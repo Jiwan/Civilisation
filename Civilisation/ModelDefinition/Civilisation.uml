@@ -1,0 +1,1291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="708f0c49-faff-4883-b8c2-aa29d3ee9059"
+  name="Civilisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="c23ae7e3-08b3-4171-a264-a43b977c785f">
+      <body>Les joueurs jouent tour par tour</body>
+      <annotatedElements>
+        <subsystemMoniker
+          Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+          LastKnownName="Règles du jeu"
+          LastKnownLocation="Civilisation.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="63b5fb84-e7d1-4929-8946-16ab62dcc686" />
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="da4f4176-d230-40bd-9f5a-954f5d95cfb5"
+        name="Joueur 1"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="11001dcf-8c19-47bc-b09c-2f80f1f83098"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Créer une ville"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fd361cc2-704f-4db4-b210-b13e16faa5de"
+              LastKnownName="Créer une ville"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3b01f4fe-b01c-4d54-95fd-b9389311cc6e"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="33b575b6-9021-49ea-be68-0d6e4497f221"
+                  name="Créer une ville"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="293cf3af-8269-4d16-98d1-53cebbbd5901"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Créer unités militaires"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c88345bb-3b8d-4326-a04a-8052077bc612"
+              LastKnownName="Créer unités"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3081e0f5-f710-4699-a3df-8ba701b30b95"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fd7c9632-2c6c-4487-a22b-bb5dc5cabb42"
+                  name="Créer unités militaires"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e6fc077b-17e3-4690-8212-fcb7d84a4a52"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Conquérir les villes de l'adversaire"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6e5ca549-d980-4b5d-a0ba-72d8f28de4f0"
+              LastKnownName="Conquérir les villes de l'adversaire"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3153cdd7-13a2-460d-9de4-5520dea4504d"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fa0f86c5-5dc5-407b-820c-9b2f5ee447c2"
+                  name="Conquérir les villes de l'adversaire"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="377c36b5-fed8-4be3-95da-23331707f866"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Bouger unités"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="23de5652-1eaf-4503-a2f0-2b466cae475e"
+              LastKnownName="Bouger unités"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="178dffec-2755-46cf-88b0-f9fd0b24b340"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="881bcff6-4944-45bb-8b9b-d5fca990ef03"
+                  name="Bouger unités"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="d103eff6-3fb8-4b9f-9970-48078f726145"
+        name="Joueur 2"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="48a63fac-3aaf-48a3-a043-34963f15ff1d"
+            isDerived="false"
+            sourceEndRoleName="Joueur 2"
+            targetEndRoleName="Créer une ville"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fd361cc2-704f-4db4-b210-b13e16faa5de"
+              LastKnownName="Créer une ville"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9d94f66f-5950-4676-88fe-0fe19e86d6b6"
+                  name="Joueur 2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3893ba45-3e33-4feb-a686-18ef70cf3e72"
+                  name="Créer une ville"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4f422bbe-7e25-4c6f-a6b9-a7bfd72861de"
+            isDerived="false"
+            sourceEndRoleName="Joueur 2"
+            targetEndRoleName="Créer unités militaires"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c88345bb-3b8d-4326-a04a-8052077bc612"
+              LastKnownName="Créer unités"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58d6c4c9-2460-4dae-ba1b-8e9b6a5ec106"
+                  name="Joueur 2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="252b6bd4-cb75-43e5-8088-6c072fc0b253"
+                  name="Créer unités militaires"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="8ed76188-3a0a-42d2-a0f0-0c28fc8dc5fd"
+            isDerived="false"
+            sourceEndRoleName="Joueur 2"
+            targetEndRoleName="Conquérir les villes de l'adversaire"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6e5ca549-d980-4b5d-a0ba-72d8f28de4f0"
+              LastKnownName="Conquérir les villes de l'adversaire"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="108c177f-2c8a-483c-bffb-fa2770a1715e"
+                  name="Joueur 2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4add38d5-893b-47ab-8570-d0f0f9c88db5"
+                  name="Conquérir les villes de l'adversaire"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6c55a091-02d2-4b70-bad8-1f8b4dd2c53d"
+            isDerived="false"
+            sourceEndRoleName="Joueur 2"
+            targetEndRoleName="Bouger unités"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="23de5652-1eaf-4503-a2f0-2b466cae475e"
+              LastKnownName="Bouger unités"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="91b28cc8-513e-4bfe-9509-4c2d82baa802"
+                  name="Joueur 2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ca02010-d625-4857-9167-8d9f8a5394e1"
+                  name="Bouger unités"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+        name="Règles du jeu"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fd361cc2-704f-4db4-b210-b13e16faa5de"
+        name="Créer une ville"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="120d5afc-aac9-473f-97d2-1f80ebe07932">
+            <useCaseMoniker
+              Id="2ee2ff4f-968d-4128-b2c1-84cdb9b81981"
+              LastKnownName="Enseignant"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c88345bb-3b8d-4326-a04a-8052077bc612"
+        name="Créer unités"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6e5ca549-d980-4b5d-a0ba-72d8f28de4f0"
+        name="Conquérir les villes de l'adversaire"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="8c39bd40-3b81-4333-9f14-7c4783b83267">
+            <useCaseMoniker
+              Id="3524b320-dc48-4024-bffd-91419a81ab81"
+              LastKnownName="Militaires"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+          <dependency
+            Id="e8a7f5a4-5b1b-4884-b84b-f45008a8e8c6">
+            <useCaseMoniker
+              Id="23de5652-1eaf-4503-a2f0-2b466cae475e"
+              LastKnownName="Bouger unités"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bcb294ce-7f07-4844-a3ad-38ab615f5208"
+        name="Directeur département"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="fc19e43c-d37a-447a-8ae8-94cd4855c00f"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="f971d064-be4b-4a9b-a99b-974dc7a733ed"
+              LastKnownName="Civiles"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2ee2ff4f-968d-4128-b2c1-84cdb9b81981"
+        name="Enseignant"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="f765b4c1-ba7a-461c-bf16-31628cbb6e9b"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="f971d064-be4b-4a9b-a99b-974dc7a733ed"
+              LastKnownName="Civiles"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3524b320-dc48-4024-bffd-91419a81ab81"
+        name="Militaires"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="ea8110f8-a9fe-4787-8392-1fb7b849f67c"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c88345bb-3b8d-4326-a04a-8052077bc612"
+              LastKnownName="Créer unités"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f971d064-be4b-4a9b-a99b-974dc7a733ed"
+        name="Civiles"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="1e9963c2-a9fc-484e-9dcd-48035256a80c"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="c88345bb-3b8d-4326-a04a-8052077bc612"
+              LastKnownName="Créer unités"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b76c23e1-d3e5-44bf-9468-537843f06d5c"
+        name="Etudiant"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="cacc8bf8-604c-41fe-a896-07a600ade613"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="3524b320-dc48-4024-bffd-91419a81ab81"
+              LastKnownName="Militaires"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="23de5652-1eaf-4503-a2f0-2b466cae475e"
+        name="Bouger unités"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="9c73d769-4356-42f4-91bf-e426f6ca90fb"
+            LastKnownName="Règles du jeu"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="5af77fb6-578e-4c34-8552-566155efc7dd"
+        name="Joueur principal"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="087f45bc-4acf-458f-bbbd-1e4c7773d6cd"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="f276abff-8dc3-4b33-bfe4-62b94cf81b46"
+              LastKnownName="Joueur"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="e4828832-e242-4c94-b9ef-5b307ffe737e"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Lancer l'application"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="673b1a75-3bb5-409e-8eba-48efb6b6d4a1"
+              LastKnownName="Lancer l'application"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2717494b-4a53-446f-8f74-4de71f3bbe0a"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4ad58cdf-e93a-4acc-bbe3-696b37739968"
+                  name="Lancer l'application"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7e1a937c-6220-4dfd-bc1c-dffe29afc144"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Créer partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="aa4430be-caa1-405a-bab2-4d825855d803"
+              LastKnownName="Créer partie"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="45b94893-7644-4eba-b5fa-6f7b9aede442"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="89ef3c1d-f032-4c1d-8053-389949bdb056"
+                  name="Créer partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9bf76c4f-1145-446e-a7c4-b5ebbddc8173"
+            isDerived="false"
+            sourceEndRoleName="Joueur 1"
+            targetEndRoleName="Choisir la carte"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="012006dc-e217-4b61-a166-ff6ba8763908"
+              LastKnownName="Choisir la carte"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4ed90574-7244-40a4-ae08-c19bf66cf29c"
+                  name="Joueur 1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e3db22a-2e04-432c-81e6-d3ebf804acbe"
+                  name="Choisir la carte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="f276abff-8dc3-4b33-bfe4-62b94cf81b46"
+        name="Joueur"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="21b222a3-a8f5-40f5-9673-81aed533df84"
+            isDerived="false"
+            sourceEndRoleName="Joueur 2"
+            targetEndRoleName="Déroulement du jeu"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="12109eab-63a1-497e-b8c4-e28b907933f8"
+              LastKnownName="Déroulement du jeu"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="88f0e004-758d-4e38-b389-5130c2161886"
+                  name="Joueur 2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9116a5fb-dc30-4489-bc9b-a91edad361a0"
+                  name="Déroulement du jeu"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b9e214a7-462d-4fba-af3e-0b15b234650d"
+            isDerived="false"
+            sourceEndRoleName="Joueur 2"
+            targetEndRoleName="Fin de partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="26818872-5c5c-4b5c-a1e0-525c00976a34"
+              LastKnownName="Fin de partie"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9ab767f5-fdef-4006-aabe-a32ad4196831"
+                  name="Joueur 2"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="848b7475-55aa-4b6f-aea2-895eaad0fcb1"
+                  name="Fin de partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+        name="Cycle de vie d'une partie"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="012006dc-e217-4b61-a166-ff6ba8763908"
+        name="Choisir la carte"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="2aace5c6-a983-4623-b112-3a9c69a57a0a">
+            <useCaseMoniker
+              Id="aa4430be-caa1-405a-bab2-4d825855d803"
+              LastKnownName="Créer partie"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="aa4430be-caa1-405a-bab2-4d825855d803"
+        name="Créer partie"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="8dcdd644-eff7-4b3a-b123-da3bd60ebb74">
+            <useCaseMoniker
+              Id="673b1a75-3bb5-409e-8eba-48efb6b6d4a1"
+              LastKnownName="Lancer l'application"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="673b1a75-3bb5-409e-8eba-48efb6b6d4a1"
+        name="Lancer l'application"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8d825731-5500-4c7f-a19c-2fe4f51a40f6"
+        name="Défaite"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="7a18ea95-5f39-454e-9d7c-2a2be378ca90"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="26818872-5c5c-4b5c-a1e0-525c00976a34"
+              LastKnownName="Fin de partie"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5df2459c-c8a5-4752-b90c-bbb964451c17"
+        name="Victoire"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="a0b542b5-850e-4bbf-ae62-e09ce154ce67"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="26818872-5c5c-4b5c-a1e0-525c00976a34"
+              LastKnownName="Fin de partie"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="12109eab-63a1-497e-b8c4-e28b907933f8"
+        name="Déroulement du jeu"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="77d5ffb7-c14c-488c-8969-cee7de6030da">
+            <useCaseMoniker
+              Id="012006dc-e217-4b61-a166-ff6ba8763908"
+              LastKnownName="Choisir la carte"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="26818872-5c5c-4b5c-a1e0-525c00976a34"
+        name="Fin de partie"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="0b34a7c5-3e5c-42eb-ae91-d4310180ee4f">
+            <useCaseMoniker
+              Id="12109eab-63a1-497e-b8c4-e28b907933f8"
+              LastKnownName="Déroulement du jeu"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="970e1a96-33cd-4c31-810b-d0598f8b54ac"
+        name="Choix adversaire"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="a89bdacd-23a6-493e-a4c2-58904be5c8d6">
+            <actorMoniker
+              Id="f276abff-8dc3-4b33-bfe4-62b94cf81b46"
+              LastKnownName="Joueur"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <extendedCases>
+          <extend
+            Id="ec1ac36c-49e7-4b0c-8ae3-f94d70797196">
+            <useCaseMoniker
+              Id="aa4430be-caa1-405a-bab2-4d825855d803"
+              LastKnownName="Créer partie"
+              LastKnownLocation="Civilisation.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4c429cf9-c235-4b84-912b-160e5f097af7"
+        name="Choix de la civilisation"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="b63f6f76-0c47-4e46-89f1-fd9ac695cc02">
+            <useCaseMoniker
+              Id="aa4430be-caa1-405a-bab2-4d825855d803"
+              LastKnownName="Créer partie"
+              LastKnownLocation="Civilisation.uml" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker
+            Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b"
+            LastKnownName="Cycle de vie d'une partie"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="40a737bb-6687-4a38-b2e2-7bc627a74403"
+        name="Développement d'une civilisation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="19f7170a-eab5-4b4c-bf72-cc1b2b645188"
+        name="Joueur"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="0e78cea1-6a56-40a0-a275-37c1e18b554e"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Amasser des ressources"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0474ad7f-c0dd-4dd1-8f45-7d102c62de20"
+              LastKnownName="Amasser des ressources"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e2b51195-a263-4bcc-ae9b-be8a0a55d3b4"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c791718c-210c-4a1f-a207-21818fca0a04"
+                  name="Amasser des ressources"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ab8b84d2-fbb7-4994-aca5-872a6cb4e57b"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Créer des unités"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8368fc1c-9eb7-46c2-b8a6-19dd2b3e698e"
+              LastKnownName="Créer des unités"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8c95ae4-5db4-468b-b13a-c5b4fb5d6736"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e089127a-c0eb-4295-bd9f-69cbc0e4b2a7"
+                  name="Créer des unités"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a5f328d7-4f16-4fdd-9714-8416f224753f"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="Etendre"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="663d895b-2f87-4c7d-9473-8b4caf73d814"
+              LastKnownName="Etendre"
+              LastKnownLocation="Civilisation.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="667e7ea9-6fe1-4c59-88b7-f13888b71d26"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="abbf3e0a-cbbe-4c7d-81e1-9680cef5c26e"
+                  name="Etendre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0474ad7f-c0dd-4dd1-8f45-7d102c62de20"
+        name="Amasser des ressources"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="40a737bb-6687-4a38-b2e2-7bc627a74403"
+            LastKnownName="Développement d'une civilisation"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c914d484-e585-4455-a9d8-19a21d585f7d"
+        name="Minerai"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="dd1a74a3-8186-4271-b156-f2bca9a5179e"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="0474ad7f-c0dd-4dd1-8f45-7d102c62de20"
+              LastKnownName="Amasser des ressources"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="40a737bb-6687-4a38-b2e2-7bc627a74403"
+            LastKnownName="Développement d'une civilisation"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="19d15143-5a4e-43a8-83fa-e25726cbb6e8"
+        name="Nourriture"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="fe455825-5291-4e9b-aaf9-1c81e9092201"
+            isSubstitutable="false">
+            <useCaseMoniker
+              Id="0474ad7f-c0dd-4dd1-8f45-7d102c62de20"
+              LastKnownName="Amasser des ressources"
+              LastKnownLocation="Civilisation.uml" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="40a737bb-6687-4a38-b2e2-7bc627a74403"
+            LastKnownName="Développement d'une civilisation"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8368fc1c-9eb7-46c2-b8a6-19dd2b3e698e"
+        name="Créer des unités"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="eb653794-03c5-4c57-baaf-86808ba802d4">
+            <useCaseMoniker
+              Id="0474ad7f-c0dd-4dd1-8f45-7d102c62de20"
+              LastKnownName="Amasser des ressources"
+              LastKnownLocation="Civilisation.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="40a737bb-6687-4a38-b2e2-7bc627a74403"
+            LastKnownName="Développement d'une civilisation"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="663d895b-2f87-4c7d-9473-8b4caf73d814"
+        name="Etendre"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="40a737bb-6687-4a38-b2e2-7bc627a74403"
+            LastKnownName="Développement d'une civilisation"
+            LastKnownLocation="Civilisation.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="8f127027-fedc-4140-8764-14434be32e12"
+        LastKnownName="Civilization"
+        LastKnownLocation="Package_0915.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f7465a80-dacc-4a24-af55-2abe12fe1f8a"
+        LastKnownName="Civilisation"
+        LastKnownLocation="Package_0916.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="fd053db6-72f2-4816-a5db-14ec8df75e83"
+        LastKnownName="World"
+        LastKnownLocation="Package_0837.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

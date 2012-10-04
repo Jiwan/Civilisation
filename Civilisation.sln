@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Civilisation", "Civilisation\Civilisation.modelproj", "{3190E1C8-C829-4DCB-A5F2-779B24DD823F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3190E1C8-C829-4DCB-A5F2-779B24DD823F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3190E1C8-C829-4DCB-A5F2-779B24DD823F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3190E1C8-C829-4DCB-A5F2-779B24DD823F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3190E1C8-C829-4DCB-A5F2-779B24DD823F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

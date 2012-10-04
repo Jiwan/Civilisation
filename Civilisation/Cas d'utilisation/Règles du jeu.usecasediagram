@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="c187f804-3256-494f-bf8e-8c606614457a" name="Civilisation" linkedPackageId="7b7b2762-f94d-4724-8bc5-73d137bf9b19" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="fd6caf06-15c3-4fe5-8938-27a2a9e584c6">
+      <elementDefinition Id="c23ae7e3-08b3-4171-a264-a43b977c785f" />
+      <body>Les joueurs jouent tour par tour</body>
+      <annotatedElements>
+        <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="66fc432b-b096-4a9b-ae38-5ac0015c4653" name="Joueur 1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="da4f4176-d230-40bd-9f5a-954f5d95cfb5" />
+        <targetEnds>
+          <association Id="f6c2160e-59b8-4283-8a3c-127b3217a5ae" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Créer une ville" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8454233b-1a3c-48a6-a986-da55a6379abd" LastKnownName="Créer une ville" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7df01499-b09c-4f5e-be02-96ee08b40fd8" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3b01f4fe-b01c-4d54-95fd-b9389311cc6e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="69a7d91f-0adc-4480-b483-ce7f658a1267" name="Créer une ville" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33b575b6-9021-49ea-be68-0d6e4497f221" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="11001dcf-8c19-47bc-b09c-2f80f1f83098" />
+          </association>
+          <association Id="8c3b1db1-4201-47d2-987d-4a14e6618312" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Créer unités militaires" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="28fe7f3f-d3e3-44ac-966a-85286d679979" LastKnownName="Créer unités" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d048ac28-c882-4e2e-a004-2b0409244db0" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3081e0f5-f710-4699-a3df-8ba701b30b95" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e95c8cca-72b1-4989-839b-3bc1c42c7a43" name="Créer unités militaires" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fd7c9632-2c6c-4487-a22b-bb5dc5cabb42" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="293cf3af-8269-4d16-98d1-53cebbbd5901" />
+          </association>
+          <association Id="3ef169e3-1db8-4e79-80ee-a7922bd87f23" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Conquérir les villes de l'adversaire" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="767a1f75-6d6b-46a8-b806-18e91f01a5ad" LastKnownName="Conquérir les villes de l'adversaire" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e99cc50e-4796-43da-8821-b72a383d6309" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3153cdd7-13a2-460d-9de4-5520dea4504d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="df1bd137-cff4-4729-81e9-60ad7f38e8e1" name="Conquérir les villes de l'adversaire" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fa0f86c5-5dc5-407b-820c-9b2f5ee447c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e6fc077b-17e3-4690-8212-fcb7d84a4a52" />
+          </association>
+          <association Id="eebdb023-9d15-4f63-8a21-f4596af3b1a6" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Bouger unités" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger unités" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3402118c-2ae7-4a51-a344-85baff81c6c8" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="178dffec-2755-46cf-88b0-f9fd0b24b340" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a64651d6-224a-4354-9b92-01e4bdeee83c" name="Bouger unités" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="881bcff6-4944-45bb-8b9b-d5fca990ef03" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="377c36b5-fed8-4be3-95da-23331707f866" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="b87d344e-ddd8-4952-a557-3b65df0c38fb" name="Joueur 2" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d103eff6-3fb8-4b9f-9970-48078f726145" />
+        <targetEnds>
+          <association Id="56c5390e-0cab-43fb-8f92-051a4fa3a8e2" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Créer une ville" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8454233b-1a3c-48a6-a986-da55a6379abd" LastKnownName="Créer une ville" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c71b66bc-18d1-457c-a976-b0bb765b67dc" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9d94f66f-5950-4676-88fe-0fe19e86d6b6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0a204340-fa3f-438d-900a-1f6ac52604ee" name="Créer une ville" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3893ba45-3e33-4feb-a686-18ef70cf3e72" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="48a63fac-3aaf-48a3-a043-34963f15ff1d" />
+          </association>
+          <association Id="17a0f790-05db-44cc-a898-98be692cc2ab" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Créer unités militaires" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="28fe7f3f-d3e3-44ac-966a-85286d679979" LastKnownName="Créer unités" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3a4ac4de-036a-48a6-90cb-ddc94ef38262" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="58d6c4c9-2460-4dae-ba1b-8e9b6a5ec106" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ef0d4628-2c47-424a-8dec-f4737b1a7e45" name="Créer unités militaires" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="252b6bd4-cb75-43e5-8088-6c072fc0b253" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4f422bbe-7e25-4c6f-a6b9-a7bfd72861de" />
+          </association>
+          <association Id="749eabed-a873-420e-b7f8-b1a73448aaef" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Conquérir les villes de l'adversaire" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="767a1f75-6d6b-46a8-b806-18e91f01a5ad" LastKnownName="Conquérir les villes de l'adversaire" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1a3c3d9b-6296-48c3-9abd-921438228f16" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="108c177f-2c8a-483c-bffb-fa2770a1715e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="87b80ec8-b7dc-4e56-9f03-1a6abbc9cc56" name="Conquérir les villes de l'adversaire" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4add38d5-893b-47ab-8570-d0f0f9c88db5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8ed76188-3a0a-42d2-a0f0-0c28fc8dc5fd" />
+          </association>
+          <association Id="4d666918-274f-4d1f-b2f1-847dd23adaec" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Bouger unités" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger unités" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="628edb33-ee64-4a63-860e-6587896fc4ed" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="91b28cc8-513e-4bfe-9509-4c2d82baa802" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="26fde5ca-3a1e-4055-b6a8-45171ddb5d9b" name="Bouger unités" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0ca02010-d625-4857-9167-8d9f8a5394e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6c55a091-02d2-4b70-bad8-1f8b4dd2c53d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="4d592c2c-ba47-4fc2-8e30-713a73127256" name="Règles du jeu" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9c73d769-4356-42f4-91bf-e426f6ca90fb" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="8454233b-1a3c-48a6-a986-da55a6379abd" name="Créer une ville" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fd361cc2-704f-4db4-b210-b13e16faa5de" />
+        <suppliersInternal>
+          <dependency Id="05ee3922-87af-4071-b731-bcb9f9da12e6">
+            <useCaseMoniker Id="f7b50883-eee7-41e7-bd88-cff0c9ccef69" LastKnownName="Enseignant" />
+            <elementDefinition Id="120d5afc-aac9-473f-97d2-1f80ebe07932" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="28fe7f3f-d3e3-44ac-966a-85286d679979" name="Créer unités" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c88345bb-3b8d-4326-a04a-8052077bc612" />
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="767a1f75-6d6b-46a8-b806-18e91f01a5ad" name="Conquérir les villes de l'adversaire" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6e5ca549-d980-4b5d-a0ba-72d8f28de4f0" />
+        <suppliersInternal>
+          <dependency Id="10b53297-ada7-4ba0-b261-58fc0ea11e18">
+            <useCaseMoniker Id="5594d507-6165-43e2-9cbc-385452de2735" LastKnownName="Militaires" />
+            <elementDefinition Id="8c39bd40-3b81-4333-9f14-7c4783b83267" />
+          </dependency>
+          <dependency Id="ea6e0ebe-ec5e-4626-8464-965391fd7af3">
+            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger unités" />
+            <elementDefinition Id="e8a7f5a4-5b1b-4884-b84b-f45008a8e8c6" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="6ff23326-f667-4363-a7cd-b2ec72130a5b" name="Directeur département" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bcb294ce-7f07-4844-a3ad-38ab615f5208" />
+        <generalsInternal>
+          <generalization Id="01d43e5c-4c1f-4c45-9568-ff6bc4a0d8e1" isSubstitutable="false">
+            <useCaseMoniker Id="48515054-4451-487a-91ab-46f1c59009be" LastKnownName="Civiles" />
+            <elementDefinition Id="fc19e43c-d37a-447a-8ae8-94cd4855c00f" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f7b50883-eee7-41e7-bd88-cff0c9ccef69" name="Enseignant" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2ee2ff4f-968d-4128-b2c1-84cdb9b81981" />
+        <generalsInternal>
+          <generalization Id="6134b903-8500-426e-935d-a2d095e1e923" isSubstitutable="false">
+            <useCaseMoniker Id="48515054-4451-487a-91ab-46f1c59009be" LastKnownName="Civiles" />
+            <elementDefinition Id="f765b4c1-ba7a-461c-bf16-31628cbb6e9b" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5594d507-6165-43e2-9cbc-385452de2735" name="Militaires" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3524b320-dc48-4024-bffd-91419a81ab81" />
+        <generalsInternal>
+          <generalization Id="d8beafce-682c-460d-a4ed-22bea7b74aeb" isSubstitutable="false">
+            <useCaseMoniker Id="28fe7f3f-d3e3-44ac-966a-85286d679979" LastKnownName="Créer unités" />
+            <elementDefinition Id="ea8110f8-a9fe-4787-8392-1fb7b849f67c" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="48515054-4451-487a-91ab-46f1c59009be" name="Civiles" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f971d064-be4b-4a9b-a99b-974dc7a733ed" />
+        <generalsInternal>
+          <generalization Id="7e3a8d40-ec9b-4134-ae81-5cea614d7007" isSubstitutable="false">
+            <useCaseMoniker Id="28fe7f3f-d3e3-44ac-966a-85286d679979" LastKnownName="Créer unités" />
+            <elementDefinition Id="1e9963c2-a9fc-484e-9dcd-48035256a80c" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f562449a-18f8-4ad0-8e4d-e5cebd9374d5" name="Etudiant" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b76c23e1-d3e5-44bf-9468-537843f06d5c" />
+        <generalsInternal>
+          <generalization Id="724f41db-366d-4232-ac39-d7f9f103db1c" isSubstitutable="false">
+            <useCaseMoniker Id="5594d507-6165-43e2-9cbc-385452de2735" LastKnownName="Militaires" />
+            <elementDefinition Id="cacc8bf8-604c-41fe-a896-07a600ade613" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1edb677a-400c-4b07-9a86-2af070912240" name="Bouger unités" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="23de5652-1eaf-4503-a2f0-2b466cae475e" />
+        <subjects>
+          <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="7b7b2762-f94d-4724-8bc5-73d137bf9b19" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1c33a21c-7b8b-4848-afc4-73ed71b4e891">
+        <profileInstance Id="c01d1dd3-7e35-48d8-a920-0ff38f788b91" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="11a21f76-746c-42a8-93e9-43b3f1859881">
+        <profileInstance Id="e7a8770a-053f-4cf2-b553-5cd6b5bced30" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>
