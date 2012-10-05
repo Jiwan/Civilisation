@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d64e6476-044a-46e5-90c7-9b21a2dc8404"
+  name="Player" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="49b25010-ff6f-4e36-b579-a0320a6a526c">
+      <body>If one day we want to handle an AI player we'll have a clever IPlayer interface for it.</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="341cc183-7a27-4959-9a12-5e6eef82a533"
+          LastKnownName="IPlayer"
+          LastKnownLocation="Package_1909.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="341cc183-7a27-4959-9a12-5e6eef82a533"
+        name="IPlayer"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2e41b43e-6bee-4607-8ca0-e84c403ab82b"
+        name="HumanPlayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b655a999-4a9d-4624-b3f7-c94f18962ab2">
+            <interfaceMoniker
+              Id="341cc183-7a27-4959-9a12-5e6eef82a533"
+              LastKnownName="IPlayer"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
         <ownedCommentsInternal>
           <comment Id="87034c1b-5fbd-45ef-9588-d10d527db806">
             <elementDefinition Id="2e7b5c69-1003-42b3-9998-7aaf586991ef" />
+            <body>We use the prototype design pattern as we want to load departement informations from a file.</body>
+            <annotatedElements>
+              <classMoniker Id="57ec4168-8f40-4c6b-8722-dde022208aa8" LastKnownName="PrototypeAbstractFactory" />
+            </annotatedElements>
           </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="8f127027-fedc-4140-8764-14434be32e12" />
@@ -188,7 +192,7 @@
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="57ec4168-8f40-4c6b-8722-dde022208aa8" name="INFOAbstractFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="57ec4168-8f40-4c6b-8722-dde022208aa8" name="PrototypeAbstractFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="78c1361a-fcfc-4761-8ebe-a3c0d8b060c6" />
               <suppliersInternal>
                 <interfaceRealization Id="e7bb026e-c471-441a-8f1f-935242a7d03c">
@@ -196,14 +200,6 @@
                   <elementDefinition Id="c5d57d96-59a4-4503-831e-3464dcd1a82d" />
                 </interfaceRealization>
               </suppliersInternal>
-              <ownedAttributesInternal>
-                <property Id="5bef058e-292b-49d1-aa5c-d1b88c24f939" name="m_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="8d5939a8-4bc4-4ea2-bad3-ae117c74cb69" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="47d7e2ec-7aaa-4123-bcb9-0285c9252d7c" LastKnownName="ICivilizationAbstractFactory" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
               <ownedOperationsInternal>
                 <operation Id="c11e84db-ebba-4fa3-9e8c-4769e1be93ed" name="CreateDepartDirector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="9d80b90b-5f2f-4e8f-9900-e2af27b4c2eb" />
@@ -257,106 +253,30 @@
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="3ffb0625-b327-47e8-ba7c-9c9136750889" name="INFOAbstractFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="3ffb0625-b327-47e8-ba7c-9c9136750889" name="INFOAbstractFactory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="7bf41543-9481-4a87-a51e-415cfc3c993c" />
-                </operation>
-                <operation Id="f7273264-1638-491e-a5b5-8a2325ee972c" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="74f47393-5d12-4280-848f-c3f0c0aea12e" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="6f08529a-4e21-4d39-bd18-9e1da5e70043" direction="Return">
-                        <elementDefinition Id="7df8a235-e961-4ddb-832a-d0398d95c685" />
+                      <parameter Id="b789e38d-ab3a-41ff-8dcc-0b0c50c0c0fe" name="proto1" direction="In" isUnique="false">
+                        <elementDefinition Id="3f7106e1-ae4b-45a8-bf0e-774476b80eba" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="1fadc064-6391-4b5c-836e-8059b47cfc4c" LastKnownName="ICivilizationAbstractFactory" />
+                          <referencedTypeMoniker Id="56c68e5c-5173-4a56-a903-a13b1809dd25" LastKnownName="IDepartDirector" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-              </ownedOperationsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="ff515f44-3ebf-430d-bcf8-e04dab74001c" name="EIIAbstractFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="9cb79f27-e5b8-48d2-a9d1-e03531cf5342" />
-              <suppliersInternal>
-                <interfaceRealization Id="47ad440c-f3e6-48e0-864d-67b0d6b908dc">
-                  <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="ICivilizationAbstractFactory" />
-                  <elementDefinition Id="f1942283-a6b4-4c90-ae23-fce8d76bfc28" />
-                </interfaceRealization>
-              </suppliersInternal>
-              <ownedAttributesInternal>
-                <property Id="98a19a9c-244c-41e7-b22a-5f2bc6ff6dca" name="m_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="2a59edfb-41b2-443d-86c2-0948d61e9be3" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="377d147c-06a6-40f7-b936-fde25558b738" LastKnownName="ICivilizationAbstractFactory" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
-              <ownedOperationsInternal>
-                <operation Id="f156d52c-75c6-46a9-9290-ab924945639f" name="CreateDepartDirector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="f242f868-19bd-4964-93ff-1161a3b7cc08" />
-                  <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="9729f19e-fab2-4e44-bda6-ffc9ee5b7297" direction="Return">
-                        <elementDefinition Id="11401317-8cba-4dc5-9742-c906788ab83d" />
+                      <parameter Id="c2c727f3-f008-4331-9c7f-1066e8b8e6a3" name="proto2" direction="In">
+                        <elementDefinition Id="dc308cdb-d6b2-4b4a-a854-1d85264e0cf9" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="f966ee14-eee5-4804-9215-39f132ece2ee" LastKnownName="IDepartDirector" />
+                          <referencedTypeMoniker Id="ea2ee16e-8d93-4e45-8ea6-3af8985c2773" LastKnownName="ITeacher" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-                <operation Id="c044ed37-f73d-4378-8701-14c210df7432" name="CreateStudent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="7ca11f14-352d-48a9-8e22-24fe3c56ae05" />
-                  <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="aaad09f6-3c67-4d77-9094-18cf4b29f711" direction="Return">
-                        <elementDefinition Id="8a4157d2-0b2e-4bf6-b1fa-63ddc6c3689a" />
+                      <parameter Id="a33c2b2c-33de-457c-8040-e5b1bd6ff183" name="proto3" direction="In">
+                        <elementDefinition Id="84d3834a-9b2a-4001-b1b7-b4f9040782ba" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="ad26568c-3e87-484e-8076-8434fbee63b2" LastKnownName="IStudent" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-                <operation Id="9673ade8-6472-491f-84e8-c6e8ec4ec80e" name="CreateTeacher" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="7bb5d997-5587-4671-ad30-e1d0552bc03a" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="3e868674-57e6-441b-ad91-77bece8b8ade" direction="Return">
-                        <elementDefinition Id="1f1e8d9b-261d-4214-8588-28d608e164a2" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="fa738c96-383b-4eef-98fe-fa2fa32ad595" LastKnownName="ITeacher" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-                <operation Id="91a9f208-51e6-4421-b28a-1ee14f82c045" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="c1a86a1f-c12b-4598-9600-7086ee476039" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="1b074730-87cf-4155-aec4-c8f76dec203c" direction="Return">
-                        <elementDefinition Id="b9d42aa1-584d-45e9-8ffa-2e2d6f387499" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="6b1ae9a5-eb0a-436a-9bb2-119363048708" LastKnownName="ICity" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-                <operation Id="f56976cd-3f2a-43c5-98c3-88c0071b1fbd" name="EIIAbstractFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="e56b033a-def9-4eea-ad21-e7f55ead39f6" />
-                </operation>
-                <operation Id="6a961bfe-6102-4071-aeb8-3d625c8a699c" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="8762fc9a-0459-46a9-a2ad-5ce295332993" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="16e8e2bf-53a4-4490-99f9-45d6899cea1c" direction="Return">
-                        <elementDefinition Id="a6e07d9d-729d-4d4e-9b0d-c88e98a96855" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="1c304585-b71a-430f-a5ef-07643e9024b4" LastKnownName="ICivilizationAbstractFactory" />
+                          <referencedTypeMoniker Id="9e5ae30c-5382-4595-bd68-be900e5bca14" LastKnownName="IStudent" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -409,26 +329,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="f966ee14-eee5-4804-9215-39f132ece2ee" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::Unit::IDepartDirector">
-        <elementDefinition Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="ad26568c-3e87-484e-8076-8434fbee63b2" name="IStudent" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::Unit::IStudent">
-        <elementDefinition Id="c282f372-8661-4ffa-bf21-55b6e7b125ba" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="fa738c96-383b-4eef-98fe-fa2fa32ad595" name="ITeacher" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::Unit::ITeacher">
-        <elementDefinition Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="6b1ae9a5-eb0a-436a-9bb2-119363048708" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::City::ICity">
-        <elementDefinition Id="97b02c64-6fec-4573-a042-2a2be0b96bd3" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="e76ebb79-e61f-45e6-8d5a-146a787b8987" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
@@ -454,23 +354,18 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="47d7e2ec-7aaa-4123-bcb9-0285c9252d7c" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::ICivilizationAbstractFactory">
-        <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
+      <referencedType Id="56c68e5c-5173-4a56-a903-a13b1809dd25" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization1::Unit::IDepartDirector">
+        <elementDefinition Id="80170929-dbb8-4a97-995e-d7313d6e4030" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="377d147c-06a6-40f7-b936-fde25558b738" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::ICivilizationAbstractFactory">
-        <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
+      <referencedType Id="ea2ee16e-8d93-4e45-8ea6-3af8985c2773" name="ITeacher" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization1::Unit::ITeacher">
+        <elementDefinition Id="c47a2f78-435a-4f25-89c5-3b151249dc2f" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="1fadc064-6391-4b5c-836e-8059b47cfc4c" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::ICivilizationAbstractFactory">
-        <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="1c304585-b71a-430f-a5ef-07643e9024b4" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::ICivilizationAbstractFactory">
-        <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
+      <referencedType Id="9e5ae30c-5382-4595-bd68-be900e5bca14" name="IStudent" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization1::Unit::IStudent">
+        <elementDefinition Id="c15995ba-05fd-4573-96f0-8323e9735dda" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

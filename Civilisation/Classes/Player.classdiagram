@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="234517a7-938d-435d-809f-acbbf9b99ae2">
+      <profileInstance Id="a1e3c7d2-3a54-4f2b-a119-2764fc422c73" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="356b1d2e-2a77-4fbb-b49e-211e27e4776d">
+      <profileInstance Id="dd4e3567-def0-4ba0-b079-beedc4f84b9c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
+        <ownedCommentsInternal>
+          <comment Id="4bd1cfee-52f0-442a-9f15-402099239e1a">
+            <elementDefinition Id="49b25010-ff6f-4e36-b579-a0320a6a526c" />
+            <body>If one day we want to handle an AI player we'll have a clever IPlayer interface for it.</body>
+            <annotatedElements>
+              <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="d64e6476-044a-46e5-90c7-9b21a2dc8404" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <Interface Id="130b40a8-596a-4bf4-9557-0eeace8a5734" name="IPlayer" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="341cc183-7a27-4959-9a12-5e6eef82a533" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f21ae4e1-a195-47f5-8871-7662aa5db8cd" name="HumanPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2e41b43e-6bee-4607-8ca0-e84c403ab82b" />
+              <suppliersInternal>
+                <interfaceRealization Id="823d61b6-2e4f-472a-8576-f7bc1125d403">
+                  <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+                  <elementDefinition Id="b655a999-4a9d-4624-b3f7-c94f18962ab2" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+  </package>
+</logicalClassDesignerModel>

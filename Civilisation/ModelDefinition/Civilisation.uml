@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="708f0c49-faff-4883-b8c2-aa29d3ee9059"
   name="Civilisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1266,6 +1266,48 @@
         Id="fd053db6-72f2-4816-a5db-14ec8df75e83"
         LastKnownName="World"
         LastKnownLocation="Package_0837.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c280d2f1-28a4-4c1b-a674-22dbad1c5a14"
+        name="Civilisation::Civilisation::ICivilizationAbstractFactory" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b173f4bc-8fae-4433-b9e3-7b1e878df357"
+        name="Civilisation::Civilisation::Unit::IDepartDirector" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="97e25661-6fb7-43b9-a03a-8c70358f8496"
+        name="Civilisation::Civilisation::Unit::IStudent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9a968f73-b9a4-4d61-959a-b5a844d8c664"
+        name="Civilisation::Civilisation::Unit::ITeacher" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d6caa217-a7bb-405c-9e85-cef57fa23871"
+        name="Civilisation::Civilisation::City::ICity" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="624dff7c-5477-4c88-90b2-6ea4f14fffc1"
+        name="Civilisation::Civilisation::Square::Square" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ee938dda-08a8-4053-a7f9-d83678cfffea"
+        LastKnownName="Civilization1"
+        LastKnownLocation="Package_1848.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d64e6476-044a-46e5-90c7-9b21a2dc8404"
+        LastKnownName="Player"
+        LastKnownLocation="Package_1909.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

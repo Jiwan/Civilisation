@@ -17,6 +17,20 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="Classes\Old Civilization.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Old Civilization.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Old Civilization.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Player.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Player.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Player.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Classes\World.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -25,6 +39,12 @@
       <DependentUpon>Classes\World.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_0837.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1848.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1848.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_0835.uml">
@@ -52,6 +72,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1107.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1848.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1909.uml">
       <SubType>Content</SubType>
     </Content>
     <Folder Include="ModelDefinition\" />

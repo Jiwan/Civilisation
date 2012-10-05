@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="ee92d238-dd9b-465f-ab64-472e9ada12de">
-      <profileInstance Id="aaf121c6-8f04-40c1-8577-c0152a9732db" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a45c1c00-0c57-4f15-ac9a-58757609b1f2">
-      <profileInstance Id="a4fcce9a-f0dd-4ba6-b74c-3aa02c846b2d" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="14658d13-38d8-464e-8f91-2722ad00560d" name="World">
@@ -24,6 +10,11 @@
               <ownedCommentsInternal>
                 <comment Id="ad19af8b-1a9f-438a-bcec-7f63539f942b">
                   <elementDefinition Id="1184ea96-a316-4f13-a184-1418f7d746a6" />
+                  <body>Avoid to derivate each sub-classe.
+</body>
+                  <annotatedElements>
+                    <classMoniker Id="ede09795-a2df-4416-b21d-7360f81981d9" LastKnownName="SquareDecorator" />
+                  </annotatedElements>
                 </comment>
               </ownedCommentsInternal>
               <elementDefinition Id="015e9c81-0c43-4456-979c-0247e8e4ef17" />
@@ -370,6 +361,48 @@
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="3764e0ef-acd9-45b3-8c34-9ef36326f7e5" name="Water" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="e1cd5246-2aef-4a54-9188-e1243709ee94" />
+                    <generalsInternal>
+                      <generalization Id="44a828cc-cc38-40a6-b774-40ccee06da54" isSubstitutable="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <elementDefinition Id="13a846a3-c07e-4a15-a60c-71688168a6f4" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="37d9dd44-85c1-4cc9-b6c5-385c40ee6400" name="Mountain" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="cff075b4-c880-4e0a-ae54-6dd3f3e1fb91" />
+                      </operation>
+                      <operation Id="b8e45cfc-7d9b-4fcc-8155-450d487994d9" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="67cc8a04-9a65-40cb-8d9f-f019eca84ccd" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="2630812f-b6ac-4a25-9618-351934fde161" direction="Return">
+                              <elementDefinition Id="2858b4bf-2233-4b4b-9df5-06e3052f27b2" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83d0986e-cda3-47bb-80e8-8c1bb0cdb453" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="796ed699-8dbd-4c84-baec-e0ce22303760" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="4837da98-18f7-4de6-ac14-d8ee5633f2d7" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="8371876a-33e7-47b5-b7ef-91d002e402f7" direction="Return">
+                              <elementDefinition Id="ae110210-e3fe-4297-afbe-40750c2f518e" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="93f12747-1892-4110-b3d5-eb952a2c20b2" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
               </packagedElements>
             </package>
           </packageHasNamedElement>
@@ -380,6 +413,34 @@
                 <packageHasNamedElement>
                   <class Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" name="Map" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="eb8566cd-d448-403e-b48d-1b8f91045bb4" />
+                    <targetEnds>
+                      <association Id="97b716a1-e198-4d26-b72d-d3275cfd2edc" isDerived="false" sourceEndRoleName="Map" targetEndRoleName="Square" isLeaf="false" isAbstract="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="bf23f8bd-e3ff-4edf-a4a6-75e408948180" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <lowerValueInternal>
+                                <literalString Id="c6932af9-9afa-4bcd-bba2-dcacb3961716" name="Lower" value="*">
+                                  <elementDefinition Id="5443aecb-8847-4f6d-a678-c6d0cb027c9b" />
+                                </literalString>
+                              </lowerValueInternal>
+                              <upperValueInternal>
+                                <literalString Id="99741b1b-d167-4e4f-88f2-cf27c9f5a719" name="Upper" value="*">
+                                  <elementDefinition Id="d55dd9f9-0ff0-40a1-9836-2149383f6a06" />
+                                </literalString>
+                              </upperValueInternal>
+                              <elementDefinition Id="d1273fea-5f62-4116-b0d5-e8ff5962629d" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="e7bba556-4b98-4a5a-a38b-685dd733ba78" name="Square" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="5610cd8a-cdb9-4b47-92f0-79dc20fa2df7" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="3c54128f-360c-45c9-8e33-96254e9e5be8" />
+                      </association>
+                    </targetEnds>
                     <ownedAttributesInternal>
                       <property Id="b49aca71-e2b0-4ed8-b4b1-28ea60111ad5" name="m_squareMatrix" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <lowerValueInternal>
@@ -792,8 +853,32 @@
         <elementDefinition Id="4916d294-b50f-4004-ace9-fc01739d08af" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="83d0986e-cda3-47bb-80e8-8c1bb0cdb453" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="93f12747-1892-4110-b3d5-eb952a2c20b2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="035714ab-62b4-456a-bb7a-44ac6c51ee6b" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ee92d238-dd9b-465f-ab64-472e9ada12de">
+        <profileInstance Id="aaf121c6-8f04-40c1-8577-c0152a9732db" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a45c1c00-0c57-4f15-ac9a-58757609b1f2">
+        <profileInstance Id="a4fcce9a-f0dd-4ba6-b74c-3aa02c846b2d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
