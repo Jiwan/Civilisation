@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
@@ -10,6 +10,10 @@
             <annotatedElements>
               <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
             </annotatedElements>
+          </comment>
+          <comment Id="e2c609e4-7d53-49b6-952c-0ada35c11889">
+            <elementDefinition Id="7ba409e1-50b8-44ca-9e4f-1c90068092f7" />
+            <body>FAIRE UN PATTERN STATE</body>
           </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="d64e6476-044a-46e5-90c7-9b21a2dc8404" />
@@ -29,6 +33,171 @@
                 </interfaceRealization>
               </suppliersInternal>
             </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="8355eec5-83fe-40af-94c2-686f9acc9418" name="Actions">
+              <ownedCommentsInternal>
+                <comment Id="312c9549-261e-409d-a501-aeba664d509f">
+                  <elementDefinition Id="9a15fca6-6cd1-4f83-a7c4-f843587d381e" />
+                  <body>Command pattern.
+Instead of using raw function calls, we will encapsulate player's actions in an object.
+This will be usefull for 
+1) Logging all actions.
+2) Debugging.
+3) If we want to make a replay we can just save the list of action and reload them whenever we want.
+4) Manymore.
+5) If we want to make an online game, this could be our action packet</body>
+                  <annotatedElements>
+                    <interfaceMoniker Id="5049eac2-42d1-4b5f-bc60-233de1947311" LastKnownName="IPlayerAction" />
+                  </annotatedElements>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="2046e58b-b54f-4e68-929c-7a7a7d52a410" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <Interface Id="5049eac2-42d1-4b5f-bc60-233de1947311" name="IPlayerAction" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="bd35a13e-a6e8-4cf4-96ee-8082ea76ac5a" />
+                    <ownedOperations>
+                      <operation Id="12419580-be56-4331-87a1-6681ce9b7047" name="Do" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="4e9a7b94-a86c-452b-932e-7484b7009bb9" />
+                      </operation>
+                      <operation Id="c9b668cd-64c3-48f6-a7f5-148469361347" name="Undo" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="18131f31-6304-415d-94c7-185c0758b84b" />
+                      </operation>
+                      <operation Id="746faf36-9d6e-434a-90f1-ae0dfd79e5dd" name="GetLog" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="46b06480-2891-478e-ba86-7fc57f8fc94b" />
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" name="InGameAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="c48d8289-3083-4139-bf3e-507c06ec1565" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="ac7b7c3e-d59e-472e-ba70-984f4c308c89">
+                        <interfaceMoniker Id="5049eac2-42d1-4b5f-bc60-233de1947311" LastKnownName="IPlayerAction" />
+                        <elementDefinition Id="f805f7a2-d0a5-4409-b082-800dadcb8b91" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="a939ae65-ea1f-4474-951c-1813f153a9ed" name="Do" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="5f22fe88-725a-40f6-99e5-c98cd7b31793" />
+                      </operation>
+                      <operation Id="f5932a66-8de5-406d-9a94-1ef2233195ae" name="Undo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="640df54b-3d00-4ad1-b684-09e7fd2a7762" />
+                      </operation>
+                      <operation Id="62758a0f-1a03-40e0-8c61-80f698977814" name="GetLog" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1dd27331-c41c-4851-ba8b-c18f08bf0210" />
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="6b8815d8-520c-4710-b82e-e1e24af6da45" name="BuildCityAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="6b355fb1-780b-4694-af3f-e0d6186f5c9b" />
+                    <generalsInternal>
+                      <generalization Id="7a27891f-3ed6-4d38-9671-6d0c678b4348" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="4bdb44bc-cc61-45c6-876d-d40f238cdf7e" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="48c198ad-3a4a-4a50-9521-bfb867d62b00" name="SkipTurnAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="ff5a64cf-b86e-4adf-80f0-5f61aeebf2dd" />
+                    <generalsInternal>
+                      <generalization Id="8be4c716-9bc7-4564-bdeb-c23b0998a5c8" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="545d893c-1313-44b3-a3ed-d66f4c66ee0c" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="75b818cd-47e0-4aad-bf01-49a2b83a901e" name="AttackAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="ba4b85ec-2b7a-432a-bf7f-229d91553fcc" />
+                    <generalsInternal>
+                      <generalization Id="8b5a5895-b41d-42d8-a35e-f6350845cd67" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="b5b50dc3-7606-433e-8e46-2e5668e34f20" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="8cbbb899-c1b0-434c-89c3-cb314098d160" name="SelectEnityAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="70a00fef-6faa-443c-98cc-81b072232ddf" />
+                    <generalsInternal>
+                      <generalization Id="ef80a681-5589-4373-a8db-3bce1670c101" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="1c972229-c4aa-4ad1-9796-32fcd27e193b" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="fb69b660-44f2-4eee-b036-2a2416976ef0" name="MoveAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="41c23865-668b-4a19-9c85-48deca9996ec" />
+                    <generalsInternal>
+                      <generalization Id="b35a6dcc-40ac-4076-83cf-508da26449fc" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="ec88e8e6-42b0-4ac4-89e3-d8f61e47d3ce" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="46a36aee-b3aa-4811-9fb5-7929704a3af3" name="CreateUnitAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="fd607f33-9a5c-4c05-b57c-6c3a6cbf2d65" />
+                    <generalsInternal>
+                      <generalization Id="0152708e-ed4c-44c5-82d4-c95ce5b42f47" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="8479a018-26b7-4575-8bb0-bc8d48aba869" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="521c2a84-1396-4f88-8287-ba4e082397b9" name="EndTurnAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="f4c6ca28-ea95-4193-9a52-736409cffb8e" />
+                    <generalsInternal>
+                      <generalization Id="ae3a6b33-45c3-415e-880d-e8cc4426b9db" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="2c8a9d00-6ede-437b-a3dd-a2c8df4d03ad" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="b835a2c4-25b6-4af9-972b-3dfcdc9e94cf" name="ParameterAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="b153763f-8c48-4e2a-8b93-95145fcc29b2" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="60948d3b-8778-40ec-8808-f0c3bba20532">
+                        <interfaceMoniker Id="5049eac2-42d1-4b5f-bc60-233de1947311" LastKnownName="IPlayerAction" />
+                        <elementDefinition Id="e7c960bb-c30b-4c54-b82d-bb7517dd48d0" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="56fc9285-7f7c-4335-a5a5-e62afa41ce69" name="Do" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="ce58c483-6702-47f2-a232-128253d7c266" />
+                      </operation>
+                      <operation Id="c7448b6f-8a54-496b-a2f2-cff2e894da35" name="Undo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="20c04eec-85aa-457e-8460-969fd94e9234" />
+                      </operation>
+                      <operation Id="65aa4abd-99fb-4b44-892b-5869f3542446" name="GetLog" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="0bb2e5ca-e7f3-4f1b-9687-6eba054a3ad2" />
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="65686c68-d79e-454e-9578-ea0cde6cb993" name="CreatePartyAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="e718207f-1efd-4966-a86f-3dfa6008995a" />
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
           </packageHasNamedElement>
         </packagedElements>
       </package>
