@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a9678fe8-7bad-472d-ac02-8c1824f3ecdc" name="Old Civilization" linkedPackageId="38867110-5076-4a4a-8287-14214676f351" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="4c0b414d-74cd-4e3a-80d6-79b3a7cea76a">
-      <profileInstance Id="9e8b6679-e585-4ee6-8d4e-8b49ccd7597b" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4ff25fe1-c5d5-4b1f-95bb-8b4621365d9b">
-      <profileInstance Id="1a4b3b78-9cf8-4325-ba57-548ae8ba5ee4" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="a9678fe8-7bad-472d-ac02-8c1824f3ecdc" name="Old Civilization" linkedPackageId="38867110-5076-4a4a-8287-14214676f351" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <referencedType Id="88e81f5e-7210-4e9a-868f-69c0fe918c2f" name="Civilisation::Civilisation::ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilisation::ICivilizationAbstractFactory">
@@ -122,11 +108,6 @@
     </packageHasNamedElement>
     <logicalClassDesignerModelHasPackages>
       <package Id="3f8d9c95-7fa1-491c-ba33-2ee5bb79b022" name="Civilization1">
-        <ownedCommentsInternal>
-          <comment Id="a8f5ac90-8e4f-4e20-8162-ee148209a7aa">
-            <elementDefinition Id="61532ee6-3858-49fb-9a84-510f64b71a6b" />
-          </comment>
-        </ownedCommentsInternal>
         <elementDefinition Id="ee938dda-08a8-4053-a7f9-d83678cfffea" />
         <packagedElements>
           <packageHasNamedElement>
@@ -379,7 +360,7 @@
                 <operation Id="7c73038e-4997-480d-9f10-0ae9151ec8ca" name="INFOAbstractFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="88150443-551d-4d96-8ab5-0070bc75979d" />
                 </operation>
-                <operation Id="cd1ca296-58d8-4357-8124-a510e645c27c" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="cd1ca296-58d8-4357-8124-a510e645c27c" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="9bfcafee-6ec6-4b26-861b-333baf52db8e" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -468,7 +449,7 @@
                 <operation Id="ffd2f8c3-1865-4d5b-bf60-4bc686165dc9" name="EIIAbstractFactory" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="e1765425-72ca-4287-b140-b21402a43415" />
                 </operation>
-                <operation Id="00b654ff-aa03-431f-8cca-3e78e9552e40" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="00b654ff-aa03-431f-8cca-3e78e9552e40" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="e230af01-5206-4495-aa2e-a9b61c92af25" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -490,5 +471,19 @@
   </packagedElements>
   <package Id="38867110-5076-4a4a-8287-14214676f351" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4c0b414d-74cd-4e3a-80d6-79b3a7cea76a">
+        <profileInstance Id="9e8b6679-e585-4ee6-8d4e-8b49ccd7597b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4ff25fe1-c5d5-4b1f-95bb-8b4621365d9b">
+        <profileInstance Id="1a4b3b78-9cf8-4325-ba57-548ae8ba5ee4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

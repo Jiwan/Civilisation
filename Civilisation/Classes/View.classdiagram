@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="802c23cc-2c76-48d5-b4cb-2bd520df8028">
+      <profileInstance Id="fd61b781-6b68-46bf-9473-da84688bfe4d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="f1ddbca8-da7d-41d5-89f3-4febce46943d">
+      <profileInstance Id="ca31963a-2f17-4e9a-8061-35773299f747" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="3c7e7d43-fa9b-4e35-893c-d84ffd5d2140" name="Drawable">
+        <ownedCommentsInternal>
+          <comment Id="05e0af1a-d9f2-4163-8bda-1d1b38c3c5af">
+            <elementDefinition Id="b71e9841-994a-401a-b14a-07f334c06a04" />
+            <body>Tile constructor is private to avoid people generating Tile without going trought the flyweight.</body>
+            <annotatedElements>
+              <classMoniker Id="8a41e60d-337a-4582-bec2-ac19facc05a2" LastKnownName="Tile" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="488554a3-80fb-41be-834f-aabd38c15d13" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <Interface Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" name="DrawableEntity" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db" />
+              <ownedOperations>
+                <operation Id="15746ab3-8106-4438-b4fc-e8ec5cbbe8a0" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b39dfb9a-b24f-4d11-94fa-b02d346d634f" />
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8a41e60d-337a-4582-bec2-ac19facc05a2" name="Tile" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8ec283a3-1a73-49fc-afe6-2c974742009e" />
+              <ownedOperationsInternal>
+                <operation Id="0005f1ce-b57f-4591-ba78-753064652fa1" name="Tile" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <appliedStereotypesInternal>
+                    <stereotypeInstance Id="f2f5dd1b-93dd-4cd1-9cf6-4ed104fcc8d7" name="create" profile="StandardProfileL2">
+                      <elementDefinition Id="a9eb8ab1-fa00-4167-af95-13e58320e8d6" />
+                    </stereotypeInstance>
+                  </appliedStereotypesInternal>
+                  <elementDefinition Id="08f4b920-40df-4b27-ab4b-d5362e51df8e" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cbcad1a2-6e32-4a9c-830c-971d8a6ff50d" name="TileFlyWeight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
+              <targetEnds>
+                <association Id="106c89c2-49b6-4779-b0fd-14a3b83f8105" isDerived="false" sourceEndRoleName="TileFlyWeight" targetEndRoleName="Tile" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="8a41e60d-337a-4582-bec2-ac19facc05a2" LastKnownName="Tile" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a1d988c3-d8b7-4e71-9525-c8dcd2365986" name="TileFlyWeight" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="01a34bb6-9a5d-49a2-aa89-68bded0c5a0e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="80c55945-dfde-4c91-9d0f-facae64244c1" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="b18bbc09-5391-40c9-a4f5-d22ed83e6b56" name="Lower" value="*">
+                            <elementDefinition Id="89133e94-c575-4e65-b261-034f89cd322c" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="7c0e0625-cd6a-4bf7-897f-c5506aedf2ae" name="Upper" value="*">
+                            <elementDefinition Id="37a2d9ba-4df3-4440-8a1e-21883123fab7" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="57ec066b-b204-43bc-9000-efae3a9df914" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="ff38ef02-790e-4ad0-8742-a0569fa53bbe" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="61212474-2358-4dee-bbb6-f4f6c2ffe602" name="m_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0a7220c6-154f-4b26-ac27-9fffa390520e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e099d097-117a-4d77-8d0d-3bcb64035ae9" LastKnownName="TileFlyWeight" />
+                  </type_NamedElement>
+                </property>
+                <property Id="b77186a5-54fc-4400-9a2b-c8d9bd87d2fb" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="93eb9a2c-773a-4a09-b70d-6582c40ab369" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="fb18193b-8171-43f9-89a4-ad09a54a9a52" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="afd46274-b116-4507-aec3-a7540f2018ad" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3bd811bf-c305-4a8e-b357-78c8f5ca5424" direction="Return">
+                        <elementDefinition Id="18a8d202-ec16-48c9-b3e2-08b1e0a3220e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b47a4170-cc01-4c28-9c43-66d9850f90c8" LastKnownName="TileFlyWeight" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="932419bc-648d-4d6c-b1c4-1ca23699fb09" name="FlyWeight" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <appliedStereotypesInternal>
+                    <stereotypeInstance Id="9f4524b7-5fab-498e-a62e-782b2f3d5806" name="create" profile="StandardProfileL2">
+                      <elementDefinition Id="74eab386-2eb4-467d-9e81-81ddb92c20d0" />
+                    </stereotypeInstance>
+                  </appliedStereotypesInternal>
+                  <elementDefinition Id="d8583bb8-bbfa-4151-a041-2564cd687eff" />
+                </operation>
+                <operation Id="78837b14-53b4-4468-badb-14bab5a6d70d" name="GetTile" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="74710ad3-5303-4ff0-90f3-63962b90676e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="35b04170-82f0-486a-bf12-620299b47290" direction="Return">
+                        <elementDefinition Id="9d04448a-b0dd-4cd9-8356-82b59e4455cb" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="a037eeeb-a946-43ef-9a9f-193df63ffcc7" LastKnownName="Tile" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="e099d097-117a-4d77-8d0d-3bcb64035ae9" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
+        <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b47a4170-cc01-4c28-9c43-66d9850f90c8" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
+        <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a037eeeb-a946-43ef-9a9f-193df63ffcc7" name="Tile" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::Tile">
+        <elementDefinition Id="8ec283a3-1a73-49fc-afe6-2c974742009e" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="0b057887-724b-48b6-88b6-6ed28a9c2aef" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+  </package>
+</logicalClassDesignerModel>
