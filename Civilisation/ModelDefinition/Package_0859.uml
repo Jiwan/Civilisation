@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="93f32028-d29a-4f32-9c9a-427fb5975c84"
   name="Map" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -34,7 +34,7 @@
             isAbstract="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -105,7 +105,7 @@
             <type_NamedElement>
               <classMoniker
                 Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                LastKnownName="Square"
+                LastKnownName="Square : IDrawableEntity"
                 LastKnownLocation="Package1_0837.uml" />
             </type_NamedElement>
           </property>
@@ -177,7 +177,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square"
+                      LastKnownName="Square : IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -530,7 +530,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square"
+                      LastKnownName="Square : IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -573,7 +573,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square"
+                      LastKnownName="Square : IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>

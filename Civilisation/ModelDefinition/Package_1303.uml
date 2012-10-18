@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="488554a3-80fb-41be-834f-aabd38c15d13"
   name="Drawable" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -19,7 +19,7 @@
     <packageHasNamedElement>
       <Interface
         Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db"
-        name="DrawableEntity"
+        name="IDrawableEntity"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -57,6 +57,24 @@
                 name="create"
                 profile="StandardProfileL2" />
             </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="3ad0b202-de1e-4054-90ba-50025f69bbcb"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2b817f46-dfe4-4ef0-9ec6-1be34cfa2202"
+                  name="System.Drawing.Point coord"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -143,14 +161,33 @@
           </property>
           <property
             Id="93eb9a2c-773a-4a09-b70d-6582c40ab369"
-            name="Attribute1"
+            name="TileDictionary"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="a79c1e79-5733-427b-a134-06c3689f5d82"
+                name="Lower"
+                value="1" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="2ed0f705-cfd9-43ec-aa90-a6aa56d45fe5"
+                name="Upper"
+                value="1" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="666d2984-371c-4688-b47f-4e2425518dbd"
+                LastKnownName=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;"
+                LastKnownLocation="Package_1303.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -204,7 +241,8 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="9d04448a-b0dd-4cd9-8356-82b59e4455cb"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
                     <classMoniker
                       Id="8ec283a3-1a73-49fc-afe6-2c974742009e"
@@ -213,10 +251,27 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dc5c80a7-c881-4482-9099-b67c31be911f"
+                  name="String name"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="40e7baae-e4da-4b1b-8a77-85ba5a63f012"
+        name="S" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="666d2984-371c-4688-b47f-4e2425518dbd"
+        name=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

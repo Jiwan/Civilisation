@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="802c23cc-2c76-48d5-b4cb-2bd520df8028">
-      <profileInstance Id="fd61b781-6b68-46bf-9473-da84688bfe4d" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="f1ddbca8-da7d-41d5-89f3-4febce46943d">
-      <profileInstance Id="ca31963a-2f17-4e9a-8061-35773299f747" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="3c7e7d43-fa9b-4e35-893c-d84ffd5d2140" name="Drawable">
@@ -29,7 +15,7 @@
         <elementDefinition Id="488554a3-80fb-41be-834f-aabd38c15d13" />
         <packagedElements>
           <packageHasNamedElement>
-            <Interface Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" name="DrawableEntity" isAbstract="false" isLeaf="false">
+            <Interface Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" name="IDrawableEntity" isAbstract="false" isLeaf="false">
               <elementDefinition Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db" />
               <ownedOperations>
                 <operation Id="15746ab3-8106-4438-b4fc-e8ec5cbbe8a0" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -49,6 +35,16 @@
                     </stereotypeInstance>
                   </appliedStereotypesInternal>
                   <elementDefinition Id="08f4b920-40df-4b27-ab4b-d5362e51df8e" />
+                </operation>
+                <operation Id="f8c48ddd-0771-4b81-a571-95be3a122eb4" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3ad0b202-de1e-4054-90ba-50025f69bbcb" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="69b08149-5752-416c-84cc-75990fc5d16b" name="System.Drawing.Point coord" direction="In" isUnique="false">
+                        <elementDefinition Id="2b817f46-dfe4-4ef0-9ec6-1be34cfa2202" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -91,8 +87,21 @@
                     <referencedTypeMoniker Id="e099d097-117a-4d77-8d0d-3bcb64035ae9" LastKnownName="TileFlyWeight" />
                   </type_NamedElement>
                 </property>
-                <property Id="b77186a5-54fc-4400-9a2b-c8d9bd87d2fb" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="b77186a5-54fc-4400-9a2b-c8d9bd87d2fb" name="TileDictionary" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="cd9f4b18-244d-4611-b6f8-1f072299f1f4" name="Lower" value="1">
+                      <elementDefinition Id="a79c1e79-5733-427b-a134-06c3689f5d82" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3f1eb50d-eee2-47e9-9cde-642e2593a1fb" name="Upper" value="1">
+                      <elementDefinition Id="2ed0f705-cfd9-43ec-aa90-a6aa56d45fe5" />
+                    </literalString>
+                  </upperValueInternal>
                   <elementDefinition Id="93eb9a2c-773a-4a09-b70d-6582c40ab369" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="951a679a-6d66-43b4-9543-308f5ab70c77" LastKnownName=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" />
+                  </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
@@ -121,11 +130,16 @@
                   <elementDefinition Id="74710ad3-5303-4ff0-90f3-63962b90676e" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="35b04170-82f0-486a-bf12-620299b47290" direction="Return">
+                      <parameter Id="35b04170-82f0-486a-bf12-620299b47290" direction="Return" isUnique="false">
                         <elementDefinition Id="9d04448a-b0dd-4cd9-8356-82b59e4455cb" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="a037eeeb-a946-43ef-9a9f-193df63ffcc7" LastKnownName="Tile" />
                         </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="0913e764-9d00-40b3-a8aa-688968eb8ccc" name="String name" direction="In" isUnique="false">
+                        <elementDefinition Id="dc5c80a7-c881-4482-9099-b67c31be911f" />
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
@@ -151,8 +165,27 @@
         <elementDefinition Id="8ec283a3-1a73-49fc-afe6-2c974742009e" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="951a679a-6d66-43b4-9543-308f5ab70c77" name=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" isAbstract="false" isLeaf="false" cachedFullName=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;">
+        <elementDefinition Id="666d2984-371c-4688-b47f-4e2425518dbd" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="0b057887-724b-48b6-88b6-6ed28a9c2aef" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="802c23cc-2c76-48d5-b4cb-2bd520df8028">
+        <profileInstance Id="fd61b781-6b68-46bf-9473-da84688bfe4d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f1ddbca8-da7d-41d5-89f3-4febce46943d">
+        <profileInstance Id="ca31963a-2f17-4e9a-8061-35773299f747" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

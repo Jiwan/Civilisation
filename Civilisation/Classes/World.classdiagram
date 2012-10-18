@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="14658d13-38d8-464e-8f91-2722ad00560d" name="World">
@@ -20,7 +20,7 @@
               <elementDefinition Id="015e9c81-0c43-4456-979c-0247e8e4ef17" />
               <packagedElements>
                 <packageHasNamedElement>
-                  <class Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" name="Square" isAbstract="true" isLeaf="false" isActiveClass="false">
+                  <class Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" name="Square : IDrawableEntity" isAbstract="true" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
                     <ownedAttributesInternal>
                       <property Id="1c95c733-64a0-4d8d-bc67-9abee6bb3caa" name="m_availableOre" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -92,7 +92,7 @@
                     <elementDefinition Id="88ed14ab-6ba2-4bcd-8acc-9bffc4b118e3" />
                     <generalsInternal>
                       <generalization Id="29affd62-8bb4-4f6e-85d7-59d010f2de62" isSubstitutable="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <elementDefinition Id="61843d58-0742-4569-929c-8593ff88e621" />
                       </generalization>
                     </generalsInternal>
@@ -134,7 +134,7 @@
                     <elementDefinition Id="0298128c-e7c7-46c2-a8a6-f2509365b2a5" />
                     <generalsInternal>
                       <generalization Id="7509d106-2b5f-4e2a-831c-78c71559c020" isSubstitutable="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <elementDefinition Id="c8f5575b-e857-42b9-945e-77d89d5d8d0d" />
                       </generalization>
                     </generalsInternal>
@@ -176,7 +176,7 @@
                     <elementDefinition Id="09b98e1e-2f0a-435d-adc3-7613a800cc78" />
                     <generalsInternal>
                       <generalization Id="f7851ba0-0eb5-489a-aa77-b973580525d7" isSubstitutable="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <elementDefinition Id="16555f2c-475f-4e40-ac53-47ee1b2ad3ce" />
                       </generalization>
                     </generalsInternal>
@@ -218,13 +218,13 @@
                     <elementDefinition Id="610a766a-4747-4ea6-a6ed-af228ae14174" />
                     <generalsInternal>
                       <generalization Id="767ef410-3e64-414b-902a-921ac3be1984" isSubstitutable="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <elementDefinition Id="812c83c1-d0ae-4690-844e-e623cde5d13b" />
                       </generalization>
                     </generalsInternal>
                     <targetEnds>
                       <association Id="c4878e1c-f7d9-457f-b2da-ff69a297054d" isDerived="false" sourceEndRoleName="SquareDecorator" targetEndRoleName="Square" isLeaf="false" isAbstract="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <relationshipOwnedElementsInternal>
                           <associationHasOwnedEnds>
                             <memberEnd Id="7512c4cc-4289-4203-aa68-c05cb102af22" name="SquareDecorator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
@@ -274,7 +274,7 @@
                             <parameter Id="64a52dce-fc6b-4151-872b-dbbac811363e" name="Parameter1" direction="In">
                               <elementDefinition Id="ce5fdeb9-2a18-4c3c-a368-5ae4622c91a3" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square" />
+                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -313,7 +313,7 @@
                             <parameter Id="449f419e-0d4e-4fab-9e53-6e083d325757" name="Parameter1" direction="In">
                               <elementDefinition Id="ffe97d35-e249-4732-a2d8-c8320c47a7dc" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square" />
+                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -352,7 +352,7 @@
                             <parameter Id="c8219863-8124-46e7-861b-8f6d2387764a" name="Parameter1" direction="In">
                               <elementDefinition Id="06fd3b11-372e-4e53-95f3-5c4f935d5d43" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square" />
+                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -366,7 +366,7 @@
                     <elementDefinition Id="e1cd5246-2aef-4a54-9188-e1243709ee94" />
                     <generalsInternal>
                       <generalization Id="44a828cc-cc38-40a6-b774-40ccee06da54" isSubstitutable="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <elementDefinition Id="13a846a3-c07e-4a15-a60c-71688168a6f4" />
                       </generalization>
                     </generalsInternal>
@@ -425,7 +425,7 @@
                     <elementDefinition Id="eb8566cd-d448-403e-b48d-1b8f91045bb4" />
                     <targetEnds>
                       <association Id="97b716a1-e198-4d26-b72d-d3275cfd2edc" isDerived="false" sourceEndRoleName="Map" targetEndRoleName="Square" isLeaf="false" isAbstract="false">
-                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square" />
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawableEntity" />
                         <relationshipOwnedElementsInternal>
                           <associationHasOwnedEnds>
                             <memberEnd Id="bf23f8bd-e3ff-4edf-a4a6-75e408948180" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
@@ -465,7 +465,7 @@
                         </upperValueInternal>
                         <elementDefinition Id="6b81a5ac-3709-477d-b11c-4590c72f20ed" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="dcd2f5a3-00c2-45b1-ab8f-3bd338d79e02" LastKnownName="Square" />
+                          <referencedTypeMoniker Id="dcd2f5a3-00c2-45b1-ab8f-3bd338d79e02" LastKnownName="Square : IDrawableEntity" />
                         </type_NamedElement>
                       </property>
                       <property Id="93544ed4-103f-4df1-b251-4a6f5214d216" name="m_size" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -501,7 +501,7 @@
                             <parameter Id="7bc3b052-fadb-4fa2-8839-909346db8d67" direction="Return">
                               <elementDefinition Id="1130ce0c-51a9-4927-8ac8-744dc33f8d49" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="cead375c-a6ee-4985-aade-b6b68b9a2847" LastKnownName="Square" />
+                                <referencedTypeMoniker Id="cead375c-a6ee-4985-aade-b6b68b9a2847" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -692,7 +692,7 @@
                             <parameter Id="6eea6952-112c-4216-9f87-fc6fb05b3ea3" direction="Return">
                               <elementDefinition Id="f25b2a78-1c10-4d69-9c08-67f0615bb1fb" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" LastKnownName="Square" />
+                                <referencedTypeMoniker Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -718,7 +718,7 @@
                             <parameter Id="1c7f0830-6999-4d93-bbe3-ca01cbc8a76f" direction="Return">
                               <elementDefinition Id="1422b009-3d86-4609-99ab-ce41a10d8636" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square" />
+                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -809,12 +809,12 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" name="Square" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square">
+      <referencedType Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" name="Square : IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawableEntity">
         <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="dcd2f5a3-00c2-45b1-ab8f-3bd338d79e02" name="Square" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square">
+      <referencedType Id="dcd2f5a3-00c2-45b1-ab8f-3bd338d79e02" name="Square : IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawableEntity">
         <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
       </referencedType>
     </packageHasNamedElement>
@@ -824,7 +824,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="cead375c-a6ee-4985-aade-b6b68b9a2847" name="Square" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square">
+      <referencedType Id="cead375c-a6ee-4985-aade-b6b68b9a2847" name="Square : IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawableEntity">
         <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
       </referencedType>
     </packageHasNamedElement>
@@ -839,7 +839,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" name="Square" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square">
+      <referencedType Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" name="Square : IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawableEntity">
         <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
       </referencedType>
     </packageHasNamedElement>

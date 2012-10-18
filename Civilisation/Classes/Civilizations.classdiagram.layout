@@ -12,11 +12,11 @@
             <OperationElementListCompartment Id="cda08fcb-68a7-44f3-8484-79719d0d2675" absoluteBounds="2.64, 1.7261718675494193, 3.0949999999999998, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </interfaceShape>
-        <classShape Id="5e217433-5580-4761-8fa5-70f015c74307" absoluteBounds="2.375, 3.375, 3.5, 1.7031249602635699" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+        <classShape Id="5e217433-5580-4761-8fa5-70f015c74307" absoluteBounds="2.5, 3.375, 3.375, 1.7031249602635699" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
           <classMoniker Id="57ec4168-8f40-4c6b-8722-dde022208aa8" LastKnownName="PrototypeAbstractFactory" />
           <nestedChildShapes>
-            <AttributeElementListCompartment Id="af5bbcb1-62ac-4513-95d2-8d25fcab63e9" absoluteBounds="2.39, 3.765, 3.4699999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-            <OperationElementListCompartment Id="b6b4d1e4-1591-4c71-af41-0081eabaea44" absoluteBounds="2.39, 3.9761718675494193, 3.4699999999999998, 1.0019530927141509" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <AttributeElementListCompartment Id="af5bbcb1-62ac-4513-95d2-8d25fcab63e9" absoluteBounds="2.515, 3.765, 3.3449999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="b6b4d1e4-1591-4c71-af41-0081eabaea44" absoluteBounds="2.515, 3.9761718675494193, 3.3449999999999998, 1.0019530927141509" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </classShape>
         <commentShape Id="575d0d8b-de23-4f79-8671-9108cb0e255f" absoluteBounds="6.625, 2.375, 2, 2.5" customColor="251, 247, 200">
@@ -70,7 +70,7 @@
         </packageShape>
       </nestedChildShapes>
     </packageShape>
-    <realizationConnector edgePoints="[(4.125 : 3.375); (4.125 : 3.04296871523062); (4.1875 : 3.04296871523062); (4.1875 : 2.66796871523062)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(4.1875 : 3.375); (4.1875 : 2.66796871523062)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="e7bb026e-c471-441a-8f1f-935242a7d03c" />
       <relativeChildShapes />
       <nodes>

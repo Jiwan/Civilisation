@@ -20,7 +20,7 @@
     <packageHasNamedElement>
       <class
         Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-        name="Square"
+        name="Square : IDrawableEntity"
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
@@ -164,7 +164,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -239,7 +239,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -314,7 +314,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -389,7 +389,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -403,7 +403,7 @@
             isAbstract="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -498,7 +498,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square"
+                      LastKnownName="Square : IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -566,7 +566,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square"
+                      LastKnownName="Square : IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -634,7 +634,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square"
+                      LastKnownName="Square : IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -657,7 +657,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square"
+              LastKnownName="Square : IDrawableEntity"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
