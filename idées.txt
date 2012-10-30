@@ -1,0 +1,16 @@
+------------------------------------------------------------------------------------------------
+Pattern state pour gérer les différentes phases du jeux.
+
+
+------------------------------------------------------------------------------------------------
+Faire un médiateur game qui gère :
+- La bataille avec un pattern stratégie.
+- La construction de villes. (Par exemple éviter la construction d'une ville sur une autre).
+
+------------------------------------------------------------------------------------------------
+De par sa vaillance et son
+abnégation, le directeur augmente de 50% les caractéristiques de défense et d’attaque des
+unités combattantes se trouvant sur la même case (ce bonus n’a?ecte pas les caractéristiques
+des directeurs).
+
+==> Faire un singleton.

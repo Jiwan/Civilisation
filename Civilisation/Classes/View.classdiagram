@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="3c7e7d43-fa9b-4e35-893c-d84ffd5d2140" name="Drawable">
         <ownedCommentsInternal>
           <comment Id="05e0af1a-d9f2-4163-8bda-1d1b38c3c5af">
             <elementDefinition Id="b71e9841-994a-401a-b14a-07f334c06a04" />
-            <body>Tile constructor is private to avoid people generating Tile without going trought the flyweight.</body>
+            <body>Tile constructor is private to avoid people generating tiles without going trought the flyweight.</body>
             <annotatedElements>
               <classMoniker Id="8a41e60d-337a-4582-bec2-ac19facc05a2" LastKnownName="Tile" />
             </annotatedElements>

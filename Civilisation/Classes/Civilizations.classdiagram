@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
         <ownedCommentsInternal>
           <comment Id="87034c1b-5fbd-45ef-9588-d10d527db806">
             <elementDefinition Id="2e7b5c69-1003-42b3-9998-7aaf586991ef" />
-            <body>We use the prototype design pattern as we want to load departement informations from a file.</body>
+            <body>We use the prototype design pattern as we want to load each departement informations from a file.</body>
             <annotatedElements>
               <classMoniker Id="57ec4168-8f40-4c6b-8722-dde022208aa8" LastKnownName="PrototypeAbstractFactory" />
             </annotatedElements>
@@ -157,6 +157,9 @@
                           <referencedTypeMoniker Id="5683a80a-efb8-49fe-aae7-36d8b11471d5" LastKnownName="Vector" />
                         </type_NamedElement>
                       </property>
+                      <property Id="0a750e9d-f58b-4bfd-8628-b6ed1f4bcb5b" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="9e5b827c-d8bb-4570-9e87-c6c66c21a69d" />
+                      </property>
                     </ownedAttributesInternal>
                     <ownedOperationsInternal>
                       <operation Id="baf4968b-169d-44cc-9c31-37b437b87761" name="TotalAvailableFood" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -184,6 +187,12 @@
                             </parameter>
                           </operationHasOwnedParameters>
                         </ownedParameters>
+                      </operation>
+                      <operation Id="2eb4b3d6-0088-4f22-9ede-44ad73e3c96f" name="CreateUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="b3d37cb3-82a9-41db-958a-5c993afe85b4" />
+                      </operation>
+                      <operation Id="9b70f234-d2a8-479e-981e-a1e5f8158cca" name="Extend" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="c76e9c61-de91-4ab9-b73a-971d3631ddf3" />
                       </operation>
                     </ownedOperationsInternal>
                   </class>
