@@ -23,7 +23,7 @@ diagrammes de classes :
 	c. carte - WORLD
 	d. unité, ville - CIVILIZATION
 	e. vue - TO BE FINISHED
-	f. etc
+	f. etc - FIGHT, DONE
 
 2. modélisation du comportement du jeu à l’aide de diagrammes d’interaction, d’états-transitions
 (déroulement des combats, choix de la case de ville lors de l’agrandissement de la population,

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="d64e6476-044a-46e5-90c7-9b21a2dc8404"
   name="Player" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -16,7 +16,25 @@
     </comment>
     <comment
       Id="7ba409e1-50b8-44ca-9e4f-1c90068092f7">
-      <body>FAIRE UN PATTERN STATE</body>
+      <body>FAIRE UN PATTERN STATE
+
+A corriger, il manque des trucs</body>
+    </comment>
+    <comment
+      Id="1f7afe65-d6dd-4d87-ae1b-a0ab98612ace">
+      <body>Classe vide pour illustrer ça justement.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="9b4e0b2e-ae00-458a-92e6-47da3e0a0c08"
+          LastKnownName="AIPlayer"
+          LastKnownLocation="Package_1909.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="eb66d2bb-b780-42fa-a3b1-cfc46d0dfa94">
+      <body>ActivePlayer : à son tour de jouer
+
+InactivePlayer : finit son tour, à l'adversaire de jouer</body>
     </comment>
   </ownedCommentsInternal>
   <packagedElements>
@@ -43,6 +61,47 @@
               LastKnownLocation="Package_1909.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="cb492c6f-2857-442a-a730-89163a885684"
+            isDerived="false"
+            sourceEndRoleName="HumanPlayer"
+            targetEndRoleName="IPlayerState"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="bd55d3db-d257-4608-a5e3-b23e399d7873"
+              LastKnownName="IPlayerState"
+              LastKnownLocation="Package_1909.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="145e65d9-b12b-4946-9d9c-fcc2ca3ec8cc"
+                  name="HumanPlayer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="01072463-326d-40d0-abd8-e10637e0f0be"
+                  name="IPlayerState"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -63,6 +122,108 @@
         Id="2046e58b-b54f-4e68-929c-7a7a7d52a410"
         LastKnownName="Actions"
         LastKnownLocation="Package_1905.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="bd55d3db-d257-4608-a5e3-b23e399d7873"
+        name="IPlayerState"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9b4e0b2e-ae00-458a-92e6-47da3e0a0c08"
+        name="AIPlayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7e72a963-cbe1-43aa-a5d3-da1fe534dc84">
+            <interfaceMoniker
+              Id="341cc183-7a27-4959-9a12-5e6eef82a533"
+              LastKnownName="IPlayer"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="fde80a66-cbba-4993-b2de-0512910b25a4"
+            isDerived="false"
+            sourceEndRoleName="AIPlayer"
+            targetEndRoleName="IPlayerState"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="bd55d3db-d257-4608-a5e3-b23e399d7873"
+              LastKnownName="IPlayerState"
+              LastKnownLocation="Package_1909.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3c067763-9d18-4221-829f-2fe75a7aaf6b"
+                  name="AIPlayer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b86b376-aa36-4d75-9979-c71747d5511f"
+                  name="IPlayerState"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="54576b93-009a-47c4-b5ed-ed090c1dd491"
+        name="ActivePlayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="13c28bef-8371-40df-a31b-a8aa97731117">
+            <interfaceMoniker
+              Id="bd55d3db-d257-4608-a5e3-b23e399d7873"
+              LastKnownName="IPlayerState"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6dbaeb44-4117-4743-a160-cafc949128dc"
+        name="InactivePlayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="5b34eacc-3530-4ee3-afb9-5f7e441f4293">
+            <interfaceMoniker
+              Id="bd55d3db-d257-4608-a5e3-b23e399d7873"
+              LastKnownName="IPlayerState"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>
