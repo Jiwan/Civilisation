@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="488554a3-80fb-41be-834f-aabd38c15d13"
   name="Drawable" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -16,7 +16,7 @@
     </comment>
     <comment
       Id="17493ee3-7d0f-40d4-abab-4464a5c9d724">
-      <body>A sprite is made of many tiles that represent each frames of the animation. Update is used to set the right frame according to the time elapsed.</body>
+      <body>A sprite is made of many tiles that represent each frame of the animation. Update is used to set the right frame according to the time elapsed.</body>
       <annotatedElements>
         <classMoniker
           Id="5425425c-970c-4776-beea-b51fcff0b1e9"
@@ -476,7 +476,7 @@ Il n'y a qu'un flyweight</body>
     <packageHasNamedElement>
       <class
         Id="3acd2d73-3537-4ba4-a0fa-0f0656a29e08"
-        name="XNAGraphicEngine"
+        name="WPFGraphicEngine"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -501,7 +501,7 @@ Il n'y a qu'un flyweight</body>
     <packageHasNamedElement>
       <class
         Id="90cf6048-67c8-4610-8ed6-e2e9305cfc31"
-        name="XNAGraphicPrimitive"
+        name="WPFGraphicPrimitive"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

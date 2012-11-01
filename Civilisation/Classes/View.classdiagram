@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="3c7e7d43-fa9b-4e35-893c-d84ffd5d2140" name="Drawable">
@@ -13,7 +13,7 @@
           </comment>
           <comment Id="527c39ca-bb33-44e6-a875-b1d1f0806dc9">
             <elementDefinition Id="17493ee3-7d0f-40d4-abab-4464a5c9d724" />
-            <body>A sprite is made of many tiles that represent each frames of the animation. Update is used to set the right frame according to the time elapsed.</body>
+            <body>A sprite is made of many tiles that represent each frame of the animation. Update is used to set the right frame according to the time elapsed.</body>
             <annotatedElements>
               <classMoniker Id="b4049241-8d6e-440a-83d4-92fbb6c73961" LastKnownName="Sprite" />
             </annotatedElements>
@@ -258,7 +258,7 @@ Il n'y a qu'un flyweight</body>
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="2ec8a1be-fb4b-4f2b-a7ad-24b5537d1716" name="XNAGraphicEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="2ec8a1be-fb4b-4f2b-a7ad-24b5537d1716" name="WPFGraphicEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="3acd2d73-3537-4ba4-a0fa-0f0656a29e08" />
               <suppliersInternal>
                 <interfaceRealization Id="48cc320b-ed2d-4255-a643-d5a048d8b9ad">
@@ -274,7 +274,7 @@ Il n'y a qu'un flyweight</body>
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="824535e8-fea6-4381-99be-4a0f9ce42c6a" name="XNAGraphicPrimitive" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="824535e8-fea6-4381-99be-4a0f9ce42c6a" name="WPFGraphicPrimitive" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="90cf6048-67c8-4610-8ed6-e2e9305cfc31" />
               <suppliersInternal>
                 <interfaceRealization Id="09f26ee7-7372-4b97-959b-03e8efe46da1">

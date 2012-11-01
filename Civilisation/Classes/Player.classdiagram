@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
@@ -30,12 +30,143 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
               <classMoniker Id="c50f8ffe-7bc7-4ffd-be48-bd1cd02c287a" LastKnownName="InactivePlayer" />
             </annotatedElements>
           </comment>
+          <comment Id="d20afd60-8fb1-47a4-b953-2729738a4082">
+            <elementDefinition Id="a5763c9d-7f9d-40c3-b2ae-a4b6d25fda45" />
+            <body>CityID si réussi, -1 sinon</body>
+            <annotatedElements>
+              <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+            </annotatedElements>
+          </comment>
+          <comment Id="0bd46afa-41bf-491c-9b93-f347f366ddff">
+            <elementDefinition Id="5afa7baa-cdf9-4bda-bc0f-7627605b3560" />
+            <body>UnitID si réussi, -1 sinon</body>
+            <annotatedElements>
+              <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+            </annotatedElements>
+          </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="d64e6476-044a-46e5-90c7-9b21a2dc8404" />
         <packagedElements>
           <packageHasNamedElement>
             <Interface Id="130b40a8-596a-4bf4-9557-0eeace8a5734" name="IPlayer" isAbstract="false" isLeaf="false">
               <elementDefinition Id="341cc183-7a27-4959-9a12-5e6eef82a533" />
+              <ownedOperations>
+                <operation Id="ab457280-6cee-4185-b54a-950ae015be9f" name="GetDirector" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3ed4cab3-c361-47bf-a02d-9c4b6fd7b63b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="152627c5-bae9-4455-be21-c1cc09e6ede8" direction="Return" isUnique="false">
+                        <elementDefinition Id="9d8d8388-475f-4cbb-89bf-d60dde21d502" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="8ed92b55-c4c3-4889-8216-a2cd764bd4a3" name="GetUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cf860e06-5eac-4286-bfe1-39d97678218b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="17b1f30e-08ca-445c-be90-f4ace2c93b62" direction="Return" isUnique="false">
+                        <elementDefinition Id="02a2d346-fc2e-4998-b3b5-9b260e461187" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="862b64d6-8989-42bb-aa6a-25742c5eea7f" name="int UnitID" direction="In" isUnique="false">
+                        <elementDefinition Id="ca0548d8-1162-425f-8623-8e8665820cec" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="eefaf88a-ae2d-4ebc-a9e0-91d655b2c04e" name="GetCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e1e708b8-ac1b-4ca6-a520-36d113eae02c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4a2b7587-abe7-4fa4-991b-6bf0d56278e8" direction="Return" isUnique="false">
+                        <elementDefinition Id="a612576e-d53f-4309-a4e1-f2356ed81033" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="26adab0a-04bf-4004-a436-1f9402057387" LastKnownName="CityID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f5ba94f5-cc2c-476c-a116-2749575890be" name="int CityID" direction="In" isUnique="false">
+                        <elementDefinition Id="df0a06fb-6e6a-4cc7-8fc6-aa2a6475d62c" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="69a89f94-f320-41f7-9191-d7b25716ba03" name="CreateUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f2efefc5-5c1b-436d-8682-8028c66594fc" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f773f985-86f9-4974-a5f0-6ebbd18931a1" name="int UnitType" direction="In" isUnique="false">
+                        <elementDefinition Id="e1368675-ced3-43b2-8498-435bdde00723" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8c8cceb7-742f-4747-829b-0729dbbc119e" direction="Return" isUnique="false">
+                        <elementDefinition Id="63589380-c133-4306-8295-5f4d6c26e62f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="142b998b-c1d7-4ed7-8216-ad3a3a4015f1" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9d9087d9-5cd6-448f-8646-35ff2049ad0b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="324fb437-560f-42f0-b24b-a21046408da7" direction="Return" isUnique="false">
+                        <elementDefinition Id="dd95e3cf-ec07-477e-8a26-8400d5253fca" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="26adab0a-04bf-4004-a436-1f9402057387" LastKnownName="CityID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="91043a2d-af4b-4fd7-8918-4305525298b3" name="int localization" direction="In" isUnique="false">
+                        <elementDefinition Id="c58f34e2-5983-422f-a5f2-23a1c3d76f24" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="2347beb6-d4e7-4f3a-a8fb-dc4c9e51245a" name="AttackUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cfb13c96-3dbf-4e76-a149-fe6a521c17bd" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b2a36977-fc07-4c00-b7e5-52bc52916920" name="Vector&lt;UnitID&gt; AttackingUnits" direction="In" isUnique="false">
+                        <elementDefinition Id="b5ffa70c-858f-4201-a9e5-dd504fdcb4cd" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="03db9469-7b4e-44ee-943a-987c4a6af602" name="vector&lt;UnitID&gt; UnitsBeingAttacked" direction="In" isUnique="false">
+                        <elementDefinition Id="3ed850e0-dbd3-44de-9793-3f3cb764def5" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="db86c680-b414-4f12-84e9-802602a609c0" name="InvadeCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="92246d45-ed34-479b-a138-a59b67eb1961" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d0959a1b-1dfb-4bd4-b256-a6abb445f031" name="UnitID uID" direction="In" isUnique="false">
+                        <elementDefinition Id="4ace292f-e17a-4a92-82a4-8f9a35816605" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c8ec135e-4eae-459e-8ab0-ac930c93d745" name="CityID cID" direction="In" isUnique="false">
+                        <elementDefinition Id="a1c9ec85-5511-40c8-b925-4d2c52f29a47" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -65,6 +196,143 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                   <elementDefinition Id="cb492c6f-2857-442a-a730-89163a885684" />
                 </association>
               </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="2cd9268f-91b0-4716-8680-30b27571e531" name="ControledUnits" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="656edd1f-9165-422a-b9e9-e11e279cec2a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2626a0ca-6d0d-43d2-9e15-36b1b6f9ce30" LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;" />
+                  </type_NamedElement>
+                </property>
+                <property Id="13f1fba5-261a-4452-a42e-a16395df1b90" name="ControlledCities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9316750d-5352-4b31-a140-525066288f1f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="29e142e7-f541-45ef-b6d2-3dea47464d2b" LastKnownName="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;" />
+                  </type_NamedElement>
+                </property>
+                <property Id="84d8896a-e117-4d7f-bb3a-7f1735eed407" name="Factory" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="47e09ef6-4eed-409f-a4cc-c1de1cee9369" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6e6c9410-66ec-400c-96a1-f547c80f0525" LastKnownName="ICivilizationAbstractFactory" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="c3f1d627-a332-4829-80f4-9d573ed3b402" name="GetDirector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2fd2ca08-59c8-4490-ae46-af6a1a1bb1f0" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="487ec7c9-0e43-47f8-a8c5-2db069f0f2c8" direction="Return" isUnique="false">
+                        <elementDefinition Id="35ce3a7d-cff5-449f-8b40-9e367da7a8af" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="8f82c197-ad96-4781-9a37-46c823b95d87" name="GetUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d6e716ef-13c0-4c38-ad54-28a855794d97" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b130c7c6-d615-4e79-a437-19621e5f113a" name="int UnitID" direction="In" isUnique="false">
+                        <elementDefinition Id="3d98850b-1f27-4e12-9a78-ebb7b0aa5d03" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6cd119fe-fc5b-436c-99a0-7db8604c7ae6" direction="Return" isUnique="false">
+                        <elementDefinition Id="5c5b91ae-c5ab-46f4-9902-c72702deeb88" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="c2247f38-c9da-4779-a678-eda12744dcb9" name="GetCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ee0beda3-e894-4e5d-827e-db7fdb523697" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a28bc58e-e4bb-47e7-8572-082eaeb78588" name="int CityID" direction="In" isUnique="false">
+                        <elementDefinition Id="491c8ee9-b60e-49e3-be1c-103460880203" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f38e69d0-16e8-4574-ad88-cafc5bce66ce" direction="Return" isUnique="false">
+                        <elementDefinition Id="ac8642d9-3d31-4753-91af-666c4fd4ea5e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="26adab0a-04bf-4004-a436-1f9402057387" LastKnownName="CityID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="86ab830b-4aaa-4f37-ba28-cbfba1aee10c" name="CreateUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6acf97db-3cd0-4516-951c-c3fbc35086b1" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8c6c8a4c-0ecf-4278-ae7b-d6694ba00b32" name="int UnitType" direction="In" isUnique="false">
+                        <elementDefinition Id="d9b29615-31dc-4e87-a2ef-e65eebbef91d" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="39a4ca3b-5d42-4287-a321-29769472d9f7" direction="Return" isUnique="false">
+                        <elementDefinition Id="205c369e-7d3f-4ff9-a2e3-aee879b7d195" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1d310ea1-afae-4335-af51-fc92b7d6e09e" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2c4d1b32-70f8-4eb4-a04a-d31ddd5b37b9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ce49d7e9-863a-4b73-8211-e70572f1b4af" name="int" direction="In" isUnique="false">
+                        <elementDefinition Id="b34b4961-4a9c-4580-b502-fe92a49a2ea8" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6e74b4ad-e142-4d0a-8835-d55f748f069f" direction="Return" isUnique="false">
+                        <elementDefinition Id="9ca54542-6210-4e72-ad8a-875dd9a0ef24" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="26adab0a-04bf-4004-a436-1f9402057387" LastKnownName="CityID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="fdfbfd03-7de3-4361-b719-5fb395fd4e91" name="AttackUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="072d3b81-9426-4dc5-aa5f-e6cfd67ea995" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a43f79f1-5fae-4aa6-94f4-d259420f372e" name="Vector&lt;UnitID&gt; AttackingUnits" direction="In" isUnique="false">
+                        <elementDefinition Id="189e545b-a75f-4b67-aa7c-1f0305755e6c" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="428efc76-13ff-4ca5-8da7-468a2b27830e" name="vector&lt;UnitID&gt; UnitsBeingAttacked" direction="In" isUnique="false">
+                        <elementDefinition Id="83dbaa3a-44a1-494b-af2d-a6058602ff0f" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="4894e56e-606a-4364-9cbe-4892346c3db7" name="InvadeCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a3b19c86-18d1-4b32-bab7-cf5cc5beb641" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a930ffbf-8121-4f90-b1d0-cd3784326e40" name="UnitID uID" direction="In" isUnique="false">
+                        <elementDefinition Id="d7c545e4-29fe-4eed-8eda-c669c8b105de" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dd424885-6241-431a-8931-d1d12081e42d" name="CityID cID" direction="In" isUnique="false">
+                        <elementDefinition Id="a73c641b-8a90-48f2-a0f0-c39d81baca4c" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -241,9 +509,9 @@ This will be usefull for
             <class Id="2815dac8-6439-441b-89e9-30f278ebe6e6" name="AIPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="9b4e0b2e-ae00-458a-92e6-47da3e0a0c08" />
               <suppliersInternal>
-                <interfaceRealization Id="4db99439-10b3-41fd-ad1a-07a17e030ef4">
+                <interfaceRealization Id="54493377-0fea-4f71-97bb-5a04432f0de7">
                   <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
-                  <elementDefinition Id="7e72a963-cbe1-43aa-a5d3-da1fe534dc84" />
+                  <elementDefinition Id="319f198f-bd5d-40ad-922a-dba0f09f966d" />
                 </interfaceRealization>
               </suppliersInternal>
               <targetEnds>
@@ -264,6 +532,143 @@ This will be usefull for
                   <elementDefinition Id="fde80a66-cbba-4993-b2de-0512910b25a4" />
                 </association>
               </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="5516898c-5d73-434d-8e02-a8149d644112" name="ControledUnits" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a5ddb45a-b344-49c9-8552-c3ac0f9d8b18" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fa3b028d-1f93-4d58-a3cc-e719dbeb8cb8" LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;" />
+                  </type_NamedElement>
+                </property>
+                <property Id="54824095-deab-4ad4-9d9e-c21cc00d3522" name="ControlledCities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ee891326-a88c-4010-a5a1-ee7020743cc3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eee3b26a-1e4e-4122-820b-d6e90a1d3d12" LastKnownName="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;" />
+                  </type_NamedElement>
+                </property>
+                <property Id="38881185-7a7b-447d-a5fb-00d54d38c192" name="Factory" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2b44a849-fdc3-4f70-a766-8ea6adb81ebf" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="3477c192-04b2-4b16-94e3-d274377e5819" LastKnownName="ICivilizationAbstractFactory" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="71a09f15-b711-478a-b8c3-47b5b11156a1" name="GetDirector" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2185599f-176a-440f-971f-29e98b822a72" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b901dd20-9f52-43ce-8a76-cb5ed049f336" direction="Return" isUnique="false">
+                        <elementDefinition Id="028b8592-aace-414d-8abf-5b68352b9193" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="21765495-7142-41b2-b9c7-4d7921348e1d" name="GetUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a9b8f578-48bf-455d-bd9f-67dbfff76ae4" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="db0c3126-3bec-42dd-806c-5ec723e43545" name="int UnitID" direction="In" isUnique="false">
+                        <elementDefinition Id="bd41c6ec-6b24-4c77-805f-6b652167158d" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dadcff2a-a69a-43fb-81f3-289ed7a2c2cc" direction="Return" isUnique="false">
+                        <elementDefinition Id="2abe086a-5f5e-4b71-8f93-e329df017a81" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1856d2a0-ba76-4f52-a42e-a2e713df6df2" name="GetCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a3a0cd67-a77d-44d1-ae08-712e438ce69a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="077155e0-0308-469b-b51e-88d140b4fb0f" name="int CityID" direction="In" isUnique="false">
+                        <elementDefinition Id="c18c5c0a-ef1c-4bc4-a6a5-602c7d62fdc5" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="24da0f28-5af5-4a3a-82d3-c33620c7abf2" direction="Return" isUnique="false">
+                        <elementDefinition Id="ef6e44c1-cded-4753-b554-da9b1561bc56" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="26adab0a-04bf-4004-a436-1f9402057387" LastKnownName="CityID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="7c688533-456e-4cb8-ad0d-222cf159032f" name="CreateUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d5f7d9b9-d442-49ca-8e93-433c1571175d" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b9a16b8c-9ee8-4f0c-9e3b-091af7739705" name="int UnitType" direction="In" isUnique="false">
+                        <elementDefinition Id="1c1b71e3-86bd-43f4-93a2-f079d8d90591" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6a2d0653-61a2-4213-9e85-5a63e4ccfe52" direction="Return" isUnique="false">
+                        <elementDefinition Id="2eb3d023-98e4-43e8-bbf6-7307a313b60c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06b2d117-30d5-4064-9682-32f34f1c0b80" LastKnownName="UnitID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1396d325-27e2-4974-b498-92cbc60ce08a" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f70340fb-c743-4709-a7b8-aa9f7295cc7d" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="59f3ee31-674b-4d69-9249-97327d418c26" name="int" direction="In" isUnique="false">
+                        <elementDefinition Id="f8a471dd-8232-4e1f-9ae4-b47daef26c76" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="942aa7ae-7f72-4e6f-8485-29df85a230da" direction="Return" isUnique="false">
+                        <elementDefinition Id="5831d6ce-0d9d-4d74-8a6a-21bde364bbc5" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="26adab0a-04bf-4004-a436-1f9402057387" LastKnownName="CityID" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="2b73d450-07ce-4f63-9d51-2d3da4e8a4dc" name="AttackUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="764f6344-9a12-4c5a-90ed-89976d29676b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="16687450-e421-43f1-8f7e-ee992b011294" name="Vector&lt;UnitID&gt; AttackingUnits" direction="In" isUnique="false">
+                        <elementDefinition Id="2b6c70d8-b09c-48ad-affe-4aa061c6228f" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="83c93938-c1cc-491d-a8db-ededf14b6994" name="vector&lt;UnitID&gt; UnitsBeingAttacked" direction="In" isUnique="false">
+                        <elementDefinition Id="23a07698-d301-4159-b2ed-79e8a17b39d8" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="95165096-0ea4-4820-8cf9-f4758799ecd9" name="InvadeCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c0c5698f-42fa-480c-a286-3ac34bceac86" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="40345436-8041-45e3-8a21-48bb3e9acbf5" name="UnitID uID" direction="In" isUnique="false">
+                        <elementDefinition Id="be3bf049-415f-4f62-9639-19a4a168351a" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9386bb4b-4c8e-4947-9d21-3faca58c7eea" name="CityID cID" direction="In" isUnique="false">
+                        <elementDefinition Id="2ee3ef0f-9569-4c69-a162-779898cabb4d" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -291,6 +696,46 @@ This will be usefull for
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="2626a0ca-6d0d-43d2-9e15-36b1b6f9ce30" name="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;">
+        <elementDefinition Id="272250ae-3660-474c-8495-48477ec5e7e2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="29e142e7-f541-45ef-b6d2-3dea47464d2b" name="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;">
+        <elementDefinition Id="ea648200-50fc-49ad-9f69-13f2f68717e9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6e6c9410-66ec-400c-96a1-f547c80f0525" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::ICivilizationAbstractFactory">
+        <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fa3b028d-1f93-4d58-a3cc-e719dbeb8cb8" name="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;">
+        <elementDefinition Id="272250ae-3660-474c-8495-48477ec5e7e2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="eee3b26a-1e4e-4122-820b-d6e90a1d3d12" name="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;">
+        <elementDefinition Id="ea648200-50fc-49ad-9f69-13f2f68717e9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3477c192-04b2-4b16-94e3-d274377e5819" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::ICivilizationAbstractFactory">
+        <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="26adab0a-04bf-4004-a436-1f9402057387" name="CityID" isAbstract="false" isLeaf="false" cachedFullName="CityID">
+        <elementDefinition Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="06b2d117-30d5-4064-9682-32f34f1c0b80" name="UnitID" isAbstract="false" isLeaf="false" cachedFullName="UnitID">
+        <elementDefinition Id="f4eb7410-4db4-4c31-97dd-997fe83ba020" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
