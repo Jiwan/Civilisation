@@ -73,6 +73,10 @@
           <commentMoniker Id="4d78a1a6-456e-46a9-a8c1-0639240777ef" />
           <relativeChildShapes />
         </commentShape>
+        <commentShape Id="572996d4-3b23-4fca-9128-9c7d57bc0fab" absoluteBounds="6.125, 1.75, 1.25, 0.5" customColor="251, 247, 200">
+          <commentMoniker Id="eb3ddbdc-269e-4521-9478-e7cd143bfb56" />
+          <relativeChildShapes />
+        </commentShape>
       </nestedChildShapes>
     </packageShape>
     <commentConnector edgePoints="[(9.25 : 5.8125); (8.375 : 5.8125)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
@@ -144,5 +148,12 @@
         <interfaceShapeMoniker Id="47193965-3a22-4797-8455-2bb79e5feb3d" />
       </nodes>
     </realizationConnector>
+    <commentConnector edgePoints="[(6.75 : 2.25); (6.75 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+      <relativeChildShapes />
+      <nodes>
+        <commentShapeMoniker Id="572996d4-3b23-4fca-9128-9c7d57bc0fab" />
+        <classShapeMoniker Id="f9a83249-2e46-4be4-b371-8f7779892cb0" />
+      </nodes>
+    </commentConnector>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

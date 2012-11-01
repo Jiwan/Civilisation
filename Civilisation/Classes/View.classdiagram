@@ -26,6 +26,14 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
               <interfaceMoniker Id="2e9ed7db-528f-47c3-9239-d9444d753770" LastKnownName="GraphicEngine" />
             </annotatedElements>
           </comment>
+          <comment Id="eb3ddbdc-269e-4521-9478-e7cd143bfb56">
+            <elementDefinition Id="aa6e40a3-efc6-483c-8440-72a595d4eac7" />
+            <body>Pattern singleton :
+Il n'y a qu'un flyweight</body>
+            <annotatedElements>
+              <classMoniker Id="cbcad1a2-6e32-4a9c-830c-971d8a6ff50d" LastKnownName="TileFlyWeight" />
+            </annotatedElements>
+          </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="488554a3-80fb-41be-834f-aabd38c15d13" />
         <packagedElements>
@@ -106,10 +114,10 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
                 </association>
               </targetEnds>
               <ownedAttributesInternal>
-                <property Id="61212474-2358-4dee-bbb6-f4f6c2ffe602" name="m_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="61212474-2358-4dee-bbb6-f4f6c2ffe602" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="0a7220c6-154f-4b26-ac27-9fffa390520e" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="e099d097-117a-4d77-8d0d-3bcb64035ae9" LastKnownName="TileFlyWeight" />
+                    <referencedTypeMoniker Id="1736233e-2b77-4fbb-9787-5eb152d043d1" LastKnownName="TileFlyWeight" />
                   </type_NamedElement>
                 </property>
                 <property Id="b77186a5-54fc-4400-9a2b-c8d9bd87d2fb" name="TileDictionary" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -280,11 +288,6 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="e099d097-117a-4d77-8d0d-3bcb64035ae9" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
-        <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="b47a4170-cc01-4c28-9c43-66d9850f90c8" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
         <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
       </referencedType>
@@ -297,6 +300,11 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
     <packageHasNamedElement>
       <referencedType Id="951a679a-6d66-43b4-9543-308f5ab70c77" name=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" isAbstract="false" isLeaf="false" cachedFullName=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;">
         <elementDefinition Id="666d2984-371c-4688-b47f-4e2425518dbd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1736233e-2b77-4fbb-9787-5eb152d043d1" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
+        <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

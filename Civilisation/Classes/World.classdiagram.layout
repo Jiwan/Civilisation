@@ -51,7 +51,7 @@
               </nestedChildShapes>
             </classShape>
             <classShape Id="e1f7333b-8615-48f9-8316-252f082f4e0b" absoluteBounds="9.75, 7.5, 2.75, 1.2226562251647319" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-              <classMoniker Id="95e28fec-fe85-42ea-8a8c-09969f10ce10" LastKnownName="FruitSquareDecoator" />
+              <classMoniker Id="95e28fec-fe85-42ea-8a8c-09969f10ce10" LastKnownName="FruitSquareDecorator" />
               <nestedChildShapes>
                 <AttributeElementListCompartment Id="d1707257-8368-41e1-b0ce-30663813bbd5" absoluteBounds="9.765, 7.89, 2.7199999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
                 <OperationElementListCompartment Id="1bfe811d-0952-4ddf-bca6-260ae383c41f" absoluteBounds="9.765, 8.10117186754942, 2.7199999999999998, 0.521484357615312" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />

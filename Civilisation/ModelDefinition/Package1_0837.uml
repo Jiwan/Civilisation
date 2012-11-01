@@ -493,12 +493,13 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="ce5fdeb9-2a18-4c3c-a368-5ae4622c91a3"
-                  name="Parameter1"
-                  direction="In">
+                  name="parameter1 : Civilisation::World::Square::Square"
+                  direction="In"
+                  isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square : IDrawableEntity"
+                    <undefinedTypeMoniker
+                      Id="2c032616-3ba3-4dc3-a95f-a9b799a62528"
+                      LastKnownName="IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -561,12 +562,13 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="ffe97d35-e249-4732-a2d8-c8320c47a7dc"
-                  name="Parameter1"
-                  direction="In">
+                  name="parameter1 : Civilisation::World::Square::Square"
+                  direction="In"
+                  isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square : IDrawableEntity"
+                    <undefinedTypeMoniker
+                      Id="2c032616-3ba3-4dc3-a95f-a9b799a62528"
+                      LastKnownName="IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -579,7 +581,7 @@
     <packageHasNamedElement>
       <class
         Id="1f20b526-36d4-4468-b70f-3636c1d5bda3"
-        name="FruitSquareDecoator"
+        name="FruitSquareDecorator"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -628,13 +630,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="06fd3b11-372e-4e53-95f3-5c4f935d5d43"
-                  name="Parameter1"
-                  direction="In">
+                  Id="2b2fc149-657a-4b94-80ca-f455481f907b"
+                  name="parameter1 : Civilisation::World::Square::Square"
+                  direction="In"
+                  isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-                      LastKnownName="Square : IDrawableEntity"
+                    <undefinedTypeMoniker
+                      Id="2c032616-3ba3-4dc3-a95f-a9b799a62528"
+                      LastKnownName="IDrawableEntity"
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -718,6 +721,11 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2c032616-3ba3-4dc3-a95f-a9b799a62528"
+        name="IDrawableEntity" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

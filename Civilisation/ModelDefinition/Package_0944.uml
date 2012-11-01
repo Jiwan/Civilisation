@@ -24,6 +24,41 @@
           LastKnownLocation="Package_0944.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="56f7190a-7c4b-46d9-9494-e886f7fc03f0">
+      <body>Pattern strategy :
+retourne le point à étendre en fonction de la cité.</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="6f2959cd-7353-4cf3-8620-e16643b9bfdf"
+          LastKnownName="ICityExtender"
+          LastKnownLocation="Package_0944.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="18bb0c0c-6399-48e9-9855-ca7451a19b96">
+      <body>void Extend()
+{
+Point newCase = BasicCityExtender.Extend(this);
+...
+}</body>
+      <annotatedElements>
+        <classMoniker
+          Id="d6335bbe-2a06-463f-ad6b-425fc7c3a1d3"
+          LastKnownName="BasicCity : ISerializable, IDrawable"
+          LastKnownLocation="Package_0944.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3372f9f2-60fc-45ba-91d4-9ee3b4305b8a">
+      <body>Pas besoin d'avoir 36 intsance d'un algorithme, donc on en fait un singleton</body>
+      <annotatedElements>
+        <classMoniker
+          Id="da954794-9e8e-45a1-88bc-58a218424c85"
+          LastKnownName="BasicCityExtender"
+          LastKnownLocation="Package_0944.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -98,6 +133,47 @@
               LastKnownLocation="Package_0944.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="48c98fb0-1d0c-4e34-bfca-7a9db2b0d289"
+            isDerived="false"
+            sourceEndRoleName="BasicCity : ISerializable, IDrawable"
+            targetEndRoleName="ICityExtender"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="6f2959cd-7353-4cf3-8620-e16643b9bfdf"
+              LastKnownName="ICityExtender"
+              LastKnownLocation="Package_0944.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6be6b2dc-afa3-42eb-8e78-f6b4e10f5162"
+                  name="BasicCity : ISerializable, IDrawable"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="59455288-ab31-4b74-94ea-2260084a4b90"
+                  name="ICityExtender"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="fed33cba-b797-431a-8082-479a2125eb56"
@@ -130,10 +206,10 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <classMoniker
-                Id="8337fe79-dde8-437e-9cf8-0a6860f61a91"
-                LastKnownName="Square"
-                LastKnownLocation="Package_1107.uml" />
+              <undefinedTypeMoniker
+                Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                LastKnownName="System.Drawing.Point"
+                LastKnownLocation="Package_0917.uml" />
             </type_NamedElement>
           </property>
           <property
@@ -182,6 +258,37 @@
                 Id="220a3521-e091-4221-bae9-3ef9018e845c"
                 LastKnownName="Integer"
                 LastKnownLocation="Civilisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b28fe74a-4e51-455c-a33b-1005eee22f6b"
+            name="_controlledCases"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="52c7ae7e-85dd-4b77-8c1a-7f8b4c502fa6"
+                name="Lower"
+                value="1" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="25da7ca2-5a78-4f96-9b37-8202cd4d9b1b"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                LastKnownName="System.Drawing.Point"
+                LastKnownLocation="Package_0917.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -376,6 +483,60 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="1f456c63-45c2-43ae-b51f-44840b0a684d"
+            name="BasicCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0126ab2d-9b48-4841-a457-9f8f4ff99e9b"
+            name="GetPosition"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0e4becf4-9b28-4c73-a8b9-367b15a95b22"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="479eef1f-163b-4d7e-951f-a9b8e9ba80cf"
+            name="GetControlledCases"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a4face1f-a534-4f99-8e5f-4e45bb357ed6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fbd89178-2c1a-43b6-9b21-171640648850"
+                      LastKnownName="List&lt;System.Drawing.Point&gt;"
+                      LastKnownLocation="Package_0944.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -679,6 +840,52 @@
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="55dfa14f-9ac2-4a48-9fc5-9b804cdb250d"
+            name="GetPosition"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="89a95af4-e972-48e1-b95f-66fc540abe85"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3fafde13-e84e-47f4-bbc7-b41dc76796ea"
+            name="GetControlledCases"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="454c13e7-c520-41fc-9bec-40a2ede9744e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fbd89178-2c1a-43b6-9b21-171640648850"
+                      LastKnownName="List&lt;System.Drawing.Point&gt;"
+                      LastKnownLocation="Package_0944.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -686,6 +893,164 @@
       <undefinedType
         Id="9ea5b298-64f4-4554-8a89-af013a6912e0"
         name="List&lt;IUnits&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="da954794-9e8e-45a1-88bc-58a218424c85"
+        name="BasicCityExtender"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f1da4364-661e-48e7-9ebe-930f09179a55">
+            <interfaceMoniker
+              Id="6f2959cd-7353-4cf3-8620-e16643b9bfdf"
+              LastKnownName="ICityExtender"
+              LastKnownLocation="Package_0944.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="bcb7ca42-b3e0-4cc1-bb02-ec19586b9c69"
+            name="_instance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1cb4416f-b4f1-4fea-ba38-f3bad9c9e933"
+            name="Extend"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e5ce6a89-1a73-4ee0-90e5-2488fa8b3cee"
+                  name="ICity"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="8f0f9fd0-0994-4fcf-bb04-cfb96994b05c"
+                      value="city" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8eb2b513-b614-4e4a-99b7-dd773c5a473e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1fd76f4b-b994-47c6-a108-8b82eed92048"
+            name="Instance"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="950cc78d-389f-410d-8124-c3e544c9eca4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="6f2959cd-7353-4cf3-8620-e16643b9bfdf"
+                      LastKnownName="ICityExtender"
+                      LastKnownLocation="Package_0944.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="04b410c9-24f5-442f-8311-b1827778a719"
+            name="BasicCityExtender"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="6f2959cd-7353-4cf3-8620-e16643b9bfdf"
+        name="ICityExtender"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="421ac0af-7498-4ede-a5bd-44a8578755f0"
+            name="Extend"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ea54f353-c2f1-4d5a-9062-436b947000a7"
+                  name="ICity"
+                  direction="In"
+                  isUnique="false">
+                  <defaultValue>
+                    <literalString
+                      Id="594272da-653d-44ed-b3da-2a24b96cf627"
+                      value="city" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2dc65d6c-6933-4d26-b77f-8fd6595db70c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e9b7c581-61d8-442c-990f-6439a4bfc97f"
+        name="CivilisatioSystem.Drawing.Point" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fbd89178-2c1a-43b6-9b21-171640648850"
+        name="List&lt;System.Drawing.Point&gt;" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

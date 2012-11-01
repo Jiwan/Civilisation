@@ -35,6 +35,17 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
           LastKnownLocation="Package_1303.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="aa6e40a3-efc6-483c-8440-72a595d4eac7">
+      <body>Pattern singleton :
+Il n'y a qu'un flyweight</body>
+      <annotatedElements>
+        <classMoniker
+          Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9"
+          LastKnownName="TileFlyWeight"
+          LastKnownLocation="Package_1303.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -182,11 +193,12 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
         <ownedAttributesInternal>
           <property
             Id="0a7220c6-154f-4b26-ac27-9fffa390520e"
-            name="m_instance"
+            name="_instance"
             visibility="Private"
             isLeaf="false"
             isStatic="true"
             isReadOnly="false"
+            isUnique="false"
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"

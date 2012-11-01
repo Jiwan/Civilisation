@@ -271,10 +271,10 @@
                         <elementDefinition Id="1c33c923-5ea7-4e23-9a36-b3dfaa3f8544" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="64a52dce-fc6b-4151-872b-dbbac811363e" name="Parameter1" direction="In">
+                            <parameter Id="64a52dce-fc6b-4151-872b-dbbac811363e" name="parameter1 : Civilisation::World::Square::Square" direction="In" isUnique="false">
                               <elementDefinition Id="ce5fdeb9-2a18-4c3c-a368-5ae4622c91a3" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
+                                <referencedTypeMoniker Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" LastKnownName="IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -310,10 +310,10 @@
                         <elementDefinition Id="a6ddb454-36f6-4a19-a50e-46dcafd46b9e" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="449f419e-0d4e-4fab-9e53-6e083d325757" name="Parameter1" direction="In">
+                            <parameter Id="449f419e-0d4e-4fab-9e53-6e083d325757" name="parameter1 : Civilisation::World::Square::Square" direction="In" isUnique="false">
                               <elementDefinition Id="ffe97d35-e249-4732-a2d8-c8320c47a7dc" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
+                                <referencedTypeMoniker Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" LastKnownName="IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -323,7 +323,7 @@
                   </class>
                 </packageHasNamedElement>
                 <packageHasNamedElement>
-                  <class Id="95e28fec-fe85-42ea-8a8c-09969f10ce10" name="FruitSquareDecoator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                  <class Id="95e28fec-fe85-42ea-8a8c-09969f10ce10" name="FruitSquareDecorator" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="1f20b526-36d4-4468-b70f-3636c1d5bda3" />
                     <generalsInternal>
                       <generalization Id="8bf37a5f-9452-4ef3-9aec-781626980e66" isSubstitutable="false">
@@ -349,10 +349,10 @@
                         <elementDefinition Id="74fdd738-00dc-4d01-806b-7ec7a89db2f2" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="c8219863-8124-46e7-861b-8f6d2387764a" name="Parameter1" direction="In">
-                              <elementDefinition Id="06fd3b11-372e-4e53-95f3-5c4f935d5d43" />
+                            <parameter Id="7aef78f5-1b89-4839-a971-363da91c9987" name="parameter1 : Civilisation::World::Square::Square" direction="In" isUnique="false">
+                              <elementDefinition Id="2b2fc149-657a-4b94-80ca-f455481f907b" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawableEntity" />
+                                <referencedTypeMoniker Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" LastKnownName="IDrawableEntity" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -494,10 +494,10 @@
                         <elementDefinition Id="3103b5cf-9c76-4418-bc29-4bb685dbd387" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="c1368351-4a71-42dc-b1f4-c0a050db4cfb" name="size" direction="In">
-                              <elementDefinition Id="aae5797d-f07e-4e36-ab8c-d04609335eb1" />
+                            <parameter Id="adefaeaf-917a-4330-b0f5-3d9b30560dee" name="size" direction="In" isUnique="false">
+                              <elementDefinition Id="6b2f9e29-f217-4359-9a17-f7cc711fefe6" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="e5729b4a-60b0-4d53-92eb-b4e2ba09ce8f" LastKnownName="Vector2" />
+                                <referencedTypeMoniker Id="3726673e-b5ed-4535-b2d3-eb5b7f1869c1" LastKnownName="System.Drawing.Point point" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -507,16 +507,16 @@
                         <elementDefinition Id="170b03d0-ad0e-4b75-a092-003cb1e410c7" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="e5578d89-633c-43b1-9754-e9cc5f3023bb" name="Vector2" direction="In" isUnique="false">
-                              <elementDefinition Id="e1a2b335-d90c-4aac-80cb-a4707f6043de" />
-                            </parameter>
-                          </operationHasOwnedParameters>
-                          <operationHasOwnedParameters>
-                            <parameter Id="7bc3b052-fadb-4fa2-8839-909346db8d67" direction="Return">
+                            <parameter Id="7bc3b052-fadb-4fa2-8839-909346db8d67" direction="Return" isUnique="false">
                               <elementDefinition Id="1130ce0c-51a9-4927-8ac8-744dc33f8d49" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="cead375c-a6ee-4985-aade-b6b68b9a2847" LastKnownName="Square : IDrawableEntity" />
                               </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="a3234314-a122-41bb-ae4a-18cbf8cc84b2" name="System.Drawing.Point point" direction="In" isUnique="false">
+                              <elementDefinition Id="2713cd64-3d0b-4d31-bd2c-9b1b2c992ce0" />
                             </parameter>
                           </operationHasOwnedParameters>
                         </ownedParameters>
@@ -525,16 +525,16 @@
                         <elementDefinition Id="b8352f3d-8253-41db-9e10-af22eb95cc42" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="51f17204-3726-48de-a663-f4ba7f391ad9" name="x" direction="In" isUnique="false">
-                              <elementDefinition Id="4ad82c64-18d3-40ff-90d5-21badc75866b" />
+                            <parameter Id="360f79ad-1973-416c-9a00-796178fc5d90" name="x" direction="In" isUnique="false">
+                              <elementDefinition Id="5066d2a5-12e4-4bb6-8132-f5d87230a3aa" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="e5729b4a-60b0-4d53-92eb-b4e2ba09ce8f" LastKnownName="Vector2" />
+                                <referencedTypeMoniker Id="65bb0831-f56c-4339-907e-9f9f57b651a7" LastKnownName="System.Drawing.Point" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="034e87bb-ae99-4612-88a8-6008207d5e61" name="square" direction="In">
-                              <elementDefinition Id="bd2794a1-044c-442c-bb4b-c9624f1fb544" />
+                            <parameter Id="a370ab6f-cdfe-417c-a402-05cefda5af3e" name="square" direction="In" isUnique="false">
+                              <elementDefinition Id="72eddb10-865c-4a27-8d80-99a060937a5e" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="395692b4-cb15-407e-84a2-44bbecba59db" LastKnownName="Square" />
                               </type_NamedElement>
@@ -640,7 +640,7 @@
                       </association>
                     </targetEnds>
                     <ownedAttributesInternal>
-                      <property Id="834597e9-6644-43e4-8a6c-b15dafe5d79b" name="m_instance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                      <property Id="834597e9-6644-43e4-8a6c-b15dafe5d79b" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <elementDefinition Id="da60f497-2924-48c1-b008-59e76b235943" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="9e8907f3-734d-4b14-9e27-c65a9ff318cd" LastKnownName="IMapCreate" />
@@ -669,7 +669,7 @@
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
-                      <operation Id="f6e578c4-5249-417e-ad73-97096d2f1629" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                      <operation Id="f6e578c4-5249-417e-ad73-97096d2f1629" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="87f6b02c-38f9-4528-8935-24e62a0f4919" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
@@ -716,7 +716,7 @@
                       </association>
                     </targetEnds>
                     <ownedAttributesInternal>
-                      <property Id="f7c68bd6-05b3-4f7a-aeed-5c4370b6e5c5" name="m_instance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                      <property Id="f7c68bd6-05b3-4f7a-aeed-5c4370b6e5c5" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <elementDefinition Id="82ce6ebd-af67-4af9-a3fb-6e105b344ec4" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="c6c651bd-aa92-47a4-b188-935c8c388161" LastKnownName="IMapCreate" />
@@ -745,7 +745,7 @@
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
-                      <operation Id="02345dc2-3875-4b0f-b9a5-c6dc3f8bc3b6" name="Instance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                      <operation Id="02345dc2-3875-4b0f-b9a5-c6dc3f8bc3b6" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="7db8a2cb-ccfe-43e6-8fde-097f0e650119" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
@@ -980,6 +980,21 @@
     <packageHasNamedElement>
       <referencedType Id="93f12747-1892-4110-b3d5-eb952a2c20b2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3726673e-b5ed-4535-b2d3-eb5b7f1869c1" name="System.Drawing.Point point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point point">
+        <elementDefinition Id="51802444-3f32-427c-ba54-0847047ac8e4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="65bb0831-f56c-4339-907e-9f9f57b651a7" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" name="IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="IDrawableEntity">
+        <elementDefinition Id="2c032616-3ba3-4dc3-a95f-a9b799a62528" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

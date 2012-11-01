@@ -161,13 +161,14 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="aae5797d-f07e-4e36-ab8c-d04609335eb1"
+                  Id="6b2f9e29-f217-4359-9a17-f7cc711fefe6"
                   name="size"
-                  direction="In">
+                  direction="In"
+                  isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="53d82c0b-d2db-47d7-8058-3fb3690b4be2"
-                      LastKnownName="Vector2"
+                      Id="51802444-3f32-427c-ba54-0847047ac8e4"
+                      LastKnownName="System.Drawing.Point point"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -185,15 +186,9 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="e1a2b335-d90c-4aac-80cb-a4707f6043de"
-                  name="Vector2"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
                   Id="1130ce0c-51a9-4927-8ac8-744dc33f8d49"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
                     <classMoniker
                       Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
@@ -201,6 +196,13 @@
                       LastKnownLocation="Package1_0837.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2713cd64-3d0b-4d31-bd2c-9b1b2c992ce0"
+                  name="System.Drawing.Point point"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -215,23 +217,24 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="4ad82c64-18d3-40ff-90d5-21badc75866b"
+                  Id="5066d2a5-12e4-4bb6-8132-f5d87230a3aa"
                   name="x"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="53d82c0b-d2db-47d7-8058-3fb3690b4be2"
-                      LastKnownName="Vector2"
-                      LastKnownLocation="Package_0859.uml" />
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="bd2794a1-044c-442c-bb4b-c9624f1fb544"
+                  Id="72eddb10-865c-4a27-8d80-99a060937a5e"
                   name="square"
-                  direction="In">
+                  direction="In"
+                  isUnique="false">
                   <type_NamedElement>
                     <classMoniker
                       Id="8337fe79-dde8-437e-9cf8-0a6860f61a91"
@@ -428,10 +431,10 @@
         <ownedAttributesInternal>
           <property
             Id="da60f497-2924-48c1-b008-59e76b235943"
-            name="m_instance"
+            name="_instance"
             visibility="Private"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isReadOnly="false"
             isUnique="false"
             isDerived="false"
@@ -487,7 +490,7 @@
             Id="87f6b02c-38f9-4528-8935-24e62a0f4919"
             name="Instance"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
@@ -579,10 +582,10 @@
         <ownedAttributesInternal>
           <property
             Id="82ce6ebd-af67-4af9-a3fb-6e105b344ec4"
-            name="m_instance"
+            name="_instance"
             visibility="Private"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isReadOnly="false"
             isUnique="false"
             isDerived="false"
@@ -639,7 +642,7 @@
             Id="7db8a2cb-ccfe-43e6-8fde-097f0e650119"
             name="Instance"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
@@ -799,6 +802,11 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="51802444-3f32-427c-ba54-0847047ac8e4"
+        name="System.Drawing.Point point" />
     </packageHasNamedElement>
   </packagedElements>
 </package>
