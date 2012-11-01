@@ -5,16 +5,6 @@
   name="Unit" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="ac35543a-9862-4f04-bfff-fc48891879e8">
-      <body>Abstract class</body>
-      <annotatedElements>
-        <classMoniker
-          Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-          LastKnownName="Unit"
-          LastKnownLocation="Package_0917.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="b64cab96-7a26-4911-9085-ff6fedeadf4c">
       <body>Si jamais on décide de faire une unité qui a une attaque qui dépend de plusieurs facteurs : comme attack de base + attaque de l'épé + attaque du compagnon, on sera bien content d'avoir une interface commune.</body>
       <annotatedElements>
@@ -24,12 +14,42 @@
           LastKnownLocation="Package_0917.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="82e09b72-027d-49a9-91b4-249242b1979b">
+      <body>Si jamais on décide de comment est géré le bonus des directeurs de département on pourra facilement changer avec cette interface</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
+          LastKnownName="IDepartDirector"
+          LastKnownLocation="Package_0917.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="d1f98150-ff13-4c55-9086-35ab5456ebe3">
+      <body>Permet de lier un sprite (animation) à un  type d'activité.</body>
+      <annotatedElements>
+        <enumerationMoniker
+          Id="814a5a56-db14-423f-a257-ba387406afee"
+          LastKnownName="UnitState"
+          LastKnownLocation="Package_0917.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="625c734d-b88b-4f41-b47b-022cfb1a9a62">
+      <body>Type d'unité</body>
+      <annotatedElements>
+        <enumerationMoniker
+          Id="baddce44-29f2-45f4-8e72-b6f4e0595de9"
+          LastKnownName="UnitType"
+          LastKnownLocation="Package_0917.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
       <class
         Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-        name="Unit"
+        name="Unit : ISerializable, IDrawable"
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
@@ -42,6 +62,73 @@
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="82214822-b1de-47ef-8690-29277e2f056b"
+            isDerived="false"
+            sourceEndRoleName="Unit : ISerializable, IDrawable"
+            targetEndRoleName="UnitState"
+            isLeaf="false"
+            isAbstract="false">
+            <enumerationMoniker
+              Id="814a5a56-db14-423f-a257-ba387406afee"
+              LastKnownName="UnitState"
+              LastKnownLocation="Package_0917.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e1ba942c-289d-4820-9edd-559a3b469cc0"
+                  name="Unit : ISerializable, IDrawable"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="2e4ee9a1-5436-4d92-aff1-1582622a4a8f"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="60791d39-7e04-416a-ad9e-7d772c4ba007"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f3e07cf-dea7-4024-b79b-b01f71e1375e"
+                  name="UnitState"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5f9bb97e-d089-46b8-8318-4b0fc75fea84"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="66964286-b61a-407f-94ba-7c06fdc1c03b"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="cb92612d-f50f-495a-a78c-306ef2839115"
@@ -131,6 +218,37 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
+          <property
+            Id="ea29c10f-6b57-45d2-a5d0-be5f3b2087ad"
+            name="_movement"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="Civilisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c1935831-4a49-4e03-b114-3ccca2a298b5"
+            name="System.Collections.Generic.Dictionary&lt;UnitState, Sprite&gt;"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -140,7 +258,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="68f5207d-0644-4554-9bf8-393a067a8f79"
+                  name="System.Drawing.Point"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6c2dcf13-0ad7-4308-8aee-f34b0183ef15"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="af2fdf0f-146e-4f6a-a084-f5dcb151ce59"
             name="GetAttack"
@@ -233,6 +366,142 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="4844a53a-3f14-4988-86b7-2ff794f85010"
+            name="GetMovement"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e310e60-cb35-4fbc-aab0-b690610465ae"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="24bed334-5367-4489-bb27-9841fef3ea7c"
+            name="Damage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="de4e18d2-47b9-4748-8b15-43ba0548d99c"
+                  name="Integer damage"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="027af449-635a-4a58-8070-498e3229ff4b"
+            name="IsDead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d4012878-7391-4c8a-a32b-6dff10178da3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="328d8811-59cc-47fb-bf19-04eb2d868a76"
+            name="GetPosition"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="21608860-827c-42f8-93d2-e381be15f19c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="05b5b480-8b13-440b-b40a-5327d0674adf"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f36d1a79-830f-4831-93bf-118ab62168ed"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b3e2773d-4547-467c-93c6-11474108c78b"
+                  name="float deltaTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="647effc2-0779-43f5-9e27-e991e3dbb888"
+            name="IsInCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="83570bc7-edf7-41a5-98fa-d5b156ce833a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -246,21 +515,116 @@
         Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
         name="IDepartDirector"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="39208310-77b0-4d9e-8388-19416869a496"
+            name="GetDefenceBonus"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="18dd7365-211e-401a-9a15-dadfeda501fa"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="28b74027-76ec-487e-a442-6f07ede3a540"
+            name="GetAttackBonus"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1a7d6fcf-e38b-44be-b63b-551963e48ce5"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
         name="IStudent"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="3ae2e22c-e45f-48ee-9e60-df400d2fb17a"
+            name="CanFight"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="49349fdb-2b0c-4982-a9cf-a9036b86a24c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
         name="ITeacher"
         isAbstract="false"
-        isLeaf="false" />
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="9ef1b9e5-d16e-4d13-a213-02ef1bb19826"
+            name="CreateCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ca1bccf7-b16e-4bce-b834-cee0eee4afa7"
+            name="Operation1"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -275,7 +639,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-              LastKnownName="Unit"
+              LastKnownName="Unit : ISerializable, IDrawable"
               LastKnownLocation="Package_0917.uml" />
           </generalization>
         </generalsInternal>
@@ -294,7 +658,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-              LastKnownName="Unit"
+              LastKnownName="Unit : ISerializable, IDrawable"
               LastKnownLocation="Package_0917.uml" />
           </generalization>
         </generalsInternal>
@@ -313,7 +677,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-              LastKnownName="Unit"
+              LastKnownName="Unit : ISerializable, IDrawable"
               LastKnownLocation="Package_0917.uml" />
           </generalization>
         </generalsInternal>
@@ -341,10 +705,76 @@
             isSubstitutable="false">
             <classMoniker
               Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-              LastKnownName="Unit"
+              LastKnownName="Unit : ISerializable, IDrawable"
               LastKnownLocation="Package_0917.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ebb81e2e-523a-47ef-b69c-baa13cc05591"
+            name="IsDead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cf845a6f-f35f-4c7d-ae15-f0e39800ca1e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="25ef8b42-6d23-42c3-9eb7-f4ef694dabf0"
+            name="Damage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="62f456d8-5544-4cc4-a780-05fa3be744d7"
+                  name="Integer damage"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b12eadba-3346-4af2-9054-a977ee3639dc"
+            name="CanFight"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="eb27a611-5501-4613-a571-8df8cf92d761"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -369,10 +799,51 @@
             isSubstitutable="false">
             <classMoniker
               Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-              LastKnownName="Unit"
+              LastKnownName="Unit : ISerializable, IDrawable"
               LastKnownLocation="Package_0917.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="983833d6-a5f4-45f3-aa93-d43b9fa4e740"
+            name="CreateCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b76dae02-290b-44e1-9b21-89dcec333e7d"
+            name="Operation1"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f7d85cf4-a602-4e76-bc16-6bbfdb708f63"
+            name="IsInCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2cd38ef3-8b7a-4424-8a48-4d35f154527c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -397,10 +868,51 @@
             isSubstitutable="false">
             <classMoniker
               Id="cec78e71-2517-43a8-85dd-05df388b01d1"
-              LastKnownName="Unit"
+              LastKnownName="Unit : ISerializable, IDrawable"
               LastKnownLocation="Package_0917.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="5fb868f3-7c23-4ede-b70f-ac7395b34ff8"
+            name="CreateCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6d983d47-036a-4178-a4c3-4cea9c1049c9"
+            name="Operation1"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e5252388-4beb-4fbf-a539-5c9eeb664e08"
+            name="IsInCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2d1baae7-f0fa-4033-93d5-38ce8979a49a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -502,8 +1014,386 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="24e216bc-9b95-47fb-bcc7-aa39bae64211"
+            name="GetMovement"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e54cd3b0-16b6-476c-b874-3378f5e2fda3"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1d06f8db-8397-4b92-8967-dbab2cddbf27"
+            name="SetPosition"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2909039a-a957-4ebf-9bb6-eed75579f28e"
+                  name="System.Drawing.Point newPosition"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c1190fe3-dce5-41fe-ae54-c1a02d997124"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="232f0c13-2e6f-4382-8d37-a8d0fe51aa96"
+            name="GetPosition"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dcff4c90-954c-455e-b95c-acb2fb3c29f4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8f4faa99-d96a-402f-84f9-240e4639c26a"
+            name="IsDead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="871198ea-b81f-4b26-a7ee-ba66c4cd3247"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6e2f1b28-b45a-4b29-b90b-b94e6d536767"
+            name="IsInCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c4ee3d0e-1ce7-4bc1-b151-4e89a916b65a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dc30f28e-7949-4a0a-b932-b6977a0f1172"
+            name="Damage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d2076545-7713-49b5-9961-8b537453ab2a"
+                  name="Integer damage"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2681d2e1-9fcb-4bd1-9fa0-e41f019df509"
+        name="BasicDepartDirector"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="5c486dc2-b9b0-40ee-a441-0f5bbba84833">
+            <interfaceMoniker
+              Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
+              LastKnownName="IDepartDirector"
+              LastKnownLocation="Package_0917.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="7c1eac3f-48f3-4fe6-a20c-832aeee057bf"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cec78e71-2517-43a8-85dd-05df388b01d1"
+              LastKnownName="Unit : ISerializable, IDrawable"
+              LastKnownLocation="Package_0917.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e4b0086c-7607-4779-b347-cc48c4a4d0ec"
+            name="GetDefenceBonus"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="564f899a-58f1-4dd1-b119-1b6770303bb2"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="4188c8f5-83e6-4d3d-ad8b-984d9740fc90"
+            name="GetAttackBonus"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f005085a-8fdc-490f-b41a-28052d166d83"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b76c7c3f-a59d-4a49-8ae9-d42b2f30b17e"
+        name="BasicStudent"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="837dc266-a9a5-4a3c-b1f3-d338c8c13b87">
+            <interfaceMoniker
+              Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
+              LastKnownName="IStudent"
+              LastKnownLocation="Package_0917.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="50fe3340-e450-435c-a8a4-63ac0e4d1e48"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cec78e71-2517-43a8-85dd-05df388b01d1"
+              LastKnownName="Unit : ISerializable, IDrawable"
+              LastKnownLocation="Package_0917.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="a2d00e56-d83b-4dd0-9176-667620633631"
+            name="CanFight"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e53067d0-3e7b-4765-9d1b-5812db325ce7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1637b756-e74e-4838-9c3b-20cff83f4235"
+        name="BasicTeacher"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="06cfce53-9d62-45fd-93ec-3ce80dd9a90f">
+            <interfaceMoniker
+              Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
+              LastKnownName="ITeacher"
+              LastKnownLocation="Package_0917.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="35057357-91ab-453d-8f4a-f57e25ebfbb8"
+            isSubstitutable="false">
+            <classMoniker
+              Id="cec78e71-2517-43a8-85dd-05df388b01d1"
+              LastKnownName="Unit : ISerializable, IDrawable"
+              LastKnownLocation="Package_0917.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="56691c3a-fb52-49ec-bbcd-ee4e3e23c89d"
+            name="CreateCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="30effb8f-72ed-44d8-b3df-150877d0c882"
+            name="Operation1"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bcd68a53-48a9-43c5-9fe8-97d2ef34e03b"
+            name="IsInCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f368a7ce-5198-437c-917f-6c46a6ed6d03"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a7d0c74f-f555-4438-b446-d14b33943655"
+        name="System.Drawing.Point" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="814a5a56-db14-423f-a257-ba387406afee"
+        name="UnitState"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="c01f9811-9b88-4c16-9d53-e6687848b828"
+            name="US_WAITING" />
+          <enumerationLiteral
+            Id="c35689f9-e587-401a-834b-fe4a89c069c0"
+            name="US_MOVING" />
+          <enumerationLiteral
+            Id="115dcee5-51f3-440b-8761-d4362a812492"
+            name="US_ACTION" />
+          <enumerationLiteral
+            Id="9bf2059a-a8d6-4cee-b286-98c382a7e433"
+            name="US_CREATINGCITY" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="baddce44-29f2-45f4-8e72-b6f4e0595de9"
+        name="UnitType"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="36529187-c729-4d95-9f45-83db96ffc43a"
+            name="UT_DIRECTOR" />
+          <enumerationLiteral
+            Id="091d3eb7-a329-44d7-96e8-232c02264f97"
+            name="UT_STUDENT" />
+          <enumerationLiteral
+            Id="b02add95-5dd7-4e39-9d8a-8db11dde2f56"
+            name="UT_TEACHER" />
+        </ownedLiterals>
+      </enumeration>
     </packageHasNamedElement>
   </packagedElements>
 </package>

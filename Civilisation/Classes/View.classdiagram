@@ -13,7 +13,7 @@
           </comment>
           <comment Id="527c39ca-bb33-44e6-a875-b1d1f0806dc9">
             <elementDefinition Id="17493ee3-7d0f-40d4-abab-4464a5c9d724" />
-            <body>A sprite is made of many tiles that represent each frames of the animation.</body>
+            <body>A sprite is made of many tiles that represent each frames of the animation. Update is used to set the right frame according to the time elapsed.</body>
             <annotatedElements>
               <classMoniker Id="b4049241-8d6e-440a-83d4-92fbb6c73961" LastKnownName="Sprite" />
             </annotatedElements>
@@ -21,7 +21,7 @@
           <comment Id="4d78a1a6-456e-46a9-a8c1-0639240777ef">
             <elementDefinition Id="119935cc-b6ff-43f7-b022-59345a277ce9" />
             <body>Pattern bridge : voir wikipédia.
-Si jamais on veut faire tourner notre jeu sur GTK on sera content.</body>
+Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</body>
             <annotatedElements>
               <interfaceMoniker Id="2e9ed7db-528f-47c3-9239-d9444d753770" LastKnownName="GraphicEngine" />
             </annotatedElements>
@@ -268,6 +268,12 @@ Si jamais on veut faire tourner notre jeu sur GTK on sera content.</body>
           <packageHasNamedElement>
             <class Id="824535e8-fea6-4381-99be-4a0f9ce42c6a" name="XNAGraphicPrimitive" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="90cf6048-67c8-4610-8ed6-e2e9305cfc31" />
+              <suppliersInternal>
+                <interfaceRealization Id="09f26ee7-7372-4b97-959b-03e8efe46da1">
+                  <interfaceMoniker Id="f8ee804f-3d11-40fa-8641-cbc4711a5b5e" LastKnownName="GraphicPrimitive" />
+                  <elementDefinition Id="4a63135d-de15-41d3-92d2-a2da389ae2ed" />
+                </interfaceRealization>
+              </suppliersInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>

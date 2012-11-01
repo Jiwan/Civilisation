@@ -25,7 +25,8 @@
           </comment>
           <comment Id="47db5ea7-ce68-4cb0-8d97-4b4ecac37a3f">
             <elementDefinition Id="4753424d-35e1-4d84-8901-9e23791a79ae" />
-            <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.</body>
+            <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.
+Le constructeur prenant un objet SerializationInfo permet de recharger une partie.</body>
             <annotatedElements>
               <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
             </annotatedElements>
@@ -34,7 +35,15 @@
             <elementDefinition Id="b5c02f01-3815-4d49-b195-d869fb8b5c0b" />
             <body>Initialize est le constructeur du jeu.
 LoadComponents chargent toutes les resources.
-La boucle du jeu est la suivante : on met à jour tout le système avec update (utile pour les sprites, animations), puis on dessine le jeu avec Draw.</body>
+La boucle du jeu est la suivante : on met à jour tout le système avec update (utile pour les sprites, animations), puis on dessine le jeu avec Draw.
+Destroy permet de libérer toutes les resources avant que l'objet soit détruit par la garbage collector</body>
+            <annotatedElements>
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+            </annotatedElements>
+          </comment>
+          <comment Id="04330fbb-9ee5-41c9-8ecb-0d4cd5a76ba8">
+            <elementDefinition Id="307a8cf3-828c-4980-af01-1ec7c538fa7e" />
+            <body>Médiateur de l'ensemble du jeu</body>
             <annotatedElements>
               <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
             </annotatedElements>
@@ -45,6 +54,24 @@ La boucle du jeu est la suivante : on met à jour tout le système avec update (
           <packageHasNamedElement>
             <class Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" name="Game : ISerializable, IDrawableEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9" />
+              <ownedAttributesInternal>
+                <property Id="ff390d2a-f930-4f96-94a3-78c966e53616" name="_players" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="82981270-0a9f-46a6-8b03-0c012a863f6c" name="Lower" value="2">
+                      <elementDefinition Id="fd4c11ab-9611-42c9-ac08-589296781182" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="1195ddcc-7079-4d5e-ae81-8e72b90f27fa" name="Upper" value=".*">
+                      <elementDefinition Id="1574aa7a-2352-4eea-9ab3-622078d90b70" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="53223a0b-f40e-4639-9422-6224f8ba0e1c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0c4ac288-1a4f-4751-9b8a-867a41cdccbd" LastKnownName="IPlayer" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
               <ownedOperationsInternal>
                 <operation Id="09db987b-ac9d-40c6-ab66-a74eb9c2a016" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="219dde5e-2ad0-4a3a-8d84-c2a9f54f9c8e" />
@@ -75,12 +102,49 @@ La boucle du jeu est la suivante : on met à jour tout le système avec update (
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="4d0c190d-aa55-4c48-b287-6ae12b47b580" name="addPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="05a2fc00-8943-4cfc-a8f8-02c63bf872cb" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="922364c0-c005-4f80-b055-dd8786a18d81" name="IPlayer newPlayer" direction="In" isUnique="false">
+                        <elementDefinition Id="a9e0f876-e1c2-4ab0-9105-28935de4d1a9" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="e5cdff76-f5f1-49aa-8210-ca6d20a7be1c" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c442c196-de89-4c44-bb96-a7af083eb62f" />
+                </operation>
+                <operation Id="5cb2d66d-5961-4abb-99b5-96bf6052fac1" name="Pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8c9434d8-f22a-4fe3-835c-bdf44ee58fcf" />
+                </operation>
+                <operation Id="fb694935-7e16-4fba-920f-08711b90d796" name="Destroy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="0c7932ed-33ba-4e2b-a12c-4b46d4a01a37" />
+                </operation>
+                <operation Id="22eb75bb-1224-4acd-8a3b-e6f5a97a9d6b" name="Game" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e8906f30-75b0-46d2-b419-edf33cae5ac6" />
+                </operation>
+                <operation Id="d04c8b07-8a81-4387-a7d7-dab19c188574" name="Game" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b36f7c48-0beb-4e2f-96f3-defad9e2a7fa" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="93e16114-b83d-4e57-ba71-96dfcf949e92" name="SerializationInfo info" direction="In" isUnique="false">
+                        <elementDefinition Id="04dfd5fa-9d52-4f52-b344-9fda5415fefb" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="0c4ac288-1a4f-4751-9b8a-867a41cdccbd" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Player::IPlayer">
+        <elementDefinition Id="341cc183-7a27-4959-9a12-5e6eef82a533" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="11aea7ad-f36b-4dee-9695-6638b185de1b" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />

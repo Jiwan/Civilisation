@@ -59,6 +59,9 @@
       <SubType>Content</SubType>
       <DependentUpon>Classes\World.classdiagram</DependentUpon>
     </Content>
+    <Content Include="idées.txt">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ModelDefinition\Package1_0837.uml">
       <SubType>Content</SubType>
     </Content>
@@ -99,6 +102,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1303.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1533.uml">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1838.uml">

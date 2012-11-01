@@ -23,7 +23,7 @@
         <classMoniker
           Id="31e5c63a-4998-4f6b-b534-7d7d5ffb6e5c"
           LastKnownName="SupportedFight"
-          LastKnownLocation="Civilisation.uml" />
+          LastKnownLocation="Package_1533.uml" />
       </annotatedElements>
     </comment>
     <comment
@@ -34,7 +34,7 @@ D'où le vector de combattants.</body>
         <classMoniker
           Id="7f5758a0-504d-40b1-b44b-c166585deb21"
           LastKnownName="TeamFight"
-          LastKnownLocation="Civilisation.uml" />
+          LastKnownLocation="Package_1533.uml" />
       </annotatedElements>
     </comment>
   </ownedCommentsInternal>
@@ -1337,223 +1337,6 @@ D'où le vector de combattants.</body>
         LastKnownLocation="Package_1303.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <Interface
-        Id="32e5fb4a-2945-46d3-9a3f-23b9afb24b9b"
-        name="Ifight"
-        isAbstract="false"
-        isLeaf="false">
-        <ownedOperations>
-          <operation
-            Id="53291841-ed77-4982-9164-772b1a1d410a"
-            name="Combat"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperations>
-      </Interface>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="df382fd7-9941-444d-ac32-66bb212ccd18"
-        name="NormalFight"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <suppliersInternal>
-          <interfaceRealization
-            Id="97ec8145-1835-49a0-a3cb-438d189b1464">
-            <interfaceMoniker
-              Id="32e5fb4a-2945-46d3-9a3f-23b9afb24b9b"
-              LastKnownName="Ifight"
-              LastKnownLocation="Civilisation.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="5b548e46-957e-4bd2-89ee-4baf94b011a0"
-            name="Combat"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="31e5c63a-4998-4f6b-b534-7d7d5ffb6e5c"
-        name="SupportedFight"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <suppliersInternal>
-          <interfaceRealization
-            Id="8e28e9b0-a117-4e41-8bc5-16b6f76d7207">
-            <interfaceMoniker
-              Id="32e5fb4a-2945-46d3-9a3f-23b9afb24b9b"
-              LastKnownName="Ifight"
-              LastKnownLocation="Civilisation.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="0f67454b-5340-45f0-b376-cbad87fbe3fc"
-            name="Combat"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="7f5758a0-504d-40b1-b44b-c166585deb21"
-        name="TeamFight"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <suppliersInternal>
-          <interfaceRealization
-            Id="156f001c-8281-4401-804e-88d240d6207d">
-            <interfaceMoniker
-              Id="32e5fb4a-2945-46d3-9a3f-23b9afb24b9b"
-              LastKnownName="Ifight"
-              LastKnownLocation="Civilisation.uml" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="7caa12f0-3c58-440b-b352-13833b3c561f"
-            name="Combat"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <class
-        Id="6bd7b049-b3b0-4911-bf93-762127ecdb60"
-        name="Fight"
-        isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="3625c8d6-ab9c-4752-9c65-c6f489ea91a6"
-            isDerived="false"
-            sourceEndRoleName="Fight"
-            targetEndRoleName="Ifight"
-            isLeaf="false"
-            isAbstract="false">
-            <interfaceMoniker
-              Id="32e5fb4a-2945-46d3-9a3f-23b9afb24b9b"
-              LastKnownName="Ifight"
-              LastKnownLocation="Civilisation.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="ecfb5dd5-be16-47d1-a7dd-f2701b2a7c8f"
-                  name="Fight"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Shared"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="ba03509d-6608-4bb0-8a73-f3a77b0b5802"
-                  name="Ifight"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
-        <ownedAttributesInternal>
-          <property
-            Id="0ea9fe14-f64d-4246-872f-0fee2070adaf"
-            name="EIIfighters"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd10d3d9-5abc-4a23-8ef0-01abe711c0d2"
-                LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;"
-                LastKnownLocation="Civilisation.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="4efe9fa8-d4df-4903-8dfb-804f900cc859"
-            name="INFOfighters"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="dd10d3d9-5abc-4a23-8ef0-01abe711c0d2"
-                LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;"
-                LastKnownLocation="Civilisation.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="81b6be08-6806-4fb5-a373-35ff38788b95"
-            name="ChooseFight"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="3b443a2d-42a0-47f7-bead-fa47f0fbcd30"
-                  name="EIIfighters"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="193ca00d-f537-4193-b27a-45c04200bdaa"
-                  name="INFOfighters"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <undefinedType
         Id="01f864a8-99b1-434e-a829-951eae679aae"
         name="Vector&lt;" />
@@ -1568,6 +1351,12 @@ D'où le vector de combattants.</body>
         Id="a134d6ac-c60c-4970-901f-f17f780b30c8"
         LastKnownName="Game"
         LastKnownLocation="Package_1121.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ce314601-1a93-47c4-b4fd-c861053ffec6"
+        LastKnownName="Fight"
+        LastKnownLocation="Package_1533.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

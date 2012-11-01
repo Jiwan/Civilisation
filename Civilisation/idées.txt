@@ -39,3 +39,6 @@ fonctionnement d’un tour, etc.) ;
 	5. Stratégie, pour la création des différents types de carte. - DONE
 	6. Il existe également de nombreux autres scénarios que vous pouvez développer (scénarios nominaux
 ou bien gestion des erreurs notamment).
+
+
+A voir comment on gère le brouillard de guerre.

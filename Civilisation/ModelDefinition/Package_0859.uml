@@ -17,11 +17,21 @@
     </comment>
     <comment
       Id="34b7a1b8-91db-496b-bbd9-32ae522f1723">
-      <body>Si on veut save la map, on la rend serializable</body>
+      <body>Si on veut save la map, on la rend serializable (Voir Game pour une explication plus complète sur la serialization)</body>
       <annotatedElements>
         <classMoniker
           Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-          LastKnownName="Map : ISerializable"
+          LastKnownName="Map : ISerializable, IDrawableEntity"
+          LastKnownLocation="Package_0859.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3595fc48-2d93-4aa7-a06a-ac6545e8a10a">
+      <body>Si l'utilisateur veut changer et faire par exemple une map avec plein d'eau.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="ff94da14-6461-4ec4-a1b8-b0bf2b1565e5"
+          LastKnownName="UserDefinedSquareRandomizer"
           LastKnownLocation="Package_0859.uml" />
       </annotatedElements>
     </comment>
@@ -30,7 +40,7 @@
     <packageHasNamedElement>
       <class
         Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-        name="Map : ISerializable"
+        name="Map : ISerializable, IDrawableEntity"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -232,6 +242,68 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="b5f389ef-aa12-4ea5-a236-b141f63491f2"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="48d824b9-cd4d-415e-bd7a-b96ebec79df2"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="48c87133-ac5c-47c2-8717-0aec71b0b280"
+                  name="float deltaTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="305e6cca-22e5-451e-941a-cef52e098146"
+            name="GetObjectData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="200f0229-0d74-46ec-8a58-8cb5bdf6c1ae"
+                  name="SerializationInfo info"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2d9a3fa0-267a-4019-a5bf-175f9d77a777"
+            name="Map"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75eae31f-6f71-4e3f-945b-2043835bb525"
+                  name="SerializationInfo info"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -272,7 +344,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map : ISerializable"
+                      LastKnownName="Map : ISerializable, IDrawableEntity"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -312,6 +384,47 @@
               LastKnownLocation="Package_0859.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="81fa42ae-aa7e-412d-87da-3077eadcd92e"
+            isDerived="false"
+            sourceEndRoleName="SmallMap"
+            targetEndRoleName="Map : ISerializable, IDrawableEntity"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
+              LastKnownName="Map : ISerializable, IDrawableEntity"
+              LastKnownLocation="Package_0859.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6e27c9ed-f1c2-437e-acf7-b5b00558f930"
+                  name="SmallMap"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4c45c878-4dd3-4531-b7f1-29c0f366fe57"
+                  name="Map : ISerializable, IDrawableEntity"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="da60f497-2924-48c1-b008-59e76b235943"
@@ -350,7 +463,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map : ISerializable"
+                      LastKnownName="Map : ISerializable, IDrawableEntity"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -422,6 +535,47 @@
               LastKnownLocation="Package_0859.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="e80f5b33-b52b-4bce-bf00-0c170bc9e442"
+            isDerived="false"
+            sourceEndRoleName="MediumMap"
+            targetEndRoleName="Map : ISerializable, IDrawableEntity"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
+              LastKnownName="Map : ISerializable, IDrawableEntity"
+              LastKnownLocation="Package_0859.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8eb5c785-0247-4d44-b342-6fae02424699"
+                  name="MediumMap"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3a96b259-c0f0-4349-9630-f2be8e31ff55"
+                  name="Map : ISerializable, IDrawableEntity"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="82ce6ebd-af67-4af9-a3fb-6e105b344ec4"
@@ -460,7 +614,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map : ISerializable"
+                      LastKnownName="Map : ISerializable, IDrawableEntity"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -553,7 +707,7 @@
     <packageHasNamedElement>
       <class
         Id="bf008e03-d471-49f6-95a1-08adffc6ef2f"
-        name="BasicQuareRandomizer"
+        name="BasicSquareRandomizer"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -602,6 +756,49 @@
       <undefinedType
         Id="56f85234-a0cf-483d-a772-3ead4d6f2c10"
         name="Civilisation::World::Map::IMapCe" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ff94da14-6461-4ec4-a1b8-b0bf2b1565e5"
+        name="UserDefinedSquareRandomizer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="8a4aef78-fef1-47b3-8471-9eb110770f63">
+            <interfaceMoniker
+              Id="0a54d03e-c4c3-4deb-bd6e-bfff0851eabc"
+              LastKnownName="ISquareRandomizer"
+              LastKnownLocation="Package_0859.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e22aa498-fddd-4f0b-8410-1457d8ecd212"
+            name="CreateSquare"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c80dbe1f-b2a4-4392-aa0e-4767d83a6f0b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
+                      LastKnownName="Square : IDrawableEntity"
+                      LastKnownLocation="Package1_0837.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -11,7 +11,8 @@
     </comment>
     <comment
       Id="4753424d-35e1-4d84-8901-9e23791a79ae">
-      <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.</body>
+      <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.
+Le constructeur prenant un objet SerializationInfo permet de recharger une partie.</body>
       <annotatedElements>
         <classMoniker
           Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9"
@@ -23,7 +24,18 @@
       Id="b5c02f01-3815-4d49-b195-d869fb8b5c0b">
       <body>Initialize est le constructeur du jeu.
 LoadComponents chargent toutes les resources.
-La boucle du jeu est la suivante : on met à jour tout le système avec update (utile pour les sprites, animations), puis on dessine le jeu avec Draw.</body>
+La boucle du jeu est la suivante : on met à jour tout le système avec update (utile pour les sprites, animations), puis on dessine le jeu avec Draw.
+Destroy permet de libérer toutes les resources avant que l'objet soit détruit par la garbage collector</body>
+      <annotatedElements>
+        <classMoniker
+          Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9"
+          LastKnownName="Game : ISerializable, IDrawableEntity"
+          LastKnownLocation="Package_1121.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="307a8cf3-828c-4980-af01-1ec7c538fa7e">
+      <body>Médiateur de l'ensemble du jeu</body>
       <annotatedElements>
         <classMoniker
           Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9"
@@ -40,6 +52,38 @@ La boucle du jeu est la suivante : on met à jour tout le système avec update (
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="53223a0b-f40e-4639-9422-6224f8ba0e1c"
+            name="_players"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="fd4c11ab-9611-42c9-ac08-589296781182"
+                name="Lower"
+                value="2" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="1574aa7a-2352-4eea-9ab3-622078d90b70"
+                name="Upper"
+                value=".*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="341cc183-7a27-4959-9a12-5e6eef82a533"
+                LastKnownName="IPlayer"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="219dde5e-2ad0-4a3a-8d84-c2a9f54f9c8e"
@@ -96,6 +140,74 @@ La boucle du jeu est la suivante : on met à jour tout le système avec update (
                 <parameter
                   Id="8dbe9a3c-8b85-43b9-904a-0b6ce07faa2f"
                   name="float deltaTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="05a2fc00-8943-4cfc-a8f8-02c63bf872cb"
+            name="addPlayer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a9e0f876-e1c2-4ab0-9105-28935de4d1a9"
+                  name="IPlayer newPlayer"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c442c196-de89-4c44-bb96-a7af083eb62f"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8c9434d8-f22a-4fe3-835c-bdf44ee58fcf"
+            name="Pause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0c7932ed-33ba-4e2b-a12c-4b46d4a01a37"
+            name="Destroy"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e8906f30-75b0-46d2-b419-edf33cae5ac6"
+            name="Game"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b36f7c48-0beb-4e2f-96f3-defad9e2a7fa"
+            name="Game"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="04dfd5fa-9d52-4f52-b344-9fda5415fefb"
+                  name="SerializationInfo info"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
