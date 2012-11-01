@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="a134d6ac-c60c-4970-901f-f17f780b30c8"
   name="Game" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -52,6 +52,47 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="3d8aae64-d9f2-424b-bd6b-974a2be853f5"
+            isDerived="false"
+            sourceEndRoleName="Game : ISerializable, IDrawableEntity"
+            targetEndRoleName="GameState"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="815fb41d-f103-4b1a-a708-18be09e452d2"
+              LastKnownName="GameState"
+              LastKnownLocation="Package_1121.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4d28af29-f504-4c8d-bfdf-d50bdaea67c3"
+                  name="Game : ISerializable, IDrawableEntity"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c1fc4359-c4f6-49a8-b3ea-30ab828e776a"
+                  name="GameState"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="53223a0b-f40e-4639-9422-6224f8ba0e1c"
@@ -220,6 +261,67 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
       <undefinedType
         Id="ae1cf727-4297-4f26-a55c-0a0355421fd2"
         name="float" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="815fb41d-f103-4b1a-a708-18be09e452d2"
+        name="GameState"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1aceb6ec-b30d-40e3-88e9-67932630c6ac"
+        name="PausedGame"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="577632db-88c5-465a-a9b9-2cd3a1d41cd1">
+            <interfaceMoniker
+              Id="815fb41d-f103-4b1a-a708-18be09e452d2"
+              LastKnownName="GameState"
+              LastKnownLocation="Package_1121.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8e263b24-3858-47df-9690-e73d3cd01145"
+        name="ActiveGame"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="8dc50646-a261-44e8-b0f2-0e722f4e1c9b">
+            <interfaceMoniker
+              Id="815fb41d-f103-4b1a-a708-18be09e452d2"
+              LastKnownName="GameState"
+              LastKnownLocation="Package_1121.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="daf4f4ab-ac11-4bae-bca9-3a86232464d8"
+        name="SavedGame"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="e66804b4-673b-4079-9361-859b9e9b883f">
+            <interfaceMoniker
+              Id="815fb41d-f103-4b1a-a708-18be09e452d2"
+              LastKnownName="GameState"
+              LastKnownLocation="Package_1121.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

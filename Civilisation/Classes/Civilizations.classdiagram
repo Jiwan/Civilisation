@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
@@ -198,6 +198,12 @@ Point newCase = BasicCityExtender.Extend(this);
                           <referencedTypeMoniker Id="b40613a2-77b8-49b2-8d6f-9980c30f009d" LastKnownName="System.Drawing.Point" />
                         </type_NamedElement>
                       </property>
+                      <property Id="1f7fb406-09ab-427b-9d3a-5dd56d85d7ed" name="CityID" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="87fdd954-e08b-4ef6-abcc-687ae598b674" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="6be08e27-bb5c-4dae-a3a8-41c36cdd1e62" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </property>
                     </ownedAttributesInternal>
                     <ownedOperationsInternal>
                       <operation Id="baf4968b-169d-44cc-9c31-37b437b87761" name="TotalAvailableFood" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -322,6 +328,19 @@ Point newCase = BasicCityExtender.Extend(this);
                               <elementDefinition Id="a4face1f-a534-4f99-8e5f-4e45bb357ed6" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="ae0b100d-6879-4c56-a037-bcc75eae6590" LastKnownName="List&lt;System.Drawing.Point&gt;" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="9b51436a-7668-4956-8186-4a96ccbaf0e0" name="GetCityID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="715861a6-b883-4661-8e83-3c02fd291eab" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="9d031d72-6e29-4e0c-970e-ea27598870dd" direction="Return" isUnique="false">
+                              <elementDefinition Id="7cf57e9d-9a8d-4e45-a2e8-e5ac297bd4f3" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="49722d05-755e-43e4-8515-193fb52f82a7" LastKnownName="Integer" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -744,6 +763,12 @@ Point newCase = BasicCityExtender.Extend(this);
                       <property Id="f47db731-9287-425e-bc6a-91703c6c34dd" name="System.Collections.Generic.Dictionary&lt;UnitState, Sprite&gt;" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <elementDefinition Id="c1935831-4a49-4e03-b114-3ccca2a298b5" />
                       </property>
+                      <property Id="4b00efd7-bea5-4672-b42d-37cd2b678e4b" name="UnitID" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="190edd2f-a09d-47c7-99d5-bc4038e70e47" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="92ac6f74-2901-400a-aa1f-3807e19081a3" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </property>
                     </ownedAttributesInternal>
                     <ownedOperationsInternal>
                       <operation Id="81894566-eb95-4f31-9c19-b90120f4b3ba" name="SetPosition" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -883,6 +908,19 @@ Point newCase = BasicCityExtender.Extend(this);
                               <elementDefinition Id="83570bc7-edf7-41a5-98fa-d5b156ce833a" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="a09ea38b-1b3d-4c12-9324-2038f1924b34" LastKnownName="Boolean" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="b044cf92-b385-43d0-834d-c3a1d939e485" name="GetUnitID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="9ed33d24-80e6-4ae7-9881-57ab357ef6ab" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c934227f-3ab4-4179-8db2-938d3020a708" direction="Return" isUnique="false">
+                              <elementDefinition Id="956ed115-cc43-4e9f-adbb-2f18c68a034f" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="ebedfdd2-e9e4-44cf-b179-fc9668db850d" LastKnownName="Integer" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -1205,6 +1243,19 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="2f426e98-7bba-474a-8248-15322020cfa2" name="GetUnitID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="f647db9e-9209-4956-bc27-f8908b0cb9a0" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="9e3db9d1-013f-4513-adce-10c4f4875328" direction="Return" isUnique="false">
+                              <elementDefinition Id="ed044a68-5ead-413f-9b9d-ed7c29f8d78e" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
@@ -1457,6 +1508,26 @@ Point newCase = BasicCityExtender.Extend(this);
     <packageHasNamedElement>
       <referencedType Id="ae0b100d-6879-4c56-a037-bcc75eae6590" name="List&lt;System.Drawing.Point&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;System.Drawing.Point&gt;">
         <elementDefinition Id="fbd89178-2c1a-43b6-9b21-171640648850" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ebedfdd2-e9e4-44cf-b179-fc9668db850d" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="92ac6f74-2901-400a-aa1f-3807e19081a3" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6be08e27-bb5c-4dae-a3a8-41c36cdd1e62" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="49722d05-755e-43e4-8515-193fb52f82a7" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

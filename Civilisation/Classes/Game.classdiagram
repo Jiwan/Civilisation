@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="5ec28e4a-1d0d-4758-a691-8ce69c972fc6">
-      <profileInstance Id="144a6a53-356d-4971-923a-c8da7d7172e7" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="8edff4e2-e092-4fee-9bd1-32931d82eb5a">
-      <profileInstance Id="928a9cd4-5fca-4ea0-aff6-f8c763098c12" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="69696a64-38e6-47d5-86d0-edefc2492ab7" name="Game">
@@ -54,6 +40,24 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
           <packageHasNamedElement>
             <class Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" name="Game : ISerializable, IDrawableEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9" />
+              <targetEnds>
+                <association Id="7c41192a-ed91-48f4-82ca-9b87edef9066" isDerived="false" sourceEndRoleName="Game : ISerializable, IDrawableEntity" targetEndRoleName="GameState" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="2e7fdbee-f021-4260-91b7-196b1580e9e6" name="Game : ISerializable, IDrawableEntity" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="4d28af29-f504-4c8d-bfdf-d50bdaea67c3" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="1d8f708b-8739-4d8c-8427-57d5a3419cfb" name="GameState" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="c1fc4359-c4f6-49a8-b3ea-30ab828e776a" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="3d8aae64-d9f2-424b-bd6b-974a2be853f5" />
+                </association>
+              </targetEnds>
               <ownedAttributesInternal>
                 <property Id="ff390d2a-f930-4f96-94a3-78c966e53616" name="_players" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
@@ -137,6 +141,44 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" name="GameState" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="815fb41d-f103-4b1a-a708-18be09e452d2" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="ed2862bc-8b60-4556-9fd2-49ca80cbc310" name="PausedGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1aceb6ec-b30d-40e3-88e9-67932630c6ac" />
+              <suppliersInternal>
+                <interfaceRealization Id="89127ae4-f306-4408-bce4-8a5a237ec606">
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <elementDefinition Id="577632db-88c5-465a-a9b9-2cd3a1d41cd1" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="aa651328-a1c0-40bf-b833-279131e673d9" name="ActiveGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8e263b24-3858-47df-9690-e73d3cd01145" />
+              <suppliersInternal>
+                <interfaceRealization Id="feb1cee8-e87b-43ec-a459-731f0b51aaaf">
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <elementDefinition Id="8dc50646-a261-44e8-b0f2-0e722f4e1c9b" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="bbbeaf77-626e-4730-8f2f-66954ac43f2c" name="SavedGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="daf4f4ab-ac11-4bae-bca9-3a86232464d8" />
+              <suppliersInternal>
+                <interfaceRealization Id="7d4e433e-a72c-4205-97f2-68db3df2ae6d">
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <elementDefinition Id="e66804b4-673b-4079-9361-859b9e9b883f" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
@@ -148,5 +190,19 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
   </packagedElements>
   <package Id="11aea7ad-f36b-4dee-9695-6638b185de1b" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5ec28e4a-1d0d-4758-a691-8ce69c972fc6">
+        <profileInstance Id="144a6a53-356d-4971-923a-c8da7d7172e7" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="8edff4e2-e092-4fee-9bd1-32931d82eb5a">
+        <profileInstance Id="928a9cd4-5fca-4ea0-aff6-f8c763098c12" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
