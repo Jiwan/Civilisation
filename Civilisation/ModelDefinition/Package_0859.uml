@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="93f32028-d29a-4f32-9c9a-427fb5975c84"
   name="Map" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -15,12 +15,22 @@
           LastKnownLocation="Package_0859.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="34b7a1b8-91db-496b-bbd9-32ae522f1723">
+      <body>Si on veut save la map, on la rend serializable</body>
+      <annotatedElements>
+        <classMoniker
+          Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
+          LastKnownName="Map : ISerializable"
+          LastKnownLocation="Package_0859.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
       <class
         Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-        name="Map"
+        name="Map : ISerializable"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -262,7 +272,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map"
+                      LastKnownName="Map : ISerializable"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -340,7 +350,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map"
+                      LastKnownName="Map : ISerializable"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -450,7 +460,7 @@
                   <type_NamedElement>
                     <classMoniker
                       Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map"
+                      LastKnownName="Map : ISerializable"
                       LastKnownLocation="Package_0859.uml" />
                   </type_NamedElement>
                 </parameter>

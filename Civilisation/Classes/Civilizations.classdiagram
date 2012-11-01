@@ -15,64 +15,6 @@
         <elementDefinition Id="8f127027-fedc-4140-8764-14434be32e12" />
         <packagedElements>
           <packageHasNamedElement>
-            <package Id="8f344b79-b56a-4e2e-a917-61deb366f46b" name="Unit">
-              <elementDefinition Id="597049b5-db66-4d9c-8acd-d3cb15b748f7" />
-              <packagedElements>
-                <packageHasNamedElement>
-                  <class Id="367f1559-7312-49f0-b82b-c5bb40da811d" name="Unit" isAbstract="true" isLeaf="false" isActiveClass="false">
-                    <elementDefinition Id="cec78e71-2517-43a8-85dd-05df388b01d1" />
-                    <ownedAttributesInternal>
-                      <property Id="5f51ee00-78f5-46e4-87da-18433c654019" name="m_cost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="cb92612d-f50f-495a-a78c-306ef2839115" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
-                        </type_NamedElement>
-                      </property>
-                      <property Id="6c1438d8-8989-4e05-8692-9add7c52d9ff" name="m_HP" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="18a11051-405c-4ca3-89a2-a8d5b7320914" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="2b3d56ff-3ec1-4995-a624-75609c62d169" LastKnownName="Integer" />
-                        </type_NamedElement>
-                      </property>
-                      <property Id="7c44ad5d-2f84-4b6e-ad78-dcf78511f1ac" name="m_attack" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="c35e95af-702d-444d-ab74-ec57d6a4a8bc" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="c793f066-4731-452c-9494-8f7a5e8bf133" LastKnownName="Integer" />
-                        </type_NamedElement>
-                      </property>
-                      <property Id="68a75d6d-d247-4d4d-968f-c3f3471ec804" name="m_defence" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="0b5cbb81-b57b-470e-a2c3-7959ec868cb7" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="bf5b0725-e7af-4b01-bc79-35a4ddb4b4a1" LastKnownName="Integer" />
-                        </type_NamedElement>
-                      </property>
-                    </ownedAttributesInternal>
-                    <ownedOperationsInternal>
-                      <operation Id="c0d46d67-d725-4070-9881-9aae7b05d506" name="Operation1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="05ea72f3-093a-4fd1-8587-1ed91d78c468" />
-                      </operation>
-                    </ownedOperationsInternal>
-                  </class>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
-                  <Interface Id="5767e1cc-54d1-4367-a437-095edf2fcba2" name="IDepartDirector" isAbstract="false" isLeaf="false">
-                    <elementDefinition Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485" />
-                  </Interface>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
-                  <Interface Id="b660c3ef-c247-4bf5-bfac-a510508e9c57" name="IStudent" isAbstract="false" isLeaf="false">
-                    <elementDefinition Id="c282f372-8661-4ffa-bf21-55b6e7b125ba" />
-                  </Interface>
-                </packageHasNamedElement>
-                <packageHasNamedElement>
-                  <Interface Id="50c5d674-144b-414b-8bc5-055048ed5ed4" name="ITeacher" isAbstract="false" isLeaf="false">
-                    <elementDefinition Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72" />
-                  </Interface>
-                </packageHasNamedElement>
-              </packagedElements>
-            </package>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
             <Interface Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false">
               <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
               <ownedOperations>
@@ -375,6 +317,220 @@
     <packageHasNamedElement>
       <referencedType Id="9e5ae30c-5382-4595-bd68-be900e5bca14" name="IStudent" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization1::Unit::IStudent">
         <elementDefinition Id="c15995ba-05fd-4573-96f0-8323e9735dda" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <package Id="8f344b79-b56a-4e2e-a917-61deb366f46b" name="Unit">
+        <ownedCommentsInternal>
+          <comment Id="af4ac8e7-7498-4d3f-8b96-01fc569aa872">
+            <elementDefinition Id="ac35543a-9862-4f04-bfff-fc48891879e8" />
+            <body>Abstract class</body>
+            <annotatedElements>
+              <classMoniker Id="367f1559-7312-49f0-b82b-c5bb40da811d" LastKnownName="Unit" />
+            </annotatedElements>
+          </comment>
+          <comment Id="90d5e5e9-7d34-4c49-a9b7-72bd8d3a3c19">
+            <elementDefinition Id="b64cab96-7a26-4911-9085-ff6fedeadf4c" />
+            <body>Si jamais on décide de faire une unité qui a une attaque qui dépend de plusieurs facteurs : comme attack de base + attaque de l'épé + attaque du compagnon, on sera bien content d'avoir une interface commune.</body>
+            <annotatedElements>
+              <interfaceMoniker Id="64f72d83-2709-4445-92b9-26bc346ab7e1" LastKnownName="IUnit" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="597049b5-db66-4d9c-8acd-d3cb15b748f7" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="367f1559-7312-49f0-b82b-c5bb40da811d" name="Unit" isAbstract="true" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="cec78e71-2517-43a8-85dd-05df388b01d1" />
+              <suppliersInternal>
+                <interfaceRealization Id="6c15c80a-18c5-49f2-96b1-18f72e51d8b8">
+                  <interfaceMoniker Id="64f72d83-2709-4445-92b9-26bc346ab7e1" LastKnownName="IUnit" />
+                  <elementDefinition Id="4d84d7ff-0bc7-46c9-b4d9-07e7b841719f" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="5f51ee00-78f5-46e4-87da-18433c654019" name="_cost" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cb92612d-f50f-495a-a78c-306ef2839115" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="6c1438d8-8989-4e05-8692-9add7c52d9ff" name="_HP" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="18a11051-405c-4ca3-89a2-a8d5b7320914" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="2b3d56ff-3ec1-4995-a624-75609c62d169" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="7c44ad5d-2f84-4b6e-ad78-dcf78511f1ac" name="_attack" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c35e95af-702d-444d-ab74-ec57d6a4a8bc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c793f066-4731-452c-9494-8f7a5e8bf133" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="68a75d6d-d247-4d4d-968f-c3f3471ec804" name="_defence" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0b5cbb81-b57b-470e-a2c3-7959ec868cb7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bf5b0725-e7af-4b01-bc79-35a4ddb4b4a1" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="a0d04839-d44f-4cc3-b77d-181937940590" name="System.Drawing.Point _case" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a78e0e3d-0a37-463a-b378-907a13798dac" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="81894566-eb95-4f31-9c19-b90120f4b3ba" name="SetPosition" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="45ace682-d62f-4e6a-ad60-12dcaef6470c" />
+                </operation>
+                <operation Id="d5ecc887-c1cd-404b-8d85-04a16c2978c8" name="GetAttack" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="af2fdf0f-146e-4f6a-a084-f5dcb151ce59" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a8ec0ab6-88c3-48ab-b32d-6f2276963216" direction="Return">
+                        <elementDefinition Id="941d1ab5-8957-4887-bce1-9f7397c3d1d8" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="52903752-fff7-447b-b703-7d420ad25223" name="GetCost" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="858eb930-c1e9-4277-a366-6ec736f1d711" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="03da482e-c294-4bcc-9cbe-ddcf6d2d993c" direction="Return">
+                        <elementDefinition Id="1ee9c5a2-1586-423a-9162-606faf514e88" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="acf7dbdf-83d7-4f41-adf2-534b81e4e9d5" name="GetDefense" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7d8085b3-969c-4cd3-8d35-feca9c42672a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5018de6a-c196-465f-a872-270f9bfa1f6b" direction="Return">
+                        <elementDefinition Id="1272dc24-7962-49fd-be1c-7240e04d8d49" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ac029df7-c644-4809-9e20-a222339eff84" name="GetHp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8b093ff7-30c6-46d0-b429-6f47cb80fd7a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="63cc075a-9814-46f8-8f7c-b28501c9958f" direction="Return">
+                        <elementDefinition Id="808d4ac2-2702-4d38-8b99-10b3f1cd90d6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="5767e1cc-54d1-4367-a437-095edf2fcba2" name="IDepartDirector" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="b660c3ef-c247-4bf5-bfac-a510508e9c57" name="IStudent" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="c282f372-8661-4ffa-bf21-55b6e7b125ba" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="50c5d674-144b-414b-8bc5-055048ed5ed4" name="ITeacher" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="64f72d83-2709-4445-92b9-26bc346ab7e1" name="IUnit" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="c31d9840-f1fd-4733-8eb4-1de526259d6b" />
+              <ownedOperations>
+                <operation Id="4c44d19c-d6ce-46c2-8ccc-262588d7d057" name="GetAttack" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a1e1be8c-14b9-4c9b-9949-036bde0c0075" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3b16cdd7-a536-4ee4-ba5e-9af668dfdd8b" direction="Return">
+                        <elementDefinition Id="ce54cea9-cad3-4909-a585-cfd35420bb8f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fd7a47b0-8a06-47f0-816b-9272093083a1" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ec8e5d90-4732-4fe8-bccc-3a6c8c75c711" name="GetCost" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="59ac1f49-79b9-4512-8027-9b709dc02695" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ec6c89ef-dfdf-48d7-9c49-a76c18260ba0" direction="Return">
+                        <elementDefinition Id="c308bacc-086f-410c-b58a-91188bb9002c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d1c6d8d4-2c78-4663-b2f1-3f592549980d" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f8a6167e-a070-41dc-8626-1c113e9b13c5" name="GetDefense" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ba790721-fc37-403d-8ba1-d1f272cd2a8a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a5797d39-626f-4072-a7c2-8aa93ed0d7e9" direction="Return">
+                        <elementDefinition Id="61ec833e-c10e-44a9-ac12-2af37f470143" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="02a9d504-2f02-4fe8-b38f-c9254f610ef2" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="59a3f023-7b4b-4feb-aee0-aa968fb2c119" name="GetHp" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b10b026d-d173-49f4-8fdd-2a6edd5df783" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="07f6c72d-1b3f-4c68-b4e0-74164d72e361" direction="Return">
+                        <elementDefinition Id="63c7dfcc-17cc-45f1-adf7-35668b21dae4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fdf68cc8-f076-4b05-b302-b249a3c11fd5" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fd7a47b0-8a06-47f0-816b-9272093083a1" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d1c6d8d4-2c78-4663-b2f1-3f592549980d" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="02a9d504-2f02-4fe8-b38f-c9254f610ef2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fdf68cc8-f076-4b05-b302-b249a3c11fd5" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

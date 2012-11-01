@@ -1,8 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="597049b5-db66-4d9c-8acd-d3cb15b748f7"
   name="Unit" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="ac35543a-9862-4f04-bfff-fc48891879e8">
+      <body>Abstract class</body>
+      <annotatedElements>
+        <classMoniker
+          Id="cec78e71-2517-43a8-85dd-05df388b01d1"
+          LastKnownName="Unit"
+          LastKnownLocation="Package_0917.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="b64cab96-7a26-4911-9085-ff6fedeadf4c">
+      <body>Si jamais on décide de faire une unité qui a une attaque qui dépend de plusieurs facteurs : comme attack de base + attaque de l'épé + attaque du compagnon, on sera bien content d'avoir une interface commune.</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="c31d9840-f1fd-4733-8eb4-1de526259d6b"
+          LastKnownName="IUnit"
+          LastKnownLocation="Package_0917.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
       <class
@@ -11,10 +33,19 @@
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="4d84d7ff-0bc7-46c9-b4d9-07e7b841719f">
+            <interfaceMoniker
+              Id="c31d9840-f1fd-4733-8eb4-1de526259d6b"
+              LastKnownName="IUnit"
+              LastKnownLocation="Package_0917.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
         <ownedAttributesInternal>
           <property
             Id="cb92612d-f50f-495a-a78c-306ef2839115"
-            name="m_cost"
+            name="_cost"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -33,7 +64,7 @@
           </property>
           <property
             Id="18a11051-405c-4ca3-89a2-a8d5b7320914"
-            name="m_HP"
+            name="_HP"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -52,7 +83,7 @@
           </property>
           <property
             Id="c35e95af-702d-444d-ab74-ec57d6a4a8bc"
-            name="m_attack"
+            name="_attack"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -71,7 +102,7 @@
           </property>
           <property
             Id="0b5cbb81-b57b-470e-a2c3-7959ec868cb7"
-            name="m_defence"
+            name="_defence"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -88,16 +119,120 @@
                 LastKnownLocation="Civilisation.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="a78e0e3d-0a37-463a-b378-907a13798dac"
+            name="System.Drawing.Point _case"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="05ea72f3-093a-4fd1-8587-1ed91d78c468"
-            name="Operation1"
+            Id="45ace682-d62f-4e6a-ad60-12dcaef6470c"
+            name="SetPosition"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="af2fdf0f-146e-4f6a-a084-f5dcb151ce59"
+            name="GetAttack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="941d1ab5-8957-4887-bce1-9f7397c3d1d8"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="858eb930-c1e9-4277-a366-6ec736f1d711"
+            name="GetCost"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1ee9c5a2-1586-423a-9162-606faf514e88"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7d8085b3-969c-4cd3-8d35-feca9c42672a"
+            name="GetDefense"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1272dc24-7962-49fd-be1c-7240e04d8d49"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8b093ff7-30c6-46d0-b429-6f47cb80fd7a"
+            name="GetHp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="808d4ac2-2702-4d38-8b99-10b3f1cd90d6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -267,6 +402,108 @@
           </generalization>
         </generalsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="c31d9840-f1fd-4733-8eb4-1de526259d6b"
+        name="IUnit"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="a1e1be8c-14b9-4c9b-9949-036bde0c0075"
+            name="GetAttack"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ce54cea9-cad3-4909-a585-cfd35420bb8f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="59ac1f49-79b9-4512-8027-9b709dc02695"
+            name="GetCost"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c308bacc-086f-410c-b58a-91188bb9002c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ba790721-fc37-403d-8ba1-d1f272cd2a8a"
+            name="GetDefense"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="61ec833e-c10e-44a9-ac12-2af37f470143"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b10b026d-d173-49f4-8fdd-2a6edd5df783"
+            name="GetHp"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="63c7dfcc-17cc-45f1-adf7-35668b21dae4"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
     </packageHasNamedElement>
   </packagedElements>
 </package>

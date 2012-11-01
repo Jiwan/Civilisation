@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="5ec28e4a-1d0d-4758-a691-8ce69c972fc6">
+      <profileInstance Id="144a6a53-356d-4971-923a-c8da7d7172e7" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="8edff4e2-e092-4fee-9bd1-32931d82eb5a">
+      <profileInstance Id="928a9cd4-5fca-4ea0-aff6-f8c763098c12" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="69696a64-38e6-47d5-86d0-edefc2492ab7" name="Game">
+        <ownedCommentsInternal>
+          <comment Id="ff6d1bc8-7e90-436b-a5da-a5029f18a59c">
+            <elementDefinition Id="c1617e98-679c-409a-a251-30169e801604" />
+            <body>Faire un pattern GameState
+</body>
+          </comment>
+          <comment Id="47db5ea7-ce68-4cb0-8d97-4b4ecac37a3f">
+            <elementDefinition Id="4753424d-35e1-4d84-8901-9e23791a79ae" />
+            <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.</body>
+            <annotatedElements>
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+            </annotatedElements>
+          </comment>
+          <comment Id="cab7253b-b86e-46d5-8998-0fe7f9edfc72">
+            <elementDefinition Id="b5c02f01-3815-4d49-b195-d869fb8b5c0b" />
+            <body>Initialize est le constructeur du jeu.
+LoadComponents chargent toutes les resources.
+La boucle du jeu est la suivante : on met à jour tout le système avec update (utile pour les sprites, animations), puis on dessine le jeu avec Draw.</body>
+            <annotatedElements>
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="a134d6ac-c60c-4970-901f-f17f780b30c8" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" name="Game : ISerializable, IDrawableEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9" />
+              <ownedOperationsInternal>
+                <operation Id="09db987b-ac9d-40c6-ab66-a74eb9c2a016" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="219dde5e-2ad0-4a3a-8d84-c2a9f54f9c8e" />
+                </operation>
+                <operation Id="63b14bc5-bb4c-44f5-8c6d-a3cc91d53951" name="LoadComponents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ef5f9038-7de8-4e19-b9bb-d9a694412bb3" />
+                </operation>
+                <operation Id="fb442036-faeb-486e-9e8b-ac00f1acbb0b" name="GetObjectData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9992307a-7414-4c18-a9ac-fcf2ae37da89" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d54c8b98-a43d-438b-a357-08866fdec3e6" name="SerializationInfo info" direction="In" isUnique="false">
+                        <elementDefinition Id="6233ba02-db66-47f7-a8e0-395ebdf17372" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="8e68c11c-02f0-42a4-9a16-85df5bd7357b" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b69ea384-6fdf-4971-a415-aa2d6d9ecbd9" />
+                </operation>
+                <operation Id="28f9b817-38cf-4dae-b601-27f78b808ca2" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9e865b2c-5f6a-47ef-b75e-54e53fe7b917" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ba8436e8-6643-41c1-bd88-d71b7d974778" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="8dbe9a3c-8b85-43b9-904a-0b6ce07faa2f" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="11aea7ad-f36b-4dee-9695-6638b185de1b" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+  </package>
+</logicalClassDesignerModel>

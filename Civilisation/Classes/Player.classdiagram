@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
@@ -10,12 +10,6 @@
             <annotatedElements>
               <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
             </annotatedElements>
-          </comment>
-          <comment Id="e2c609e4-7d53-49b6-952c-0ada35c11889">
-            <elementDefinition Id="7ba409e1-50b8-44ca-9e4f-1c90068092f7" />
-            <body>FAIRE UN PATTERN STATE
-
-A corriger, il manque des trucs</body>
           </comment>
           <comment Id="923e6c74-0de1-4609-89c7-fa85de408fdf">
             <elementDefinition Id="1f7afe65-d6dd-4d87-ae1b-a0ab98612ace" />
@@ -28,7 +22,13 @@ A corriger, il manque des trucs</body>
             <elementDefinition Id="eb66d2bb-b780-42fa-a3b1-cfc46d0dfa94" />
             <body>ActivePlayer : à son tour de jouer
 
-InactivePlayer : finit son tour, à l'adversaire de jouer</body>
+InactivePlayer : finit son tour, à l'adversaire de jouer
+
+If one day we want to make an online game we'll just add DisconnectedPlayer, ReconnectingPlayer, etc
+</body>
+            <annotatedElements>
+              <classMoniker Id="c50f8ffe-7bc7-4ffd-be48-bd1cd02c287a" LastKnownName="InactivePlayer" />
+            </annotatedElements>
           </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="d64e6476-044a-46e5-90c7-9b21a2dc8404" />

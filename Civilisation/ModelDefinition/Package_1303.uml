@@ -14,6 +14,27 @@
           LastKnownLocation="Package_1303.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="17493ee3-7d0f-40d4-abab-4464a5c9d724">
+      <body>A sprite is made of many tiles that represent each frames of the animation.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="5425425c-970c-4776-beea-b51fcff0b1e9"
+          LastKnownName="Sprite"
+          LastKnownLocation="Package_1303.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="119935cc-b6ff-43f7-b022-59345a277ce9">
+      <body>Pattern bridge : voir wikipédia.
+Si jamais on veut faire tourner notre jeu sur GTK on sera content.</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256"
+          LastKnownName="GraphicEngine"
+          LastKnownLocation="Package_1303.uml" />
+      </annotatedElements>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -31,6 +52,24 @@
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="9a5cde52-ddc5-4b4b-9578-22d3a7dc97ad"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="695123c9-3298-439e-ba73-3dd9177cf84e"
+                  name="float deltaTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -272,6 +311,188 @@
       <undefinedType
         Id="666d2984-371c-4688-b47f-4e2425518dbd"
         name=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5425425c-970c-4776-beea-b51fcff0b1e9"
+        name="Sprite"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c2b930d1-6fff-4934-8dd8-88407040b875">
+            <interfaceMoniker
+              Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db"
+              LastKnownName="IDrawableEntity"
+              LastKnownLocation="Package_1303.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="1ceb450a-d37a-4350-8711-601a32c0f706"
+            isDerived="false"
+            sourceEndRoleName="Sprite"
+            targetEndRoleName="Tile"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8ec283a3-1a73-49fc-afe6-2c974742009e"
+              LastKnownName="Tile"
+              LastKnownLocation="Package_1303.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3b00d744-c13f-403b-8b88-b05a35c6f849"
+                  name="Sprite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2afc217c-6278-4e88-9412-d1f28914bb24"
+                  name="Tile"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="463e68e9-ad75-4628-8353-d04582cfd993"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="61244640-99be-42db-8753-3fa3507f8d95"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="0db70bb2-b321-41d0-a51c-a885117b66cd"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="48ffd6ba-26d2-481a-9330-5f14ba494872"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6a2b8c8b-ab38-4345-bb3b-6fc770bcea10"
+                  name="float deltaTime"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256"
+        name="GraphicEngine"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="b4d3e58e-4c6e-4816-afa9-b66ae683fdcc"
+            isDerived="false"
+            sourceEndRoleName="GraphicEngine"
+            targetEndRoleName="GraphicPrimitive"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="1d9e9330-9c14-41de-b1e0-5af5b7ed2141"
+              LastKnownName="GraphicPrimitive"
+              LastKnownLocation="Package_1303.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c7c1d9f-f4fd-4b34-b875-6a0741562ea9"
+                  name="GraphicEngine"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="272db816-2a90-41a6-a7bb-5efaa29096c4"
+                  name="GraphicPrimitive"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3acd2d73-3537-4ba4-a0fa-0f0656a29e08"
+        name="XNAGraphicEngine"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="00972e04-f23f-4183-ac30-63c560fd86d2">
+            <interfaceMoniker
+              Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256"
+              LastKnownName="GraphicEngine"
+              LastKnownLocation="Package_1303.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="1d9e9330-9c14-41de-b1e0-5af5b7ed2141"
+        name="GraphicPrimitive"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="90cf6048-67c8-4610-8ed6-e2e9305cfc31"
+        name="XNAGraphicPrimitive"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

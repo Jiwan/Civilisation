@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="14658d13-38d8-464e-8f91-2722ad00560d" name="World">
@@ -417,11 +417,18 @@
                     <interfaceMoniker Id="e396a9ee-b7b5-4d38-a7d4-0726a6ce0482" LastKnownName="IMapCreate" />
                   </annotatedElements>
                 </comment>
+                <comment Id="c35f9421-0225-4ef1-b300-17de15d6ab08">
+                  <elementDefinition Id="34b7a1b8-91db-496b-bbd9-32ae522f1723" />
+                  <body>Si on veut save la map, on la rend serializable</body>
+                  <annotatedElements>
+                    <classMoniker Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" LastKnownName="Map : ISerializable" />
+                  </annotatedElements>
+                </comment>
               </ownedCommentsInternal>
               <elementDefinition Id="93f32028-d29a-4f32-9c9a-427fb5975c84" />
               <packagedElements>
                 <packageHasNamedElement>
-                  <class Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" name="Map" isAbstract="false" isLeaf="false" isActiveClass="false">
+                  <class Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" name="Map : ISerializable" isAbstract="false" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="eb8566cd-d448-403e-b48d-1b8f91045bb4" />
                     <targetEnds>
                       <association Id="97b716a1-e198-4d26-b72d-d3275cfd2edc" isDerived="false" sourceEndRoleName="Map" targetEndRoleName="Square" isLeaf="false" isAbstract="false">
@@ -548,7 +555,7 @@
                             <parameter Id="c03a0ef3-b61d-4876-b9ba-92675a45d43e" direction="Return">
                               <elementDefinition Id="289c56d2-d46d-4d4e-9540-8cf3f2186dcd" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map" />
+                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map : ISerializable" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -590,7 +597,7 @@
                             <parameter Id="f09f4dd0-6258-4af5-8934-2ee40aacb4e9" direction="Return">
                               <elementDefinition Id="4caed839-ad4a-4458-9829-241dd258a142" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map" />
+                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map : ISerializable" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -648,7 +655,7 @@
                             <parameter Id="188832cc-ca35-41ec-8af0-7b7f9a3c2a76" direction="Return">
                               <elementDefinition Id="33dd470d-bc1b-47e1-a132-7d9566b387ca" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map" />
+                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map : ISerializable" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -834,7 +841,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" name="Map" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::Map">
+      <referencedType Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" name="Map : ISerializable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::Map : ISerializable">
         <elementDefinition Id="eb8566cd-d448-403e-b48d-1b8f91045bb4" />
       </referencedType>
     </packageHasNamedElement>
