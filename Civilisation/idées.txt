@@ -1,7 +1,6 @@
 ------------------------------------------------------------------------------------------------
 Pattern state pour gérer les différentes phases du jeux.
 
-
 ------------------------------------------------------------------------------------------------
 Faire un médiateur game qui gère :
 - La bataille avec un pattern stratégie.

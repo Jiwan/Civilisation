@@ -1,30 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="69696a64-38e6-47d5-86d0-edefc2492ab7" name="Game">
         <ownedCommentsInternal>
-          <comment Id="ff6d1bc8-7e90-436b-a5da-a5029f18a59c">
-            <elementDefinition Id="c1617e98-679c-409a-a251-30169e801604" />
-            <body>Faire un pattern GameState
-</body>
-          </comment>
           <comment Id="47db5ea7-ce68-4cb0-8d97-4b4ecac37a3f">
             <elementDefinition Id="4753424d-35e1-4d84-8901-9e23791a79ae" />
             <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.
-Le constructeur prenant un objet SerializationInfo permet de recharger une partie.</body>
+Le constructeur prenant un objet SerializationInfo permet de recharger une partie. MainLoop se charge de faire fonctionner le coeur du jeu. Comme on le voit le jeu est indépendant de l'engine graphique.</body>
             <annotatedElements>
               <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
             </annotatedElements>
           </comment>
           <comment Id="cab7253b-b86e-46d5-8998-0fe7f9edfc72">
             <elementDefinition Id="b5c02f01-3815-4d49-b195-d869fb8b5c0b" />
-            <body>Initialize est le constructeur du jeu.
+            <body>Initialize est le constructeur de l'état.
 LoadComponents chargent toutes les resources.
 La boucle du jeu est la suivante : on met à jour tout le système avec update (utile pour les sprites, animations), puis on dessine le jeu avec Draw.
 Destroy permet de libérer toutes les resources avant que l'objet soit détruit par la garbage collector</body>
             <annotatedElements>
-              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+              <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
             </annotatedElements>
           </comment>
           <comment Id="04330fbb-9ee5-41c9-8ecb-0d4cd5a76ba8">
@@ -32,6 +27,13 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
             <body>Médiateur de l'ensemble du jeu</body>
             <annotatedElements>
               <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+            </annotatedElements>
+          </comment>
+          <comment Id="a2150a14-b834-4b21-8139-c288c7fc809e">
+            <elementDefinition Id="9f45683d-008b-4944-9229-ab5368342aa1" />
+            <body>Etat dans lesquel on génère la map, on charge toutes les textures, ... Tout en affichant une belle barre de chargement</body>
+            <annotatedElements>
+              <classMoniker Id="ed2862bc-8b60-4556-9fd2-49ca80cbc310" LastKnownName="LoadingState" />
             </annotatedElements>
           </comment>
         </ownedCommentsInternal>
@@ -42,7 +44,7 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
               <elementDefinition Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9" />
               <targetEnds>
                 <association Id="7c41192a-ed91-48f4-82ca-9b87edef9066" isDerived="false" sourceEndRoleName="Game : ISerializable, IDrawableEntity" targetEndRoleName="GameState" isLeaf="false" isAbstract="false">
-                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
                   <relationshipOwnedElementsInternal>
                     <associationHasOwnedEnds>
                       <memberEnd Id="2e7fdbee-f021-4260-91b7-196b1580e9e6" name="Game : ISerializable, IDrawableEntity" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
@@ -51,6 +53,16 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     </associationHasOwnedEnds>
                     <associationHasOwnedEnds>
                       <memberEnd Id="1d8f708b-8739-4d8c-8427-57d5a3419cfb" name="GameState" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="4727ca6d-4570-4f56-841f-6c5fb452a96b" name="Lower" value="*">
+                            <elementDefinition Id="36c0129d-63fa-4155-bbc8-b9fb3a0baa06" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="4aec4277-c0e8-4f81-9d3a-7d1c7244ddf7" name="Upper" value="*">
+                            <elementDefinition Id="a382920a-cd3c-467f-b0e8-884acc6d2a99" />
+                          </literalString>
+                        </upperValueInternal>
                         <elementDefinition Id="c1fc4359-c4f6-49a8-b3ea-30ab828e776a" />
                       </memberEnd>
                     </associationHasOwnedEnds>
@@ -59,7 +71,7 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                 </association>
               </targetEnds>
               <ownedAttributesInternal>
-                <property Id="ff390d2a-f930-4f96-94a3-78c966e53616" name="_players" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="ff390d2a-f930-4f96-94a3-78c966e53616" name="_players" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="82981270-0a9f-46a6-8b03-0c012a863f6c" name="Lower" value="2">
                       <elementDefinition Id="fd4c11ab-9611-42c9-ac08-589296781182" />
@@ -75,14 +87,26 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     <referencedTypeMoniker Id="0c4ac288-1a4f-4751-9b8a-867a41cdccbd" LastKnownName="IPlayer" />
                   </type_NamedElement>
                 </property>
+                <property Id="98e916f3-c5e1-4ed3-9f05-49701728ad76" name="_states" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b27175c-a9d7-4d59-9a85-d8c9be6a218d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a6398a2e-4bf6-4210-ad61-08d108937e14" LastKnownName="Stack&lt;IGameState&gt;" />
+                  </type_NamedElement>
+                </property>
+                <property Id="86e17e00-fe76-4db9-b8e5-865f48d9585f" name="_map " visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e1353fcf-78f0-4079-821b-fbf5e3598483" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="651121d1-600f-412b-b9cc-2e3db00572a5" LastKnownName="Civilisation::World::Map::Map" />
+                  </type_NamedElement>
+                </property>
+                <property Id="febb50d2-52a5-41b6-8075-e2b20a37c3f5" name="_engine" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1c63874f-1656-4a70-bcb0-9bc4751eff0c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="57b02158-9057-4a33-981e-0944f5e2053d" LastKnownName="IGraphicEngine" />
+                  </type_NamedElement>
+                </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="09db987b-ac9d-40c6-ab66-a74eb9c2a016" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="219dde5e-2ad0-4a3a-8d84-c2a9f54f9c8e" />
-                </operation>
-                <operation Id="63b14bc5-bb4c-44f5-8c6d-a3cc91d53951" name="LoadComponents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="ef5f9038-7de8-4e19-b9bb-d9a694412bb3" />
-                </operation>
                 <operation Id="fb442036-faeb-486e-9e8b-ac00f1acbb0b" name="GetObjectData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="9992307a-7414-4c18-a9ac-fcf2ae37da89" />
                   <ownedParameters>
@@ -93,37 +117,15 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="8e68c11c-02f0-42a4-9a16-85df5bd7357b" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="b69ea384-6fdf-4971-a415-aa2d6d9ecbd9" />
-                </operation>
-                <operation Id="28f9b817-38cf-4dae-b601-27f78b808ca2" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="9e865b2c-5f6a-47ef-b75e-54e53fe7b917" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="ba8436e8-6643-41c1-bd88-d71b7d974778" name="float deltaTime" direction="In" isUnique="false">
-                        <elementDefinition Id="8dbe9a3c-8b85-43b9-904a-0b6ce07faa2f" />
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
-                </operation>
-                <operation Id="4d0c190d-aa55-4c48-b287-6ae12b47b580" name="addPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="4d0c190d-aa55-4c48-b287-6ae12b47b580" name="AddPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="05a2fc00-8943-4cfc-a8f8-02c63bf872cb" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="922364c0-c005-4f80-b055-dd8786a18d81" name="IPlayer newPlayer" direction="In" isUnique="false">
-                        <elementDefinition Id="a9e0f876-e1c2-4ab0-9105-28935de4d1a9" />
+                      <parameter Id="1ef53c62-a5f8-4555-a881-6d7db8b012ea" name="IPlayer  newPlayer" direction="In" isUnique="false">
+                        <elementDefinition Id="213ecc05-676e-490b-b4d9-03ecccbda86d" />
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
-                </operation>
-                <operation Id="e5cdff76-f5f1-49aa-8210-ca6d20a7be1c" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="c442c196-de89-4c44-bb96-a7af083eb62f" />
-                </operation>
-                <operation Id="5cb2d66d-5961-4abb-99b5-96bf6052fac1" name="Pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="8c9434d8-f22a-4fe3-835c-bdf44ee58fcf" />
-                </operation>
-                <operation Id="fb694935-7e16-4fba-920f-08711b90d796" name="Destroy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="0c7932ed-33ba-4e2b-a12c-4b46d4a01a37" />
                 </operation>
                 <operation Id="22eb75bb-1224-4acd-8a3b-e6f5a97a9d6b" name="Game" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="e8906f30-75b0-46d2-b419-edf33cae5ac6" />
@@ -138,45 +140,323 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="a092a9c8-716e-4efd-9e95-c79339a18876" name="GetPlayers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8eb88d8d-8088-42fd-ab76-4dbd85af9887" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4b000f1b-9cd4-4a09-80c7-911ab9156ad8" direction="Return" isUnique="false">
+                        <lowerValueInternal>
+                          <literalString Id="3dcf252b-659f-4a59-9a86-d097fa197811" name="Lower" value="2">
+                            <elementDefinition Id="c696994f-2109-4d8e-8efb-03699fccb88c" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="6a993c4b-5741-4055-903a-68febfd131a7" name="Upper" value=".*">
+                            <elementDefinition Id="24633c79-b5ca-4fd8-8ab0-264e9820a210" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="919c63b7-cc1e-41d0-aa5e-8e50c0df1ac8" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8b501684-7e5a-4a6c-8316-ded67180db90" LastKnownName="IPlayer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9ceac481-c721-41bd-8b94-a3682a710f60" name="PushState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="0e7044be-eea1-48c7-ae1d-65158e0512b5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="632a50bd-07cd-4a88-ba39-4929f3888142" name="IGameState" direction="In" isUnique="false">
+                        <elementDefinition Id="8d391006-2f4a-4620-82a5-39d8a4c90269" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="57270c80-058c-441c-864f-8874e5a4e1b2" name="PopState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="518eb280-a5e7-4d6c-9c2c-5ec9068deb36" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ea7db130-5085-41aa-aa8f-c17b88d08ca7" name="IGameState" direction="In" isUnique="false">
+                        <elementDefinition Id="ffecd1d8-9a92-4893-8fe0-77a6825e90c6" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="16a8b5eb-c201-44e9-b96b-9cddab0ec4e5" name="MainLoop" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="23a20dc1-a5be-484e-b16b-a0b277e618d4" />
+                </operation>
+                <operation Id="33ffb509-c98d-4781-807b-a7182e43cac6" name="SetMap" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7035a7fb-f846-4388-8d3d-c65a1f913ab7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="06dbbd3e-61c0-42c0-9e02-e649f455889d" name="Civilisation::World::Map::Map map" direction="In" isUnique="false">
+                        <elementDefinition Id="5de7bd95-a61a-44db-b652-0306b046843f" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d9de8f41-54e1-41b9-88f2-d0a24ef742e7" name="SetEngine" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="35681bda-63ed-4ea7-a708-a290c4a33b97" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f5d1f84d-9c9c-4f6a-8816-65d43c3bcf67" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="e3256751-6f7c-4239-ba06-4f8c966aa39e" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <Interface Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" name="GameState" isAbstract="false" isLeaf="false">
+            <Interface Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" name="IGameState" isAbstract="false" isLeaf="false">
               <elementDefinition Id="815fb41d-f103-4b1a-a708-18be09e452d2" />
+              <ownedOperations>
+                <operation Id="dc1daee3-fda6-4b63-97c9-6e452ee11e30" name="Destroy" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5f6eb96d-b9b5-405c-aec0-5ddc1c157396" />
+                </operation>
+                <operation Id="54c286f2-b35d-4ded-9006-ea1abaafe435" name="Initialize" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bd8a3f6f-16dd-4e37-955c-111561abb4e9" />
+                </operation>
+                <operation Id="8aa87447-7a43-442e-a895-942819ad2948" name="LoadComponents" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="aaeed4a6-d26c-488e-b353-0ff7e7a8f9de" />
+                </operation>
+                <operation Id="b033b21a-5cdf-4874-adb5-2d87beaaf541" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="318377fa-42a5-40da-8853-b7e198d65e62" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3ea7ec1d-bbd4-478d-9468-6dc11850149e" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="bc9c6a7a-0742-4dcb-b29c-0ab22fde77c6" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="27640e74-4efe-4663-8c8d-6f5106bec207" name="Start" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f6d42e9f-5f4e-4e8c-9886-9f93714d2f46" />
+                </operation>
+                <operation Id="637a93f6-ee8c-48f0-aac8-a24805aa5b2c" name="Pause" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="21e8b78f-8e63-4f8c-815c-e5e51a0d26e5" />
+                </operation>
+                <operation Id="a3519e5c-b838-4c1e-8bc2-bc3cfeeefd1e" name="SetGame" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f3da71ea-c799-490d-b061-3b00b27fa12b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bca9a3e9-3990-4fca-bc81-8176039feade" name="Game" direction="In" isUnique="false">
+                        <elementDefinition Id="f13e723d-0c65-428a-a5b6-d3e7e2e56de0" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="05abaf67-bbf1-40f7-9a5d-30921e90a289" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="eeba9afa-efd2-4a56-9a21-10fe2c602653" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c118e2ca-ae8e-43ab-9ea4-538d3d9a8307" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="d6ee8539-754f-4f4c-a5fb-69e47433f287" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
             </Interface>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="ed2862bc-8b60-4556-9fd2-49ca80cbc310" name="PausedGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="ed2862bc-8b60-4556-9fd2-49ca80cbc310" name="LoadingState" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="1aceb6ec-b30d-40e3-88e9-67932630c6ac" />
               <suppliersInternal>
                 <interfaceRealization Id="89127ae4-f306-4408-bce4-8a5a237ec606">
-                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
                   <elementDefinition Id="577632db-88c5-465a-a9b9-2cd3a1d41cd1" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="b00effd1-8680-4d32-9d4c-c0b2401ffcf3" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="958d48c5-279c-4c61-a759-f04c63bc59f7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d33cb804-1927-4566-9415-44a30ce8882a" LastKnownName="Game" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="e7fd402a-af98-4496-88ec-97916e381055" name="Destroy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7c1f540b-3363-4011-83b1-ece6a8d6b14f" />
+                </operation>
+                <operation Id="9ef47293-680a-4102-9fdc-d908d13a1ad3" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a449f623-a86c-4d25-bb47-5a04903d83f0" />
+                </operation>
+                <operation Id="8b0b6811-2bbf-45ed-94b3-59ed3d2bc243" name="LoadComponents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2c43db91-9a31-4d5e-a90d-bdfd7e6cb1d1" />
+                </operation>
+                <operation Id="8b546cdd-d3f7-41e3-9c1d-41d3574d7c61" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fed6b392-4938-4b09-8187-7b8fe9b8fcc2" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f76b5055-00a1-4049-99fa-e50608327855" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="06720196-e25b-4cbf-913c-458c96337f40" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="37f7124c-c476-4779-8c39-4cd86ff19ff9" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c3eff6d4-78be-48fc-961f-bcd6846b851a" />
+                </operation>
+                <operation Id="423eee2d-7956-4c87-9dfe-9abc78d7ec3d" name="Pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="64b31529-9b1b-4ab3-8269-19319415ec53" />
+                </operation>
+                <operation Id="424e8c17-7600-4372-b00b-2fa3e99a6bbe" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7884a1cc-5dc1-4a00-b870-e2f14cdc4cf9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e7740c42-be15-4553-a4e1-ea61c131f10d" name="Game" direction="In" isUnique="false">
+                        <elementDefinition Id="a143a6f4-0d21-474c-8323-5cfbbd81f37a" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="7d924a92-22e9-4239-b465-e8a51a671c73" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="819e90c3-cec4-4d6c-90dd-646ca4cdd3f3" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4214270a-3f0c-4b08-a2a8-9ce4fb59dcad" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="956ad5af-96e5-4f7e-94e7-00736a57f2fe" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="aa651328-a1c0-40bf-b833-279131e673d9" name="ActiveGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="aa651328-a1c0-40bf-b833-279131e673d9" name="ActiveGameState" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="8e263b24-3858-47df-9690-e73d3cd01145" />
               <suppliersInternal>
                 <interfaceRealization Id="feb1cee8-e87b-43ec-a459-731f0b51aaaf">
-                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
                   <elementDefinition Id="8dc50646-a261-44e8-b0f2-0e722f4e1c9b" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="553a60eb-6d09-41ec-8eaa-ee1a0cfa0700" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="963b2901-74b5-4864-8315-8efc2595deea" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="104555be-59ce-47fe-8bb7-4521384fa51a" LastKnownName="Game" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="cbdef67b-cf00-42f6-bb3c-5dc68af530c5" name="Destroy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="70869487-b5dd-4244-bc99-70e7e57eacc6" />
+                </operation>
+                <operation Id="cdd13221-09c8-48f3-8182-11f84826c92c" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4e42dcd1-c8e5-47b9-a4d6-b42f3c8fd35c" />
+                </operation>
+                <operation Id="81e03350-ef41-4a03-bc06-d99de625a576" name="LoadComponents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="744adda0-5b55-4f83-9d8d-6d8aada791e3" />
+                </operation>
+                <operation Id="1f5605fa-d065-4c7a-8496-a84b0e0d0564" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b2e9e244-77db-492d-aac1-97b296002eda" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9c860e2a-08cc-4813-8321-6bf7abf68834" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="53ed58b9-3e14-4567-b6a0-245c155beb12" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="b544594e-984d-47ae-8ae7-0cb4c0bd1b97" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="77919d19-4f54-4c12-ad79-5dda6cf42145" />
+                </operation>
+                <operation Id="da456ded-1cb4-44c3-a5be-99d6359a0300" name="Pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="81c5962b-c2d7-407a-a398-625d3ec80845" />
+                </operation>
+                <operation Id="f2ac3b9a-9013-418c-a966-68b4da5b1f19" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5efd9385-8f2c-450a-a4a0-b183bff7386b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4ff5f3bf-0c21-4b5a-8dd5-13af661f5368" name="Game" direction="In" isUnique="false">
+                        <elementDefinition Id="c222089c-4975-4f4d-83fc-dde2ffb13aba" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="61b2ccdc-7226-4e01-b979-4d177ce08aed" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="566514a9-bb37-499e-a4dc-94126cc61b0d" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2510c6ca-0d0e-4db6-bb7f-42bb947d5b2a" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="d71c47d2-7475-4e18-a6c7-d0db55099c01" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="bbbeaf77-626e-4730-8f2f-66954ac43f2c" name="SavedGame" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="bbbeaf77-626e-4730-8f2f-66954ac43f2c" name="ScoreState" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="daf4f4ab-ac11-4bae-bca9-3a86232464d8" />
               <suppliersInternal>
                 <interfaceRealization Id="7d4e433e-a72c-4205-97f2-68db3df2ae6d">
-                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="GameState" />
+                  <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
                   <elementDefinition Id="e66804b4-673b-4079-9361-859b9e9b883f" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="d787f0a5-19a7-408b-9b18-aaadaf1a0b4a" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="db2154fe-eb3a-4814-8e3c-8a40b0b3404f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="48118051-aea9-4404-8462-992d4df4ea2b" LastKnownName="Game" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="2a109e72-f5b3-4a74-8d2c-194c9e9779a9" name="Destroy" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9b7e7653-d064-4539-b647-9d20522f6756" />
+                </operation>
+                <operation Id="299d68d1-d000-40cc-892c-911aecb05ba8" name="Initialize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fc97a5ad-f984-433b-8c51-3a2f4895d30a" />
+                </operation>
+                <operation Id="f5b34252-ef0c-472d-b09d-5de4ca55d589" name="LoadComponents" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5e8603fc-3291-4bbc-b2d6-b3d77bc5cbbb" />
+                </operation>
+                <operation Id="587493cf-432f-46a2-a99a-19275e56d598" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="255675d0-d972-4145-a334-c0d1b91f5e5b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dee190df-35b4-416c-a515-a6a24cbfbc89" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="ae33a29d-5bc3-4f56-9a7d-6c6fd9161d36" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="c7bb5d7a-7391-491e-a40c-2f90a002153c" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="31336b6a-d20d-4983-ba8d-5fbef426f7e3" />
+                </operation>
+                <operation Id="e1f599bd-97a0-4c8e-a0f8-3e37d09957b1" name="Pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4c136029-9bdb-4807-9362-40b839ef975e" />
+                </operation>
+                <operation Id="d4dc2979-dfc3-4cb5-afaf-1baea925162e" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7a3259e1-47fe-4c15-9de9-93faaa77b996" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fc3be5e1-1fc7-466e-af3c-8a37b440bdb3" name="Game" direction="In" isUnique="false">
+                        <elementDefinition Id="f508866e-ec7a-4ea1-9d23-614c16aa8759" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="99f795d2-9e29-43d8-befc-cb8cdeb4bc38" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fd10ec4e-a0e1-4f08-8749-b14929c21c3f" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f1a61a3a-fe1f-4c71-8e8c-4f4964671cf5" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="b461e867-d1ff-4a43-9b22-f41669a5a4b0" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>
@@ -185,6 +465,41 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
     <packageHasNamedElement>
       <referencedType Id="0c4ac288-1a4f-4751-9b8a-867a41cdccbd" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Player::IPlayer">
         <elementDefinition Id="341cc183-7a27-4959-9a12-5e6eef82a533" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a6398a2e-4bf6-4210-ad61-08d108937e14" name="Stack&lt;IGameState&gt;" isAbstract="false" isLeaf="false" cachedFullName="Stack&lt;IGameState&gt;">
+        <elementDefinition Id="c8f50aec-d1ae-4e26-8c3a-1a2e938f0e53" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8b501684-7e5a-4a6c-8316-ded67180db90" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
+        <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="651121d1-600f-412b-b9cc-2e3db00572a5" name="Civilisation::World::Map::Map" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::Map">
+        <elementDefinition Id="748ab606-4ef4-4415-aa44-09b829ce33dc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="57b02158-9057-4a33-981e-0944f5e2053d" name="IGraphicEngine" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::IGraphicEngine">
+        <elementDefinition Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d33cb804-1927-4566-9415-44a30ce8882a" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="104555be-59ce-47fe-8bb7-4521384fa51a" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="48118051-aea9-4404-8462-992d4df4ea2b" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

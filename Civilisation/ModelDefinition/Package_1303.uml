@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="488554a3-80fb-41be-834f-aabd38c15d13"
   name="Drawable" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -31,14 +31,14 @@ Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</b
       <annotatedElements>
         <interfaceMoniker
           Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256"
-          LastKnownName="GraphicEngine"
+          LastKnownName="IGraphicEngine"
           LastKnownLocation="Package_1303.uml" />
       </annotatedElements>
     </comment>
     <comment
       Id="aa6e40a3-efc6-483c-8440-72a595d4eac7">
       <body>Pattern singleton :
-Il n'y a qu'un flyweight</body>
+Il n'y a qu'un flyweight. On évite ainsi de recharger un tile plusieurs fois.</body>
       <annotatedElements>
         <classMoniker
           Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9"
@@ -62,7 +62,17 @@ Il n'y a qu'un flyweight</body>
             isStatic="false"
             isAbstract="true"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d89be125-9147-4126-ae28-f46c6c760eec"
+                  name="IGraphicEngine"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="9a5cde52-ddc5-4b4b-9578-22d3a7dc97ad"
             name="Update"
@@ -333,10 +343,17 @@ Il n'y a qu'un flyweight</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="c2b930d1-6fff-4934-8dd8-88407040b875">
+            Id="4d8ff0c6-1842-434b-814d-35926b6f9163">
             <interfaceMoniker
               Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db"
               LastKnownName="IDrawableEntity"
+              LastKnownLocation="Package_1303.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="01483f29-54fb-44df-8016-ef86dc56eece">
+            <interfaceMoniker
+              Id="bf9628c1-70a8-403c-b1e8-73b1a0301e56"
+              LastKnownName="ISprite"
               LastKnownLocation="Package_1303.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -396,15 +413,25 @@ Il n'y a qu'un flyweight</body>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
-            Id="0db70bb2-b321-41d0-a51c-a885117b66cd"
+            Id="072b6221-bcb8-475a-8304-c6915c909f65"
             name="Draw"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d8257f05-d54c-41f3-a228-511f87a13d54"
+                  name="IGraphicEngine"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
-            Id="48ffd6ba-26d2-481a-9330-5f14ba494872"
+            Id="96de50fc-6525-4e38-bd7c-672fdd3a5c20"
             name="Update"
             isLeaf="false"
             isStatic="false"
@@ -414,10 +441,86 @@ Il n'y a qu'un flyweight</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="6a2b8c8b-ab38-4345-bb3b-6fc770bcea10"
+                  Id="ebafde38-69cc-49d8-aba4-92876b90283f"
                   name="float deltaTime"
                   direction="In"
                   isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="550bdffa-3546-4f64-87d3-a1b9b0ca1ebc"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e7b25a51-3811-4a44-bc33-330bc562a07d"
+            name="Stop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="62031078-32b4-4846-9ea7-677c6c9b75de"
+            name="SetTileFrames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bd037b2e-88f1-41df-8fea-bf65789ce30b"
+                  name="tile"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4d4ef2e7-3a07-4963-8690-62b34fd4cd71"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1546bd35-7f67-437c-9faa-0088ae9dc1af"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d259fb47-3add-4db2-a1e0-6303325def9b"
+                      LastKnownName="ITile"
+                      LastKnownLocation="Package_1303.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b76ba6e9-3108-4085-a175-7220c64d1920"
+            name="GetTileFrames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d392ef74-0fee-4376-b10c-a8d41cb24396"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="91730663-069a-441c-ac83-cfeac6ab24e3"
+                      LastKnownName="tile : ITile[1...*]"
+                      LastKnownLocation="Package_1303.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -427,7 +530,7 @@ Il n'y a qu'un flyweight</body>
     <packageHasNamedElement>
       <Interface
         Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256"
-        name="GraphicEngine"
+        name="IGraphicEngine"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -440,7 +543,7 @@ Il n'y a qu'un flyweight</body>
             isAbstract="false">
             <interfaceMoniker
               Id="1d9e9330-9c14-41de-b1e0-5af5b7ed2141"
-              LastKnownName="GraphicPrimitive"
+              LastKnownName="IGraphicPrimitive"
               LastKnownLocation="Package_1303.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -485,7 +588,7 @@ Il n'y a qu'un flyweight</body>
             Id="00972e04-f23f-4183-ac30-63c560fd86d2">
             <interfaceMoniker
               Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256"
-              LastKnownName="GraphicEngine"
+              LastKnownName="IGraphicEngine"
               LastKnownLocation="Package_1303.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -494,7 +597,7 @@ Il n'y a qu'un flyweight</body>
     <packageHasNamedElement>
       <Interface
         Id="1d9e9330-9c14-41de-b1e0-5af5b7ed2141"
-        name="GraphicPrimitive"
+        name="IGraphicPrimitive"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -510,11 +613,91 @@ Il n'y a qu'un flyweight</body>
             Id="4a63135d-de15-41d3-92d2-a2da389ae2ed">
             <interfaceMoniker
               Id="1d9e9330-9c14-41de-b1e0-5af5b7ed2141"
-              LastKnownName="GraphicPrimitive"
+              LastKnownName="IGraphicPrimitive"
               LastKnownLocation="Package_1303.uml" />
           </interfaceRealization>
         </suppliersInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="bf9628c1-70a8-403c-b1e8-73b1a0301e56"
+        name="ISprite"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="8ca0a4fb-aa45-4a78-afa5-a9dbf6b608b5"
+            name="GetTileFrames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4befca93-6afa-4872-bbeb-3cd5a9ad3b00"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="91730663-069a-441c-ac83-cfeac6ab24e3"
+                      LastKnownName="tile : ITile[1...*]"
+                      LastKnownLocation="Package_1303.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e7515467-d770-4426-9a07-0258aadc41ac"
+            name="SetTileFrames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="23d7a673-7db7-49f2-be24-2097862de6a7"
+                  name="tile"
+                  direction="In"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d2b24cb6-3f49-44f3-a017-fe9cf7fa21b5"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="74cd7489-7961-4e4f-9863-e23e192f15ed"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d259fb47-3add-4db2-a1e0-6303325def9b"
+                      LastKnownName="ITile"
+                      LastKnownLocation="Package_1303.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d259fb47-3add-4db2-a1e0-6303325def9b"
+        name="ITile" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="91730663-069a-441c-ac83-cfeac6ab24e3"
+        name="tile : ITile[1...*]" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

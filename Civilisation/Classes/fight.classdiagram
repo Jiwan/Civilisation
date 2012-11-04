@@ -1,84 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="a6119447-5d24-4c67-a93a-c0d402528bca" name="UMLClassDiagram1" linkedPackageId="520ff4f0-68a2-418c-be55-069708a8b61c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
-    <packageHasNamedElement>
-      <referencedType Id="55ec804c-8133-4874-b3c2-012f4ee34c81" name="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;">
-        <elementDefinition Id="dd10d3d9-5abc-4a23-8ef0-01abe711c0d2" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="a2278ea5-be89-4f72-9166-0c3d6613b0ce" name="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;" isAbstract="false" isLeaf="false" cachedFullName="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;">
-        <elementDefinition Id="dd10d3d9-5abc-4a23-8ef0-01abe711c0d2" />
-      </referencedType>
-    </packageHasNamedElement>
     <logicalClassDesignerModelHasPackages>
       <package Id="6af764d7-2fab-4a7b-abe5-52cc5d06a4d8" name="Fight">
-        <ownedCommentsInternal>
-          <comment Id="a6f785fd-8382-4b3c-ae8f-d82b4724c0d4">
-            <elementDefinition Id="6c73b99d-0103-4b04-b403-f07814a8951c" />
-            <body>Combat lorsque le directeur de départe est présent (bonus défensif et offensif)</body>
-            <annotatedElements>
-              <classMoniker Id="3ca2e100-910a-4b4a-acf3-0d5bc0230f5d" LastKnownName="SupportedFight" />
-            </annotatedElements>
-          </comment>
-          <comment Id="05d21a10-3e70-4dbe-8691-7126f781c776">
-            <elementDefinition Id="f571db93-0a17-4dfa-ad5e-92b25184bdea" />
-            <body>Combat à plusieurs unités (Non précisé dans le poly, mais doit être possible).
-D'où le vector de combattants.</body>
-            <annotatedElements>
-              <classMoniker Id="144378b5-537c-44a8-9d30-b051786f959c" LastKnownName="TeamFight" />
-            </annotatedElements>
-          </comment>
-        </ownedCommentsInternal>
         <elementDefinition Id="ce314601-1a93-47c4-b4fd-c861053ffec6" />
         <packagedElements>
           <packageHasNamedElement>
-            <class Id="548a5038-fb79-4126-acce-3c3f820ee581" name="Fight" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="6bd7b049-b3b0-4911-bf93-762127ecdb60" />
-              <targetEnds>
-                <association Id="62c5a3a3-6f18-43f3-9bfc-181ca1d2c364" isDerived="false" sourceEndRoleName="Fight" targetEndRoleName="Ifight" isLeaf="false" isAbstract="false">
-                  <interfaceMoniker Id="5ee6e649-2439-42bd-be10-8c0217350723" LastKnownName="Ifight" />
-                  <relationshipOwnedElementsInternal>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="c4b4f5d0-cdc7-43cc-b738-2601069acdae" name="Fight" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                        <elementDefinition Id="ecfb5dd5-be16-47d1-a7dd-f2701b2a7c8f" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                    <associationHasOwnedEnds>
-                      <memberEnd Id="29befea7-9d46-4307-b884-63c5a923f891" name="Ifight" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                        <elementDefinition Id="ba03509d-6608-4bb0-8a73-f3a77b0b5802" />
-                      </memberEnd>
-                    </associationHasOwnedEnds>
-                  </relationshipOwnedElementsInternal>
-                  <elementDefinition Id="3625c8d6-ab9c-4752-9c65-c6f489ea91a6" />
-                </association>
-              </targetEnds>
+            <Interface Id="20a86b10-cc74-416f-9b2b-0acd55469dee" name="IFight" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="0595d1fd-dc11-41ff-b1ab-2dd7aefb7998" />
+              <ownedOperations>
+                <operation Id="8b055b81-d102-407d-8039-c8e481eb21df" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1a360d58-fcab-4703-9a4e-343e6a44fcea" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fa9a61ca-8fcb-4b31-b61d-f1b7f0aae388" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="2f36c20d-1ec4-4230-a2c9-6cbda0939a85" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="197f901e-03b5-443c-90bb-253dcd588880" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="16bc2d4d-1373-4c34-a046-7645b6024d21" name="AddFighter" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f82ba73f-3a8f-4a79-8d8b-6c7ebf51e7ca" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2d2bf4a4-4896-424a-b2ca-52fdc343d938" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="7df4c917-2e16-498e-b2a0-155b3a7e1dd5" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="197f901e-03b5-443c-90bb-253dcd588880" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="39bb1afc-daba-4897-a459-587745646e73" name="AddSupport" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4cb698af-16d8-49b9-95de-e5bc07daafd0" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5e739250-0bba-4194-ae84-931627844985" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="907ebce1-aceb-44eb-874d-ad5d08b91cf6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9f244852-aefa-49d8-8c99-d1fdea34dabc" LastKnownName="IDepartDirector" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="29dda47e-8d57-4fe7-8fae-653ad68e9d07" name="Fight" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6e26989a-ae49-4e36-be5c-b44b0e8fd401" />
+                </operation>
+                <operation Id="70403713-292a-40ab-9fb7-800390bff03d" name="GetWinners" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="122682c5-4173-4abf-93bd-c5f802b62ddc" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="80d22dda-80c8-462b-b598-1eac80e83ff4" direction="Return" isUnique="false">
+                        <elementDefinition Id="9a161e8c-fd11-4523-ac1a-ca1ad3e4af59" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="1e25e484-7f07-4594-bff2-be0f236221a3" LastKnownName="IPlayer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cbfec879-4b7a-4c5b-97d7-14e6d79c2fc4" name="SupportedFight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1d3ce358-b111-4b33-bb81-adce415d952d" />
+              <generalsInternal>
+                <generalization Id="d11fed90-5e25-498c-b6e1-64a9aa113d23" isSubstitutable="false">
+                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+                  <elementDefinition Id="b5e676dc-c3df-411d-8976-b237919512a9" />
+                </generalization>
+              </generalsInternal>
               <ownedAttributesInternal>
-                <property Id="b5701d34-2148-431d-8e0a-eb59d363cb70" name="EIIfighters" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="0ea9fe14-f64d-4246-872f-0fee2070adaf" />
+                <property Id="9c995fdc-eece-4f22-8e1d-2d1ba16b523c" name="_supporter" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b023b31c-33c1-41ca-a149-8760e9ee5dd3" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="55ec804c-8133-4874-b3c2-012f4ee34c81" LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;" />
-                  </type_NamedElement>
-                </property>
-                <property Id="35639576-4149-4e10-8e0e-1befffef78b6" name="INFOfighters" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="4efe9fa8-d4df-4903-8dfb-804f900cc859" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="a2278ea5-be89-4f72-9166-0c3d6613b0ce" LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit&gt;" />
+                    <referencedTypeMoniker Id="197f901e-03b5-443c-90bb-253dcd588880" LastKnownName="IUnit" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="76ba457d-fbfd-48df-b50b-8b1ab343f796" name="ChooseFight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="81b6be08-6806-4fb5-a373-35ff38788b95" />
+                <operation Id="b8e370d3-f70d-4d49-9eab-1ea5d181b661" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cd7d6e03-0ce1-4cf2-9c9a-5cbbd74527fd" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="2da62df2-108a-474c-aee7-3a4ddc142370" name="EIIfighters" direction="In" isUnique="false">
-                        <elementDefinition Id="3b443a2d-42a0-47f7-bead-fa47f0fbcd30" />
+                      <parameter Id="a17995b1-74eb-429d-bca7-818afba4c649" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="18b86a60-240c-4640-b7da-588cdad084a7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f51163ad-25fa-4bb3-b9c6-2927962c0a99" LastKnownName="IUnit" />
+                        </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="bb5838bb-16d6-463d-99ad-b15e0b46c524" name="AddFighter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="02acd741-c2de-4622-a54f-1100d4375b6a" />
+                  <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="f78add70-49f1-4c55-ad46-16031930a143" name="INFOfighters" direction="In" isUnique="false">
-                        <elementDefinition Id="193ca00d-f537-4193-b27a-45c04200bdaa" />
+                      <parameter Id="a2a9448f-6c3c-4ef7-bdf8-9d827a742db9" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="cc0649e3-c6b0-4605-af7a-112be80808a7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f51163ad-25fa-4bb3-b9c6-2927962c0a99" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ba6c1a4b-0fc4-4508-ae57-fd6c7a9ed2e3" name="AddSupport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d313a150-e264-46aa-a11b-34fa05c48893" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3b0046ec-f0f6-46d9-8586-1becfbdbe97d" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="515aadda-abc8-4289-8613-507ab0387218" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fb7f9fa8-6acd-4ef0-857e-356a795000a5" LastKnownName="IDepartDirector" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="48803348-ed5c-49b1-84ed-1e3a48fa3ee7" name="Fight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="00e9e602-d03f-40e7-803f-050e3d75a68f" />
+                </operation>
+                <operation Id="eca0920f-64fc-4dad-9f2f-5ac5b792a593" name="GetWinners" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2e6c047b-2bd1-4d41-8e20-1605ab6b3fa0" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="584ddb24-bec6-4f61-8453-4c05cc4d7a29" direction="Return" isUnique="false">
+                        <elementDefinition Id="a75d8ace-5214-48a3-807d-6ef2070909da" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="61e65715-47c5-43c1-91bf-1817404728d9" LastKnownName="IPlayer" />
+                        </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
@@ -87,66 +144,296 @@ D'où le vector de combattants.</body>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="c899778e-78ff-4c31-9792-b88ef629a1ac" name="NormalFight" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="df382fd7-9941-444d-ac32-66bb212ccd18" />
-              <suppliersInternal>
-                <interfaceRealization Id="3e805554-d4d9-48a8-8a8d-824ef3ab5e75">
-                  <interfaceMoniker Id="5ee6e649-2439-42bd-be10-8c0217350723" LastKnownName="Ifight" />
-                  <elementDefinition Id="97ec8145-1835-49a0-a3cb-438d189b1464" />
-                </interfaceRealization>
-              </suppliersInternal>
+            <class Id="8cd6b81e-a97a-4746-b49d-15b77f421450" name="NormalFight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a5ccba63-4980-49ab-9891-bd39acfee002" />
+              <generalsInternal>
+                <generalization Id="253d4ee1-a94e-426a-806d-5b6ba0ea9d91" isSubstitutable="false">
+                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+                  <elementDefinition Id="5db3d808-fd40-45b0-a203-801b3e09b498" />
+                </generalization>
+              </generalsInternal>
               <ownedOperationsInternal>
-                <operation Id="d0481a36-4d90-47b2-9f7d-3398dad1dd2b" name="Combat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="5b548e46-957e-4bd2-89ee-4baf94b011a0" />
+                <operation Id="d2dbc92d-693b-49b1-b9c4-b3161a41a96b" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6ae8b64d-0699-4fca-8421-7de5aadae4ba" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="7360abed-1805-4fff-8380-0f93208c3228" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="60820097-4e5b-4a26-a78d-1295a907837f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8ac246ee-3401-4c06-8715-277d2f9d74b5" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="29410808-ac5f-4500-8698-83d1ac567d4e" name="AddFighter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d01f47d4-8bd6-4231-88e3-947ad1d8faad" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3500f29a-add3-4dd7-b5b4-1f7cc86cb4d9" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="8c4d3c42-48c5-45d8-8381-0df3ba3ddaa4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8ac246ee-3401-4c06-8715-277d2f9d74b5" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="2dfa840a-a180-4b37-bda7-02d5e5907527" name="AddSupport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="db49ec82-6fa1-49b2-b903-e10110603e2a" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c2804e31-fa0f-455a-bad8-351ecc6c0a2d" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="70f57830-d253-41c0-b6b0-fdc0c2351c03" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="99d511d4-e4db-48a6-afc3-b691035b2674" LastKnownName="IDepartDirector" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="582059c4-3116-4f43-be97-b9c9fcd8a522" name="Fight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="557ae9b3-9190-4c45-809a-895da434fac1" />
+                </operation>
+                <operation Id="9f87ec8b-fc1d-402e-882e-cee474dceb1a" name="GetWinners" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="05fb33cd-90d4-46f1-94b1-b5c3fc81fac9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="0c472ed4-9659-4060-8aca-44caa98e0a10" direction="Return" isUnique="false">
+                        <elementDefinition Id="c648c381-e0a7-4002-98c8-095e2e3930d7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d60d76e5-d7b8-4078-970d-b226de022488" LastKnownName="IPlayer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
                 </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="3ca2e100-910a-4b4a-acf3-0d5bc0230f5d" name="SupportedFight" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="31e5c63a-4998-4f6b-b534-7d7d5ffb6e5c" />
-              <suppliersInternal>
-                <interfaceRealization Id="83c9a6c4-9d5a-45db-a43a-85d4a4c5a773">
-                  <interfaceMoniker Id="5ee6e649-2439-42bd-be10-8c0217350723" LastKnownName="Ifight" />
-                  <elementDefinition Id="8e28e9b0-a117-4e41-8bc5-16b6f76d7207" />
-                </interfaceRealization>
-              </suppliersInternal>
+            <class Id="321120e2-a192-4b1a-a020-87ce1afea852" name="CityFight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1c0898ec-e9a1-4036-a375-d4160fddf685" />
+              <generalsInternal>
+                <generalization Id="abb9ba98-ce5b-40a1-940b-39ea31ea7edb" isSubstitutable="false">
+                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+                  <elementDefinition Id="46a4715f-24f7-460e-9076-f9b1d5c2beb9" />
+                </generalization>
+              </generalsInternal>
               <ownedOperationsInternal>
-                <operation Id="3d454d98-2b1f-4e73-879a-591ee3fdcca9" name="Combat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="0f67454b-5340-45f0-b376-cbad87fbe3fc" />
+                <operation Id="34246be5-88dd-46b7-b2f7-1e2d47f71416" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="22499402-9a63-496b-90d1-663bb8785b20" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="da6241f4-01e9-4cf0-98fb-438b3c1f7714" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="55828708-1525-46b5-868d-372a4d01268c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="04c60d94-e246-4a8b-95f0-61862c40a571" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="248faba8-0da3-47ae-b0ff-d7b4dae3e566" name="AddFighter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9bf7b3ec-e4fc-4b9b-8503-3acf1ba63752" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f3be98ff-2b23-4c0d-9476-98a4604f34fb" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="dbeaeb3f-f635-4101-bcf4-d02c1f3880c4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="04c60d94-e246-4a8b-95f0-61862c40a571" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1dfe269b-abf1-460e-aa1f-1fc7a93cb6c5" name="AddSupport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="75b3aef6-1d18-4b67-8996-8ee61dcc1e46" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="efea83a0-a36f-43f3-937d-2d630377ba63" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="515a47a4-b6a1-4f53-bcf9-4ed2d4ae41be" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="108c3ea0-e0fd-4c9f-aba9-597c123a68fe" LastKnownName="IDepartDirector" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="14a43458-a142-4ae1-a054-d1dae833924a" name="Fight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="741a56ed-8a01-417e-befe-791278de5116" />
+                </operation>
+                <operation Id="e88b3c19-f412-49e9-beaa-c8b20cbcaf59" name="GetWinners" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9383d0ad-bcdf-4ff7-8af5-3665b2dfee99" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c1b2032d-002a-43c0-9dc2-15e041829b32" direction="Return" isUnique="false">
+                        <elementDefinition Id="bab7f1c3-ba22-4570-b6b6-c8e5e14f9a41" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d1335eff-31f8-4b7d-bb85-8facfb7a7576" LastKnownName="IPlayer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
                 </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="144378b5-537c-44a8-9d30-b051786f959c" name="TeamFight" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="7f5758a0-504d-40b1-b44b-c166585deb21" />
+            <class Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" name="2V2Fight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c41ddc70-0fae-4f5f-a59d-2e1fcf1b9bc7" />
               <suppliersInternal>
-                <interfaceRealization Id="96ecbf06-a4f5-46ed-ab9d-fc4fa8a89555">
-                  <interfaceMoniker Id="5ee6e649-2439-42bd-be10-8c0217350723" LastKnownName="Ifight" />
-                  <elementDefinition Id="156f001c-8281-4401-804e-88d240d6207d" />
+                <interfaceRealization Id="b73cedbc-d617-4d3d-8797-3e69a1f21366">
+                  <interfaceMoniker Id="20a86b10-cc74-416f-9b2b-0acd55469dee" LastKnownName="IFight" />
+                  <elementDefinition Id="4688c868-bd2b-4e19-a6b0-530817d08fe4" />
                 </interfaceRealization>
               </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="4849b628-134d-4cdc-823f-83001fbf01ad" name="defencer" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dec43866-791f-4b4e-92b7-79b1ef38087b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="394027d7-8ed4-4714-9de6-22557fc18322" LastKnownName="IUnit" />
+                  </type_NamedElement>
+                </property>
+                <property Id="b6a27412-ca2a-4cbb-b7a0-5dbb7a829e28" name="attacker" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a5ca86ff-9083-439b-b577-82436da11f21" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1c6e4b7b-56f1-4880-986c-b6c3351fcc32" LastKnownName="IUnit" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="73cc1479-4bd8-4a1d-b93c-162792052c13" name="Combat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="7caa12f0-3c58-440b-b352-13833b3c561f" />
+                <operation Id="f8fff979-e221-4dd8-aa86-954f1714745d" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1a834857-13a8-44b5-a041-c83a07667b9b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="630956d4-0ab3-4f12-b19f-37eefd5d71d9" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="9eb2d8d9-c9a5-469f-8ffc-3d1bc4347dc1" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="197f901e-03b5-443c-90bb-253dcd588880" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f1a8237c-4d15-40b8-a96c-f0e23af58360" name="AddFighter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d8395bb1-d058-4ebb-af25-7aeb6d7fda8b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3f854466-5eab-4cbc-bdbe-13a320071cfb" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="12e8295e-72b2-404e-8668-447f00089ddd" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="197f901e-03b5-443c-90bb-253dcd588880" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9a39171b-2e03-4e0d-9a43-1e151b24d31e" name="AddSupport" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="20b04c1a-e634-4e97-a71a-01afcfd9bb8b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="64de0939-eda4-49a9-be43-0bdb801f49ec" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="c36100ac-7474-4834-9320-ae239628963b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9f244852-aefa-49d8-8c99-d1fdea34dabc" LastKnownName="IDepartDirector" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="63491e89-cac6-442e-9dda-1c6bde2b4f02" name="Fight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bef0d790-d46c-4bae-83dc-94466ee030f2" />
+                </operation>
+                <operation Id="6fe42799-62b2-417c-9981-1d28a8d6f2c9" name="GetWinners" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f866f05b-7ff4-47cf-bc25-efd50a462608" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="12ed91c4-34f2-4ee7-8bad-3419ad6a99d5" direction="Return" isUnique="false">
+                        <elementDefinition Id="4ef24f58-51be-4b56-8c61-db983d327285" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="1e25e484-7f07-4594-bff2-be0f236221a3" LastKnownName="IPlayer" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
                 </operation>
               </ownedOperationsInternal>
             </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <Interface Id="5ee6e649-2439-42bd-be10-8c0217350723" name="Ifight" isAbstract="false" isLeaf="false">
-              <elementDefinition Id="32e5fb4a-2945-46d3-9a3f-23b9afb24b9b" />
-              <ownedOperations>
-                <operation Id="6207c2fe-c73f-4e67-9448-f74c70ee1735" name="Combat" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="53291841-ed77-4982-9164-772b1a1d410a" />
-                </operation>
-              </ownedOperations>
-            </Interface>
           </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="197f901e-03b5-443c-90bb-253dcd588880" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="394027d7-8ed4-4714-9de6-22557fc18322" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1c6e4b7b-56f1-4880-986c-b6c3351fcc32" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9f244852-aefa-49d8-8c99-d1fdea34dabc" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="IDepartDirector">
+        <elementDefinition Id="c9a1edd3-22f9-4cc4-9969-4f70130fea7f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1e25e484-7f07-4594-bff2-be0f236221a3" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
+        <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8ac246ee-3401-4c06-8715-277d2f9d74b5" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="99d511d4-e4db-48a6-afc3-b691035b2674" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="IDepartDirector">
+        <elementDefinition Id="c9a1edd3-22f9-4cc4-9969-4f70130fea7f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d60d76e5-d7b8-4078-970d-b226de022488" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
+        <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="04c60d94-e246-4a8b-95f0-61862c40a571" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="108c3ea0-e0fd-4c9f-aba9-597c123a68fe" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="IDepartDirector">
+        <elementDefinition Id="c9a1edd3-22f9-4cc4-9969-4f70130fea7f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d1335eff-31f8-4b7d-bb85-8facfb7a7576" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
+        <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f51163ad-25fa-4bb3-b9c6-2927962c0a99" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fb7f9fa8-6acd-4ef0-857e-356a795000a5" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="IDepartDirector">
+        <elementDefinition Id="c9a1edd3-22f9-4cc4-9969-4f70130fea7f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="61e65715-47c5-43c1-91bf-1817404728d9" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
+        <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="520ff4f0-68a2-418c-be55-069708a8b61c" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />

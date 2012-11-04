@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="d64e6476-044a-46e5-90c7-9b21a2dc8404"
   name="Player" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -15,20 +15,10 @@
       </annotatedElements>
     </comment>
     <comment
-      Id="1f7afe65-d6dd-4d87-ae1b-a0ab98612ace">
-      <body>Classe vide pour illustrer ça justement.</body>
-      <annotatedElements>
-        <classMoniker
-          Id="9b4e0b2e-ae00-458a-92e6-47da3e0a0c08"
-          LastKnownName="AIPlayer"
-          LastKnownLocation="Package_1909.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="eb66d2bb-b780-42fa-a3b1-cfc46d0dfa94">
       <body>ActivePlayer : à son tour de jouer
 
-InactivePlayer : finit son tour, à l'adversaire de jouer
+InactivePlayer : finit  son tour, à l'adversaire de jouer
 
 If one day we want to make an online game we'll just add DisconnectedPlayer, ReconnectingPlayer, etc
 </body>
@@ -36,26 +26,6 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
         <classMoniker
           Id="6dbaeb44-4117-4743-a160-cafc949128dc"
           LastKnownName="InactivePlayer"
-          LastKnownLocation="Package_1909.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="a5763c9d-7f9d-40c3-b2ae-a4b6d25fda45">
-      <body>CityID si réussi, -1 sinon</body>
-      <annotatedElements>
-        <interfaceMoniker
-          Id="341cc183-7a27-4959-9a12-5e6eef82a533"
-          LastKnownName="IPlayer"
-          LastKnownLocation="Package_1909.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="5afa7baa-cdf9-4bda-bc0f-7627605b3560">
-      <body>UnitID si réussi, -1 sinon</body>
-      <annotatedElements>
-        <interfaceMoniker
-          Id="341cc183-7a27-4959-9a12-5e6eef82a533"
-          LastKnownName="IPlayer"
           LastKnownLocation="Package_1909.uml" />
       </annotatedElements>
     </comment>
@@ -69,8 +39,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
         isLeaf="false">
         <ownedOperations>
           <operation
-            Id="3ed4cab3-c361-47bf-a02d-9c4b6fd7b63b"
-            name="GetDirector"
+            Id="a13f6b53-ba27-4a10-a7eb-17618ec872b1"
+            name="AddUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -79,13 +49,14 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="9d8d8388-475f-4cbb-89bf-d60dde21d502"
-                  direction="Return"
+                  Id="5de1e032-30b8-4e68-add5-d3cc33522116"
+                  name="unit"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -93,8 +64,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="cf860e06-5eac-4286-bfe1-39d97678218b"
-            name="GetUnit"
+            Id="69087e09-f763-43da-a383-b6b3e2a577a7"
+            name="AsUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -103,60 +74,35 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="02a2d346-fc2e-4998-b3b5-9b260e461187"
-                  direction="Return"
+                  Id="6980879f-fb11-4013-aba6-3a22395e0719"
+                  name="point"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
-                      LastKnownLocation="Package_1909.uml" />
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="ca0548d8-1162-425f-8623-8e8665820cec"
-                  name="int UnitID"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="e1e708b8-ac1b-4ca6-a520-36d113eae02c"
-            name="GetCity"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="true"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="a612576e-d53f-4309-a4e1-f2356ed81033"
-                  direction="Return"
-                  isUnique="false">
+                  Id="cb27898d-406b-4732-8d05-9966d2c593a1"
+                  direction="Return">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf"
-                      LastKnownName="CityID"
-                      LastKnownLocation="Package_1909.uml" />
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="df0a06fb-6e6a-4cc7-8fc6-aa2a6475d62c"
-                  name="int CityID"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
-            Id="f2efefc5-5c1b-436d-8682-8028c66594fc"
-            name="CreateUnit"
+            Id="bb911514-21a9-4269-80c9-2ee55f08a2d3"
+            name="RemoveUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -165,20 +111,14 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="e1368675-ced3-43b2-8498-435bdde00723"
-                  name="int UnitType"
+                  Id="ff326f77-7c19-47c6-84e5-1c7380f3fb51"
+                  name="unit"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="63589380-c133-4306-8295-5f4d6c26e62f"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -186,8 +126,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="9d9087d9-5cd6-448f-8646-35ff2049ad0b"
-            name="CreateCity"
+            Id="53a1119d-f25a-41d9-8100-6fcf614ab024"
+            name="GetAllUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -196,29 +136,35 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="dd95e3cf-ec07-477e-8a26-8400d5253fca"
-                  direction="Return"
+                  Id="34304bce-26e9-4210-9b79-4d6444fbcb82"
+                  name="point"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf"
-                      LastKnownName="CityID"
-                      LastKnownLocation="Package_1909.uml" />
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c58f34e2-5983-422f-a5f2-23a1c3d76f24"
-                  name="int localization"
-                  direction="In"
-                  isUnique="false" />
+                  Id="fba0d542-b01d-41ac-8d60-83f616b6b817"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
-            Id="cfb13c96-3dbf-4e76-a149-fe6a521c17bd"
-            name="AttackUnit"
+            Id="ea04dbe3-4398-40d3-b8f7-926b241f0348"
+            name="AddCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -227,23 +173,23 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b5ffa70c-858f-4201-a9e5-dd504fdcb4cd"
-                  name="Vector&lt;UnitID&gt; AttackingUnits"
+                  Id="4bbb0ffe-aa26-45d4-a865-6c31bbb2b0d7"
+                  name="city"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="3ed850e0-dbd3-44de-9793-3f3cb764def5"
-                  name="vector&lt;UnitID&gt; UnitsBeingAttacked"
-                  direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e7140e78-24c2-4146-928e-9fed0c7a1559"
+                      LastKnownName="City"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
-            Id="92246d45-ed34-479b-a138-a59b67eb1961"
-            name="InvadeCity"
+            Id="d1c8174c-7754-4464-8748-b83b523bae1e"
+            name="AsCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -252,17 +198,114 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="4ace292f-e17a-4a92-82a4-8f9a35816605"
-                  name="UnitID uID"
+                  Id="be995145-6f53-466e-827f-0bfeeb67fd8e"
+                  name="point"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a1c9ec85-5511-40c8-b925-4d2c52f29a47"
-                  name="CityID cID"
+                  Id="c248c437-6c01-4c1e-8299-5bdeb619701a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="34ff5691-8cb5-442a-ba3e-291a665c838b"
+            name="GetAllCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bb6c2254-bc05-4a3b-9419-4fb76f6aee38"
+                  name="point"
                   direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2835463f-3b2f-41de-98fc-2213a47de8d7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fcca7258-afe7-4428-9032-9938a9bd2345"
+            name="RemoveCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f73c48b1-b5f0-4442-9599-14dfe322f4f5"
+                  name="unit"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8ee8047a-df37-4567-9be6-e2f0184c8885"
+            name="isDead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="76ca9750-93cc-4943-b5ec-512e90e1b8ef"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -328,8 +371,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="656edd1f-9165-422a-b9e9-e11e279cec2a"
-            name="ControledUnits"
+            Id="a83ef3b2-5217-4dea-95a9-ad702941ba01"
+            name="_cities"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -338,16 +381,28 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="ceabb597-d29b-45f7-b07d-ef4e4fcd6aaf"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="1a1e75ed-bc6b-4488-966a-2d5db001ac5a"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="272250ae-3660-474c-8495-48477ec5e7e2"
-                LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;"
+                Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce"
+                LastKnownName="ICity"
                 LastKnownLocation="Package_1909.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="9316750d-5352-4b31-a140-525066288f1f"
-            name="ControlledCities"
+            Id="76ccc150-cd57-437c-8360-3ef03a2a2dd7"
+            name="_units"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -356,36 +411,30 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="944de2d4-9333-406d-a806-c829c4c2864d"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="5d83bcc4-ff0a-4c88-970d-9dd0fc822e58"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="ea648200-50fc-49ad-9f69-13f2f68717e9"
-                LastKnownName="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;"
+                Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                LastKnownName="IUnit"
                 LastKnownLocation="Package_1909.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="47e09ef6-4eed-409f-a4cc-c1de1cee9369"
-            name="Factory"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <interfaceMoniker
-                Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-                LastKnownName="ICivilizationAbstractFactory"
-                LastKnownLocation="Package_0915.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="2fd2ca08-59c8-4490-ae46-af6a1a1bb1f0"
-            name="GetDirector"
+            Id="aaf202eb-cf9d-4fde-b077-c3f23ae6f573"
+            name="AddUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -394,13 +443,14 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="35ce3a7d-cff5-449f-8b40-9e367da7a8af"
-                  direction="Return"
+                  Id="d341e696-fa84-4956-b585-9cda7d77c048"
+                  name="unit"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -408,8 +458,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="d6e716ef-13c0-4c38-ad54-28a855794d97"
-            name="GetUnit"
+            Id="9fabb78d-d0be-4593-ae4f-7ba6c8b53942"
+            name="AsUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -418,20 +468,51 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="3d98850b-1f27-4e12-9a78-ebb7b0aa5d03"
-                  name="int UnitID"
+                  Id="de79255b-7ada-466b-8726-4efc03fe92b4"
+                  name="System.Drawing.Point"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="5c5b91ae-c5ab-46f4-9902-c72702deeb88"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b6c676cc-64a4-49cb-ae43-3e1b14470838"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="70767dfc-5ab0-4096-8985-51c299f79c68"
+            name="RemoveUnit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="036a466a-c687-4816-af94-2272e430291d"
+                  name="unit"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -439,8 +520,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="ee0beda3-e894-4e5d-827e-db7fdb523697"
-            name="GetCity"
+            Id="c5b9c73b-2c96-4cce-a906-2247df951778"
+            name="GetAllUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -449,20 +530,26 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="491c8ee9-b60e-49e3-be1c-103460880203"
-                  name="int CityID"
+                  Id="a6db61bf-cf44-45f3-9dbc-01627231fc88"
+                  name="point"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ac8642d9-3d31-4753-91af-666c4fd4ea5e"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf"
-                      LastKnownName="CityID"
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="920aaf52-26ae-44c9-9588-a67c007993a5"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -470,8 +557,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="6acf97db-3cd0-4516-951c-c3fbc35086b1"
-            name="CreateUnit"
+            Id="0df5d518-ac1e-49d8-9c99-3ad2ef4335ed"
+            name="AddCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -480,20 +567,14 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d9b29615-31dc-4e87-a2ef-e65eebbef91d"
-                  name="int UnitType"
+                  Id="1fc50d7a-1df0-41af-a8a4-1c7ad9f95854"
+                  name="unit"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="205c369e-7d3f-4ff9-a2e3-aee879b7d195"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="e7140e78-24c2-4146-928e-9fed0c7a1559"
+                      LastKnownName="City"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -501,8 +582,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="2c4d1b32-70f8-4eb4-a04a-d31ddd5b37b9"
-            name="CreateCity"
+            Id="840b3662-00d0-4a5e-bb0b-8ff7588baa75"
+            name="AsCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -511,20 +592,63 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b34b4961-4a9c-4580-b502-fe92a49a2ea8"
-                  name="int"
+                  Id="ba8c5aa0-a589-4e05-b3a0-b5de2c77004d"
+                  name="point"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="9ca54542-6210-4e72-ad8a-875dd9a0ef24"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf"
-                      LastKnownName="CityID"
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="59e99268-eedd-4799-941f-f6a38c987517"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ed82d980-40ae-4478-b3d1-78cffd139dfe"
+            name="GetAllCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a6ada02e-e9f7-4f64-b41f-3f46443dd5ab"
+                  name="point"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75e7dd55-8bef-4b06-8903-bbb54227668b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -532,8 +656,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="072d3b81-9426-4dc5-aa5f-e6cfd67ea995"
-            name="AttackUnit"
+            Id="00ea6dba-29ae-424d-aed2-036fb0dd845b"
+            name="RemoveCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -542,23 +666,23 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="189e545b-a75f-4b67-aa7c-1f0305755e6c"
-                  name="Vector&lt;UnitID&gt; AttackingUnits"
+                  Id="1d79d819-41a8-48a1-9cb4-46a5cd5f1d42"
+                  name="unit"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="83dbaa3a-44a1-494b-af2d-a6058602ff0f"
-                  name="vector&lt;UnitID&gt; UnitsBeingAttacked"
-                  direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
-            Id="a3b19c86-18d1-4b32-bab7-cf5cc5beb641"
-            name="InvadeCity"
+            Id="18cae4bc-1fae-4ff8-ae9c-995821cb79e6"
+            name="isDead"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -567,17 +691,15 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d7c545e4-29fe-4eed-8eda-c669c8b105de"
-                  name="UnitID uID"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="a73c641b-8a90-48f2-a0f0-c39d81baca4c"
-                  name="CityID cID"
-                  direction="In"
-                  isUnique="false" />
+                  Id="51f3ce91-2a32-4aad-b10e-8891ffaddb0d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -669,8 +791,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="a5ddb45a-b344-49c9-8552-c3ac0f9d8b18"
-            name="ControledUnits"
+            Id="f3034873-9ba0-4722-82cf-333f87df3912"
+            name="_cities"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -679,16 +801,28 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="4ca6543a-5ef2-4cb7-b0e2-ff81b4547d2e"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="a5197da3-b6da-4cba-879e-02f5968b4875"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="272250ae-3660-474c-8495-48477ec5e7e2"
-                LastKnownName="Vector&lt;Civilisation::Civilization::Unit::Unit : ISerializable, IDrawable&gt;"
+                Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce"
+                LastKnownName="ICity"
                 LastKnownLocation="Package_1909.uml" />
             </type_NamedElement>
           </property>
           <property
-            Id="ee891326-a88c-4010-a5a1-ee7020743cc3"
-            name="ControlledCities"
+            Id="2e1d31e0-1a39-4183-bfd2-cb9cddc34e3a"
+            name="_units"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -697,36 +831,30 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="2044bec6-567b-425c-aabd-038d12af2373"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="5be5b717-e3e1-4b39-9171-50120d4ec79c"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="ea648200-50fc-49ad-9f69-13f2f68717e9"
-                LastKnownName="Vector&lt;Civilisation::Civilization::City::BasicCity : ISerializable, IDrawable&gt;"
+                Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                LastKnownName="IUnit"
                 LastKnownLocation="Package_1909.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="2b44a849-fdc3-4f70-a766-8ea6adb81ebf"
-            name="Factory"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <interfaceMoniker
-                Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-                LastKnownName="ICivilizationAbstractFactory"
-                LastKnownLocation="Package_0915.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="2185599f-176a-440f-971f-29e98b822a72"
-            name="GetDirector"
+            Id="bc8883ae-96e8-4b63-bb31-91c57c042051"
+            name="AddUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -735,13 +863,14 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="028b8592-aace-414d-8abf-5b68352b9193"
-                  direction="Return"
+                  Id="f0486d52-4b20-4a88-8634-5ad8b420f574"
+                  name="unit"
+                  direction="In"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -749,8 +878,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="a9b8f578-48bf-455d-bd9f-67dbfff76ae4"
-            name="GetUnit"
+            Id="ad98cfc3-0ad4-4174-a105-014020b38720"
+            name="AsUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -759,20 +888,51 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="bd41c6ec-6b24-4c77-805f-6b652167158d"
-                  name="int UnitID"
+                  Id="aec8ccff-42e3-4a67-9ad9-934ede3edf41"
+                  name="System.Drawing.Point"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="2abe086a-5f5e-4b71-8f93-e329df017a81"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="974616bf-c00a-4cf7-8137-155fe07fd61d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ab27efba-758b-466a-97f6-c5fabac760f9"
+            name="RemoveUnit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fd4abc03-7a03-4307-bde4-124139c8c4bf"
+                  name="unit"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -780,8 +940,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="a3a0cd67-a77d-44d1-ae08-712e438ce69a"
-            name="GetCity"
+            Id="2ee6f368-eb3c-4f44-a0ac-ab70383d5c96"
+            name="GetAllUnit"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -790,20 +950,26 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c18c5c0a-ef1c-4bc4-a6a5-602c7d62fdc5"
-                  name="int CityID"
+                  Id="72c005e3-6b08-408d-b631-e7e441693543"
+                  name="point"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="ef6e44c1-cded-4753-b554-da9b1561bc56"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf"
-                      LastKnownName="CityID"
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8dc5bccc-8d66-4ca8-9c0e-5ca8d2f2f042"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -811,8 +977,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="d5f7d9b9-d442-49ca-8e93-433c1571175d"
-            name="CreateUnit"
+            Id="f00fde1e-4ec0-4829-bc98-ce3969bb436d"
+            name="AddCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -821,20 +987,14 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="1c1b71e3-86bd-43f4-93a2-f079d8d90591"
-                  name="int UnitType"
+                  Id="971683c1-4ee9-4d83-bca2-a2480b10ed58"
+                  name="unit"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="2eb3d023-98e4-43e8-bbf6-7307a313b60c"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
-                      LastKnownName="UnitID"
+                      Id="e7140e78-24c2-4146-928e-9fed0c7a1559"
+                      LastKnownName="City"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -842,8 +1002,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="f70340fb-c743-4709-a7b8-aa9f7295cc7d"
-            name="CreateCity"
+            Id="9bcd2da3-b2ea-42e4-b915-d8d61b9cee13"
+            name="AsCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -852,20 +1012,63 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="f8a471dd-8232-4e1f-9ae4-b47daef26c76"
-                  name="int"
+                  Id="d2f4cd5a-01c4-4a84-95ff-d7a8f7871086"
+                  name="point"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="5831d6ce-0d9d-4d74-8a6a-21bde364bbc5"
-                  direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="e5e5e97f-db4b-47d9-a653-03995a1b94bf"
-                      LastKnownName="CityID"
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="577cfd5e-ecb2-4bfc-aa46-858bba0727c7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="22b32395-5d16-473f-9aa0-cce289e28a21"
+            name="GetAllCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d67e64e6-2f86-493e-a060-7624b3c96b95"
+                  name="point"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                      LastKnownName="System.Drawing.Point"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2605ef86-05a1-4df4-a3ec-b65196bd0a3f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
                       LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -873,8 +1076,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             </ownedParameters>
           </operation>
           <operation
-            Id="764f6344-9a12-4c5a-90ed-89976d29676b"
-            name="AttackUnit"
+            Id="35fd3902-ac6d-40e8-8aec-a2a55bc162ab"
+            name="RemoveCity"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -883,23 +1086,23 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="2b6c70d8-b09c-48ad-affe-4aa061c6228f"
-                  name="Vector&lt;UnitID&gt; AttackingUnits"
+                  Id="51fba165-4ea2-4927-a948-55c417b3cef4"
+                  name="unit"
                   direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="23a07698-d301-4159-b2ed-79e8a17b39d8"
-                  name="vector&lt;UnitID&gt; UnitsBeingAttacked"
-                  direction="In"
-                  isUnique="false" />
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
-            Id="c0c5698f-42fa-480c-a286-3ac34bceac86"
-            name="InvadeCity"
+            Id="f38dd26a-f993-4f5d-8c10-f285b79c453c"
+            name="isDead"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -908,17 +1111,15 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="be3bf049-415f-4f62-9639-19a4a168351a"
-                  name="UnitID uID"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="2ee3ef0f-9569-4c69-a162-779898cabb4d"
-                  name="CityID cID"
-                  direction="In"
-                  isUnique="false" />
+                  Id="3fb9e778-5ad5-4687-ab11-68490fae9121"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -1010,6 +1211,39 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
       <undefinedType
         Id="f4eb7410-4db4-4c31-97dd-997fe83ba020"
         name="UnitID" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6cd8a4a6-008d-4929-baf7-def002eaa4f1"
+        name="GUID" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7fa26469-0b4d-4c2f-8fda-60d2c6c2d0a2"
+        name="DeadPlayer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c37743cb-bfe5-4ed6-b6ef-7b9e4f7cc51c">
+            <interfaceMoniker
+              Id="bd55d3db-d257-4608-a5e3-b23e399d7873"
+              LastKnownName="IPlayerState"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+        name="IUnit" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce"
+        name="ICity" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="708f0c49-faff-4883-b8c2-aa29d3ee9059"
   name="Civilisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -16,27 +16,6 @@
     </comment>
     <comment
       Id="63b5fb84-e7d1-4929-8946-16ab62dcc686" />
-    <comment
-      Id="6c73b99d-0103-4b04-b403-f07814a8951c">
-      <body>Combat lorsque le directeur de départe est présent (bonus défensif et offensif)</body>
-      <annotatedElements>
-        <classMoniker
-          Id="31e5c63a-4998-4f6b-b534-7d7d5ffb6e5c"
-          LastKnownName="SupportedFight"
-          LastKnownLocation="Package_1533.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="f571db93-0a17-4dfa-ad5e-92b25184bdea">
-      <body>Combat à plusieurs unités (Non précisé dans le poly, mais doit être possible).
-D'où le vector de combattants.</body>
-      <annotatedElements>
-        <classMoniker
-          Id="7f5758a0-504d-40b1-b44b-c166585deb21"
-          LastKnownName="TeamFight"
-          LastKnownLocation="Package_1533.uml" />
-      </annotatedElements>
-    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -1357,6 +1336,14 @@ D'où le vector de combattants.</body>
         Id="ce314601-1a93-47c4-b4fd-c861053ffec6"
         LastKnownName="Fight"
         LastKnownLocation="Package_1533.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f7ad6dd7-8895-4704-9a0c-911d71157f5d"
+        name="SelectUnitAction"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

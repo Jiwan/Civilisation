@@ -61,7 +61,7 @@ This will be usefull for
       <class
         Id="c48d8289-3083-4139-bf3e-507c06ec1565"
         name="InGameAction"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <suppliersInternal>
@@ -73,6 +73,27 @@ This will be usefull for
               LastKnownLocation="Package_1905.uml" />
           </interfaceRealization>
         </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="64771969-102d-48b2-b92a-d009e2756a81"
+            name="player"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="29525dae-12cb-45af-860c-51ec753ebd6a"
+                LastKnownName="IPlayer"
+                LastKnownLocation="Package_1121.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="5f22fe88-725a-40f6-99e5-c98cd7b31793"
@@ -98,6 +119,55 @@ This will be usefull for
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="92c77b8e-9991-498e-9a36-aa5bde306f1f"
+            name="GetPlayer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="686116b1-0209-41fc-8214-6b9f9e61a594"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="29525dae-12cb-45af-860c-51ec753ebd6a"
+                      LastKnownName="IPlayer"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3df7e5a8-58d1-4796-81ed-e455c871812a"
+            name="SetPlayer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d5d58548-fa9c-4e26-9359-4b354384929f"
+                  name="player"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="29525dae-12cb-45af-860c-51ec753ebd6a"
+                      LastKnownName="IPlayer"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -118,6 +188,26 @@ This will be usefull for
               LastKnownLocation="Package_1905.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="19a09d0b-3bee-42df-96be-1d193952f733"
+            name="newPosition"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                LastKnownName="System.Drawing.Point"
+                LastKnownLocation="Package_0917.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -156,12 +246,50 @@ This will be usefull for
               LastKnownLocation="Package_1905.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="03a23caa-3c4d-46e6-97d6-b85bfed130ff"
+            name="attackCase"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                LastKnownName="System.Drawing.Point"
+                LastKnownLocation="Package_0917.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="46ebc988-a75f-438a-9348-d4c5d4f32f48"
+            name="unit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                LastKnownName="IUnit"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="70a00fef-6faa-443c-98cc-81b072232ddf"
-        name="SelectEnityAction"
+        name="SelectUnitAction"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -175,12 +303,32 @@ This will be usefull for
               LastKnownLocation="Package_1905.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="efc16911-c7bf-4eb8-a7eb-8148739c8aa8"
+            name="unit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                LastKnownName="IUnit"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="41c23865-668b-4a19-9c85-48deca9996ec"
-        name="MoveAction"
+        name="MoveUnitAction"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -194,6 +342,44 @@ This will be usefull for
               LastKnownLocation="Package_1905.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="9a7f914f-fde8-41da-8541-c0496b613e56"
+            name="unit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                LastKnownName="IUnit"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ae2fdeac-e4c3-4dc8-8c58-b5d3dc5b7c81"
+            name="newPosition"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="a7d0c74f-f555-4438-b446-d14b33943655"
+                LastKnownName="System.Drawing.Point"
+                LastKnownLocation="Package_0917.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -213,6 +399,44 @@ This will be usefull for
               LastKnownLocation="Package_1905.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="11fc358e-114f-4ab0-873a-75348ccac835"
+            name="city"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce"
+                LastKnownName="ICity"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="618b8965-9b2e-4ca4-8c53-279b27db715e"
+            name="unit"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                LastKnownName="IUnit"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -285,6 +509,45 @@ This will be usefull for
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8faaeb9f-7d0c-4626-ac3e-b9c53bb281e2"
+        name="SelectCity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="10a93836-1ed7-4167-b4a9-30245e6f87fa"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c48d8289-3083-4139-bf3e-507c06ec1565"
+              LastKnownName="InGameAction"
+              LastKnownLocation="Package_1905.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="c83e48dd-0568-47c7-aa1e-bd54f9429a08"
+            name="city"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce"
+                LastKnownName="ICity"
+                LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

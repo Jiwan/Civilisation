@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
@@ -269,9 +269,6 @@ Point newCase = BasicCityExtender.Extend(this);
                       <operation Id="51e6c0c2-f91d-4379-974e-1a3261882b22" name="GetSize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="f097afff-5e38-42a5-b617-ab404c0c1da0" />
                       </operation>
-                      <operation Id="3c59670e-f9d7-4d23-b444-ac64704ce3a3" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="37b03237-cc4b-4673-bcab-6ed71374b25a" />
-                      </operation>
                       <operation Id="91648833-aa87-4b47-a22e-c94e84ffa8ba" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="14d34125-50a2-489f-8203-65c36e7b05b1" />
                         <ownedParameters>
@@ -342,6 +339,16 @@ Point newCase = BasicCityExtender.Extend(this);
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="49722d05-755e-43e4-8515-193fb52f82a7" LastKnownName="Integer" />
                               </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="d8fcbc43-55f7-4001-8d96-657ec9da5cb2" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="9296dc53-3c00-4853-9fb1-b7ffeb5bdea0" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="86b04a81-4faf-48c1-961a-a28e1add3d58" name="IGraphicEngine" direction="In" isUnique="false">
+                              <elementDefinition Id="f7f2de08-3573-492d-a55c-98ad8461e797" />
                             </parameter>
                           </operationHasOwnedParameters>
                         </ownedParameters>
@@ -887,9 +894,6 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
-                      <operation Id="253d5aa8-ec24-43f8-b3c0-8e4b68106fe6" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="05b5b480-8b13-440b-b40a-5327d0674adf" />
-                      </operation>
                       <operation Id="592efe77-4d49-4402-8f50-1062ce0ac30d" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="f36d1a79-830f-4831-93bf-118ab62168ed" />
                         <ownedParameters>
@@ -926,6 +930,16 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="b39d3efd-811e-48a6-8571-27060a8c1ab7" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="dd5ee65a-1d30-475d-a516-f068fb4ac4dd" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="d2114791-7f1f-49b9-9ad1-6da4ae82c5d4" name="IGraphicEngine" direction="In" isUnique="false">
+                              <elementDefinition Id="3ac92091-6374-4cb2-ab43-8f7e44faff4b" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
@@ -955,9 +969,6 @@ Point newCase = BasicCityExtender.Extend(this);
                     <ownedOperations>
                       <operation Id="d627fe83-12ef-48b4-bf21-61e524e322fd" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="9ef1b9e5-d16e-4d13-a213-02ef1bb19826" />
-                      </operation>
-                      <operation Id="8caa84aa-12e6-4085-ae3c-a8ab03a3d8cc" name="Operation1" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="ca1bccf7-b16e-4bce-b834-cee0eee4afa7" />
                       </operation>
                     </ownedOperations>
                   </Interface>
@@ -1226,35 +1237,6 @@ Point newCase = BasicCityExtender.Extend(this);
                     <ownedOperationsInternal>
                       <operation Id="012de599-611e-407a-a95c-51e9e9b41053" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="56691c3a-fb52-49ec-bbcd-ee4e3e23c89d" />
-                      </operation>
-                      <operation Id="d2ca9bdf-b4e0-4a9c-a97b-4c4e71df1edd" name="Operation1" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="30effb8f-72ed-44d8-b3df-150877d0c882" />
-                      </operation>
-                      <operation Id="5c27953d-17f0-42d9-a309-6ee4d03c8843" name="IsInCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="bcd68a53-48a9-43c5-9fe8-97d2ef34e03b" />
-                        <ownedParameters>
-                          <operationHasOwnedParameters>
-                            <parameter Id="d52b1d19-8fb9-4b45-9b69-0330dfb2b487" direction="Return">
-                              <elementDefinition Id="f368a7ce-5198-437c-917f-6c46a6ed6d03" />
-                              <type_NamedElement>
-                                <referencedTypeMoniker Id="497d23b5-0884-40ae-90da-119c966dab80" LastKnownName="Boolean" />
-                              </type_NamedElement>
-                            </parameter>
-                          </operationHasOwnedParameters>
-                        </ownedParameters>
-                      </operation>
-                      <operation Id="2f426e98-7bba-474a-8248-15322020cfa2" name="GetUnitID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="f647db9e-9209-4956-bc27-f8908b0cb9a0" />
-                        <ownedParameters>
-                          <operationHasOwnedParameters>
-                            <parameter Id="9e3db9d1-013f-4513-adce-10c4f4875328" direction="Return" isUnique="false">
-                              <elementDefinition Id="ed044a68-5ead-413f-9b9d-ed7c29f8d78e" />
-                              <type_NamedElement>
-                                <referencedTypeMoniker Id="368791e1-0456-4d29-b9a4-9fb71ec65970" LastKnownName="Integer" />
-                              </type_NamedElement>
-                            </parameter>
-                          </operationHasOwnedParameters>
-                        </ownedParameters>
                       </operation>
                     </ownedOperationsInternal>
                   </class>
