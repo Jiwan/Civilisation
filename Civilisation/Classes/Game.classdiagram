@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="69696a64-38e6-47d5-86d0-edefc2492ab7" name="Game">
@@ -34,6 +34,21 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
             <body>Etat dans lesquel on génère la map, on charge toutes les textures, ... Tout en affichant une belle barre de chargement</body>
             <annotatedElements>
               <classMoniker Id="ed2862bc-8b60-4556-9fd2-49ca80cbc310" LastKnownName="LoadingState" />
+            </annotatedElements>
+          </comment>
+          <comment Id="5a5a706d-683e-487b-b1a1-24d29d7024ef">
+            <elementDefinition Id="1940cb2f-06b2-43c7-b63f-67aee5fcd71d" />
+            <body>Pattern Observateur: 
+mainWindow est une référence vers la fenêtre WPF qui permettra de notifier tous les évenements de la souris et du clavier à l'état courant du jeu.
+
+ex: pour la souris,
+mainWindow.MouseMove += _state.top().MouseMovedEventHandler;
+notifiera automatiquement l'état de la souris à l'état courant
+Observateur : currentState
+Observé : _mainWindow</body>
+            <annotatedElements>
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+              <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
             </annotatedElements>
           </comment>
         </ownedCommentsInternal>
@@ -103,6 +118,12 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                   <elementDefinition Id="1c63874f-1656-4a70-bcb0-9bc4751eff0c" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="57b02158-9057-4a33-981e-0944f5e2053d" LastKnownName="IGraphicEngine" />
+                  </type_NamedElement>
+                </property>
+                <property Id="b71e4ada-329f-42c9-9547-4e75e13ad95a" name="_mainWindow" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1f988976-1f26-4699-9b7f-597dc80f5ffe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="15a391d2-5026-4f62-9a0a-3ae29e94b4eb" LastKnownName="System::Windows::Window" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -258,6 +279,69 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="eee15f39-f389-4c81-8986-20b958068aef" name="MouseClickedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="01a67cfa-052e-4ca8-ba3a-6c919a556a14" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4b04f011-af9a-44a0-a9b6-da90202fed20" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="9fc4daa7-31df-447c-9075-49bea8f6bfbc" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3c13252a-7990-4c90-9ce0-cc6127fd9dae" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="c3635016-7efe-4e92-a5dd-409227215cd2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="a3da7a4d-10f7-4f74-b8c7-935abca98f5d" name="MouseMovedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="462eeb6a-0113-4068-a88b-7c5b259e4785" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9dd377e4-0858-4274-8b05-1e0a4513fff3" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="99185ca6-84c2-4dbf-ba15-fab05d44b74c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="18587048-fdbd-45d5-90b7-26a44862a28f" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="230e4ff9-5d2f-481d-b0b4-cbea0cbdc23b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="66cd5d61-c1b6-4362-916f-3a96a135eb9c" name="KeyboardPressedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6628b583-7569-44d0-ab3e-e93b4d69fefe" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5521c7c5-ed08-48e7-8b74-968d09579113" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="bcb9df57-c15a-414f-bd71-288fa7562aaf" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bcc0c81a-59e9-47c4-be02-57746f2e1c4f" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="f29eeec2-8ae9-4844-b4d0-dd8bad638638" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8b609bb6-39db-4c1d-acd2-d30244382d8d" LastKnownName="KeyboardEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperations>
             </Interface>
           </packageHasNamedElement>
@@ -320,6 +404,69 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     <operationHasOwnedParameters>
                       <parameter Id="4214270a-3f0c-4b08-a2a8-9ce4fb59dcad" name="IGraphicEngine" direction="In" isUnique="false">
                         <elementDefinition Id="956ad5af-96e5-4f7e-94e7-00736a57f2fe" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="34333c3c-6aef-4d32-8328-ed31d05503b3" name="MouseClickedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a14800ec-e9e9-4221-996f-0f2335c691ce" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="532e8d07-06f2-4432-8475-e1eab72596d0" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="81a3aff3-8081-475f-88d9-d8d404b35b45" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="74d15754-a0dc-4058-a237-440341b47f3c" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="ecd63a63-6817-4022-b6e8-7a8ecd618f27" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="81a010fb-e1c0-4461-a6c0-699a447f671b" name="MouseMovedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3c2b13b9-a168-4998-90f2-ffce6fdd7798" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b59e3686-71db-47c0-9653-603df6cfb0c8" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="a1b9df5c-e205-4eeb-bc15-ba356ed3c25b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8fe2a8ab-b836-461b-8594-d93f25f37abe" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="4787f36b-eb97-4bba-b9b2-df4f053ac8af" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="27a98b9a-d7b9-40c0-aada-1351a32b1831" name="KeyboardPressedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c3e138a2-8173-40b4-9c17-20454200c219" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="690402a5-dd82-4663-9e2c-00353526aca1" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="008a6f5d-ed2b-4369-a4bf-a24894388c29" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="aca33ae5-4baa-47fc-af92-af92175351ab" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="a0b70de6-d9b4-484d-8a17-07c651cde66d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8b609bb6-39db-4c1d-acd2-d30244382d8d" LastKnownName="KeyboardEventArgs" />
+                        </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
@@ -390,6 +537,69 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="8870366e-8b37-4924-9d86-82db7022f19e" name="MouseClickedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7d94f483-853f-44cd-8372-ccb3b63c83c7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c6596d27-2e8b-4fe2-a80e-d9de6400d748" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="ffef0e4d-9595-4a6f-bf9d-7887f84ed0bd" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="41ed74eb-f1c7-4feb-94d3-7b002000d6d0" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="c6f49af3-7a10-4225-b132-2dd346457de2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="0bace511-6d46-4ce2-afe0-6b3489ab3996" name="MouseMovedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1b6741ac-2cd2-4fea-8f5d-3e2258d794f5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bcfc3ee8-e4cf-4f4a-b0c9-7dd5dc9b9c8f" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="e777e837-1486-47d2-a0c2-cd54dd94f08c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d6c51032-8f8d-4184-841f-56e9e9d0af93" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="5426f3af-e614-4c37-9d4a-a9ee66bc34c7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="64d4f8bc-3f99-40dc-bead-617dc2436a52" name="KeyboardPressedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9ef54af6-dc2c-4a92-a48b-e84b2f98ac39" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dce996a9-9d08-484c-96da-6bb3ed2408a6" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="f3392d06-01d1-4616-b4c7-99e7885e3da1" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c0b88980-17d4-41d9-9b0d-60dfea1bd693" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="a5a96d17-d820-48f1-a391-ccd899296b8a" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8b609bb6-39db-4c1d-acd2-d30244382d8d" LastKnownName="KeyboardEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
@@ -456,6 +666,69 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="c6fba392-a51c-457e-96b4-03fdd64451c8" name="MouseClickedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="17450d54-a7f1-42c6-ad1b-344f55626978" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="21075026-c286-4509-8420-4380ddf045a7" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="ef1af12d-5c37-4b3c-995a-82d0a0b2f6ae" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c485df89-bd14-4cd0-9366-1106caaec86a" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="60a09fb8-bb32-4641-a560-b6bf7483c5ae" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="2187117e-c090-4608-a239-02bc1e4adb9e" name="MouseMovedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7edb6bc3-1b3e-4cb8-afdd-1133ccda03e7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5826c656-a0a2-4be1-acc6-19422547a3a0" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="d177eb13-b15d-4fc6-8c16-1265ebd72bd3" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6e9b5cfb-b5e7-45a3-bdb7-55f01e207301" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="6c47d710-a8af-48c3-b54f-bd7ae4e3a752" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="c0c01354-ffbd-4f9a-89f4-142db9554a37" name="KeyboardPressedEventHandler" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cafb23e6-1f7c-49ba-81d0-0fb1cfbe6b08" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="240121e3-4623-42de-86c0-5a7eb5094b40" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="e770055c-772a-4792-8ea9-1351834ee25d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8e428e28-d766-46f5-be70-206c9e5b7a09" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="0d816ed0-7b6a-4759-8b71-d0dbd1ef167b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8b609bb6-39db-4c1d-acd2-d30244382d8d" LastKnownName="KeyboardEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
@@ -500,6 +773,26 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
     <packageHasNamedElement>
       <referencedType Id="48118051-aea9-4404-8462-992d4df4ea2b" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
         <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c0ca4298-e1e4-46a4-9408-10a416dc3773" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="66b61843-3749-4b97-8319-2da57261c1ae" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="067bceca-845d-4f05-b7e1-772ca3aba9a8" name="MouseEventArgs" isAbstract="false" isLeaf="false" cachedFullName="MouseEventArgs">
+        <elementDefinition Id="f5a6e2b2-1f49-4251-8958-843a8b42a46c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8b609bb6-39db-4c1d-acd2-d30244382d8d" name="KeyboardEventArgs" isAbstract="false" isLeaf="false" cachedFullName="KeyboardEventArgs">
+        <elementDefinition Id="28dcf8f2-9119-40ce-9826-9bd796dc2877" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="15a391d2-5026-4f62-9a0a-3ae29e94b4eb" name="System::Windows::Window" isAbstract="false" isLeaf="false" cachedFullName="System::Windows::Window">
+        <elementDefinition Id="3ba8333e-7b08-4af2-8b4a-0c8c6a34eb20" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

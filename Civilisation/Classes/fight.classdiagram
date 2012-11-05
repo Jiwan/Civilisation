@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="a6119447-5d24-4c67-a93a-c0d402528bca" name="UMLClassDiagram1" linkedPackageId="520ff4f0-68a2-418c-be55-069708a8b61c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a6119447-5d24-4c67-a93a-c0d402528bca" name="UMLClassDiagram1" linkedPackageId="520ff4f0-68a2-418c-be55-069708a8b61c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="6af764d7-2fab-4a7b-abe5-52cc5d06a4d8" name="Fight">
@@ -220,6 +220,14 @@
                   <elementDefinition Id="46a4715f-24f7-460e-9076-f9b1d5c2beb9" />
                 </generalization>
               </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="2ec6ac65-4821-4d9f-b2b4-85abd91efb91" name="city" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9af80ac8-ed3f-422e-898e-d1fd24fdff99" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1b6a9365-d527-44cf-8c53-209fab1ceecd" LastKnownName="ICity" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
               <ownedOperationsInternal>
                 <operation Id="34246be5-88dd-46b7-b2f7-1e2d47f71416" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="22499402-9a63-496b-90d1-663bb8785b20" />
@@ -432,6 +440,11 @@
     <packageHasNamedElement>
       <referencedType Id="61e65715-47c5-43c1-91bf-1817404728d9" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
         <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1b6a9365-d527-44cf-8c53-209fab1ceecd" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="ICity">
+        <elementDefinition Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
