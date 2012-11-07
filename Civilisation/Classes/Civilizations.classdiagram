@@ -9,14 +9,14 @@
             <body>We use the prototype design pattern as we want to load each departement informations from a file.
 </body>
             <annotatedElements>
-              <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="IPrototypeCivilization" />
+              <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="ICivilizationAbstractFactory" />
             </annotatedElements>
           </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="8f127027-fedc-4140-8764-14434be32e12" />
         <packagedElements>
           <packageHasNamedElement>
-            <Interface Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" name="IPrototypeCivilization" isAbstract="false" isLeaf="false">
+            <Interface Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false">
               <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
               <ownedOperations>
                 <operation Id="bb93ad80-44dc-4ac2-8538-277deeede4c6" name="CreateDepartDirector" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -70,9 +70,6 @@
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
-                </operation>
-                <operation Id="c0355e57-1104-47e3-bbca-8eb5102b7dac" name="Clone" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="2efe87d2-90dc-43c2-968a-e91f6db710e1" />
                 </operation>
               </ownedOperations>
             </Interface>
@@ -562,11 +559,11 @@ Point newCase = BasicCityExtender.Extend(this);
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="57ec4168-8f40-4c6b-8722-dde022208aa8" name="ConcreteFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="57ec4168-8f40-4c6b-8722-dde022208aa8" name="PrototypeCivilizationFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="78c1361a-fcfc-4761-8ebe-a3c0d8b060c6" />
               <suppliersInternal>
                 <interfaceRealization Id="e7bb026e-c471-441a-8f1f-935242a7d03c">
-                  <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="IPrototypeCivilization" />
+                  <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="ICivilizationAbstractFactory" />
                   <elementDefinition Id="c5d57d96-59a4-4503-831e-3464dcd1a82d" />
                 </interfaceRealization>
               </suppliersInternal>
@@ -623,28 +620,28 @@ Point newCase = BasicCityExtender.Extend(this);
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="3ffb0625-b327-47e8-ba7c-9c9136750889" name="INFOAbstractFactory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="3ffb0625-b327-47e8-ba7c-9c9136750889" name="CivilizationAbstractFactory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="7bf41543-9481-4a87-a51e-415cfc3c993c" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="b789e38d-ab3a-41ff-8dcc-0b0c50c0c0fe" name="proto1" direction="In" isUnique="false">
-                        <elementDefinition Id="3f7106e1-ae4b-45a8-bf0e-774476b80eba" />
+                      <parameter Id="410bba54-b600-4b01-ae78-288fe5b4d424" name="proto1" direction="In" isUnique="false">
+                        <elementDefinition Id="2e50fc49-a769-4a2d-970d-ac7b0e1c51a8" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="56c68e5c-5173-4a56-a903-a13b1809dd25" LastKnownName="IDepartDirector" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="c2c727f3-f008-4331-9c7f-1066e8b8e6a3" name="proto2" direction="In">
-                        <elementDefinition Id="dc308cdb-d6b2-4b4a-a854-1d85264e0cf9" />
+                      <parameter Id="ac1a5c2c-ede0-41f4-bfab-5e180845b181" name="proto2" direction="In" isUnique="false">
+                        <elementDefinition Id="24e13191-879b-4b8a-9b09-2b9accec0895" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="ea2ee16e-8d93-4e45-8ea6-3af8985c2773" LastKnownName="ITeacher" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="a33c2b2c-33de-457c-8040-e5b1bd6ff183" name="proto3" direction="In">
-                        <elementDefinition Id="84d3834a-9b2a-4001-b1b7-b4f9040782ba" />
+                      <parameter Id="ed83fa4b-26aa-4b09-9e9e-36d5a871d225" name="proto3" direction="In" isUnique="false">
+                        <elementDefinition Id="5b7972b7-4262-4c39-b917-a33463f9f295" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="9e5ae30c-5382-4595-bd68-be900e5bca14" LastKnownName="IStudent" />
                         </type_NamedElement>
@@ -652,8 +649,34 @@ Point newCase = BasicCityExtender.Extend(this);
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="132db217-928a-4e9a-bccd-1c20fe287fd5" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="2a5442d2-89a3-408f-8e72-05799746ce22" />
+                <operation Id="a212cb05-e59c-44d7-9f6c-ddbdb67d3ea8" name="PrototypeCivilisationFactory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8b4ecd2f-96ee-43f9-87b7-c92b05ad2ddd" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1c45dca9-68a7-49ae-918e-4cf507edc961" name="protoDir" direction="In" isUnique="false">
+                        <elementDefinition Id="4c3d772a-297a-4fe9-8a64-36f51dfad72c" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="768ab23f-9bfe-4e35-8fb4-1bb84c8ad5a3" name="protoStud" direction="In" isUnique="false">
+                        <elementDefinition Id="f562a73a-4667-4dd1-a86e-cfd49ff2c4c9" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bb0d5ff4-69e3-4dc1-bca0-5d0c71a76805" name="protoProf" direction="In" isUnique="false">
+                        <elementDefinition Id="8b3f726f-cc15-40dc-9452-9855b244db97" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
                 </operation>
               </ownedOperationsInternal>
             </class>
