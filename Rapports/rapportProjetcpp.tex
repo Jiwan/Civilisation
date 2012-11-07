@@ -107,18 +107,23 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 
 \section{Cas d'utilisation}
 	\subsection{Règles du jeu}
-	Dans ce diagramme, nous avons illustré les intéractions entre les conceptes du jeu (les règles du jeu), les différentes unités intervenant dans une partie et les joueurs qui interagissent avec ces derniers.
+		Dans ce diagramme, nous avons illustré les intéractions entre les conceptes du jeu et les joueurs. (schéma 1)
 	Les joueurs sont ceux qui créent des villes, créent des unités, bougent et font combattre ces unités et capturent des villes.
-	Sur ce diagramme figurent les principales intéractions entre les joueurs.
-	Nous avons fait un diagramme \textit{Développement d'une civilisation} pour illustrer les actions qu'un joueur doit entreprendre lors d'une partie, ainsi que les dépendances de ces actions.
-	
+	Les dépendances entre les entités du jeu apparaissent bien.
+	(Nous avons fait un diagramme \textit{Développement d'une civilisation} pour illustrer les actions qu'un joueur doit entreprendre lors d'une partie,
+	ainsi que les dépendances de ces actions. JAI ENVIE D'EN METTRE QU'UN)
 	
 	\subsection{Cycle de vie d'une partie}
-
-
+	Ce diagramme illustre toutes les phases du logiciel, avec les choix potentiels des joueurs.(schéma 2)
 	
 \section{Diagrammes de Classe}
 	\subsection{Civilization}
+		\subsubsection{Sous-section Civilization}
+			Nous avons utilisé le design pattern Prototype pour pouvoir avoir le plus possible de civilizations différentes.
+		En effet, au départ nous étions partis sur le patron de conception Fabrique Abstraite, ce qui aurait donné le schéma 3.
+			Après réflexion, nous voulions pouvoir étendre le nombre de civilizations pour pouvoir en ajouter autant que voulu.
+		Le joueur pourrait importer sa civilisation créée (sous forme d'un fichier XML par exemple). 
+		Donc pour implémenter cette solution, le choix du prototype est plus judicieux.
 	\subsection{Player}
 	\subsection{View}
 	\subsection{World}

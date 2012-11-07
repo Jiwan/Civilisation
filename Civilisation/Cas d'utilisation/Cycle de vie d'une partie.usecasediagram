@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dee4d0ee-714d-4df6-9f16-abac1c2c18f7" name="Cycle de vie d'une partie" linkedPackageId="b66d2d50-30fd-428c-9091-b45a6aa2517d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="1a25854a-a9d0-4290-965f-d9b509522ffa">
-      <profileInstance Id="1efb9165-6693-4a3a-a1d9-dcf73e175127" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="e5e218cf-f480-4d80-8a23-f3e9209f92fe">
-      <profileInstance Id="0c892372-dfbb-4b5d-9f0c-353e964fabeb" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dee4d0ee-714d-4df6-9f16-abac1c2c18f7" name="Cycle de vie d'une partie" linkedPackageId="b66d2d50-30fd-428c-9091-b45a6aa2517d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="17a6fa62-a948-4ebf-adb4-900d643e9fc5" name="Joueur principal" isAbstract="false" isLeaf="false">
@@ -246,8 +232,36 @@
         </subjects>
       </useCase>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="eb2333ed-34b1-4a5c-845d-58ee10fbb3bc" name="Affichage des scores" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bca194a8-c87d-47ea-b001-78382955b0a5" />
+        <suppliersInternal>
+          <dependency Id="a65c3073-7bac-45f5-b45f-bf9e6bf12b08">
+            <useCaseMoniker Id="f4de6983-cf7a-43ea-b943-f396af1b2ed9" LastKnownName="Fin de partie" />
+            <elementDefinition Id="fc753844-db58-4f89-a42a-879d572c6635" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="b66d2d50-30fd-428c-9091-b45a6aa2517d" name="Civilisation">
     <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1a25854a-a9d0-4290-965f-d9b509522ffa">
+        <profileInstance Id="1efb9165-6693-4a3a-a1d9-dcf73e175127" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e5e218cf-f480-4d80-8a23-f3e9209f92fe">
+        <profileInstance Id="0c892372-dfbb-4b5d-9f0c-353e964fabeb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

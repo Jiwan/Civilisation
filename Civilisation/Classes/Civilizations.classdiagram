@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
@@ -9,14 +9,14 @@
             <body>We use the prototype design pattern as we want to load each departement informations from a file.
 </body>
             <annotatedElements>
-              <classMoniker Id="57ec4168-8f40-4c6b-8722-dde022208aa8" LastKnownName="PrototypeAbstractFactory" />
+              <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="IPrototypeCivilization" />
             </annotatedElements>
           </comment>
         </ownedCommentsInternal>
         <elementDefinition Id="8f127027-fedc-4140-8764-14434be32e12" />
         <packagedElements>
           <packageHasNamedElement>
-            <Interface Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" name="ICivilizationAbstractFactory" isAbstract="false" isLeaf="false">
+            <Interface Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" name="IPrototypeCivilization" isAbstract="false" isLeaf="false">
               <elementDefinition Id="12df8360-ae78-4495-9bee-eeda47fe3b04" />
               <ownedOperations>
                 <operation Id="bb93ad80-44dc-4ac2-8538-277deeede4c6" name="CreateDepartDirector" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -70,6 +70,9 @@
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
+                </operation>
+                <operation Id="c0355e57-1104-47e3-bbca-8eb5102b7dac" name="Clone" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2efe87d2-90dc-43c2-968a-e91f6db710e1" />
                 </operation>
               </ownedOperations>
             </Interface>
@@ -559,11 +562,11 @@ Point newCase = BasicCityExtender.Extend(this);
             </package>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="57ec4168-8f40-4c6b-8722-dde022208aa8" name="PrototypeAbstractFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="57ec4168-8f40-4c6b-8722-dde022208aa8" name="ConcreteFactory" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="78c1361a-fcfc-4761-8ebe-a3c0d8b060c6" />
               <suppliersInternal>
                 <interfaceRealization Id="e7bb026e-c471-441a-8f1f-935242a7d03c">
-                  <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="ICivilizationAbstractFactory" />
+                  <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="IPrototypeCivilization" />
                   <elementDefinition Id="c5d57d96-59a4-4503-831e-3464dcd1a82d" />
                 </interfaceRealization>
               </suppliersInternal>
@@ -648,6 +651,9 @@ Point newCase = BasicCityExtender.Extend(this);
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>
+                </operation>
+                <operation Id="132db217-928a-4e9a-bccd-1c20fe287fd5" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2a5442d2-89a3-408f-8e72-05799746ce22" />
                 </operation>
               </ownedOperationsInternal>
             </class>

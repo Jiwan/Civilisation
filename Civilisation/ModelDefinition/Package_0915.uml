@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="8f127027-fedc-4140-8764-14434be32e12"
   name="Civilization" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -9,9 +9,9 @@
       <body>We use the prototype design pattern as we want to load each departement informations from a file.
 </body>
       <annotatedElements>
-        <classMoniker
-          Id="78c1361a-fcfc-4761-8ebe-a3c0d8b060c6"
-          LastKnownName="PrototypeAbstractFactory"
+        <interfaceMoniker
+          Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
+          LastKnownName="IPrototypeCivilization"
           LastKnownLocation="Package_0915.uml" />
       </annotatedElements>
     </comment>
@@ -26,7 +26,7 @@
     <packageHasNamedElement>
       <Interface
         Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-        name="ICivilizationAbstractFactory"
+        name="IPrototypeCivilization"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -122,6 +122,14 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="2efe87d2-90dc-43c2-968a-e91f6db710e1"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -134,7 +142,7 @@
     <packageHasNamedElement>
       <class
         Id="78c1361a-fcfc-4761-8ebe-a3c0d8b060c6"
-        name="PrototypeAbstractFactory"
+        name="ConcreteFactory"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -143,7 +151,7 @@
             Id="c5d57d96-59a4-4503-831e-3464dcd1a82d">
             <interfaceMoniker
               Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-              LastKnownName="ICivilizationAbstractFactory"
+              LastKnownName="IPrototypeCivilization"
               LastKnownLocation="Package_0915.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -291,6 +299,14 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="2a5442d2-89a3-408f-8e72-05799746ce22"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -306,7 +322,7 @@
             Id="f1942283-a6b4-4c90-ae23-fce8d76bfc28">
             <interfaceMoniker
               Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-              LastKnownName="ICivilizationAbstractFactory"
+              LastKnownName="IPrototypeCivilization"
               LastKnownLocation="Package_0915.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -326,7 +342,7 @@
             <type_NamedElement>
               <interfaceMoniker
                 Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-                LastKnownName="ICivilizationAbstractFactory"
+                LastKnownName="IPrototypeCivilization"
                 LastKnownLocation="Package_0915.uml" />
             </type_NamedElement>
           </property>
@@ -449,13 +465,21 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
-                      LastKnownName="ICivilizationAbstractFactory"
+                      LastKnownName="IPrototypeCivilization"
                       LastKnownLocation="Package_0915.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="7b60cf62-cf63-472a-9a2f-080dfcae57b7"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -471,6 +495,179 @@
         Id="e96b8f1f-04c9-4083-a9bf-96f787da0d41"
         LastKnownName="Square"
         LastKnownLocation="Package_1107.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0fc1b423-33d7-48db-bc03-ad01d695112c"
+        name="EIIConcreteFactory1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="acc529fe-e020-4a99-af99-b621dc455bcf">
+            <interfaceMoniker
+              Id="12df8360-ae78-4495-9bee-eeda47fe3b04"
+              LastKnownName="IPrototypeCivilization"
+              LastKnownLocation="Package_0915.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="77d914f8-74de-4cb7-9fd2-95ddd18821e4"
+            name="CreateDepartDirector"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="58dd3ed9-24c8-4bb4-abc0-ca77d349a4a0"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
+                      LastKnownName="IDepartDirector"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="52ec45cf-d753-4f9d-8896-22aa1fb45d1a"
+            name="CreateStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3efdd274-e1b4-4a51-91f2-eadc5560b3e6"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
+                      LastKnownName="IStudent"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="72edc8cf-e81b-4aba-873a-39611af797b2"
+            name="CreateTeacher"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="30904295-df86-4508-a3fd-7bee33568f2f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
+                      LastKnownName="ITeacher"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f7e46d98-25ee-455f-8cda-953adffad572"
+            name="CreateCity"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="31537b02-7be4-48ce-a44e-1566846b87fc"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="97b02c64-6fec-4573-a042-2a2be0b96bd3"
+                      LastKnownName="ICity"
+                      LastKnownLocation="Package_0944.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9ae95f1d-52b6-448b-8b97-1e07e093cd8d"
+            name="EIIAbstractFactory"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="45a9687b-9774-417c-98f2-a92822dc503d"
+                  name="proto1"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="80170929-dbb8-4a97-995e-d7313d6e4030"
+                      LastKnownName="IDepartDirector"
+                      LastKnownLocation="Package1_1848.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="08a6bb4f-9874-4c9e-b791-3b88608069e5"
+                  name="proto2"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="c47a2f78-435a-4f25-89c5-3b151249dc2f"
+                      LastKnownName="ITeacher"
+                      LastKnownLocation="Package1_1848.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="80d56c07-987c-4a4c-9acb-ece6144ca424"
+                  name="proto3"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="c15995ba-05fd-4573-96f0-8323e9735dda"
+                      LastKnownName="IStudent"
+                      LastKnownLocation="Package1_1848.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f261a37b-8693-4434-9ba7-c7c2d90113e8"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>
