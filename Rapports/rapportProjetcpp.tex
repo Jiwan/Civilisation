@@ -123,11 +123,21 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 		En effet, au départ nous étions partis sur le patron de conception Fabrique Abstraite, ce qui aurait donné le Schéma 3.
 			Après réflexion, nous voulions pouvoir étendre le nombre de civilizations pour pouvoir en ajouter autant que voulu.
 		Le joueur pourrait importer sa civilisation créée (sous forme d'un fichier XML par exemple). 
-		Donc pour implémenter cette solution, le choix du prototype est plus judicieux. (Schéma 4)
-		Il permet d'éviter un nombre de sous classe important, qu'on aurait obtenu avec une Fabrique Abstraite.
+		Donc pour implémenter cette solution, le choix du prototype est plus judicieux pour la Fabrique Concrète. (Schéma 4)
+		Il permet d'éviter un nombre de sous classe important, qu'on aurait obtenu avec un patron Fabrique Abstraite classique (pour chaque civilisation, implémenter une fabrique concrète).
+			Donc en somme, nous avons une Fabrique Abstraite, qui possède une Fabrique Concrète qui implémente le patron de conception Prototype.
+			Cette Fabrique Concrète a donc un constructeur qui a comme rôle de cloner les interfaces des unités spécifiques d'une civilisation (Directeur, étudiant, etc.),
+		pour en fabriquer d'autres, avec des caractéristiques uniques.
+			Ces instances particulières des unités peuvent provenir de 2 endroits :
+				1) Soit il les a crée lui même (via une interface utilisateur, qui créera un fichier XML contenant le prototype sérialisé)
+				2) Soit ce sont des unités prédéfinies que l'on aura créées nous mêmes. (Il faudra alors désérialiser le prototype, qui est stocké sous la forme d'un fichier XMLcomme pour la 1ère méthode.)
 		
 		\subsubsection{Sous-section Unit}
-		
+			Une interface commune IUnit est pratique si jamais on décide de faire une unité qui a une attaque qui dépend de plusieurs facteurs.
+			(Comme attaque de base + attaque de l'épée + attaque du compagnon). Une interface commune permet de réaliser ceci facilement.
+			La classe Unit est \textit{Serializable} (comme expliqué auparavant) et \textit{Drawable} (pour avoir les méthodes d'affichage).
+			On a aussi des interfaces spécifiques pour les types d'unités spéciales (IDirector, IStudent, ITeacher), ce qui nous donne une certaine flexibilité.
+			Si jamais on décide de comment est géré le bonus des directeurs de département par exemple, on pourra facilement changer ceci avec cette interface.
 		
 	\subsection{Player}
 	\subsection{View}
