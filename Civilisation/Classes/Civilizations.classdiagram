@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
@@ -26,7 +26,7 @@
                       <parameter Id="1421fc89-2cea-4e90-a3e7-e98c1750645d" direction="Return">
                         <elementDefinition Id="185097b8-f0ed-4884-8c2a-9dea007f12d5" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector" />
+                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -39,7 +39,7 @@
                       <parameter Id="8963f879-aa9f-4b0c-a71e-c4d5bdafbcc9" direction="Return">
                         <elementDefinition Id="31782b9d-368e-4a5d-808a-ece5d57d1446" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent" />
+                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -52,7 +52,7 @@
                       <parameter Id="1d9f46ed-00d6-4708-9f7b-e42f351bfaa9" direction="Return">
                         <elementDefinition Id="c7f4f957-c030-4138-809f-c4714268265f" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher" />
+                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -575,7 +575,7 @@ Point newCase = BasicCityExtender.Extend(this);
                       <parameter Id="f5ffc739-2a44-4a3a-9647-ddaf47ab8e2b" direction="Return">
                         <elementDefinition Id="376239e4-4eaf-4468-8505-cc2b2fb2b5ce" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector" />
+                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -588,7 +588,7 @@ Point newCase = BasicCityExtender.Extend(this);
                       <parameter Id="bbaf67da-f6a2-4a4e-91f6-298612d6015d" direction="Return">
                         <elementDefinition Id="0f06f63b-70d2-4cc7-8a17-86f7260f1262" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent" />
+                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -601,7 +601,7 @@ Point newCase = BasicCityExtender.Extend(this);
                       <parameter Id="f55d4113-136b-41be-a596-394ebaf9b7c4" direction="Return">
                         <elementDefinition Id="e549a0d5-509e-4b7e-929b-0d6da7394bfa" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher" />
+                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -656,7 +656,7 @@ Point newCase = BasicCityExtender.Extend(this);
                       <parameter Id="1c45dca9-68a7-49ae-918e-4cf507edc961" name="protoDir" direction="In" isUnique="false">
                         <elementDefinition Id="4c3d772a-297a-4fe9-8a64-36f51dfad72c" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector" />
+                          <referencedTypeMoniker Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" LastKnownName="IDepartDirector : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -664,7 +664,7 @@ Point newCase = BasicCityExtender.Extend(this);
                       <parameter Id="768ab23f-9bfe-4e35-8fb4-1bb84c8ad5a3" name="protoStud" direction="In" isUnique="false">
                         <elementDefinition Id="f562a73a-4667-4dd1-a86e-cfd49ff2c4c9" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent" />
+                          <referencedTypeMoniker Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" LastKnownName="IStudent : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -672,7 +672,7 @@ Point newCase = BasicCityExtender.Extend(this);
                       <parameter Id="bb0d5ff4-69e3-4dc1-bca0-5d0c71a76805" name="protoProf" direction="In" isUnique="false">
                         <elementDefinition Id="8b3f726f-cc15-40dc-9452-9855b244db97" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher" />
+                          <referencedTypeMoniker Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" LastKnownName="ITeacher : ICloneable" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -695,7 +695,7 @@ Point newCase = BasicCityExtender.Extend(this);
                   <elementDefinition Id="82e09b72-027d-49a9-91b4-249242b1979b" />
                   <body>Si jamais on décide de comment est géré le bonus des directeurs de département on pourra facilement changer avec cette interface</body>
                   <annotatedElements>
-                    <interfaceMoniker Id="5767e1cc-54d1-4367-a437-095edf2fcba2" LastKnownName="IDepartDirector" />
+                    <interfaceMoniker Id="5767e1cc-54d1-4367-a437-095edf2fcba2" LastKnownName="IDepartDirector : ICloneable" />
                   </annotatedElements>
                 </comment>
                 <comment Id="9f2b3c62-9802-4737-b3e0-47ed8f768802">
@@ -973,7 +973,7 @@ Point newCase = BasicCityExtender.Extend(this);
                   </class>
                 </packageHasNamedElement>
                 <packageHasNamedElement>
-                  <Interface Id="b660c3ef-c247-4bf5-bfac-a510508e9c57" name="IStudent" isAbstract="false" isLeaf="false">
+                  <Interface Id="b660c3ef-c247-4bf5-bfac-a510508e9c57" name="IStudent : ICloneable" isAbstract="false" isLeaf="false">
                     <elementDefinition Id="c282f372-8661-4ffa-bf21-55b6e7b125ba" />
                     <ownedOperations>
                       <operation Id="b8378367-294d-44c6-906b-5b0497a25250" name="CanFight" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -989,15 +989,41 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="6e1dd1eb-55c3-485c-90ab-ddbd1b66dc61" name="Clone" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="08d302b9-deea-449c-9781-db49d97caf67" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="e19b8dfd-f8a6-4d4d-83bf-0838b99f47c4" direction="Return" isUnique="false">
+                              <elementDefinition Id="fed0af3b-58e5-43cc-a4c3-8e321446eeae" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="fcd4c0fe-539a-47c3-ae26-17439ccf2f40" LastKnownName="Object" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperations>
                   </Interface>
                 </packageHasNamedElement>
                 <packageHasNamedElement>
-                  <Interface Id="50c5d674-144b-414b-8bc5-055048ed5ed4" name="ITeacher" isAbstract="false" isLeaf="false">
+                  <Interface Id="50c5d674-144b-414b-8bc5-055048ed5ed4" name="ITeacher : ICloneable" isAbstract="false" isLeaf="false">
                     <elementDefinition Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72" />
                     <ownedOperations>
                       <operation Id="d627fe83-12ef-48b4-bf21-61e524e322fd" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="9ef1b9e5-d16e-4d13-a213-02ef1bb19826" />
+                      </operation>
+                      <operation Id="21ae7f42-e824-4efb-8da6-8521e2f4edd9" name="Clone" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="c1dcc9ed-fec1-4825-ae10-20d2410beb68" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="142a5224-c732-4f54-b860-0c92411a1ec9" direction="Return" isUnique="false">
+                              <elementDefinition Id="2afdbeca-dd6e-47a0-b493-77748a61f725" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="048bb607-51f8-488e-9626-0be553f6942e" LastKnownName="Object" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
                       </operation>
                     </ownedOperations>
                   </Interface>
@@ -1143,7 +1169,7 @@ Point newCase = BasicCityExtender.Extend(this);
                     <elementDefinition Id="2681d2e1-9fcb-4bd1-9fa0-e41f019df509" />
                     <suppliersInternal>
                       <interfaceRealization Id="80e07196-ae42-4f0e-9775-19309144cfae">
-                        <interfaceMoniker Id="5767e1cc-54d1-4367-a437-095edf2fcba2" LastKnownName="IDepartDirector" />
+                        <interfaceMoniker Id="5767e1cc-54d1-4367-a437-095edf2fcba2" LastKnownName="IDepartDirector : ICloneable" />
                         <elementDefinition Id="5c486dc2-b9b0-40ee-a441-0f5bbba84833" />
                       </interfaceRealization>
                     </suppliersInternal>
@@ -1180,11 +1206,24 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="42a89bc3-a48b-49b4-ab16-1784f18cc0dd" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="26832410-ded0-4049-87ee-c079c61d73d0" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="0f57e6ce-5181-4163-9d8b-11d988de82c3" direction="Return" isUnique="false">
+                              <elementDefinition Id="7f205d01-ab84-4491-9bd9-869823d6a668" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="41fc19ec-c041-4c36-a07b-3f025df3dc7b" LastKnownName="Object" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
                 <packageHasNamedElement>
-                  <Interface Id="5767e1cc-54d1-4367-a437-095edf2fcba2" name="IDepartDirector" isAbstract="false" isLeaf="false">
+                  <Interface Id="5767e1cc-54d1-4367-a437-095edf2fcba2" name="IDepartDirector : ICloneable" isAbstract="false" isLeaf="false">
                     <elementDefinition Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485" />
                     <ownedOperations>
                       <operation Id="73b9129d-3eb8-48b3-84f0-27e55d7412a1" name="GetDefenceBonus" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -1213,6 +1252,19 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="5828c2c5-a766-4faa-97ae-19778074a34e" name="Clone" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="61ed0337-6d4c-4671-9f02-2e3b3cef4dcc" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="05d20e35-ee66-4534-a887-5a7180a7e455" direction="Return" isUnique="false">
+                              <elementDefinition Id="1cc5a140-2352-436c-aa29-57f8447823a7" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="41fc19ec-c041-4c36-a07b-3f025df3dc7b" LastKnownName="Object" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperations>
                   </Interface>
                 </packageHasNamedElement>
@@ -1221,7 +1273,7 @@ Point newCase = BasicCityExtender.Extend(this);
                     <elementDefinition Id="b76c7c3f-a59d-4a49-8ae9-d42b2f30b17e" />
                     <suppliersInternal>
                       <interfaceRealization Id="635e9a1c-17d5-4200-a656-387e6fed9d3b">
-                        <interfaceMoniker Id="b660c3ef-c247-4bf5-bfac-a510508e9c57" LastKnownName="IStudent" />
+                        <interfaceMoniker Id="b660c3ef-c247-4bf5-bfac-a510508e9c57" LastKnownName="IStudent : ICloneable" />
                         <elementDefinition Id="837dc266-a9a5-4a3c-b1f3-d338c8c13b87" />
                       </interfaceRealization>
                     </suppliersInternal>
@@ -1245,6 +1297,19 @@ Point newCase = BasicCityExtender.Extend(this);
                           </operationHasOwnedParameters>
                         </ownedParameters>
                       </operation>
+                      <operation Id="d8d08aee-2454-4f72-98d5-c517a2992601" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1e9c8344-6127-465e-acd2-76c07ca89d71" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="5c4a0160-346e-4a6f-9c9d-3bef7b94c46a" direction="Return" isUnique="false">
+                              <elementDefinition Id="afb09b70-d49c-4033-b528-03079e6bdfae" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="41fc19ec-c041-4c36-a07b-3f025df3dc7b" LastKnownName="Object" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
                     </ownedOperationsInternal>
                   </class>
                 </packageHasNamedElement>
@@ -1253,7 +1318,7 @@ Point newCase = BasicCityExtender.Extend(this);
                     <elementDefinition Id="1637b756-e74e-4838-9c3b-20cff83f4235" />
                     <suppliersInternal>
                       <interfaceRealization Id="634f8f17-0411-4752-8221-0e35cf718959">
-                        <interfaceMoniker Id="50c5d674-144b-414b-8bc5-055048ed5ed4" LastKnownName="ITeacher" />
+                        <interfaceMoniker Id="50c5d674-144b-414b-8bc5-055048ed5ed4" LastKnownName="ITeacher : ICloneable" />
                         <elementDefinition Id="06cfce53-9d62-45fd-93ec-3ce80dd9a90f" />
                       </interfaceRealization>
                     </suppliersInternal>
@@ -1266,6 +1331,19 @@ Point newCase = BasicCityExtender.Extend(this);
                     <ownedOperationsInternal>
                       <operation Id="012de599-611e-407a-a95c-51e9e9b41053" name="CreateCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                         <elementDefinition Id="56691c3a-fb52-49ec-bbcd-ee4e3e23c89d" />
+                      </operation>
+                      <operation Id="9ef7e86a-961c-4b88-9604-b5e70593e01e" name="Clone" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1698db32-c784-4861-80f7-261c852db4d9" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="3ab067a7-76dd-446a-ab90-fcd7a9e68a94" direction="Return" isUnique="false">
+                              <elementDefinition Id="fbe74e37-b4f8-4399-9890-b35bd3003b0c" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="41fc19ec-c041-4c36-a07b-3f025df3dc7b" LastKnownName="Object" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
                       </operation>
                     </ownedOperationsInternal>
                   </class>
@@ -1332,17 +1410,17 @@ Point newCase = BasicCityExtender.Extend(this);
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" name="IDepartDirector" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Unit::IDepartDirector">
+      <referencedType Id="261aed75-5bcb-4da3-af2e-8fdbab0dfec5" name="IDepartDirector : ICloneable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Unit::IDepartDirector : ICloneable">
         <elementDefinition Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" name="IStudent" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Unit::IStudent">
+      <referencedType Id="47b72df3-53bd-4a13-9223-2d2e6184cb88" name="IStudent : ICloneable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Unit::IStudent : ICloneable">
         <elementDefinition Id="c282f372-8661-4ffa-bf21-55b6e7b125ba" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" name="ITeacher" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Unit::ITeacher">
+      <referencedType Id="cc40e176-8ff4-4019-b5b1-8d8cab6c84f2" name="ITeacher : ICloneable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Unit::ITeacher : ICloneable">
         <elementDefinition Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72" />
       </referencedType>
     </packageHasNamedElement>
@@ -1539,6 +1617,21 @@ Point newCase = BasicCityExtender.Extend(this);
     <packageHasNamedElement>
       <referencedType Id="49722d05-755e-43e4-8515-193fb52f82a7" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="41fc19ec-c041-4c36-a07b-3f025df3dc7b" name="Object" isAbstract="false" isLeaf="false" cachedFullName="Object">
+        <elementDefinition Id="ee146adf-a9ee-41c3-838e-d3ef01372d00" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fcd4c0fe-539a-47c3-ae26-17439ccf2f40" name="Object" isAbstract="false" isLeaf="false" cachedFullName="Object">
+        <elementDefinition Id="ee146adf-a9ee-41c3-838e-d3ef01372d00" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="048bb607-51f8-488e-9626-0be553f6942e" name="Object" isAbstract="false" isLeaf="false" cachedFullName="Object">
+        <elementDefinition Id="ee146adf-a9ee-41c3-838e-d3ef01372d00" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

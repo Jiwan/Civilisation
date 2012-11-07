@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="597049b5-db66-4d9c-8acd-d3cb15b748f7"
   name="Unit" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -20,7 +20,7 @@
       <annotatedElements>
         <interfaceMoniker
           Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-          LastKnownName="IDepartDirector"
+          LastKnownName="IDepartDirector : ICloneable"
           LastKnownLocation="Package_0917.uml" />
       </annotatedElements>
     </comment>
@@ -566,7 +566,7 @@
     <packageHasNamedElement>
       <Interface
         Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-        name="IDepartDirector"
+        name="IDepartDirector : ICloneable"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -617,13 +617,37 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="61ed0337-6d4c-4671-9f02-2e3b3cef4dcc"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1cc5a140-2352-436c-aa29-57f8447823a7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-        name="IStudent"
+        name="IStudent : ICloneable"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -650,13 +674,37 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="08d302b9-deea-449c-9781-db49d97caf67"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fed0af3b-58e5-43cc-a4c3-8e321446eeae"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
         Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-        name="ITeacher"
+        name="ITeacher : ICloneable"
         isAbstract="false"
         isLeaf="false">
         <ownedOperations>
@@ -668,6 +716,30 @@
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="c1dcc9ed-fec1-4825-ae10-20d2410beb68"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2afdbeca-dd6e-47a0-b493-77748a61f725"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -740,7 +812,7 @@
             Id="6dee3f95-479d-4ea5-8e50-dc929462d24d">
             <interfaceMoniker
               Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-              LastKnownName="IStudent"
+              LastKnownName="IStudent : ICloneable"
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -819,6 +891,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="73a84d61-e897-4121-a23e-eda353e493b2"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4cc97339-989d-4f71-97dc-78b702b4e38a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -834,7 +930,7 @@
             Id="428c0726-c29b-4e53-a151-1ebcd3f75057">
             <interfaceMoniker
               Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-              LastKnownName="ITeacher"
+              LastKnownName="ITeacher : ICloneable"
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -904,6 +1000,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="dacf8bae-3d23-4620-9e34-5f270da7517f"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dae1f865-974f-449e-8217-f93a242d10bd"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -919,7 +1039,7 @@
             Id="264756e3-f426-4c61-89e0-5b9f1975bc12">
             <interfaceMoniker
               Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-              LastKnownName="ITeacher"
+              LastKnownName="ITeacher : ICloneable"
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -984,6 +1104,30 @@
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
                       LastKnownLocation="Civilisation.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="78e8f575-f0bb-4354-8156-486db59162bd"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bbfc6324-031e-473f-bd70-c61afcf57691"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1239,7 +1383,7 @@
             Id="5c486dc2-b9b0-40ee-a441-0f5bbba84833">
             <interfaceMoniker
               Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-              LastKnownName="IDepartDirector"
+              LastKnownName="IDepartDirector : ICloneable"
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -1301,6 +1445,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="26832410-ded0-4049-87ee-c079c61d73d0"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f205d01-ab84-4491-9bd9-869823d6a668"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1316,7 +1484,7 @@
             Id="837dc266-a9a5-4a3c-b1f3-d338c8c13b87">
             <interfaceMoniker
               Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-              LastKnownName="IStudent"
+              LastKnownName="IStudent : ICloneable"
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -1354,6 +1522,30 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="1e9c8344-6127-465e-acd2-76c07ca89d71"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="afb09b70-d49c-4033-b528-03079e6bdfae"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1369,7 +1561,7 @@
             Id="06cfce53-9d62-45fd-93ec-3ce80dd9a90f">
             <interfaceMoniker
               Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-              LastKnownName="ITeacher"
+              LastKnownName="ITeacher : ICloneable"
               LastKnownLocation="Package_0917.uml" />
           </interfaceRealization>
         </suppliersInternal>
@@ -1392,6 +1584,30 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="1698db32-c784-4861-80f7-261c852db4d9"
+            name="Clone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fbe74e37-b4f8-4399-9890-b35bd3003b0c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+                      LastKnownName="Object"
+                      LastKnownLocation="Package_0917.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1440,6 +1656,11 @@
             name="UT_TEACHER" />
         </ownedLiterals>
       </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ee146adf-a9ee-41c3-838e-d3ef01372d00"
+        name="Object" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="8f127027-fedc-4140-8764-14434be32e12"
   name="Civilization" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -46,7 +46,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-                      LastKnownName="IDepartDirector"
+                      LastKnownName="IDepartDirector : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -69,7 +69,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-                      LastKnownName="IStudent"
+                      LastKnownName="IStudent : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -92,7 +92,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-                      LastKnownName="ITeacher"
+                      LastKnownName="ITeacher : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -164,7 +164,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-                      LastKnownName="IDepartDirector"
+                      LastKnownName="IDepartDirector : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -187,7 +187,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-                      LastKnownName="IStudent"
+                      LastKnownName="IStudent : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -210,7 +210,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-                      LastKnownName="ITeacher"
+                      LastKnownName="ITeacher : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -311,7 +311,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-                      LastKnownName="IDepartDirector"
+                      LastKnownName="IDepartDirector : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -325,7 +325,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-                      LastKnownName="IStudent"
+                      LastKnownName="IStudent : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -339,7 +339,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-                      LastKnownName="ITeacher"
+                      LastKnownName="ITeacher : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -403,7 +403,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="fa78e52c-a914-4f9a-8d4e-7b3dc7d43485"
-                      LastKnownName="IDepartDirector"
+                      LastKnownName="IDepartDirector : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -426,7 +426,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="c282f372-8661-4ffa-bf21-55b6e7b125ba"
-                      LastKnownName="IStudent"
+                      LastKnownName="IStudent : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -449,7 +449,7 @@
                   <type_NamedElement>
                     <interfaceMoniker
                       Id="ae3d1459-5796-43b6-9702-b7d9f5cbee72"
-                      LastKnownName="ITeacher"
+                      LastKnownName="ITeacher : ICloneable"
                       LastKnownLocation="Package_0917.uml" />
                   </type_NamedElement>
                 </parameter>
