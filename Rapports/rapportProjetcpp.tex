@@ -118,7 +118,7 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 	
 \section{Diagrammes de Classe}
 	\subsection{Civilization}
-		\subsubsection{Sous-section Civilization}
+		\subsubsection{Namespace Civilization}
 			Nous avons utilisé le design pattern Prototype pour pouvoir avoir le plus possible de civilizations différentes.
 		En effet, au départ nous étions partis sur le patron de conception Fabrique Abstraite, ce qui aurait donné le Schéma 3.
 			Après réflexion, nous voulions pouvoir étendre le nombre de civilizations pour pouvoir en ajouter autant que voulu.
@@ -132,17 +132,40 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 				1) Soit il les a crée lui même (via une interface utilisateur, qui créera un fichier XML contenant le prototype sérialisé)
 				2) Soit ce sont des unités prédéfinies que l'on aura créées nous mêmes. (Il faudra alors désérialiser le prototype, qui est stocké sous la forme d'un fichier XMLcomme pour la 1ère méthode.)
 		
-		\subsubsection{Sous-section Unit}
+		\subsubsection{Namespace Unit}
 			Une interface commune IUnit est pratique si jamais on décide de faire une unité qui a une attaque qui dépend de plusieurs facteurs.
-			(Comme attaque de base + attaque de l'épée + attaque du compagnon). Une interface commune permet de réaliser ceci facilement.
-			La classe Unit est \textit{Serializable} (comme expliqué auparavant) et \textit{Drawable} (pour avoir les méthodes d'affichage).
-			On a aussi des interfaces spécifiques pour les types d'unités spéciales (IDirector, IStudent, ITeacher), ce qui nous donne une certaine flexibilité.
+		(Comme attaque de base + attaque de l'épée + attaque du compagnon). Une interface commune permet de réaliser ceci facilement.
+			La classe Unit est \textit{ISerializable} (comme expliqué auparavant) et \textit{IDrawable} (pour avoir les méthodes d'affichage).
+		On a aussi des interfaces spécifiques pour les types d'unités spéciales (IDirector, IStudent, ITeacher), ce qui nous donne une certaine flexibilité.
 			Si jamais on décide de comment est géré le bonus des directeurs de département par exemple, on pourra facilement changer ceci avec cette interface.
+		
+		\subsubsection{Namespace City}
+			De même que pour IUnit, nous avons pensé à une interface ICity (qui pourrait se revéler pratique si nous voulons étendre un autre concept à des villes de type différent).
+		Par exmple, nous pourrions imaginer une ville dont \textit{TotalAvailableFood} dépend aussi de son commerce avec une autre ville par exemple, nous pouvons changer la manière dont est implémenté cette méthode.
+			Ensuite, nous avons utilisé le pattern Stratégie afin d'implémenter des algorithmes différents d'extension de la ville (\textit{"Le choix de cette case, sera réalisé par un algorithme que vous développerez."})
+		Ainsi, on pourra au départ implémenter un algorithme simple et bête qui choisira une case aléatoirement.
+			Puis dans un deuxième temps, choisir d'implémenter un algorithme plus intelligent, qui choisira les case en fonction de leur contenu exploitable (minerai, nourriture).
+		De plus, vu qu'une seule instance de cet algorithme est utile à la fois, nous utiliseront le patron de conception Singleton.
+			
 		
 	\subsection{Player}
 	\subsection{View}
 	\subsection{World}
-	
+		\subsubsection{Namespace World}
+			\subsubsection{Namespace Square}
+				Dans le namespace Square, nous avons crée une classe pour représenter une case du "damier" de notre jeu.
+			Ces cases peuvent être de natures différentes (Montagne, Plaine, Désert) et avoir des ressources spéciales (Fer, Fruit).
+			Grâce à ces natures et resources spéciales, on peut avoir de nombreux types de cases différents.
+			Une implémentation idéale de ce cas serait le patron de conception Décorateur.
+			En effet, grâce au décorateur, on peut alors "décorer" les cases Montagne, Plaine ou Désert avec les ressources spéciales Fer et Fruit.
+			Il est aussi facile d'ajouter une nature ou une ressource spéciales, sans tout de même faire exploser le nombre de classes.
+			
+			\subsubsection{Namespace Map}
+				L'interface IMapCreate permet d'obliger les classes de type Map qui l'implémentent d'avoir une méthode CreateMap qui est spéciale en fonction du randomizer qui est passé en paramètre.
+			En fait, il s'agit du patron de conception Stratégie appliquée à une interface.
+			Le lien entre l'interface IMapCreate et ISquareRandomizer n'est pas aussi fort qu'une aggrégation, mais doit quand même avoir un randomizer passé en paramètre.
+			Il est alors facile d'avoir des stratégies différentes de création de cartes, si on veut des cartes avec plus de mer par exemple, ou plus de montagne.
+			
 	
 \section{Diagramme d'états-transitions}
 
