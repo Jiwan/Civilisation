@@ -98,11 +98,23 @@ Alexandru \textsc{Costan} % Supervisor's Name
 
 \section{Introduction}
 
+	Lors de la modélisation de notre version de \textit{Civilization}, nous avons voulu la rendre la plus flexible et extensible possible.
+Nous voulions pouvoir facilement ajouter la gestion des jeux en réseau, pouvoir étendre et créer ses propres classes, etc.
+Heureusement, ceci est réalisable grâce aux \textit{design patterns} (qui nous sont aussi imposés).
+Nous avons essayé d'aller plus loin que les 5 patrons de conceptions imposé, afin de réaliser notre objectif d'un jeu pouvant évoluer.
+A chaque fois, nous avons justifié l'utilisation du patron de conception.
+	Bonne lecture.
 
 \section{Cas d'utilisation}
 	\subsection{Règles du jeu}
+	Dans ce diagramme, nous avons illustré les intéractions entre les conceptes du jeu (les règles du jeu), les différentes unités intervenant dans une partie et les joueurs qui interagissent avec ces derniers.
+	Les joueurs sont ceux qui créent des villes, créent des unités, bougent et font combattre ces unités et capturent des villes.
+	Sur ce diagramme figurent les principales intéractions entre les joueurs.
+	Nous avons fait un diagramme \textit{Développement d'une civilisation} pour illustrer les actions qu'un joueur doit entreprendre lors d'une partie, ainsi que les dépendances de ces actions.
+	
+	
 	\subsection{Cycle de vie d'une partie}
-	\subsection{Développement d'une civilisation}
+
 
 	
 \section{Diagrammes de Classe}

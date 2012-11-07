@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="c187f804-3256-494f-bf8e-8c606614457a" name="Civilisation" linkedPackageId="7b7b2762-f94d-4724-8bc5-73d137bf9b19" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c187f804-3256-494f-bf8e-8c606614457a" name="Civilisation" linkedPackageId="7b7b2762-f94d-4724-8bc5-73d137bf9b19" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <ownedCommentsInternal>
     <comment Id="fd6caf06-15c3-4fe5-8938-27a2a9e584c6">
       <elementDefinition Id="c23ae7e3-08b3-4171-a264-a43b977c785f" />
@@ -63,7 +63,7 @@
             <elementDefinition Id="e6fc077b-17e3-4690-8212-fcb7d84a4a52" />
           </association>
           <association Id="eebdb023-9d15-4f63-8a21-f4596af3b1a6" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Bouger unités" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger unités" />
+            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger/combattre unités" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="3402118c-2ae7-4a51-a344-85baff81c6c8" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -134,7 +134,7 @@
             <elementDefinition Id="8ed76188-3a0a-42d2-a0f0-0c28fc8dc5fd" />
           </association>
           <association Id="4d666918-274f-4d1f-b2f1-847dd23adaec" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Bouger unités" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger unités" />
+            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger/combattre unités" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="628edb33-ee64-4a63-860e-6587896fc4ed" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -174,6 +174,12 @@
     <packageHasNamedElement>
       <useCase Id="28fe7f3f-d3e3-44ac-966a-85286d679979" name="Créer unités" isAbstract="false" isLeaf="false">
         <elementDefinition Id="c88345bb-3b8d-4326-a04a-8052077bc612" />
+        <suppliersInternal>
+          <dependency Id="d30c2508-d5ee-4ab2-bca1-f52b60ee91b3">
+            <useCaseMoniker Id="8454233b-1a3c-48a6-a986-da55a6379abd" LastKnownName="Créer une ville" />
+            <elementDefinition Id="ef47bd5f-5713-45cf-b65b-32766c95c9ff" />
+          </dependency>
+        </suppliersInternal>
         <subjects>
           <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
         </subjects>
@@ -188,7 +194,7 @@
             <elementDefinition Id="8c39bd40-3b81-4333-9f14-7c4783b83267" />
           </dependency>
           <dependency Id="ea6e0ebe-ec5e-4626-8464-965391fd7af3">
-            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger unités" />
+            <useCaseMoniker Id="1edb677a-400c-4b07-9a86-2af070912240" LastKnownName="Bouger/combattre unités" />
             <elementDefinition Id="e8a7f5a4-5b1b-4884-b84b-f45008a8e8c6" />
           </dependency>
         </suppliersInternal>
@@ -268,8 +274,14 @@
       </useCase>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <useCase Id="1edb677a-400c-4b07-9a86-2af070912240" name="Bouger unités" isAbstract="false" isLeaf="false">
+      <useCase Id="1edb677a-400c-4b07-9a86-2af070912240" name="Bouger/combattre unités" isAbstract="false" isLeaf="false">
         <elementDefinition Id="23de5652-1eaf-4503-a2f0-2b466cae475e" />
+        <suppliersInternal>
+          <dependency Id="35a57642-2ead-4cc1-a033-282dc226129b">
+            <useCaseMoniker Id="28fe7f3f-d3e3-44ac-966a-85286d679979" LastKnownName="Créer unités" />
+            <elementDefinition Id="48c52725-3676-4c73-8345-28ccaf83a7df" />
+          </dependency>
+        </suppliersInternal>
         <subjects>
           <subsystemMoniker Id="4d592c2c-ba47-4fc2-8e30-713a73127256" LastKnownName="Règles du jeu" />
         </subjects>
