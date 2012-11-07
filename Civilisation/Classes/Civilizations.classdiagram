@@ -6,8 +6,7 @@
         <ownedCommentsInternal>
           <comment Id="87034c1b-5fbd-45ef-9588-d10d527db806">
             <elementDefinition Id="2e7b5c69-1003-42b3-9998-7aaf586991ef" />
-            <body>We use the prototype design pattern as we want to load each departement informations from a file.
-</body>
+            <body>Nous utiliserons le pattern prototype car nous voulons charger les civilisations à partir de fichiers de configuration.</body>
             <annotatedElements>
               <interfaceMoniker Id="5f4c4790-07e9-46d4-894c-bcbc1f6ead4d" LastKnownName="ICivilizationAbstractFactory" />
             </annotatedElements>
@@ -325,19 +324,6 @@ Point newCase = BasicCityExtender.Extend(this);
                               <elementDefinition Id="a4face1f-a534-4f99-8e5f-4e45bb357ed6" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="ae0b100d-6879-4c56-a037-bcc75eae6590" LastKnownName="List&lt;System.Drawing.Point&gt;" />
-                              </type_NamedElement>
-                            </parameter>
-                          </operationHasOwnedParameters>
-                        </ownedParameters>
-                      </operation>
-                      <operation Id="9b51436a-7668-4956-8186-4a96ccbaf0e0" name="GetCityID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                        <elementDefinition Id="715861a6-b883-4661-8e83-3c02fd291eab" />
-                        <ownedParameters>
-                          <operationHasOwnedParameters>
-                            <parameter Id="9d031d72-6e29-4e0c-970e-ea27598870dd" direction="Return" isUnique="false">
-                              <elementDefinition Id="7cf57e9d-9a8d-4e45-a2e8-e5ac297bd4f3" />
-                              <type_NamedElement>
-                                <referencedTypeMoniker Id="49722d05-755e-43e4-8515-193fb52f82a7" LastKnownName="Integer" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -1611,11 +1597,6 @@ Point newCase = BasicCityExtender.Extend(this);
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="6be08e27-bb5c-4dae-a3a8-41c36cdd1e62" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
-        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="49722d05-755e-43e4-8515-193fb52f82a7" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
     </packageHasNamedElement>

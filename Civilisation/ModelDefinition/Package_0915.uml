@@ -6,8 +6,7 @@
   <ownedCommentsInternal>
     <comment
       Id="2e7b5c69-1003-42b3-9998-7aaf586991ef">
-      <body>We use the prototype design pattern as we want to load each departement informations from a file.
-</body>
+      <body>Nous utiliserons le pattern prototype car nous voulons charger les civilisations à partir de fichiers de configuration.</body>
       <annotatedElements>
         <interfaceMoniker
           Id="12df8360-ae78-4495-9bee-eeda47fe3b04"

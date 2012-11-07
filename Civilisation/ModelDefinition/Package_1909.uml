@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="d64e6476-044a-46e5-90c7-9b21a2dc8404"
   name="Player" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -26,6 +26,16 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
         <classMoniker
           Id="6dbaeb44-4117-4743-a160-cafc949128dc"
           LastKnownName="InactivePlayer"
+          LastKnownLocation="Package_1909.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="35d8c6a3-5012-458e-bbb7-1802c7743e70">
+      <body>CF: Game pour voir le pattern observateur utilisé pour receptionner les événements provenant de la souris et du clavier.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="2e41b43e-6bee-4607-8ca0-e84c403ab82b"
+          LastKnownName="HumanPlayer"
           LastKnownLocation="Package_1909.uml" />
       </annotatedElements>
     </comment>
@@ -309,6 +319,55 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="b4685c63-fc11-4565-914e-9f29fa166863"
+            name="GetCommands"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="620385cd-b8fd-49f4-a291-0de1e760dc29"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="719c725a-7cab-4928-bd4b-467a8e7b620c"
+                      LastKnownName="IPlayerAction"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a4b613b0-64b1-4815-8a58-8e8272ce8569"
+            name="SetGame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b43f2ca9-6b8d-4fbc-a7de-c336e1585433"
+                  name="game"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e1c6c581-db8c-46c1-a59d-54535a2a740b"
+                      LastKnownName="Game"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -373,6 +432,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           <property
             Id="a83ef3b2-5217-4dea-95a9-ad702941ba01"
             name="_cities"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -403,6 +463,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           <property
             Id="76ccc150-cd57-437c-8360-3ef03a2a2dd7"
             name="_units"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -428,6 +489,25 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                 Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
                 LastKnownName="IUnit"
                 LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="faae61cb-7b6e-4a54-86d5-e5b468563d96"
+            name="_game"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e1c6c581-db8c-46c1-a59d-54535a2a740b"
+                LastKnownName="Game"
+                LastKnownLocation="Package_1121.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -703,6 +783,172 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="d844a1bb-94ee-4b53-ae02-3632330e0422"
+            name="GetCommands"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3db8e5ad-835c-40c2-b707-b98ebf681304"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="719c725a-7cab-4928-bd4b-467a8e7b620c"
+                      LastKnownName="IPlayerAction"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="df08bd15-5229-42b0-bc01-b7b0b8cf161c"
+            name="SetGame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="803826bd-13bc-41c3-bc81-9dca519b9ac6"
+                  name="game"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e1c6c581-db8c-46c1-a59d-54535a2a740b"
+                      LastKnownName="Game"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b7153785-8f46-471c-aceb-34c75dab4905"
+            name="KeyboardPressedEventHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="311fa243-208e-470c-9b66-1cdbccddb820"
+                  name="o"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="66b61843-3749-4b97-8319-2da57261c1ae"
+                      LastKnownName="object"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="28a4b060-5267-4b74-8f5c-df162f15bd24"
+                  name="e"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="28dcf8f2-9119-40ce-9826-9bd796dc2877"
+                      LastKnownName="KeyboardEventArgs"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1298938d-01cf-421a-b8dc-65cfb14139ad"
+            name="MouseClickedEventHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b4914779-48c7-479c-bc8b-55c22ee6ea09"
+                  name="o"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="66b61843-3749-4b97-8319-2da57261c1ae"
+                      LastKnownName="object"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="96ce3faf-c59a-421c-a0e0-f903bbf5d9ec"
+                  name="e"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f5a6e2b2-1f49-4251-8958-843a8b42a46c"
+                      LastKnownName="MouseEventArgs"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5e6e9575-bb7a-460f-a11c-a426f6e9c1af"
+            name="MouseMovedEventHandler"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5745e3ca-d9cc-442f-b3ce-f3502306ad23"
+                  name="o"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="66b61843-3749-4b97-8319-2da57261c1ae"
+                      LastKnownName="object"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3a022f9a-444a-45c4-90ee-70ff0e15d3ce"
+                  name="e"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f5a6e2b2-1f49-4251-8958-843a8b42a46c"
+                      LastKnownName="MouseEventArgs"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -793,6 +1039,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           <property
             Id="f3034873-9ba0-4722-82cf-333f87df3912"
             name="_cities"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -823,6 +1070,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           <property
             Id="2e1d31e0-1a39-4183-bfd2-cb9cddc34e3a"
             name="_units"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -848,6 +1096,25 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                 Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
                 LastKnownName="IUnit"
                 LastKnownLocation="Package_1909.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0d65805e-126c-4ce5-a0c4-af869af58f11"
+            name="_game"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e1c6c581-db8c-46c1-a59d-54535a2a740b"
+                LastKnownName="Game"
+                LastKnownLocation="Package_1121.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1123,6 +1390,55 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="bcae8554-a641-42ef-af66-79acc0b73b9c"
+            name="GetCommands"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5c96cb00-3bf1-4167-a63a-20fe0aa4d12f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="719c725a-7cab-4928-bd4b-467a8e7b620c"
+                      LastKnownName="IPlayerAction"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7194b997-8bd3-4e98-b9e3-2c826c0846af"
+            name="SetGame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e6f2b2b5-9712-4bcb-b391-5ab54c08ad1a"
+                  name="game"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e1c6c581-db8c-46c1-a59d-54535a2a740b"
+                      LastKnownName="Game"
+                      LastKnownLocation="Package_1121.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1244,6 +1560,11 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
       <undefinedType
         Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce"
         name="ICity" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="719c725a-7cab-4928-bd4b-467a8e7b620c"
+        name="IPlayerAction" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

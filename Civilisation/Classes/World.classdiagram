@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="14658d13-38d8-464e-8f91-2722ad00560d" name="World">
@@ -23,16 +23,22 @@
                   <class Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" name="Square : IDrawableEntity" isAbstract="true" isLeaf="false" isActiveClass="false">
                     <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
                     <ownedAttributesInternal>
-                      <property Id="1c95c733-64a0-4d8d-bc67-9abee6bb3caa" name="m_availableOre" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                      <property Id="1c95c733-64a0-4d8d-bc67-9abee6bb3caa" name="_availableOre" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <elementDefinition Id="49c3f3b4-9153-497c-9e7b-f90211438c3e" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="f46cd213-8b06-4d9d-9288-0ef5a4b2c21c" LastKnownName="Integer" />
                         </type_NamedElement>
                       </property>
-                      <property Id="4d5eebb1-ddd9-4084-b5b1-d3f527c0f3d2" name="m_availableFood" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                      <property Id="4d5eebb1-ddd9-4084-b5b1-d3f527c0f3d2" name="_availableFood" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <elementDefinition Id="af4b4dba-55f1-4fde-a6cb-940ef58976f2" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="4a1aa781-4f71-44df-8276-79c74d699d7b" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="d0e71ac3-c2b1-45f7-af5b-40d289a7ed21" name="_tile" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="013f3912-f0d1-4d18-98ee-5f3729aa19d4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="12fc5ecf-d195-4c9b-a11d-217f435889c4" LastKnownName="Tile" />
                         </type_NamedElement>
                       </property>
                     </ownedAttributesInternal>
@@ -80,6 +86,26 @@
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="17801dd9-8976-4caa-a75c-c4690391716a" LastKnownName="Integer" />
                               </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="1dce3830-0fbd-4166-981e-c381b55631bb" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="f79a1d14-03ee-4f66-9582-3ad410515605" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="84972f9a-fb79-4230-8217-55b9e962567f" name="IGraphicEngine" direction="In" isUnique="false">
+                              <elementDefinition Id="04c33701-c611-43ed-baf3-af9c978baf53" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="44044419-6aca-414e-aa0f-1264add8abdd" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="5dd5ebdb-bba5-480c-bcca-be95cfd3a702" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="6139ab2a-57d0-4f0f-9997-27625bb3a732" name="float deltaTime" direction="In" isUnique="false">
+                              <elementDefinition Id="dafa457b-18ec-459d-bcac-479eb1272e78" />
                             </parameter>
                           </operationHasOwnedParameters>
                         </ownedParameters>
@@ -995,6 +1021,11 @@
     <packageHasNamedElement>
       <referencedType Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" name="IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="IDrawableEntity">
         <elementDefinition Id="2c032616-3ba3-4dc3-a95f-a9b799a62528" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="12fc5ecf-d195-4c9b-a11d-217f435889c4" name="Tile" isAbstract="false" isLeaf="false" cachedFullName="Tile">
+        <elementDefinition Id="c2796372-6627-43f1-9f64-d5d695f79669" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

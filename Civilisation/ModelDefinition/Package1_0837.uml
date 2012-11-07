@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="015e9c81-0c43-4456-979c-0247e8e4ef17"
   name="Square" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -27,7 +27,7 @@
         <ownedAttributesInternal>
           <property
             Id="49c3f3b4-9153-497c-9e7b-f90211438c3e"
-            name="m_availableOre"
+            name="_availableOre"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -46,7 +46,7 @@
           </property>
           <property
             Id="af4b4dba-55f1-4fde-a6cb-940ef58976f2"
-            name="m_availableFood"
+            name="_availableFood"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -61,6 +61,25 @@
                 Id="220a3521-e091-4221-bae9-3ef9018e845c"
                 LastKnownName="Integer"
                 LastKnownLocation="Civilisation.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="013f3912-f0d1-4d18-98ee-5f3729aa19d4"
+            name="_tile"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c2796372-6627-43f1-9f64-d5d695f79669"
+                LastKnownName="Tile"
+                LastKnownLocation="Package1_0837.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -145,6 +164,42 @@
                       LastKnownLocation="Civilisation.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f79a1d14-03ee-4f66-9582-3ad410515605"
+            name="Draw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="04c33701-c611-43ed-baf3-af9c978baf53"
+                  name="IGraphicEngine"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5dd5ebdb-bba5-480c-bcca-be95cfd3a702"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dafa457b-18ec-459d-bcac-479eb1272e78"
+                  name="float deltaTime"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -726,6 +781,11 @@
       <undefinedType
         Id="2c032616-3ba3-4dc3-a95f-a9b799a62528"
         name="IDrawableEntity" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c2796372-6627-43f1-9f64-d5d695f79669"
+        name="Tile" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

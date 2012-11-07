@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
@@ -21,6 +21,13 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
 </body>
             <annotatedElements>
               <classMoniker Id="c50f8ffe-7bc7-4ffd-be48-bd1cd02c287a" LastKnownName="InactivePlayer" />
+            </annotatedElements>
+          </comment>
+          <comment Id="32f1f60e-e63d-41e4-be58-26081cd4a04a">
+            <elementDefinition Id="35d8c6a3-5012-458e-bbb7-1802c7743e70" />
+            <body>CF: Game pour voir le pattern observateur utilisé pour receptionner les événements provenant de la souris et du clavier.</body>
+            <annotatedElements>
+              <classMoniker Id="f21ae4e1-a195-47f5-8871-7662aa5db8cd" LastKnownName="HumanPlayer" />
             </annotatedElements>
           </comment>
         </ownedCommentsInternal>
@@ -179,6 +186,32 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="6c81c3bd-7548-4e8e-a864-d9d83ab75e2a" name="GetCommands" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b4685c63-fc11-4565-914e-9f29fa166863" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dfc7d204-5178-4808-b3a8-4427f4902936" direction="Return" isUnique="false">
+                        <elementDefinition Id="620385cd-b8fd-49f4-a291-0de1e760dc29" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3652643e-4610-49a8-aa14-e9456b7af94a" LastKnownName="IPlayerAction" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f34c4c9f-28b9-45ee-ba6a-d665e03bff5b" name="SetGame" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a4b613b0-64b1-4815-8a58-8e8272ce8569" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2909ab00-d64b-4cb5-89a4-711f22c2bc72" name="game" direction="In" isUnique="false">
+                        <elementDefinition Id="b43f2ca9-6b8d-4fbc-a7de-c336e1585433" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" LastKnownName="Game" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperations>
             </Interface>
           </packageHasNamedElement>
@@ -210,7 +243,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                 </association>
               </targetEnds>
               <ownedAttributesInternal>
-                <property Id="a3f45143-d521-46d6-9c34-8366dd453c6b" name="_cities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="a3f45143-d521-46d6-9c34-8366dd453c6b" name="_cities" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="d1140b54-74c7-4ebb-be6e-ba2362faa030" name="Lower" value="*">
                       <elementDefinition Id="ceabb597-d29b-45f7-b07d-ef4e4fcd6aaf" />
@@ -226,7 +259,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                     <referencedTypeMoniker Id="519f8b27-beeb-459d-b1d2-3f7796f379c0" LastKnownName="ICity" />
                   </type_NamedElement>
                 </property>
-                <property Id="fabe5460-8693-44cf-b8de-bcd4b16b156a" name="_units" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="fabe5460-8693-44cf-b8de-bcd4b16b156a" name="_units" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="8b9b567b-13fb-4bb7-99a0-a818526a8ec6" name="Lower" value="*">
                       <elementDefinition Id="944de2d4-9333-406d-a806-c829c4c2864d" />
@@ -240,6 +273,12 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                   <elementDefinition Id="76ccc150-cd57-437c-8360-3ef03a2a2dd7" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                  </type_NamedElement>
+                </property>
+                <property Id="958ffed3-d2d8-427e-8716-c04a64777811" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="faae61cb-7b6e-4a54-86d5-e5b468563d96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c54afdeb-445a-488c-bf3c-b82c2e0da24f" LastKnownName="Game" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -388,6 +427,95 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                         <elementDefinition Id="51f3ce91-2a32-4aad-b10e-8891ffaddb0d" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="4524ddaa-3453-44a7-8498-ecffe6c1aab8" name="GetCommands" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d844a1bb-94ee-4b53-ae02-3632330e0422" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e26e1e1b-d596-42d2-b1b9-857fb301f8ad" direction="Return" isUnique="false">
+                        <elementDefinition Id="3db8e5ad-835c-40c2-b707-b98ebf681304" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3652643e-4610-49a8-aa14-e9456b7af94a" LastKnownName="IPlayerAction" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="e799a65d-297f-4bce-9d11-fd695edfe247" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="df08bd15-5229-42b0-bc01-b7b0b8cf161c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b16b73a4-2359-4e7f-942f-5e1ba50ddb18" name="game" direction="In" isUnique="false">
+                        <elementDefinition Id="803826bd-13bc-41c3-bc81-9dca519b9ac6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" LastKnownName="Game" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9da37b89-5cb2-426e-88ba-af9622d40ecf" name="KeyboardPressedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b7153785-8f46-471c-aceb-34c75dab4905" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9250a587-fe98-48a4-b577-5d29fa6e48ec" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="311fa243-208e-470c-9b66-1cdbccddb820" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f1904702-6f8d-45aa-bf31-b664048f0b99" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="78b13113-7888-4935-a67f-525ec1a9c128" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="28a4b060-5267-4b74-8f5c-df162f15bd24" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="6547d12c-79cc-4a68-b350-0541f4c3ecfa" LastKnownName="KeyboardEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ea622ab6-fc95-4273-8feb-74b7710c0dd7" name="MouseClickedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1298938d-01cf-421a-b8dc-65cfb14139ad" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f86538b5-2784-47fa-bede-32b3e46692f5" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="b4914779-48c7-479c-bc8b-55c22ee6ea09" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f1904702-6f8d-45aa-bf31-b664048f0b99" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ddd9a375-706f-4270-9847-b4d4a83c69ff" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="96ce3faf-c59a-421c-a0e0-f903bbf5d9ec" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="92fe104e-8159-4dfc-b430-275705b302ca" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="dfcd1a58-82a5-4d61-8fda-566a46e02453" name="MouseMovedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5e6e9575-bb7a-460f-a11c-a426f6e9c1af" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="7686b65e-12f3-43b7-b27f-a983d8f41a71" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="5745e3ca-d9cc-442f-b3ce-f3502306ad23" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f1904702-6f8d-45aa-bf31-b664048f0b99" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2e46fccd-0fd8-4f33-bac6-e9f4ff739c14" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="3a022f9a-444a-45c4-90ee-70ff0e15d3ce" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="92fe104e-8159-4dfc-b430-275705b302ca" LastKnownName="MouseEventArgs" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -678,7 +806,7 @@ This will be usefull for
                 </association>
               </targetEnds>
               <ownedAttributesInternal>
-                <property Id="8a80078c-a670-4a43-b4f5-97e89a6f7d56" name="_cities" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="8a80078c-a670-4a43-b4f5-97e89a6f7d56" name="_cities" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="cadfa49a-3691-4491-b95c-2048b34d6f29" name="Lower" value="*">
                       <elementDefinition Id="4ca6543a-5ef2-4cb7-b0e2-ff81b4547d2e" />
@@ -694,7 +822,7 @@ This will be usefull for
                     <referencedTypeMoniker Id="361de839-74d8-44d8-a5aa-1b0522404ce2" LastKnownName="ICity" />
                   </type_NamedElement>
                 </property>
-                <property Id="6cd17dff-ef7e-4a35-adce-f164e1607de4" name="_units" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="6cd17dff-ef7e-4a35-adce-f164e1607de4" name="_units" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="9dbed4a4-ac8a-4a5f-91af-53d451e5455a" name="Lower" value="*">
                       <elementDefinition Id="2044bec6-567b-425c-aabd-038d12af2373" />
@@ -708,6 +836,12 @@ This will be usefull for
                   <elementDefinition Id="2e1d31e0-1a39-4183-bfd2-cb9cddc34e3a" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="71345bec-39fa-469f-babb-194c75e8eb39" LastKnownName="IUnit" />
+                  </type_NamedElement>
+                </property>
+                <property Id="87f45a58-b5fc-4364-8581-528c1b537c33" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0d65805e-126c-4ce5-a0c4-af869af58f11" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6549269f-c011-45f1-bc0e-2e6a8d8ca2c6" LastKnownName="Game" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -856,6 +990,32 @@ This will be usefull for
                         <elementDefinition Id="3fb9e778-5ad5-4687-ab11-68490fae9121" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="55255134-4ee5-4bb6-b000-e40f5befceb5" name="GetCommands" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bcae8554-a641-42ef-af66-79acc0b73b9c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1047e68a-7cbd-4f90-86b1-7a804a74b34b" direction="Return" isUnique="false">
+                        <elementDefinition Id="5c96cb00-3bf1-4167-a63a-20fe0aa4d12f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3652643e-4610-49a8-aa14-e9456b7af94a" LastKnownName="IPlayerAction" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="870ebe9e-c631-4524-9713-a42cdec02162" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7194b997-8bd3-4e98-b9e3-2c826c0846af" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5d207b42-4c34-42c4-8c92-30b666a45962" name="game" direction="In" isUnique="false">
+                        <elementDefinition Id="e6f2b2b5-9712-4bcb-b391-5ab54c08ad1a" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" LastKnownName="Game" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -1018,6 +1178,41 @@ This will be usefull for
     <packageHasNamedElement>
       <referencedType Id="06603e0d-f4a3-45ef-864b-f5e6be1d2743" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
         <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3652643e-4610-49a8-aa14-e9456b7af94a" name="IPlayerAction" isAbstract="false" isLeaf="false" cachedFullName="IPlayerAction">
+        <elementDefinition Id="719c725a-7cab-4928-bd4b-467a8e7b620c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f1904702-6f8d-45aa-bf31-b664048f0b99" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="66b61843-3749-4b97-8319-2da57261c1ae" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6547d12c-79cc-4a68-b350-0541f4c3ecfa" name="KeyboardEventArgs" isAbstract="false" isLeaf="false" cachedFullName="KeyboardEventArgs">
+        <elementDefinition Id="28dcf8f2-9119-40ce-9826-9bd796dc2877" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="92fe104e-8159-4dfc-b430-275705b302ca" name="MouseEventArgs" isAbstract="false" isLeaf="false" cachedFullName="MouseEventArgs">
+        <elementDefinition Id="f5a6e2b2-1f49-4251-8958-843a8b42a46c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c54afdeb-445a-488c-bf3c-b82c2e0da24f" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6549269f-c011-45f1-bc0e-2e6a8d8ca2c6" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
