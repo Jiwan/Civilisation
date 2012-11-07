@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="015e9c81-0c43-4456-979c-0247e8e4ef17"
   name="Square" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -20,7 +20,7 @@
     <packageHasNamedElement>
       <class
         Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-        name="Square : IDrawableEntity"
+        name="Square : IDrawable"
         isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
@@ -219,7 +219,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square : IDrawableEntity"
+              LastKnownName="Square : IDrawable"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -294,7 +294,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square : IDrawableEntity"
+              LastKnownName="Square : IDrawable"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -369,7 +369,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square : IDrawableEntity"
+              LastKnownName="Square : IDrawable"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -444,7 +444,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square : IDrawableEntity"
+              LastKnownName="Square : IDrawable"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>
@@ -458,7 +458,7 @@
             isAbstract="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square : IDrawableEntity"
+              LastKnownName="Square : IDrawable"
               LastKnownLocation="Package1_0837.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -715,7 +715,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf"
-              LastKnownName="Square : IDrawableEntity"
+              LastKnownName="Square : IDrawable"
               LastKnownLocation="Package1_0837.uml" />
           </generalization>
         </generalsInternal>

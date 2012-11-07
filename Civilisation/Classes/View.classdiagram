@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="3c7e7d43-fa9b-4e35-893c-d84ffd5d2140" name="Drawable">
@@ -38,7 +38,7 @@ Il n'y a qu'un flyweight. On évite ainsi de recharger un tile plusieurs fois.</
         <elementDefinition Id="488554a3-80fb-41be-834f-aabd38c15d13" />
         <packagedElements>
           <packageHasNamedElement>
-            <Interface Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" name="IDrawableEntity" isAbstract="false" isLeaf="false">
+            <Interface Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" name="IDrawable" isAbstract="false" isLeaf="false">
               <elementDefinition Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db" />
               <ownedOperations>
                 <operation Id="15746ab3-8106-4438-b4fc-e8ec5cbbe8a0" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
@@ -192,7 +192,7 @@ Il n'y a qu'un flyweight. On évite ainsi de recharger un tile plusieurs fois.</
               <elementDefinition Id="5425425c-970c-4776-beea-b51fcff0b1e9" />
               <suppliersInternal>
                 <interfaceRealization Id="0c6dfea2-131a-43b2-b106-2758e40d8749">
-                  <interfaceMoniker Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" LastKnownName="IDrawableEntity" />
+                  <interfaceMoniker Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" LastKnownName="IDrawable" />
                   <elementDefinition Id="4d8ff0c6-1842-434b-814d-35926b6f9163" />
                 </interfaceRealization>
                 <interfaceRealization Id="f371059e-94b3-4e05-94ae-c13f2ea6ad1b">

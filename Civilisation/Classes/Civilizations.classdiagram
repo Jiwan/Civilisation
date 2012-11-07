@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="d7dbf11e-f293-43a3-b8b2-ea42567a4fd5" name="Les civilisations" linkedPackageId="ca53757a-3e9f-4622-af67-eb74cf42d3a3" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c9d187c6-7e72-4403-ab9e-92ca70182dff" name="Civilization">
@@ -129,21 +129,21 @@ Point newCase = BasicCityExtender.Extend(this);
                       </interfaceRealization>
                     </suppliersInternal>
                     <targetEnds>
-                      <association Id="8705964b-86ce-4cb8-b176-9e4826ffdc56" isDerived="false" sourceEndRoleName="BasicCity : ISerializable, IDrawable" targetEndRoleName="ICityExtender" isLeaf="false" isAbstract="false">
+                      <association Id="d5c18721-1ed4-46a2-96e7-b2b218f4b37a" isDerived="false" sourceEndRoleName="BasicCity : ISerializable, IDrawable" targetEndRoleName="ICityExtender" isLeaf="false" isAbstract="false">
                         <interfaceMoniker Id="ae1955f3-a8b5-4e6a-9f9b-40937fdeccc7" LastKnownName="ICityExtender" />
                         <relationshipOwnedElementsInternal>
                           <associationHasOwnedEnds>
-                            <memberEnd Id="cfde40da-b87c-4440-a013-4958622e8730" name="BasicCity : ISerializable, IDrawable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                              <elementDefinition Id="6be6b2dc-afa3-42eb-8e78-f6b4e10f5162" />
+                            <memberEnd Id="32830c4e-f0ac-4d68-b6da-6abe677c7e8e" name="BasicCity : ISerializable, IDrawable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="7bf1d2e6-1552-47eb-a23f-29195a2dc595" />
                             </memberEnd>
                           </associationHasOwnedEnds>
                           <associationHasOwnedEnds>
-                            <memberEnd Id="4f7704af-aed4-4029-b3e9-16fd965172ef" name="ICityExtender" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                              <elementDefinition Id="59455288-ab31-4b74-94ea-2260084a4b90" />
+                            <memberEnd Id="2266ec16-c550-4b1a-8bcf-045b07b6329f" name="ICityExtender" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="28a8d92e-0d88-410e-88d5-aa942afdd313" />
                             </memberEnd>
                           </associationHasOwnedEnds>
                         </relationshipOwnedElementsInternal>
-                        <elementDefinition Id="48c98fb0-1d0c-4e34-bfca-7a9db2b0d289" />
+                        <elementDefinition Id="a91ff26f-fe4a-4115-9080-f45bd1ed8d01" />
                       </association>
                     </targetEnds>
                     <ownedAttributesInternal>
@@ -466,6 +466,9 @@ Point newCase = BasicCityExtender.Extend(this);
                     <ownedAttributesInternal>
                       <property Id="75fbc9e7-9c2c-4382-8afc-54e30120fb06" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                         <elementDefinition Id="bcb7ca42-b3e0-4cc1-bb02-ec19586b9c69" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="641cfa78-d914-40b1-89b4-3deedbeecf76" LastKnownName="BasicCityExtender" />
+                        </type_NamedElement>
                       </property>
                     </ownedAttributesInternal>
                     <ownedOperationsInternal>
@@ -1613,6 +1616,11 @@ Point newCase = BasicCityExtender.Extend(this);
     <packageHasNamedElement>
       <referencedType Id="048bb607-51f8-488e-9626-0be553f6942e" name="Object" isAbstract="false" isLeaf="false" cachedFullName="Object">
         <elementDefinition Id="ee146adf-a9ee-41c3-838e-d3ef01372d00" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="641cfa78-d914-40b1-89b4-3deedbeecf76" name="BasicCityExtender" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::City::BasicCityExtender">
+        <elementDefinition Id="da954794-9e8e-45a1-88bc-58a218424c85" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

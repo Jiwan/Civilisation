@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="648374e8-9c67-4dc1-a17b-c5e19a7ec7b9"
   name="City" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -135,7 +135,7 @@ Point newCase = BasicCityExtender.Extend(this);
         </suppliersInternal>
         <targetEnds>
           <association
-            Id="48c98fb0-1d0c-4e34-bfca-7a9db2b0d289"
+            Id="a91ff26f-fe4a-4115-9080-f45bd1ed8d01"
             isDerived="false"
             sourceEndRoleName="BasicCity : ISerializable, IDrawable"
             targetEndRoleName="ICityExtender"
@@ -148,20 +148,20 @@ Point newCase = BasicCityExtender.Extend(this);
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="6be6b2dc-afa3-42eb-8e78-f6b4e10f5162"
+                  Id="7bf1d2e6-1552-47eb-a23f-29195a2dc595"
                   name="BasicCity : ISerializable, IDrawable"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="None"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="59455288-ab31-4b74-94ea-2260084a4b90"
+                  Id="28a8d92e-0d88-410e-88d5-aa942afdd313"
                   name="ICityExtender"
                   isLeaf="false"
                   isStatic="false"
@@ -951,7 +951,14 @@ Point newCase = BasicCityExtender.Extend(this);
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="da954794-9e8e-45a1-88bc-58a218424c85"
+                LastKnownName="BasicCityExtender"
+                LastKnownLocation="Package_0944.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b85c94da-5bef-4266-a768-840b332b88b6" name="Game" linkedPackageId="11aea7ad-f36b-4dee-9695-6638b185de1b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="69696a64-38e6-47d5-86d0-edefc2492ab7" name="Game">
@@ -9,7 +9,7 @@
             <body>ISerializable et GetObjectData permettent de sauvergarder la partie sous forme de serialization.
 Le constructeur prenant un objet SerializationInfo permet de recharger une partie. MainLoop se charge de faire fonctionner le coeur du jeu. Comme on le voit le jeu est indépendant de l'engine graphique.</body>
             <annotatedElements>
-              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawable" />
             </annotatedElements>
           </comment>
           <comment Id="cab7253b-b86e-46d5-8998-0fe7f9edfc72">
@@ -26,7 +26,7 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
             <elementDefinition Id="307a8cf3-828c-4980-af01-1ec7c538fa7e" />
             <body>Médiateur de l'ensemble du jeu</body>
             <annotatedElements>
-              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawable" />
             </annotatedElements>
           </comment>
           <comment Id="a2150a14-b834-4b21-8139-c288c7fc809e">
@@ -47,7 +47,7 @@ notifiera automatiquement l'état de la souris à l'état courant
 Observateur : currentState
 Observé : _mainWindow</body>
             <annotatedElements>
-              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawableEntity" />
+              <classMoniker Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" LastKnownName="Game : ISerializable, IDrawable" />
               <interfaceMoniker Id="b7f5e2d5-7c0c-42ab-a2ac-aa66a0410d9a" LastKnownName="IGameState" />
             </annotatedElements>
           </comment>
@@ -55,7 +55,7 @@ Observé : _mainWindow</body>
         <elementDefinition Id="a134d6ac-c60c-4970-901f-f17f780b30c8" />
         <packagedElements>
           <packageHasNamedElement>
-            <class Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" name="Game : ISerializable, IDrawableEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="d6d8ca83-aab4-45ea-a08d-da0222c6f1b3" name="Game : ISerializable, IDrawable" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9" />
               <targetEnds>
                 <association Id="7c41192a-ed91-48f4-82ca-9b87edef9066" isDerived="false" sourceEndRoleName="Game : ISerializable, IDrawableEntity" targetEndRoleName="GameState" isLeaf="false" isAbstract="false">
