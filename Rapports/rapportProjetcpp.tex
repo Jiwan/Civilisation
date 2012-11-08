@@ -279,9 +279,18 @@ Pour l'instant nous implémentons cette interface à l'aide d'une classe InGameA
 Nous envisageons de rajouter d'autres classes mères implémentant l'interface IPlayerAction, comme par exemple ChatBoxAction pour la gestion de dialogues.
 
 \section{Diagramme d'états-transitions}
+Nous avons créé deux diagrammes d'états-transitions :
+\begin{itemize}
+\item Un diagramme montrant la recherche d'un Tile dans le flyweight.
+\item Les états-transitions pour déplacer une unité.
+\end{itemize}
 
-\section{Diagrammes d'intégration}
-
+\section{Diagrammes d'interaction}
+Nous avons créé deux diagrammes d'interaction :
+\begin{itemize}
+\item Un diagramme représentant le lancement d'une partie. Ce qui comprend la création d'une instance de la classe Game, la création d'une carte (Map), la création des deux joueurs et enfin la création du moteur graphique. Le jeu peut ensuite entrer dans l'état LoadingState, puis dans l'état ActiveGameState (la partie a alors commencé).
+\item Un diagramme représentant une itération dans la boucle MainLoop. Cela consiste a dessiner toutes les unités de la map, a mettre à jour les animations pour la prochaine frame et enfin récupérer les actions du joueur actif. On voit dans ce diagramme que le joueur a décidé d'acheter une nouvelle unité Enseignant.
+\end{itemize}
 
 
 
