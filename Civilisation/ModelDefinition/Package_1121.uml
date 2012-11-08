@@ -11,7 +11,7 @@ Le constructeur prenant un objet SerializationInfo permet de recharger une parti
       <annotatedElements>
         <classMoniker
           Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9"
-          LastKnownName="Game : ISerializable, IDrawable"
+          LastKnownName="Game : ISerializable"
           LastKnownLocation="Package_1121.uml" />
       </annotatedElements>
     </comment>
@@ -34,7 +34,7 @@ Destroy permet de libérer toutes les resources avant que l'objet soit détruit 
       <annotatedElements>
         <classMoniker
           Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9"
-          LastKnownName="Game : ISerializable, IDrawable"
+          LastKnownName="Game : ISerializable"
           LastKnownLocation="Package_1121.uml" />
       </annotatedElements>
     </comment>
@@ -70,7 +70,7 @@ Observé : _mainWindow</body>
     <packageHasNamedElement>
       <class
         Id="6c1e8699-34e4-4cbe-b391-2256e62ff9a9"
-        name="Game : ISerializable, IDrawable"
+        name="Game : ISerializable"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
