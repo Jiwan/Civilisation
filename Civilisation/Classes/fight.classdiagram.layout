@@ -34,7 +34,7 @@
           </nestedChildShapes>
         </classShape>
         <classShape Id="232a953c-56a9-414d-8043-9afd2333596e" absoluteBounds="3.625, 3.5, 1.5, 2.0234374503294621" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-          <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+          <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="1V1Fight" />
           <nestedChildShapes>
             <AttributeElementListCompartment Id="91810ab7-86b2-4462-9f10-c52216c8257d" absoluteBounds="3.64, 3.89, 1.4700000000000002, 0.52148435761531187" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
             <OperationElementListCompartment Id="5cc6661b-fd79-4951-be57-b16880f70a46" absoluteBounds="3.64, 4.421484357615312, 1.4700000000000002, 1.0019530927141507" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />

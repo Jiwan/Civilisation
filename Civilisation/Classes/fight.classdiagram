@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a6119447-5d24-4c67-a93a-c0d402528bca" name="UMLClassDiagram1" linkedPackageId="520ff4f0-68a2-418c-be55-069708a8b61c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="a6119447-5d24-4c67-a93a-c0d402528bca" name="UMLClassDiagram1" linkedPackageId="520ff4f0-68a2-418c-be55-069708a8b61c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="6af764d7-2fab-4a7b-abe5-52cc5d06a4d8" name="Fight">
@@ -9,12 +9,12 @@
             <Interface Id="20a86b10-cc74-416f-9b2b-0acd55469dee" name="IFight" isAbstract="false" isLeaf="false">
               <elementDefinition Id="0595d1fd-dc11-41ff-b1ab-2dd7aefb7998" />
               <ownedOperations>
-                <operation Id="8b055b81-d102-407d-8039-c8e481eb21df" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                <operation Id="8b055b81-d102-407d-8039-c8e481eb21df" name="AddDefender" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="1a360d58-fcab-4703-9a4e-343e6a44fcea" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="fa9a61ca-8fcb-4b31-b61d-f1b7f0aae388" name="unit" direction="In" isUnique="false">
-                        <elementDefinition Id="2f36c20d-1ec4-4230-a2c9-6cbda0939a85" />
+                      <parameter Id="15ed120f-f148-4aec-b0ea-34a6bcd40a22" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="6db7b479-e882-4bbf-a762-f9a1a36f4ebd" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="197f901e-03b5-443c-90bb-253dcd588880" LastKnownName="IUnit" />
                         </type_NamedElement>
@@ -72,7 +72,7 @@
               <elementDefinition Id="1d3ce358-b111-4b33-bb81-adce415d952d" />
               <generalsInternal>
                 <generalization Id="d11fed90-5e25-498c-b6e1-64a9aa113d23" isSubstitutable="false">
-                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="1V1Fight" />
                   <elementDefinition Id="b5e676dc-c3df-411d-8976-b237919512a9" />
                 </generalization>
               </generalsInternal>
@@ -85,7 +85,7 @@
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="b8e370d3-f70d-4d49-9eab-1ea5d181b661" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="b8e370d3-f70d-4d49-9eab-1ea5d181b661" name="AddDefender" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="cd7d6e03-0ce1-4cf2-9c9a-5cbbd74527fd" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -148,12 +148,12 @@
               <elementDefinition Id="a5ccba63-4980-49ab-9891-bd39acfee002" />
               <generalsInternal>
                 <generalization Id="253d4ee1-a94e-426a-806d-5b6ba0ea9d91" isSubstitutable="false">
-                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="1V1Fight" />
                   <elementDefinition Id="5db3d808-fd40-45b0-a203-801b3e09b498" />
                 </generalization>
               </generalsInternal>
               <ownedOperationsInternal>
-                <operation Id="d2dbc92d-693b-49b1-b9c4-b3161a41a96b" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="d2dbc92d-693b-49b1-b9c4-b3161a41a96b" name="AddDefender" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="6ae8b64d-0699-4fca-8421-7de5aadae4ba" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -216,7 +216,7 @@
               <elementDefinition Id="1c0898ec-e9a1-4036-a375-d4160fddf685" />
               <generalsInternal>
                 <generalization Id="abb9ba98-ce5b-40a1-940b-39ea31ea7edb" isSubstitutable="false">
-                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="2V2Fight" />
+                  <classMoniker Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" LastKnownName="1V1Fight" />
                   <elementDefinition Id="46a4715f-24f7-460e-9076-f9b1d5c2beb9" />
                 </generalization>
               </generalsInternal>
@@ -229,7 +229,7 @@
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="34246be5-88dd-46b7-b2f7-1e2d47f71416" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="34246be5-88dd-46b7-b2f7-1e2d47f71416" name="AddDefender" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="22499402-9a63-496b-90d1-663bb8785b20" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -288,7 +288,7 @@
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" name="2V2Fight" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="ecc42cc0-dd5f-442e-8f0e-a29db86fe63d" name="1V1Fight" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="c41ddc70-0fae-4f5f-a59d-2e1fcf1b9bc7" />
               <suppliersInternal>
                 <interfaceRealization Id="b73cedbc-d617-4d3d-8797-3e69a1f21366">
@@ -297,10 +297,10 @@
                 </interfaceRealization>
               </suppliersInternal>
               <ownedAttributesInternal>
-                <property Id="4849b628-134d-4cdc-823f-83001fbf01ad" name="defencer" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="4849b628-134d-4cdc-823f-83001fbf01ad" name="defender" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="dec43866-791f-4b4e-92b7-79b1ef38087b" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="394027d7-8ed4-4714-9de6-22557fc18322" LastKnownName="IUnit" />
+                    <referencedTypeMoniker Id="6d70cce3-6379-4f47-a369-289ac20395b0" LastKnownName="IUnit" />
                   </type_NamedElement>
                 </property>
                 <property Id="b6a27412-ca2a-4cbb-b7a0-5dbb7a829e28" name="attacker" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -311,7 +311,7 @@
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="f8fff979-e221-4dd8-aa86-954f1714745d" name="AddDefencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="f8fff979-e221-4dd8-aa86-954f1714745d" name="AddDefender" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="1a834857-13a8-44b5-a041-c83a07667b9b" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -378,11 +378,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="394027d7-8ed4-4714-9de6-22557fc18322" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
-        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="1c6e4b7b-56f1-4880-986c-b6c3351fcc32" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
         <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
       </referencedType>
@@ -445,6 +440,11 @@
     <packageHasNamedElement>
       <referencedType Id="1b6a9365-d527-44cf-8c53-209fab1ceecd" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="ICity">
         <elementDefinition Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6d70cce3-6379-4f47-a369-289ac20395b0" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

@@ -107,11 +107,11 @@
                 <OperationElementListCompartment Id="b94b64ef-c56b-47c3-b75e-0fe787a94d15" absoluteBounds="10.89, 12.22617186754942, 3.0949999999999998, 0.52148435761531187" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
               </nestedChildShapes>
             </interfaceShape>
-            <interfaceShape Id="9afb7215-6c51-4320-9ff2-75752c53b52c" absoluteBounds="3.875, 5.5, 3.125, 2.5039061854283009" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+            <interfaceShape Id="9afb7215-6c51-4320-9ff2-75752c53b52c" absoluteBounds="4, 5.5, 3.125, 2.5039061854283009" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
               <interfaceMoniker Id="64f72d83-2709-4445-92b9-26bc346ab7e1" LastKnownName="IUnit" />
               <nestedChildShapes>
-                <AttributeElementListCompartment Id="9606822d-44c4-44a6-aa9b-1f509bf3054a" isExpanded="false" absoluteBounds="3.89, 5.89, 3.0949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-                <OperationElementListCompartment Id="f490283f-e3b5-4daf-8f68-eb5400f1eb9d" absoluteBounds="3.89, 6.10117186754942, 3.0949999999999998, 1.8027343178788819" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+                <AttributeElementListCompartment Id="9606822d-44c4-44a6-aa9b-1f509bf3054a" isExpanded="false" absoluteBounds="4.0150000000000006, 5.89, 3.0949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+                <OperationElementListCompartment Id="f490283f-e3b5-4daf-8f68-eb5400f1eb9d" absoluteBounds="4.0150000000000006, 6.10117186754942, 3.0949999999999998, 1.8027343178788819" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
               </nestedChildShapes>
             </interfaceShape>
             <commentShape Id="62623efb-f47e-4c20-a3ce-0d8c953fe598" absoluteBounds="7.5, 5.75, 1.25, 1.75" customColor="251, 247, 200">
@@ -183,14 +183,14 @@
         <interfaceShapeMoniker Id="8589d1fb-7dd6-46dc-b735-12a3b34c2651" />
       </nodes>
     </realizationConnector>
-    <commentConnector edgePoints="[(20.75 : 9.875); (19.625 : 9.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(20.75 : 9.875); (19.625 : 9.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="9bcbd5eb-7950-4a3d-ae67-4fd29ed1396c" />
         <classShapeMoniker Id="52d74729-521e-4998-b57a-8aaaaaf89e03" />
       </nodes>
     </commentConnector>
-    <commentConnector edgePoints="[(20.375 : 11.4375); (19.625 : 11.4375)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(20.375 : 11.4375); (19.625 : 11.4375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="900fba14-362f-47ba-9c7a-d07663092a06" />
@@ -212,7 +212,7 @@
         <interfaceShapeMoniker Id="51299d37-8ffd-41e9-992f-e558fdf3aae2" />
       </nodes>
     </commentConnector>
-    <commentConnector edgePoints="[(19.125 : 13.125); (19.125 : 12.6406248807907)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(19.125 : 13.125); (19.125 : 12.6406248807907)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="e6bb5622-ee62-4a70-97fb-616f8689b07b" />
@@ -249,7 +249,7 @@
         <classShapeMoniker Id="31b825b6-a1af-42ee-a9f3-8d9c6e1069d4" />
       </nodes>
     </generalizationConnector>
-    <commentConnector edgePoints="[(1.625 : 10.375); (1.625 : 12.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(1.625 : 10.375); (1.625 : 12.375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="f1f65d02-7c1e-4103-ab42-5496d5985f54" />
@@ -280,7 +280,7 @@
         <interfaceShapeMoniker Id="281d4cb1-9226-4003-972d-87a6d9ebb251" />
       </nodes>
     </realizationConnector>
-    <associationConnector edgePoints="[(19.625 : 8.90624999006589); (23.25 : 8.90624999006589)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
+    <associationConnector edgePoints="[(19.625 : 8.90624999006589); (23.25 : 8.90624999006589)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="1">
       <associationMoniker Id="d5c18721-1ed4-46a2-96e7-b2b218f4b37a" />
       <relativeChildShapes />
       <nodes>
@@ -318,14 +318,14 @@
         <enumerationShapeMoniker Id="13f88032-b10f-4927-a0e3-b122682b8d19" />
       </nodes>
     </commentConnector>
-    <commentConnector edgePoints="[(7.5 : 6.625); (7 : 6.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
+    <commentConnector edgePoints="[(7.5 : 6.625); (7.125 : 6.625)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <nodes>
         <commentShapeMoniker Id="62623efb-f47e-4c20-a3ce-0d8c953fe598" />
         <interfaceShapeMoniker Id="9afb7215-6c51-4320-9ff2-75752c53b52c" />
       </nodes>
     </commentConnector>
-    <realizationConnector edgePoints="[(5.5 : 8.5); (5.5 : 8.2439061854283); (5.4375 : 8.2439061854283); (5.4375 : 8.0039061854283)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
+    <realizationConnector edgePoints="[(5.5 : 8.5); (5.5 : 8.2439061854283); (5.5625 : 8.2439061854283); (5.5625 : 8.0039061854283)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110" showAsLollipop="false">
       <interfaceRealizationMoniker Id="6c15c80a-18c5-49f2-96b1-18f72e51d8b8" />
       <relativeChildShapes />
       <nodes>

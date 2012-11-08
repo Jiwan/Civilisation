@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="ce314601-1a93-47c4-b4fd-c861053ffec6"
   name="Fight" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -217,7 +217,7 @@
         <ownedOperations>
           <operation
             Id="1a360d58-fcab-4703-9a4e-343e6a44fcea"
-            name="AddDefencer"
+            name="AddDefender"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -226,7 +226,7 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="2f36c20d-1ec4-4230-a2c9-6cbda0939a85"
+                  Id="6db7b479-e882-4bbf-a762-f9a1a36f4ebd"
                   name="unit"
                   direction="In"
                   isUnique="false">
@@ -338,7 +338,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="c41ddc70-0fae-4f5f-a59d-2e1fcf1b9bc7"
-              LastKnownName="2V2Fight"
+              LastKnownName="1V1Fight"
               LastKnownLocation="Package_1533.uml" />
           </generalization>
         </generalsInternal>
@@ -365,7 +365,7 @@
         <ownedOperationsInternal>
           <operation
             Id="cd7d6e03-0ce1-4cf2-9c9a-5cbbd74527fd"
-            name="AddDefencer"
+            name="AddDefender"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -486,14 +486,14 @@
             isSubstitutable="false">
             <classMoniker
               Id="c41ddc70-0fae-4f5f-a59d-2e1fcf1b9bc7"
-              LastKnownName="2V2Fight"
+              LastKnownName="1V1Fight"
               LastKnownLocation="Package_1533.uml" />
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
           <operation
             Id="6ae8b64d-0699-4fca-8421-7de5aadae4ba"
-            name="AddDefencer"
+            name="AddDefender"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -614,7 +614,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="c41ddc70-0fae-4f5f-a59d-2e1fcf1b9bc7"
-              LastKnownName="2V2Fight"
+              LastKnownName="1V1Fight"
               LastKnownLocation="Package_1533.uml" />
           </generalization>
         </generalsInternal>
@@ -642,7 +642,7 @@
         <ownedOperationsInternal>
           <operation
             Id="22499402-9a63-496b-90d1-663bb8785b20"
-            name="AddDefencer"
+            name="AddDefender"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -753,7 +753,7 @@
     <packageHasNamedElement>
       <class
         Id="c41ddc70-0fae-4f5f-a59d-2e1fcf1b9bc7"
-        name="2V2Fight"
+        name="1V1Fight"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -769,7 +769,7 @@
         <ownedAttributesInternal>
           <property
             Id="dec43866-791f-4b4e-92b7-79b1ef38087b"
-            name="defencer"
+            name="defender"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -809,7 +809,7 @@
         <ownedOperationsInternal>
           <operation
             Id="1a834857-13a8-44b5-a041-c83a07667b9b"
-            name="AddDefencer"
+            name="AddDefender"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
