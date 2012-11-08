@@ -28,7 +28,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[12pt]{article}
-
+\usepackage[utf8]{inputenc}
 \begin{document}
 
 \begin{titlepage}
@@ -94,22 +94,21 @@ Alexandru \textsc{Costan} % Supervisor's Name
 
 \end{titlepage}
 
-\tableofcontent
+%\tableofcontent
 
 \section{Introduction}
 
-	Lors de la modélisation de notre version de \textit{Civilization}, nous avons voulu la rendre la plus flexible et extensible possible.
+	Lors de la modélisation de notre version de \textit{Civilization}, nous avons voulu rendre notre code le plus flexible et extensible possible.
 Nous voulions pouvoir facilement ajouter la gestion des jeux en réseau, pouvoir étendre et créer ses propres classes, etc.
 Heureusement, ceci est réalisable grâce aux \textit{design patterns} (qui nous sont aussi imposés).
-Nous avons essayé d'aller plus loin que les 5 patrons de conceptions imposé, afin de réaliser notre objectif d'un jeu pouvant évoluer.
-A chaque fois, nous avons justifié l'utilisation du patron de conception.
-	Bonne lecture.
+Nous avons essayé d'aller plus loin que les 5 patrons de conceptions imposé, afin de réaliser notre objectif d'un jeu pouvant évoluer. Nous justifierons nos différents choix techniques tout au long de ce rapport.
+Bonne lecture.
 
 \section{Cas d'utilisation}
 	\subsection{Règles du jeu}
-		Dans ce diagramme, nous avons illustré les intéractions entre les conceptes du jeu et les joueurs. (Schéma 1)
-	Les joueurs sont ceux qui créent des villes, créent des unités, bougent et font combattre ces unités et capturent des villes.
-	Les dépendances entre les entités du jeu apparaissent bien.
+		Dans ce diagramme, nous avons illustré les intéractions entre les concepts du jeu et les joueurs. (Schéma 1)
+	Les joueurs sont ceux qui créent des villes, créent des unités, bougent, font combattre les unités et capturent des villes.
+	Les dépendances entre les entités du jeu apparaissent le plus clairement possible.
 	(Nous avons fait un diagramme \textit{Développement d'une civilisation} pour illustrer les actions qu'un joueur doit entreprendre lors d'une partie,
 	ainsi que les dépendances de ces actions. JAI ENVIE D'EN METTRE QU'UN)
 	
@@ -117,35 +116,37 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 	Ce diagramme illustre toutes les phases du logiciel, avec les choix potentiels des joueurs.(Schéma 2)
 	
 \section{Diagrammes de Classe}
+Nous avons commencé par modéliser l'ensemble des interfaces des entités que nous voudrions manipuler. Ceci nous a permis de ce concentrer sur l'interaction des objets sans se préoccuper de leurs implémentations. Par la suite, nous avons implémenté les différentes interfaces par des classes concrètes. A noter que dans certains cas particulier nous avons regroupé interface et une partie de l'implémentation sous forme de classe abstraite. Ci-dessous vous trouverez les différents les diagrammes de classes finaux de notre application regroupées par espace de noms. 
 	\subsection{Civilization}
 		\subsubsection{Namespace Civilization}
 			Nous avons utilisé le design pattern Prototype pour pouvoir avoir le plus possible de civilizations différentes.
-		En effet, au départ nous étions partis sur le patron de conception Fabrique Abstraite, ce qui aurait donné le Schéma 3.
-			Après réflexion, nous voulions pouvoir étendre le nombre de civilizations pour pouvoir en ajouter autant que voulu.
-		Le joueur pourrait importer sa civilisation créée (sous forme d'un fichier XML par exemple). 
-		Donc pour implémenter cette solution, le choix du prototype est plus judicieux pour la Fabrique Concrète. (Schéma 4)
-		Il permet d'éviter un nombre de sous classe important, qu'on aurait obtenu avec un patron Fabrique Abstraite classique (pour chaque civilisation, implémenter une fabrique concrète).
-			Donc en somme, nous avons une Fabrique Abstraite, qui possède une Fabrique Concrète qui implémente le patron de conception Prototype.
-			Cette Fabrique Concrète a donc un constructeur qui a comme rôle de cloner les interfaces des unités spécifiques d'une civilisation (Directeur, étudiant, etc.),
-		pour en fabriquer d'autres, avec des caractéristiques uniques.
-			Ces instances particulières des unités peuvent provenir de 2 endroits :
-				1) Soit il les a crée lui même (via une interface utilisateur, qui créera un fichier XML contenant le prototype sérialisé)
-				2) Soit ce sont des unités prédéfinies que l'on aura créées nous mêmes. (Il faudra alors désérialiser le prototype, qui est stocké sous la forme d'un fichier XMLcomme pour la 1ère méthode.)
+		En effet, au départ nous étions partis sur le patron de conception Fabrique Abstraite classique, ce qui aurait donné le Schéma 3. C'est à dire implémenter une classe concrète pour chacune des civilisations.
+			Après réflexion, nous voulions pouvoir étendre facilement le nombre de civilisations (tout joueur n'est pas forcement suffisamment émérite en C\# pour pouvoir rajouter sa propre classe).
+		Le joueur pourrait importer sa civilisation créée, sous forme d'un fichier XML par exemple. 
+		Donc pour implémenter cette solution, nous avons utilisé une Fabrique Concrète utilisant des prototypes d'unités différents à cloner lorsqu'il désire utiliser telle ou telle civilisation. (Schéma 4)
+		Cette Fabrique Concrète a donc un constructeur qui a comme rôle de récupérer des unités clonables spécifiques à une civilisation (Directeur, étudiant, etc.), pour en fabriquer d'autres, avec des caractéristiques uniques.
+Ces instances particulières des unités peuvent provenir de 2 endroits :
+\begin{enumerate}
+\item Soit l'utilisateur les a crée lui même, via une interface utilisateur, qui créera un fichier XML contenant le prototype unité sérialisé (l'interface ISerializable de C\# permet de définir cette possibilité de sérialisation).
+\item Soit ce sont des unités prédéfinies que l'on aura créées auparavant. (Il faudra alors désérialiser l'unité prototype, qui est stockée sous la forme d'un fichier XML comme pour la 1ère méthode.)
+\end{enumerate}
+		Le couplage du pattern Fabrique Abstraite avec le pattern prototype nous permet d'éviter un nombre de sous-classes important. Toutefois il est toujours possible de coder des civilisations en dur en implémentant un autre type de fabrique concrète.
+
 		
 		\subsubsection{Namespace Unit}
-			Une interface commune IUnit est pratique si jamais on décide de faire une unité qui a une attaque qui dépend de plusieurs facteurs.
-		(Comme attaque de base + attaque de l'épée + attaque du compagnon). Une interface commune permet de réaliser ceci facilement.
+			Une interface commune IUnit est pratique dans le cas où l'on déciderais de faire une unité qui a une attaque qui dépend de plusieurs facteurs.
+		(Comme par exemple : attaque = attaque de base + attaque de l'épée + attaque du compagnon). Une interface commune permet de réaliser ceci facilement.
 			La classe Unit est \textit{ISerializable} (comme expliqué auparavant) et \textit{IDrawable} (pour avoir les méthodes d'affichage).
 		On a aussi des interfaces spécifiques pour les types d'unités spéciales (IDirector, IStudent, ITeacher), ce qui nous donne une certaine flexibilité.
-			Si jamais on décide de comment est géré le bonus des directeurs de département par exemple, on pourra facilement changer ceci avec cette interface.
+			Si jamais l'on décide de changer la gestion des bonus des directeurs de département par exemple, cette interface permettra de le changer sans toucher au code client.
 		
 		\subsubsection{Namespace City}
 			De même que pour IUnit, nous avons pensé à une interface ICity (qui pourrait se revéler pratique si nous voulons étendre un autre concept à des villes de type différent).
-		Par exmple, nous pourrions imaginer une ville dont \textit{TotalAvailableFood} dépend aussi de son commerce avec une autre ville par exemple, nous pouvons changer la manière dont est implémenté cette méthode.
+		Par exmple, nous pourrions imaginer une ville dont \textit{TotalAvailableFood} dépend aussi de son commerce avec une autre ville par exemple, nous pouvons changer la manière dont est implémenté cette méthode à chaud sans risquer de changer le code client.
 			Ensuite, nous avons utilisé le pattern Stratégie afin d'implémenter des algorithmes différents d'extension de la ville (\textit{"Le choix de cette case, sera réalisé par un algorithme que vous développerez."})
 		Ainsi, on pourra au départ implémenter un algorithme simple et bête qui choisira une case aléatoirement.
 			Puis dans un deuxième temps, choisir d'implémenter un algorithme plus intelligent, qui choisira les case en fonction de leur contenu exploitable (minerai, nourriture).
-		De plus, vu qu'une seule instance de cet algorithme est utile à la fois, nous utiliseront le patron de conception Singleton.
+		De plus, vu qu'une seule instance de cet algorithme est utile à la fois, nous utiliseront le patron de conception Singleton (le pattern Singleton se retrouve dans toutes les patterns algorithme de notre projet).
 			
 		
 	\subsection{Player}
@@ -153,68 +154,72 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 		\subsubsection{Namespace Drawable} 
 			TileFlyWeight est un pattern poids-mouche (flyweight) pour les tiles (textures) que nous allons utiliser pour la vue de notre jeu.
 		En effet, de nombreuses cases de la carte de notre jeu ainsi que les différentes unités utilisent les mêmes textures. Afin d'éviter d'encombrer
-		inutillement la mémoire en chargeant plusieurs fois la même texture, nous allons partager une même instance de cette texture aux différents objets la nécéssitant.
+		inutilement la mémoire en chargeant plusieurs fois la même texture, nous allons partager une même instance de cette texture aux différents objets la nécessitant.
 		Pour cela, notre pattern flyweight contient une hashmap liant un nom de texture à son contenu. 
-		Par exemple si plusieurs objets demande le tile "water.png", ceux-ci partageront une unique instance du tile "water.png". 
+		Par exemple si plusieurs objets demandent le tile "water.png", ceux-ci partageront une unique instance du tile "water.png". 
 		A noter que si aucun objet ne demande "water.png", la texture ne sera jamais chargé en mémoire.
 			On pourrait se demander si il n'est pas plus judicieux de partager les objets cases de notre carte et pas uniquement leurs textures. 
-		En effet nous pourriont décider que toutes les cases "moutain" soit partagées car elles contiennent les mêmes caractéristiques 
+		En effet nous pourrions décider que toutes les cases "moutain" soit partagées car elles contiennent les mêmes caractéristiques 
 		(hormis leur position, une caractéristique qui serait alors passé en état externe lors des manipulations).
 			Nous projetons de créer des cases avec des caractéristiques variant au cours du temps (par exemple, la nourriture diminue en cas de guerre de proche), 
 		il est alors difficile envisageable de contenir toutes les caractéristiques en état externe. C'est dans cette optique que nous ne partageons uniquement les textures des cases.
 		Notre poids-mouche est un singleton car il n'y aucune raison de l'instancier plusieurs fois au cours d'une même partie.
-
+		\paragraph{}
 		La classe Tile a son constructeur privé car nous voulons que les Tiles soit chargés uniquement à partir du FlyWeight. 
 		On remarquera également que la méthode \textit{Draw} prend un paramètre d'état externe qui est la position du tile que nous voulons dessiner 
-		(comme vu précédement le pattern FlyWeight oblige à passer les états non-partagés d'un objet à l'aide de paramètres externes).
-
-		Nous avons mit à la disposition des dévellopeurs une interface ISprite pour dessiner des animations. Un sprite consistant en une série de textures que l'on fait défiler afin de donner l'illusion 
-		d'une animation. L'implémentation de cette interface est faite avec la classe Sprite qui gère des animations basiques. L'intérêt d'une interface ISprite est de pouvoir facilement changer l'implémentation
-		sans réecrire tout le code client.
-
+		(comme vu précédemment le pattern FlyWeight oblige à passer les états non-partagés d'un objet à l'aide de paramètres externes).
+		\paragraph{}
+		Nous avons mit à la disposition des développeurs une interface ISprite pour dessiner des animations. Un sprite consistant en une série de textures que l'on fait défiler afin de donner l'illusion 
+		d'une animation. L'implémentation de cette interface est faite avec la classe Sprite qui gère des animations basiques. Encore une fois l'intérêt d'une interface ISprite est de pouvoir facilement changer l'implémentation
+		sans réécrire tout le code client.
+		\paragraph{}
 		Pour la vue, nous avons également l'interface IDrawable qui doit être implémenté par toutes les entités que nous voudrons dessiner (les cases, les unités, ...). 
 		Cette interface contient deux fonctions :
-		- Draw qui permet de dessiner l'entité, le paramètre IGraphiqueEngine sera détaillé par la suite.
-		- Update qui met à jour l'état graphique de l'entité que nous allons dessiner. En effet, si nous utilisons des animations, il est important de modifier l'état de la prochaine frame que nous allons dessiner.
+		\begin{itemize}		
+		\item Draw qui permet de dessiner l'entité, le paramètre IGraphiqueEngine sera détaillé par la suite.
+		\item Update qui met à jour l'état graphique de l'entité que nous allons dessiner. En effet, si nous utilisons des animations, il est important de modifier l'état de la prochaine frame que nous allons dessiner.
 		Le paramètre deltaTime est la différence de temps entre la frame précédente et la frame courante. Nous exprimeront l'ensemble de nos animations à l'aide de ce paramètre, ainsi peu importe la puissance de la machine
 		sur laquelle tourne le jeu, les animations seront toujours de même durée et donc fluides.
-
-			Nous esperons implémenter par la suite un pattern bridge pour séparer l'interface de notre moteur graphique de son implémentation. 
-		En effet, il serait élégant de pouvoir faire tourner notre jeu en dehors de l'environment WPF (XNA, DirectX, OpenGL par exemple).
+		\end{itemize}
+		\paragraph{}
+			Nous espérons implémenter par la suite un pattern bridge pour séparer l'interface de notre moteur graphique de son implémentation. 
+		En effet, il serait élégant de pouvoir faire tourner notre jeu en dehors de l'environnent WPF (XNA, DirectX, OpenGL par exemple).
 		Pour cela nous avons imaginé une interface IGraphicEngine qui contiendra les appels graphiques nécéssaires au fonctionnement de notre jeux (DrawSprite, CreateSprite, LoadTile, ...).
-		L'implémentation dans le cas de WPF est la classe WPFGraphicEngine, pour XNA se cera XNAGraphicEngine, ...
+		L'implémentation dans le cas de WPF est la classe WPFGraphicEngine, pour XNA se sera XNAGraphicEngine, ...
 		Dans toutes les librairies graphiques nous retrouvons des appels à des primitives graphiques identiques(DrawTexture, LoadPNGTexture, ...). 
 			L'interface IGraphicEngine dépend donc de son implémentation bas-niveau qui est l'interface IGraphicPrimitive qui contient l'ensemble de ces appels primitifs.
-		Pour WPF nous créont alors une classe WPFGraphicPrimitive pour implémenter cette interface IGraphicPrimitive. Il en va des même pour les autres environments que nous désiront utiliser.
-		Ce pattern bridge ne contient pour l'instant aucune méthode car nous ne sommes pas encore certains des fonctions graphiques nécéssaires à notre jeu.
+		Pour WPF nous créons alors une classe WPFGraphicPrimitive pour implémenter cette interface IGraphicPrimitive. Il en va des même pour les autres environnements que nous détirons utiliser.
+		Ce pattern bridge ne contient pour l'instant aucune méthode car nous ne sommes pas encore certains des fonctions graphiques nécessaires à notre jeu.
 
 		
 	\subsection{World}
 		\subsubsection{Namespace World}
 			\subsubsection{Namespace Square}
-				Dans le namespace Square, nous avons crée une classe pour représenter une case du "damier" de notre jeu.
+				Dans le namespace Square, nous avons créé une classe pour représenter une case du "damier" de notre jeu.
 			Ces cases peuvent être de natures différentes (Montagne, Plaine, Désert) et avoir des ressources spéciales (Fer, Fruit).
-			Grâce à ces natures et resources spéciales, on peut avoir de nombreux types de cases différents.
+			Grâce à ces natures et ressources spéciales, on peut avoir de nombreux types de cases différents.
 			Une implémentation idéale de ce cas serait le patron de conception Décorateur.
 			En effet, grâce au décorateur, on peut alors "décorer" les cases Montagne, Plaine ou Désert avec les ressources spéciales Fer et Fruit.
-			Il est aussi facile d'ajouter une nature ou une ressource spéciales, sans tout de même faire exploser le nombre de classes.
+			Il est aussi facile d'ajouter une nature ou une ressource spéciales, sans tout de même faire exploser le nombre de classes filles.
 			
 			\subsubsection{Namespace Map}
-				L'interface IMapCreate permet d'obliger les classes de type SmallMap ou MediumMap qui l'implémentent d'avoir une méthode CreateMap qui est spéciale en fonction du randomizer qui est passé en paramètre.
+				L'interface IMapCreate permet d'obliger les classes de type SmallMap ou MediumMap qui l'implémentent d'avoir une méthode CreateMap. Cette architecture peut sembler étrange par la présence du paramètre randomizer.
 			En fait, il s'agit du patron de conception Stratégie appliquée à une interface.
-			Le lien entre l'interface IMapCreate et ISquareRandomizer n'est pas aussi fort qu'une aggrégation, mais doit quand même avoir un randomizer passé en paramètre.
+			Le lien entre l'interface IMapCreate et ISquareRandomizer n'est pas aussi fort qu'une agrégation, mais doit quand même avoir un randomizer passé en paramètre.
 			Il est alors facile d'avoir des stratégies différentes de création de cartes, si on veut des cartes avec plus de mer par exemple, ou plus de montagne.
 				Un autre patron de conception Stratégie se cache derrière SmallMap et MediumMap. La fonction \textit{CreateMap} renvoie une Map, qui sera différente en fonction de la taille (en plus du randomizer).
-			En effet, dans une grande carte on pourrait avoir plus de cases d'eau, chose qu'on ne pourrait se permettre d'avoir quand on a une petite carte.	
+			En effet, dans une grande carte on pourrait avoir plus de cases d'eau, chose qu'on ne pourrait se permettre d'avoir quand on a une petite carte.
 	
 	\subsection{Fight}
 		\subsubsection{Namespace Fight}
 			Dans le Namespace Fight, nous avons encore une fois utilisé le patron de conception stratégie.
 			Elle nous permet de choisir quel algorithme de combat utiliser.
 			En effet, nous avons imaginé plusieurs algorithmes différents en fonction de différents paramètres :
-				1) Le combat avec un Directeur de département sur la case comme support.
-				2) Le combat normal d'une unité contre une autre.
-				3) Le combat dans une ville (des fortifications doivent sûrement apporter un avantage défensif).
+			\begin{enumerate}
+				\item Le combat avec un Directeur de département sur la case comme support.
+				\item Le combat normal d'une unité contre une autre.
+				\item Le combat dans une ville (des fortifications doivent sûrement apporter un avantage défensif).
+			\end{enumerate}
 			L'intérêt d'une interface IFight est que si l'on veut un combat entre des groupes d'unités (en non plus du 1v1), on pourra implémenter cette interface par une autre classe.
 			On aurait alors les méthodes utiles comme \textit{addDefender()} ou \textit{addFighter()}, qui n'interdisent pas l'ajout de plusieurs unités.
 		
@@ -222,19 +227,47 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 		\subsubsection{Namespace Game}
 				Game est la classe centrale de notre jeu. 
 				Nous pouvons la considérer comme un pattern médiateur car elle va gérer les communications (la logique) entre les objets de notre jeu.
-			Cette classe implémente l'interface ISerializable afin de pouvoir enregistrer l'état de la partie dans un fichier de notre de choix et de pouvoir le recharger
-			ultérierement. Nous pourrons donc mettre à disposition un système de sauvegarde pour les joueurs. 
+			Cette classe implémente l'interface ISerializable afin de pouvoir enregistrer l'état de la partie dans un fichier de notre de choix et de pouvoir le recharger ultérieurement. Nous pourrons donc mettre à disposition un système de sauvegarde pour les joueurs. 
 			La fonction MainLoop de notre classe Game est la boucle principale du jeu qui mettra à jour l'état de la partie puis dessinera celle-ci. 
 			Si nous voulons changer le comportement de cette boucle, il est toujours possible d'étendre la classe Game et de redéfinir la fonction MainLoop.
-
-				Pour gérer les différentes phases du jeu, nous utiliserons le pattern state. 
+				\paragraph{}
+				Pour gérer les différentes phases du jeu, nous utiliserons le pattern State. 
 			Pour cela nous avons créé l'interface IGameState qui contient des fonctions pour charger l'état courant, le démarrer, le stopper...
-			La classe Game contient une pile d'état; l'état courant est alors l'état en sommet de pile. .
-			En effet il est intéressant de garder l'état précédant pour pouvoir retouner facilement dans une phase précédente du jeu.
-
-				Pour lier les actions utilisateurs au modèle du jeu, nous utilisons le pattern observateur. Plus précisement, nous avons opté pour le système d'event de C\#
-			pour récupérer les mouvements de la souris et les actions du clavier dans les états de Game (respectivement les fonctions KeyboardPressedEventHandle,  MouseClickedEventHandler, MouseMovedEventHandler).
+			La classe Game contient une pile d'état, l'état courant est alors l'état en sommet de pile. .
+			En effet il est intéressant de garder l'état précédant pour pouvoir retourner facilement dans une phase précédente de la partie.
+				\paragraph{}
+				Pour lier les actions utilisateurs au modèle du jeu, nous utilisons le pattern observateur. Plus précisément, nous avons opté pour le système d'event de C\#	pour récupérer les mouvements de la souris et les actions du clavier dans les états de Game (respectivement les fonctions KeyboardPressedEventHandle,  MouseClickedEventHandler, MouseMovedEventHandler).
 			
+			\subsection{Player}
+				\subsubsection{Namespace Player}
+				Afin de pouvoir implémenter plusieurs types de joueurs, nous avons créé une interface commune IPlayer. 
+				En effet nous voulons pouvoir gérer aussi bien un joueur humain qu'une intelligence artificielle, qu'un joueur en ligne, ...
+				Nous avons pour l'instant deux implémentations :
+					\begin{itemize}
+					\item HumanPlayer : qui gère un joueur humain manipulant la machine sur laquelle tourne le jeu. 
+Cette implémentation utilise, comme la classe Game, le pattern observateur pour gérer les entrées utilisateur (la souris et le clavier).
+					\item AIPlayer : qui gère une intelligence artificielle basique.
+					\end{itemize}
+Les joueurs modifient le cours de la partie à l'aide d'une liste d'action qui est mise à jour à chaque tour.
+Un joueur possède aussi un état (pattern state) qui influence son comportement. Par exemple un joueur peut être dans l'état actif, l'état inactif,
+voire l'état déconnecté dans le cas d'un jeu en ligne. 
+					
+				\subsubsection{Namespace Player.Actions}
+Nous avons décidé d'encapsuler les différentes actions des joueurs par un pattern commande. 
+Les communications entre les objets sont donc maintenant contenues dans un objet ayant pour interface IPlayerAction.
+On peut citer de nombreux avantages à utiliser ce pattern plutôt que des "appels bruts" à des fonctions :
+\begin{itemize}
+\item Loguer les différentes actions des joueurs.
+\item Débuguer facilement le déroulement d'une partie.
+\item Si l'on veut implémenter un système de replay, il nous suffira de loguer toutes les actions et de les rejouer.
+\item Faire un système de retour en arrière.
+\item Si l'on veut faire un jeu en ligne, il nous suffira d'envoyer les actions des joueurs par paquets sous forme sérializée. Il ne restera plus qu'à 
+désérialiser les actions à la réception des paquets pour synchroniser les deux joueurs.
+\end{itemize}
+
+Pour l'instant nous implémentons cette interface à l'aide d'une classe InGameAction et de nombreuses sous-classes comme AttackAction, BuildCityAction, etc.
+Nous envisageons de rajouter d'autres classes mères implémentant l'interface IPlayerAction, comme par exemple ChatBoxAction pour la gestion de dialogues.
+
 \section{Diagramme d'états-transitions}
 
 \section{Diagrammes d'intégration}
