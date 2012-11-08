@@ -62,19 +62,12 @@
     <Content Include="idées.txt">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Interaction\creationPartie.sequencediagram">
+    <Content Include="Interaction\lancementPartie.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Interaction\creationPartie.sequencediagram.layout">
+    <Content Include="Interaction\lancementPartie.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Interaction\creationPartie.sequencediagram</DependentUpon>
-    </Content>
-    <Content Include="Interaction\cycleDeViePartie.sequencediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Interaction\cycleDeViePartie.sequencediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Interaction\cycleDeViePartie.sequencediagram</DependentUpon>
+      <DependentUpon>Interaction\lancementPartie.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_0837.uml">
       <SubType>Content</SubType>
