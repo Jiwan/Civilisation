@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="708f0c49-faff-4883-b8c2-aa29d3ee9059"
   name="Civilisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -3113,22 +3113,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="7e86ec84-a936-4486-99e7-a65a993e210c"
-            name="MessageOccurrenceSpecification40">
-            <covered>
-              <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="be5f6670-a168-489f-bc0f-f543b251ba95"
             name="MessageOccurrenceSpecification39">
             <covered>
               <lifelineMoniker
                 Id="1bdc190f-57e2-419c-a8c6-688d13a31256"
                 LastKnownName="MainPlayer : HumanPlayer"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7e86ec84-a936-4486-99e7-a65a993e210c"
+            name="MessageOccurrenceSpecification40">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3201,16 +3201,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="f5d9e4ac-9fcd-4a6a-b194-8ab27c560463"
-            name="MessageOccurrenceSpecification42">
-            <covered>
-              <lifelineMoniker
-                Id="412358fd-c84a-4a8a-bde3-3ef686936dfc"
-                LastKnownName="Rival : HumanPlayer"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="e7ba7bfd-434d-45d0-8dba-c9e8e81d6525"
             name="MessageOccurrenceSpecification41">
             <covered>
@@ -3221,8 +3211,8 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="ff3d4cc2-0818-4206-af23-27604306de2f"
-            name="MessageOccurrenceSpecification43">
+            Id="f5d9e4ac-9fcd-4a6a-b194-8ab27c560463"
+            name="MessageOccurrenceSpecification42">
             <covered>
               <lifelineMoniker
                 Id="412358fd-c84a-4a8a-bde3-3ef686936dfc"
@@ -3237,6 +3227,16 @@
               <lifelineMoniker
                 Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
                 LastKnownName="UIInterface"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ff3d4cc2-0818-4206-af23-27604306de2f"
+            name="MessageOccurrenceSpecification43">
+            <covered>
+              <lifelineMoniker
+                Id="412358fd-c84a-4a8a-bde3-3ef686936dfc"
+                LastKnownName="Rival : HumanPlayer"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3309,16 +3309,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="c0057b8c-23fb-48dd-8228-ba50acd7e0c5"
-            name="MessageOccurrenceSpecification80">
-            <covered>
-              <lifelineMoniker
-                Id="96685666-dcaa-4305-be65-db51675879f1"
-                LastKnownName="Randomizer : BasicRandomizer"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="289f7b5d-f0cf-4f38-ab80-f22c4d8af081"
             name="MessageOccurrenceSpecification79">
             <covered>
@@ -3329,12 +3319,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="a1a012bd-0002-4c18-b588-12de67e2aa3b"
-            name="MessageOccurrenceSpecification82">
+            Id="c0057b8c-23fb-48dd-8228-ba50acd7e0c5"
+            name="MessageOccurrenceSpecification80">
             <covered>
               <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
+                Id="96685666-dcaa-4305-be65-db51675879f1"
+                LastKnownName="Randomizer : BasicRandomizer"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3345,6 +3335,16 @@
               <lifelineMoniker
                 Id="96685666-dcaa-4305-be65-db51675879f1"
                 LastKnownName="Randomizer : BasicRandomizer"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a1a012bd-0002-4c18-b588-12de67e2aa3b"
+            name="MessageOccurrenceSpecification82">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3525,16 +3525,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="aff24612-5353-4d18-b924-cc5ad8a0f29c"
-            name="MessageOccurrenceSpecification46">
-            <covered>
-              <lifelineMoniker
-                Id="4d82b9ae-152d-45a7-bc71-345d1f098bcd"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="f1ce85d5-c9c7-45a8-a9ee-ab773660d01a"
             name="MessageOccurrenceSpecification45">
             <covered>
@@ -3545,12 +3535,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="07b8b58e-5608-4b5d-8d0e-d7bf24b5227e"
-            name="MessageOccurrenceSpecification48">
+            Id="aff24612-5353-4d18-b924-cc5ad8a0f29c"
+            name="MessageOccurrenceSpecification46">
             <covered>
               <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
+                Id="4d82b9ae-152d-45a7-bc71-345d1f098bcd"
+                LastKnownName="Map : MediumMap"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3561,6 +3551,16 @@
               <lifelineMoniker
                 Id="4d82b9ae-152d-45a7-bc71-345d1f098bcd"
                 LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="07b8b58e-5608-4b5d-8d0e-d7bf24b5227e"
+            name="MessageOccurrenceSpecification48">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3633,16 +3633,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="58945020-9b86-41db-b1c2-9220d8ce303e"
-            name="MessageOccurrenceSpecification53">
-            <covered>
-              <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="63f4072a-ef93-4dc4-9d2f-4f0b7efdbf5a"
             name="MessageOccurrenceSpecification54">
             <covered>
@@ -3653,8 +3643,8 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="b9229a48-dd0b-45d3-9318-92b2caeb82dd"
-            name="MessageOccurrenceSpecification56">
+            Id="58945020-9b86-41db-b1c2-9220d8ce303e"
+            name="MessageOccurrenceSpecification53">
             <covered>
               <lifelineMoniker
                 Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
@@ -3669,6 +3659,16 @@
               <lifelineMoniker
                 Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
                 LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b9229a48-dd0b-45d3-9318-92b2caeb82dd"
+            name="MessageOccurrenceSpecification56">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3869,22 +3869,22 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="d1e2d360-3590-49df-a14d-e4df2eaaf3a1"
-            name="MessageOccurrenceSpecification74">
-            <covered>
-              <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="b3ec7c77-4cd6-47cf-b001-a87647ac9a57"
             name="MessageOccurrenceSpecification73">
             <covered>
               <lifelineMoniker
                 Id="9532c5d0-f8d6-4cf8-a894-b6f6484cde85"
                 LastKnownName="Engine : WPFGraphicEngine"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d1e2d360-3590-49df-a14d-e4df2eaaf3a1"
+            name="MessageOccurrenceSpecification74">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -3957,22 +3957,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="05c638f5-9ad8-4e56-8b95-57f01c586311"
-            name="MessageOccurrenceSpecification75">
-            <covered>
-              <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="4d3e0801-9052-4ceb-8447-27fe42ca2ba6"
             name="MessageOccurrenceSpecification76">
             <covered>
               <lifelineMoniker
                 Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
                 LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="05c638f5-9ad8-4e56-8b95-57f01c586311"
+            name="MessageOccurrenceSpecification75">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4065,16 +4065,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="64574a30-0b8d-4413-b8dc-2abead73c4ce"
-            name="MessageOccurrenceSpecification62">
-            <covered>
-              <lifelineMoniker
-                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
-                LastKnownName="Game : Game"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="39cc3ecc-64b6-4abb-b06b-732e6a962026"
             name="MessageOccurrenceSpecification61">
             <covered>
@@ -4085,12 +4075,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="2e2b379e-5321-4d29-a198-facdfa3ddba7"
-            name="MessageOccurrenceSpecification64">
+            Id="64574a30-0b8d-4413-b8dc-2abead73c4ce"
+            name="MessageOccurrenceSpecification62">
             <covered>
               <lifelineMoniker
-                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
-                LastKnownName="UIInterface"
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4101,6 +4091,16 @@
               <lifelineMoniker
                 Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
                 LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2e2b379e-5321-4d29-a198-facdfa3ddba7"
+            name="MessageOccurrenceSpecification64">
+            <covered>
+              <lifelineMoniker
+                Id="5c9d9fc0-c491-4b73-80a4-52c6a4432722"
+                LastKnownName="UIInterface"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -4242,6 +4242,26 @@
                 Id="bccaf5ba-4b50-43d8-8247-c8f0fb6a95a6"
                 LastKnownName="MessageOccurrenceSpecification2"
                 LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c23b19c3-23db-4ab8-93bc-3318edecf2f5"
+                LastKnownName="MessageOccurrenceSpecification85"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4f923e66-e01c-4f1c-b180-b293b5245ab2"
+                LastKnownName="MessageOccurrenceSpecification88"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="58a9472e-4bc0-4e7e-8270-081c9eddf1e8"
+                LastKnownName="MessageOccurrenceSpecification99"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8a8b8315-6b7d-430b-8c95-6a9632fbf9a3"
+                LastKnownName="ExecutionOccurrenceSpecification61"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8ef799ad-3b7d-463a-b325-c7add80570e5"
+                LastKnownName="ExecutionOccurrenceSpecification62"
+                LastKnownLocation="Civilisation.uml" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
           <executionOccurrenceSpecification
@@ -4272,6 +4292,306 @@
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="2f073a51-3640-413d-80a5-3c8b0375c962"
+            name="BehaviorExecutionSpecification27">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8649a120-db13-41c5-8689-64c152603338"
+                LastKnownName="ExecutionOccurrenceSpecification54"
+                LastKnownLocation="Civilisation.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="f417d3c8-6cbd-4ef0-83da-126f6f6f974f"
+                LastKnownName="ExecutionOccurrenceSpecification53"
+                LastKnownLocation="Civilisation.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="303907a2-240e-4035-baaa-2d57ff359b21"
+                LastKnownName="MessageOccurrenceSpecification86"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e1bc69d9-91f0-4949-9940-6cd761a06137"
+                LastKnownName="MessageOccurrenceSpecification87"
+                LastKnownLocation="Civilisation.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="f417d3c8-6cbd-4ef0-83da-126f6f6f974f"
+            name="ExecutionOccurrenceSpecification53">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="beadbc85-d179-4a7f-82e5-c75a0d86f572"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="303907a2-240e-4035-baaa-2d57ff359b21"
+            name="MessageOccurrenceSpecification86">
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c23b19c3-23db-4ab8-93bc-3318edecf2f5"
+            name="MessageOccurrenceSpecification85">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e1bc69d9-91f0-4949-9940-6cd761a06137"
+            name="MessageOccurrenceSpecification87">
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4f923e66-e01c-4f1c-b180-b293b5245ab2"
+            name="MessageOccurrenceSpecification88">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8649a120-db13-41c5-8689-64c152603338"
+            name="ExecutionOccurrenceSpecification54">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ce71f0a8-d4a3-492f-a522-535c79fc6e32"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="5332ad2a-49c5-450a-aace-9cf6135fcf26"
+            name="BehaviorExecutionSpecification32">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="dbf99ac2-c82c-41ab-b3ae-ee3b74ea039f"
+                LastKnownName="ExecutionOccurrenceSpecification64"
+                LastKnownLocation="Civilisation.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="b55042cd-a299-4b6f-afca-4d08b2bacebb"
+                LastKnownName="ExecutionOccurrenceSpecification63"
+                LastKnownLocation="Civilisation.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="1b25d8dd-0b12-4df7-89d2-2b0e94b901ad"
+                LastKnownName="MessageOccurrenceSpecification102"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3375f532-a4bd-4b9f-8450-500d3eb49f22"
+                LastKnownName="MessageOccurrenceSpecification103"
+                LastKnownLocation="Civilisation.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="b55042cd-a299-4b6f-afca-4d08b2bacebb"
+            name="ExecutionOccurrenceSpecification63">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="5a9b2910-f2f0-45ef-8f24-c6e09bb7b7fb"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1b25d8dd-0b12-4df7-89d2-2b0e94b901ad"
+            name="MessageOccurrenceSpecification102">
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="07301664-0f50-4644-a342-3632c824260a"
+            name="MessageOccurrenceSpecification101">
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="58a9472e-4bc0-4e7e-8270-081c9eddf1e8"
+            name="MessageOccurrenceSpecification99">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="d823078a-78b1-4b2f-896b-3c5f4e30189d"
+            name="BehaviorExecutionSpecification31">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8ef799ad-3b7d-463a-b325-c7add80570e5"
+                LastKnownName="ExecutionOccurrenceSpecification62"
+                LastKnownLocation="Civilisation.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="8a8b8315-6b7d-430b-8c95-6a9632fbf9a3"
+                LastKnownName="ExecutionOccurrenceSpecification61"
+                LastKnownLocation="Civilisation.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="86635d87-20aa-498c-be85-3d86b9411392"
+                LastKnownName="MessageOccurrenceSpecification100"
+                LastKnownLocation="Civilisation.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="8a8b8315-6b7d-430b-8c95-6a9632fbf9a3"
+            name="ExecutionOccurrenceSpecification61">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="65df8ef9-e8db-4fc6-9547-c3e4e099b295"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="86635d87-20aa-498c-be85-3d86b9411392"
+            name="MessageOccurrenceSpecification100">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3375f532-a4bd-4b9f-8450-500d3eb49f22"
+            name="MessageOccurrenceSpecification103">
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="140b303f-4d58-442d-931b-47e8990ac677"
+            name="MessageOccurrenceSpecification104">
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="dbf99ac2-c82c-41ab-b3ae-ee3b74ea039f"
+            name="ExecutionOccurrenceSpecification64">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="97c06b2e-ab52-45f5-8340-0137704379ef"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8ef799ad-3b7d-463a-b325-c7add80570e5"
+            name="ExecutionOccurrenceSpecification62">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="22a792cf-b3c3-4c17-9e2d-987408d26693"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="43fa6af2-1e9d-4987-854e-748a7f6b3bf8"
             name="ExecutionOccurrenceSpecification2">
@@ -4279,6 +4599,330 @@
               <executionOccurrenceSpecificationReferencesEvent>
                 <executionEventMoniker
                   Id="254c84fd-b02d-4f13-be6f-d3ab1ea8f67d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="e22b1a04-19db-4d2f-b5ce-1bf3df87dc73"
+            name="BehaviorExecutionSpecification33">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3fe598fc-fb79-4a92-a98e-e32a2812b46e"
+                LastKnownName="ExecutionOccurrenceSpecification66"
+                LastKnownLocation="Civilisation.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="131ec099-8b29-4460-8b69-3af802186a97"
+                LastKnownName="ExecutionOccurrenceSpecification65"
+                LastKnownLocation="Civilisation.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="c59f9f5b-c9b4-4898-b853-90386a76f594"
+                LastKnownName="MessageOccurrenceSpecification106"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="0677c2aa-f807-4b8e-b867-7213858f9e66"
+                LastKnownName="MessageOccurrenceSpecification107"
+                LastKnownLocation="Civilisation.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="131ec099-8b29-4460-8b69-3af802186a97"
+            name="ExecutionOccurrenceSpecification65">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0a41572e-16d8-4d23-9703-dd5f5a089bf2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c59f9f5b-c9b4-4898-b853-90386a76f594"
+            name="MessageOccurrenceSpecification106">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="dfea915f-d23d-46ee-a751-af0c463a4c62"
+            name="MessageOccurrenceSpecification105">
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c2d22ee5-0403-47c6-9371-ecd0cb934868"
+            name="MessageOccurrenceSpecification108">
+            <covered>
+              <lifelineMoniker
+                Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+                LastKnownName="MyLoadingState : LoadingState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0677c2aa-f807-4b8e-b867-7213858f9e66"
+            name="MessageOccurrenceSpecification107">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3fe598fc-fb79-4a92-a98e-e32a2812b46e"
+            name="ExecutionOccurrenceSpecification66">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="51356068-7e90-477d-a63a-abdb5e80d503"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="cc225879-3b01-4d23-a80d-f87b018a2382"
+            name="BehaviorExecutionSpecification35">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5fbad089-487e-4cb5-91d5-e899f827b585"
+                LastKnownName="MyScoreState : ScoreState"
+                LastKnownLocation="Civilisation.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="a3f56356-80ef-498a-9ec7-654949c84cd5"
+                LastKnownName="ExecutionOccurrenceSpecification70"
+                LastKnownLocation="Civilisation.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="fbd37118-c027-4e34-84e2-256837783d2d"
+                LastKnownName="ExecutionOccurrenceSpecification69"
+                LastKnownLocation="Civilisation.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="9c20b06c-8d3e-4d13-83d5-a6c864ecf3f9"
+                LastKnownName="MessageOccurrenceSpecification114"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="eceacf01-30eb-48b4-8e55-06b93d21a02f"
+                LastKnownName="MessageOccurrenceSpecification115"
+                LastKnownLocation="Civilisation.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="fbd37118-c027-4e34-84e2-256837783d2d"
+            name="ExecutionOccurrenceSpecification69">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e013effe-51d6-4f67-8198-b1d5041a3268"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5fbad089-487e-4cb5-91d5-e899f827b585"
+                LastKnownName="MyScoreState : ScoreState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9c20b06c-8d3e-4d13-83d5-a6c864ecf3f9"
+            name="MessageOccurrenceSpecification114">
+            <covered>
+              <lifelineMoniker
+                Id="5fbad089-487e-4cb5-91d5-e899f827b585"
+                LastKnownName="MyScoreState : ScoreState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="c993da21-2208-4d9a-8004-f13f51b44477"
+            name="MessageOccurrenceSpecification113">
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ea450aa0-bfcf-49f6-a1fe-f9210af62858"
+            name="MessageOccurrenceSpecification116">
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="eceacf01-30eb-48b4-8e55-06b93d21a02f"
+            name="MessageOccurrenceSpecification115">
+            <covered>
+              <lifelineMoniker
+                Id="5fbad089-487e-4cb5-91d5-e899f827b585"
+                LastKnownName="MyScoreState : ScoreState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="a3f56356-80ef-498a-9ec7-654949c84cd5"
+            name="ExecutionOccurrenceSpecification70">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="3931be4e-14e5-43e2-8e81-e808c08c4bad"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5fbad089-487e-4cb5-91d5-e899f827b585"
+                LastKnownName="MyScoreState : ScoreState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="3eb7cf97-3b80-473e-a785-0ee2be53b2c7"
+            name="BehaviorExecutionSpecification36">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="bd6c95ba-e29a-4ae9-81a6-4de0440a6da7"
+                LastKnownName="ExecutionOccurrenceSpecification72"
+                LastKnownLocation="Civilisation.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="c8d1372d-68ae-49bd-b1b5-a6d83e92e281"
+                LastKnownName="ExecutionOccurrenceSpecification71"
+                LastKnownLocation="Civilisation.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7d5426a3-298a-4f0f-9c78-93e383180620"
+                LastKnownName="MessageOccurrenceSpecification118"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="d35bca16-810b-4713-927b-33c74e98ffa2"
+                LastKnownName="MessageOccurrenceSpecification119"
+                LastKnownLocation="Civilisation.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="c8d1372d-68ae-49bd-b1b5-a6d83e92e281"
+            name="ExecutionOccurrenceSpecification71">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="6623eda5-8256-4f2b-83cf-579b60b7491d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="Civilisation.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e41bcc90-7e8a-4413-8d34-af1618b7739e"
+            name="MessageOccurrenceSpecification117">
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7d5426a3-298a-4f0f-9c78-93e383180620"
+            name="MessageOccurrenceSpecification118">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d35bca16-810b-4713-927b-33c74e98ffa2"
+            name="MessageOccurrenceSpecification119">
+            <covered>
+              <lifelineMoniker
+                Id="014c2f86-3c3f-435e-b455-ddbcb87590ae"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="672c7346-8f6d-4677-a931-f25dc90a7bfe"
+            name="MessageOccurrenceSpecification120">
+            <covered>
+              <lifelineMoniker
+                Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+                LastKnownName="MyActiveGameState : ActiveGameState"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="bd6c95ba-e29a-4ae9-81a6-4de0440a6da7"
+            name="ExecutionOccurrenceSpecification72">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="e00a69a8-64c1-4714-afd0-91ccf7af2e54"
                   LastKnownName="ExecutionEvent"
                   LastKnownLocation="Civilisation.uml" />
               </executionOccurrenceSpecificationReferencesEvent>
@@ -4450,6 +5094,22 @@
                 Id="43fa6af2-1e9d-4987-854e-748a7f6b3bf8"
                 LastKnownName="ExecutionOccurrenceSpecification2"
                 LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="131ec099-8b29-4460-8b69-3af802186a97"
+                LastKnownName="ExecutionOccurrenceSpecification65"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3fe598fc-fb79-4a92-a98e-e32a2812b46e"
+                LastKnownName="ExecutionOccurrenceSpecification66"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="c8d1372d-68ae-49bd-b1b5-a6d83e92e281"
+                LastKnownName="ExecutionOccurrenceSpecification71"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="bd6c95ba-e29a-4ae9-81a6-4de0440a6da7"
+                LastKnownName="ExecutionOccurrenceSpecification72"
+                LastKnownLocation="Civilisation.uml" />
             </topLevelOccurrences>
           </lifeline>
           <lifeline
@@ -4529,6 +5189,86 @@
               <executionOccurrenceSpecificationMoniker
                 Id="76105fa3-fcd9-4278-8027-5783a663bf0a"
                 LastKnownName="ExecutionOccurrenceSpecification50"
+                LastKnownLocation="Civilisation.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="5e388ec3-e4f5-4b9c-a81c-87dc80799d04"
+            name="MyLoadingState : LoadingState"
+            isActor="false"
+            lifelineDisplayName="MyLoadingState : LoadingState">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="f417d3c8-6cbd-4ef0-83da-126f6f6f974f"
+                LastKnownName="ExecutionOccurrenceSpecification53"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8649a120-db13-41c5-8689-64c152603338"
+                LastKnownName="ExecutionOccurrenceSpecification54"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="07301664-0f50-4644-a342-3632c824260a"
+                LastKnownName="MessageOccurrenceSpecification101"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="140b303f-4d58-442d-931b-47e8990ac677"
+                LastKnownName="MessageOccurrenceSpecification104"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="dfea915f-d23d-46ee-a751-af0c463a4c62"
+                LastKnownName="MessageOccurrenceSpecification105"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c2d22ee5-0403-47c6-9371-ecd0cb934868"
+                LastKnownName="MessageOccurrenceSpecification108"
+                LastKnownLocation="Civilisation.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="9f87edc8-07d7-4e35-9b79-974ee6869729"
+            name="MyActiveGameState : ActiveGameState"
+            isActor="false"
+            lifelineDisplayName="MyActiveGameState : ActiveGameState">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="b55042cd-a299-4b6f-afca-4d08b2bacebb"
+                LastKnownName="ExecutionOccurrenceSpecification63"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dbf99ac2-c82c-41ab-b3ae-ee3b74ea039f"
+                LastKnownName="ExecutionOccurrenceSpecification64"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="c993da21-2208-4d9a-8004-f13f51b44477"
+                LastKnownName="MessageOccurrenceSpecification113"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ea450aa0-bfcf-49f6-a1fe-f9210af62858"
+                LastKnownName="MessageOccurrenceSpecification116"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="e41bcc90-7e8a-4413-8d34-af1618b7739e"
+                LastKnownName="MessageOccurrenceSpecification117"
+                LastKnownLocation="Civilisation.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="672c7346-8f6d-4677-a931-f25dc90a7bfe"
+                LastKnownName="MessageOccurrenceSpecification120"
+                LastKnownLocation="Civilisation.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="5fbad089-487e-4cb5-91d5-e899f827b585"
+            name="MyScoreState : ScoreState"
+            isActor="false"
+            lifelineDisplayName="MyScoreState : ScoreState">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="fbd37118-c027-4e34-84e2-256837783d2d"
+                LastKnownName="ExecutionOccurrenceSpecification69"
+                LastKnownLocation="Civilisation.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="a3f56356-80ef-498a-9ec7-654949c84cd5"
+                LastKnownName="ExecutionOccurrenceSpecification70"
                 LastKnownLocation="Civilisation.uml" />
             </topLevelOccurrences>
           </lifeline>
@@ -4952,6 +5692,215 @@
                 LastKnownLocation="Civilisation.uml" />
             </receiveEvent>
           </message>
+          <message
+            Id="470c3255-7bb9-47f0-99d6-51d9d8914e51"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c23b19c3-23db-4ab8-93bc-3318edecf2f5"
+                LastKnownName="MessageOccurrenceSpecification85"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="303907a2-240e-4035-baaa-2d57ff359b21"
+                LastKnownName="MessageOccurrenceSpecification86"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3b07d752-d719-44ce-99c2-cc37e85126b0"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e1bc69d9-91f0-4949-9940-6cd761a06137"
+                LastKnownName="MessageOccurrenceSpecification87"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4f923e66-e01c-4f1c-b180-b293b5245ab2"
+                LastKnownName="MessageOccurrenceSpecification88"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c8f72f21-c820-40bf-8926-5f1185990d2d"
+            name="SetGameState(MyLoadingState)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="58a9472e-4bc0-4e7e-8270-081c9eddf1e8"
+                LastKnownName="MessageOccurrenceSpecification99"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="86635d87-20aa-498c-be85-3d86b9411392"
+                LastKnownName="MessageOccurrenceSpecification100"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f4816b24-620f-46fe-be20-e905ac90732d"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="07301664-0f50-4644-a342-3632c824260a"
+                LastKnownName="MessageOccurrenceSpecification101"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1b25d8dd-0b12-4df7-89d2-2b0e94b901ad"
+                LastKnownName="MessageOccurrenceSpecification102"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="5d36acea-3352-44a2-be7e-6e572b6c8f71"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3375f532-a4bd-4b9f-8450-500d3eb49f22"
+                LastKnownName="MessageOccurrenceSpecification103"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="140b303f-4d58-442d-931b-47e8990ac677"
+                LastKnownName="MessageOccurrenceSpecification104"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6898f76c-06ef-403e-98d2-2160e72267e2"
+            name="SetGameState(MyActiveGameState)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="dfea915f-d23d-46ee-a751-af0c463a4c62"
+                LastKnownName="MessageOccurrenceSpecification105"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c59f9f5b-c9b4-4898-b853-90386a76f594"
+                LastKnownName="MessageOccurrenceSpecification106"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="f064b992-925c-4c8e-ab11-2438e97ce6f5"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="0677c2aa-f807-4b8e-b867-7213858f9e66"
+                LastKnownName="MessageOccurrenceSpecification107"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c2d22ee5-0403-47c6-9371-ecd0cb934868"
+                LastKnownName="MessageOccurrenceSpecification108"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="21f42234-1949-4c9f-bb4a-c04297ca8b38"
+            name="&lt;&lt;create&gt;&gt;"
+            messageKind="Complete"
+            messageSort="CreateMessage"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="c993da21-2208-4d9a-8004-f13f51b44477"
+                LastKnownName="MessageOccurrenceSpecification113"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9c20b06c-8d3e-4d13-83d5-a6c864ecf3f9"
+                LastKnownName="MessageOccurrenceSpecification114"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="d89901b7-9449-49b7-b007-edd4433be94f"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="eceacf01-30eb-48b4-8e55-06b93d21a02f"
+                LastKnownName="MessageOccurrenceSpecification115"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ea450aa0-bfcf-49f6-a1fe-f9210af62858"
+                LastKnownName="MessageOccurrenceSpecification116"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="fea4be6b-bf54-4d58-828b-faac05e440d3"
+            name="SetGameState(MyScoreState)"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e41bcc90-7e8a-4413-8d34-af1618b7739e"
+                LastKnownName="MessageOccurrenceSpecification117"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7d5426a3-298a-4f0f-9c78-93e383180620"
+                LastKnownName="MessageOccurrenceSpecification118"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="3d0e0d39-6f0f-4038-a10a-cdbfde207206"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="d35bca16-810b-4713-927b-33c74e98ffa2"
+                LastKnownName="MessageOccurrenceSpecification119"
+                LastKnownLocation="Civilisation.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="672c7346-8f6d-4677-a931-f25dc90a7bfe"
+                LastKnownName="MessageOccurrenceSpecification120"
+                LastKnownLocation="Civilisation.uml" />
+            </receiveEvent>
+          </message>
         </messages>
       </interaction>
     </packageHasNamedElement>
@@ -5231,12 +6180,322 @@ Pas tout représenté ici.
         </ownedCommentsInternal>
         <fragments>
           <messageOccurrenceSpecification
+            Id="65c8d4d7-3d01-4be9-b5c1-576c4b31d15a"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e0c2d76a-351a-4fcc-842f-e53a1fb6fa7b"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="438eeda7-554c-421f-a2dc-110a9f877208"
+            name="MessageOccurrenceSpecification31">
+            <covered>
+              <lifelineMoniker
+                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
+                LastKnownName="Etudiant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7c278c2e-a18d-4844-bbb5-4167ce7a4ccd"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
+                LastKnownName="Enseignant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7e9fda2d-01b4-4d68-aa4c-b2a20370ca1e"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="58108943-0e34-4e9a-8869-61e1b7372484"
+                LastKnownName="City : City"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7feb9cfd-8c6c-4752-8570-59fccb5118f0"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b7278ce9-da0d-430d-94f0-c04752681a1c"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
+                LastKnownName="Enseignant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="978855ab-a1a2-49d9-a4f3-9a8482006b12"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
+                LastKnownName="Etudiant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5f1143be-be2e-4588-ad46-b626851ea4e4"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ed8fb8df-7aa0-4d60-b18e-d6ed9567eb8f"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
+                LastKnownName="Etudiant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a64543d1-d7f3-4724-89e9-e95c24f7f538"
+            name="MessageOccurrenceSpecification32">
+            <covered>
+              <lifelineMoniker
+                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
+                LastKnownName="Etudiant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0e2229fb-4026-47ce-9b55-85faf000868b"
+            name="MessageOccurrenceSpecification30">
+            <covered>
+              <lifelineMoniker
+                Id="ad5373c2-a2b1-4f08-8a8e-80f9427a3ac1"
+                LastKnownName="UI"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="0343deb3-e8fe-4e3a-a715-0e94cec63e81"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="ad5373c2-a2b1-4f08-8a8e-80f9427a3ac1"
+                LastKnownName="UI"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="90e9301a-c77b-4949-846f-edb11c4fbcca"
+            name="MessageOccurrenceSpecification29">
+            <covered>
+              <lifelineMoniker
+                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="8e1a11e8-33a7-43ea-aa15-56ed5b82c1fc"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="58108943-0e34-4e9a-8869-61e1b7372484"
+                LastKnownName="City : City"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f6a07b48-2958-44b7-9fe2-a071e718a098"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="58108943-0e34-4e9a-8869-61e1b7372484"
+                LastKnownName="City : City"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6661a008-6334-4aea-b85c-770a33344a42"
+            name="MessageOccurrenceSpecification24">
+            <covered>
+              <lifelineMoniker
+                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
+                LastKnownName="Enseignant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="26adce73-05da-43c2-af4f-04c851fc81e4"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="58108943-0e34-4e9a-8869-61e1b7372484"
+                LastKnownName="City : City"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b5baf2a8-bc55-46dd-922b-cd1edde5151d"
+            name="MessageOccurrenceSpecification33">
+            <covered>
+              <lifelineMoniker
+                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
+                LastKnownName="Etudiant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="45354620-4226-45f2-ab60-f1fd6f4d6f07"
+            name="MessageOccurrenceSpecification28">
+            <covered>
+              <lifelineMoniker
+                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5bb55095-1459-40ae-8aef-58c5936f8ba4"
+            name="MessageOccurrenceSpecification34">
+            <covered>
+              <lifelineMoniker
+                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
+                LastKnownName="Etudiant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e594fb85-a0f5-4f8a-ba13-9924783ce9e9"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="eeb49f86-7345-438a-99cb-acf3c2cfeb40"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5fec5493-6131-404e-8e92-a96e376aacae"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="e4bafcbd-accd-4d2c-b0d9-29a2602d578b"
+                LastKnownName="Square : Square"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="10991934-3ebc-44e9-aa93-d48d97a29367"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="61d6fbda-ce68-4528-a130-6de59df6dba8"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="b0924bc0-4356-4e24-aec1-4ff2e346e3b4"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="e4bafcbd-accd-4d2c-b0d9-29a2602d578b"
+                LastKnownName="Square : Square"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9538e6e3-b282-46b5-8b8b-42ff63c82017"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
+                LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
             Id="89bccf75-f98f-4c53-ac29-6d9e9222ef9a"
             name="MessageOccurrenceSpecification1">
             <covered>
               <lifelineMoniker
                 Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
                 LastKnownName="Game : Game"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="eb84ebeb-1f96-4348-85a3-633402b90a40"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
+                LastKnownName="Enseignant : Unit"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="d439439d-ea01-4d58-8b29-51a30f219177"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
+                LastKnownLocation="Civilisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="144b5c52-8206-4e5a-b770-555e64768eea"
+            name="MessageOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
+                LastKnownName="Map : MediumMap"
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -5286,16 +6545,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="9538e6e3-b282-46b5-8b8b-42ff63c82017"
-            name="MessageOccurrenceSpecification2">
-            <covered>
-              <lifelineMoniker
-                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
-                LastKnownName="Game : Game"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="42801e03-357c-463f-823f-900cd3154ec2"
             name="ExecutionOccurrenceSpecification2">
@@ -5388,26 +6637,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="e594fb85-a0f5-4f8a-ba13-9924783ce9e9"
-            name="MessageOccurrenceSpecification6">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="61d6fbda-ce68-4528-a130-6de59df6dba8"
-            name="MessageOccurrenceSpecification5">
-            <covered>
-              <lifelineMoniker
-                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
-                LastKnownName="Game : Game"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="9cda36df-7b40-4aed-9722-7c5c6a6adef2"
             name="BehaviorExecutionSpecification4">
@@ -5458,46 +6687,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="5fec5493-6131-404e-8e92-a96e376aacae"
-            name="MessageOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="e4bafcbd-accd-4d2c-b0d9-29a2602d578b"
-                LastKnownName="Square : Square"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="10991934-3ebc-44e9-aa93-d48d97a29367"
-            name="MessageOccurrenceSpecification9">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="b0924bc0-4356-4e24-aec1-4ff2e346e3b4"
-            name="MessageOccurrenceSpecification11">
-            <covered>
-              <lifelineMoniker
-                Id="e4bafcbd-accd-4d2c-b0d9-29a2602d578b"
-                LastKnownName="Square : Square"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="eeb49f86-7345-438a-99cb-acf3c2cfeb40"
-            name="MessageOccurrenceSpecification12">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="b2a13287-e5d2-467b-9ee6-6c121b697003"
             name="ExecutionOccurrenceSpecification8">
@@ -5566,46 +6755,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="144b5c52-8206-4e5a-b770-555e64768eea"
-            name="MessageOccurrenceSpecification13">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="eb84ebeb-1f96-4348-85a3-633402b90a40"
-            name="MessageOccurrenceSpecification14">
-            <covered>
-              <lifelineMoniker
-                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
-                LastKnownName="Enseignant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="d439439d-ea01-4d58-8b29-51a30f219177"
-            name="MessageOccurrenceSpecification16">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="b7278ce9-da0d-430d-94f0-c04752681a1c"
-            name="MessageOccurrenceSpecification15">
-            <covered>
-              <lifelineMoniker
-                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
-                LastKnownName="Enseignant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="3237506d-a03e-4371-8071-f43f2da32418"
             name="ExecutionOccurrenceSpecification10">
@@ -5674,46 +6823,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="7feb9cfd-8c6c-4752-8570-59fccb5118f0"
-            name="MessageOccurrenceSpecification17">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="978855ab-a1a2-49d9-a4f3-9a8482006b12"
-            name="MessageOccurrenceSpecification18">
-            <covered>
-              <lifelineMoniker
-                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
-                LastKnownName="Etudiant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="ed8fb8df-7aa0-4d60-b18e-d6ed9567eb8f"
-            name="MessageOccurrenceSpecification19">
-            <covered>
-              <lifelineMoniker
-                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
-                LastKnownName="Etudiant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="5f1143be-be2e-4588-ad46-b626851ea4e4"
-            name="MessageOccurrenceSpecification20">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="9b16dc17-7f92-47ce-9f02-77d54506e35d"
             name="ExecutionOccurrenceSpecification12">
@@ -5732,26 +6841,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="e0c2d76a-351a-4fcc-842f-e53a1fb6fa7b"
-            name="MessageOccurrenceSpecification8">
-            <covered>
-              <lifelineMoniker
-                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
-                LastKnownName="Game : Game"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="65c8d4d7-3d01-4be9-b5c1-576c4b31d15a"
-            name="MessageOccurrenceSpecification7">
-            <covered>
-              <lifelineMoniker
-                Id="2ec47583-3df0-4e3b-9a0e-2a0a3317039b"
-                LastKnownName="Map : MediumMap"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="6f41534a-bc3e-40b1-b0b8-5c42feb00b0f"
             name="ExecutionOccurrenceSpecification6">
@@ -5770,16 +6859,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="438eeda7-554c-421f-a2dc-110a9f877208"
-            name="MessageOccurrenceSpecification31">
-            <covered>
-              <lifelineMoniker
-                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
-                LastKnownName="Etudiant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="80f56250-0f8a-4ac8-8630-8624a1efdca0"
             name="BehaviorExecutionSpecification7">
@@ -5830,26 +6909,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="7e9fda2d-01b4-4d68-aa4c-b2a20370ca1e"
-            name="MessageOccurrenceSpecification22">
-            <covered>
-              <lifelineMoniker
-                Id="58108943-0e34-4e9a-8869-61e1b7372484"
-                LastKnownName="City : City"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="7c278c2e-a18d-4844-bbb5-4167ce7a4ccd"
-            name="MessageOccurrenceSpecification21">
-            <covered>
-              <lifelineMoniker
-                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
-                LastKnownName="Enseignant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="e95daad3-41da-4cc9-9d6f-8280379db34e"
             name="BehaviorExecutionSpecification10">
@@ -5896,36 +6955,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="a64543d1-d7f3-4724-89e9-e95c24f7f538"
-            name="MessageOccurrenceSpecification32">
-            <covered>
-              <lifelineMoniker
-                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
-                LastKnownName="Etudiant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="26adce73-05da-43c2-af4f-04c851fc81e4"
-            name="MessageOccurrenceSpecification23">
-            <covered>
-              <lifelineMoniker
-                Id="58108943-0e34-4e9a-8869-61e1b7372484"
-                LastKnownName="City : City"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="6661a008-6334-4aea-b85c-770a33344a42"
-            name="MessageOccurrenceSpecification24">
-            <covered>
-              <lifelineMoniker
-                Id="68d7c112-c70e-45a4-af12-6faa463693ff"
-                LastKnownName="Enseignant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="74ab7d67-413b-4985-b7aa-db3ed53c7114"
             name="ExecutionOccurrenceSpecification14">
@@ -5962,16 +6991,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="b5baf2a8-bc55-46dd-922b-cd1edde5151d"
-            name="MessageOccurrenceSpecification33">
-            <covered>
-              <lifelineMoniker
-                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
-                LastKnownName="Etudiant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="999267a5-5e9c-4c81-94fe-eabaf90f766d"
             name="BehaviorExecutionSpecification11">
@@ -6018,16 +7037,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="5bb55095-1459-40ae-8aef-58c5936f8ba4"
-            name="MessageOccurrenceSpecification34">
-            <covered>
-              <lifelineMoniker
-                Id="5f8d5837-f7f3-43cc-8204-b0158683d394"
-                LastKnownName="Etudiant : Unit"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="e1a03961-4634-4b89-b201-f855345fec1d"
             name="BehaviorExecutionSpecification9">
@@ -6078,26 +7087,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="45354620-4226-45f2-ab60-f1fd6f4d6f07"
-            name="MessageOccurrenceSpecification28">
-            <covered>
-              <lifelineMoniker
-                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
-                LastKnownName="Game : Game"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="0343deb3-e8fe-4e3a-a715-0e94cec63e81"
-            name="MessageOccurrenceSpecification27">
-            <covered>
-              <lifelineMoniker
-                Id="ad5373c2-a2b1-4f08-8a8e-80f9427a3ac1"
-                LastKnownName="UI"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="3548fe87-d9f5-427c-a937-8c9a642af876"
             name="ExecutionOccurrenceSpecification22">
@@ -6116,26 +7105,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="0e2229fb-4026-47ce-9b55-85faf000868b"
-            name="MessageOccurrenceSpecification30">
-            <covered>
-              <lifelineMoniker
-                Id="ad5373c2-a2b1-4f08-8a8e-80f9427a3ac1"
-                LastKnownName="UI"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="90e9301a-c77b-4949-846f-edb11c4fbcca"
-            name="MessageOccurrenceSpecification29">
-            <covered>
-              <lifelineMoniker
-                Id="75b0f26d-0ebb-4a64-a51b-0f0c471574c9"
-                LastKnownName="Game : Game"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="984f3f18-7765-4cbf-b486-0baf1db429bb"
             name="ExecutionOccurrenceSpecification18">
@@ -6154,16 +7123,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="f6a07b48-2958-44b7-9fe2-a071e718a098"
-            name="MessageOccurrenceSpecification25">
-            <covered>
-              <lifelineMoniker
-                Id="58108943-0e34-4e9a-8869-61e1b7372484"
-                LastKnownName="City : City"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <behaviorExecutionSpecification
             Id="5056dcac-43e0-40fb-b4f6-b4c4ac3927db"
             name="BehaviorExecutionSpecification8">
@@ -6210,16 +7169,6 @@ Pas tout représenté ici.
                 LastKnownLocation="Civilisation.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification
-            Id="8e1a11e8-33a7-43ea-aa15-56ed5b82c1fc"
-            name="MessageOccurrenceSpecification26">
-            <covered>
-              <lifelineMoniker
-                Id="58108943-0e34-4e9a-8869-61e1b7372484"
-                LastKnownName="City : City"
-                LastKnownLocation="Civilisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
           <executionOccurrenceSpecification
             Id="62873b9d-9e0a-4b49-8b52-621e07c3a59a"
             name="ExecutionOccurrenceSpecification16">
@@ -6828,6 +7777,66 @@ Pas tout représenté ici.
     <packageHasNamedElement>
       <executionEvent
         Id="7e68f41d-edfa-497a-8083-e51e336f6751"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="beadbc85-d179-4a7f-82e5-c75a0d86f572"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ce71f0a8-d4a3-492f-a522-535c79fc6e32"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="65df8ef9-e8db-4fc6-9547-c3e4e099b295"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="22a792cf-b3c3-4c17-9e2d-987408d26693"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="5a9b2910-f2f0-45ef-8f24-c6e09bb7b7fb"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="97c06b2e-ab52-45f5-8340-0137704379ef"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0a41572e-16d8-4d23-9703-dd5f5a089bf2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="51356068-7e90-477d-a63a-abdb5e80d503"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e013effe-51d6-4f67-8198-b1d5041a3268"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="3931be4e-14e5-43e2-8e81-e808c08c4bad"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="6623eda5-8256-4f2b-83cf-579b60b7491d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="e00a69a8-64c1-4714-afd0-91ccf7af2e54"
         name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>

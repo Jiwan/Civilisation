@@ -45,6 +45,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Classes\Fight.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Classes\Règles du jeu.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Règles du jeu.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\Règles du jeu.usecasediagram</DependentUpon>
+    </Content>
     <Content Include="Classes\View.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -147,13 +154,6 @@
     <Content Include="Cas d%27utilisation\Développement d%27une civilisation.usecasediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Cas d'utilisation\Développement d'une civilisation.usecasediagram</DependentUpon>
-    </Content>
-    <Content Include="Cas d%27utilisation\Règles du jeu.usecasediagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Cas d%27utilisation\Règles du jeu.usecasediagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Cas d'utilisation\Règles du jeu.usecasediagram</DependentUpon>
     </Content>
     <Content Include="Classes\Civilizations.classdiagram">
       <SubType>Content</SubType>
