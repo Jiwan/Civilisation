@@ -1,4 +1,14 @@
 Espace de noms Player :
-Afin de 
+Afin de pouvoir implémenter plusieurs types de joueurs, nous avons créé une interface commune IPlayer. 
+En effet nous vonlons pouvoir gérer aussi bien un joueur humain qu'une intelligence artificielle, qu'un joueur en ligne, ...
+Nous avons pour l'instant deux implémentations :
+- HumanPlayer : qui gère un joueur humain manipulant la machine sur laquelle tourne le jeu. 
+Cette implémentation utilise, comme la classe Game, le pattern observateur pour gérer les entrées utilisateur (la souris et le clavier).
+- AIPlayer : qui gère une intelligence artificielle basique.
+Les joueurs modifient le cours de la partie à l'aide d'une liste d'action qui est mise à jour à chaque tour.
+Un joueur possède aussi un état (pattern state) qui influence son comportement. Par exemple un joueur peut être dans l'état actif, l'état inactif,
+voire l'état déconnecté dans le cas d'un jeu en ligne. 
 
 Espace de noms Player.Actions :
+Nous avons décidé d'encapsuler les différentes actions des joueurs par un pattern commande. 
+Les communications entre les objets sont donc maintenant contenues 
