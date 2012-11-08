@@ -69,12 +69,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Interaction\creationPartie.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="Interaction\UMLSequenceDiagram1.sequencediagram">
+    <Content Include="Interaction\cycleDeViePartie.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Interaction\UMLSequenceDiagram1.sequencediagram.layout">
+    <Content Include="Interaction\cycleDeViePartie.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Interaction\UMLSequenceDiagram1.sequencediagram</DependentUpon>
+      <DependentUpon>Interaction\cycleDeViePartie.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_0837.uml">
       <SubType>Content</SubType>
