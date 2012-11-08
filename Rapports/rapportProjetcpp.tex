@@ -112,18 +112,16 @@ Bonne lecture.
 
 \section{Diagrammes de cas d'utilisation}
 	\subsection{Règles du jeu}
-		Dans ce diagramme, nous avons illustré les intéractions entre les concepts du jeu et les joueurs. (Schéma 1)
+		Dans ce diagramme, nous avons illustré les intéractions entre les concepts du jeu et les joueurs. (Schéma \ref{oldciv})
 	Les joueurs sont ceux qui créent des villes, créent des unités, bougent, font combattre les unités et capturent des villes.
 	Les dépendances entre les entités du jeu apparaissent le plus clairement possible.
-	(Nous avons fait un diagramme \textit{Développement d'une civilisation} pour illustrer les actions qu'un joueur doit entreprendre lors d'une partie,
-	ainsi que les dépendances de ces actions. JAI ENVIE D'EN METTRE QU'UN)
 	
 	\subsection{Cycle de vie d'une partie}
-	Ce diagramme illustre toutes les phases du logiciel, avec les choix potentiels des joueurs.(Schéma 2)
+	Ce diagramme illustre toutes les phases du logiciel, avec les choix potentiels des joueurs.(Schéma \ref{cyclevie})
 	
 \section{Diagrammes de Classe}
 Nous avons commencé par modéliser l'ensemble des interfaces des entités que nous voudrions manipuler. Ceci nous a permis de ce concentrer sur l'interaction des objets sans se préoccuper de leurs implémentations. Par la suite, nous avons implémenté les différentes interfaces par des classes concrètes. A noter que dans certains cas particulier nous avons regroupé interface et une partie de l'implémentation sous forme de classe abstraite. Ci-dessous vous trouverez les différents les diagrammes de classes finaux de notre application regroupées par espace de noms. 
-	\subsection{Civilization}
+	\subsection{Civilization : schéma \ref{civ}}
 		\subsubsection{Namespace Civilization}
 			Nous avons utilisé le design pattern Prototype pour pouvoir avoir le plus possible de civilizations différentes.
 		En effet, au départ nous étions partis sur le patron de conception Fabrique Abstraite classique, ce qui aurait donné le Schéma 3. C'est à dire implémenter une classe concrète pour chacune des civilisations.
@@ -154,9 +152,8 @@ Ces instances particulières des unités peuvent provenir de 2 endroits :
 			Puis dans un deuxième temps, choisir d'implémenter un algorithme plus intelligent, qui choisira les case en fonction de leur contenu exploitable (minerai, nourriture).
 		De plus, vu qu'une seule instance de cet algorithme est utile à la fois, nous utiliseront le patron de conception Singleton (le pattern Singleton se retrouve dans toutes les patterns algorithme de notre projet).
 			
-		
-	\subsection{Player}
-	\subsection{View}
+	
+	\subsection{View : schéma \ref{view}}
 		\subsubsection{Namespace Drawable} 
 			TileFlyWeight est un pattern poids-mouche (flyweight) pour les tiles (textures) que nous allons utiliser pour la vue de notre jeu.
 		En effet, de nombreuses cases de la carte de notre jeu ainsi que les différentes unités utilisent les mêmes textures. Afin d'éviter d'encombrer
@@ -202,7 +199,7 @@ Ces instances particulières des unités peuvent provenir de 2 endroits :
 		Ce pattern bridge ne contient pour l'instant aucune méthode car nous ne sommes pas encore certains des fonctions graphiques nécessaires à notre jeu.
 
 		
-	\subsection{World}
+	\subsection{World : schéma \ref{world}}
 		\subsubsection{Namespace World}
 			\subsubsection{Namespace Square}
 				Dans le namespace Square, nous avons créé une classe pour représenter une case du "damier" de notre jeu.
@@ -220,7 +217,7 @@ Ces instances particulières des unités peuvent provenir de 2 endroits :
 				Un autre patron de conception Stratégie se cache derrière SmallMap et MediumMap. La fonction \textit{CreateMap} renvoie une Map, qui sera différente en fonction de la taille (en plus du randomizer).
 			En effet, dans une grande carte on pourrait avoir plus de cases d'eau, chose qu'on ne pourrait se permettre d'avoir quand on a une petite carte.
 	
-	\subsection{Fight}
+	\subsection{Fight : schéma \ref{fight}}
 		\subsubsection{Namespace Fight}
 			Dans le Namespace Fight, nous avons encore une fois utilisé le patron de conception stratégie.
 			Elle nous permet de choisir quel algorithme de combat utiliser.
@@ -233,7 +230,7 @@ Ces instances particulières des unités peuvent provenir de 2 endroits :
 			L'intérêt d'une interface IFight est que si l'on veut un combat entre des groupes d'unités (en non plus du 1v1), on pourra implémenter cette interface par une autre classe.
 			On aurait alors les méthodes utiles comme \textit{addDefender()} ou \textit{addFighter()}, qui n'interdisent pas l'ajout de plusieurs unités.
 		
-	\subsection{Game}	
+	\subsection{Game : schéma \ref{game}}	
 		\subsubsection{Namespace Game}
 				Game est la classe centrale de notre jeu. 
 				Nous pouvons la considérer comme un pattern médiateur car elle va gérer les communications (la logique) entre les objets de notre jeu.
@@ -248,7 +245,7 @@ Ces instances particulières des unités peuvent provenir de 2 endroits :
 				\paragraph{}
 				Pour lier les actions utilisateurs au modèle du jeu, nous utilisons le pattern observateur. Plus précisément, nous avons opté pour le système d'event de C\#	pour récupérer les mouvements de la souris et les actions du clavier dans les états de Game (respectivement les fonctions KeyboardPressedEventHandle,  MouseClickedEventHandler, MouseMovedEventHandler).
 			
-			\subsection{Player}
+			\subsection{Player : schéma \ref{player}}
 				\subsubsection{Namespace Player}
 				Afin de pouvoir implémenter plusieurs types de joueurs, nous avons créé une interface commune IPlayer. 
 				En effet nous voulons pouvoir gérer aussi bien un joueur humain qu'une intelligence artificielle, qu'un joueur en ligne, ...
@@ -281,18 +278,122 @@ Nous envisageons de rajouter d'autres classes mères implémentant l'interface I
 \section{Diagramme d'états-transitions}
 Nous avons créé deux diagrammes d'états-transitions :
 \begin{itemize}
-\item Un diagramme montrant la recherche d'un Tile dans le flyweight.
-\item Les états-transitions pour déplacer une unité.
+\item Un diagramme montrant la recherche d'un Tile dans le flyweight (voir schéma \ref{flyweight}).
+\item Les états-transitions pour déplacer une unité(voir schéma \ref{dep}).
 \end{itemize}
 
 \section{Diagrammes d'interaction}
 Nous avons créé deux diagrammes d'interaction :
 \begin{itemize}
-\item Un diagramme représentant le lancement d'une partie. Ce qui comprend la création d'une instance de la classe Game, la création d'une carte (Map), la création des deux joueurs et enfin la création du moteur graphique. Le jeu peut ensuite entrer dans l'état LoadingState, puis dans l'état ActiveGameState (la partie a alors commencé).
-\item Un diagramme représentant une itération dans la boucle MainLoop. Cela consiste a dessiner toutes les unités de la map, a mettre à jour les animations pour la prochaine frame et enfin récupérer les actions du joueur actif. On voit dans ce diagramme que le joueur a décidé d'acheter une nouvelle unité Enseignant.
+\item Un diagramme représentant le lancement d'une partie. Ce qui comprend la création d'une instance de la classe Game, la création d'une carte (Map), la création des deux joueurs et enfin la création du moteur graphique. Le jeu peut ensuite entrer dans l'état LoadingState, puis dans l'état ActiveGameState (la partie a alors commencé, voir schéma \ref{lancement}).
+\item Un diagramme représentant une itération dans la boucle MainLoop. Cela consiste a dessiner toutes les unités de la map, a mettre à jour les animations pour la prochaine frame et enfin récupérer les actions du joueur actif. On voit dans ce diagramme que le joueur a décidé d'acheter une nouvelle unité Enseignant (voir schéma \ref{frame}).
 \end{itemize}
 
+\section{Annexes}
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{devci.png}
+    \caption{Développement d'une civilisation.}
+    \label{devci}
+\end{center}
+\end{figure}
 
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{cyclevie.png}
+    \caption{Cycle de vie d'une partie.}
+    \label{cyclevie}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{oldciv.png}
+    \caption{Civilization (ancienne version).}
+    \label{oldciv}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{civ.png}
+    \caption{Civilization.}
+    \label{civ}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{view.png}
+    \caption{View.}
+    \label{view}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{world.png}
+    \caption{World.}
+    \label{world}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{fight.png}
+    \caption{Fight.}
+    \label{fight}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{game.png}
+    \caption{Game.}
+    \label{game}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{player.png}
+    \caption{Player.}
+    \label{player}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{flyWeight.png}
+    \caption{FlyWeight.}
+    \label{flyweight}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{dep.png}
+    \caption{Deplacement d'une unité.}
+    \label{dep}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{lancement.png}
+    \caption{Lancement d'une partie.}
+    \label{lancement}
+\end{center}
+\end{figure}
+
+\begin{figure}
+    \begin{center}  
+    \includegraphics[width=\textwidth]{frame.png}
+    \caption{Une itération dans la MainLoop.}
+    \label{frame}
+\end{center}
+\end{figure}
 
 
 
