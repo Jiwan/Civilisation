@@ -1,1 +1,15 @@
 Espace de noms Game :
+Game est la classe centrale de notre jeu. 
+Nous pouvons la considérer comme un pattern médiateur car elle va gérer les communications (la logique) entre les objets de notre jeu.
+Cette classe implémente l'interface ISerializable afin de pouvoir enregistrer l'état de la partie dans un fichier de notre de choix et de pouvoir le recharger
+ultérierement. Nous pourrons donc mettre à disposition un système de sauvegarde pour les joueurs. 
+La fonction MainLoop de notre classe Game est la boucle principale du jeu qui mettra à jour l'état de la partie puis dessinera celle-ci. 
+Si nous voulons changer le comportement de cette boucle, il est toujours possible d'étendre la classe Game et de redéfinir la fonction MainLoop.
+
+Pour gérer les différentes phases du jeu, nous utiliserons le pattern state. 
+Pour cela nous avons créé l'interface IGameState qui contient des fonctions pour charger l'état courant, le démarrer, le stopper...
+La classe Game contient une pile d'état; l'état courant est alors l'état en sommet de pile. .
+En effet il est intéressant de garder l'état précédant pour pouvoir retouner facilement dans une phase précédente du jeu.
+
+Pour lier les actions utilisateurs au modèle du jeu, nous utilisons le pattern observateur. Plus précisement, nous avons opté pour le système d'event de C#
+pour récupérer les mouvements de la souris et les actions du clavier dans les états de Game (respectivement les fonctions KeyboardPressedEventHandle,  MouseClickedEventHandler, MouseMovedEventHandler). 
