@@ -1,20 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="93f32028-d29a-4f32-9c9a-427fb5975c84"
   name="Map" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
-    <comment
-      Id="5865fbf2-c31e-4be5-a417-e5f941bd0336">
-      <body>If we want to add a new Square type or a new way to generate map we should make a strategy pattern
-</body>
-      <annotatedElements>
-        <interfaceMoniker
-          Id="4916d294-b50f-4004-ace9-fc01739d08af"
-          LastKnownName="IMapCreate"
-          LastKnownLocation="Package_0859.uml" />
-      </annotatedElements>
-    </comment>
     <comment
       Id="34b7a1b8-91db-496b-bbd9-32ae522f1723">
       <body>Si on veut save la map, on la rend serializable (Voir Game pour une explication plus complète sur la serialization)</body>
@@ -343,18 +332,19 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="289c56d2-d46d-4d4e-9540-8cf3f2186dcd"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map : ISerializable, IDrawable"
-                      LastKnownLocation="Package_0859.uml" />
+                    <undefinedTypeMoniker
+                      Id="748ab606-4ef4-4415-aa44-09b829ce33dc"
+                      LastKnownName="Civilisation::World::Map::Map"
+                      LastKnownLocation="Package_1121.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="2e9e7d74-0153-47f5-a852-beed76261511"
+                  Id="cd894710-dac2-4a47-b6d8-dcb979e91615"
                   name="randomizer"
                   direction="In"
                   isUnique="false">
@@ -462,12 +452,13 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="4caed839-ad4a-4458-9829-241dd258a142"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map : ISerializable, IDrawable"
-                      LastKnownLocation="Package_0859.uml" />
+                    <undefinedTypeMoniker
+                      Id="748ab606-4ef4-4415-aa44-09b829ce33dc"
+                      LastKnownName="Civilisation::World::Map::Map"
+                      LastKnownLocation="Package_1121.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -475,7 +466,8 @@
                 <parameter
                   Id="19f7e3ef-d8fd-409a-a56a-5436e8ee28fe"
                   name="randomizer"
-                  direction="In">
+                  direction="In"
+                  isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="a9584b06-80c3-4747-ae6b-af65f5c51a85"
@@ -613,12 +605,13 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="33dd470d-bc1b-47e1-a132-7d9566b387ca"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
-                    <classMoniker
-                      Id="eb8566cd-d448-403e-b48d-1b8f91045bb4"
-                      LastKnownName="Map : ISerializable, IDrawable"
-                      LastKnownLocation="Package_0859.uml" />
+                    <undefinedTypeMoniker
+                      Id="748ab606-4ef4-4415-aa44-09b829ce33dc"
+                      LastKnownName="Civilisation::World::Map::Map"
+                      LastKnownLocation="Package_1121.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

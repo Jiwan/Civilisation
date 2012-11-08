@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="14658d13-38d8-464e-8f91-2722ad00560d" name="World">
@@ -435,14 +435,6 @@
           <packageHasNamedElement>
             <package Id="b59daffb-876a-4196-8f56-c15e43e6ae05" name="Map">
               <ownedCommentsInternal>
-                <comment Id="e0d45fc5-a0ef-44b5-b587-283f3ca5c371">
-                  <elementDefinition Id="5865fbf2-c31e-4be5-a417-e5f941bd0336" />
-                  <body>If we want to add a new Square type or a new way to generate map we should make a strategy pattern
-</body>
-                  <annotatedElements>
-                    <interfaceMoniker Id="e396a9ee-b7b5-4d38-a7d4-0726a6ce0482" LastKnownName="IMapCreate" />
-                  </annotatedElements>
-                </comment>
                 <comment Id="c35f9421-0225-4ef1-b300-17de15d6ab08">
                   <elementDefinition Id="34b7a1b8-91db-496b-bbd9-32ae522f1723" />
                   <body>Si on veut save la map, on la rend serializable (Voir Game pour une explication plus complète sur la serialization)</body>
@@ -618,16 +610,16 @@
                         <elementDefinition Id="dcf17122-19bf-42ee-9691-25a66b02303a" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="c03a0ef3-b61d-4876-b9ba-92675a45d43e" direction="Return">
+                            <parameter Id="c03a0ef3-b61d-4876-b9ba-92675a45d43e" direction="Return" isUnique="false">
                               <elementDefinition Id="289c56d2-d46d-4d4e-9540-8cf3f2186dcd" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map : ISerializable, IDrawable" />
+                                <referencedTypeMoniker Id="9f786dc7-b748-40d3-892c-af680b731d23" LastKnownName="Civilisation::World::Map::Map" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="d873ebaf-b2f9-4ee1-a490-2c5ab2969a9b" name="randomizer" direction="In" isUnique="false">
-                              <elementDefinition Id="2e9e7d74-0153-47f5-a852-beed76261511" />
+                            <parameter Id="d3e8be3d-61e0-4456-94a9-529b6bfb8d36" name="randomizer" direction="In" isUnique="false">
+                              <elementDefinition Id="cd894710-dac2-4a47-b6d8-dcb979e91615" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="bb5753d6-d8e8-4b6d-a2a0-5eb59fd19a42" LastKnownName="Civilisation::World::IQuareRandomizer" />
                               </type_NamedElement>
@@ -678,15 +670,15 @@
                         <elementDefinition Id="e0e44f85-25bd-4910-8500-e47671fee904" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="f09f4dd0-6258-4af5-8934-2ee40aacb4e9" direction="Return">
+                            <parameter Id="f09f4dd0-6258-4af5-8934-2ee40aacb4e9" direction="Return" isUnique="false">
                               <elementDefinition Id="4caed839-ad4a-4458-9829-241dd258a142" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map : ISerializable, IDrawable" />
+                                <referencedTypeMoniker Id="9f786dc7-b748-40d3-892c-af680b731d23" LastKnownName="Civilisation::World::Map::Map" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="f287b63d-77a0-438b-b940-9a7f756e72f0" name="randomizer" direction="In">
+                            <parameter Id="f287b63d-77a0-438b-b940-9a7f756e72f0" name="randomizer" direction="In" isUnique="false">
                               <elementDefinition Id="19f7e3ef-d8fd-409a-a56a-5436e8ee28fe" />
                               <type_NamedElement>
                                 <referencedTypeMoniker Id="bb5753d6-d8e8-4b6d-a2a0-5eb59fd19a42" LastKnownName="Civilisation::World::IQuareRandomizer" />
@@ -754,10 +746,10 @@
                         <elementDefinition Id="ba1f6be7-06d5-4b20-ab0c-44499828f173" />
                         <ownedParameters>
                           <operationHasOwnedParameters>
-                            <parameter Id="188832cc-ca35-41ec-8af0-7b7f9a3c2a76" direction="Return">
+                            <parameter Id="188832cc-ca35-41ec-8af0-7b7f9a3c2a76" direction="Return" isUnique="false">
                               <elementDefinition Id="33dd470d-bc1b-47e1-a132-7d9566b387ca" />
                               <type_NamedElement>
-                                <referencedTypeMoniker Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" LastKnownName="Map : ISerializable, IDrawable" />
+                                <referencedTypeMoniker Id="9f786dc7-b748-40d3-892c-af680b731d23" LastKnownName="Civilisation::World::Map::Map" />
                               </type_NamedElement>
                             </parameter>
                           </operationHasOwnedParameters>
@@ -969,11 +961,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="882d474e-c83e-4db5-a6e4-f3286d72a3ae" name="Map : ISerializable, IDrawable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::Map : ISerializable, IDrawable">
-        <elementDefinition Id="eb8566cd-d448-403e-b48d-1b8f91045bb4" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" name="Square : IDrawable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawable">
         <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
       </referencedType>
@@ -1026,6 +1013,11 @@
     <packageHasNamedElement>
       <referencedType Id="12fc5ecf-d195-4c9b-a11d-217f435889c4" name="Tile" isAbstract="false" isLeaf="false" cachedFullName="Tile">
         <elementDefinition Id="c2796372-6627-43f1-9f64-d5d695f79669" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9f786dc7-b748-40d3-892c-af680b731d23" name="Civilisation::World::Map::Map" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::Map">
+        <elementDefinition Id="748ab606-4ef4-4415-aa44-09b829ce33dc" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
