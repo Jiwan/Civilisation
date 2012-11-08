@@ -1,6 +1,6 @@
 Espace de noms Player :
 Afin de pouvoir implémenter plusieurs types de joueurs, nous avons créé une interface commune IPlayer. 
-En effet nous vonlons pouvoir gérer aussi bien un joueur humain qu'une intelligence artificielle, qu'un joueur en ligne, ...
+En effet nous voulons pouvoir gérer aussi bien un joueur humain qu'une intelligence artificielle, qu'un joueur en ligne, ...
 Nous avons pour l'instant deux implémentations :
 - HumanPlayer : qui gère un joueur humain manipulant la machine sur laquelle tourne le jeu. 
 Cette implémentation utilise, comme la classe Game, le pattern observateur pour gérer les entrées utilisateur (la souris et le clavier).

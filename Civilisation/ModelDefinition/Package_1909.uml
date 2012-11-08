@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="d64e6476-044a-46e5-90c7-9b21a2dc8404"
   name="Player" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -236,7 +236,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           </operation>
           <operation
             Id="34ff5691-8cb5-442a-ba3e-291a665c838b"
-            name="GetAllCity"
+            name="GetAllCities"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -245,7 +245,20 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="bb6c2254-bc05-4a3b-9419-4fb76f6aee38"
+                  Id="2835463f-3b2f-41de-98fc-2213a47de8d7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e86f19dc-25d9-4360-877f-984031dc937a"
                   name="point"
                   direction="In"
                   isUnique="false">
@@ -254,18 +267,6 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                       Id="a7d0c74f-f555-4438-b446-d14b33943655"
                       LastKnownName="System.Drawing.Point"
                       LastKnownLocation="Package_0917.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="2835463f-3b2f-41de-98fc-2213a47de8d7"
-                  direction="Return">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
-                      LastKnownName="IUnit"
-                      LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -375,7 +376,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
       <class
         Id="2e41b43e-6bee-4607-8ca0-e84c403ab82b"
         name="HumanPlayer"
-        isAbstract="false"
+        isAbstract="true"
         isLeaf="false"
         isActiveClass="false">
         <suppliersInternal>
@@ -700,7 +701,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           </operation>
           <operation
             Id="ed82d980-40ae-4478-b3d1-78cffd139dfe"
-            name="GetAllCity"
+            name="GetAllCities"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -709,7 +710,20 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="a6ada02e-e9f7-4f64-b41f-3f46443dd5ab"
+                  Id="75e7dd55-8bef-4b06-8903-bbb54227668b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
+                      LastKnownName="IUnit"
+                      LastKnownLocation="Package_1909.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a639f14c-4c3a-42f3-85ba-b31e0a1d1bf9"
                   name="point"
                   direction="In"
                   isUnique="false">
@@ -718,18 +732,6 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                       Id="a7d0c74f-f555-4438-b446-d14b33943655"
                       LastKnownName="System.Drawing.Point"
                       LastKnownLocation="Package_0917.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="75e7dd55-8bef-4b06-8903-bbb54227668b"
-                  direction="Return">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"
-                      LastKnownName="IUnit"
-                      LastKnownLocation="Package_1909.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -1307,7 +1309,7 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
           </operation>
           <operation
             Id="22b32395-5d16-473f-9aa0-cce289e28a21"
-            name="GetAllCity"
+            name="GetAllCities"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1331,7 +1333,8 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
               <operationHasOwnedParameters>
                 <parameter
                   Id="2605ef86-05a1-4df4-a3ec-b65196bd0a3f"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f"

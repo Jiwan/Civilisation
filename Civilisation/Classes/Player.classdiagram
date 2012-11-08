@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
@@ -139,22 +139,22 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="9377ed75-7742-46f6-94b7-9c8ec1b0c5a6" name="GetAllCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                <operation Id="9377ed75-7742-46f6-94b7-9c8ec1b0c5a6" name="GetAllCities" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="34ff5691-8cb5-442a-ba3e-291a665c838b" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="c6ac3b7a-64c3-46a9-b3dd-74da1fcd3d81" name="point" direction="In" isUnique="false">
-                        <elementDefinition Id="bb6c2254-bc05-4a3b-9419-4fb76f6aee38" />
+                      <parameter Id="c0e0b74b-e10a-4964-b3d7-da664f3d5d10" direction="Return" isUnique="false">
+                        <elementDefinition Id="2835463f-3b2f-41de-98fc-2213a47de8d7" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="f65566e9-6095-4094-905e-a15554e10f93" LastKnownName="System.Drawing.Point" />
+                          <referencedTypeMoniker Id="919bef1c-b869-4a0e-95c3-ed2259970ab9" LastKnownName="IUnit" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="c0e0b74b-e10a-4964-b3d7-da664f3d5d10" direction="Return">
-                        <elementDefinition Id="2835463f-3b2f-41de-98fc-2213a47de8d7" />
+                      <parameter Id="810a0809-bb1f-4209-b320-5783c9c50e14" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="e86f19dc-25d9-4360-877f-984031dc937a" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="919bef1c-b869-4a0e-95c3-ed2259970ab9" LastKnownName="IUnit" />
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -385,22 +385,22 @@ If one day we want to make an online game we'll just add DisconnectedPlayer, Rec
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="3560f0e2-74d4-4a02-a9e7-16ce539b53dc" name="GetAllCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="3560f0e2-74d4-4a02-a9e7-16ce539b53dc" name="GetAllCities" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="ed82d980-40ae-4478-b3d1-78cffd139dfe" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="b4542023-8bf5-4ca7-b820-9ad99bed6a9b" name="point" direction="In" isUnique="false">
-                        <elementDefinition Id="a6ada02e-e9f7-4f64-b41f-3f46443dd5ab" />
+                      <parameter Id="9106cc60-6886-409a-837f-0bb004c967d4" direction="Return" isUnique="false">
+                        <elementDefinition Id="75e7dd55-8bef-4b06-8903-bbb54227668b" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="9106cc60-6886-409a-837f-0bb004c967d4" direction="Return">
-                        <elementDefinition Id="75e7dd55-8bef-4b06-8903-bbb54227668b" />
+                      <parameter Id="bb30cae7-5cf1-4abf-89d3-8b113277d494" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="a639f14c-4c3a-42f3-85ba-b31e0a1d1bf9" />
                         <type_NamedElement>
-                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
                         </type_NamedElement>
                       </parameter>
                     </operationHasOwnedParameters>
@@ -948,7 +948,7 @@ This will be usefull for
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
-                <operation Id="d6859777-1237-4f36-805e-bbd40d36d5b1" name="GetAllCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="d6859777-1237-4f36-805e-bbd40d36d5b1" name="GetAllCities" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="22b32395-5d16-473f-9aa0-cce289e28a21" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
@@ -960,7 +960,7 @@ This will be usefull for
                       </parameter>
                     </operationHasOwnedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="d1097448-b44e-4ae8-af45-708762979a4f" direction="Return">
+                      <parameter Id="d1097448-b44e-4ae8-af45-708762979a4f" direction="Return" isUnique="false">
                         <elementDefinition Id="2605ef86-05a1-4df4-a3ec-b65196bd0a3f" />
                         <type_NamedElement>
                           <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
