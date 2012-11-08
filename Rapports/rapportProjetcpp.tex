@@ -29,6 +29,12 @@
 
 \documentclass[12pt]{article}
 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\graphicspath{{./Screenshots/}}
+
 \begin{document}
 
 \begin{titlepage}
@@ -94,7 +100,10 @@ Alexandru \textsc{Costan} % Supervisor's Name
 
 \end{titlepage}
 
-\tableofcontent
+
+\tableofcontents
+\pagenumbering{arabic}
+\newpage
 
 \section{Introduction}
 
@@ -105,13 +114,13 @@ Nous avons essayé d'aller plus loin que les 5 patrons de conceptions imposé, a
 A chaque fois, nous avons justifié l'utilisation du patron de conception.
 	Bonne lecture.
 
-\section{Cas d'utilisation}
+\newpage
+
+\section{Diagrammes de cas d'utilisation}
 	\subsection{Règles du jeu}
 		Dans ce diagramme, nous avons illustré les intéractions entre les conceptes du jeu et les joueurs. (Schéma 1)
 	Les joueurs sont ceux qui créent des villes, créent des unités, bougent et font combattre ces unités et capturent des villes.
 	Les dépendances entre les entités du jeu apparaissent bien.
-	(Nous avons fait un diagramme \textit{Développement d'une civilisation} pour illustrer les actions qu'un joueur doit entreprendre lors d'une partie,
-	ainsi que les dépendances de ces actions. JAI ENVIE D'EN METTRE QU'UN)
 	
 	\subsection{Cycle de vie d'une partie}
 	Ce diagramme illustre toutes les phases du logiciel, avec les choix potentiels des joueurs.(Schéma 2)
