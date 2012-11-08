@@ -204,10 +204,19 @@ A chaque fois, nous avons justifié l'utilisation du patron de conception.
 			En fait, il s'agit du patron de conception Stratégie appliquée à une interface.
 			Le lien entre l'interface IMapCreate et ISquareRandomizer n'est pas aussi fort qu'une aggrégation, mais doit quand même avoir un randomizer passé en paramètre.
 			Il est alors facile d'avoir des stratégies différentes de création de cartes, si on veut des cartes avec plus de mer par exemple, ou plus de montagne.
-				Un autre patron de conception Stratégie se cache derrière SmallMap et MediumMap. La fonction\textit{CreateMap} renvoie une Map, qui sera différente en fonction de la taille (en plus du randomizer).
+				Un autre patron de conception Stratégie se cache derrière SmallMap et MediumMap. La fonction \textit{CreateMap} renvoie une Map, qui sera différente en fonction de la taille (en plus du randomizer).
 			En effet, dans une grande carte on pourrait avoir plus de cases d'eau, chose qu'on ne pourrait se permettre d'avoir quand on a une petite carte.	
 	
-	\subsection{Fight}	
+	\subsection{Fight}
+		\subsubsection{Namespace Fight}
+			Dans le Namespace Fight, nous avons encore une fois utilisé le patron de conception stratégie.
+			Elle nous permet de choisir quel algorithme de combat utiliser.
+			En effet, nous avons imaginé plusieurs algorithmes différents en fonction de différents paramètres :
+				1) Le combat avec un Directeur de département sur la case comme support.
+				2) Le combat normal d'une unité contre une autre.
+				3) Le combat dans une ville (des fortifications doivent sûrement apporter un avantage défensif).
+			L'intérêt d'une interface IFight est que si l'on veut un combat entre des groupes d'unités (en non plus du 1v1), on pourra implémenter cette interface par une autre classe.
+			On aurait alors les méthodes utiles comme \textit{addDefender()} ou \textit{addFighter()}, qui n'interdisent pas l'ajout de plusieurs unités.
 	
 \section{Diagramme d'états-transitions}
 
