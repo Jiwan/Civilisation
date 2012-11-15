@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Civilization.World.Square.Desert">
+    <Position X="3" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>World\Square\Desert.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.Water">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>World\Square\Water.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.Field">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>World\Square\Field.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.FruitSquareDecorator">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>World\Square\FruitSquareDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.IronSquareDecorator">
+    <Position X="9.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>World\Square\IronSquareDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.Mountain">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>World\Square\Mountain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.Square">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>World\Square\Square.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Civilization.World.Square.SquareDecorator">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>World\Square\SquareDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
