@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="317d0785-4f92-4e82-8719-dd475dd0d932" name="World" linkedPackageId="035714ab-62b4-456a-bb7a-44ac6c51ee6b" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="14658d13-38d8-464e-8f91-2722ad00560d" name="World">
+        <elementDefinition Id="fd053db6-72f2-4816-a5db-14ec8df75e83" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="e83ee8d4-0238-45eb-9785-f4bf844fedd3" name="Square">
+              <ownedCommentsInternal>
+                <comment Id="ad19af8b-1a9f-438a-bcec-7f63539f942b">
+                  <elementDefinition Id="1184ea96-a316-4f13-a184-1418f7d746a6" />
+                  <body>Avoid to derivate each sub-classe.
+</body>
+                  <annotatedElements>
+                    <classMoniker Id="ede09795-a2df-4416-b21d-7360f81981d9" LastKnownName="SquareDecorator" />
+                  </annotatedElements>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="015e9c81-0c43-4456-979c-0247e8e4ef17" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" name="Square : IDrawable" isAbstract="true" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
+                    <ownedAttributesInternal>
+                      <property Id="1c95c733-64a0-4d8d-bc67-9abee6bb3caa" name="_availableOre" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="49c3f3b4-9153-497c-9e7b-f90211438c3e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f46cd213-8b06-4d9d-9288-0ef5a4b2c21c" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="4d5eebb1-ddd9-4084-b5b1-d3f527c0f3d2" name="_availableFood" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="af4b4dba-55f1-4fde-a6cb-940ef58976f2" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="4a1aa781-4f71-44df-8276-79c74d699d7b" LastKnownName="Integer" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="d0e71ac3-c2b1-45f7-af5b-40d289a7ed21" name="_tile" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="013f3912-f0d1-4d18-98ee-5f3729aa19d4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="12fc5ecf-d195-4c9b-a11d-217f435889c4" LastKnownName="Tile" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="037b20a6-2f88-4bce-abb7-2678945741aa" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="6ae76019-53d9-438e-804a-4cadccb8e67a" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="7476b63d-ec9a-4837-9c33-a0a925f01562" direction="Return">
+                              <elementDefinition Id="175ebfed-5e2e-4019-8d00-918543bf7286" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="5cf749b5-ef37-4ff5-84e2-7061bfecfcde" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="1f69a068-956f-4dcb-88cd-9f04bad72175" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1d8565d6-1846-412c-ac4d-1c0330068762" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="501ad758-c825-4482-9776-32acc169a464" direction="Return">
+                              <elementDefinition Id="970b314d-b4d8-4ffc-a169-f3975c20f058" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="014be4d5-8b54-4b0f-ace2-543d44e20fcb" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="1692fc01-74d8-48c6-bbe5-2d0965cfb7d0" name="Square" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="2617af04-db79-4b20-9236-aa85ab877b4b" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c3c9e497-f066-4651-a26e-09a5b726d676" name="food" direction="In">
+                              <elementDefinition Id="ef9969ac-6368-4fcc-bc6d-c7dc906a76e3" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="17801dd9-8976-4caa-a75c-c4690391716a" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="6dda8b85-c02e-4b36-8623-ed27224b79fc" name="ore" direction="In">
+                              <elementDefinition Id="b92b4562-c5ee-478b-8692-4f8fadc30e10" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="17801dd9-8976-4caa-a75c-c4690391716a" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="1dce3830-0fbd-4166-981e-c381b55631bb" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="f79a1d14-03ee-4f66-9582-3ad410515605" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="84972f9a-fb79-4230-8217-55b9e962567f" name="IGraphicEngine" direction="In" isUnique="false">
+                              <elementDefinition Id="04c33701-c611-43ed-baf3-af9c978baf53" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="44044419-6aca-414e-aa0f-1264add8abdd" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="5dd5ebdb-bba5-480c-bcca-be95cfd3a702" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="6139ab2a-57d0-4f0f-9997-27625bb3a732" name="float deltaTime" direction="In" isUnique="false">
+                              <elementDefinition Id="dafa457b-18ec-459d-bcac-479eb1272e78" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="51fe1dca-1539-4263-82da-b6b6e01ebb4f" name="Mountain" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="88ed14ab-6ba2-4bcd-8acc-9bffc4b118e3" />
+                    <generalsInternal>
+                      <generalization Id="29affd62-8bb4-4f6e-85d7-59d010f2de62" isSubstitutable="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <elementDefinition Id="61843d58-0742-4569-929c-8593ff88e621" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="cfe0d272-811a-4b13-9fa5-16401f60b3cc" name="Mountain" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="087d818f-1110-40b0-a18b-d6283139e5ce" />
+                      </operation>
+                      <operation Id="1d655a30-321e-4ea9-b29f-a6f48098c8e8" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="fa2f5f02-6dd7-4222-9aba-6da4a825b270" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="a427a067-db70-494c-b88e-df4b01411afe" direction="Return">
+                              <elementDefinition Id="6d46df05-3526-4a06-8e9c-f522c4485ff7" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="547e3604-b8a3-4f07-a285-0575e722b9d5" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="58ffc27d-5217-4133-b7a2-9062d72d61a2" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1080f19f-a2bb-49a6-bda2-c06eb475331c" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="359e7168-ef25-40a0-bf1a-336a0c104dd4" direction="Return">
+                              <elementDefinition Id="de682d78-8bae-4d65-9ee3-fbb38261205c" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="ca3bb8d3-6d37-424d-8dba-938ed5eb1e06" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="c1de0838-5bd9-429b-affd-d711d0a07ca6" name="Field" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="0298128c-e7c7-46c2-a8a6-f2509365b2a5" />
+                    <generalsInternal>
+                      <generalization Id="7509d106-2b5f-4e2a-831c-78c71559c020" isSubstitutable="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <elementDefinition Id="c8f5575b-e857-42b9-945e-77d89d5d8d0d" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="02c8487f-a504-4e81-bc3f-ef4ec9a9c271" name="Field" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1ca087ec-6b08-4c50-990a-838e2e861b07" />
+                      </operation>
+                      <operation Id="1285d153-8841-4140-936e-70f3eafc71c6" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="250bf654-5251-4cb7-b2a9-62ea3f837c90" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="5f472672-c994-4c5f-b117-a02c97a335bf" direction="Return">
+                              <elementDefinition Id="fcece046-b1b7-4781-be9a-072e7d3f7f8e" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="ec5763db-ccca-4af2-a149-632f8827882d" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="2c5b0aa3-d510-4bd2-b97e-793b1e344f58" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="ff979bec-08e2-4a40-a580-e0c74fdfc1a9" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="2801cbc0-4561-4f48-8acf-7e74fb7e2732" direction="Return">
+                              <elementDefinition Id="1efe53e0-9864-4a45-9f12-f18ab9b6e74b" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="2154f465-ccb8-4a16-a841-ba26b2e1df1e" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="1f31253c-50b6-406c-9d1a-53036cbbc4c6" name="Desert" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="09b98e1e-2f0a-435d-adc3-7613a800cc78" />
+                    <generalsInternal>
+                      <generalization Id="f7851ba0-0eb5-489a-aa77-b973580525d7" isSubstitutable="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <elementDefinition Id="16555f2c-475f-4e40-ac53-47ee1b2ad3ce" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="faf6ec2f-00fd-45b6-ae2c-cb7ea52b3091" name="Desert" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="4c4b0588-bad2-4fef-9a69-00a97882445a" />
+                      </operation>
+                      <operation Id="92601549-30e5-403a-85d1-de9d43616775" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="f0347f10-6519-4862-8a6f-ca9fab83ee5d" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="334409fb-c8bc-4d3c-b79c-d409ff28e3d0" direction="Return">
+                              <elementDefinition Id="55183ea3-f081-41ef-ac38-daf1de122496" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="19352fa5-32a9-40b1-82b9-8d1fc9d310d2" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="ec4fbf90-a62c-465d-876b-b08c80226b10" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="08125c93-2eae-45dc-9f08-14cad383da2f" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="28e2fe7e-6cc1-4006-8d72-9eaabdacb595" direction="Return">
+                              <elementDefinition Id="fdebb767-6c33-4dbb-9b7e-c6347a3be641" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="afd39758-ea08-4bcf-bc4c-dc4d7cee1530" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="ede09795-a2df-4416-b21d-7360f81981d9" name="SquareDecorator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="610a766a-4747-4ea6-a6ed-af228ae14174" />
+                    <generalsInternal>
+                      <generalization Id="767ef410-3e64-414b-902a-921ac3be1984" isSubstitutable="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <elementDefinition Id="812c83c1-d0ae-4690-844e-e623cde5d13b" />
+                      </generalization>
+                    </generalsInternal>
+                    <targetEnds>
+                      <association Id="c4878e1c-f7d9-457f-b2da-ff69a297054d" isDerived="false" sourceEndRoleName="SquareDecorator" targetEndRoleName="Square" isLeaf="false" isAbstract="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="7512c4cc-4289-4203-aa68-c05cb102af22" name="SquareDecorator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="7e55e00b-e348-427b-b025-3aae82e54894" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="ec033fe5-93a2-49c5-8c35-3d4d7d4280be" name="Square" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                              <elementDefinition Id="d7465b12-a65f-4193-8914-32c68ca421dd" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="06d367b5-a0e8-403c-92fc-78af9b63a86b" />
+                      </association>
+                    </targetEnds>
+                    <ownedOperationsInternal>
+                      <operation Id="13982224-50b4-45fa-9da1-0f25d9118515" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="37fadc57-5ade-4d26-a4ac-8fdb2c930be2" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c9c2712c-fa29-48f1-9f6c-5020e8ed7be4" direction="Return">
+                              <elementDefinition Id="bc8520b7-1758-47ac-bdca-9dcc45dd6df8" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="9496803e-8ac9-4360-a722-99ebbcb2ec53" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="f731e064-65d5-42cc-b9fe-b8238cfefc8d" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="2e4ffa88-0a17-4007-a082-a1e02ed3081c" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="1512b61d-1da3-4e34-ab03-2aa7aceb1a09" direction="Return">
+                              <elementDefinition Id="7b41073c-1d04-44d7-b22e-1d08c78034d7" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="c5c535d9-c6c9-4ad1-b399-70b08fc306b6" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="7998f4ce-7c66-4b52-8275-460ca7b10701" name="SquareDecorator" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1c33c923-5ea7-4e23-9a36-b3dfaa3f8544" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="64a52dce-fc6b-4151-872b-dbbac811363e" name="parameter1 : Civilisation::World::Square::Square" direction="In" isUnique="false">
+                              <elementDefinition Id="ce5fdeb9-2a18-4c3c-a368-5ae4622c91a3" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" LastKnownName="IDrawableEntity" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="4816e683-349e-42a6-ae6f-a9e6518dffb2" name="IronSquareDecorator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="2946c163-4d06-4223-aab2-c234f2144de6" />
+                    <generalsInternal>
+                      <generalization Id="f37e2153-6614-48a7-8c78-a61b8d0875c4" isSubstitutable="false">
+                        <classMoniker Id="ede09795-a2df-4416-b21d-7360f81981d9" LastKnownName="SquareDecorator" />
+                        <elementDefinition Id="91e0ddf1-2f2d-4f81-ad3d-fc610c9f3479" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="fea27f49-25d4-4dd6-b5bf-def097ec6c1d" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="9d72312e-69e8-4eb8-a0aa-9574c9067094" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="e647b492-151a-421d-b43a-dd50606dc2f2" direction="Return">
+                              <elementDefinition Id="28fe8940-82fe-40ee-b781-cdef356b8c9e" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="3e00b99a-02e1-4a4e-8079-9ace1f52a5d1" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="0878f2ab-f122-40b6-8c45-b25cf60d6fbb" name="IronSquaeDecorator" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="a6ddb454-36f6-4a19-a50e-46dcafd46b9e" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="449f419e-0d4e-4fab-9e53-6e083d325757" name="parameter1 : Civilisation::World::Square::Square" direction="In" isUnique="false">
+                              <elementDefinition Id="ffe97d35-e249-4732-a2d8-c8320c47a7dc" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" LastKnownName="IDrawableEntity" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="95e28fec-fe85-42ea-8a8c-09969f10ce10" name="FruitSquareDecorator" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="1f20b526-36d4-4468-b70f-3636c1d5bda3" />
+                    <generalsInternal>
+                      <generalization Id="8bf37a5f-9452-4ef3-9aec-781626980e66" isSubstitutable="false">
+                        <classMoniker Id="ede09795-a2df-4416-b21d-7360f81981d9" LastKnownName="SquareDecorator" />
+                        <elementDefinition Id="5cf13a6d-7d1e-4794-8abb-af0db5f4c376" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="c324b7c6-4eb3-4687-ae49-79968e86eb42" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="a63ca363-d984-4cea-8c60-a7d2cd606d37" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="f6ffed98-b8c9-4140-904c-fff86d1e8901" direction="Return">
+                              <elementDefinition Id="143e2f12-5f42-4a4c-868a-d3816a45deb1" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="328f27ca-cb3c-4c9f-bb39-b6e8035e1816" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="05c45409-9a4c-4ec7-adba-aec85ab94336" name="FruitSquareDecorator" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="74fdd738-00dc-4d01-806b-7ec7a89db2f2" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="7aef78f5-1b89-4839-a971-363da91c9987" name="parameter1 : Civilisation::World::Square::Square" direction="In" isUnique="false">
+                              <elementDefinition Id="2b2fc149-657a-4b94-80ca-f455481f907b" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" LastKnownName="IDrawableEntity" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="3764e0ef-acd9-45b3-8c34-9ef36326f7e5" name="Water" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="e1cd5246-2aef-4a54-9188-e1243709ee94" />
+                    <generalsInternal>
+                      <generalization Id="44a828cc-cc38-40a6-b774-40ccee06da54" isSubstitutable="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <elementDefinition Id="13a846a3-c07e-4a15-a60c-71688168a6f4" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="37d9dd44-85c1-4cc9-b6c5-385c40ee6400" name="Water" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="cff075b4-c880-4e0a-ae54-6dd3f3e1fb91" />
+                      </operation>
+                      <operation Id="b8e45cfc-7d9b-4fcc-8155-450d487994d9" name="AvailableFood" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="67cc8a04-9a65-40cb-8d9f-f019eca84ccd" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="2630812f-b6ac-4a25-9618-351934fde161" direction="Return">
+                              <elementDefinition Id="2858b4bf-2233-4b4b-9df5-06e3052f27b2" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="83d0986e-cda3-47bb-80e8-8c1bb0cdb453" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="796ed699-8dbd-4c84-baec-e0ce22303760" name="AvailableOre" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="4837da98-18f7-4de6-ac14-d8ee5633f2d7" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="8371876a-33e7-47b5-b7ef-91d002e402f7" direction="Return">
+                              <elementDefinition Id="ae110210-e3fe-4297-afbe-40750c2f518e" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="93f12747-1892-4110-b3d5-eb952a2c20b2" LastKnownName="Integer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="b59daffb-876a-4196-8f56-c15e43e6ae05" name="Map">
+              <ownedCommentsInternal>
+                <comment Id="c35f9421-0225-4ef1-b300-17de15d6ab08">
+                  <elementDefinition Id="34b7a1b8-91db-496b-bbd9-32ae522f1723" />
+                  <body>Si on veut save la map, on la rend serializable (Voir Game pour une explication plus complète sur la serialization)</body>
+                  <annotatedElements>
+                    <classMoniker Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" LastKnownName="Map : ISerializable, IDrawable" />
+                  </annotatedElements>
+                </comment>
+                <comment Id="6023a452-99cf-4e35-af14-3acfcbfbb2d9">
+                  <elementDefinition Id="3595fc48-2d93-4aa7-a06a-ac6545e8a10a" />
+                  <body>Si l'utilisateur veut changer et faire par exemple une map avec plein d'eau.</body>
+                  <annotatedElements>
+                    <classMoniker Id="31f0d645-d9a4-46ab-8c6e-867b2e786911" LastKnownName="UserDefinedSquareRandomizer" />
+                  </annotatedElements>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="93f32028-d29a-4f32-9c9a-427fb5975c84" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <class Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" name="Map : ISerializable, IDrawable" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="eb8566cd-d448-403e-b48d-1b8f91045bb4" />
+                    <targetEnds>
+                      <association Id="97b716a1-e198-4d26-b72d-d3275cfd2edc" isDerived="false" sourceEndRoleName="Map" targetEndRoleName="Square" isLeaf="false" isAbstract="false">
+                        <classMoniker Id="c6e375da-0f3f-45b1-9d1c-245e632a19af" LastKnownName="Square : IDrawable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="bf23f8bd-e3ff-4edf-a4a6-75e408948180" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                              <lowerValueInternal>
+                                <literalString Id="c6932af9-9afa-4bcd-bba2-dcacb3961716" name="Lower" value="*">
+                                  <elementDefinition Id="5443aecb-8847-4f6d-a678-c6d0cb027c9b" />
+                                </literalString>
+                              </lowerValueInternal>
+                              <upperValueInternal>
+                                <literalString Id="99741b1b-d167-4e4f-88f2-cf27c9f5a719" name="Upper" value="*">
+                                  <elementDefinition Id="d55dd9f9-0ff0-40a1-9836-2149383f6a06" />
+                                </literalString>
+                              </upperValueInternal>
+                              <elementDefinition Id="d1273fea-5f62-4116-b0d5-e8ff5962629d" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="e7bba556-4b98-4a5a-a38b-685dd733ba78" name="Square" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="5610cd8a-cdb9-4b47-92f0-79dc20fa2df7" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="3c54128f-360c-45c9-8e33-96254e9e5be8" />
+                      </association>
+                    </targetEnds>
+                    <ownedAttributesInternal>
+                      <property Id="b49aca71-e2b0-4ed8-b4b1-28ea60111ad5" name="m_squareMatrix" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="1c4c677c-70a8-42b6-a395-efdf5116cf3f" name="Lower" value="1">
+                            <elementDefinition Id="b8036015-d841-4952-961e-976eaa9b3c0c" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="3301fe38-974d-4e94-a862-9e3e0c2873ad" name="Upper" value="*">
+                            <elementDefinition Id="bc0da854-5583-48be-ae2d-8b1ceff9fdfd" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="6b81a5ac-3709-477d-b11c-4590c72f20ed" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="dcd2f5a3-00c2-45b1-ab8f-3bd338d79e02" LastKnownName="Square : IDrawable" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="93544ed4-103f-4df1-b251-4a6f5214d216" name="m_size" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="63325f93-ad40-491b-986c-7e1afc13d9f7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="e5729b4a-60b0-4d53-92eb-b4e2ba09ce8f" LastKnownName="Vector2" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="9734cc0d-d859-4354-a54c-cd41d6052a0a" name="Map" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="3103b5cf-9c76-4418-bc29-4bb685dbd387" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="adefaeaf-917a-4330-b0f5-3d9b30560dee" name="size" direction="In" isUnique="false">
+                              <elementDefinition Id="6b2f9e29-f217-4359-9a17-f7cc711fefe6" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="3726673e-b5ed-4535-b2d3-eb5b7f1869c1" LastKnownName="System.Drawing.Point point" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="1f36a54d-9f51-4732-8c87-715aeabc881a" name="GetSquare" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="170b03d0-ad0e-4b75-a092-003cb1e410c7" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="7bc3b052-fadb-4fa2-8839-909346db8d67" direction="Return" isUnique="false">
+                              <elementDefinition Id="1130ce0c-51a9-4927-8ac8-744dc33f8d49" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="cead375c-a6ee-4985-aade-b6b68b9a2847" LastKnownName="Square : IDrawable" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="a3234314-a122-41bb-ae4a-18cbf8cc84b2" name="System.Drawing.Point point" direction="In" isUnique="false">
+                              <elementDefinition Id="2713cd64-3d0b-4d31-bd2c-9b1b2c992ce0" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="1439eb16-07ca-4b40-aa9c-7db730215d49" name="ReplaceSquare" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="b8352f3d-8253-41db-9e10-af22eb95cc42" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="360f79ad-1973-416c-9a00-796178fc5d90" name="x" direction="In" isUnique="false">
+                              <elementDefinition Id="5066d2a5-12e4-4bb6-8132-f5d87230a3aa" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="65bb0831-f56c-4339-907e-9f9f57b651a7" LastKnownName="System.Drawing.Point" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="a370ab6f-cdfe-417c-a402-05cefda5af3e" name="square" direction="In" isUnique="false">
+                              <elementDefinition Id="72eddb10-865c-4a27-8d80-99a060937a5e" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="395692b4-cb15-407e-84a2-44bbecba59db" LastKnownName="Square" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="421483b1-e68f-4e97-95f9-de23f765feb9" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="b5f389ef-aa12-4ea5-a236-b141f63491f2" />
+                      </operation>
+                      <operation Id="4cc8154e-583c-4044-8b55-a40f23d4fefb" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="48d824b9-cd4d-415e-bd7a-b96ebec79df2" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="e6546aa2-edaf-42ca-b93f-b5f84ce20223" name="float deltaTime" direction="In" isUnique="false">
+                              <elementDefinition Id="48c87133-ac5c-47c2-8717-0aec71b0b280" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="39a7eff8-cce7-4ac3-a190-a2f88a363810" name="GetObjectData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="305e6cca-22e5-451e-941a-cef52e098146" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c66613c0-a86f-4ade-80dc-9465adac2284" name="SerializationInfo info" direction="In" isUnique="false">
+                              <elementDefinition Id="200f0229-0d74-46ec-8a58-8cb5bdf6c1ae" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="7ed47a01-68fa-45ca-aa6d-4eddc71e2110" name="Map" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="2d9a3fa0-267a-4019-a5bf-175f9d77a777" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="14492ba4-5483-43be-aa22-27b0c2dfe546" name="SerializationInfo info" direction="In" isUnique="false">
+                              <elementDefinition Id="75eae31f-6f71-4e3f-945b-2043835bb525" />
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="e396a9ee-b7b5-4d38-a7d4-0726a6ce0482" name="IMapCreate" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="4916d294-b50f-4004-ace9-fc01739d08af" />
+                    <suppliersInternal>
+                      <dependency Id="dac65621-8573-475c-be2f-794cea00916b">
+                        <interfaceMoniker Id="b3d99324-b91b-4447-9086-9ded7816bf96" LastKnownName="ISquareRandomizer" />
+                        <elementDefinition Id="7ee6715c-a4b8-4dd8-a560-684ee4a54fef" />
+                      </dependency>
+                    </suppliersInternal>
+                    <ownedOperations>
+                      <operation Id="0d2349e9-5590-4954-9197-3c47d9e9526d" name="CreateMap" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="dcf17122-19bf-42ee-9691-25a66b02303a" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="c03a0ef3-b61d-4876-b9ba-92675a45d43e" direction="Return" isUnique="false">
+                              <elementDefinition Id="289c56d2-d46d-4d4e-9540-8cf3f2186dcd" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="9f786dc7-b748-40d3-892c-af680b731d23" LastKnownName="Civilisation::World::Map::Map" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="d3e8be3d-61e0-4456-94a9-529b6bfb8d36" name="randomizer" direction="In" isUnique="false">
+                              <elementDefinition Id="cd894710-dac2-4a47-b6d8-dcb979e91615" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="bb5753d6-d8e8-4b6d-a2a0-5eb59fd19a42" LastKnownName="Civilisation::World::IQuareRandomizer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="6619b364-b324-4834-800e-c5494b2eda0e" name="SmallMap" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="9c1aa3ea-e311-4ba3-b1ef-f0db55caa755" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="b3e58dec-a01a-4bc6-a2f5-5004449cbee7">
+                        <interfaceMoniker Id="e396a9ee-b7b5-4d38-a7d4-0726a6ce0482" LastKnownName="IMapCreate" />
+                        <elementDefinition Id="b9847174-b7ca-4300-a8d6-5f7c06c1567c" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="1893b045-9b22-4764-aa01-55cf8201dc8e" isDerived="false" sourceEndRoleName="SmallMap" targetEndRoleName="Map : ISerializable, IDrawableEntity" isLeaf="false" isAbstract="false">
+                        <classMoniker Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" LastKnownName="Map : ISerializable, IDrawable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="db3ff46d-1421-43ed-9bf2-67ed15d0ca29" name="SmallMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="6e27c9ed-f1c2-437e-acf7-b5b00558f930" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="02a74238-517d-4569-89e2-4118cae9c82d" name="Map : ISerializable, IDrawableEntity" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="4c45c878-4dd3-4531-b7f1-29c0f366fe57" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="81fa42ae-aa7e-412d-87da-3077eadcd92e" />
+                      </association>
+                    </targetEnds>
+                    <ownedAttributesInternal>
+                      <property Id="834597e9-6644-43e4-8a6c-b15dafe5d79b" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="da60f497-2924-48c1-b008-59e76b235943" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9e8907f3-734d-4b14-9e27-c65a9ff318cd" LastKnownName="IMapCreate" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="d73cd0d4-bd57-452d-aeb9-bdbfd12fb37c" name="CreateMap" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="e0e44f85-25bd-4910-8500-e47671fee904" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="f09f4dd0-6258-4af5-8934-2ee40aacb4e9" direction="Return" isUnique="false">
+                              <elementDefinition Id="4caed839-ad4a-4458-9829-241dd258a142" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="9f786dc7-b748-40d3-892c-af680b731d23" LastKnownName="Civilisation::World::Map::Map" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="f287b63d-77a0-438b-b940-9a7f756e72f0" name="randomizer" direction="In" isUnique="false">
+                              <elementDefinition Id="19f7e3ef-d8fd-409a-a56a-5436e8ee28fe" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="bb5753d6-d8e8-4b6d-a2a0-5eb59fd19a42" LastKnownName="Civilisation::World::IQuareRandomizer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="f6e578c4-5249-417e-ad73-97096d2f1629" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="87f6b02c-38f9-4528-8935-24e62a0f4919" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="0e856c32-9c74-43d9-bb9b-7a177dbfe457" direction="Return" isUnique="false">
+                              <elementDefinition Id="097c08f4-6633-4f95-a70a-de63c1f20e49" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="9e8907f3-734d-4b14-9e27-c65a9ff318cd" LastKnownName="IMapCreate" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="b5d06dcb-1e68-4328-a468-8401d1a73af8" name="SmallMap" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="09b389ca-ff60-42b2-979d-c99e8deacfe7" />
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="d3876e44-5ef8-47c9-877b-768a2b8123fe" name="MediumMap" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="33118585-3237-4ca1-80f1-ca9e82bedb18" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="575e2fb2-9fb3-4539-8aa7-504aef60aefe">
+                        <interfaceMoniker Id="e396a9ee-b7b5-4d38-a7d4-0726a6ce0482" LastKnownName="IMapCreate" />
+                        <elementDefinition Id="79e50c56-faa5-4a14-8212-6af1d6b3f116" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <targetEnds>
+                      <association Id="ee08ee25-7ebf-4b85-9197-5f946a2cca00" isDerived="false" sourceEndRoleName="MediumMap" targetEndRoleName="Map : ISerializable, IDrawableEntity" isLeaf="false" isAbstract="false">
+                        <classMoniker Id="70ea9106-5193-45b1-9f57-c3e8d5372ac4" LastKnownName="Map : ISerializable, IDrawable" />
+                        <relationshipOwnedElementsInternal>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="eaa7ff21-53b9-49c5-a2c7-be48124d19e4" name="MediumMap" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                              <elementDefinition Id="8eb5c785-0247-4d44-b342-6fae02424699" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                          <associationHasOwnedEnds>
+                            <memberEnd Id="e93d0367-dc74-42f4-8a25-2a4ebae4b316" name="Map : ISerializable, IDrawableEntity" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                              <elementDefinition Id="3a96b259-c0f0-4349-9630-f2be8e31ff55" />
+                            </memberEnd>
+                          </associationHasOwnedEnds>
+                        </relationshipOwnedElementsInternal>
+                        <elementDefinition Id="e80f5b33-b52b-4bce-bf00-0c170bc9e442" />
+                      </association>
+                    </targetEnds>
+                    <ownedAttributesInternal>
+                      <property Id="f7c68bd6-05b3-4f7a-aeed-5c4370b6e5c5" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="82ce6ebd-af67-4af9-a3fb-6e105b344ec4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c6c651bd-aa92-47a4-b188-935c8c388161" LastKnownName="IMapCreate" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="0a944dd0-4aa1-4d6e-bdae-7a6f79ea8de8" name="CreateMap" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="ba1f6be7-06d5-4b20-ab0c-44499828f173" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="188832cc-ca35-41ec-8af0-7b7f9a3c2a76" direction="Return" isUnique="false">
+                              <elementDefinition Id="33dd470d-bc1b-47e1-a132-7d9566b387ca" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="9f786dc7-b748-40d3-892c-af680b731d23" LastKnownName="Civilisation::World::Map::Map" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="41863869-5ca7-4e69-8fc6-40f41cf95f93" name="randomizer" direction="In" isUnique="false">
+                              <elementDefinition Id="e57baebd-a096-4c3e-b228-9f2f1540bec1" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="bb5753d6-d8e8-4b6d-a2a0-5eb59fd19a42" LastKnownName="Civilisation::World::IQuareRandomizer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="02345dc2-3875-4b0f-b9a5-c6dc3f8bc3b6" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="7db8a2cb-ccfe-43e6-8fde-097f0e650119" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="de0aec58-656a-44bf-ab30-98967db78215" direction="Return" isUnique="false">
+                              <elementDefinition Id="f292c7c6-75e9-4deb-9843-82fe1524d445" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="a2e13f2c-2a0e-46a7-9789-108ace9b0261" LastKnownName="IMapCreate" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="a4b7a430-9720-4671-8337-879f8825324c" name="MediumMap" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="c6977c3a-ca11-4ca6-ab44-3048de2578cd" />
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="b3d99324-b91b-4447-9086-9ded7816bf96" name="ISquareRandomizer" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="0a54d03e-c4c3-4deb-bd6e-bfff0851eabc" />
+                    <ownedOperations>
+                      <operation Id="5279045a-f8f7-4781-905d-945484bc4db3" name="CreateSquare" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="6cfb32f2-a225-4332-aefe-6ceaa0a4a185" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="6eea6952-112c-4216-9f87-fc6fb05b3ea3" direction="Return">
+                              <elementDefinition Id="f25b2a78-1c10-4d69-9c08-67f0615bb1fb" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" LastKnownName="Square : IDrawable" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="3ce6d55e-39fc-47c5-a7c1-9347d4d58b15" name="BasicSquareRandomizer" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="bf008e03-d471-49f6-95a1-08adffc6ef2f" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="f5847fc4-7dcb-482c-ad0b-0f6480e7ad90">
+                        <interfaceMoniker Id="b3d99324-b91b-4447-9086-9ded7816bf96" LastKnownName="ISquareRandomizer" />
+                        <elementDefinition Id="00240897-e4ff-4d91-83e4-2670d1ff6834" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="3e1cd253-2c08-4b15-bb55-c47a082d7de0" name="CreateSquare" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="c3a3f185-775e-45c7-8ec6-82805138dc60" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="1c7f0830-6999-4d93-bbe3-ca01cbc8a76f" direction="Return">
+                              <elementDefinition Id="1422b009-3d86-4609-99ab-ce41a10d8636" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawable" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="31f0d645-d9a4-46ab-8c6e-867b2e786911" name="UserDefinedSquareRandomizer" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="ff94da14-6461-4ec4-a1b8-b0bf2b1565e5" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="a1cf382f-8a57-45d9-8b72-c54d22e9c8bd">
+                        <interfaceMoniker Id="b3d99324-b91b-4447-9086-9ded7816bf96" LastKnownName="ISquareRandomizer" />
+                        <elementDefinition Id="8a4aef78-fef1-47b3-8471-9eb110770f63" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="412b2a25-8e7b-40e4-bd73-2fc7389e12f6" name="CreateSquare" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="e22aa498-fddd-4f0b-8410-1457d8ecd212" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="fe4e9f4b-8819-44d8-a331-e5703445d2ce" direction="Return">
+                              <elementDefinition Id="c80dbe1f-b2a4-4392-aa0e-4767d83a6f0b" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" LastKnownName="Square : IDrawable" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="17801dd9-8976-4caa-a75c-c4690391716a" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f46cd213-8b06-4d9d-9288-0ef5a4b2c21c" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4a1aa781-4f71-44df-8276-79c74d699d7b" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5cf749b5-ef37-4ff5-84e2-7061bfecfcde" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="014be4d5-8b54-4b0f-ace2-543d44e20fcb" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="547e3604-b8a3-4f07-a285-0575e722b9d5" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ca3bb8d3-6d37-424d-8dba-938ed5eb1e06" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ec5763db-ccca-4af2-a149-632f8827882d" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2154f465-ccb8-4a16-a841-ba26b2e1df1e" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="19352fa5-32a9-40b1-82b9-8d1fc9d310d2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="afd39758-ea08-4bcf-bc4c-dc4d7cee1530" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="328f27ca-cb3c-4c9f-bb39-b6e8035e1816" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3e00b99a-02e1-4a4e-8079-9ace1f52a5d1" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9496803e-8ac9-4360-a722-99ebbcb2ec53" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c5c535d9-c6c9-4ad1-b399-70b08fc306b6" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2bc55ebd-25dc-48b2-903f-ef438a4b05ed" name="Square : IDrawable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawable">
+        <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dcd2f5a3-00c2-45b1-ab8f-3bd338d79e02" name="Square : IDrawable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawable">
+        <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e5729b4a-60b0-4d53-92eb-b4e2ba09ce8f" name="Vector2" isAbstract="false" isLeaf="false" cachedFullName="Vector2">
+        <elementDefinition Id="53d82c0b-d2db-47d7-8058-3fb3690b4be2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cead375c-a6ee-4985-aade-b6b68b9a2847" name="Square : IDrawable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawable">
+        <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="395692b4-cb15-407e-84a2-44bbecba59db" name="Square" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Civilization::Square::Square">
+        <elementDefinition Id="8337fe79-dde8-437e-9cf8-0a6860f61a91" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="21ad2e26-1aef-4463-824d-3fffbcbcd076" name="Square : IDrawable" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Square::Square : IDrawable">
+        <elementDefinition Id="ed0d2ddb-6bb8-4ca6-b7f2-9d49090fa9bf" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bb5753d6-d8e8-4b6d-a2a0-5eb59fd19a42" name="Civilisation::World::IQuareRandomizer" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::IQuareRandomizer">
+        <elementDefinition Id="a9584b06-80c3-4747-ae6b-af65f5c51a85" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9e8907f3-734d-4b14-9e27-c65a9ff318cd" name="IMapCreate" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::IMapCreate">
+        <elementDefinition Id="4916d294-b50f-4004-ace9-fc01739d08af" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c6c651bd-aa92-47a4-b188-935c8c388161" name="IMapCreate" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::IMapCreate">
+        <elementDefinition Id="4916d294-b50f-4004-ace9-fc01739d08af" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a2e13f2c-2a0e-46a7-9789-108ace9b0261" name="IMapCreate" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::IMapCreate">
+        <elementDefinition Id="4916d294-b50f-4004-ace9-fc01739d08af" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="83d0986e-cda3-47bb-80e8-8c1bb0cdb453" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="93f12747-1892-4110-b3d5-eb952a2c20b2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3726673e-b5ed-4535-b2d3-eb5b7f1869c1" name="System.Drawing.Point point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point point">
+        <elementDefinition Id="51802444-3f32-427c-ba54-0847047ac8e4" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="65bb0831-f56c-4339-907e-9f9f57b651a7" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1d8ba4cc-c9fd-45d9-a88b-a7053f116d50" name="IDrawableEntity" isAbstract="false" isLeaf="false" cachedFullName="IDrawableEntity">
+        <elementDefinition Id="2c032616-3ba3-4dc3-a95f-a9b799a62528" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="12fc5ecf-d195-4c9b-a11d-217f435889c4" name="Tile" isAbstract="false" isLeaf="false" cachedFullName="Tile">
+        <elementDefinition Id="c2796372-6627-43f1-9f64-d5d695f79669" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9f786dc7-b748-40d3-892c-af680b731d23" name="Civilisation::World::Map::Map" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::World::Map::Map">
+        <elementDefinition Id="748ab606-4ef4-4415-aa44-09b829ce33dc" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="035714ab-62b4-456a-bb7a-44ac6c51ee6b" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ee92d238-dd9b-465f-ab64-472e9ada12de">
+        <profileInstance Id="aaf121c6-8f04-40c1-8577-c0152a9732db" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a45c1c00-0c57-4f15-ac9a-58757609b1f2">
+        <profileInstance Id="a4fcce9a-f0dd-4ba6-b74c-3aa02c846b2d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

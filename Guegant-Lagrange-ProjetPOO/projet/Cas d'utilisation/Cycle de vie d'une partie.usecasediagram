@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dee4d0ee-714d-4df6-9f16-abac1c2c18f7" name="Cycle de vie d'une partie" linkedPackageId="b66d2d50-30fd-428c-9091-b45a6aa2517d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="17a6fa62-a948-4ebf-adb4-900d643e9fc5" name="Joueur principal" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5af77fb6-578e-4c34-8552-566155efc7dd" />
+        <generalsInternal>
+          <generalization Id="0f6ac5a7-d587-4844-a32e-85eca2c93063" isSubstitutable="false">
+            <actorMoniker Id="5f3ba579-9c5e-42e9-ad3b-b673df2fba7a" LastKnownName="Joueur" />
+            <elementDefinition Id="087f45bc-4acf-458f-bbbd-1e4c7773d6cd" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="8c818912-927f-410d-8023-920fb2e3b790" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Lancer l'application" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c1b7c9f7-ad4e-4805-82d6-5d1162410c5e" LastKnownName="Lancer l'application" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="92a643a7-db00-40f7-9245-d8447ba88ebd" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2717494b-4a53-446f-8f74-4de71f3bbe0a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="43c853f7-f3eb-46c6-96c5-d4d7612bdeb1" name="Lancer l'application" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4ad58cdf-e93a-4acc-bbe3-696b37739968" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e4828832-e242-4c94-b9ef-5b307ffe737e" />
+          </association>
+          <association Id="fd498c5f-a11d-4f8a-91c6-155abd7f710c" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Créer partie" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bf67e5fa-d106-4be0-882b-53f8bbb0f02c" LastKnownName="Créer partie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3892f20e-a635-4090-ba87-87c3adce7ff4" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="45b94893-7644-4eba-b5fa-6f7b9aede442" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f123ab79-78ff-4ef8-9e7c-d2de6fe9fc34" name="Créer partie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="89ef3c1d-f032-4c1d-8053-389949bdb056" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7e1a937c-6220-4dfd-bc1c-dffe29afc144" />
+          </association>
+          <association Id="156ffe3b-6b17-4407-9fd2-e37cfc99f204" isDerived="false" sourceEndRoleName="Joueur 1" targetEndRoleName="Choisir la carte" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="81e59417-33c8-4549-a5df-1efe6352f66b" LastKnownName="Choisir la carte" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="938fb781-339f-456d-bff7-dce60b43c4ed" name="Joueur 1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4ed90574-7244-40a4-ae08-c19bf66cf29c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="93cd3580-a6bb-4dc0-8de1-253151faf766" name="Choisir la carte" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0e3db22a-2e04-432c-81e6-d3ebf804acbe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9bf76c4f-1145-446e-a7c4-b5ebbddc8173" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="5f3ba579-9c5e-42e9-ad3b-b673df2fba7a" name="Joueur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f276abff-8dc3-4b33-bfe4-62b94cf81b46" />
+        <targetEnds>
+          <association Id="ea519eef-48f4-4485-b102-ba6f43f9c75d" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Déroulement du jeu" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b66fbe85-7846-48d8-99e0-181120515144" LastKnownName="Déroulement du jeu" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec9c3800-fac1-48bf-a90d-42fe0b79fe85" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="88f0e004-758d-4e38-b389-5130c2161886" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8c263e47-8205-4e52-bee7-79532ed0db37" name="Déroulement du jeu" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9116a5fb-dc30-4489-bc9b-a91edad361a0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="21b222a3-a8f5-40f5-9673-81aed533df84" />
+          </association>
+          <association Id="0a367fbb-e3bd-47bb-a4fa-81d685094e42" isDerived="false" sourceEndRoleName="Joueur 2" targetEndRoleName="Fin de partie" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f4de6983-cf7a-43ea-b943-f396af1b2ed9" LastKnownName="Fin de partie" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac46e16b-6fdf-4e39-9ed0-69c3fdfe95db" name="Joueur 2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9ab767f5-fdef-4006-aabe-a32ad4196831" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="de273138-c9b5-473b-80d4-224537e9c56a" name="Fin de partie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="848b7475-55aa-4b6f-aea2-895eaad0fcb1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b9e214a7-462d-4fba-af3e-0b15b234650d" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" name="Cycle de vie d'une partie" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2f85bacc-4bcc-47bf-8b23-b1ed01744b5b" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="81e59417-33c8-4549-a5df-1efe6352f66b" name="Choisir la carte" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="012006dc-e217-4b61-a166-ff6ba8763908" />
+        <suppliersInternal>
+          <dependency Id="6d738226-26c9-4b81-8ce9-4f76af52c7a9">
+            <useCaseMoniker Id="bf67e5fa-d106-4be0-882b-53f8bbb0f02c" LastKnownName="Créer partie" />
+            <elementDefinition Id="2aace5c6-a983-4623-b112-3a9c69a57a0a" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="bf67e5fa-d106-4be0-882b-53f8bbb0f02c" name="Créer partie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="aa4430be-caa1-405a-bab2-4d825855d803" />
+        <suppliersInternal>
+          <dependency Id="02e561bc-b1b0-4b0b-953c-3b98b4baeca3">
+            <useCaseMoniker Id="c1b7c9f7-ad4e-4805-82d6-5d1162410c5e" LastKnownName="Lancer l'application" />
+            <elementDefinition Id="8dcdd644-eff7-4b3a-b123-da3bd60ebb74" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="c1b7c9f7-ad4e-4805-82d6-5d1162410c5e" name="Lancer l'application" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="673b1a75-3bb5-409e-8eba-48efb6b6d4a1" />
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="2250e1e1-492a-4905-95c6-64392792642f" name="Défaite" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8d825731-5500-4c7f-a19c-2fe4f51a40f6" />
+        <generalsInternal>
+          <generalization Id="d5b05b41-1649-4262-a2f6-b10eb4e9cd78" isSubstitutable="false">
+            <useCaseMoniker Id="f4de6983-cf7a-43ea-b943-f396af1b2ed9" LastKnownName="Fin de partie" />
+            <elementDefinition Id="7a18ea95-5f39-454e-9d7c-2a2be378ca90" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9838fde9-7420-4672-928f-2768bd03de80" name="Victoire" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5df2459c-c8a5-4752-b90c-bbb964451c17" />
+        <generalsInternal>
+          <generalization Id="11b038bd-79f4-4a6d-b87c-9aa23f56c286" isSubstitutable="false">
+            <useCaseMoniker Id="f4de6983-cf7a-43ea-b943-f396af1b2ed9" LastKnownName="Fin de partie" />
+            <elementDefinition Id="a0b542b5-850e-4bbf-ae62-e09ce154ce67" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b66fbe85-7846-48d8-99e0-181120515144" name="Déroulement du jeu" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="12109eab-63a1-497e-b8c4-e28b907933f8" />
+        <suppliersInternal>
+          <dependency Id="41ad2a7b-b8f7-42e7-9363-d71befbf273a">
+            <useCaseMoniker Id="81e59417-33c8-4549-a5df-1efe6352f66b" LastKnownName="Choisir la carte" />
+            <elementDefinition Id="77d5ffb7-c14c-488c-8969-cee7de6030da" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f4de6983-cf7a-43ea-b943-f396af1b2ed9" name="Fin de partie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="26818872-5c5c-4b5c-a1e0-525c00976a34" />
+        <suppliersInternal>
+          <dependency Id="c677d10d-ff2b-4d32-a433-56841ba57e9d">
+            <useCaseMoniker Id="b66fbe85-7846-48d8-99e0-181120515144" LastKnownName="Déroulement du jeu" />
+            <elementDefinition Id="0b34a7c5-3e5c-42eb-ae91-d4310180ee4f" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="72ef6543-5f21-4c6b-8c04-5698fcfc6108" name="Choix adversaire" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="970e1a96-33cd-4c31-810b-d0598f8b54ac" />
+        <suppliersInternal>
+          <dependency Id="fa2b9828-ad5c-4aa8-82ca-f2587f28ac99">
+            <actorMoniker Id="5f3ba579-9c5e-42e9-ad3b-b673df2fba7a" LastKnownName="Joueur" />
+            <elementDefinition Id="a89bdacd-23a6-493e-a4c2-58904be5c8d6" />
+          </dependency>
+        </suppliersInternal>
+        <extendedCases>
+          <extend Id="2335b520-bd21-47b4-b49f-970131ed7b96">
+            <useCaseMoniker Id="bf67e5fa-d106-4be0-882b-53f8bbb0f02c" LastKnownName="Créer partie" />
+            <elementDefinition Id="ec1ac36c-49e7-4b0c-8ae3-f94d70797196" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="44f74075-690e-4dee-afa4-4fcf0d3f3156" name="Choix de la civilisation" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4c429cf9-c235-4b84-912b-160e5f097af7" />
+        <extendedCases>
+          <extend Id="cfb62df5-1bf6-4934-9335-bd5f7783734e">
+            <useCaseMoniker Id="bf67e5fa-d106-4be0-882b-53f8bbb0f02c" LastKnownName="Créer partie" />
+            <elementDefinition Id="b63f6f76-0c47-4e46-89f1-fd9ac695cc02" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="eb2333ed-34b1-4a5c-845d-58ee10fbb3bc" name="Affichage des scores" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bca194a8-c87d-47ea-b001-78382955b0a5" />
+        <suppliersInternal>
+          <dependency Id="a65c3073-7bac-45f5-b45f-bf9e6bf12b08">
+            <useCaseMoniker Id="f4de6983-cf7a-43ea-b943-f396af1b2ed9" LastKnownName="Fin de partie" />
+            <elementDefinition Id="fc753844-db58-4f89-a42a-879d572c6635" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="3dbe8106-ca9c-4308-9cf2-6cd74b5c1a15" LastKnownName="Cycle de vie d'une partie" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="b66d2d50-30fd-428c-9091-b45a6aa2517d" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="1a25854a-a9d0-4290-965f-d9b509522ffa">
+        <profileInstance Id="1efb9165-6693-4a3a-a1d9-dcf73e175127" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e5e218cf-f480-4d80-8a23-f3e9209f92fe">
+        <profileInstance Id="0c892372-dfbb-4b5d-9f0c-353e964fabeb" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

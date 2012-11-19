@@ -17,8 +17,10 @@ namespace Civilization.World.Square
 
         #endregion
 
+        #region constructor
         public IronSquareDecorator(Square square) : base(square)
         {
         }
+        #endregion
     }
 }

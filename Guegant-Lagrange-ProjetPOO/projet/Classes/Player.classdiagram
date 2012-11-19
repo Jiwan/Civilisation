@@ -1,0 +1,1236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="4b1d7b01-61be-41d3-92f3-f1e86d12b4f7" name="Player" linkedPackageId="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="bfbed6c1-cc64-496b-bf53-c6a17c2b86ad" name="Player">
+        <ownedCommentsInternal>
+          <comment Id="4bd1cfee-52f0-442a-9f15-402099239e1a">
+            <elementDefinition Id="49b25010-ff6f-4e36-b579-a0320a6a526c" />
+            <body>If one day we want to handle an AI player we'll have a clever IPlayer interface for it.</body>
+            <annotatedElements>
+              <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+            </annotatedElements>
+          </comment>
+          <comment Id="4b2fdb00-0cc7-4105-a340-5dcb8d5379de">
+            <elementDefinition Id="eb66d2bb-b780-42fa-a3b1-cfc46d0dfa94" />
+            <body>ActivePlayer : à son tour de jouer
+
+InactivePlayer : finit  son tour, à l'adversaire de jouer
+
+If one day we want to make an online game we'll just add DisconnectedPlayer, ReconnectingPlayer, etc
+</body>
+            <annotatedElements>
+              <classMoniker Id="c50f8ffe-7bc7-4ffd-be48-bd1cd02c287a" LastKnownName="InactivePlayer" />
+            </annotatedElements>
+          </comment>
+          <comment Id="32f1f60e-e63d-41e4-be58-26081cd4a04a">
+            <elementDefinition Id="35d8c6a3-5012-458e-bbb7-1802c7743e70" />
+            <body>CF: Game pour voir le pattern observateur utilisé pour receptionner les événements provenant de la souris et du clavier.</body>
+            <annotatedElements>
+              <classMoniker Id="f21ae4e1-a195-47f5-8871-7662aa5db8cd" LastKnownName="HumanPlayer" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="d64e6476-044a-46e5-90c7-9b21a2dc8404" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <Interface Id="130b40a8-596a-4bf4-9557-0eeace8a5734" name="IPlayer" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="341cc183-7a27-4959-9a12-5e6eef82a533" />
+              <ownedOperations>
+                <operation Id="cd9366d4-76bd-4672-95b4-902466ebe727" name="AddUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a13f6b53-ba27-4a10-a7eb-17618ec872b1" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="01bbf190-a085-482c-a2b2-6d194e4c191e" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="5de1e032-30b8-4e68-add5-d3cc33522116" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="fd16fed7-504b-4b18-80b4-f6111d86b2b5" name="AsUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="69087e09-f763-43da-a383-b6b3e2a577a7" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="33791644-496e-4e72-8fff-45d87526063a" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="6980879f-fb11-4013-aba6-3a22395e0719" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1caa2a81-3aba-4e0f-b446-0bdef5d2683e" direction="Return">
+                        <elementDefinition Id="cb27898d-406b-4732-8d05-9966d2c593a1" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="103293a0-f3e4-48c3-9c7e-11259bbd44ce" name="RemoveUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bb911514-21a9-4269-80c9-2ee55f08a2d3" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d64e2f55-12c8-403c-b215-2a022da3b4e5" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="ff326f77-7c19-47c6-84e5-1c7380f3fb51" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="348503a6-aff9-422d-9359-3df38f9574dc" name="GetAllUnit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="53a1119d-f25a-41d9-8100-6fcf614ab024" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b4bd3db2-4309-43c1-8e0d-c02a3c055fea" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="34304bce-26e9-4210-9b79-4d6444fbcb82" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="71c779fd-cf71-4e7a-9a37-079af084d813" direction="Return">
+                        <elementDefinition Id="fba0d542-b01d-41ac-8d60-83f616b6b817" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="cb705187-27ee-4ffc-90c8-bd1ab1ab1bea" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d1b0f83c-b128-48a3-bf4e-ceadbbe44aa6" name="AddCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ea04dbe3-4398-40d3-b8f7-926b241f0348" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="99ec3b36-b075-4674-a3e6-d3cebb45e151" name="city" direction="In" isUnique="false">
+                        <elementDefinition Id="4bbb0ffe-aa26-45d4-a865-6c31bbb2b0d7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="5a69e046-c109-4274-ac9e-878a6299a8e0" LastKnownName="City" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="a673b4cb-5140-4f02-ae2b-b26c2969ecc8" name="AsCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d1c8174c-7754-4464-8748-b83b523bae1e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="716dcaf4-cf81-4bb4-a932-71e70f92e5e9" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="be995145-6f53-466e-827f-0bfeeb67fd8e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f65566e9-6095-4094-905e-a15554e10f93" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b0cf464b-2322-4e56-a5f5-a48d0d78b99f" direction="Return">
+                        <elementDefinition Id="c248c437-6c01-4c1e-8299-5bdeb619701a" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="08fee5db-3f1a-471f-9e52-2086359eb64b" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9377ed75-7742-46f6-94b7-9c8ec1b0c5a6" name="GetAllCities" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="34ff5691-8cb5-442a-ba3e-291a665c838b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c0e0b74b-e10a-4964-b3d7-da664f3d5d10" direction="Return" isUnique="false">
+                        <elementDefinition Id="2835463f-3b2f-41de-98fc-2213a47de8d7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="919bef1c-b869-4a0e-95c3-ed2259970ab9" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="810a0809-bb1f-4209-b320-5783c9c50e14" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="e86f19dc-25d9-4360-877f-984031dc937a" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1b683876-3feb-4a94-9071-21f6969433e4" name="RemoveCity" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fcca7258-afe7-4428-9032-9938a9bd2345" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="03e654ac-abf9-43c3-8e22-47427a47a534" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="f73c48b1-b5f0-4442-9599-14dfe322f4f5" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b212f7cc-a5c4-4876-b04b-c4c2eea0e072" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="66f7b5f7-9b9f-4364-8722-297c614c4cf1" name="isDead" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8ee8047a-df37-4567-9be6-e2f0184c8885" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a7a0cdf0-eaff-4fa2-8207-051c9f65ad7a" direction="Return">
+                        <elementDefinition Id="76ca9750-93cc-4943-b5ec-512e90e1b8ef" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="bac23726-0e10-4ade-8c9f-6aec2f7e8461" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="6c81c3bd-7548-4e8e-a864-d9d83ab75e2a" name="GetCommands" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b4685c63-fc11-4565-914e-9f29fa166863" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dfc7d204-5178-4808-b3a8-4427f4902936" direction="Return" isUnique="false">
+                        <elementDefinition Id="620385cd-b8fd-49f4-a291-0de1e760dc29" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3652643e-4610-49a8-aa14-e9456b7af94a" LastKnownName="IPlayerAction" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="f34c4c9f-28b9-45ee-ba6a-d665e03bff5b" name="SetGame" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a4b613b0-64b1-4815-8a58-8e8272ce8569" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2909ab00-d64b-4cb5-89a4-711f22c2bc72" name="game" direction="In" isUnique="false">
+                        <elementDefinition Id="b43f2ca9-6b8d-4fbc-a7de-c336e1585433" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" LastKnownName="Game" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="f21ae4e1-a195-47f5-8871-7662aa5db8cd" name="HumanPlayer" isAbstract="true" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2e41b43e-6bee-4607-8ca0-e84c403ab82b" />
+              <suppliersInternal>
+                <interfaceRealization Id="823d61b6-2e4f-472a-8576-f7bc1125d403">
+                  <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+                  <elementDefinition Id="b655a999-4a9d-4624-b3f7-c94f18962ab2" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="893610c0-08c0-41b7-8529-9fc476d8728e" isDerived="false" sourceEndRoleName="HumanPlayer" targetEndRoleName="IPlayerState" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="5574d1aa-2cf8-4240-bea7-88d694115eb2" LastKnownName="IPlayerState" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="f531a768-6906-4bbb-ae8b-b3a14ca8f4e2" name="HumanPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="145e65d9-b12b-4946-9d9c-fcc2ca3ec8cc" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="93a0e61e-15bc-4fb8-a045-6c3ca87c80d8" name="IPlayerState" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="01072463-326d-40d0-abd8-e10637e0f0be" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="cb492c6f-2857-442a-a730-89163a885684" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="a3f45143-d521-46d6-9c34-8366dd453c6b" name="_cities" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="d1140b54-74c7-4ebb-be6e-ba2362faa030" name="Lower" value="*">
+                      <elementDefinition Id="ceabb597-d29b-45f7-b07d-ef4e4fcd6aaf" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="bb328ca7-7fa0-4678-b538-1ea91a1d7b81" name="Upper" value="*">
+                      <elementDefinition Id="1a1e75ed-bc6b-4488-966a-2d5db001ac5a" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="a83ef3b2-5217-4dea-95a9-ad702941ba01" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="519f8b27-beeb-459d-b1d2-3f7796f379c0" LastKnownName="ICity" />
+                  </type_NamedElement>
+                </property>
+                <property Id="fabe5460-8693-44cf-b8de-bcd4b16b156a" name="_units" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="8b9b567b-13fb-4bb7-99a0-a818526a8ec6" name="Lower" value="*">
+                      <elementDefinition Id="944de2d4-9333-406d-a806-c829c4c2864d" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="b58f5001-70a2-4928-b706-d9b686710ed0" name="Upper" value="*">
+                      <elementDefinition Id="5d83bcc4-ff0a-4c88-970d-9dd0fc822e58" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="76ccc150-cd57-437c-8360-3ef03a2a2dd7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                  </type_NamedElement>
+                </property>
+                <property Id="958ffed3-d2d8-427e-8716-c04a64777811" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="faae61cb-7b6e-4a54-86d5-e5b468563d96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c54afdeb-445a-488c-bf3c-b82c2e0da24f" LastKnownName="Game" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="e8bbc650-25f6-4e58-8d72-c8208fdb922d" name="AddUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="aaf202eb-cf9d-4fde-b077-c3f23ae6f573" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f69819de-b72a-4423-a882-f823a908061a" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="d341e696-fa84-4956-b585-9cda7d77c048" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="6f95c81f-9301-4408-b68b-62c0941c0b1d" name="AsUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9fabb78d-d0be-4593-ae4f-7ba6c8b53942" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fc005d3c-a7ed-4ba6-93ff-0602e04cabf7" name="System.Drawing.Point" direction="In" isUnique="false">
+                        <elementDefinition Id="de79255b-7ada-466b-8726-4efc03fe92b4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a7fe490d-c42c-4bfb-bb30-8735ab09479a" direction="Return">
+                        <elementDefinition Id="b6c676cc-64a4-49cb-ae43-3e1b14470838" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ffb323c7-b675-4da3-8a32-f49b2a42243f" name="RemoveUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="70767dfc-5ab0-4096-8985-51c299f79c68" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="86ed0a88-7695-4534-90be-8dd8edde1181" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="036a466a-c687-4816-af94-2272e430291d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="83bebce8-3d44-434f-908b-7c73cbac5ef7" name="GetAllUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c5b9c73b-2c96-4cce-a906-2247df951778" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="21f4c6d7-fd81-4575-9b39-e71b4973cef2" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="a6db61bf-cf44-45f3-9dbc-01627231fc88" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="dc573233-70cf-4b46-ada7-04a18e1a50d6" direction="Return">
+                        <elementDefinition Id="920aaf52-26ae-44c9-9588-a67c007993a5" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="fc71907c-82b9-42f3-8d34-32c88d211b58" name="AddCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="0df5d518-ac1e-49d8-9c99-3ad2ef4335ed" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="af00fbed-4da3-475b-8d30-ebf921299c4b" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="1fc50d7a-1df0-41af-a8a4-1c7ad9f95854" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="5a69e046-c109-4274-ac9e-878a6299a8e0" LastKnownName="City" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="40bda4a5-b2f5-4f57-b15b-be5d5268ad57" name="AsCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="840b3662-00d0-4a5e-bb0b-8ff7588baa75" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="81a9bf1b-4512-4f0c-88f9-79f86eb9dffc" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="ba8c5aa0-a589-4e05-b3a0-b5de2c77004d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="101010c5-042f-4f8e-b449-586edfa4d28b" direction="Return">
+                        <elementDefinition Id="59e99268-eedd-4799-941f-f6a38c987517" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="3560f0e2-74d4-4a02-a9e7-16ce539b53dc" name="GetAllCities" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ed82d980-40ae-4478-b3d1-78cffd139dfe" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9106cc60-6886-409a-837f-0bb004c967d4" direction="Return" isUnique="false">
+                        <elementDefinition Id="75e7dd55-8bef-4b06-8903-bbb54227668b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="bb30cae7-5cf1-4abf-89d3-8b113277d494" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="a639f14c-4c3a-42f3-85ba-b31e0a1d1bf9" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="c2335a88-90ad-4f63-8c17-42abeaff28e6" name="RemoveCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="00ea6dba-29ae-424d-aed2-036fb0dd845b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="43d8e476-f254-491c-aa04-cc87bd11af8d" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="1d79d819-41a8-48a1-9cb4-46a5cd5f1d42" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="1aa7c634-6eeb-4005-898a-b5564c06ca29" name="isDead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="18cae4bc-1fae-4ff8-ae9c-995821cb79e6" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="46c9f36e-3bad-4795-948c-bda8ca454045" direction="Return">
+                        <elementDefinition Id="51f3ce91-2a32-4aad-b10e-8891ffaddb0d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="4524ddaa-3453-44a7-8498-ecffe6c1aab8" name="GetCommands" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d844a1bb-94ee-4b53-ae02-3632330e0422" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e26e1e1b-d596-42d2-b1b9-857fb301f8ad" direction="Return" isUnique="false">
+                        <elementDefinition Id="3db8e5ad-835c-40c2-b707-b98ebf681304" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3652643e-4610-49a8-aa14-e9456b7af94a" LastKnownName="IPlayerAction" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="e799a65d-297f-4bce-9d11-fd695edfe247" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="df08bd15-5229-42b0-bc01-b7b0b8cf161c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b16b73a4-2359-4e7f-942f-5e1ba50ddb18" name="game" direction="In" isUnique="false">
+                        <elementDefinition Id="803826bd-13bc-41c3-bc81-9dca519b9ac6" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" LastKnownName="Game" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9da37b89-5cb2-426e-88ba-af9622d40ecf" name="KeyboardPressedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b7153785-8f46-471c-aceb-34c75dab4905" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="9250a587-fe98-48a4-b577-5d29fa6e48ec" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="311fa243-208e-470c-9b66-1cdbccddb820" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f1904702-6f8d-45aa-bf31-b664048f0b99" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="78b13113-7888-4935-a67f-525ec1a9c128" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="28a4b060-5267-4b74-8f5c-df162f15bd24" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="6547d12c-79cc-4a68-b350-0541f4c3ecfa" LastKnownName="KeyboardEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="ea622ab6-fc95-4273-8feb-74b7710c0dd7" name="MouseClickedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1298938d-01cf-421a-b8dc-65cfb14139ad" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="f86538b5-2784-47fa-bede-32b3e46692f5" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="b4914779-48c7-479c-bc8b-55c22ee6ea09" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f1904702-6f8d-45aa-bf31-b664048f0b99" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ddd9a375-706f-4270-9847-b4d4a83c69ff" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="96ce3faf-c59a-421c-a0e0-f903bbf5d9ec" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="92fe104e-8159-4dfc-b430-275705b302ca" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="dfcd1a58-82a5-4d61-8fda-566a46e02453" name="MouseMovedEventHandler" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5e6e9575-bb7a-460f-a11c-a426f6e9c1af" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="7686b65e-12f3-43b7-b27f-a983d8f41a71" name="o" direction="In" isUnique="false">
+                        <elementDefinition Id="5745e3ca-d9cc-442f-b3ce-f3502306ad23" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="f1904702-6f8d-45aa-bf31-b664048f0b99" LastKnownName="object" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="2e46fccd-0fd8-4f33-bac6-e9f4ff739c14" name="e" direction="In" isUnique="false">
+                        <elementDefinition Id="3a022f9a-444a-45c4-90ee-70ff0e15d3ce" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="92fe104e-8159-4dfc-b430-275705b302ca" LastKnownName="MouseEventArgs" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="8355eec5-83fe-40af-94c2-686f9acc9418" name="Actions">
+              <ownedCommentsInternal>
+                <comment Id="312c9549-261e-409d-a501-aeba664d509f">
+                  <elementDefinition Id="9a15fca6-6cd1-4f83-a7c4-f843587d381e" />
+                  <body>Command pattern.
+Instead of using raw function calls, we will encapsulate player's actions in an object.
+This will be usefull for 
+1) Logging all actions.
+2) Debugging.
+3) If we want to make a replay we can just save the list of action and reload them whenever we want.
+4) Manymore.
+5) If we want to make an online game, this could be our action packet</body>
+                  <annotatedElements>
+                    <interfaceMoniker Id="5049eac2-42d1-4b5f-bc60-233de1947311" LastKnownName="IPlayerAction" />
+                  </annotatedElements>
+                </comment>
+              </ownedCommentsInternal>
+              <elementDefinition Id="2046e58b-b54f-4e68-929c-7a7a7d52a410" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <Interface Id="5049eac2-42d1-4b5f-bc60-233de1947311" name="IPlayerAction" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="bd35a13e-a6e8-4cf4-96ee-8082ea76ac5a" />
+                    <ownedOperations>
+                      <operation Id="12419580-be56-4331-87a1-6681ce9b7047" name="Do" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="4e9a7b94-a86c-452b-932e-7484b7009bb9" />
+                      </operation>
+                      <operation Id="c9b668cd-64c3-48f6-a7f5-148469361347" name="Undo" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="18131f31-6304-415d-94c7-185c0758b84b" />
+                      </operation>
+                      <operation Id="746faf36-9d6e-434a-90f1-ae0dfd79e5dd" name="GetLog" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="46b06480-2891-478e-ba86-7fc57f8fc94b" />
+                      </operation>
+                    </ownedOperations>
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" name="InGameAction" isAbstract="true" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="c48d8289-3083-4139-bf3e-507c06ec1565" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="ac7b7c3e-d59e-472e-ba70-984f4c308c89">
+                        <interfaceMoniker Id="5049eac2-42d1-4b5f-bc60-233de1947311" LastKnownName="IPlayerAction" />
+                        <elementDefinition Id="f805f7a2-d0a5-4409-b082-800dadcb8b91" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                    <ownedAttributesInternal>
+                      <property Id="6b1d4a04-40ec-465d-b309-5c432d68f3d7" name="player" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="64771969-102d-48b2-b92a-d009e2756a81" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="6f158cbd-7537-4d76-b9ac-30f9d369de6d" LastKnownName="IPlayer" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                    <ownedOperationsInternal>
+                      <operation Id="a939ae65-ea1f-4474-951c-1813f153a9ed" name="Do" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="5f22fe88-725a-40f6-99e5-c98cd7b31793" />
+                      </operation>
+                      <operation Id="f5932a66-8de5-406d-9a94-1ef2233195ae" name="Undo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="640df54b-3d00-4ad1-b684-09e7fd2a7762" />
+                      </operation>
+                      <operation Id="62758a0f-1a03-40e0-8c61-80f698977814" name="GetLog" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="1dd27331-c41c-4851-ba8b-c18f08bf0210" />
+                      </operation>
+                      <operation Id="9eb5be76-e5cd-429c-a785-05d3ec807b69" name="GetPlayer" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="92c77b8e-9991-498e-9a36-aa5bde306f1f" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="0baaded8-6de4-4385-9791-779e9989b0f0" direction="Return" isUnique="false">
+                              <elementDefinition Id="686116b1-0209-41fc-8214-6b9f9e61a594" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="6f158cbd-7537-4d76-b9ac-30f9d369de6d" LastKnownName="IPlayer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                      <operation Id="585778da-ac20-42e9-82a2-6a31d85b1561" name="SetPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                        <elementDefinition Id="3df7e5a8-58d1-4796-81ed-e455c871812a" />
+                        <ownedParameters>
+                          <operationHasOwnedParameters>
+                            <parameter Id="6f50c653-af87-4a2e-9f79-fa234adc2fb1" name="player" direction="In" isUnique="false">
+                              <elementDefinition Id="d5d58548-fa9c-4e26-9359-4b354384929f" />
+                              <type_NamedElement>
+                                <referencedTypeMoniker Id="6f158cbd-7537-4d76-b9ac-30f9d369de6d" LastKnownName="IPlayer" />
+                              </type_NamedElement>
+                            </parameter>
+                          </operationHasOwnedParameters>
+                        </ownedParameters>
+                      </operation>
+                    </ownedOperationsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="6b8815d8-520c-4710-b82e-e1e24af6da45" name="BuildCityAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="6b355fb1-780b-4694-af3f-e0d6186f5c9b" />
+                    <generalsInternal>
+                      <generalization Id="7a27891f-3ed6-4d38-9671-6d0c678b4348" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="4bdb44bc-cc61-45c6-876d-d40f238cdf7e" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedAttributesInternal>
+                      <property Id="3941d8e1-8a52-47fc-a68d-a67aa71f249a" name="newPosition" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="19a09d0b-3bee-42df-96be-1d193952f733" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="678529c2-917d-4720-bc1c-7286062033d5" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="48c198ad-3a4a-4a50-9521-bfb867d62b00" name="SkipTurnAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="ff5a64cf-b86e-4adf-80f0-5f61aeebf2dd" />
+                    <generalsInternal>
+                      <generalization Id="8be4c716-9bc7-4564-bdeb-c23b0998a5c8" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="545d893c-1313-44b3-a3ed-d66f4c66ee0c" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="75b818cd-47e0-4aad-bf01-49a2b83a901e" name="AttackAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="ba4b85ec-2b7a-432a-bf7f-229d91553fcc" />
+                    <generalsInternal>
+                      <generalization Id="8b5a5895-b41d-42d8-a35e-f6350845cd67" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="b5b50dc3-7606-433e-8e46-2e5668e34f20" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedAttributesInternal>
+                      <property Id="a4dfabc3-2204-4ec8-902b-0588dd5b28a2" name="attackCase" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="03a23caa-3c4d-46e6-97d6-b85bfed130ff" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="5daa4b91-5847-4369-a06c-fef0b821833c" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="dc365b87-473b-4702-ab5e-3216cca82cac" name="unit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="46ebc988-a75f-438a-9348-d4c5d4f32f48" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="06603e0d-f4a3-45ef-864b-f5e6be1d2743" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="8cbbb899-c1b0-434c-89c3-cb314098d160" name="SelectUnitAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="70a00fef-6faa-443c-98cc-81b072232ddf" />
+                    <generalsInternal>
+                      <generalization Id="ef80a681-5589-4373-a8db-3bce1670c101" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="1c972229-c4aa-4ad1-9796-32fcd27e193b" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedAttributesInternal>
+                      <property Id="9c4f4f00-a8d8-4d99-96e3-c364ab5b2c47" name="unit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="efc16911-c7bf-4eb8-a7eb-8148739c8aa8" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="9321b1fb-af47-411e-9f41-37653a04a70b" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="fb69b660-44f2-4eee-b036-2a2416976ef0" name="MoveUnitAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="41c23865-668b-4a19-9c85-48deca9996ec" />
+                    <generalsInternal>
+                      <generalization Id="b35a6dcc-40ac-4076-83cf-508da26449fc" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="ec88e8e6-42b0-4ac4-89e3-d8f61e47d3ce" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedAttributesInternal>
+                      <property Id="dff9fd9c-052d-4997-b028-d0501f2500cf" name="unit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="9a7f914f-fde8-41da-8541-c0496b613e56" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="716039ec-d694-48cd-99d7-0a1f79227349" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="3b78a78b-de45-4558-9547-55525dc6621e" name="newPosition" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="ae2fdeac-e4c3-4dc8-8c58-b5d3dc5b7c81" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="81bd28a1-1314-4d60-9ee1-115cb325d73c" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="46a36aee-b3aa-4811-9fb5-7929704a3af3" name="CreateUnitAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="fd607f33-9a5c-4c05-b57c-6c3a6cbf2d65" />
+                    <generalsInternal>
+                      <generalization Id="0152708e-ed4c-44c5-82d4-c95ce5b42f47" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="8479a018-26b7-4575-8bb0-bc8d48aba869" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedAttributesInternal>
+                      <property Id="00065e8d-6937-476a-9706-69c251fb81f1" name="city" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="11fc358e-114f-4ab0-873a-75348ccac835" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="74bbff9b-943e-4548-ae24-d5b8eb8578b9" LastKnownName="ICity" />
+                        </type_NamedElement>
+                      </property>
+                      <property Id="4315fa61-01b8-4883-a51b-d07ea3d85614" name="unit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="618b8965-9b2e-4ca4-8c53-279b27db715e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="210ec9de-df8f-49cd-97a8-10574dbb3889" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="521c2a84-1396-4f88-8287-ba4e082397b9" name="EndTurnAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="f4c6ca28-ea95-4193-9a52-736409cffb8e" />
+                    <generalsInternal>
+                      <generalization Id="ae3a6b33-45c3-415e-880d-e8cc4426b9db" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="2c8a9d00-6ede-437b-a3dd-a2c8df4d03ad" />
+                      </generalization>
+                    </generalsInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="da662bc4-2055-4a6e-9175-54a5bee1e07c" name="SelectCity" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="8faaeb9f-7d0c-4626-ac3e-b9c53bb281e2" />
+                    <generalsInternal>
+                      <generalization Id="7f2e279d-eb5c-44ef-a05a-59b1216fb7a0" isSubstitutable="false">
+                        <classMoniker Id="2ab18b62-ed65-4718-be30-4ddcc9800c72" LastKnownName="InGameAction" />
+                        <elementDefinition Id="10a93836-1ed7-4167-b4a9-30245e6f87fa" />
+                      </generalization>
+                    </generalsInternal>
+                    <ownedAttributesInternal>
+                      <property Id="a0ab9468-83e2-48ee-bdcf-df84ba37328f" name="city" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="c83e48dd-0568-47c7-aa1e-bd54f9429a08" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="8c5fd0ad-c4ae-42d6-97ba-d4d34841dda7" LastKnownName="ICity" />
+                        </type_NamedElement>
+                      </property>
+                    </ownedAttributesInternal>
+                  </class>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="5574d1aa-2cf8-4240-bea7-88d694115eb2" name="IPlayerState" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="bd55d3db-d257-4608-a5e3-b23e399d7873" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2815dac8-6439-441b-89e9-30f278ebe6e6" name="AIPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="9b4e0b2e-ae00-458a-92e6-47da3e0a0c08" />
+              <suppliersInternal>
+                <interfaceRealization Id="54493377-0fea-4f71-97bb-5a04432f0de7">
+                  <interfaceMoniker Id="130b40a8-596a-4bf4-9557-0eeace8a5734" LastKnownName="IPlayer" />
+                  <elementDefinition Id="319f198f-bd5d-40ad-922a-dba0f09f966d" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="e01bf3c9-d206-4000-aaae-63c73aed3f8e" isDerived="false" sourceEndRoleName="AIPlayer" targetEndRoleName="IPlayerState" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="5574d1aa-2cf8-4240-bea7-88d694115eb2" LastKnownName="IPlayerState" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="2b206109-92d9-4f03-9121-3437db15a4f2" name="AIPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="3c067763-9d18-4221-829f-2fe75a7aaf6b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="0889e285-6332-46ee-99ea-a067fd7f5c2d" name="IPlayerState" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="1b86b376-aa36-4d75-9979-c71747d5511f" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="fde80a66-cbba-4993-b2de-0512910b25a4" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="8a80078c-a670-4a43-b4f5-97e89a6f7d56" name="_cities" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="cadfa49a-3691-4491-b95c-2048b34d6f29" name="Lower" value="*">
+                      <elementDefinition Id="4ca6543a-5ef2-4cb7-b0e2-ff81b4547d2e" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="52eabf6b-2f8e-4aa0-b2ee-df8e8ad2b6a7" name="Upper" value="*">
+                      <elementDefinition Id="a5197da3-b6da-4cba-879e-02f5968b4875" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="f3034873-9ba0-4722-82cf-333f87df3912" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="361de839-74d8-44d8-a5aa-1b0522404ce2" LastKnownName="ICity" />
+                  </type_NamedElement>
+                </property>
+                <property Id="6cd17dff-ef7e-4a35-adce-f164e1607de4" name="_units" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="9dbed4a4-ac8a-4a5f-91af-53d451e5455a" name="Lower" value="*">
+                      <elementDefinition Id="2044bec6-567b-425c-aabd-038d12af2373" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0269bc7e-1d63-4590-9040-3dc2d1c4cda8" name="Upper" value="*">
+                      <elementDefinition Id="5be5b717-e3e1-4b39-9171-50120d4ec79c" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2e1d31e0-1a39-4183-bfd2-cb9cddc34e3a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="71345bec-39fa-469f-babb-194c75e8eb39" LastKnownName="IUnit" />
+                  </type_NamedElement>
+                </property>
+                <property Id="87f45a58-b5fc-4364-8581-528c1b537c33" name="_game" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0d65805e-126c-4ce5-a0c4-af869af58f11" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6549269f-c011-45f1-bc0e-2e6a8d8ca2c6" LastKnownName="Game" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="4800b81d-45f0-4679-a155-c55c1d549b31" name="AddUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bc8883ae-96e8-4b63-bb31-91c57c042051" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="b72147b4-6d20-407b-aca7-3b993866fdd9" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="f0486d52-4b20-4a88-8634-5ad8b420f574" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="53926e70-36f7-49dd-9aad-c342fefcca1c" name="AsUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ad98cfc3-0ad4-4174-a105-014020b38720" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4a2b1c50-35de-4f9d-9a8e-d1bd00a60aa0" name="System.Drawing.Point" direction="In" isUnique="false">
+                        <elementDefinition Id="aec8ccff-42e3-4a67-9ad9-934ede3edf41" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e25fcca1-916b-48da-bfdd-3d25409efd74" direction="Return">
+                        <elementDefinition Id="974616bf-c00a-4cf7-8137-155fe07fd61d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="497c5e49-30b9-4fcb-a06d-5d1838604f27" name="RemoveUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ab27efba-758b-466a-97f6-c5fabac760f9" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5c93846a-ea7a-4d1e-b86c-3ce82e3bd4e7" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="fd4abc03-7a03-4307-bde4-124139c8c4bf" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="7dc12cb3-3b0b-4df2-a7cc-4cfb40582a85" name="GetAllUnit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2ee6f368-eb3c-4f44-a0ac-ab70383d5c96" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="08ddf8b1-9611-44ec-ac17-f3aaf79c5814" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="72c005e3-6b08-408d-b631-e7e441693543" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e7b9f0bd-313a-47b2-b059-1a3e481c1388" direction="Return">
+                        <elementDefinition Id="8dc5bccc-8d66-4ca8-9c0e-5ca8d2f2f042" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="6decf842-89ab-4138-bfe3-d37567fcb7a1" name="AddCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f00fde1e-4ec0-4829-bc98-ce3969bb436d" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="41544fc1-536b-4ed8-be09-bbe44bc705ac" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="971683c1-4ee9-4d83-bca2-a2480b10ed58" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="5a69e046-c109-4274-ac9e-878a6299a8e0" LastKnownName="City" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="0ac76ffb-3c0b-45a0-b12f-30e635b2d03f" name="AsCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9bcd2da3-b2ea-42e4-b915-d8d61b9cee13" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5b2eb44e-8f15-4a52-83c6-cb9b5d2ef55a" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="d2f4cd5a-01c4-4a84-95ff-d7a8f7871086" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="26ea21d5-c689-436e-a2f1-9e44478fadb8" direction="Return">
+                        <elementDefinition Id="577cfd5e-ecb2-4bfc-aa46-858bba0727c7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d6859777-1237-4f36-805e-bbd40d36d5b1" name="GetAllCities" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="22b32395-5d16-473f-9aa0-cce289e28a21" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4f3ead33-66f8-4560-a49a-e8572b0f43ee" name="point" direction="In" isUnique="false">
+                        <elementDefinition Id="d67e64e6-2f86-493e-a060-7624b3c96b95" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="2acaba0a-9821-4025-867d-83321286a6de" LastKnownName="System.Drawing.Point" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d1097448-b44e-4ae8-af45-708762979a4f" direction="Return" isUnique="false">
+                        <elementDefinition Id="2605ef86-05a1-4df4-a3ec-b65196bd0a3f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="d9d8c2bd-442f-48ed-8caf-18cd4013e272" name="RemoveCity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="35fd3902-ac6d-40e8-8aec-a2a55bc162ab" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="ae8d6086-b554-451b-b320-cd93cdf8a135" name="unit" direction="In" isUnique="false">
+                        <elementDefinition Id="51fba165-4ea2-4927-a948-55c417b3cef4" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" LastKnownName="IUnit" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="9ebb8cb1-dc14-4043-bb9f-a12f8e1ded3f" name="isDead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f38dd26a-f993-4f5d-8c10-f285b79c453c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a204652e-11ef-4e94-bd64-426647f68829" direction="Return">
+                        <elementDefinition Id="3fb9e778-5ad5-4687-ab11-68490fae9121" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="34beb48d-077d-4644-828c-2af608689753" LastKnownName="Boolean" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="55255134-4ee5-4bb6-b000-e40f5befceb5" name="GetCommands" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="bcae8554-a641-42ef-af66-79acc0b73b9c" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="1047e68a-7cbd-4f90-86b1-7a804a74b34b" direction="Return" isUnique="false">
+                        <elementDefinition Id="5c96cb00-3bf1-4167-a63a-20fe0aa4d12f" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="3652643e-4610-49a8-aa14-e9456b7af94a" LastKnownName="IPlayerAction" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="870ebe9e-c631-4524-9713-a42cdec02162" name="SetGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="7194b997-8bd3-4e98-b9e3-2c826c0846af" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="5d207b42-4c34-42c4-8c92-30b666a45962" name="game" direction="In" isUnique="false">
+                        <elementDefinition Id="e6f2b2b5-9712-4bcb-b391-5ab54c08ad1a" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" LastKnownName="Game" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c66579a2-1dbc-4836-a657-7c9b4cf0e8fa" name="ActivePlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="54576b93-009a-47c4-b5ed-ed090c1dd491" />
+              <suppliersInternal>
+                <interfaceRealization Id="94899d0e-e296-4e79-a38a-5dd6e702124b">
+                  <interfaceMoniker Id="5574d1aa-2cf8-4240-bea7-88d694115eb2" LastKnownName="IPlayerState" />
+                  <elementDefinition Id="13c28bef-8371-40df-a31b-a8aa97731117" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c50f8ffe-7bc7-4ffd-be48-bd1cd02c287a" name="InactivePlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6dbaeb44-4117-4743-a160-cafc949128dc" />
+              <suppliersInternal>
+                <interfaceRealization Id="23b9f13a-533c-49ff-9c2d-43e418482545">
+                  <interfaceMoniker Id="5574d1aa-2cf8-4240-bea7-88d694115eb2" LastKnownName="IPlayerState" />
+                  <elementDefinition Id="5b34eacc-3530-4ee3-afb9-5f7e441f4293" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="981867ef-fdfe-4613-ac04-4ba15983b94e" name="DeadPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="7fa26469-0b4d-4c2f-8fda-60d2c6c2d0a2" />
+              <suppliersInternal>
+                <interfaceRealization Id="e52403e3-c09c-46a2-9022-3efe6e8750b0">
+                  <interfaceMoniker Id="5574d1aa-2cf8-4240-bea7-88d694115eb2" LastKnownName="IPlayerState" />
+                  <elementDefinition Id="c37743cb-bfe5-4ed6-b6ef-7b9e4f7cc51c" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="6f158cbd-7537-4d76-b9ac-30f9d369de6d" name="IPlayer" isAbstract="false" isLeaf="false" cachedFullName="IPlayer">
+        <elementDefinition Id="29525dae-12cb-45af-860c-51ec753ebd6a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="168c8b0d-95c4-4dc2-8f5f-7616b04c91b0" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2acaba0a-9821-4025-867d-83321286a6de" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="34beb48d-077d-4644-828c-2af608689753" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cb705187-27ee-4ffc-90c8-bd1ab1ab1bea" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b212f7cc-a5c4-4876-b04b-c4c2eea0e072" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f65566e9-6095-4094-905e-a15554e10f93" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="08fee5db-3f1a-471f-9e52-2086359eb64b" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="919bef1c-b869-4a0e-95c3-ed2259970ab9" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5a69e046-c109-4274-ac9e-878a6299a8e0" name="City" isAbstract="false" isLeaf="false" cachedFullName="City">
+        <elementDefinition Id="e7140e78-24c2-4146-928e-9fed0c7a1559" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bac23726-0e10-4ade-8c9f-6aec2f7e8461" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="519f8b27-beeb-459d-b1d2-3f7796f379c0" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="ICity">
+        <elementDefinition Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="361de839-74d8-44d8-a5aa-1b0522404ce2" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="ICity">
+        <elementDefinition Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="71345bec-39fa-469f-babb-194c75e8eb39" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e6c73cf5-c440-4855-9120-07157ed2fcdc" name="SelectUnitAction" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f7ad6dd7-8895-4704-9a0c-911d71157f5d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="81bd28a1-1314-4d60-9ee1-115cb325d73c" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5daa4b91-5847-4369-a06c-fef0b821833c" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="678529c2-917d-4720-bc1c-7286062033d5" name="System.Drawing.Point" isAbstract="false" isLeaf="false" cachedFullName="System.Drawing.Point">
+        <elementDefinition Id="a7d0c74f-f555-4438-b446-d14b33943655" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8c5fd0ad-c4ae-42d6-97ba-d4d34841dda7" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="ICity">
+        <elementDefinition Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="74bbff9b-943e-4548-ae24-d5b8eb8578b9" name="ICity" isAbstract="false" isLeaf="false" cachedFullName="ICity">
+        <elementDefinition Id="23aabc52-957e-4c6b-a9c4-92fc51d715ce" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="210ec9de-df8f-49cd-97a8-10574dbb3889" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="716039ec-d694-48cd-99d7-0a1f79227349" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9321b1fb-af47-411e-9f41-37653a04a70b" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="06603e0d-f4a3-45ef-864b-f5e6be1d2743" name="IUnit" isAbstract="false" isLeaf="false" cachedFullName="IUnit">
+        <elementDefinition Id="1acb79aa-00cd-4e1c-9576-0435b1bc353f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3652643e-4610-49a8-aa14-e9456b7af94a" name="IPlayerAction" isAbstract="false" isLeaf="false" cachedFullName="IPlayerAction">
+        <elementDefinition Id="719c725a-7cab-4928-bd4b-467a8e7b620c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c8a2dd1b-42c7-4c1f-b128-f2b79ceca848" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f1904702-6f8d-45aa-bf31-b664048f0b99" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="66b61843-3749-4b97-8319-2da57261c1ae" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6547d12c-79cc-4a68-b350-0541f4c3ecfa" name="KeyboardEventArgs" isAbstract="false" isLeaf="false" cachedFullName="KeyboardEventArgs">
+        <elementDefinition Id="28dcf8f2-9119-40ce-9826-9bd796dc2877" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="92fe104e-8159-4dfc-b430-275705b302ca" name="MouseEventArgs" isAbstract="false" isLeaf="false" cachedFullName="MouseEventArgs">
+        <elementDefinition Id="f5a6e2b2-1f49-4251-8958-843a8b42a46c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c54afdeb-445a-488c-bf3c-b82c2e0da24f" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6549269f-c011-45f1-bc0e-2e6a8d8ca2c6" name="Game" isAbstract="false" isLeaf="false" cachedFullName="Game">
+        <elementDefinition Id="e1c6c581-db8c-46c1-a59d-54535a2a740b" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="15d86f00-d6e5-4fa9-98d9-db276b6a5da0" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="234517a7-938d-435d-809f-acbbf9b99ae2">
+        <profileInstance Id="a1e3c7d2-3a54-4f2b-a119-2764fc422c73" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="356b1d2e-2a77-4fbb-b49e-211e27e4776d">
+        <profileInstance Id="dd4e3567-def0-4ba0-b079-beedc4f84b9c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

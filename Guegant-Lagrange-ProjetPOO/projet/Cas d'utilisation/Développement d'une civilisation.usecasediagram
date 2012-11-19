@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="5a2de723-003b-4d5d-895b-adb47b64cf4e" name="Développement d'une civilisation" linkedPackageId="e2ce187c-f8a1-449d-8413-094214b44677" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="5da53cf0-4ac5-46b7-992b-937849b0177c">
+      <elementDefinition Id="63b5fb84-e7d1-4929-8946-16ab62dcc686" />
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="0df62140-4d49-4298-b079-8d85f6c95d62" name="Développement d'une civilisation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="40a737bb-6687-4a38-b2e2-7bc627a74403" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="dc5b23d9-a987-43ba-957b-cb6876183775" name="Joueur" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19f7170a-eab5-4b4c-bf72-cc1b2b645188" />
+        <targetEnds>
+          <association Id="86214536-7669-4021-9bbb-bade5c6ffccb" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Amasser des ressources" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8ae62837-6991-4864-be34-32500a1e15da" LastKnownName="Amasser des ressources" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dce15106-3330-471f-85f7-1dd3ba39f58d" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e2b51195-a263-4bcc-ae9b-be8a0a55d3b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30806a44-935d-458a-a480-6cd1f36850d4" name="Amasser des ressources" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c791718c-210c-4a1f-a207-21818fca0a04" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0e78cea1-6a56-40a0-a275-37c1e18b554e" />
+          </association>
+          <association Id="e726ed93-22d3-4ff4-9b0c-3e82c7c22a19" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Créer des unités" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="645b88e0-da86-4e94-acd2-dfd83036237f" LastKnownName="Créer des unités" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d9f1e0c9-209e-4a7e-a234-7c4dc402a350" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a8c95ae4-5db4-468b-b13a-c5b4fb5d6736" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81fbfc8c-b78d-4f01-bdde-a3693b9c5ee5" name="Créer des unités" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e089127a-c0eb-4295-bd9f-69cbc0e4b2a7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ab8b84d2-fbb7-4994-aca5-872a6cb4e57b" />
+          </association>
+          <association Id="a82ae409-dcd4-452b-acca-77cabf8c950e" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Etendre" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="802e4449-6e00-4a24-bc9d-332823525b95" LastKnownName="Etendre sa civilisation - conquérir le monde!" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fd08f613-d700-4b94-bf9c-4e408ae26712" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="667e7ea9-6fe1-4c59-88b7-f13888b71d26" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a831f0aa-25e6-40d5-b3f3-e830fd6da16e" name="Etendre" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="abbf3e0a-cbbe-4c7d-81e1-9680cef5c26e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a5f328d7-4f16-4fdd-9714-8416f224753f" />
+          </association>
+          <association Id="168589df-625e-4c08-9d19-4185fa4645cd" isDerived="false" sourceEndRoleName="Joueur" targetEndRoleName="Créer des villes" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="94bf6b7a-c563-4a6b-b52e-6569952a1066" LastKnownName="Créer des villes" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="50786f3b-b357-4f7a-a8c2-bad1ceb91016" name="Joueur" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="eea052b1-2352-407c-a1d2-0169a38977a4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3d40ee5-0112-40d8-b542-cb576b197f79" name="Créer des villes" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="16636de4-5148-4042-9d0a-58808aae5f50" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8473a365-2c5e-470a-9265-3b4c2ad6d9e4" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="8ae62837-6991-4864-be34-32500a1e15da" name="Amasser des ressources" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0474ad7f-c0dd-4dd1-8f45-7d102c62de20" />
+        <suppliersInternal>
+          <dependency Id="44d1b01d-103d-4852-aba4-1abff77e7fe9">
+            <useCaseMoniker Id="94bf6b7a-c563-4a6b-b52e-6569952a1066" LastKnownName="Créer des villes" />
+            <elementDefinition Id="a6a835eb-cf0c-41ff-889c-60763346a7de" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="85af9cbf-d2f9-434b-bc6d-2727d867e0da" name="Minerai" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c914d484-e585-4455-a9d8-19a21d585f7d" />
+        <generalsInternal>
+          <generalization Id="b4fc9ab7-6531-4078-b9ce-3bc7482fb3a4" isSubstitutable="false">
+            <useCaseMoniker Id="8ae62837-6991-4864-be34-32500a1e15da" LastKnownName="Amasser des ressources" />
+            <elementDefinition Id="dd1a74a3-8186-4271-b156-f2bca9a5179e" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b5f984e2-00b1-4cf0-a10f-8405a9458d86" name="Nourriture" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="19d15143-5a4e-43a8-83fa-e25726cbb6e8" />
+        <generalsInternal>
+          <generalization Id="3557a39f-5ea6-4dea-8204-f4d10ef3c6a4" isSubstitutable="false">
+            <useCaseMoniker Id="8ae62837-6991-4864-be34-32500a1e15da" LastKnownName="Amasser des ressources" />
+            <elementDefinition Id="fe455825-5291-4e9b-aaf9-1c81e9092201" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="645b88e0-da86-4e94-acd2-dfd83036237f" name="Créer des unités" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8368fc1c-9eb7-46c2-b8a6-19dd2b3e698e" />
+        <suppliersInternal>
+          <dependency Id="5ef1f3dc-ec63-4d8b-94aa-cc83ecf4d136">
+            <useCaseMoniker Id="8ae62837-6991-4864-be34-32500a1e15da" LastKnownName="Amasser des ressources" />
+            <elementDefinition Id="eb653794-03c5-4c57-baaf-86808ba802d4" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="802e4449-6e00-4a24-bc9d-332823525b95" name="Etendre sa civilisation - conquérir le monde!" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="663d895b-2f87-4c7d-9473-8b4caf73d814" />
+        <suppliersInternal>
+          <dependency Id="24d0fca2-be35-48ac-870d-e8a73bc4cca4">
+            <useCaseMoniker Id="430cb9f8-eaa5-4bf9-933b-bcb55a1c4049" LastKnownName="Combattre l'adversaire" />
+            <elementDefinition Id="8c2b82a8-668d-4683-a165-9dc823041982" />
+          </dependency>
+          <dependency Id="d28e18c6-6c09-44a5-a0ad-1f4a1bf7c44c">
+            <useCaseMoniker Id="94bf6b7a-c563-4a6b-b52e-6569952a1066" LastKnownName="Créer des villes" />
+            <elementDefinition Id="2d280a8f-1930-4d29-9e83-49f84b152fcd" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="25d1ab74-1887-42a8-952b-a452fa1804c2" name="Créer Enseignant" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="09886f37-3f85-4025-a064-976861cb5530" />
+        <generalsInternal>
+          <generalization Id="fc2af454-08a2-40bf-a033-e16e1da5eb60" isSubstitutable="false">
+            <useCaseMoniker Id="645b88e0-da86-4e94-acd2-dfd83036237f" LastKnownName="Créer des unités" />
+            <elementDefinition Id="c705796a-2837-43fd-b65d-efa809c2869f" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="94bf6b7a-c563-4a6b-b52e-6569952a1066" name="Créer des villes" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="03624cdd-f263-49bb-9709-4d9f42bdd347" />
+        <suppliersInternal>
+          <dependency Id="5d772058-1a64-433b-903e-23efd5b44d6c">
+            <useCaseMoniker Id="25d1ab74-1887-42a8-952b-a452fa1804c2" LastKnownName="Créer Enseignant" />
+            <elementDefinition Id="9ac86342-6efd-45f8-8a6a-b299ba28d4c9" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="430cb9f8-eaa5-4bf9-933b-bcb55a1c4049" name="Combattre l'adversaire" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0d7b78b5-689d-480f-b4df-9dc663cb7372" />
+        <suppliersInternal>
+          <dependency Id="af7692d2-50bc-4e01-aff5-dcc18e8f85ae">
+            <useCaseMoniker Id="84cb4d3b-445c-42b4-ad3e-c3df5bf09efc" LastKnownName="Créer des unités militaires" />
+            <elementDefinition Id="c2801ff2-9b1d-4b22-a67c-f5e3f5c348f3" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="84cb4d3b-445c-42b4-ad3e-c3df5bf09efc" name="Créer des unités militaires" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3d95f813-8e8e-4b72-8ace-7f1801bcc504" />
+        <generalsInternal>
+          <generalization Id="f2d06220-7c9b-44f0-a7d1-15300c7f8424" isSubstitutable="false">
+            <useCaseMoniker Id="645b88e0-da86-4e94-acd2-dfd83036237f" LastKnownName="Créer des unités" />
+            <elementDefinition Id="321656da-203f-4f95-b3ff-027b4af15f16" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="0df62140-4d49-4298-b079-8d85f6c95d62" LastKnownName="Développement d'une civilisation" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="e2ce187c-f8a1-449d-8413-094214b44677" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4944249b-1062-4481-a7db-df978bff5181">
+        <profileInstance Id="74ea8578-2eac-43dc-845c-25c736bdc5d3" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3c6b95ba-551c-4031-a69f-663cbf182263">
+        <profileInstance Id="06dc9fb6-49ae-4a5e-87c1-82bd634a94c1" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

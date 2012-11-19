@@ -1,0 +1,32 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Diagrammes de cas d'utilisation}{3}
+\contentsline {subsection}{\numberline {2.1}R\IeC {\`e}gles du jeu}{3}
+\contentsline {subsection}{\numberline {2.2}Cycle de vie d'une partie}{3}
+\contentsline {section}{\numberline {3}Diagrammes de Classe}{3}
+\contentsline {subsection}{\numberline {3.1}Civilization : sch\IeC {\'e}ma \ref {civ}}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}Namespace Civilization}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}Namespace Unit}{4}
+\contentsline {subsubsection}{\numberline {3.1.3}Namespace City}{4}
+\contentsline {subsection}{\numberline {3.2}View : sch\IeC {\'e}ma \ref {view}}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}Namespace Drawable}{5}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {subsection}{\numberline {3.3}World : sch\IeC {\'e}ma \ref {world}}{7}
+\contentsline {subsubsection}{\numberline {3.3.1}Namespace World}{7}
+\contentsline {subsubsection}{\numberline {3.3.2}Namespace Square}{7}
+\contentsline {subsubsection}{\numberline {3.3.3}Namespace Map}{7}
+\contentsline {subsection}{\numberline {3.4}Fight : sch\IeC {\'e}ma \ref {fight}}{8}
+\contentsline {subsubsection}{\numberline {3.4.1}Namespace Fight}{8}
+\contentsline {subsection}{\numberline {3.5}Game : sch\IeC {\'e}ma \ref {game}}{8}
+\contentsline {subsubsection}{\numberline {3.5.1}Namespace Game}{8}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {subsection}{\numberline {3.6}Player : sch\IeC {\'e}ma \ref {player}}{9}
+\contentsline {subsubsection}{\numberline {3.6.1}Namespace Player}{9}
+\contentsline {subsubsection}{\numberline {3.6.2}Namespace Player.Actions}{9}
+\contentsline {section}{\numberline {4}Diagramme d'\IeC {\'e}tats-transitions}{10}
+\contentsline {section}{\numberline {5}Diagrammes d'interaction}{10}
+\contentsline {section}{\numberline {6}Annexes}{11}

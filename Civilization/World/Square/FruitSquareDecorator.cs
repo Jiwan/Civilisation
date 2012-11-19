@@ -7,19 +7,20 @@ namespace Civilization.World.Square
 
         public override uint AvailableFood
         {
-            get { return square.AvailableFood; }
+            get { return square.AvailableFood + 2; }
         }
 
         public override uint AvailableOre
         {
-            get { return square.AvailableOre + 2; }
+            get { return square.AvailableOre; }
         }
 
         #endregion
 
-
+        #region constructor
         public FruitSquareDecorator(Square square) : base(square)
         {
         }
+        #endregion
     }
 }

@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="7d9b7711-52da-4117-bac4-8c9c9d5d1b1c" name="View" linkedPackageId="0b057887-724b-48b6-88b6-6ed28a9c2aef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="3c7e7d43-fa9b-4e35-893c-d84ffd5d2140" name="Drawable">
+        <ownedCommentsInternal>
+          <comment Id="05e0af1a-d9f2-4163-8bda-1d1b38c3c5af">
+            <elementDefinition Id="b71e9841-994a-401a-b14a-07f334c06a04" />
+            <body>Tile constructor is private to avoid people generating tiles without going trought the flyweight.</body>
+            <annotatedElements>
+              <classMoniker Id="8a41e60d-337a-4582-bec2-ac19facc05a2" LastKnownName="Tile" />
+            </annotatedElements>
+          </comment>
+          <comment Id="527c39ca-bb33-44e6-a875-b1d1f0806dc9">
+            <elementDefinition Id="17493ee3-7d0f-40d4-abab-4464a5c9d724" />
+            <body>A sprite is made of many tiles that represent each frame of the animation. Update is used to set the right frame according to the time elapsed.</body>
+            <annotatedElements>
+              <classMoniker Id="b4049241-8d6e-440a-83d4-92fbb6c73961" LastKnownName="Sprite" />
+            </annotatedElements>
+          </comment>
+          <comment Id="4d78a1a6-456e-46a9-a8c1-0639240777ef">
+            <elementDefinition Id="119935cc-b6ff-43f7-b022-59345a277ce9" />
+            <body>A implémenter si on a le temps.
+Si jamais on veut faire tourner notre jeu sur GTK ou WinForm on sera content.</body>
+            <annotatedElements>
+              <interfaceMoniker Id="2e9ed7db-528f-47c3-9239-d9444d753770" LastKnownName="IGraphicEngine" />
+            </annotatedElements>
+          </comment>
+          <comment Id="eb3ddbdc-269e-4521-9478-e7cd143bfb56">
+            <elementDefinition Id="aa6e40a3-efc6-483c-8440-72a595d4eac7" />
+            <body>Pattern singleton :
+Il n'y a qu'un flyweight. On évite ainsi de recharger un tile plusieurs fois.</body>
+            <annotatedElements>
+              <classMoniker Id="cbcad1a2-6e32-4a9c-830c-971d8a6ff50d" LastKnownName="TileFlyWeight" />
+            </annotatedElements>
+          </comment>
+        </ownedCommentsInternal>
+        <elementDefinition Id="488554a3-80fb-41be-834f-aabd38c15d13" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <Interface Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" name="IDrawable" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="a18b1f49-7b76-4984-ad94-3d1cfabaa7db" />
+              <ownedOperations>
+                <operation Id="15746ab3-8106-4438-b4fc-e8ec5cbbe8a0" name="Draw" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b39dfb9a-b24f-4d11-94fa-b02d346d634f" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="20f6d804-a1aa-4fce-ba58-d773bea0c93b" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="d89be125-9147-4126-ae28-f46c6c760eec" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="b8b7210e-c93c-4e36-aeb7-72f1ff70b5c6" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9a5cde52-ddc5-4b4b-9578-22d3a7dc97ad" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="45a10c09-b703-4f5a-8f77-a3e1f32de020" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="695123c9-3298-439e-ba73-3dd9177cf84e" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8a41e60d-337a-4582-bec2-ac19facc05a2" name="Tile" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="8ec283a3-1a73-49fc-afe6-2c974742009e" />
+              <ownedOperationsInternal>
+                <operation Id="0005f1ce-b57f-4591-ba78-753064652fa1" name="Tile" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <appliedStereotypesInternal>
+                    <stereotypeInstance Id="f2f5dd1b-93dd-4cd1-9cf6-4ed104fcc8d7" name="create" profile="StandardProfileL2">
+                      <elementDefinition Id="a9eb8ab1-fa00-4167-af95-13e58320e8d6" />
+                    </stereotypeInstance>
+                  </appliedStereotypesInternal>
+                  <elementDefinition Id="08f4b920-40df-4b27-ab4b-d5362e51df8e" />
+                </operation>
+                <operation Id="f8c48ddd-0771-4b81-a571-95be3a122eb4" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3ad0b202-de1e-4054-90ba-50025f69bbcb" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="69b08149-5752-416c-84cc-75990fc5d16b" name="System.Drawing.Point coord" direction="In" isUnique="false">
+                        <elementDefinition Id="2b817f46-dfe4-4ef0-9ec6-1be34cfa2202" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="cbcad1a2-6e32-4a9c-830c-971d8a6ff50d" name="TileFlyWeight" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
+              <targetEnds>
+                <association Id="106c89c2-49b6-4779-b0fd-14a3b83f8105" isDerived="false" sourceEndRoleName="TileFlyWeight" targetEndRoleName="Tile" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="8a41e60d-337a-4582-bec2-ac19facc05a2" LastKnownName="Tile" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="a1d988c3-d8b7-4e71-9525-c8dcd2365986" name="TileFlyWeight" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="01a34bb6-9a5d-49a2-aa89-68bded0c5a0e" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="80c55945-dfde-4c91-9d0f-facae64244c1" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="b18bbc09-5391-40c9-a4f5-d22ed83e6b56" name="Lower" value="*">
+                            <elementDefinition Id="89133e94-c575-4e65-b261-034f89cd322c" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="7c0e0625-cd6a-4bf7-897f-c5506aedf2ae" name="Upper" value="*">
+                            <elementDefinition Id="37a2d9ba-4df3-4440-8a1e-21883123fab7" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="57ec066b-b204-43bc-9000-efae3a9df914" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="ff38ef02-790e-4ad0-8742-a0569fa53bbe" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="61212474-2358-4dee-bbb6-f4f6c2ffe602" name="_instance" visibility="Private" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0a7220c6-154f-4b26-ac27-9fffa390520e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="1736233e-2b77-4fbb-9787-5eb152d043d1" LastKnownName="TileFlyWeight" />
+                  </type_NamedElement>
+                </property>
+                <property Id="b77186a5-54fc-4400-9a2b-c8d9bd87d2fb" name="TileDictionary" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="cd9f4b18-244d-4611-b6f8-1f072299f1f4" name="Lower" value="1">
+                      <elementDefinition Id="a79c1e79-5733-427b-a134-06c3689f5d82" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3f1eb50d-eee2-47e9-9cde-642e2593a1fb" name="Upper" value="1">
+                      <elementDefinition Id="2ed0f705-cfd9-43ec-aa90-a6aa56d45fe5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="93eb9a2c-773a-4a09-b70d-6582c40ab369" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="951a679a-6d66-43b4-9543-308f5ab70c77" LastKnownName=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="fb18193b-8171-43f9-89a4-ad09a54a9a52" name="Instance" isLeaf="false" isStatic="true" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="afd46274-b116-4507-aec3-a7540f2018ad" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="3bd811bf-c305-4a8e-b357-78c8f5ca5424" direction="Return">
+                        <elementDefinition Id="18a8d202-ec16-48c9-b3e2-08b1e0a3220e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b47a4170-cc01-4c28-9c43-66d9850f90c8" LastKnownName="TileFlyWeight" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="932419bc-648d-4d6c-b1c4-1ca23699fb09" name="FlyWeight" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <appliedStereotypesInternal>
+                    <stereotypeInstance Id="9f4524b7-5fab-498e-a62e-782b2f3d5806" name="create" profile="StandardProfileL2">
+                      <elementDefinition Id="74eab386-2eb4-467d-9e81-81ddb92c20d0" />
+                    </stereotypeInstance>
+                  </appliedStereotypesInternal>
+                  <elementDefinition Id="d8583bb8-bbfa-4151-a041-2564cd687eff" />
+                </operation>
+                <operation Id="78837b14-53b4-4468-badb-14bab5a6d70d" name="GetTile" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="74710ad3-5303-4ff0-90f3-63962b90676e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="35b04170-82f0-486a-bf12-620299b47290" direction="Return" isUnique="false">
+                        <elementDefinition Id="9d04448a-b0dd-4cd9-8356-82b59e4455cb" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="a037eeeb-a946-43ef-9a9f-193df63ffcc7" LastKnownName="Tile" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="0913e764-9d00-40b3-a8aa-688968eb8ccc" name="String name" direction="In" isUnique="false">
+                        <elementDefinition Id="dc5c80a7-c881-4482-9099-b67c31be911f" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="b4049241-8d6e-440a-83d4-92fbb6c73961" name="Sprite" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5425425c-970c-4776-beea-b51fcff0b1e9" />
+              <suppliersInternal>
+                <interfaceRealization Id="0c6dfea2-131a-43b2-b106-2758e40d8749">
+                  <interfaceMoniker Id="db1e6dea-44ac-4d5c-a5ec-eef1b04d251e" LastKnownName="IDrawable" />
+                  <elementDefinition Id="4d8ff0c6-1842-434b-814d-35926b6f9163" />
+                </interfaceRealization>
+                <interfaceRealization Id="f371059e-94b3-4e05-94ae-c13f2ea6ad1b">
+                  <interfaceMoniker Id="2b06f9c9-c188-46e2-9336-e0d944cbd8fa" LastKnownName="ISprite" />
+                  <elementDefinition Id="01483f29-54fb-44df-8016-ef86dc56eece" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="e1c91c91-69b0-4393-bde4-717fc65a6ddc" isDerived="false" sourceEndRoleName="Sprite" targetEndRoleName="Tile" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="8a41e60d-337a-4582-bec2-ac19facc05a2" LastKnownName="Tile" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="482936a4-1839-41b1-84cc-afe66434b118" name="Sprite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="3b00d744-c13f-403b-8b88-b05a35c6f849" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="cec31701-93f6-4a95-9d71-869c4c645e8c" name="Tile" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="cab87bd2-b701-4b92-ad8c-e3d0b46d2c0e" name="Lower" value="*">
+                            <elementDefinition Id="463e68e9-ad75-4628-8353-d04582cfd993" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="0253934f-afab-4307-9e3a-be1ef60f5880" name="Upper" value="*">
+                            <elementDefinition Id="61244640-99be-42db-8753-3fa3507f8d95" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="2afc217c-6278-4e88-9412-d1f28914bb24" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="1ceb450a-d37a-4350-8711-601a32c0f706" />
+                </association>
+              </targetEnds>
+              <ownedOperationsInternal>
+                <operation Id="804db165-9640-42ba-ba1e-845cbf8e2047" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="072b6221-bcb8-475a-8304-c6915c909f65" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="81ae41ff-96a3-4f95-b9e3-a29549242258" name="IGraphicEngine" direction="In" isUnique="false">
+                        <elementDefinition Id="d8257f05-d54c-41f3-a228-511f87a13d54" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="70606d3e-bc06-47c0-8ab2-d58d1fee4918" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="96de50fc-6525-4e38-bd7c-672fdd3a5c20" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="846a76ba-8f4d-4131-83c2-43b13ecf7218" name="float deltaTime" direction="In" isUnique="false">
+                        <elementDefinition Id="ebafde38-69cc-49d8-aba4-92876b90283f" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="92546165-7845-4b8e-9a05-2bc057f78e26" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="550bdffa-3546-4f64-87d3-a1b9b0ca1ebc" />
+                </operation>
+                <operation Id="072ea140-44cf-4e0f-9677-16f4ab55fac2" name="Stop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e7b25a51-3811-4a44-bc33-330bc562a07d" />
+                </operation>
+                <operation Id="11f4058f-a7a8-4f4a-8853-8ac753d2866c" name="SetTileFrames" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="62031078-32b4-4846-9ea7-677c6c9b75de" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="e47d6bde-3047-4c95-9caa-e79649b42e68" name="tile" direction="In" isUnique="false">
+                        <lowerValueInternal>
+                          <literalString Id="66b5d872-4293-4bf7-94d1-62304256dc83" name="Lower" value="1">
+                            <elementDefinition Id="4d4ef2e7-3a07-4963-8690-62b34fd4cd71" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="57ba3755-6b31-49ab-aa25-24f7a72753af" name="Upper" value=".*">
+                            <elementDefinition Id="1546bd35-7f67-437c-9faa-0088ae9dc1af" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="bd037b2e-88f1-41df-8fea-bf65789ce30b" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fc024adf-fa11-4b52-a7bc-03a1182a0435" LastKnownName="ITile" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="76b5be9c-760c-4e3a-97c7-eba008d4d6fe" name="GetTileFrames" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b76ba6e9-3108-4085-a175-7220c64d1920" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="6d8b6ce2-b9c9-44bc-8285-4d4ef15ed030" direction="Return">
+                        <elementDefinition Id="d392ef74-0fee-4376-b10c-a8d41cb24396" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="d7f482c9-f0af-41ce-9a7a-e75607952eb0" LastKnownName="tile : ITile[1...*]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="2e9ed7db-528f-47c3-9239-d9444d753770" name="IGraphicEngine" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="47cb6a8a-61b9-4ede-9e23-ea4b98b62256" />
+              <targetEnds>
+                <association Id="5331c965-1ded-4548-8d49-c2fa2b624687" isDerived="false" sourceEndRoleName="GraphicEngine" targetEndRoleName="GraphicPrimitive" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="f8ee804f-3d11-40fa-8641-cbc4711a5b5e" LastKnownName="IGraphicPrimitive" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="68b9e2fc-1714-44d8-8b1f-fbdbc70acf52" name="GraphicEngine" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="7c7c1d9f-f4fd-4b34-b875-6a0741562ea9" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="c4c30fa1-406d-42ee-b5d6-04d09e4e5faa" name="GraphicPrimitive" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="272db816-2a90-41a6-a7bb-5efaa29096c4" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="b4d3e58e-4c6e-4816-afa9-b66ae683fdcc" />
+                </association>
+              </targetEnds>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2ec8a1be-fb4b-4f2b-a7ad-24b5537d1716" name="WPFGraphicEngine" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="3acd2d73-3537-4ba4-a0fa-0f0656a29e08" />
+              <suppliersInternal>
+                <interfaceRealization Id="48cc320b-ed2d-4255-a643-d5a048d8b9ad">
+                  <interfaceMoniker Id="2e9ed7db-528f-47c3-9239-d9444d753770" LastKnownName="IGraphicEngine" />
+                  <elementDefinition Id="00972e04-f23f-4183-ac30-63c560fd86d2" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="f8ee804f-3d11-40fa-8641-cbc4711a5b5e" name="IGraphicPrimitive" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="1d9e9330-9c14-41de-b1e0-5af5b7ed2141" />
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="824535e8-fea6-4381-99be-4a0f9ce42c6a" name="WPFGraphicPrimitive" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="90cf6048-67c8-4610-8ed6-e2e9305cfc31" />
+              <suppliersInternal>
+                <interfaceRealization Id="09f26ee7-7372-4b97-959b-03e8efe46da1">
+                  <interfaceMoniker Id="f8ee804f-3d11-40fa-8641-cbc4711a5b5e" LastKnownName="IGraphicPrimitive" />
+                  <elementDefinition Id="4a63135d-de15-41d3-92d2-a2da389ae2ed" />
+                </interfaceRealization>
+              </suppliersInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="2b06f9c9-c188-46e2-9336-e0d944cbd8fa" name="ISprite" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="bf9628c1-70a8-403c-b1e8-73b1a0301e56" />
+              <ownedOperations>
+                <operation Id="ad847114-85de-4c28-8ea2-75813075c936" name="GetTileFrames" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8ca0a4fb-aa45-4a78-afa5-a9dbf6b608b5" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="c0f8d75f-0e79-4f09-97df-362eeaf3785d" direction="Return">
+                        <elementDefinition Id="4befca93-6afa-4872-bbeb-3cd5a9ad3b00" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="4e9e4758-8246-480e-ace6-2a7e18d1428b" LastKnownName="tile : ITile[1...*]" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="b77a3d86-1cbf-4653-bf3e-ba5fe90ce620" name="SetTileFrames" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e7515467-d770-4426-9a07-0258aadc41ac" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="4a89a861-2f7d-4ed8-9e07-09696fc3c7ba" name="tile" direction="In" isUnique="false">
+                        <lowerValueInternal>
+                          <literalString Id="27bb6329-fce6-4e1f-a1c8-b769b6c1effb" name="Lower" value="1">
+                            <elementDefinition Id="d2b24cb6-3f49-44f3-a017-fe9cf7fa21b5" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="7d535526-52ec-4e73-80cd-c08b81c21791" name="Upper" value=".*">
+                            <elementDefinition Id="74cd7489-7961-4e4f-9863-e23e192f15ed" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="23d7a673-7db7-49f2-be24-2097862de6a7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="b966f023-5e11-410f-bab0-bc9114f6e7cd" LastKnownName="ITile" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="b47a4170-cc01-4c28-9c43-66d9850f90c8" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
+        <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a037eeeb-a946-43ef-9a9f-193df63ffcc7" name="Tile" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::Tile">
+        <elementDefinition Id="8ec283a3-1a73-49fc-afe6-2c974742009e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="951a679a-6d66-43b4-9543-308f5ab70c77" name=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;" isAbstract="false" isLeaf="false" cachedFullName=" System.Collections.Generic.Dictionary&lt;String,Tile&gt;">
+        <elementDefinition Id="666d2984-371c-4688-b47f-4e2425518dbd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1736233e-2b77-4fbb-9787-5eb152d043d1" name="TileFlyWeight" isAbstract="false" isLeaf="false" cachedFullName="Civilisation::Drawable::TileFlyWeight">
+        <elementDefinition Id="6f7bd82b-8f87-4657-8493-e3ad7328bec9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fc024adf-fa11-4b52-a7bc-03a1182a0435" name="ITile" isAbstract="false" isLeaf="false" cachedFullName="ITile">
+        <elementDefinition Id="d259fb47-3add-4db2-a1e0-6303325def9b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d7f482c9-f0af-41ce-9a7a-e75607952eb0" name="tile : ITile[1...*]" isAbstract="false" isLeaf="false" cachedFullName="tile : ITile[1...*]">
+        <elementDefinition Id="91730663-069a-441c-ac83-cfeac6ab24e3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4e9e4758-8246-480e-ace6-2a7e18d1428b" name="tile : ITile[1...*]" isAbstract="false" isLeaf="false" cachedFullName="tile : ITile[1...*]">
+        <elementDefinition Id="91730663-069a-441c-ac83-cfeac6ab24e3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b966f023-5e11-410f-bab0-bc9114f6e7cd" name="ITile" isAbstract="false" isLeaf="false" cachedFullName="ITile">
+        <elementDefinition Id="d259fb47-3add-4db2-a1e0-6303325def9b" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="0b057887-724b-48b6-88b6-6ed28a9c2aef" name="Civilisation">
+    <elementDefinition Id="708f0c49-faff-4883-b8c2-aa29d3ee9059" />
+    <profileInstances>
+      <packageHasProfileInstances Id="802c23cc-2c76-48d5-b4cb-2bd520df8028">
+        <profileInstance Id="fd61b781-6b68-46bf-9473-da84688bfe4d" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f1ddbca8-da7d-41d5-89f3-4febce46943d">
+        <profileInstance Id="ca31963a-2f17-4e9a-8061-35773299f747" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
