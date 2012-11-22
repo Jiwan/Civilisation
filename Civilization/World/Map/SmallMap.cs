@@ -1,10 +1,10 @@
-﻿
-using System.Drawing;
+﻿using System.Drawing;
+
 namespace Civilization.World.Map
 {
     class SmallMap : IMapCreate
     {
-
+        #region methods
         public Map CreateMap(ISquareRandomizer randomizer)
         {
             Map map = new Map(new Point(25, 25));
@@ -18,5 +18,6 @@ namespace Civilization.World.Map
             }
             return map;
         }
+        #endregion
     }
 }

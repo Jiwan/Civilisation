@@ -4,6 +4,7 @@ namespace Civilization.World.Map
 {
     class MediumMap : IMapCreate
     {
+        #region methods
         public Map CreateMap(ISquareRandomizer randomizer)
         {
             Map map = new Map(new Point(100, 100));
@@ -17,5 +18,6 @@ namespace Civilization.World.Map
             }
             return map;
         }
+        #endregion
     }
 }
