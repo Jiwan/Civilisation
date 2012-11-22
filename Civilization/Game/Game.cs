@@ -13,11 +13,11 @@ namespace Civilization.Game
         private Window mainWindow;
         private Civilization.World.Map.Map map;
         private Stack states;
-        private IPlayer[] players; 
+        private Player[] players; 
         #endregion
 
         #region properties
-        public IPlayer[] Players
+        public Player[] Players
         {
             get {return players;}
         }
@@ -36,7 +36,7 @@ namespace Civilization.Game
             mainWindow = new Window();
             map = new Map(new System.Drawing.Point(25, 25));
             states = new Stack(); 
-            players = new IPlayer[2];
+            players = new Player[2];
         }
 
         public Game(SerializationInfo info)
