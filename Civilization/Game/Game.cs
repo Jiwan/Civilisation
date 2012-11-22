@@ -21,6 +21,13 @@ namespace Civilization.Game
         {
             get {return players;}
         }
+
+        public void Map(Map map)
+        {
+            set {this.map = map;}
+        }
+
+        public void 
         #endregion
 
         #region constructors
