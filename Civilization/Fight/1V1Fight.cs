@@ -1,7 +1,8 @@
-﻿
+﻿using Civilization.Civilization.Unit;
+
 namespace Civilization.Fight
 {
-    class _1V1Fight : IFight
+    public class _1V1Fight : IFight
     {
         #region fields
         private IUnit attacker;

@@ -56,6 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Civilization\ICivilizationAbstractFactory.cs" />
+    <Compile Include="Civilization\PrototypeCivilizationFactory.cs" />
+    <Compile Include="Civilization\Unit\IUnit.cs" />
+    <Compile Include="Civilization\Unit\Unit.cs" />
+    <Compile Include="Fight\1V1Fight.cs" />
+    <Compile Include="Fight\IFight.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
@@ -107,6 +113,9 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="World\Square\World.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Civilization\City\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
