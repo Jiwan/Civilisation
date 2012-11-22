@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Drawing;
 using Civilization.World.Map;
 using System.Runtime.Serialization;
 using System.Collections;
@@ -7,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Civilization.Game
 {
-    class Game : ISerializable
+    public class Game : ISerializable
     {
         #region fields
         /// <summary>

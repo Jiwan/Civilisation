@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace Civilization.Game
 {
-    interface IGameState
+    public interface IGameState
     {
         #region methods
 
