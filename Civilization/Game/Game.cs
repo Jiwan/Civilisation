@@ -9,26 +9,32 @@ namespace Civilization.Game
     public class Game : ISerializable
     {
         #region fields
+
         /// <summary>
         /// The engine
         /// </summary>
         private GraphicEngine engine;
+
         /// <summary>
         /// The main window
         /// </summary>
         private Window mainWindow;
+
         /// <summary>
         /// The map
         /// </summary>
         private Civilization.World.Map.Map map;
+
         /// <summary>
         /// The game states
         /// </summary>
         private Stack states;
+
         /// <summary>
         /// The players
         /// </summary>
         private List<Player> players;
+
         #endregion
 
         #region properties

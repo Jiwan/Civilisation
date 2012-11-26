@@ -1,4 +1,6 @@
 ﻿using System;
+using Civilization.Civilization.City;
+using Civilization.Civilization.Unit;
 
 namespace Civilization.Civilization
 {

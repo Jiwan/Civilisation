@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Civilization.Civilization.Unit
 {
+    [Serializable()]
     public class Unit : IUnit
     {
         #region fields

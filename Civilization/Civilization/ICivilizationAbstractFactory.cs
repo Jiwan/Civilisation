@@ -1,16 +1,18 @@
-﻿
+﻿using Civilization.Civilization.City;
+using Civilization.Civilization.Unit;
+
 namespace Civilization.Civilization
 {
     public interface ICivilizationAbstractFactory
     {
         #region methods
-        public ICity CreateCity();
+        ICity CreateCity();
 
-        public IDepartDirector CreateDepartDirector();
+        IDepartDirector CreateDepartDirector();
 
-        public IStudent CreateStudent();
+        IStudent CreateStudent();
 
-        public ITeacher CreateTeacher();
+        ITeacher CreateTeacher();
         #endregion
     }
 }

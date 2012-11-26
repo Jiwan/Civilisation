@@ -1,54 +1,55 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace Civilization.Civilization.Unit
 {
-    public interface IUnit
+    public interface IUnit : ICloneable
     {
         #region properties
-        public int Attack
+        int Attack
         {
             get;
         }
 
-        public int Cost
+        int Cost
         {
             get;
         }
 
-        public int Defense
+        int Defense
         {
             get;
         }
 
-        public int HP
+        int HP
         {
             get;
         }
 
-        public int Movement
+        int Movement
         {
             get;
         }
 
-        public Point Position
+        Point Position
         {
             get;
             set;
         }
 
-        public bool IsDead
+        bool IsDead
         {
             get;
         }
 
-        public bool IsInCity
+        bool IsInCity
         {
             get;
         }
         #endregion
 
         #region methods
-        public void Damage(int damageValue);
+        void Damage(int damageValue);
         #endregion
     }
 }

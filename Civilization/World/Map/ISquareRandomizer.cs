@@ -1,10 +1,10 @@
 ﻿
 namespace Civilization.World.Map
 {
-    interface ISquareRandomizer
+    public interface ISquareRandomizer
     {
         #region methods
-        public Square.Square CreateSquare();
+        Square.Square CreateSquare();
         #endregion
     }
 }

@@ -1,10 +1,10 @@
 ﻿
 namespace Civilization.World.Map
 {
-    interface IMapCreate
+    public interface IMapCreate
     {
         #region methods
-        public Map CreateMap(ISquareRandomizer randomizer);
+        Map CreateMap(ISquareRandomizer randomizer);
         #endregion
     }
 }

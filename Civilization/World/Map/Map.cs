@@ -10,7 +10,7 @@ namespace Civilization.World.Map
     /// <summary>
     /// 
     /// </summary>
-    class Map
+    public class Map
     {
         #region fields
         /// <summary>

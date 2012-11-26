@@ -56,8 +56,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Civilization\City\BasicCity.cs" />
+    <Compile Include="Civilization\City\BasicCityExtender.cs" />
+    <Compile Include="Civilization\City\ICity.cs" />
+    <Compile Include="Civilization\City\ICityExtender.cs" />
     <Compile Include="Civilization\ICivilizationAbstractFactory.cs" />
     <Compile Include="Civilization\PrototypeCivilizationFactory.cs" />
+    <Compile Include="Civilization\Unit\IDepartDirector.cs" />
+    <Compile Include="Civilization\Unit\IStudent.cs" />
+    <Compile Include="Civilization\Unit\ITeacher.cs" />
     <Compile Include="Civilization\Unit\IUnit.cs" />
     <Compile Include="Civilization\Unit\Unit.cs" />
     <Compile Include="Fight\1V1Fight.cs" />
@@ -116,9 +123,7 @@
     <AppDesigner Include="Properties\" />
     <None Include="World\Square\World.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Civilization\City\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
