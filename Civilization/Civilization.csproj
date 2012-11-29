@@ -62,6 +62,9 @@
     <Compile Include="Civilization\City\ICityExtender.cs" />
     <Compile Include="Civilization\ICivilizationAbstractFactory.cs" />
     <Compile Include="Civilization\PrototypeCivilizationFactory.cs" />
+    <Compile Include="Civilization\Unit\BasicDepartDirector.cs" />
+    <Compile Include="Civilization\Unit\BasicStudent.cs" />
+    <Compile Include="Civilization\Unit\BasicTeacher.cs" />
     <Compile Include="Civilization\Unit\IDepartDirector.cs" />
     <Compile Include="Civilization\Unit\IStudent.cs" />
     <Compile Include="Civilization\Unit\ITeacher.cs" />

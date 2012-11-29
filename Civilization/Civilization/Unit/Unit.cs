@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace Civilization.Civilization.Unit
 {
+    #region enumerates
     public enum UnitState
     {
         US_ATTACK,
@@ -13,7 +14,9 @@ namespace Civilization.Civilization.Unit
         US_DEFENCE,
         US_WAITING,
     };
+    #endregion
 
+    #region classes
     [Serializable()]
     public class Unit : IUnit
     {        
@@ -83,9 +86,14 @@ namespace Civilization.Civilization.Unit
         #endregion
 
         #region constructor
-        public Unit()
+        public Unit(int attack, int defence, int cost, int hp, int movement)
         {
             stateMotions = new Dictionary<UnitState, Sprite>();
+            
+            this.attack = attack;
+            this.cost = cost;
+            this.hp = hp;
+            this.movement = movement;
         }
         #endregion        
 
@@ -96,4 +104,5 @@ namespace Civilization.Civilization.Unit
         }
         #endregion
     }
+    #endregion
 }

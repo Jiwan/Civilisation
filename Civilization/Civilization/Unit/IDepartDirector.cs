@@ -11,7 +11,7 @@ namespace Civilization.Civilization.Unit
         /// <value>
         /// The attack bonus.
         /// </value>
-        int AttackBonus { get; }
+        double AttackBonus { get; }
 
         /// <summary>
         /// Gets the defence bonus.
@@ -19,7 +19,7 @@ namespace Civilization.Civilization.Unit
         /// <value>
         /// The defence bonus.
         /// </value>
-        int DefenceBonus { get; }
+        double DefenceBonus { get; }
         #endregion
     }
 }
