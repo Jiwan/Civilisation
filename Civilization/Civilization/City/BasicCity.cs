@@ -56,7 +56,7 @@ namespace Civilization.Civilization.City
             controlledCases = new List<Point>();
             inDoorsUnits = new List<IUnit>();
 
-            // A city control its own case.
+            // A city controls its own case.
             controlledCases.Add(position);
         }
         #endregion
