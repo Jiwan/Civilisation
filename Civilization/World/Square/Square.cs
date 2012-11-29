@@ -5,6 +5,7 @@ namespace Civilization.World.Square
     {
         #region fields
         private uint availableFood;
+
         private uint availableOre;
 
       

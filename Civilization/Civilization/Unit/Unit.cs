@@ -1,12 +1,22 @@
-﻿using System;
+﻿#region usings
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+#endregion
 
 namespace Civilization.Civilization.Unit
 {
+    public enum UnitState
+    {
+        US_ATTACK,
+        US_MOVING,
+        US_DEFENCE,
+        US_WAITING,
+    };
+
     [Serializable()]
     public class Unit : IUnit
-    {
+    {        
         #region fields
         private Dictionary<UnitState, Sprite> stateMotions;
         
