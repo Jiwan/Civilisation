@@ -72,6 +72,9 @@
     <Compile Include="Game\ActiveState.cs" />
     <Compile Include="Game\Game.cs" />
     <Compile Include="Game\IGameState.cs" />
+    <Compile Include="Player\AIPlayer.cs" />
+    <Compile Include="Player\HumanPlayer.cs" />
+    <Compile Include="Player\IPlayer.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
     <Compile Include="World\Map\ISquareRandomizer.cs" />

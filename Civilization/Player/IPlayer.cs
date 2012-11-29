@@ -9,6 +9,15 @@ namespace Civilization.Player
 {
     interface IPlayer
     {
+        #region properties
+
+        IList<ICity> Cities { get; }
+
+        IList<IUnit> Units { get; }
+
+        #endregion
+
+
         #region methods
 
         /// <summary>
@@ -24,32 +33,22 @@ namespace Civilization.Player
         void AddUnit(IUnit unit);
 
         /// <summary>
-        /// Returns true if one of the player's cities is at the point coordinates.
+        /// Determines whether the specified point has a city.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns></returns>
-        Boolean AsCity(Point point);
+        /// <returns>
+        ///   <c>true</c> if the specified point has city; otherwise, <c>false</c>.
+        /// </returns>
+        bool HasCity(Point point);
 
         /// <summary>
-        /// Returns true if one of the player's units is at the point coordinates.
+        /// Determines whether the specified point has a unit.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns></returns>
-        Boolean AsUnit(Point point);
-
-        /// <summary>
-        /// Gets all cities.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns></returns>
-        IList<ICity> GetAllCities(Point point);
-
-        /// <summary>
-        /// Gets all units.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns></returns>
-        IList<IUnit> GetAllUnits(Point point);
+        /// <returns>
+        ///   <c>true</c> if the specified point has unit; otherwise, <c>false</c>.
+        /// </returns>
+        bool HasUnit(Point point);
 
         /// <summary>
         /// Gets the commands.
@@ -74,12 +73,6 @@ namespace Civilization.Player
         /// </summary>
         /// <param name="unit">The unit.</param>
         void RemoveUnit(IUnit unit);
-
-        /// <summary>
-        /// Sets the game.
-        /// </summary>
-        /// <param name="game">The game.</param>
-        void SetGame(Game.Game game);
 
         #endregion
     }
