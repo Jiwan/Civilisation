@@ -18,10 +18,10 @@ double Calcul::interpolation_cos2D(double a, double b, double c, double d, doubl
 }
 
 double Calcul::interpolation_cubique(double y0, double y1, double y2, double y3, double x) {
-	a = y3 - y2 - y0 + y1;
-	b = y0 - y1 - a;
-	c = y2 - y0;
-	d = y1;
+	double a = y3 - y2 - y0 + y1;
+	double b = y0 - y1 - a;
+	double c = y2 - y0;
+	double d = y1;
 
 	return a *x * x * x + b * x * x + c * x + d;
 }
@@ -66,42 +66,3 @@ double Calcul::bruit_coherent2D(double x, double y, double persistance, int nomb
 
 	return somme * (1 - persistance) / (1 - p);
 }
-
-void Calcul::definirPixel(SDL_Surface *surface, int x, int y, Uint32 pixel) {
-    int opp = surface->format->BytesPerPixel;
-    Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * opp;
-
-    switch(opp) {
-        case 1:
-            *p = pixel;
-            break;
-
-        case 2:
-            *(Uint16 *) p = pixel;
-            break;
-
-        case 3:
-            if(SDL_BYTEORDER == SDL_BIG_ENDIAN)
-            {
-                p[0] = (pixel >> 16) & 0xff;
-                p[1] = (pixel >> 8) & 0xff;
-                p[2] = pixel & 0xff;
-            }
-            else
-            {
-                p[0] = pixel & 0xff;
-                p[1] = (pixel >> 8) & 0xff;
-                p[2] = (pixel >> 16) & 0xff;
-            }
-            break;
-
-        case 4:
-            * (Uint32 *) p = pixel;
-            break;
-    }
-}
-
-Uint32 Calcul::obtenirCouleur(double rouge, double vert, double bleu) {
-   return (((int) (rouge * 255)) << 16) + (((int) (vert * 255)) << 8) + (int) (bleu * 255);
-}
-

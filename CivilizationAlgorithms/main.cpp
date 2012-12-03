@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL.h>
 #include "Calcul.h"
 
 // On définit la taille de l'image.
@@ -14,39 +13,20 @@
 
 
 int main(int argc, char *argv[]) {
-	SDL_Surface *ecran = NULL, *img = NULL;
-	SDL_Rect position;
 
-	// On initialise la SDL.
-	SDL_Init(SDL_INIT_VIDEO);
-	ecran = SDL_SetVideoMode(TAILLE, TAILLE, 32,  SDL_ANYFORMAT | SDL_HWSURFACE );
-	SDL_WM_SetCaption("Test Bruit cohérent", NULL);
+	int[TAILLE][TAILLE] matrix;
+	for(int i = 0; i < TAILLE; i++) {
+		for(int j = 0; j < TAILLE; j++) {
+			matrix[i][j] = Calcul::bruit_coherent2D(i, j, PERSISTANCE, OCTAVES);
+		}
+	}
 
-	// On crée une surface SDL pour dessiner dedans.
-	img = SDL_CreateRGBSurface(SDL_HWSURFACE, TAILLE, TAILLE, 32, 0, 0, 0, 0);
-
-	initBruit2D(TAILLE + 1, TAILLE + 1, PAS, OCTAVES);
-
-	int x,y;
-	for(y = 0; y < TAILLE; y++)
-		for(x = 0; x < TAILLE; x++)
-			definirPixel(img, x, y, obtenirPixel(x, y));
-	destroyBruit2D();
-
-	/* ************ Affichage du résultat **************** */
-
-	position.x = position.y = 0;
-	SDL_BlitSurface(img, NULL, ecran, &position);
-
-	// On force l'affichage.
-	SDL_Flip(ecran);
-
-	// On attend que l'utilisateur quitte.
-	SDL_Event event;
-	do
-	SDL_WaitEvent( &event );
-	while ( event.type!= SDL_QUIT);
-	SDL_Quit();
-
+	for(int i = 0; i < TAILLE; i++) {
+		for(int j = 0; j < TAILLE; j++) {
+			std::cout << "[" + matrix[i][j] + "]";
+		}
+		std::cout << endl;
+	}
+	
 	return EXIT_SUCCESS;
 }

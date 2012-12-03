@@ -14,12 +14,6 @@ public:
 	double fonction_bruit2D(double x, double y);
 	double bruit_coherent(double x, double persistance, int nombre_octaves);
 	double bruit_coherent2D(double x, double y, double persistance, int nombre_octaves);
-	void definirPixel(SDL_Surface *surface, int x, int y, Uint32 pixel);
-	Uint32 obtenirCouleur(double rouge, double vert, double bleu);
-	Uint32 obtenirPixel(int x, int y);
-
-
-
 
 };
 
