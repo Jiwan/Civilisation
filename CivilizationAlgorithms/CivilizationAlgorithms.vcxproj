@@ -69,11 +69,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Calcul.h" />
+    <ClInclude Include="Noise.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Calcul.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Noise.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
