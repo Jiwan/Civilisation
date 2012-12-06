@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Civilization", "Civilizatio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CivilizationAlgorithms", "CivilizationAlgorithms\CivilizationAlgorithms.vcxproj", "{7C013537-A574-4F53-935E-16512300CC8B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CivilizationAlgorithmsNative", "CivilizationAlgorithmsNative\CivilizationAlgorithmsNative.vcxproj", "{42953D43-3D69-4FE5-94C3-EB7297E78B93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{7C013537-A574-4F53-935E-16512300CC8B}.Release|Win32.ActiveCfg = Release|Win32
 		{7C013537-A574-4F53-935E-16512300CC8B}.Release|Win32.Build.0 = Release|Win32
 		{7C013537-A574-4F53-935E-16512300CC8B}.Release|x86.ActiveCfg = Release|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Debug|Win32.ActiveCfg = Debug|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Debug|Win32.Build.0 = Debug|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Debug|x86.ActiveCfg = Debug|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Release|Any CPU.ActiveCfg = Release|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Release|Win32.ActiveCfg = Release|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Release|Win32.Build.0 = Release|Win32
+		{42953D43-3D69-4FE5-94C3-EB7297E78B93}.Release|x86.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
