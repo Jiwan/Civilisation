@@ -17,8 +17,7 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Noise();
-	Noise::initBruit2D(TAILLE + 1, TAILLE + 1, PAS, OCTAVES);
+	Noise::Noise(TAILLE + 1, TAILLE + 1, PAS, OCTAVES);
 	double[][] matrix = new double[TAILLE][TAILLE];
 
 	int[TAILLE][TAILLE] matrix;

@@ -24,7 +24,10 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Noise.h">
+    <ClInclude Include="Noise2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Noise1D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +38,10 @@
     <ClCompile Include="CivilizationAlgorithmsNative.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Noise.cpp">
+    <ClCompile Include="Noise2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Noise1D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
