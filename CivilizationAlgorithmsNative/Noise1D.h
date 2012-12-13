@@ -6,11 +6,11 @@ class Noise1D
 {
 public:
 	Noise1D(int t, int p, int n);
-	~Noise1D(void);
+	~Noise1D();
 
-	double bruit1D(int i);
-	double interpolation_cos1D(double a, double b, double x);
-	double fonction_bruit1D(double x);
+	double getVal(int i);
+	static double interpolation_cos1D(double a, double b, double x);
+	double bruit1D(double x);
 	double bruit_coherent1D(double x, double persistance);
 
 private:
