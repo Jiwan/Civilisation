@@ -26,6 +26,10 @@ namespace Civilization
 
         private void LaunchGame(object sender, RoutedEventArgs e)
         {
+            //A implémenter
+            //Créer un Game
+            //Ajouter le joueur
+            //Créer la carte
             Game.Game();
         }
     }

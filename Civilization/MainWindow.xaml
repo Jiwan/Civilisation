@@ -16,6 +16,10 @@
                       Source="C:\Users\Richard\Documents\GitHub\Civilisation\Ressources\map1250.jpg">
                 </Image>
             </ScrollViewer>
+            <Label Content="Nombre de tours restants : " Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="0,30,0,0" Name="labelNbTours" VerticalAlignment="Top" />
+            <Label Name="label" Grid.Row="1" Height="28" Margin="0,0,0,100">
+                <TextBlock Text="Civilization" Name="textBlock" FontSize="16" TextDecorations="Underline" />
+            </Label>
         </Grid>
     </Canvas>
     
