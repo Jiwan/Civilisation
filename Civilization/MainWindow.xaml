@@ -1,23 +1,26 @@
 ﻿<Window x:Class="Civilization.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="480" Width="720">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="4*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="Choose Your Civilization"></Label>
-        <ListBox Grid.Row="0" Grid.Column="1" Margin="50">
-            <ListBoxItem>EII</ListBoxItem>
-            <ListBoxItem>INFO</ListBoxItem>
-            <ListBoxItem>Create a new civilization</ListBoxItem>
-            <ListBoxItem></ListBoxItem>
-        </ListBox>
-    </Grid>
+        Title="MainWindow" Height="650" Width="850">
+    <Canvas Name="canvas1" MouseLeftButtonDown="MouseDown">
+        <Grid Height="611" Canvas.Left="0" Canvas.Top="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="490" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="830" />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"  Grid.Row="0" Grid.Column="0">
+                <Image Margin="10, 10, 10, 10" Stretch="UniformToFill" Name="map"
+                      Source="C:\Users\Richard\Documents\GitHub\Civilisation\Ressources\map1250.jpg">
+                </Image>
+            </ScrollViewer>
+            <Label Content="Nombre de tours restants : " Grid.Row="1" Height="28" HorizontalAlignment="Left" Margin="0,30,0,0" Name="labelNbTours" VerticalAlignment="Top" />
+            <Label Name="label" Grid.Row="1" Height="28" Margin="0,0,0,100">
+                <TextBlock Text="Civilization" Name="textBlock" FontSize="16" TextDecorations="Underline" />
+            </Label>
+        </Grid>
+    </Canvas>
+    
 </Window>

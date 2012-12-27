@@ -29,6 +29,15 @@ namespace Civilization.Player
         
         #endregion
 
+        #region Constructeur
+
+        public HumanPlayer()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        #endregion
+
         #region properties
 
         public IList<ICity> Cities
