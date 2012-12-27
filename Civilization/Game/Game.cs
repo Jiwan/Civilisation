@@ -66,7 +66,7 @@ namespace Civilization.Game
         /// <value>
         /// The engine.
         /// </value>
-        public GraphicEngine engine
+        public GraphicEngine Engine
         {
             set { engine = value; }
         }
@@ -108,11 +108,15 @@ namespace Civilization.Game
         {
             players.Add(newPlayer);
         }
+
         /// <summary>
         /// Gets the object data.
         /// </summary>
         /// <param name="info">The info.</param>
-        public void GetObjectData(SerializationInfo info) { }
+        public void GetObjectData(SerializationInfo info) 
+        {
+        }
+
         /// <summary>
         /// Pops the state.
         /// </summary>

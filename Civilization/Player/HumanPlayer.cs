@@ -3,6 +3,8 @@ using Civilization.Civilization.Unit;
 using Civilization.Civilization.City;
 using System.Drawing;
 using System;
+using Civilization.Player.Actions;
+using System.Windows.Input;
 
 namespace Civilization.Player
 {
@@ -143,17 +145,17 @@ namespace Civilization.Player
  	        units.Remove(unit);
         }
 
-        public void KeyboardPressedEventHandler(Object o, KeyboardPressedEventHandler e)
+        public void KeyboardPressedEventHandler(Object o, KeyEventArgs e)
         {
             throw new System.NotImplementedException();
         }
 
-        public void MousePressedEventHandler(Object o, KeyboardPressedEventHandler e)
+        public void MousePressedEventHandler(Object o, MouseEventArgs e)
         {
             throw new System.NotImplementedException();
         }
 
-        public void MouseMovedEventHandler(Object o, KeyboardPressedEventHandler e)
+        public void MouseMovedEventHandler(Object o, MouseEventArgs e)
         {
             throw new System.NotImplementedException();
         }

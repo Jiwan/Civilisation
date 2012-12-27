@@ -25,22 +25,22 @@ namespace Civilization.Civilization
         #region methods
         public ICity CreateCity()
         {
-            return protoCity.Clone();
+            return (ICity)protoCity.Clone();
         }
 
         public IDepartDirector CreateDepartDirector()
         {
-            return protoDepartDirector.Clone();
+            return (IDepartDirector)protoDepartDirector.Clone();
         }
 
         public IStudent CreateStudent()
         {
-            return protoStudent.Clone();
+            return (IStudent)protoStudent.Clone();
         }
 
         public ITeacher CreateTeacher()
         {
-            return protoTeacher.Clone();
+            return (ITeacher)protoTeacher.Clone();
         }
         #endregion
     }

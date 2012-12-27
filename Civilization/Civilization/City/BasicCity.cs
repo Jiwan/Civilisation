@@ -82,6 +82,11 @@ namespace Civilization.Civilization.City
         {
             throw new System.NotImplementedException();
         }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
         #endregion
 
         #region protected

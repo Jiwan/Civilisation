@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using Civilization.Civilization.Unit;
 
 namespace Civilization.Civilization.City
 {
-   public interface ICity
+   public interface ICity : ICloneable
    {
        #region properties
        IList<Point> ControlledCases { get; }
