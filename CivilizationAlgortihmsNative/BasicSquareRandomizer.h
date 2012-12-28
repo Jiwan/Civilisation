@@ -4,7 +4,7 @@
 #include "Common.h"
 #include "ISquareRandomizer.h"
 
-class BasicSquareRandomizer : ISquareRandomizer
+class DECLDIR BasicSquareRandomizer : ISquareRandomizer
 {
 public:
 	virtual ~BasicSquareRandomizer()

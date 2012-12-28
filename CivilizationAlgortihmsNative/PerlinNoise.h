@@ -13,7 +13,7 @@
 #include "Common.h"
 #include "ISquareRandomizer.h"
 
-struct LinearInterpolation
+struct DECLDIR LinearInterpolation
 {
 	// If we store a field, remember to add a virtual destructor.
 public:
@@ -32,7 +32,7 @@ protected:
 	}
 };
 
-struct CosInterpolation : LinearInterpolation
+struct DECLDIR CosInterpolation : LinearInterpolation
 {
 private:
 	virtual double interpolateBase(double a, double b, double x)
@@ -45,18 +45,21 @@ private:
 
 // Unlike interpolation, we may want to change the randomizer at running time and not at compile time with a policy.
 
-template <class InterpolationPolicy = CosInterpolation> class PerlinNoiseMap : InterpolationPolicy
+template <class InterpolationPolicy = CosInterpolation> class DECLDIR PerlinNoiseMap : InterpolationPolicy
 {
 public:
-	PerlinNoiseMap(unsigned int width, unsigned int height) : m_width(width), m_height(height)
+	PerlinNoiseMap()
 	{
 		srand(time(NULL));
-
-		m_map = std::unique_ptr<std::pair<TileType, DecoratorType>[]>(new std::pair<TileType, DecoratorType>[width * height]);
 	}
 
-	void generateHeightMap(ISquareRandomizer* randomizer, double maxHeight)
+	void generateHeightMap(ISquareRandomizer* randomizer, double maxHeight, unsigned int width, unsigned int height)
 	{
+		m_width = width;
+		m_height = height;
+
+		m_map = std::unique_ptr<std::pair<TileType, DecoratorType>[]>(new std::pair<TileType, DecoratorType>[width * height]);
+
 		double power = maxHeight;
 		unsigned int stepWidth = m_width;
 		unsigned int stepHeight = m_height;
@@ -96,7 +99,7 @@ public:
 				}
 			}
 
-			power = log(power); // Try to make an logarithmic decrease.
+			power = log(power); // Try to make a logarithmic decrease.
 			stepWidth = stepWidth / 2;
 			stepHeight = stepHeight / 2;
 		}
@@ -120,14 +123,14 @@ public:
 		return m_map[(y * m_width) + x].second;
 	}
 
-	friend std::ostream& operator<<(std::ostream& other, PerlinNoiseMap& map);
+	//friend std::ostream& operator<<(std::ostream& other, PerlinNoiseMap& map);
 private:
 	std::unique_ptr<std::pair<TileType, DecoratorType>[]> m_map;
 	unsigned int m_width;
 	unsigned int m_height;
 };
 
-std::ostream& operator<<(std::ostream& out, PerlinNoiseMap<>& map)
+/*std::ostream& operator<<(std::ostream& out, PerlinNoiseMap<>& map)
 {	
 	for (unsigned int i = 0; i < map.m_width; ++i)
 	{
@@ -140,5 +143,5 @@ std::ostream& operator<<(std::ostream& out, PerlinNoiseMap<>& map)
 	}
 
 	return out;
-}
+}*/
 #endif

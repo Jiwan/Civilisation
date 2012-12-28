@@ -1,19 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
+#include <Windows.h>
 
 #include "PerlinNoise.h"
 #include "BasicSquareRandomizer.h"
 
-int main(int argc, char* argv[])
+// Putain de templates !!!
+// Il manque le keyword "export" dans le compilateur de VS2010
+template class PerlinNoiseMap <CosInterpolation>;
+template class PerlinNoiseMap <LinearInterpolation>;
+
+BOOL WINAPI DllMain(
+  HINSTANCE hinstDLL,
+  DWORD fdwReason,
+  LPVOID lpvReserved
+)
 {
-	BasicSquareRandomizer randomizer;
-	PerlinNoiseMap<> test(25, 25);
-	
-	test.generateHeightMap(reinterpret_cast<ISquareRandomizer*>(&randomizer), 100.0f);
 
-	std::cout << test;
-
-	system("PAUSE");
-	return EXIT_SUCCESS;
+	return TRUE;
 }

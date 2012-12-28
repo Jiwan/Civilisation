@@ -139,7 +139,12 @@
     <AppDesigner Include="Properties\" />
     <None Include="World\Square\World.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CivilizationAlgorithms\CivilizationAlgorithms.vcxproj">
+      <Project>{8507248A-A84B-400B-A452-B053C407E8B5}</Project>
+      <Name>CivilizationAlgorithms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
