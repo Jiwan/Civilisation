@@ -1,4 +1,4 @@
-﻿<Window x:Class="Civilization.MainWindow"
+﻿<Window x:Class="Civilization.Launch"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="650" Width="850">
@@ -6,7 +6,7 @@
     <Window.Resources>
         <!--Default DataTemplate (white tile)-->
         <DataTemplate x:Key="DefaultDataTemplate">
-            <Grid Height="50" Margin="0">
+            <Grid Name="mapGrid"  Height="50" Margin="0">
                 
             </Grid>
         </DataTemplate>

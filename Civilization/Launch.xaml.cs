@@ -15,21 +15,52 @@ using System.Windows.Shapes;
 namespace Civilization
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Launch.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Launch : Window
     {
-        public MainWindow()
+        public Launch()
         {
             InitializeComponent();
         }
 
+        private void smallMap_checked(object sender, RoutedEventArgs e)
+        {
+            btnSmallMap.Foreground = Brushes.Blue;
+            btnSmallMap.Background = Brushes.Yellow;
+
+            btnBigMap.Foreground = Brushes.Black;
+            btnBigMap.Background = Brushes.White;
+        }
+
+        private void bigMap_checked(object sender, RoutedEventArgs e)
+        {
+            btnBigMap.Foreground = Brushes.Blue;
+            btnBigMap.Background = Brushes.Yellow;
+
+            btnSmallMap.Foreground = Brushes.Black;
+            btnSmallMap.Background = Brushes.White;
+        }
+
         private void LaunchGame(object sender, RoutedEventArgs e)
         {
-            //A implémenter
+            //A finir d'implémenter
+            
+            //choix de la taille de carte et création de celle-ci
+            if (btnBigMap.isChecked == true)
+            {
+                Console.WriteLine("Big Map chosen.");
+                MapDisplay map = new MapDisplay(100);
+            }
+            else
+            {
+                Console.WriteLine("Small Map chosen.");
+                MapDisplay map = new MapDisplay(25);
+            }
+            
             //Créer un Game
             //Ajouter le joueur
-            //Créer la carte
+            
             Game.Game();
         }
     }
