@@ -6,7 +6,9 @@
     <Window.Resources>
         <!--Default DataTemplate (white tile)-->
         <DataTemplate x:Key="DefaultDataTemplate">
-            
+            <Grid Height="50" Margin="0">
+                
+            </Grid>
         </DataTemplate>
 
         <!--Mountain DataTemplate (brown tile)-->

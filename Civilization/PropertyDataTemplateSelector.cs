@@ -12,22 +12,21 @@ namespace Civilization
         public DataTemplate DesertDataTemplate { get; set; }
         public DataTemplate WaterDataTemplate { get; set; }
 
-        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        public override DataTemplate SelectTemplate(ManagedTileType item, DependencyObject container)
         {
-            ManagedTileType tile = CivilizationAlgorithms.PerlinNoise.GetTileType(0, 0);
-            if (tile == ManagedTileType.Mountain)
+            if (item == ManagedTileType.Mountain)
             {
                 return MountainDataTemplate;
             }
-            else if (tile == ManagedTileType.Field)
+            else if (item == ManagedTileType.Field)
             {
                 return FieldDataTemplate;
             }
-            else if (tile == ManagedTileType.Desert)
+            else if (item == ManagedTileType.Desert)
             {
                 return DesertDataTemplate;
             }
-            else if (tile == ManagedTileType.Water)
+            else if (item == ManagedTileType.Water)
             {
                 return WaterDataTemplate;
             }
