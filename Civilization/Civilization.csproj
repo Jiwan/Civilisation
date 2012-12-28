@@ -88,6 +88,7 @@
     <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="Player\Actions\IPlayerAction.cs" />
+    <Compile Include="PropertyDataTemplateSelector.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
     <Compile Include="World\Map\ISquareRandomizer.cs" />
