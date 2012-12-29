@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows;
 using CivilizationAlgorithms;
+using Civilization.World.Square;
 
 namespace Civilization
 {
@@ -12,21 +13,21 @@ namespace Civilization
         public DataTemplate DesertDataTemplate { get; set; }
         public DataTemplate WaterDataTemplate { get; set; }
 
-        public override DataTemplate SelectTemplate(ManagedTileType item, DependencyObject container)
+        public override DataTemplate SelectTemplate(Square tile, DependencyObject container)
         {
-            if (item == ManagedTileType.Mountain)
+            if (tile is Mountain)
             {
                 return MountainDataTemplate;
             }
-            else if (item == ManagedTileType.Field)
+            else if (tile is Field)
             {
                 return FieldDataTemplate;
             }
-            else if (item == ManagedTileType.Desert)
+            else if (tile is Desert)
             {
                 return DesertDataTemplate;
             }
-            else if (item == ManagedTileType.Water)
+            else if (tile is Water)
             {
                 return WaterDataTemplate;
             }

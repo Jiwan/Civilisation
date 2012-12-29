@@ -102,6 +102,10 @@
     <Compile Include="World\Square\SquareDecorator.cs" />
     <Compile Include="World\Square\Water.cs" />
     <Compile Include="World\Square\Square.cs" />
+    <Page Include="GridResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Launch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
