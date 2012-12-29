@@ -24,6 +24,13 @@ namespace Civilization.World.Map
         private Square.Square[,] squareMatrix;
         #endregion
 
+        #region properties
+        public Square.Square[,] SquareMatrix
+        {
+            get { return squareMatrix; }
+        }
+        #endregion
+
         #region constructor
         /// <summary>
         /// Initializes a new instance of the <see cref="Map" /> class.

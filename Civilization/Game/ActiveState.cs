@@ -17,18 +17,13 @@ namespace Civilization.Game
         {
             this.game = game;
         }
-
-        private ~ActiveState()
-        {
-        }
-
         #endregion
 
         #region methods
 
         public void Destroy()
         {
-            ~ActiveState();
+
         }
 
         public void Draw(GraphicEngine engine)

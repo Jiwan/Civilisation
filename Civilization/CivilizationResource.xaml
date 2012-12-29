@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Civilization">
+
+    <!--Mountain DataTemplate (brown tile)-->
+    <ItemsPanelTemplate x:Key="MountainDataTemplate">
+        <TextBlock Text="Mountain"/>
+    </ItemsPanelTemplate>
+
+    <!--Field DataTemplate (green tile)-->
+    <ItemsPanelTemplate x:Key="FieldDataTemplate">
+        <TextBlock Text="Field"/>
+    </ItemsPanelTemplate>
+
+    <!--Desert DataTemplate (yellow tile)-->
+    <ItemsPanelTemplate x:Key="DesertDataTemplate">
+        <TextBlock Text="Desert"/>
+    </ItemsPanelTemplate>
+
+    <!--Water DataTemplate (blue tile)-->
+    <ItemsPanelTemplate x:Key="WaterDataTemplate">
+        <TextBlock Text="Water"/>
+    </ItemsPanelTemplate>
+
+    <local:SquareTemplateSelector x:Key="MySquareTemplateSelector" 
+                                  DesertDataTemplate="{StaticResource ResourceKey=DesertDataTemplate}"
+                                  MountainDataTemplate="{StaticResource ResourceKey=MountainDataTemplate}"
+                                  FieldDataTemplate="{StaticResource ResourceKey=FieldDataTemplate}"
+                                  WaterDataTemplate="{StaticResource ResourceKey=WaterDataTemplate}"
+                                  />
+    
+    <DataTemplate x:Key="MapTemplate">
+        <ItemsControl ItemsSource="{Binding}" ItemTemplateSelector="{StaticResource MySquareTemplateSelector}">
+        </ItemsControl>
+    </DataTemplate>
+</ResourceDictionary>

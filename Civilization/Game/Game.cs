@@ -3,10 +3,11 @@ using Civilization.World.Map;
 using System.Runtime.Serialization;
 using System.Collections;
 using System.Collections.Generic;
+using Civilization.Player;
 
 namespace Civilization.Game
 {
-    public class Game : ISerializable
+    public class Game
     {
         #region fields
 
@@ -23,7 +24,7 @@ namespace Civilization.Game
         /// <summary>
         /// The map
         /// </summary>
-        private Civilization.World.Map.Map map;
+        private Map map;
 
         /// <summary>
         /// The game states
@@ -33,7 +34,7 @@ namespace Civilization.Game
         /// <summary>
         /// The players
         /// </summary>
-        private List<Player> players;
+        private List<Player.IPlayer> players;
 
         #endregion
 
@@ -44,7 +45,7 @@ namespace Civilization.Game
         /// <value>
         /// The players.
         /// </value>
-        public IList<Player> Players
+        public IList<Player.IPlayer> Players
         {
             get { return players; }
         }
@@ -79,11 +80,11 @@ namespace Civilization.Game
         /// </summary>
         public Game()
         {
-            engine = new GraphicEngine();
+            //engine = new GraphicEngine();
             mainWindow = new Window();
             map = new Map(new System.Drawing.Point(25, 25));
             states = new Stack();
-            players = new List<Player>();
+            players = new List<Player.IPlayer>();
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Civilization.Game
         /// <returns></returns>
         public IGameState PopState()
         {
-            return states.Pop();
+            return (IGameState)states.Pop();
         }
 
         /// <summary>

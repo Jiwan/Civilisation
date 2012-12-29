@@ -12,10 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Civilization.World.Map;
-using Civilization.World.Square;
-
-namespace Civilization
+namespace SaveMySoul
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
@@ -25,9 +22,6 @@ namespace Civilization
         public MainWindow()
         {
             InitializeComponent();
-
-            Map map = (new SmallMap()).CreateMap(null);
-            mapControl.ItemsSource = map.SquareMatrix.Cast<Square>();
         }
     }
 }

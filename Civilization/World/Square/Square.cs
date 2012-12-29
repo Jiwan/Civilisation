@@ -27,7 +27,7 @@ namespace Civilization.World.Square
         public virtual Point Position
         {
             get { return position; }
-            set;
+            set { position = value; }
         }
 
         #endregion

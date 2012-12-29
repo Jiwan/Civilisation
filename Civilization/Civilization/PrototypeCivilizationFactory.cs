@@ -16,10 +16,13 @@ namespace Civilization.Civilization
  
         #region constructor
         public PrototypeCivilizationFactory(
-            ICity protoCity, 
+            ICity protoCity,
             IDepartDirector protoDepartDirector,
             IStudent protoStudent,
-            ITeacher protoTeacher);
+            ITeacher protoTeacher)
+        {
+
+        }
         #endregion
 
         #region methods

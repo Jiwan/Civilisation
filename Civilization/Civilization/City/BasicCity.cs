@@ -43,9 +43,21 @@ namespace Civilization.Civilization.City
             }
         }
 
-        public int TotalAvailableFood { get; }
+        public int TotalAvailableFood 
+        { 
+            get 
+            { 
+                return 0; 
+            } 
+        }
 
-        public int TotalAvailableOre { get; }
+        public int TotalAvailableOre
+        {
+            get
+            {
+                return 0;
+            }
+        }
         #endregion
 
         #region constructors

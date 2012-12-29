@@ -5,15 +5,14 @@ using Civilization.World.Square;
 
 namespace Civilization
 {
-    class PropertyDataTemplateSelector : DataTemplateSelector
+    class SquareTemplateSelector : DataTemplateSelector
     {
-        public DataTemplate DefaultDataTemplate { get; set; }
         public DataTemplate MountainDataTemplate { get; set; }
         public DataTemplate FieldDataTemplate { get; set; }
         public DataTemplate DesertDataTemplate { get; set; }
         public DataTemplate WaterDataTemplate { get; set; }
 
-        public override DataTemplate SelectTemplate(Square tile, DependencyObject container)
+        public override DataTemplate SelectTemplate(object tile, DependencyObject container)
         {
             if (tile is Mountain)
             {
@@ -33,7 +32,7 @@ namespace Civilization
             }
             else
             {
-                return DefaultDataTemplate;
+                return base.SelectTemplate(tile, container);
             }
         }
     }

@@ -40,28 +40,6 @@ namespace Civilization
 
             btnSmallMap.Foreground = Brushes.Black;
             btnSmallMap.Background = Brushes.White;
-        }
-
-        private void LaunchGame(object sender, RoutedEventArgs e)
-        {
-            //A finir d'implémenter
-            
-            //choix de la taille de carte et création de celle-ci
-            if (btnBigMap.isChecked == true)
-            {
-                Console.WriteLine("Big Map chosen.");
-                MapDisplay map = new MapDisplay(100);
-            }
-            else
-            {
-                Console.WriteLine("Small Map chosen.");
-                MapDisplay map = new MapDisplay(25);
-            }
-            
-            //Créer un Game
-            //Ajouter le joueur
-            
-            Game.Game();
-        }
+        }       
     }
 }

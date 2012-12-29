@@ -102,6 +102,11 @@ namespace Civilization.Civilization.Unit
         {
             throw new System.NotImplementedException();
         }
+
+        public object Clone()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
     #endregion

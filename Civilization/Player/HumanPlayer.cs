@@ -63,7 +63,10 @@ namespace Civilization.Player
                 return game;
             }
 
-            set;
+            set
+            {
+                game = value;
+            }
         }
 
         #endregion

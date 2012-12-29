@@ -27,7 +27,7 @@ namespace Civilization.World.Map
                             map.ReplaceSquare(new Point(i, j), new Water());
                             break;
                         case ManagedTileType.Mountain:
-                            map.ReplaceSquare(new Point(i, j),  new Mountain());
+                            map.ReplaceSquare(new Point(i, j), new Mountain());
                             break;
                         case ManagedTileType.Field:
                             map.ReplaceSquare(new Point(i, j), new Field());

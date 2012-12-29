@@ -18,7 +18,7 @@
             <ListBoxItem>Create a new civilization</ListBoxItem>
             <ListBoxItem></ListBoxItem>
         </ListBox>
-        <Button Content="Begin" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="262,22,0,0" Name="Begin" VerticalAlignment="Top" Width="75" Click="LaunchGame" />
+        <Button Content="Begin" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="262,22,0,0" Name="Begin" VerticalAlignment="Top" Width="75"/>
         <TextBlock TextWrapping="WrapWithOverflow" Margin="12,0,17,41">
           Enter your name and choose your civilization :</TextBlock>
         <RadioButton Name="btnSmallMap"  GroupName="mapSize" Content="Small Map" IsChecked="True" Checked="smallMap_checked" Height="25" Margin="100,0,155,30" Grid.Row="1" />

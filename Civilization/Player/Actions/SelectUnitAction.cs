@@ -9,17 +9,17 @@ namespace Civilization.Player.Actions
         #endregion
 
         #region methods
-        public override bool Do()
+        public bool Do()
         {
             throw new System.NotImplementedException();
         }
 
-        public override bool UnDo()
+        public bool UnDo()
         {
             throw new System.NotImplementedException();
         }
 
-        public override string GetLog()
+        public string GetLog()
         {
             throw new System.NotImplementedException();
         }

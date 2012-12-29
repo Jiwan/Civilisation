@@ -8,7 +8,7 @@ using Civilization.Player.Actions;
 
 namespace Civilization.Player
 {
-    interface IPlayer
+    public interface IPlayer
     {
         #region properties
 

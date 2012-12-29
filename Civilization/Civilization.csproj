@@ -52,10 +52,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Civilization\City\BasicCity.cs" />
     <Compile Include="Civilization\City\BasicCityExtender.cs" />
     <Compile Include="Civilization\City\ICity.cs" />
@@ -69,12 +68,17 @@
     <Compile Include="Civilization\Unit\IStudent.cs" />
     <Compile Include="Civilization\Unit\ITeacher.cs" />
     <Compile Include="Civilization\Unit\IUnit.cs" />
+    <Compile Include="Civilization\Unit\Sprite.cs" />
     <Compile Include="Civilization\Unit\Unit.cs" />
     <Compile Include="Fight\1V1Fight.cs" />
     <Compile Include="Fight\IFight.cs" />
     <Compile Include="Game\ActiveState.cs" />
     <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GraphicEngine.cs" />
     <Compile Include="Game\IGameState.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Player\Actions\AttackAction.cs" />
     <Compile Include="Player\Actions\BuildCityAction.cs" />
     <Compile Include="Player\Actions\CreateUnitAction.cs" />
@@ -88,7 +92,7 @@
     <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="Player\Actions\IPlayerAction.cs" />
-    <Compile Include="PropertyDataTemplateSelector.cs" />
+    <Compile Include="SquareTemplateSelector.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
     <Compile Include="World\Map\ISquareRandomizer.cs" />
@@ -102,7 +106,11 @@
     <Compile Include="World\Square\SquareDecorator.cs" />
     <Compile Include="World\Square\Water.cs" />
     <Compile Include="World\Square\Square.cs" />
-    <Page Include="GridResource.xaml">
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CivilizationResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,14 +118,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Launch.xaml.cs">
       <DependentUpon>Launch.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
