@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using CivilizationAlgorithms;
 using Civilization.World.Square;
 using System;
 
@@ -33,36 +32,8 @@ namespace Civilization.World.Map
         public Map(Point size)
         {
             this.size = size;
-            squareMatrix = new Square.Square[size.X, size.Y];
-            CivilizationAlgorithms.PerlinNoise.GenerateHeightMap(100, (uint)size.X, (uint)size.Y);
-            
-            for (int i = 0; i < size.X; i++)
-            {
-                for (int j = 0; j < size.Y; j++)
-                {
-                    switch (CivilizationAlgorithms.PerlinNoise.GetTileType(i, j))
-                    {
-                        case ManagedTileType.Desert:
-                            squareMatrix[i, j] = new Desert();
-                            break;
-                        case ManagedTileType.Water:
-                            squareMatrix[i, j] = new Water();
-                            break;
-                        case ManagedTileType.Mountain:
-                            squareMatrix[i, j] = new Mountain();
-                            break;
-                        case ManagedTileType.Field:
-                            squareMatrix[i, j] = new Field();
-                            break;
-                        default:
-                            Console.WriteLine("Problem generating square type.");
-                            break;
-                    }
-                    squareMatrix[i, j].Position = new Point(i, j);
-                }
-            }
+            squareMatrix = new Square.Square[size.X, size.Y];           
         }
-    }
         #endregion
 
         #region methods
