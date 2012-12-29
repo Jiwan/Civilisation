@@ -3,24 +3,24 @@
                     xmlns:local="clr-namespace:Civilization">
 
     <!--Mountain DataTemplate (brown tile)-->
-    <ItemsPanelTemplate x:Key="MountainDataTemplate">
+    <DataTemplate x:Key="MountainDataTemplate">
         <TextBlock Text="Mountain"/>
-    </ItemsPanelTemplate>
+    </DataTemplate>
 
     <!--Field DataTemplate (green tile)-->
-    <ItemsPanelTemplate x:Key="FieldDataTemplate">
+    <DataTemplate x:Key="FieldDataTemplate">
         <TextBlock Text="Field"/>
-    </ItemsPanelTemplate>
+    </DataTemplate>
 
     <!--Desert DataTemplate (yellow tile)-->
-    <ItemsPanelTemplate x:Key="DesertDataTemplate">
+    <DataTemplate x:Key="DesertDataTemplate">
         <TextBlock Text="Desert"/>
-    </ItemsPanelTemplate>
+    </DataTemplate>
 
     <!--Water DataTemplate (blue tile)-->
-    <ItemsPanelTemplate x:Key="WaterDataTemplate">
+    <DataTemplate x:Key="WaterDataTemplate">
         <TextBlock Text="Water"/>
-    </ItemsPanelTemplate>
+    </DataTemplate>
 
     <local:SquareTemplateSelector x:Key="MySquareTemplateSelector" 
                                   DesertDataTemplate="{StaticResource ResourceKey=DesertDataTemplate}"
@@ -31,6 +31,7 @@
     
     <DataTemplate x:Key="MapTemplate">
         <ItemsControl ItemsSource="{Binding}" ItemTemplateSelector="{StaticResource MySquareTemplateSelector}">
+            <TextBox Text="{Binding Position.Y}"></TextBox>
         </ItemsControl>
     </DataTemplate>
 </ResourceDictionary>
