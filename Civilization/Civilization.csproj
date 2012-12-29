@@ -70,6 +70,7 @@
     <Compile Include="Civilization\Unit\ITeacher.cs" />
     <Compile Include="Civilization\Unit\IUnit.cs" />
     <Compile Include="Civilization\Unit\Unit.cs" />
+    <Compile Include="DynamicGrid.cs" />
     <Compile Include="Fight\1V1Fight.cs" />
     <Compile Include="Fight\IFight.cs" />
     <Compile Include="Game\ActiveState.cs" />

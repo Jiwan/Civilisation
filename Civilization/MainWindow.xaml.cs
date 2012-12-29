@@ -12,22 +12,6 @@ namespace Civilization
     /// </summary>
     public partial class MainWindow : Application
     {
-        internal static void addRow()
-        {
-            // http://www.c-sharpcorner.com/Resources/676/
-            throw new NotImplementedException();
-        }
-
-        internal static void addColomn()
-        {
-            // http://www.c-sharpcorner.com/Resources/676/
-            throw new NotImplementedException();
-        }
-
-        internal static void addTile(CivilizationAlgorithms.ManagedTileType managedTileType)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

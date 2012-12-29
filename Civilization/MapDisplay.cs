@@ -9,22 +9,23 @@ namespace Civilization
     class MapDisplay
     {
         private uint mapSize;
+        private DynamicGrid grid;
 
         public MapDisplay(uint size)
         {
             mapSize = size;
             CivilizationAlgorithms.PerlinNoise.GenerateHeightMap(100, size, size);
+            grid = new DynamicGrid();
 
             for (int i = 0; i < mapSize; ++i)
             {
-                MainWindow.addRow();
+                grid.addRow();
 
                 for (int j = 0; j < mapSize; ++j)
                 {
-                    MainWindow.addColomn();
-                    MainWindow.addTile(CivilizationAlgorithms.PerlinNoise.GetTileType(i, j));
+                    grid.addColomn();
+                    grid.addTile(CivilizationAlgorithms.PerlinNoise.GetTileType(i, j));
                 }
-                Console.Write("\n");
             }
 
         }
