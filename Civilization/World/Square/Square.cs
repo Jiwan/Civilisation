@@ -1,14 +1,15 @@
-﻿
+﻿using System.Drawing;
+
 namespace Civilization.World.Square
 {
     public abstract class Square// : IDrawable
     {
         #region fields
         private uint availableFood;
-
         private uint availableOre;
 
-      
+        private Point position;
+
         // private Tile tile;
         #endregion
 
@@ -21,6 +22,12 @@ namespace Civilization.World.Square
         public virtual uint AvailableOre
         {
             get { return availableOre; }
+        }
+
+        public virtual Point Position
+        {
+            get { return position; }
+            set;
         }
 
         #endregion

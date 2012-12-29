@@ -1,4 +1,4 @@
-﻿<Window x:Class="Civilization.Launch"
+﻿<Window x:Class="Civilization.DataBinding"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="650" Width="850">
@@ -6,29 +6,27 @@
     <Window.Resources>
         <!--Default DataTemplate (white tile)-->
         <DataTemplate x:Key="DefaultDataTemplate">
-            <Grid Name="DynamicGrid">
-                
-            </Grid>
+            <TextBlock Text="{Binding terrain}" Background="White"/>
         </DataTemplate>
 
         <!--Mountain DataTemplate (brown tile)-->
         <DataTemplate x:Key="MountainDataTemplate">
-            
+            <TextBlock Text="{Binding terrain}" Background="Brown"/>
         </DataTemplate>
         
         <!--Field DataTemplate (green tile)-->
         <DataTemplate x:Key="FieldDataTemplate">
-            
+            <TextBlock Text="{Binding terrain}" Background="Green"/>
         </DataTemplate>
         
         <!--Desert DataTemplate (yellow tile)-->
         <DataTemplate x:Key="DesertDataTemplate">
-            
+            <TextBlock Text="{Binding terrain}" Background="Yellow"/>
         </DataTemplate>
 
         <!--Water DataTemplate (blue tile)-->
         <DataTemplate x:Key="WaterDataTemplate">
-            
+            <TextBlock Text="{Binding terrain}" Background="Azure"/>
         </DataTemplate>
 
         <!-- DataTemplate Selector
