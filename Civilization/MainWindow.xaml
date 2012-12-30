@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Civilization.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Civilization" Height="350" Width="525">
     
     <Window.Resources>
         <ResourceDictionary>
@@ -11,7 +11,22 @@
         </ResourceDictionary>
     </Window.Resources>
     
-    <Grid>
-        <ItemsControl x:Name="mapControl" ItemTemplate="{DynamicResource MapTemplate}"/>
-    </Grid>
+    <DockPanel>
+            <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Top" Height="Auto">                
+                <MenuItem Header="Jeu">
+                    <MenuItem Header="Création d'une partie"/>
+                    <Separator/>
+                    <MenuItem Header="Sauvegarder la partie"/>
+                    <MenuItem Header="Charger une partie"/>
+                    <Separator/>
+                    <MenuItem Header="Quitter"/>
+                </MenuItem>
+                <MenuItem Header="Option">
+                    
+                </MenuItem>
+                <MenuItem Header="Aide">
+                    <MenuItem Header="A propos de"/>
+                </MenuItem>
+        </Menu>        
+    </DockPanel>
 </Window>

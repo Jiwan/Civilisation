@@ -27,7 +27,7 @@ namespace Civilization
             InitializeComponent();
 
             Map map = (new SmallMap()).CreateMap(null);
-            mapControl.ItemsSource = map.SquareMatrix.Cast<Square>();
+           // mapControl.ItemsSource = map.SquareMatrix.Cast<Square>();
         }
     }
 }
