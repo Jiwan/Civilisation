@@ -30,9 +30,9 @@ namespace Civilization.Player
 
         #region Constructeur
 
-        public HumanPlayer()
+        public HumanPlayer(string name)
         {
-            throw new System.NotImplementedException();
+            Name = name;
         }
 
         #endregion
