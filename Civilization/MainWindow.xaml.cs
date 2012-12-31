@@ -29,5 +29,22 @@ namespace Civilization
             Map map = (new SmallMap()).CreateMap(null);
            // mapControl.ItemsSource = map.SquareMatrix.Cast<Square>();
         }
+
+        private void closeMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void createMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            CreateGameWindow window = new CreateGameWindow();
+            
+            var result = window.ShowDialog();
+
+            if (result.HasValue && result.Value)
+            {
+                //!TODO : Traiter la création de la partie.
+            }
+        }
     }
 }

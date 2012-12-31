@@ -13,13 +13,13 @@
     
     <DockPanel>
             <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Top" Height="Auto">                
-                <MenuItem Header="Jeu">
-                    <MenuItem Header="Création d'une partie"/>
+                <MenuItem Header="Jeu" x:Name="gameMenuItem">
+                    <MenuItem Header="Création d'une partie" x:Name="createMenuItem" Click="createMenuItem_Click" />
                     <Separator/>
-                    <MenuItem Header="Sauvegarder la partie"/>
-                    <MenuItem Header="Charger une partie"/>
+                    <MenuItem Header="Sauvegarder la partie" x:Name="saveMenuItem"/>
+                    <MenuItem Header="Charger une partie" x:Name="loadMenuItem"/>
                     <Separator/>
-                    <MenuItem Header="Quitter"/>
+                    <MenuItem Header="Quitter" x:Name="closeMenuItem" Click="closeMenuItem_Click" />
                 </MenuItem>
                 <MenuItem Header="Option">
                     

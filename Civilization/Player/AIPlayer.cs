@@ -58,6 +58,7 @@ namespace Civilization.Player
             }
         }
 
+        public string Name { get; set; }
         #endregion
 
         #region Methods

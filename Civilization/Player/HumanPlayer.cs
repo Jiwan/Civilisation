@@ -25,8 +25,7 @@ namespace Civilization.Player
         /// <summary>
         /// The game
         /// </summary>
-        private Game.Game game;
-        
+        private Game.Game game;  
         #endregion
 
         #region Constructeur
@@ -40,6 +39,12 @@ namespace Civilization.Player
 
         #region properties
 
+        /// <summary>
+        /// Gets the cities.
+        /// </summary>
+        /// <value>
+        /// The cities.
+        /// </value>
         public IList<ICity> Cities
         {
             get
@@ -69,6 +74,7 @@ namespace Civilization.Player
             }
         }
 
+        public string Name { get; set; }        
         #endregion
 
         #region Methods

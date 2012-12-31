@@ -16,6 +16,8 @@ namespace Civilization.Player
 
         IList<IUnit> Units { get; }
 
+        string Name { get; set; }
+
         #endregion
 
 

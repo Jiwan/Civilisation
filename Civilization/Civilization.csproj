@@ -70,6 +70,9 @@
     <Compile Include="Civilization\Unit\IUnit.cs" />
     <Compile Include="Civilization\Unit\Sprite.cs" />
     <Compile Include="Civilization\Unit\Unit.cs" />
+    <Compile Include="CreateGameWindow.xaml.cs">
+      <DependentUpon>CreateGameWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fight\1V1Fight.cs" />
     <Compile Include="Fight\IFight.cs" />
     <Compile Include="Game\ActiveState.cs" />
@@ -114,14 +117,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Launch.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="CreateGameWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Launch.xaml.cs">
-      <DependentUpon>Launch.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
