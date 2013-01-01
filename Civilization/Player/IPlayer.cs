@@ -18,6 +18,8 @@ namespace Civilization.Player
 
         string Name { get; set; }
 
+        System.Windows.Media.Color Color { get; set; }
+
         #endregion
 
 

@@ -59,6 +59,16 @@ namespace Civilization.Player
         }
 
         public string Name { get; set; }
+
+        public System.Windows.Media.Color Color { get; set; }
+        #endregion
+
+        #region constructor
+        public AIPlayer(string name, System.Windows.Media.Color color)
+        {
+            Name = name;
+            Color = color;
+        }
         #endregion
 
         #region Methods

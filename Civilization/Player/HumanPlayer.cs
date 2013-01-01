@@ -25,14 +25,15 @@ namespace Civilization.Player
         /// <summary>
         /// The game
         /// </summary>
-        private Game.Game game;  
+        private Game.Game game; 
         #endregion
 
         #region Constructeur
 
-        public HumanPlayer(string name)
+        public HumanPlayer(string name, System.Windows.Media.Color color)
         {
             Name = name;
+            Color = color;
         }
 
         #endregion
@@ -74,7 +75,9 @@ namespace Civilization.Player
             }
         }
 
-        public string Name { get; set; }        
+        public string Name { get; set; }
+
+        public System.Windows.Media.Color Color { get; set; }
         #endregion
 
         #region Methods

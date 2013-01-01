@@ -101,7 +101,8 @@
     <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="Player\Actions\IPlayerAction.cs" />
-    <Compile Include="SquareTemplateSelector.cs" />
+    <Compile Include="TemplateSelector\PlayerTemplateSelector.cs" />
+    <Compile Include="TemplateSelector\SquareTemplateSelector.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
     <Compile Include="World\Map\ISquareRandomizer.cs" />
@@ -162,6 +163,22 @@
       <Project>{8507248A-A84B-400B-A452-B053C407E8B5}</Project>
       <Name>CivilizationAlgorithms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\desert.png" />
+    <Resource Include="Images\mokup 2.png" />
+    <Resource Include="Images\mokup.png" />
+    <Resource Include="Images\mountain.png" />
+    <Resource Include="Images\plain.png" />
+    <Resource Include="Images\snow.png" />
+    <Resource Include="Images\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\computer.png" />
+    <Resource Include="Images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
