@@ -79,6 +79,9 @@
     <Compile Include="CreateGameWindow.xaml.cs">
       <DependentUpon>CreateGameWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fight\1V1Fight.cs" />
     <Compile Include="Fight\IFight.cs" />
     <Compile Include="Game\ActiveState.cs" />
@@ -103,6 +106,9 @@
     <Compile Include="Player\Actions\IPlayerAction.cs" />
     <Compile Include="TemplateSelector\PlayerTemplateSelector.cs" />
     <Compile Include="TemplateSelector\SquareTemplateSelector.cs" />
+    <Compile Include="CustomControls\MapViewer.xaml.cs">
+      <DependentUpon>MapViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
     <Compile Include="World\Map\ISquareRandomizer.cs" />
@@ -128,9 +134,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomControls\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\MapViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
