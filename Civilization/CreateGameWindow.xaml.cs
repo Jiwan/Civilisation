@@ -10,10 +10,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 using Civilization.Player;
 using Civilization.World.Map;
-using System.Collections.ObjectModel;
+using Civilization.CustomControls;
 
 namespace Civilization
 {
@@ -150,9 +151,36 @@ namespace Civilization
             e.Handled = true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the GenerateButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
             mapViewer.Map = SmallMap.Instance.CreateMap(null);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the addPlayerButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void addPlayerButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlayerMessageBox msgBox = new PlayerMessageBox();
+
+            msgBox.ShowDialog();
+
+            if (msgBox.PlayerChoiceResult == PlayerMessageBox.PlayerChoice.Human)
+            {
+                players.Add(new HumanPlayer("Nouveau joueur", Colors.Green));
+            }
+            else
+            {
+                players.Add(new AIPlayer("Nouveau joueur", Colors.Green));
+            }
+
         }
         #endregion
         #endregion

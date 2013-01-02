@@ -83,6 +83,9 @@
     <Compile Include="CustomControls\ColorPicker.xaml.cs">
       <DependentUpon>ColorPicker.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\PlayerMessageBox.xaml.cs">
+      <DependentUpon>PlayerMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fight\1V1Fight.cs" />
     <Compile Include="Fight\IFight.cs" />
     <Compile Include="Fight\XVXFight.cs" />
@@ -137,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\PlayerMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,7 +203,9 @@
     <Resource Include="Images\computer.png" />
     <Resource Include="Images\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

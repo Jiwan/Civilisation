@@ -7,6 +7,7 @@
     <BitmapImage x:Key="PinClose" UriSource="Images/cancel.png"/>
     <BitmapImage x:Key="AiIcon" UriSource="Images/computer.png"/>
     <BitmapImage x:Key="HumanIcon" UriSource="Images/user.png"/>
+    <BitmapImage x:Key="PinAdd" UriSource="Images/add.png"/>
 
     <!--Mountain DataTemplate (brown tile)-->
     <DataTemplate x:Key="MountainDataTemplate">

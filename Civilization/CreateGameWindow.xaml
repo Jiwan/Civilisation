@@ -38,6 +38,14 @@
                             <CommandBinding Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" />
                         </ListBox.CommandBindings>
                     </ListBox>
+                    <Button x:Name="addPlayerButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Height="25" Width="25" Click="addPlayerButton_Click">
+                        <Button.ContentTemplate>
+                            <DataTemplate>                                
+                                    <Image Source="{StaticResource ResourceKey=PinAdd}"/>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                    </Button>
+
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
