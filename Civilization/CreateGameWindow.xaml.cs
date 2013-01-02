@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 
 using Civilization.Player;
 using Civilization.World.Map;
+using System.Collections.ObjectModel;
 
 namespace Civilization
 {
@@ -25,7 +26,7 @@ namespace Civilization
         /// <summary>
         /// The players
         /// </summary>
-        private List<IPlayer> players;
+        private ObservableCollection<IPlayer> players;
         #endregion
 
         #region constructor
@@ -56,7 +57,7 @@ namespace Civilization
         /// </summary>
         private void InitializePlayers()
         {
-            players = new List<IPlayer>();
+            players = new ObservableCollection<IPlayer>();
             players.Add(new HumanPlayer("Joueur 1", Colors.Blue));
             players.Add(new AIPlayer("Joueur 2", Colors.Red));
 
@@ -83,15 +84,7 @@ namespace Civilization
         /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
         private void tabControlOption_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (sender is TabControl)
-            {                
-                TabItem tab = (TabItem)e.AddedItems[0];
-
-                if (tab.Name.Equals("mapTabItem"))
-                {
-                    mapViewer.Map = SmallMap.Instance.CreateMap(null);
-                }
-            }
+            
         }
 
         /// <summary>
@@ -152,9 +145,14 @@ namespace Civilization
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             ListBox listBox = (ListBox)sender;
-            bool result = players.Remove((IPlayer)listBox.SelectedItem);
+            bool result = players.Remove((IPlayer)((Button)e.OriginalSource).DataContext);
 
             e.Handled = true;
+        }
+
+        private void GenerateButton_Click(object sender, RoutedEventArgs e)
+        {
+            mapViewer.Map = SmallMap.Instance.CreateMap(null);
         }
         #endregion
         #endregion

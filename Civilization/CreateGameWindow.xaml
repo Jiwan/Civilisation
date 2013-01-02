@@ -30,7 +30,10 @@
                              Margin="10,10,10,10" Grid.Column="0" 
                              ItemTemplateSelector="{StaticResource MyPlayerTemplateSelector}" 
                              HorizontalContentAlignment="Stretch"
-                             Button.Click="playerListBox_Click" SelectionChanged="playerListBox_SelectionChanged">
+                             Button.Click="playerListBox_Click" 
+                             SelectionChanged="playerListBox_SelectionChanged"
+                             IsSynchronizedWithCurrentItem="True"
+                             >
                         <ListBox.CommandBindings>
                             <CommandBinding Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" />
                         </ListBox.CommandBindings>
@@ -56,7 +59,7 @@
                                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}"/>
                                 
                                 <Label Grid.Row="1">Couleur :</Label>
-                                <customControls:ColorPicker Grid.Row="1" Grid.Column="1" Width="200" SelectedColor="{Binding Path=Color, Mode=TwoWay}" Loaded="ColorPicker_Loaded">
+                                <customControls:ColorPicker Grid.Row="1" Grid.Column="1" Width="200" SelectedColor="{Binding Path=Color, Mode=TwoWay}">
                                     
                                 </customControls:ColorPicker>
                                 
@@ -141,7 +144,7 @@
                                     <Style TargetType="Button">
                                         <Setter Property="Margin" Value="5"></Setter>
                                     </Style>
-                                </StackPanel.Resources>
+                                </StackPanel.Resources>                               
                                 <Button VerticalAlignment="Center">Load</Button>
                                 <Button VerticalAlignment="Center">Save</Button>
                             </StackPanel>
@@ -159,6 +162,8 @@
 
                             <Label Grid.Row="4">Montagne :</Label>
                             <Slider Grid.Column="1" Grid.Row="4" Name="mountainSlider"/>
+
+                            <Button Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Name="GenerateButton" Padding="1" Margin="0,10,0,0" Click="GenerateButton_Click">Générer</Button>
                         </Grid>
                     </GroupBox>
                 </Grid>
