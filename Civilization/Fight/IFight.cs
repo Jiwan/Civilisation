@@ -6,15 +6,14 @@ namespace Civilization.Fight
     public interface IFight
     {
         #region methods
-        void AddDefender(IUnit unit);
 
-        void AddFighter(IUnit unit);
+        void AddSupportToAttack();
 
-        void AddSupport(IDepartDirector unit);
+        void AddSupportToDefence();
 
         void StartFight();
 
-        IPlayer GetWinner();
+        Winner GetWinner();
         #endregion
     }
 }
