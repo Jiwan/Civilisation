@@ -24,6 +24,7 @@ namespace Civilization.Civilization.Unit
         int HP
         {
             get;
+            set;
         }
 
         int Movement
