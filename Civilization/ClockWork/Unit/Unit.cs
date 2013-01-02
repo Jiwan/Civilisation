@@ -54,7 +54,14 @@ namespace Civilization.ClockWork.Unit
 
         public int HP
         {
-            get { return hp; }
+            get
+            {
+                return hp;
+            }
+            set
+            {
+                hp = value;
+            }
         }
 
         public int Movement
