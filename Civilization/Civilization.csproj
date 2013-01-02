@@ -65,6 +65,7 @@
     <Compile Include="ClockWork\City\BasicCityExtender.cs" />
     <Compile Include="ClockWork\City\ICity.cs" />
     <Compile Include="ClockWork\City\ICityExtender.cs" />
+    <Compile Include="ClockWork\Civilization.cs" />
     <Compile Include="ClockWork\ICivilizationAbstractFactory.cs" />
     <Compile Include="ClockWork\PrototypeCivilizationFactory.cs" />
     <Compile Include="ClockWork\Unit\BasicDepartDirector.cs" />
@@ -80,6 +81,9 @@
       <DependentUpon>CreateGameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomCommands\ListBoxCommand.cs" />
+    <Compile Include="CustomControls\CivilizationMessageBox.xaml.cs">
+      <DependentUpon>CivilizationMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ColorPicker.xaml.cs">
       <DependentUpon>ColorPicker.xaml</DependentUpon>
     </Compile>
@@ -136,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\CivilizationMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\remove.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

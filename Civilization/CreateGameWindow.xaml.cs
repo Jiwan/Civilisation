@@ -15,6 +15,11 @@ using System.Collections.ObjectModel;
 using Civilization.Player;
 using Civilization.World.Map;
 using Civilization.CustomControls;
+using Civilization.ClockWork;
+using Civilization.ClockWork.City;
+using Civilization.ClockWork.Unit;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Civilization
 {
@@ -28,6 +33,13 @@ namespace Civilization
         /// The players
         /// </summary>
         private ObservableCollection<IPlayer> players;
+
+        /// <summary>
+        /// The civilizations
+        /// </summary>
+        private ObservableCollection<Civilization.ClockWork.Civilization> civilizations;
+
+        private static readonly string defaultCivilizationsPath = "/Civilizations/defaults.cxml";
         #endregion
 
         #region constructor
@@ -38,6 +50,7 @@ namespace Civilization
         {
             InitializeComponent();
             InitializePlayers();
+            InitializeCivilizations();
         }
         #endregion
 
@@ -63,6 +76,23 @@ namespace Civilization
             players.Add(new AIPlayer("Joueur 2", Colors.Red));
 
             playerListBox.ItemsSource = players;
+        }
+
+        /// <summary>
+        /// Initializes the civilizations.
+        /// </summary>
+        private void InitializeCivilizations()
+        {
+            civilizations = new ObservableCollection<ClockWork.Civilization>();
+
+            civilizationComboBox.ItemsSource = civilizations;
+            civilizationListBox.ItemsSource = civilizations;
+            // Load from a default file.
+
+            if (System.IO.File.Exists(defaultCivilizationsPath))
+            {
+                LoadCivilizations(defaultCivilizationsPath);
+            }
         }
 
         /// <summary>
@@ -180,7 +210,71 @@ namespace Civilization
             {
                 players.Add(new AIPlayer("Nouveau joueur", Colors.Green));
             }
+        }
 
+        /// <summary>
+        /// Handles the Click event of the addCivilizationButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void addCivilizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            var msgBox = new CivilizationMessageBox();
+            
+            msgBox.ShowDialog();
+
+            var civ = new Civilization.ClockWork.Civilization(msgBox.CivilizationName, new PrototypeCivilizationFactory());
+
+            civilizations.Add(civ);
+        }
+
+        private void removeCivilizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (civilizationListBox.SelectedItem != null)
+            {
+                civilizations.Remove((Civilization.ClockWork.Civilization)civilizationListBox.SelectedItem);
+            }
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog saveFile = new Microsoft.Win32.SaveFileDialog();
+            saveFile.Filter = "Civilization Xml (*.cxml)|*.cxml";
+
+            var result = saveFile.ShowDialog();
+
+            if (result != null)
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(civilizations.GetType());
+
+                using (StreamWriter streamWriter = System.IO.File.CreateText(saveFile.FileName))
+                {
+                    xmlSerializer.Serialize(streamWriter, civilizations);
+                }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
+            openFile.Filter = "Civilization Xml (*.cxml)|*.cxml";
+
+            var result = openFile.ShowDialog();
+
+            if (result != null)
+            {
+                LoadCivilizations(openFile.FileName);
+            }
+        }
+
+        private void LoadCivilizations(string path)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(civilizations.GetType());
+
+            using (StreamReader streamReader = System.IO.File.OpenText(path))
+            {
+                civilizations = (ObservableCollection<Civilization.ClockWork.Civilization>)xmlSerializer.Deserialize(streamReader);
+            }
         }
         #endregion
         #endregion

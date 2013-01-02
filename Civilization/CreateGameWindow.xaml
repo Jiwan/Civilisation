@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:customControls="clr-namespace:Civilization.CustomControls"
         xmlns:customCommands="clr-namespace:Civilization.CustomCommands"
-        Title="Créer une nouvelle partie" Height="575" Width="800">
+        Title="Créer une nouvelle partie" Height="726" Width="800">
     
     <Window.Resources>
         <ResourceDictionary>
@@ -72,18 +72,31 @@
                                 </customControls:ColorPicker>
                                 
                                 <Label Grid.Row="2">Civilisation :</Label>
-                                <ComboBox Height="30" Name="civilizationComboBox" Width="200" Grid.Row="2" Grid.Column="2" SelectionChanged="civilizationComboBox_SelectionChanged" />
+                                <ComboBox Height="30" Name="civilizationComboBox" Width="200" 
+                                          Grid.Row="2" Grid.Column="2" SelectionChanged="civilizationComboBox_SelectionChanged"
+                                          IsSynchronizedWithCurrentItem="True"
+                                          >
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label>
+                                                <Binding Path="Name"/>
+                                            </Label>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
                             </Grid>                                    
                         </GroupBox>
                         <GroupBox Grid.Row="1" Header="Civilisation :" Margin="10,5,10,10">
                             <Grid Margin="10">
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="160"/>
                                     <RowDefinition Height="150"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="3*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -96,26 +109,51 @@
                                             <Setter Property="Margin" Value="5"></Setter>
                                         </Style>
                                     </StackPanel.Resources>
-                                    <Button VerticalAlignment="Center">Load</Button>
-                                    <Button VerticalAlignment="Center">Save</Button>
+                                    <Button VerticalAlignment="Center" Click="Button_Click">Load</Button>
+                                    <Button VerticalAlignment="Center" Name="saveButton"  Click="saveButton_Click">Save</Button>
                                 </StackPanel>
 
-                                <ListBox Grid.Column="1" Name="unitListBox" Margin="20"/>
+                                <ListBox Grid.Column="1" Name="civilizationListBox" Margin="20,20,20,31" IsSynchronizedWithCurrentItem="True">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label>
+                                                <Binding Path="Name"/>
+                                            </Label>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Button Height="25" HorizontalAlignment="Right" Margin="0,0,47,0" Name="addCivilizationButton" VerticalAlignment="Bottom" Width="25" Grid.Column="1" Click="addCivilizationButton_Click">
+                                    <Button.ContentTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{StaticResource PinAdd}" />
+                                        </DataTemplate>
+                                    </Button.ContentTemplate>
+                                </Button>
+                                <Button Height="25" HorizontalAlignment="Right" Margin="0,0,20,0" Name="removeCivilizationButton" VerticalAlignment="Bottom" Width="25" Grid.Column="1" Click="removeCivilizationButton_Click">
+                                    <Button.ContentTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{StaticResource PinRemove}" />
+                                        </DataTemplate>
+                                    </Button.ContentTemplate>
+                                </Button>
+
+                                <Label Grid.Row="1">Unités :</Label>
+                                <ListBox Grid.Row="1" Grid.Column="1" Name="unitListBox" Margin="20"/>
                                 
-                                <Label Grid.Row="1">Attaque : </Label>
-                                <Slider Grid.Column="1" Grid.Row="1" Name="attackSlider"/>
+                                <Label Grid.Row="2">Attaque : </Label>
+                                <Slider Grid.Column="1" Grid.Row="2" Name="attackSlider"/>
                                 
-                                <Label Grid.Row="2">Defence : </Label>
-                                <Slider Grid.Column="1" Grid.Row="2" Name="defenceSlider"/>
+                                <Label Grid.Row="3">Defence : </Label>
+                                <Slider Grid.Column="1" Grid.Row="3" Name="defenceSlider"/>
                                 
-                                <Label Grid.Row="3">HP : </Label>
-                                <Slider Grid.Column="1" Grid.Row="3" Name="hpSlider"/>
+                                <Label Grid.Row="4">HP : </Label>
+                                <Slider Grid.Column="1" Grid.Row="4" Name="hpSlider"/>
                                 
-                                <Label Grid.Row="4">Mouvement : </Label>
-                                <Slider Grid.Column="1" Grid.Row="4" Name="movementSlider"/>
+                                <Label Grid.Row="5">Mouvement : </Label>
+                                <Slider Grid.Column="1" Grid.Row="5" Name="movementSlider"/>
                                 
-                                <Label Grid.Row="5">Points restant : </Label>
-                                <Label Grid.Row="5" Grid.Column="1">0</Label>                                
+                                <Label Grid.Row="6">Points restant : </Label>
+                                <Label Grid.Row="6" Grid.Column="1">0</Label>
                             </Grid>
                         </GroupBox>
                     </Grid>
