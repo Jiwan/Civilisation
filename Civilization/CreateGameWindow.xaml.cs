@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 using Civilization.Player;
+using Civilization.World.Map;
 
 namespace Civilization
 {
@@ -21,10 +22,16 @@ namespace Civilization
     public partial class CreateGameWindow : Window
     {
         #region fields
+        /// <summary>
+        /// The players
+        /// </summary>
         private List<IPlayer> players;
         #endregion
 
         #region constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateGameWindow" /> class.
+        /// </summary>
         public CreateGameWindow()
         {
             InitializeComponent();
@@ -34,11 +41,19 @@ namespace Civilization
 
         #region methods
         #region private
+        /// <summary>
+        /// Handles the Click event of the cancelButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
         }
 
+        /// <summary>
+        /// Initializes the players.
+        /// </summary>
         private void InitializePlayers()
         {
             players = new List<IPlayer>();
@@ -46,6 +61,100 @@ namespace Civilization
             players.Add(new AIPlayer("Joueur 2", Colors.Red));
 
             playerListBox.ItemsSource = players;
+        }
+
+        /// <summary>
+        /// Handles the Click event of the playerListBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void playerListBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button)
+            {
+                
+            }
+        }
+
+        /// <summary>
+        /// Handles the SelectionChanged event of the tabControlOption control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
+        private void tabControlOption_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is TabControl)
+            {                
+                TabItem tab = (TabItem)e.AddedItems[0];
+
+                if (tab.Name.Equals("mapTabItem"))
+                {
+                    mapViewer.Map = SmallMap.Instance.CreateMap(null);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handles the SelectionChanged event of the playerListBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
+        private void playerListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Avoid the event to bubbling.
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Handles the Loaded event of the ColorPicker control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void ColorPicker_Loaded(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Handles the SelectionChanged event of the civilizationComboBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
+        private void civilizationComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Handles the CanExecute event of the CommandBinding control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="CanExecuteRoutedEventArgs" /> instance containing the event data.</param>
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            Control target = e.Source as Control;
+
+            if (target != null)
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
+        }
+
+        /// <summary>
+        /// Handles the Executed event of the CommandBinding control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ExecutedRoutedEventArgs" /> instance containing the event data.</param>
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            ListBox listBox = (ListBox)sender;
+            bool result = players.Remove((IPlayer)listBox.SelectedItem);
+
+            e.Handled = true;
         }
         #endregion
         #endregion

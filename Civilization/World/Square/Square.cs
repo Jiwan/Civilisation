@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System;
 
 namespace Civilization.World.Square
 {
@@ -30,6 +31,7 @@ namespace Civilization.World.Square
             set { position = value; }
         }
 
+        public abstract Uri Tile { get; }
         #endregion
 
         #region constructors

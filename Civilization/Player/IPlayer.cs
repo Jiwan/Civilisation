@@ -1,7 +1,7 @@
 ﻿using System;
-using Civilization.Civilization.City;
+using Civilization.ClockWork.City;
 using System.Drawing;
-using Civilization.Civilization.Unit;
+using Civilization.ClockWork.Unit;
 using System.Collections;
 using System.Collections.Generic;
 using Civilization.Player.Actions;

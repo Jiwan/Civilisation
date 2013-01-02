@@ -29,6 +29,11 @@ namespace Civilization.World.Map
         {
             get { return squareMatrix; }
         }
+
+        public Point Size
+        {
+            get { return size; }
+        }
         #endregion
 
         #region constructor

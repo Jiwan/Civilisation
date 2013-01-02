@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Civilization.Civilization.City
+namespace Civilization.ClockWork.City
 {
     public class BasicCityExtender : ICityExtender
     {

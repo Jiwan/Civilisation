@@ -1,5 +1,5 @@
 ﻿
-namespace Civilization.Civilization.Unit
+namespace Civilization.ClockWork.Unit
 {
     public class BasicDepartDirector : Unit, IDepartDirector
     {

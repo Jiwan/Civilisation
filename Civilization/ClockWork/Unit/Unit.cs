@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 #endregion
 
-namespace Civilization.Civilization.Unit
+namespace Civilization.ClockWork.Unit
 {
     #region enumerates
     public enum UnitState

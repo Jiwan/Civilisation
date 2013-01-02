@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Civilization.Civilization.City
+namespace Civilization.ClockWork.City
 {
     public interface ICityExtender
     {

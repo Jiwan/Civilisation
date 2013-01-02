@@ -24,9 +24,9 @@ namespace Civilization.CustomControls
             InitializeComponent();
         }
 
-        public Brush SelectedColor
+        public Color SelectedColor
         {
-            get { return (Brush)GetValue(SelectedColorProperty); }
+            get { return (Color)GetValue(SelectedColorProperty); }
             set { SetValue(SelectedColorProperty, value); }
         }
 
@@ -34,6 +34,6 @@ namespace Civilization.CustomControls
         // This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SelectedColorProperty =
             DependencyProperty.Register("SelectedColor",
-        typeof(Brush), typeof(ColorPicker), new UIPropertyMetadata(null));
+        typeof(Color), typeof(ColorPicker), new UIPropertyMetadata(null));
     }
 }

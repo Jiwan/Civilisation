@@ -1,8 +1,8 @@
 ﻿using System;
-using Civilization.Civilization.City;
-using Civilization.Civilization.Unit;
+using Civilization.ClockWork.City;
+using Civilization.ClockWork.Unit;
 
-namespace Civilization.Civilization
+namespace Civilization.ClockWork
 {
     [Serializable()]
     public class PrototypeCivilizationFactory : ICivilizationAbstractFactory

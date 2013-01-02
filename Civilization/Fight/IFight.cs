@@ -1,4 +1,4 @@
-﻿using Civilization.Civilization.Unit;
+﻿using Civilization.ClockWork.Unit;
 using Civilization.Player;
 
 namespace Civilization.Fight

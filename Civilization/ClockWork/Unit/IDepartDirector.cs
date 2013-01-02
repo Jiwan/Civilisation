@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Civilization.Civilization.Unit
+namespace Civilization.ClockWork.Unit
 {
     public interface IDepartDirector : IUnit
     {
