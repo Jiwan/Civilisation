@@ -5,9 +5,53 @@ using Civilization.World.Square;
 
 namespace Civilization.World.Map
 {
-    class MediumMap : IMapCreate
+    public class MediumMap : IMapCreate
     {
+        #region fields
+        /// <summary>
+        /// The singleton instance of this class
+        /// </summary>
+        static MediumMap instance;
+        #endregion
+
+        #region properties
+        /// <summary>
+        /// Gets the singleton instance of this class.
+        /// </summary>
+        /// <value>
+        /// The instance.
+        /// </value>
+        public static MediumMap Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new MediumMap();
+                }
+
+                return instance;
+            }
+        }
+        #endregion
+        
+        #region constructors
+        /// <summary>
+        /// Prevents a default instance of the <see cref="MediumMap" /> class from being created.
+        /// </summary>
+        private MediumMap()
+        {
+
+        }
+        #endregion
+
         #region methods
+        /// <summary>
+        /// Creates the map.
+        /// </summary>
+        /// <param name="randomizer">The randomizer.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">Unknow tile type</exception>
         public Map CreateMap(ISquareRandomizer randomizer)
         {
             Map map = new Map(new Point(100, 100));

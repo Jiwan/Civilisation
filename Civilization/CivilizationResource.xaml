@@ -1,11 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Civilization.TemplateSelector">
+                    xmlns:local="clr-namespace:Civilization.TemplateSelector"
+                    xmlns:customCommands="clr-namespace:Civilization.CustomCommands"
+                    >
 
     <BitmapImage x:Key="PinClose" UriSource="Images/cancel.png"/>
     <BitmapImage x:Key="AiIcon" UriSource="Images/computer.png"/>
     <BitmapImage x:Key="HumanIcon" UriSource="Images/user.png"/>
-    
+
     <!--Mountain DataTemplate (brown tile)-->
     <DataTemplate x:Key="MountainDataTemplate">
         <TextBlock Text="Mountain"/>
@@ -32,7 +34,7 @@
                                   FieldDataTemplate="{StaticResource ResourceKey=FieldDataTemplate}"
                                   WaterDataTemplate="{StaticResource ResourceKey=WaterDataTemplate}"
                                   />
-    
+
     <DataTemplate x:Key="MapTemplate">
         <ItemsControl ItemsSource="{Binding}" ItemTemplateSelector="{StaticResource MySquareTemplateSelector}">
             <TextBox Text="{Binding Position.Y}"></TextBox>
@@ -54,18 +56,23 @@
                         <GradientStop Color="{Binding Path=Color}" Offset="1.0"/>
                     </RadialGradientBrush>
                 </Grid.Background>
-                <Image Grid.Column="0" Source="{StaticResource ResourceKey=HumanIcon}" Stretch="Fill" Width="50" Height="50"/>  
+                <Image Grid.Column="0" Source="{StaticResource ResourceKey=HumanIcon}" Stretch="Fill" Width="50" Height="50"/>
             </Grid>
             <StackPanel Grid.Column="1" HorizontalAlignment="Center">
                 <Label Content="{Binding Path=Name}"/>
                 <Label>Test</Label>
             </StackPanel>
-            <Button Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}">
                 <Button.Template>
                     <ControlTemplate>
                         <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <Image Source="{StaticResource ResourceKey=PinClose}"/>
+                            <Image Source="{StaticResource ResourceKey=PinClose}" x:Name="deleteImage"/>
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="deleteImage" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="deleteImage" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
@@ -76,10 +83,10 @@
         <Border>
             <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.Background>
                         <RadialGradientBrush GradientOrigin="0.5,0.5">
@@ -91,22 +98,28 @@
                     <Image Grid.Column="0" Source="{StaticResource ResourceKey=AiIcon}" Stretch="Fill" Width="50" Height="50"/>
                 </Grid>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-                <Label Content="{Binding Path=Name}"/>
-                <Label>Test</Label>
-            </StackPanel>
-            <Button Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
-                            <Image Source="{StaticResource ResourceKey=PinClose}"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-        </Grid>
+                    <Label Content="{Binding Path=Name}"/>
+                    <Label>Test</Label>
+                </StackPanel>
+                <Button Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}">
+                    <!-- Eventuellement rajouter un visual stateManager pour gérer les transitions de pressed et not pressed -->
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                <Image Source="{StaticResource ResourceKey=PinClose}" x:Name="deleteImage"/>
+                            </Border>
+                            <ControlTemplate.Triggers>                                
+                                <Trigger SourceName="deleteImage" Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="deleteImage" Property="Opacity" Value="0.5"/>
+                                </Trigger>                                
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>                    
+                </Button>
+            </Grid>
         </Border>
     </DataTemplate>
-    
+
     <local:PlayerTemplateSelector x:Key="MyPlayerTemplateSelector" 
                                  AIDataTemplate="{StaticResource ResourceKey=AIPlayerItem}"
                                   HumanDataTemplate="{StaticResource ResourceKey=HumanPlayerItem}"

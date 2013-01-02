@@ -1,4 +1,4 @@
-﻿using Civilization.Civilization.City;
+﻿using Civilization.ClockWork.City;
 
 namespace Civilization.Player.Actions
 {

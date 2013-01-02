@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Civilization.Civilization.Unit
+namespace Civilization.ClockWork.Unit
 {
     public interface IUnit : ICloneable
     {

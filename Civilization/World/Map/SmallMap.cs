@@ -4,9 +4,53 @@ using Civilization.World.Square;
 
 namespace Civilization.World.Map
 {
-    class SmallMap : IMapCreate
+    public class SmallMap : IMapCreate
     {
+        #region fields
+        /// <summary>
+        /// The singleton instance of this class
+        /// </summary>
+        static SmallMap instance;
+        #endregion
+
+        #region properties
+        /// <summary>
+        /// Gets the singleton instance of this class.
+        /// </summary>
+        /// <value>
+        /// The instance.
+        /// </value>
+        public static SmallMap Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new SmallMap();
+                }
+
+                return instance;
+            }
+        }
+        #endregion
+
+        #region constructors
+        /// <summary>
+        /// Prevents a default instance of the <see cref="SmallMap" /> class from being created.
+        /// </summary>
+        private SmallMap()
+        { 
+
+        }
+        #endregion
+
         #region methods
+        /// <summary>
+        /// Creates the map.
+        /// </summary>
+        /// <param name="randomizer">The randomizer.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">Unknow tile type</exception>
         public Map CreateMap(ISquareRandomizer randomizer)
         {
             Map map = new Map(new Point(25, 25));

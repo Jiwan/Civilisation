@@ -24,10 +24,7 @@ namespace Civilization
     {
         public MainWindow()
         {
-            InitializeComponent();
-
-            Map map = (new SmallMap()).CreateMap(null);
-           // mapControl.ItemsSource = map.SquareMatrix.Cast<Square>();
+            InitializeComponent();           
         }
 
         private void closeMenuItem_Click(object sender, RoutedEventArgs e)

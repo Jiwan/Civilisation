@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Civilization.Civilization.Unit;
-using Civilization.Civilization.City;
+using Civilization.ClockWork.Unit;
+using Civilization.ClockWork.City;
 using System.Drawing;
 using Civilization.Player.Actions;
 

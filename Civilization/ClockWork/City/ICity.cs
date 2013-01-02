@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Civilization.Civilization.Unit;
+using Civilization.ClockWork.Unit;
 
-namespace Civilization.Civilization.City
+namespace Civilization.ClockWork.City
 {
    public interface ICity : ICloneable
    {

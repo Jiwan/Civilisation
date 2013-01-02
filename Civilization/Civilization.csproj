@@ -61,24 +61,25 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Civilization\City\BasicCity.cs" />
-    <Compile Include="Civilization\City\BasicCityExtender.cs" />
-    <Compile Include="Civilization\City\ICity.cs" />
-    <Compile Include="Civilization\City\ICityExtender.cs" />
-    <Compile Include="Civilization\ICivilizationAbstractFactory.cs" />
-    <Compile Include="Civilization\PrototypeCivilizationFactory.cs" />
-    <Compile Include="Civilization\Unit\BasicDepartDirector.cs" />
-    <Compile Include="Civilization\Unit\BasicStudent.cs" />
-    <Compile Include="Civilization\Unit\BasicTeacher.cs" />
-    <Compile Include="Civilization\Unit\IDepartDirector.cs" />
-    <Compile Include="Civilization\Unit\IStudent.cs" />
-    <Compile Include="Civilization\Unit\ITeacher.cs" />
-    <Compile Include="Civilization\Unit\IUnit.cs" />
-    <Compile Include="Civilization\Unit\Sprite.cs" />
-    <Compile Include="Civilization\Unit\Unit.cs" />
+    <Compile Include="ClockWork\City\BasicCity.cs" />
+    <Compile Include="ClockWork\City\BasicCityExtender.cs" />
+    <Compile Include="ClockWork\City\ICity.cs" />
+    <Compile Include="ClockWork\City\ICityExtender.cs" />
+    <Compile Include="ClockWork\ICivilizationAbstractFactory.cs" />
+    <Compile Include="ClockWork\PrototypeCivilizationFactory.cs" />
+    <Compile Include="ClockWork\Unit\BasicDepartDirector.cs" />
+    <Compile Include="ClockWork\Unit\BasicStudent.cs" />
+    <Compile Include="ClockWork\Unit\BasicTeacher.cs" />
+    <Compile Include="ClockWork\Unit\IDepartDirector.cs" />
+    <Compile Include="ClockWork\Unit\IStudent.cs" />
+    <Compile Include="ClockWork\Unit\ITeacher.cs" />
+    <Compile Include="ClockWork\Unit\IUnit.cs" />
+    <Compile Include="ClockWork\Unit\Sprite.cs" />
+    <Compile Include="ClockWork\Unit\Unit.cs" />
     <Compile Include="CreateGameWindow.xaml.cs">
       <DependentUpon>CreateGameWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomCommands\ListBoxCommand.cs" />
     <Compile Include="CustomControls\ColorPicker.xaml.cs">
       <DependentUpon>ColorPicker.xaml</DependentUpon>
     </Compile>
@@ -184,7 +185,7 @@
     <Resource Include="Images\mokup 2.png" />
     <Resource Include="Images\mokup.png" />
     <Resource Include="Images\mountain.png" />
-    <Resource Include="Images\plain.png" />
+    <Resource Include="Images\field.png" />
     <Resource Include="Images\snow.png" />
     <Resource Include="Images\water.png" />
   </ItemGroup>
@@ -195,6 +196,7 @@
     <Resource Include="Images\computer.png" />
     <Resource Include="Images\user.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
