@@ -24,6 +24,7 @@ namespace Civilization.ClockWork.Unit
         int HP
         {
             get;
+            set;
         }
 
         int Movement
