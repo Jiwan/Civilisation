@@ -20,6 +20,11 @@ namespace Civilization.Player
 
         System.Windows.Media.Color Color { get; set; }
 
+        Civilization.ClockWork.Civilization PlayedCivilization
+        {
+            get;
+            set;
+        }
         #endregion
 
 

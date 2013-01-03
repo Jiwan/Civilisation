@@ -30,16 +30,72 @@ namespace Civilization
     {
         #region fields
         /// <summary>
-        /// The players
+        /// The max points for the current unit.
+        /// </summary>
+        private double maxPoints;
+
+        /// <summary>
+        /// The players.
         /// </summary>
         private ObservableCollection<IPlayer> players;
 
         /// <summary>
-        /// The civilizations
+        /// The civilizations.
         /// </summary>
         private ObservableCollection<Civilization.ClockWork.Civilization> civilizations;
 
+        /// <summary>
+        /// The default civilizations file path.
+        /// </summary>
         private static readonly string defaultCivilizationsPath = "/Civilizations/defaults.cxml";
+
+        /// <summary>
+        /// The selected unit property.
+        /// </summary>
+        public static readonly DependencyProperty SelectedUnitProperty = DependencyProperty.Register("SelectedUnit", typeof(IUnit), typeof(CreateGameWindow));
+
+        public static readonly DependencyProperty RemainingPointsProperty = DependencyProperty.Register(
+            "RemainingPoints", 
+            typeof(double), 
+            typeof(CreateGameWindow),
+            new PropertyMetadata(0.0, OnRemainingPointChanged));
+
+        /// <summary>
+        /// The attack max point property
+        /// </summary>
+        public static readonly DependencyProperty AttackMaxPointProperty = DependencyProperty.Register("AttackMaxPoint", typeof(double), typeof(CreateGameWindow));
+
+        /// <summary>
+        /// The defence max point property
+        /// </summary>
+        public static readonly DependencyProperty DefenceMaxPointProperty = DependencyProperty.Register("DefenceMaxPoint", typeof(double), typeof(CreateGameWindow));
+
+        /// <summary>
+        /// The hp max point property
+        /// </summary>
+        public static readonly DependencyProperty HpMaxPointProperty = DependencyProperty.Register("HpMaxPoint", typeof(double), typeof(CreateGameWindow));
+
+        /// <summary>
+        /// The movement max point property
+        /// </summary>
+        public static readonly DependencyProperty MovementMaxPointProperty = DependencyProperty.Register("MovementMaxPoint", typeof(double), typeof(CreateGameWindow));
+        #endregion
+
+        #region properties
+        /// <summary>
+        /// The selected unit.
+        /// </summary>
+        public IUnit SelectedUnit
+        {
+            get
+            {
+                return (IUnit)this.GetValue(SelectedUnitProperty);
+            }
+            set
+            {
+                this.SetValue(SelectedUnitProperty, value);
+            }
+        }
         #endregion
 
         #region constructor
@@ -188,7 +244,7 @@ namespace Civilization
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-            mapViewer.Map = SmallMap.Instance.CreateMap(null);
+            mapViewer.Map = MediumMap.Instance.CreateMap(null);
         }
 
         /// <summary>
@@ -228,6 +284,11 @@ namespace Civilization
             civilizations.Add(civ);
         }
 
+        /// <summary>
+        /// Handles the Click event of the removeCivilizationButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void removeCivilizationButton_Click(object sender, RoutedEventArgs e)
         {
             if (civilizationListBox.SelectedItem != null)
@@ -236,6 +297,11 @@ namespace Civilization
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the saveButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.SaveFileDialog saveFile = new Microsoft.Win32.SaveFileDialog();
@@ -254,7 +320,12 @@ namespace Civilization
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Handles the Click event of the loadButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void loadButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
             openFile.Filter = "Civilization Xml (*.cxml)|*.cxml";
@@ -267,6 +338,10 @@ namespace Civilization
             }
         }
 
+        /// <summary>
+        /// Loads the civilizations from a file.
+        /// </summary>
+        /// <param name="path">The path of the file.</param>
         private void LoadCivilizations(string path)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(civilizations.GetType());
@@ -275,6 +350,134 @@ namespace Civilization
             {
                 civilizations = (ObservableCollection<Civilization.ClockWork.Civilization>)xmlSerializer.Deserialize(streamReader);
             }
+
+            civilizationComboBox.ItemsSource = civilizations;
+            civilizationListBox.ItemsSource = civilizations;
+        }
+
+        /// <summary>
+        /// Handles the Selected event of the departDirectorListBoxItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void departDirectorListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            if (civilizationListBox.SelectedItem != null)
+            {
+                SelectedUnit = ((Civilization.ClockWork.Civilization)civilizationListBox.SelectedItem).Factory.DepartDirectorPrototype;
+                this.maxPoints = 10;
+                UpdateRemainingPoints();
+            }
+        }
+
+        /// <summary>
+        /// Handles the Selected event of the teacherListBoxItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void teacherListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            if (civilizationListBox.SelectedItem != null)
+            {
+                SelectedUnit = ((Civilization.ClockWork.Civilization)civilizationListBox.SelectedItem).Factory.TeacherPrototype;
+                this.maxPoints = 5;
+                UpdateRemainingPoints();
+            }
+        }
+
+        /// <summary>
+        /// Handles the Selected event of the studentListBoxItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void studentListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            if (civilizationListBox.SelectedItem != null)
+            {
+                SelectedUnit = ((Civilization.ClockWork.Civilization)civilizationListBox.SelectedItem).Factory.StudentPrototype;
+                this.maxPoints = 18;
+                UpdateRemainingPoints();
+            }
+        }
+
+        /// <summary>
+        /// Handles the SelectionChanged event of the civilizationListBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs" /> instance containing the event data.</param>
+        private void civilizationListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            unitListBox.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Called when [remaining point changed].
+        /// </summary>
+        /// <param name="d">The UserControl d.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs" /> instance containing the event data.</param>
+        private static void OnRemainingPointChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            CreateGameWindow window = (CreateGameWindow)d;
+            window.UpdateSliders();            
+        }
+
+        /// <summary>
+        /// Updates the remaining points.
+        /// </summary>
+        private void UpdateRemainingPoints()
+        {
+            this.SetValue(RemainingPointsProperty, maxPoints - (attackSlider.Value + defenceSlider.Value + hpSlider.Value + movementSlider.Value));
+        }
+
+        /// <summary>
+        /// Updates the sliders.
+        /// </summary>
+        private void UpdateSliders()
+        {
+            this.SetValue(AttackMaxPointProperty, attackSlider.Value + (double)this.GetValue(RemainingPointsProperty));
+            this.SetValue(DefenceMaxPointProperty, defenceSlider.Value + (double)this.GetValue(RemainingPointsProperty));
+            this.SetValue(HpMaxPointProperty, hpSlider.Value + (double)this.GetValue(RemainingPointsProperty));
+            this.SetValue(MovementMaxPointProperty, movementSlider.Value + (double)this.GetValue(RemainingPointsProperty));
+        }
+
+        /// <summary>
+        /// Defences the slider_ value changed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void defenceSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateRemainingPoints();
+        }
+
+        /// <summary>
+        /// Hps the slider_ value changed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void hpSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateRemainingPoints();
+        }
+
+        /// <summary>
+        /// Movements the slider_ value changed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void movementSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateRemainingPoints();
+        }
+
+        /// <summary>
+        /// Attacks the slider_ value changed.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
+        private void attackSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            UpdateRemainingPoints();
         }
         #endregion
         #endregion

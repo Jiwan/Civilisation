@@ -75,7 +75,17 @@ namespace Civilization.Player
             }
         }
 
-        public string Name { get; set; }
+        public string Name 
+        { 
+            get; 
+            set; 
+        }
+
+        public Civilization.ClockWork.Civilization PlayedCivilization
+        {
+            get;
+            set;
+        }
 
         public System.Windows.Media.Color Color { get; set; }
         #endregion

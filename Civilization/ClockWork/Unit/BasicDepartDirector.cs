@@ -1,6 +1,8 @@
-﻿
+﻿using System;
+
 namespace Civilization.ClockWork.Unit
 {
+   [Serializable()]
     public class BasicDepartDirector : Unit, IDepartDirector
     {
         #region fields

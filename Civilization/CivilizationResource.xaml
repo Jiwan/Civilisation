@@ -62,7 +62,7 @@
             </Grid>
             <StackPanel Grid.Column="1" HorizontalAlignment="Center">
                 <Label Content="{Binding Path=Name}"/>
-                <Label>Test</Label>
+                <Label Content="{Binding Path=PlayedCivilization.Name}"/>
             </StackPanel>
             <Button Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}">
                 <Button.Template>
@@ -101,7 +101,7 @@
                 </Grid>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center">
                     <Label Content="{Binding Path=Name}"/>
-                    <Label>Test</Label>
+                    <Label Content="{Binding Path=PlayedCivilization.Name}"/>
                 </StackPanel>
                 <Button Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}">
                     <!-- Eventuellement rajouter un visual stateManager pour gérer les transitions de pressed et not pressed -->

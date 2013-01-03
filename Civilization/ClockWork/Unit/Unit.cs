@@ -37,9 +37,16 @@ namespace Civilization.ClockWork.Unit
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets or sets the attack.
+        /// </summary>
+        /// <value>
+        /// The attack.
+        /// </value>
         public int Attack
         {
             get { return attack; }
+            set { attack = value; }
         }
 
         public int Cost
@@ -50,6 +57,7 @@ namespace Civilization.ClockWork.Unit
         public int Defense
         {
             get { return defense; }
+            set { defense = value; }
         }
 
         public int HP
@@ -67,6 +75,7 @@ namespace Civilization.ClockWork.Unit
         public int Movement
         {
             get { return movement; }
+            set { movement = value; }
         }
 
         public System.Drawing.Point Position

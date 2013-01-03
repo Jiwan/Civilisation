@@ -9,6 +9,7 @@ namespace Civilization.ClockWork.Unit
         int Attack
         {
             get;
+            set;
         }
 
         int Cost
@@ -19,6 +20,7 @@ namespace Civilization.ClockWork.Unit
         int Defense
         {
             get;
+            set;
         }
 
         int HP
@@ -30,6 +32,7 @@ namespace Civilization.ClockWork.Unit
         int Movement
         {
             get;
+            set;
         }
 
         Point Position

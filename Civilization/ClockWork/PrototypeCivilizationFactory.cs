@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Drawing;
+using System.Xml.Serialization;
 using Civilization.ClockWork.City;
 using Civilization.ClockWork.Unit;
-using System.Drawing;
+using Civilization.Utils.Serialization;
 
 namespace Civilization.ClockWork
 {
@@ -14,20 +16,6 @@ namespace Civilization.ClockWork
         /// </summary>
         private ICity protoCity;
 
-        /// <summary>
-        /// The proto depart director
-        /// </summary>
-        private IDepartDirector protoDepartDirector;
-
-        /// <summary>
-        /// The proto student
-        /// </summary>
-        private IStudent protoStudent;
-
-        /// <summary>
-        /// The proto teacher
-        /// </summary>
-        private ITeacher protoTeacher;
         #endregion
 
         #region properties
@@ -37,11 +25,17 @@ namespace Civilization.ClockWork
         /// <value>
         /// The depart director prototype.
         /// </value>
+        [XmlIgnore()]
         public IDepartDirector DepartDirectorPrototype
         {
             get
             {
-                return protoDepartDirector;
+                return XmlDepartDirectorPrototype.Value;
+            }
+
+            set
+            {
+                XmlDepartDirectorPrototype.Value = value;
             }
         }
 
@@ -51,11 +45,17 @@ namespace Civilization.ClockWork
         /// <value>
         /// The student prototype.
         /// </value>
+        [XmlIgnore()]
         public IStudent StudentPrototype
         {
             get
             {
-                return protoStudent;
+                return XmlStudentPrototype.Value;
+            }
+
+            set
+            {
+                XmlStudentPrototype.Value = value;
             }
         }
 
@@ -65,13 +65,36 @@ namespace Civilization.ClockWork
         /// <value>
         /// The teacher prototype.
         /// </value>
+        [XmlIgnore()]
         public ITeacher TeacherPrototype
         {
             get
             {
-                return protoTeacher;
+                return XmlTeacherPrototype.Value;
+            }
+
+            set
+            {
+                XmlTeacherPrototype.Value = value;
             }
         }
+
+
+        /// <summary>
+        /// The XML teacher prototype (is only use for internal purpose).
+        /// </summary>
+        public XmlAnything<IDepartDirector> XmlDepartDirectorPrototype;
+        
+        /// <summary>
+        /// The XML teacher prototype (is only use for internal purpose.
+        /// </summary>
+        public XmlAnything<IStudent> XmlStudentPrototype;
+
+        /// <summary>
+        /// The XML teacher prototype (is only use for internal purpose).
+        /// </summary>
+        public XmlAnything<ITeacher> XmlTeacherPrototype;
+
         #endregion
 
         #region constructor
@@ -89,21 +112,22 @@ namespace Civilization.ClockWork
             ITeacher protoTeacher)
         {
             this.protoCity = protoCity;
-            this.protoDepartDirector = protoDepartDirector;
-            this.protoStudent = protoStudent;
-            this.protoTeacher = protoTeacher;
+            XmlDepartDirectorPrototype = new XmlAnything<IDepartDirector>(protoDepartDirector);
+            XmlStudentPrototype = new XmlAnything<IStudent>(protoStudent);
+            XmlTeacherPrototype = new XmlAnything<ITeacher>(protoTeacher);
         }
 
         public PrototypeCivilizationFactory()
         {
             this.protoCity = new BasicCity(new Point(0, 0));
-            this.protoDepartDirector = new BasicDepartDirector();
-            this.protoStudent = new BasicStudent(0, 0, 0, 0, 0);
-            this.protoTeacher = new BasicTeacher(0, 0, 0, 0, 0);
+            XmlDepartDirectorPrototype = new XmlAnything<IDepartDirector>(new BasicDepartDirector());
+            XmlStudentPrototype = new XmlAnything<IStudent>(new BasicStudent(0, 0, 0, 0, 0));
+            XmlTeacherPrototype = new XmlAnything<ITeacher>(new BasicTeacher(0, 0, 0, 0, 0));
         }
         #endregion
 
         #region methods
+        #region publics
         /// <summary>
         /// Creates the city.
         /// </summary>
@@ -119,7 +143,7 @@ namespace Civilization.ClockWork
         /// <returns></returns>
         public IDepartDirector CreateDepartDirector()
         {
-            return (IDepartDirector)protoDepartDirector.Clone();
+            return (IDepartDirector)XmlDepartDirectorPrototype.Value.Clone();
         }
 
         /// <summary>
@@ -128,7 +152,7 @@ namespace Civilization.ClockWork
         /// <returns></returns>
         public IStudent CreateStudent()
         {
-            return (IStudent)protoStudent.Clone();
+            return (IStudent)XmlStudentPrototype.Value.Clone();
         }
 
         /// <summary>
@@ -137,8 +161,13 @@ namespace Civilization.ClockWork
         /// <returns></returns>
         public ITeacher CreateTeacher()
         {
-            return (ITeacher)protoTeacher.Clone();
+            return (ITeacher)XmlTeacherPrototype.Value.Clone();
         }
+        #endregion
+
+        #region privates
+       
+        #endregion
         #endregion
     }
 }
