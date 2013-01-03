@@ -26,11 +26,13 @@ namespace Civilization.ClockWork.City
        #endregion
 
        #region methods
-       bool AddCitizen();
+       void AddCitizen();
 
-       void CollectRessouces();
+       void CollectOre();
 
-       void CreateUnit(IUnit unit);
+       void CollectFood();
+
+       Unit.Unit CreateUnit(UnitType type);
 
        void Extend();
        #endregion
