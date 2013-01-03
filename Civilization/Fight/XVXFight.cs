@@ -10,12 +10,30 @@ namespace Civilization.Fight
     class XVXFight : IFight
     {
         #region fields
+        /// <summary>
+        /// The attackers
+        /// </summary>
         private List<IUnit> attackers;
+        /// <summary>
+        /// The defenders
+        /// </summary>
         private List<IUnit> defenders;
+        /// <summary>
+        /// The winner
+        /// </summary>
         private Winner winner;
+        /// <summary>
+        /// The support
+        /// </summary>
         private Support support;
         #endregion
 
+        #region constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XVXFight" /> class.
+        /// </summary>
+        /// <param name="initialAttacker">The initial attacker.</param>
+        /// <param name="initialDefender">The initial defender.</param>
         public XVXFight(IUnit initialAttacker, IUnit initialDefender)
         {
             attackers = new List<IUnit>();
@@ -24,17 +42,30 @@ namespace Civilization.Fight
             defenders.Add(initialDefender);
             winner = Winner.W_NONE;
         }
+        #endregion
 
+        #region methods
+        /// <summary>
+        /// Adds an attacker.
+        /// </summary>
+        /// <param name="attacker">The attacker.</param>
         public void addAttacker(IUnit attacker)
         {
             attackers.Add(attacker);
         }
 
+        /// <summary>
+        /// Adds a defender.
+        /// </summary>
+        /// <param name="defender">The defender.</param>
         public void addDefender(IUnit defender)
         {
             defenders.Add(defender);
         }
 
+        /// <summary>
+        /// Adds support to attack.
+        /// </summary>
         public void AddSupportToAttack()
         {
             switch (support)
@@ -51,6 +82,9 @@ namespace Civilization.Fight
             }
         }
 
+        /// <summary>
+        /// Adds support to defence.
+        /// </summary>
         public void AddSupportToDefence()
         {
             switch (support)
@@ -67,7 +101,9 @@ namespace Civilization.Fight
             }
         }
 
-
+        /// <summary>
+        /// Starts the fight.
+        /// </summary>
         public void StartFight()
         {   
             // nombre de combats : choisi aléatoirement à l’engagement
@@ -145,16 +181,27 @@ namespace Civilization.Fight
                 }
             }
         }
-        
 
-        public static bool TeamDefeated(List<IUnit> team)
+        /// <summary>
+        /// Determines whether [is team defeated] [the specified team].
+        /// </summary>
+        /// <param name="team">The team.</param>
+        /// <returns>
+        ///   <c>true</c> if [is team defeated] [the specified team]; otherwise, <c>false</c>.
+        /// </returns>
+        public static bool IsTeamDefeated(List<IUnit> team)
         {
             return team.TrueForAll(unit => unit.IsDead);
         }
-        
+
+        /// <summary>
+        /// Gets the winner.
+        /// </summary>
+        /// <returns></returns>
         public Winner GetWinner()
         {
             return winner;
         }
+        #endregion
     }
 }

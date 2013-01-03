@@ -26,14 +26,30 @@ namespace Civilization.Fight
     public class _1V1Fight : IFight
     {
         #region fields
+        /// <summary>
+        /// The attacker
+        /// </summary>
         private IUnit attacker;
+        /// <summary>
+        /// The defender
+        /// </summary>
         private IUnit defender;
+        /// <summary>
+        /// The support
+        /// </summary>
         private Support support;
+        /// <summary>
+        /// The winner
+        /// </summary>
         private Winner winner;
         #endregion
 
-        #region methods
-
+        #region constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="_1V1Fight" /> class.
+        /// </summary>
+        /// <param name="att">The attacker.</param>
+        /// <param name="def">The defender.</param>
         public _1V1Fight(IUnit att, IUnit def)
         {
             if (att.Attack != 0)
@@ -47,12 +63,17 @@ namespace Civilization.Fight
             defender = def;
             winner = Winner.W_NONE;
         }
+        #endregion
 
+        #region methods
         private System.Exception AttackException(string p)
         {
             throw new Exception(p);
         }
 
+        /// <summary>
+        /// Adds the support to attack.
+        /// </summary>
         public void AddSupportToAttack()
         {
             switch (support)
@@ -69,6 +90,9 @@ namespace Civilization.Fight
             }
         }
 
+        /// <summary>
+        /// Adds the support to defence.
+        /// </summary>
         public void AddSupportToDefence()
         {
             switch (support)
@@ -85,6 +109,9 @@ namespace Civilization.Fight
             }
         }
 
+        /// <summary>
+        /// Starts the fight.
+        /// </summary>
         public void StartFight()
         {
             // nombre de combats : choisi aléatoirement à l’engagement
@@ -137,6 +164,10 @@ namespace Civilization.Fight
             }
         }
 
+        /// <summary>
+        /// Gets the winner.
+        /// </summary>
+        /// <returns></returns>
         public Winner GetWinner()
         {
             return winner;
