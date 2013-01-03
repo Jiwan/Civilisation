@@ -115,6 +115,13 @@ namespace Civilization.ClockWork.Unit
             throw new NotImplementedException();
         }
         #endregion
+
+        /*
+        public bool estmort()
+        {
+            return HP == 0;
+        }
+         */
     }
     #endregion
 }

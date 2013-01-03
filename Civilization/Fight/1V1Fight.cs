@@ -142,7 +142,5 @@ namespace Civilization.Fight
             return winner;
         }
         #endregion
-
-        public bool supp { get; set; }
     }
 }
