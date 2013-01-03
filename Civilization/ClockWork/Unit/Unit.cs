@@ -116,12 +116,6 @@ namespace Civilization.ClockWork.Unit
         }
         #endregion
 
-        /*
-        public bool estmort()
-        {
-            return HP == 0;
-        }
-         */
     }
     #endregion
 }
