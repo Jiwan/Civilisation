@@ -9,7 +9,9 @@
     <BitmapImage x:Key="HumanIcon" UriSource="Images/user.png"/>
     <BitmapImage x:Key="PinAdd" UriSource="Images/add.png"/>
     <BitmapImage x:Key="PinRemove" UriSource="Images/remove.png"/>
-
+    <BitmapImage x:Key="OpenIcon" UriSource="Images/open.png"/>
+    <BitmapImage x:Key="SaveIcon" UriSource="Images/save.png"/>
+    
     <!--Mountain DataTemplate (brown tile)-->
     <DataTemplate x:Key="MountainDataTemplate">
         <TextBlock Text="Mountain"/>
