@@ -2,7 +2,7 @@
 
 namespace Civilization.World.Square
 {
-    class Mountain : Square
+    public class Mountain : Square
     {
         #region fields
         private static readonly Uri tileUri = new Uri(@"pack://application:,,,/Images/mountain.png", UriKind.Absolute);

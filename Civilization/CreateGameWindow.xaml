@@ -226,11 +226,14 @@
                                         <Setter Property="Margin" Value="5"></Setter>
                                     </Style>
                                 </StackPanel.Resources>                               
-                                <Button VerticalAlignment="Center">Load</Button>
-                                <Button VerticalAlignment="Center">Save</Button>
+                                <Button VerticalAlignment="Center" x:Name="loadMapButton" Click="loadMapButton_Click">Load</Button>
+                                <Button VerticalAlignment="Center" Click="saveMapButton_Click" x:Name="saveMapButton">Save</Button>
                             </StackPanel>
                             <Label Grid.Row="0" Grid.Column="1">Taille :</Label>
-                            <ComboBox Grid.Row="0" Grid.Column="1" Height="23" Name="sizeComboBox" Width="120"/>
+                            <ComboBox Grid.Row="0" Grid.Column="1" Height="23" Name="sizeComboBox" Width="120">
+                                <ComboBoxItem Content="Petite" IsSelected="True" />
+                                <ComboBoxItem Content="Grande" />
+                            </ComboBox>
 
                             <Label Grid.Row="1">Eau :</Label>
                             <Slider Grid.Column="1" Grid.Row="1" Name="waterSlider"/>

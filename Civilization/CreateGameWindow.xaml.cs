@@ -244,7 +244,14 @@ namespace Civilization
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-            mapViewer.Map = MediumMap.Instance.CreateMap(null);
+            if (((ComboBoxItem)sizeComboBox.SelectedValue).Content.Equals("Petite"))
+            {
+                mapViewer.Map = SmallMap.Instance.CreateMap(null);
+            }
+            else
+            {
+                mapViewer.Map = MediumMap.Instance.CreateMap(null);
+            }
         }
 
         /// <summary>
@@ -309,7 +316,7 @@ namespace Civilization
 
             var result = saveFile.ShowDialog();
 
-            if (result != null)
+            if (result != null && result == true)
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(civilizations.GetType());
 
@@ -332,7 +339,7 @@ namespace Civilization
 
             var result = openFile.ShowDialog();
 
-            if (result != null)
+            if (result != null && result == true)
             {
                 LoadCivilizations(openFile.FileName);
             }
@@ -478,6 +485,50 @@ namespace Civilization
         private void attackSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             UpdateRemainingPoints();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the saveMapButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void saveMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (mapViewer.Map == null)
+                return;
+
+            Microsoft.Win32.SaveFileDialog saveFile = new Microsoft.Win32.SaveFileDialog();
+            saveFile.Filter = "Map Xml (*.mxml)|*.mxml";
+
+            var result = saveFile.ShowDialog();
+
+            if (result != null && result == true)
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(mapViewer.Map.GetType());
+
+                using (StreamWriter streamWriter = System.IO.File.CreateText(saveFile.FileName))
+                {
+                    xmlSerializer.Serialize(streamWriter, mapViewer.Map);
+                }
+            }
+        }
+
+        private void loadMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
+            openFile.Filter = "Map Xml (*.mxml)|*.mxml";
+
+            var result = openFile.ShowDialog();
+
+            if (result != null && result == true)
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Map));
+
+                using (StreamReader streamReader = System.IO.File.OpenText(openFile.FileName))
+                {
+                    mapViewer.Map = (Map)xmlSerializer.Deserialize(streamReader);
+                }
+            }
         }
         #endregion
         #endregion
