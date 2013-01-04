@@ -26,10 +26,10 @@ namespace Civilization.ClockWork.City
         private Player.IPlayer player;
 
         private int population;
+        private uint ore;
         private uint food;
         // neededFood represents the food that was needed last time to have a population increase.
         private double neededFood;
-        private uint ore;
         
         #endregion
 
@@ -50,7 +50,7 @@ namespace Civilization.ClockWork.City
             }
         }
 
-        public Point Position
+        public Point ICity.Position
         {
             get
             {
@@ -90,44 +90,14 @@ namespace Civilization.ClockWork.City
             this.map = map;
             position = location;
             this.player = player;
+            population = 1;
+            ore = 0;
+            food = 0;
             
             controlledCases = new List<Point>();
+            controlledCases.Add(position);
             inDoorsUnits = new List<IUnit>();
 
-            /*
-             * A placer autre part
-             
-            Point HG = new Point(position.X, position.Y);
-            Point BD = new Point(position.X, position.Y);
-
-
-            for (int i = 0; i < 5; i++)
-            {
-                if (HG.X > 0)
-                {
-                    HG.X--;
-                }
-
-                if (HG.Y > 0)
-                {
-                    HG.Y--;
-                }
-
-                if (BD.X < map.Size.X)
-                {
-                    BD.X++;
-                }
-
-                if (BD.Y < map.Size.Y)
-                {
-                    BD.Y++;
-                }
-            }
-
-            controlledCases.Add(HG);
-            controlledCases.Add(BD);
-
-            */
         }
         #endregion
 
@@ -148,7 +118,7 @@ namespace Civilization.ClockWork.City
             }
         }
 
-        public Unit.IUnit CreateUnit(UnitType type)
+        public Unit.IUnit ICity.CreateUnit(UnitType type)
         {
             switch (type)
             {
@@ -171,36 +141,76 @@ namespace Civilization.ClockWork.City
 
         public void Extend()
         {
+            if (controlledCases.Count >= 25)
+            {
+                Console.WriteLine("The city has reached its maximum capacity. It can no longer be extended.");
+                return;
+            }
+
             // Etendre à la case ayant le plus de minerai (i.e une case de desert)
             Point HG = new Point (position.X, position.Y);
             Point BD = new Point (position.X, position.Y);
-            if (position.X - 1 > 0)
-                HG.X--;
-            if (position.Y - 1 > 0)
-                HG.Y--;
-            if (position.X + 1 < map.Size.X)
-                BD.X++;
-            if (position.Y + 1 < map.Size.Y)
-                BD.Y++;
-
-            Point pointIdealExtension = new Point();
-            bool found = false;
-            while (!found)
+            
+            int portee = 0;
+            // premier carré (3x3)
+            if (controlledCases.Count < 9)
             {
-                for (int i = HG.X; i < BD.X; i++)
+                portee = 1;
+            }
+            // deuxième carré (4x4)
+            else if (controlledCases.Count < 16)
+            {
+                portee = 2;
+            }
+            // troisième carré (5x5)
+            else if (controlledCases.Count < 25)
+            {
+                portee = 3;
+            }
+
+            if (position.X - portee > 0)
+                HG.X -= portee;
+            if (position.Y - portee > 0)
+                HG.Y -= portee;
+            if (position.X + portee < map.Size.X)
+                BD.X += portee;
+            if (position.Y + portee < map.Size.Y)
+                BD.Y += portee;
+
+            // Trouver le point idéal
+            List<Point> listCases = new List<Point>();
+            
+            for (int i = HG.X; i < BD.X; i++)
+            {
+                for (int j = HG.X; i < BD.Y; j++)
                 {
-                    for (int j = HG.X; i < BD.Y; j++)
-                    {
-                        /*
-                         * if (map.SquareMatrix[i, j].Tile == "desert" && !controlledCases.Contains(new Point(i, j)))
-                         * {
-                         *      pointIdealExtension.X = i;
-                         *      pointIdealExtension.Y = j;
-                         *      found = true;
-                         * }
-                         */
-                    }
+                    listCases.Add(new Point(i, j));
                 }
+            }
+
+            if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert && !controlledCases.Contains(point)))
+            {
+                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert);
+                controlledCases.Add(toBeAdded);
+                return;
+            }
+            else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field && !controlledCases.Contains(point)))
+            {
+                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field);
+                controlledCases.Add(toBeAdded);
+                return;
+            }
+            else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain && !controlledCases.Contains(point)))
+            {
+                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain);
+                controlledCases.Add(toBeAdded);
+                return;
+            }
+            else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water && !controlledCases.Contains(point)))
+            {
+                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water);
+                controlledCases.Add(toBeAdded);
+                return;
             }
          }
 
@@ -211,7 +221,8 @@ namespace Civilization.ClockWork.City
 
         public void NextTurn()
         {
-
+            // remet le compteur de food à 0
+            food = 0;
         }
 
         public void CollectOre()
@@ -224,24 +235,5 @@ namespace Civilization.ClockWork.City
             controlledCases.ForEach(point => food += map.SquareMatrix[point.X, point.Y].AvailableFood);
         }
         #endregion
-
-
-        Point ICity.Position
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-                throw new System.NotImplementedException();
-            }
-        }
-
-
-        Unit.Unit ICity.CreateUnit(UnitType type)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
