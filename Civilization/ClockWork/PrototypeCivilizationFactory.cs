@@ -119,10 +119,10 @@ namespace Civilization.ClockWork
 
         public PrototypeCivilizationFactory()
         {
-            this.protoCity = new BasicCity(new Point(0, 0));
+            this.protoCity = new BasicCity(new Point(0, 0), null);
             XmlDepartDirectorPrototype = new XmlAnything<IDepartDirector>(new BasicDepartDirector());
-            XmlStudentPrototype = new XmlAnything<IStudent>(new BasicStudent(0, 0, 0, 0, 0));
-            XmlTeacherPrototype = new XmlAnything<ITeacher>(new BasicTeacher(0, 0, 0, 0, 0));
+            XmlStudentPrototype = new XmlAnything<IStudent>(new BasicStudent(0, 0, 0, 0));
+            XmlTeacherPrototype = new XmlAnything<ITeacher>(new BasicTeacher(0, 0, 0, 0));
         }
         #endregion
 

@@ -188,7 +188,7 @@
                                 <Label Grid.Row="6" Grid.Column="1" Content="{Binding RemainingPoints, ElementName=_this}" Grid.ColumnSpan="2" />
 
                                 <Label Grid.Row="7">Prix : </Label>
-                                <Label Grid.Row="7" Grid.Column="1" Content="{Binding SelectedUnit.Price, ElementName=_this}" />
+                                <Label Grid.Row="7" Grid.Column="1" Content="{Binding SelectedUnit.Cost, ElementName=_this}" />
                             </Grid>
                         </GroupBox>
                     </Grid>

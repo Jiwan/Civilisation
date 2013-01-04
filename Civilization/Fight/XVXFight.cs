@@ -117,7 +117,7 @@ namespace Civilization.Fight
 
             for (int i = 0; i < nbCombats; i++)
             {
-                if (!TeamDefeated(defenders) && !TeamDefeated(attackers))
+                if (!IsTeamDefeated(defenders) && !IsTeamDefeated(attackers))
                 {
                     double realAttack = 0, realDefence = 0;
                     attackers.ForEach(attacker => realAttack += (attacker.Attack * attacker.HP));
@@ -169,7 +169,7 @@ namespace Civilization.Fight
                         defenders[rnd.Next(0, defenders.Count)].HP--;
                     }
                 }
-                else if (!TeamDefeated(attackers))
+                else if (!IsTeamDefeated(attackers))
                 {
                     winner = Winner.W_DEFENDER;
                     return;

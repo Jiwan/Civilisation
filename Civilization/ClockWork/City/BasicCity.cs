@@ -61,7 +61,8 @@ namespace Civilization.ClockWork.City
         {
             get
             {
-                return age;
+                return 0;
+                // return age;
             }
         }
 
@@ -155,11 +156,11 @@ namespace Civilization.ClockWork.City
                     break;
                 case UnitType.U_STUDENT:
                     //if assez de ressources
-                    return new BasicStudent(0, 0, 0, 0, 0);
+                    return new BasicStudent(0, 0, 0, 0);
                     break;
                 case UnitType.U_TEACHER:
                     //if assez de ressources
-                    return new BasicTeacher(0, 0, 0, 0, 0);
+                    return new BasicTeacher(0, 0, 0, 0);
                     break;
                 default:
                     throw new Exception("Cannot create the unit");

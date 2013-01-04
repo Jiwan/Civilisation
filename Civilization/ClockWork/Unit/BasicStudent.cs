@@ -6,22 +6,53 @@ namespace Civilization.ClockWork.Unit
     public class BasicStudent : Unit, IStudent
     {
         #region constructors
-        public BasicStudent() : base(4, 2, 100, 10, 2) 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicStudent" /> class.
+        /// </summary>
+        public BasicStudent() : base(4, 2, 10, 2) 
         {
 
         }
 
-        public BasicStudent(int attack, int defence, int cost, int hp, int movement) 
-            : base(attack, defence, cost, hp, movement)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicStudent" /> class.
+        /// </summary>
+        /// <param name="attack">The attack.</param>
+        /// <param name="defence">The defence.</param>
+        /// <param name="hp">The hp.</param>
+        /// <param name="movement">The movement.</param>
+        public BasicStudent(int attack, int defence, int hp, int movement) 
+            : base(attack, defence, hp, movement)
         {
 
         }
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets a value indicating whether this student can attack.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this student can attack; otherwise, <c>false</c>.
+        /// </value>
+        /// <exception cref="System.NotImplementedException"></exception>
         public bool CanAttack
         {
             get { throw new System.NotImplementedException(); }
+        }
+
+        /// <summary>
+        /// Gets the cost.
+        /// </summary>
+        /// <value>
+        /// The cost.
+        /// </value>
+        public override int Cost
+        {
+            get
+            {
+                return 8 * (Attack + Defense + Movement + HP);
+            }
         }
         #endregion
 
