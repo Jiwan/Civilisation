@@ -67,6 +67,31 @@ namespace Civilization.Player
         }
         
         public System.Windows.Media.Color Color { get; set; }
+
+
+        public int AvailableFood
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+                throw new System.NotImplementedException();
+            }
+        }
+
+        public int AvailableOre
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+                throw new System.NotImplementedException();
+            }
+        }
         #endregion
 
         #region constructor
@@ -164,5 +189,7 @@ namespace Civilization.Player
         }
 
         #endregion
+
+
     }
 }

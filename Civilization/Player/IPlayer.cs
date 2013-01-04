@@ -13,18 +13,14 @@ namespace Civilization.Player
         #region properties
 
         IList<ICity> Cities { get; }
-
         IList<IUnit> Units { get; }
-
+        Game.Game Game { get; set; }
         string Name { get; set; }
-
+        Civilization.ClockWork.Civilization PlayedCivilization { get; set; }
         System.Windows.Media.Color Color { get; set; }
+        int AvailableFood { get; set; }
+        int AvailableOre { get; set; }
 
-        Civilization.ClockWork.Civilization PlayedCivilization
-        {
-            get;
-            set;
-        }
         #endregion
 
 

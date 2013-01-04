@@ -23,6 +23,7 @@ namespace Civilization.ClockWork.City
         private List<IUnit> inDoorsUnits;
         private Point position;
         private Map map;
+        private Player.IPlayer player;
 
         private int population;
         private uint food;
@@ -84,10 +85,11 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region constructors
-        public BasicCity(Point location, Map map)
+        public BasicCity(Point location, Map map, Player.IPlayer player)
         {
             this.map = map;
             position = location;
+            this.player = player;
             
             controlledCases = new List<Point>();
             inDoorsUnits = new List<IUnit>();
@@ -146,31 +148,61 @@ namespace Civilization.ClockWork.City
             }
         }
 
-        public Unit.Unit CreateUnit(UnitType type)
+        public Unit.IUnit CreateUnit(UnitType type)
         {
             switch (type)
             {
                 case UnitType.U_DIRECTOR:
-                    //if assez de ressources
-                    return new BasicDepartDirector();
-                    break;
+                    if (player.AvailableOre >= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost)
+                        player.AvailableOre -= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
+                        return player.PlayedCivilization.Factory.CreateDepartDirector();
                 case UnitType.U_STUDENT:
-                    //if assez de ressources
-                    return new BasicStudent(0, 0, 0, 0);
-                    break;
+                    if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
+                        player.AvailableOre -= player.PlayedCivilization.Factory.StudentPrototype.Cost;
+                        return player.PlayedCivilization.Factory.CreateStudent();
                 case UnitType.U_TEACHER:
-                    //if assez de ressources
-                    return new BasicTeacher(0, 0, 0, 0);
-                    break;
+                    if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
+                        player.AvailableOre -= player.PlayedCivilization.Factory.TeacherPrototype.Cost;
+                        return player.PlayedCivilization.Factory.CreateTeacher();
                 default:
-                    throw new Exception("Cannot create the unit");
+                    throw new Exception("Cannot create the unit, not enough resources.");
             }
         }
 
         public void Extend()
         {
-            throw new System.NotImplementedException();
-        }
+            // Etendre à la case ayant le plus de minerai (i.e une case de desert)
+            Point HG = new Point (position.X, position.Y);
+            Point BD = new Point (position.X, position.Y);
+            if (position.X - 1 > 0)
+                HG.X--;
+            if (position.Y - 1 > 0)
+                HG.Y--;
+            if (position.X + 1 < map.Size.X)
+                BD.X++;
+            if (position.Y + 1 < map.Size.Y)
+                BD.Y++;
+
+            Point pointIdealExtension = new Point();
+            bool found = false;
+            while (!found)
+            {
+                for (int i = HG.X; i < BD.X; i++)
+                {
+                    for (int j = HG.X; i < BD.Y; j++)
+                    {
+                        /*
+                         * if (map.SquareMatrix[i, j].Tile == "desert" && !controlledCases.Contains(new Point(i, j)))
+                         * {
+                         *      pointIdealExtension.X = i;
+                         *      pointIdealExtension.Y = j;
+                         *      found = true;
+                         * }
+                         */
+                    }
+                }
+            }
+         }
 
         public object Clone()
         {
@@ -204,6 +236,12 @@ namespace Civilization.ClockWork.City
             {
                 throw new System.NotImplementedException();
             }
+        }
+
+
+        Unit.Unit ICity.CreateUnit(UnitType type)
+        {
+            throw new NotImplementedException();
         }
     }
 }
