@@ -21,6 +21,8 @@ using Civilization.ClockWork.Unit;
 using System.Xml.Serialization;
 using System.IO;
 
+using CivilizationAlgorithms;
+
 namespace Civilization
 {
     /// <summary>
@@ -244,6 +246,14 @@ namespace Civilization
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
+            double total = waterSlider.Value + fieldSlider.Value + mountainSlider.Value + desertSlider.Value;
+            double waterQuantity = (waterSlider.Value / total) * 100;
+            double desertQuantity = waterQuantity + ((desertSlider.Value / total) * 100);
+            double fieldQuantity = desertQuantity + ((fieldSlider.Value / total) * 100);
+            // Moutain is the rest.
+
+            PerlinNoise.UpdateQuantities(waterQuantity, desertQuantity, fieldQuantity);
+
             if (((ComboBoxItem)sizeComboBox.SelectedValue).Content.Equals("Petite"))
             {
                 mapViewer.Map = SmallMap.Instance.CreateMap(null);
@@ -513,6 +523,11 @@ namespace Civilization
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the loadMapButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void loadMapButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
@@ -529,6 +544,38 @@ namespace Civilization
                     mapViewer.Map = (Map)xmlSerializer.Deserialize(streamReader);
                 }
             }
+        }
+
+        private void startButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (players.Count < 2)
+            {
+                MessageBox.Show("Une partie nécéssite au moins la présence de 2 joueurs");
+                return;
+            }
+
+            if (mapViewer.Map == null)
+            {
+                MessageBox.Show("Veuillez choisir votre carte avant de pouvoir lancer votre partie");
+                return;
+            }
+
+            foreach (var player in players)
+            {
+                if (player.Color == null)
+                {
+                    MessageBox.Show("Vous devez choisir une couleur pour le joueur " + player.Name);
+                    return;
+                }
+
+                if (player.PlayedCivilization == null)
+                {
+                    MessageBox.Show("Vous devez choisir une civilisation pour le joueur " + player.Name);
+                    return;
+                }
+            }
+
+            DialogResult = true;
         }
         #endregion
         #endregion

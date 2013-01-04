@@ -24,6 +24,7 @@ namespace CivilizationAlgorithms {
 	public ref class PerlinNoise sealed
 	{
 	public:
+		static void UpdateQuantities(double food, double desert, double plain); 
 		static void GenerateHeightMap(double maxHeight, unsigned int width, unsigned int height);
 		static ManagedTileType GetTileType(int x, int y);
 		static ManagedDecoratorType GetDecoratorType(int x, int y);

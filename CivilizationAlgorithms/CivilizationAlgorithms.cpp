@@ -29,3 +29,10 @@ ManagedDecoratorType PerlinNoise::GetDecoratorType(int x, int y)
 {
 	return static_cast<ManagedDecoratorType>(SingletonPerlinNoiseMap::Instance().getDecoratorType(x, y));
 }
+
+void PerlinNoise::UpdateQuantities(double water, double desert, double field)
+{
+	SingletonBasicSquareRandomizer::Instance().setWaterRange(water);
+	SingletonBasicSquareRandomizer::Instance().setDesertRange(desert);
+	SingletonBasicSquareRandomizer::Instance().setFieldRange(field);
+}

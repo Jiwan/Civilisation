@@ -61,8 +61,8 @@ public:
 		m_map = std::unique_ptr<std::pair<TileType, DecoratorType>[]>(new std::pair<TileType, DecoratorType>[width * height]);
 
 		double power = maxHeight;
-		unsigned int stepWidth = m_width;
-		unsigned int stepHeight = m_height;
+		unsigned int stepWidth = m_width / 2;
+		unsigned int stepHeight = m_height / 2;
 
 		std::unique_ptr<double[]> heightMap(new double[m_width * m_height]);
 
