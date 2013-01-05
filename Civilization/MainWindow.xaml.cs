@@ -23,6 +23,9 @@ namespace Civilization
     public partial class MainWindow : Window
     {
         #region fields
+        /// <summary>
+        /// The window
+        /// </summary>
         CreateGameWindow window;
         #endregion
         

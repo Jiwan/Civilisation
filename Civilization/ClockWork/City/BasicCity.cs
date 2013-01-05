@@ -50,11 +50,15 @@ namespace Civilization.ClockWork.City
             }
         }
 
-        public Point ICity.Position
+        public Point Position
         {
             get
             {
                 return position;
+            }
+            set
+            {
+                position = value;
             }
         }
 
@@ -118,22 +122,22 @@ namespace Civilization.ClockWork.City
             }
         }
 
-        public Unit.IUnit ICity.CreateUnit(UnitType type)
+        public Unit.Unit CreateUnit(UnitType type)
         {
             switch (type)
             {
                 case UnitType.U_DIRECTOR:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost)
                         player.AvailableOre -= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
-                        return player.PlayedCivilization.Factory.CreateDepartDirector();
+                        return (Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector();
                 case UnitType.U_STUDENT:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
                         player.AvailableOre -= player.PlayedCivilization.Factory.StudentPrototype.Cost;
-                        return player.PlayedCivilization.Factory.CreateStudent();
+                    return (Unit.Unit)player.PlayedCivilization.Factory.CreateStudent();
                 case UnitType.U_TEACHER:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
                         player.AvailableOre -= player.PlayedCivilization.Factory.TeacherPrototype.Cost;
-                        return player.PlayedCivilization.Factory.CreateTeacher();
+                    return (Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher();
                 default:
                     throw new Exception("Cannot create the unit, not enough resources.");
             }
