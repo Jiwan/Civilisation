@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System;
+using System.Windows.Media.Imaging;
 
 namespace Civilization.World.Square
 {
@@ -31,7 +32,7 @@ namespace Civilization.World.Square
             set { position = value; }
         }
 
-        public abstract Uri Tile { get; }
+        public abstract BitmapImage Tile { get; }
         #endregion
 
         #region constructors

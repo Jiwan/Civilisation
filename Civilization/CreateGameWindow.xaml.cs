@@ -98,6 +98,14 @@ namespace Civilization
                 this.SetValue(SelectedUnitProperty, value);
             }
         }
+
+        public Map CreatedMap
+        {
+            get
+            {
+                return mapViewer.Map;
+            }
+        }
         #endregion
 
         #region constructor

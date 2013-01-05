@@ -22,26 +22,57 @@ namespace Civilization
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region fields
+        CreateGameWindow window;
+        #endregion
+        
+        #region constructors
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow" /> class.
+        /// </summary>
         public MainWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            window = new CreateGameWindow();
         }
+        #endregion
 
+        #region methods
+        /// <summary>
+        /// Handles the Click event of the closeMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void closeMenuItem_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Handles the Click event of the createMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void createMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            CreateGameWindow window = new CreateGameWindow();
-            
+        {            
             var result = window.ShowDialog();
 
             if (result.HasValue && result.Value)
             {
-                //!TODO : Traiter la création de la partie.
+                mapViewer.Map = window.CreatedMap;
             }
         }
+
+        /// <summary>
+        /// Handles the Click event of the aboutMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void aboutMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(@"Ce projet a été crée par J.Guegant et R.Lagrange dans le cadre d'un projet de 4ème à l'Institut National des Sciences Appliquées de Rennes.
+Pour plus d'informations, se référer au manuel utilisateur.");
+        }
+        #endregion
     }
 }

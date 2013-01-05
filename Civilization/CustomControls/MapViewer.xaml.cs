@@ -44,7 +44,7 @@ namespace Civilization.CustomControls
             set
             {
                 map = value;
-                UpdateMapView();
+                this.InvalidateVisual();
             }
         }
         #endregion
@@ -60,44 +60,29 @@ namespace Civilization.CustomControls
         #endregion
 
         #region methods
-        #region private
-        /// <summary>
-        /// Updates the map view.
-        /// </summary>
-        private void UpdateMapView()
+        
+        #region protected
+        protected override void OnRender(DrawingContext drawingContext)
         {
-            mainGrid.Children.Clear();
-            mainGrid.RowDefinitions.Clear();
-            mainGrid.ColumnDefinitions.Clear();
+            base.OnRender(drawingContext);
 
-            for (int i = 0; i < map.Size.X; ++i)
-            {
-                RowDefinition rowdef = new RowDefinition();
-                rowdef.Height = new GridLength(mainGrid.ActualHeight / map.Size.X);
-                mainGrid.RowDefinitions.Add(rowdef);
-            }
-
-            for (int i = 0; i < map.Size.Y; ++i)
-            {
-                ColumnDefinition columndef = new ColumnDefinition();
-                columndef.Width = new GridLength(mainGrid.ActualWidth / map.Size.Y);
-                mainGrid.ColumnDefinitions.Add(columndef);
-            }
+            if (map == null)
+                return;
 
             for (int i = 0; i < map.Size.X; ++i)
             {
                 for (int j = 0; j < map.Size.Y; ++j)
                 {
-                    Image square = new Image();
-                    square.Source = new BitmapImage(map.SquareMatrix[i, j].Tile);
-                    
-                    mainGrid.Children.Add(square);
-                    
-                    Grid.SetRow(square, j);
-                    Grid.SetColumn(square, i);
+                    Point position = new Point(i * (this.ActualWidth / map.Size.X), j * (this.ActualHeight / map.Size.Y));
+                    Size size = new Size(this.ActualWidth / map.Size.X, this.ActualHeight / map.Size.Y);
+
+                    drawingContext.DrawImage(map.SquareMatrix[i, j].Tile, new Rect(position, size));              
                 }
             }
         }
+        #endregion
+
+        #region private
         #endregion
         #endregion
     }

@@ -121,6 +121,7 @@
     <Compile Include="CustomControls\MapViewer.xaml.cs">
       <DependentUpon>MapViewer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Drawing\TileFlyWeight.cs" />
     <Compile Include="Utils\Serialization\XmlAnything.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
@@ -228,6 +229,7 @@
     <Resource Include="Images\open.png" />
     <Resource Include="Images\save.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

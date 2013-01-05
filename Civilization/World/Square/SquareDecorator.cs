@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Media.Imaging;
+
 namespace Civilization.World.Square
 {
     class SquareDecorator : Square
@@ -17,7 +19,7 @@ namespace Civilization.World.Square
         /// <value>
         /// The tile.
         /// </value>
-        public override System.Uri Tile
+        public override BitmapImage Tile
         {
             get { return square.Tile; }
         }
