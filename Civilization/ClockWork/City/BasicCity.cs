@@ -18,19 +18,16 @@ namespace Civilization.ClockWork.City
     public class BasicCity : ICity
     {
         #region fields
-
         private List<Point> controlledCases;
         private List<IUnit> inDoorsUnits;
         private Point position;
         private Map map;
         private Player.IPlayer player;
-
         private int population;
         private uint ore;
         private uint food;
         // neededFood represents the food that was needed last time to have a population increase.
         private double neededFood;
-        
         #endregion
 
         #region properties
@@ -41,7 +38,6 @@ namespace Civilization.ClockWork.City
                 return controlledCases; 
             } 
         }
-
         public IList<IUnit> InDoorsUnits 
         {
             get
@@ -49,37 +45,44 @@ namespace Civilization.ClockWork.City
                 return inDoorsUnits;
             }
         }
-
-        public Point ICity.Position
+        public Point Position
         {
             get
             {
                 return position;
             }
+            set
+            {
+                position = value;
+            }
         }
-
         public int Size 
         {
             get
             {
                 return 0;
-                // return age;
             }
         }
-
-        public int TotalAvailableFood 
+        public uint Food 
         { 
             get 
             { 
-                return 0; 
-            } 
+                return food; 
+            }
+            set
+            {
+                food = value;
+            }
         }
-
-        public int TotalAvailableOre
+        public uint Ore
         {
             get
             {
-                return 0;
+                return ore;
+            }
+            set
+            {
+                ore = value;
             }
         }
         #endregion
@@ -102,7 +105,6 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region methods
-
         public void AddCitizen()
         {
             // il faut respecter la formule suivante : nbResn = nbResn−1 + nbResn−1/2.
@@ -117,8 +119,7 @@ namespace Civilization.ClockWork.City
                 neededFood += neededFood / 2;
             }
         }
-
-        public Unit.IUnit ICity.CreateUnit(UnitType type)
+        public Unit.IUnit CreateUnit(UnitType type)
         {
             switch (type)
             {
@@ -138,7 +139,6 @@ namespace Civilization.ClockWork.City
                     throw new Exception("Cannot create the unit, not enough resources.");
             }
         }
-
         public void Extend()
         {
             if (controlledCases.Count >= 25)
@@ -213,23 +213,21 @@ namespace Civilization.ClockWork.City
                 return;
             }
          }
-
         public object Clone()
         {
             return MemberwiseClone();
         }
-
         public void NextTurn()
         {
             // remet le compteur de food à 0
             food = 0;
+            CollectFood();
+            CollectOre();
         }
-
         public void CollectOre()
         {
             controlledCases.ForEach(point => ore += map.SquareMatrix[point.X, point.Y].AvailableOre);
         }
-
         public void CollectFood()
         {
             controlledCases.ForEach(point => food += map.SquareMatrix[point.X, point.Y].AvailableFood);

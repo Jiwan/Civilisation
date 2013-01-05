@@ -9,31 +9,23 @@ namespace Civilization.ClockWork.City
    {
        #region properties
        IList<Point> ControlledCases { get; }
-
        IList<IUnit> InDoorsUnits { get; }
-
        Point Position
        {
            get;
            set;
        }
-
        int Size { get; }
-
-       int TotalAvailableFood { get; }
-
-       int TotalAvailableOre { get; }
+       int Food { get; }
+       int Ore { get; }
        #endregion
 
        #region methods
        void AddCitizen();
-
        void CollectOre();
-
        void CollectFood();
-
-       Unit.Unit CreateUnit(UnitType type);
-
+       Unit.IUnit CreateUnit(UnitType type);
+       void NextTurn();
        void Extend();
        #endregion
    }
