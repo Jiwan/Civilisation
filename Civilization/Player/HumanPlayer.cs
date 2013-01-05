@@ -25,14 +25,25 @@ namespace Civilization.Player
         /// <summary>
         /// The game
         /// </summary>
-        private Game.Game game; 
+        private Game.Game game;
+
+        private string name;
+
+        private Civilization.ClockWork.Civilization playedCivilization;
+
+        private System.Windows.Media.Color color;
+
+        private int availableFood;
+
+        private int availableOre;
+
         #endregion
 
         #region Constructeur
 
         public HumanPlayer(string name, System.Windows.Media.Color color)
         {
-            Name = name;
+            this.name = name;
             Color = color;
         }
 
@@ -54,6 +65,12 @@ namespace Civilization.Player
             }
         }
 
+        /// <summary>
+        /// Gets the units.
+        /// </summary>
+        /// <value>
+        /// The units.
+        /// </value>
         public IList<IUnit> Units
         {
             get
@@ -62,6 +79,12 @@ namespace Civilization.Player
             }
         }
 
+        /// <summary>
+        /// Gets or sets the game.
+        /// </summary>
+        /// <value>
+        /// The game.
+        /// </value>
         public Game.Game Game
         {
             get
@@ -75,19 +98,84 @@ namespace Civilization.Player
             }
         }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name 
-        { 
-            get; 
-            set; 
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
         }
 
+        /// <summary>
+        /// Gets or sets the played civilization.
+        /// </summary>
+        /// <value>
+        /// The played civilization.
+        /// </value>
         public Civilization.ClockWork.Civilization PlayedCivilization
         {
-            get;
-            set;
+            get
+            {
+                return playedCivilization;
+            }
+            set
+            {
+                playedCivilization = value;
+            }
         }
 
-        public System.Windows.Media.Color Color { get; set; }
+        /// <summary>
+        /// Gets or sets the color.
+        /// </summary>
+        /// <value>
+        /// The color.
+        /// </value>
+        public System.Windows.Media.Color Color
+        {
+            get
+            {
+                return color;
+            }
+            set
+            {
+                color = value;
+            }
+        }
+
+        public int AvailableFood
+        {
+            get
+            {
+                return availableFood;
+            }
+            set
+            {
+                availableFood = value;
+            }
+        }
+
+        public int AvailableOre
+        {
+            get
+            {
+                return availableOre;
+            }
+            set
+            {
+                availableOre = value;
+            }
+        }
+
         #endregion
 
         #region Methods
