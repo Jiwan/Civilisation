@@ -45,10 +45,6 @@ namespace Civilization.ClockWork.City
                 return inDoorsUnits;
             }
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> d544e2ea232bb67e763b91e29ae80f331561b5fc
         public Point Position
         {
             get
@@ -123,26 +119,21 @@ namespace Civilization.ClockWork.City
                 neededFood += neededFood / 2;
             }
         }
-<<<<<<< HEAD
         public Unit.IUnit CreateUnit(UnitType type)
-=======
-
-        public Unit.Unit CreateUnit(UnitType type)
->>>>>>> d544e2ea232bb67e763b91e29ae80f331561b5fc
         {
             switch (type)
             {
                 case UnitType.U_DIRECTOR:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost)
-                        player.AvailableOre -= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
+                        player.AvailableOre -= (uint) player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
                         return (Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector();
                 case UnitType.U_STUDENT:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
-                        player.AvailableOre -= player.PlayedCivilization.Factory.StudentPrototype.Cost;
+                        player.AvailableOre -= (uint) player.PlayedCivilization.Factory.StudentPrototype.Cost;
                     return (Unit.Unit)player.PlayedCivilization.Factory.CreateStudent();
                 case UnitType.U_TEACHER:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
-                        player.AvailableOre -= player.PlayedCivilization.Factory.TeacherPrototype.Cost;
+                        player.AvailableOre -= (uint) player.PlayedCivilization.Factory.TeacherPrototype.Cost;
                     return (Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher();
                 default:
                     throw new Exception("Cannot create the unit, not enough resources.");

@@ -18,8 +18,8 @@ namespace Civilization.Player
         private string name;
         private Civilization.ClockWork.Civilization playedCivilization;
         private System.Windows.Media.Color color;
-        private int availableFood;
-        private int availableOre;
+        private uint availableFood;
+        private uint availableOre;
         #endregion
 
         #region Constructeur
@@ -102,7 +102,7 @@ namespace Civilization.Player
                 color = value;
             }
         }
-        public int AvailableFood
+        public uint AvailableFood
         {
             get
             {
@@ -113,7 +113,7 @@ namespace Civilization.Player
                 availableFood = value;
             }
         }
-        public int AvailableOre
+        public uint AvailableOre
         {
             get
             {

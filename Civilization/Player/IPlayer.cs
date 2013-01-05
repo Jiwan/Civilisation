@@ -18,8 +18,8 @@ namespace Civilization.Player
         string Name { get; set; }
         Civilization.ClockWork.Civilization PlayedCivilization { get; set; }
         System.Windows.Media.Color Color { get; set; }
-        int AvailableFood { get; set; }
-        int AvailableOre { get; set; }
+        uint AvailableFood { get; set; }
+        uint AvailableOre { get; set; }
         bool Alive { get; set; }
 
         #endregion

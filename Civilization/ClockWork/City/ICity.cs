@@ -16,8 +16,8 @@ namespace Civilization.ClockWork.City
            set;
        }
        int Size { get; }
-       int Food { get; }
-       int Ore { get; }
+       uint Food { get; }
+       uint Ore { get; }
        #endregion
 
        #region methods
