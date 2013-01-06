@@ -66,13 +66,12 @@ namespace Civilization.CustomControls
         /// </summary>
         private MouseAction currentMouseAction;
 
-        /// <summary>
-        /// The picked square
-        /// </summary>
-        private Point? pickedSquare;
         #endregion
 
         #region properties
+        
+        public static readonly DependencyProperty PickedSquareProperty = DependencyProperty.Register("PickedSquare", typeof(Point), typeof(MapViewer));
+
         /// <summary>
         /// Gets or sets the map we want to draw.
         /// </summary>
@@ -92,6 +91,12 @@ namespace Civilization.CustomControls
             }
         }
 
+        /// <summary>
+        /// Gets or sets the current mouse action.
+        /// </summary>
+        /// <value>
+        /// The current mouse action.
+        /// </value>
         public MouseAction CurrentMouseAction
         {
             get
@@ -109,6 +114,25 @@ namespace Civilization.CustomControls
                     this.Cursor = Cursors.Arrow;
                 }
                 currentMouseAction = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the picked square.
+        /// </summary>
+        /// <value>
+        /// The picked square.
+        /// </value>
+        public Point PickedSquare
+        {
+            get
+            {
+                return (Point)GetValue(PickedSquareProperty);
+            }
+
+            set
+            {
+                SetValue(PickedSquareProperty, value);
             }
         }
 
@@ -134,7 +158,45 @@ namespace Civilization.CustomControls
         #endregion
 
         #region methods
-        
+
+        #region public
+        /// <summary>
+        /// Gets the rectangle according to square indexes et current camera.
+        /// </summary>
+        /// <param name="posX">The index X of the square.</param>
+        /// <param name="posY">The index Y of the square.</param>
+        /// <returns></returns>
+        public Rect GetRectangle(int posX, int posY)
+        {
+            Size size = new Size(zoom, zoom);
+            Point position = new Point((posX * zoom) - cameraPosition.X, (posY * zoom) - cameraPosition.Y);
+
+            if (position.X < 0)
+            {
+                size.Width += position.X;
+                position.X = 0;
+            }
+
+            if (position.Y < 0)
+            {
+                size.Height += position.Y;
+                position.Y = 0;
+            }
+
+            if ((position.X + zoom) > ActualWidth)
+            {
+                size.Width = ActualWidth - position.X;
+            }
+
+            if ((position.Y + zoom) > ActualHeight)
+            {
+                size.Height = ActualHeight - position.Y;
+            }
+
+            return new Rect(position, size);
+        }
+        #endregion
+
         #region protected
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
@@ -149,7 +211,7 @@ namespace Civilization.CustomControls
             else
             {
                 Point pickPosition = e.GetPosition(this);
-                pickedSquare = new Point
+                PickedSquare = new Point
                     {
                         X = Math.Floor(((pickPosition.X + cameraPosition.X) / 50)),
                         Y = Math.Floor(((pickPosition.Y + cameraPosition.Y) / 50))
@@ -158,7 +220,7 @@ namespace Civilization.CustomControls
                 this.InvalidateVisual();
 
                 if (SelectedSquareChanged != null)
-                    SelectedSquareChanged((Point)pickedSquare);
+                    SelectedSquareChanged((Point)PickedSquare);
             }
         }
 
@@ -223,11 +285,11 @@ namespace Civilization.CustomControls
                 }
             }
 
-            if (pickedSquare != null)
+            if (PickedSquare != null)
             {
-                if (((Point)pickedSquare).X >= upperBoundX && ((Point)pickedSquare).X < maxX && ((Point)pickedSquare).Y >= upperBoundY && ((Point)pickedSquare).Y < maxY)
+                if (PickedSquare.X >= upperBoundX && PickedSquare.X < maxX && PickedSquare.Y >= upperBoundY && PickedSquare.Y < maxY)
                 {
-                    Rect rect = GetRectangle((int)((Point)pickedSquare).X, (int)((Point)pickedSquare).Y);
+                    Rect rect = GetRectangle((int)PickedSquare.X, (int)PickedSquare.Y);
                     SolidColorBrush myBrush = new SolidColorBrush(Colors.Blue);
                     myBrush.Opacity = 0.2;
                     drawingContext.DrawRectangle(myBrush, null, rect);
@@ -263,36 +325,6 @@ namespace Civilization.CustomControls
 
             if (update)
                 this.InvalidateVisual();
-        }
-
-        private Rect GetRectangle(int posX, int posY)
-        {
-            Size size = new Size(zoom, zoom);
-            Point position = new Point((posX * zoom) - cameraPosition.X, (posY * zoom) - cameraPosition.Y);
-
-            if (position.X < 0)
-            {
-                size.Width += position.X;
-                position.X = 0;
-            }
-
-            if (position.Y < 0)
-            {
-                size.Height += position.Y;
-                position.Y = 0;
-            }
-
-            if ((position.X + zoom) > ActualWidth)
-            {
-                size.Width = ActualWidth - position.X;
-            }
-
-            if ((position.Y + zoom) > ActualHeight)
-            {
-                size.Height = ActualHeight - position.Y;
-            }
-
-            return new Rect(position, size);
         }
         #endregion
         #endregion

@@ -96,6 +96,16 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         {
             mapViewer.CurrentMouseAction = CustomControls.MapViewer.MouseAction.MoveView;
         }
+
+        /// <summary>
+        /// Maps the viewer_ selected square changed.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        private void mapViewer_SelectedSquareChanged(Point position)
+        {
+            //!TODO : Mettre a jour les infos sur la case.
+            squarePositionStackPanel.DataContext = mapViewer;
+        }
         #endregion
     }
 }
