@@ -11,6 +11,9 @@
     <BitmapImage x:Key="PinRemove" UriSource="Images/remove.png"/>
     <BitmapImage x:Key="OpenIcon" UriSource="Images/open.png"/>
     <BitmapImage x:Key="SaveIcon" UriSource="Images/save.png"/>
+    <BitmapImage x:Key="HourglassIcon" UriSource="Images/hourglass.png"/>
+    <BitmapImage x:Key="MouseIcon" UriSource="Images/mouse-cursor.png"/>
+    <BitmapImage x:Key="HandIcon" UriSource="Images/hand-cursor.png"/>
     
     <!--Mountain DataTemplate (brown tile)-->
     <DataTemplate x:Key="MountainDataTemplate">

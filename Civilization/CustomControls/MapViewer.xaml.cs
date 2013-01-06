@@ -56,7 +56,15 @@ namespace Civilization.CustomControls
         /// </summary>
         private bool MovingCamera;
 
+        /// <summary>
+        /// The zoom
+        /// </summary>
         private double zoom;
+
+        /// <summary>
+        /// The current mouse action
+        /// </summary>
+        private MouseAction currentMouseAction;
         #endregion
 
         #region properties
@@ -81,8 +89,22 @@ namespace Civilization.CustomControls
 
         public MouseAction CurrentMouseAction
         {
-            get;
-            set;
+            get
+            {
+                return currentMouseAction;
+            }
+            set
+            {
+                if (value == MouseAction.MoveView)
+                {
+                    this.Cursor = Cursors.Hand;
+                }
+                else
+                {
+                    this.Cursor = Cursors.Arrow;
+                }
+                currentMouseAction = value;
+            }
         }
 
         /// <summary>
@@ -112,10 +134,11 @@ namespace Civilization.CustomControls
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
-            if (CurrentMouseAction == MouseAction.MoveView)
+            if (currentMouseAction == MouseAction.MoveView)
             {
                 oldCameraPosition = cameraPosition;
                 mousePosition = e.GetPosition(this);
+                this.Cursor = Cursors.SizeAll;
                 MovingCamera = true;
             }
             else
@@ -127,8 +150,12 @@ namespace Civilization.CustomControls
         protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonUp(e);
-            UpdateCamera(e.GetPosition(this));
-            MovingCamera = false;
+            if (currentMouseAction == MouseAction.MoveView)
+            {
+                UpdateCamera(e.GetPosition(this));
+                MovingCamera = false;
+                this.Cursor = Cursors.Hand;
+            }
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -144,11 +171,15 @@ namespace Civilization.CustomControls
         protected override void OnMouseLeave(MouseEventArgs e)
         {
             base.OnMouseLeave(e);
-            
-            if (e.LeftButton == MouseButtonState.Pressed)
+
+            if (currentMouseAction == MouseAction.MoveView)
             {
-                UpdateCamera(e.GetPosition(this));
-                MovingCamera = false;
+                if (e.LeftButton == MouseButtonState.Pressed)
+                {
+                    UpdateCamera(e.GetPosition(this));
+                    MovingCamera = false;
+                    this.Cursor = Cursors.Hand;
+                }
             }
         }
 
@@ -194,7 +225,6 @@ namespace Civilization.CustomControls
                         size.Height = ActualHeight - position.Y;
                     }
 
-                        // 50 dpi and not 50 px.
                     Rect rect = new Rect(position, size);
 
                     drawingContext.DrawImage(map.SquareMatrix[i, j].Tile, new Rect(position, size));

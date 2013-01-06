@@ -41,7 +41,7 @@
                             <CommandBinding Command="{x:Static customCommands:ListBoxCommand.RemoveCommand}" CanExecute="CommandBinding_CanExecute" Executed="CommandBinding_Executed" />
                         </ListBox.CommandBindings>
                     </ListBox>
-                    <Button x:Name="addPlayerButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Height="25" Width="25" Click="addPlayerButton_Click">
+                    <Button x:Name="addPlayerButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Height="25" Width="25" Click="addPlayerButton_Click" ToolTip="Ajouter un joueur">
                         <Button.ContentTemplate>
                             <DataTemplate>                                
                                     <Image Source="{StaticResource ResourceKey=PinAdd}"/>
@@ -115,14 +115,14 @@
                                             <Setter Property="Margin" Value="5"></Setter>
                                         </Style>
                                     </StackPanel.Resources>
-                                    <Button VerticalAlignment="Center" x:Name="loadButton" Click="loadButton_Click" Width="25" Height="25">
+                                    <Button VerticalAlignment="Center" x:Name="loadButton" Click="loadButton_Click" Width="25" Height="25" ToolTip="Charger les civilisations à partir d'un fichier">
                                         <Button.ContentTemplate>
                                             <DataTemplate>
                                                 <Image Source="{StaticResource OpenIcon}" />
                                             </DataTemplate>
                                         </Button.ContentTemplate>
                                     </Button>
-                                    <Button VerticalAlignment="Center" Name="saveButton"  Click="saveButton_Click" Width="25" Height="25">
+                                    <Button VerticalAlignment="Center" Name="saveButton"  Click="saveButton_Click" Width="25" Height="25" ToolTip="Sauvegarder les civilisations dans un fichier">
                                         <Button.ContentTemplate>
                                             <DataTemplate>
                                                 <Image Source="{StaticResource SaveIcon}" />
@@ -140,14 +140,14 @@
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                                <Button Height="25" HorizontalAlignment="Right" Margin="0,0,30,0" Name="addCivilizationButton" VerticalAlignment="Bottom" Width="25" Grid.Column="1" Click="addCivilizationButton_Click">
+                                <Button Height="25" HorizontalAlignment="Right" Margin="0,0,30,0" Name="addCivilizationButton" VerticalAlignment="Bottom" Width="25" Grid.Column="1" Click="addCivilizationButton_Click" ToolTip="Ajouter une civilisation">
                                     <Button.ContentTemplate>
                                         <DataTemplate>
                                             <Image Source="{StaticResource PinAdd}" />
                                         </DataTemplate>
                                     </Button.ContentTemplate>
                                 </Button>
-                                <Button Height="25" HorizontalAlignment="Right" Name="removeCivilizationButton" VerticalAlignment="Bottom" Width="25" Grid.Column="1" Click="removeCivilizationButton_Click">
+                                <Button Height="25" HorizontalAlignment="Right" Name="removeCivilizationButton" VerticalAlignment="Bottom" Width="25" Grid.Column="1" Click="removeCivilizationButton_Click" ToolTip="Enelever une civilisation">
                                     <Button.ContentTemplate>
                                         <DataTemplate>
                                             <Image Source="{StaticResource PinRemove}" />
@@ -213,7 +213,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Width="460" Height="460">
-                        <customControls:MapViewer x:Name="mapViewer" Cursor="Hand">
+                        <customControls:MapViewer x:Name="mapViewer">
                             
                         </customControls:MapViewer>
                     </Grid>
@@ -238,14 +238,14 @@
                                         <Setter Property="Margin" Value="5"></Setter>
                                     </Style>
                                 </StackPanel.Resources>
-                                <Button VerticalAlignment="Center" x:Name="loadMapButton" Click="loadMapButton_Click" Width="25" Height="25">
+                                <Button VerticalAlignment="Center" x:Name="loadMapButton" Click="loadMapButton_Click" Width="25" Height="25" ToolTip="Charger la carte à partir d'un fichier">
                                     <Button.ContentTemplate>
                                         <DataTemplate>
                                             <Image Source="{StaticResource OpenIcon}" />
                                         </DataTemplate>
                                     </Button.ContentTemplate>
                                 </Button>
-                                <Button VerticalAlignment="Center" Click="saveMapButton_Click" x:Name="saveMapButton" Width="25" Height="25">
+                                <Button VerticalAlignment="Center" Click="saveMapButton_Click" x:Name="saveMapButton" Width="25" Height="25" ToolTip="Sauvegarder la carte dans un fichier">
                                     <Button.ContentTemplate>
                                         <DataTemplate>
                                             <Image Source="{StaticResource SaveIcon}" />

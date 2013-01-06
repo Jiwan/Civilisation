@@ -76,6 +76,26 @@ namespace Civilization
             MessageBox.Show(@"Ce projet a été crée par J.Guegant et R.Lagrange dans le cadre d'un projet de 4ème à l'Institut National des Sciences Appliquées de Rennes.
 Pour plus d'informations, se référer au manuel utilisateur.");
         }
+
+        /// <summary>
+        /// Handles the Click event of the arrowButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void arrowButton_Click(object sender, RoutedEventArgs e)
+        {
+            mapViewer.CurrentMouseAction = CustomControls.MapViewer.MouseAction.PickSquare;
+        }
+
+        /// <summary>
+        /// Handles the Click event of the handButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void handButton_Click(object sender, RoutedEventArgs e)
+        {
+            mapViewer.CurrentMouseAction = CustomControls.MapViewer.MouseAction.MoveView;
+        }
         #endregion
     }
 }
