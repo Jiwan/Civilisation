@@ -28,6 +28,8 @@ namespace Civilization.Player
             this.name = name;
             Color = color;
             alive = true;
+            cities = new List<ICity>();
+            units = new List<IUnit>();
         }
         #endregion
 
