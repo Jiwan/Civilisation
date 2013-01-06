@@ -3,7 +3,7 @@ using Civilization.Utils.Serialization;
 
 namespace Civilization.World.Square
 {
-    class SquareDecorator : Square
+    public class SquareDecorator : Square
     {
 
         #region properties
@@ -38,6 +38,7 @@ namespace Civilization.World.Square
         /// <param name="square">The square.</param>
         public SquareDecorator(Square square) : base(0, 0)
         {
+            EncapsulatedSquare = new XmlAnything<Square>();
             this.EncapsulatedSquare.Value = square;
         }
 

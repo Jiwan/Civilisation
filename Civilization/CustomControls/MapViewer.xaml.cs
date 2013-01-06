@@ -282,6 +282,13 @@ namespace Civilization.CustomControls
                     drawingContext.DrawImage(map.SquareMatrix[i, j].Tile, rect);
                     Pen pen = new Pen(Brushes.Black, 1);
                     drawingContext.DrawRectangle(null, pen, rect);
+
+                    if (map.SquareMatrix[i, j].TileDecorator != null)
+                    {
+                        rect.Width /= 2;
+                        rect.Height /= 2;
+                        drawingContext.DrawImage(map.SquareMatrix[i, j].TileDecorator, rect);
+                    }
                 }
             }
 

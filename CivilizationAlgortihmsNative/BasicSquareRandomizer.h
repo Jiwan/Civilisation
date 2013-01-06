@@ -19,22 +19,26 @@ public:
 
 	virtual std::pair<TileType, DecoratorType> createCase(double value)
 	{
+		TileType type = TileType::FIELD;
+
 		if (0 <= value && value < m_waterRange)
 		{
-			return std::make_pair(TileType::WATER, DecoratorType::NONE);
+			type = TileType::WATER;
 		} 
 		else if (m_waterRange <= value && value < m_desertRange)
 		{
-			return std::make_pair(TileType::DESERT, DecoratorType::NONE);
+			type = TileType::DESERT;
 		}
 		else if (m_desertRange <= value && value < m_fieldRange)
 		{
-			return std::make_pair(TileType::FIELD, DecoratorType::NONE);
+			type = TileType::FIELD;
 		}
 		else 
 		{
-			return std::make_pair(TileType::MOUNTAIN, DecoratorType::NONE);
+			type = TileType::WATER;
 		}
+
+		return std::make_pair(type, getDecorator(type));
 	}
 
 	void setWaterRange(double range)

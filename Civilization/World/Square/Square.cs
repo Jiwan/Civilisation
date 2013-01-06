@@ -33,6 +33,13 @@ namespace Civilization.World.Square
         }
 
         public abstract BitmapImage Tile { get; }
+        public virtual BitmapImage TileDecorator 
+        {
+            get
+            {
+                return null;
+            }
+        }
         #endregion
 
         #region constructors

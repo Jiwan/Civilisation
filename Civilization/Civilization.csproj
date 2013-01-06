@@ -193,7 +193,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="World\Square\World.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CivilizationAlgorithms\CivilizationAlgorithms.vcxproj">
@@ -238,6 +237,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\mouse-cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\food.png" />
+    <Resource Include="Images\iron.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

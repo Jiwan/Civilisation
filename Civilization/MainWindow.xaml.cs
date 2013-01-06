@@ -80,7 +80,7 @@ namespace Civilization
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void aboutMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(@"Ce projet a été crée par J.Guegant et R.Lagrange dans le cadre d'un projet de 4ème à l'Institut National des Sciences Appliquées de Rennes.
+            MessageBox.Show(@"Ce projet a été crée par J.Guegant et R.Lagrange dans le cadre d'un cours de POO à l'Institut National des Sciences Appliquées de Rennes.
 Pour plus d'informations, se référer au manuel utilisateur.");
         }
 
