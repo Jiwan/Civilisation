@@ -16,11 +16,20 @@ using Civilization.World.Map;
 
 namespace Civilization.CustomControls
 {
+    public delegate void SelectedSquareChangedHandler(Point position);
     /// <summary>
     /// Logique d'interaction pour MapViewer.xaml
     /// </summary>
     public partial class MapViewer : UserControl
     {
+        #region enums
+        public enum MouseAction
+        {
+            MoveView,
+            PickSquare
+        }
+        #endregion
+
         #region fields
         /// <summary>
         /// The map we want to draw.
@@ -33,6 +42,11 @@ namespace Civilization.CustomControls
         private Point cameraPosition;
 
         /// <summary>
+        /// The old camera position
+        /// </summary>
+        private Point oldCameraPosition;
+
+        /// <summary>
         /// The mouse position
         /// </summary>
         private Point mousePosition;
@@ -41,6 +55,8 @@ namespace Civilization.CustomControls
         /// The moving camera
         /// </summary>
         private bool MovingCamera;
+
+        private double zoom;
         #endregion
 
         #region properties
@@ -62,6 +78,17 @@ namespace Civilization.CustomControls
                 this.InvalidateVisual();
             }
         }
+
+        public MouseAction CurrentMouseAction
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Occurs when [selected square changed].
+        /// </summary>
+        public event SelectedSquareChangedHandler SelectedSquareChanged;
         #endregion
 
         #region constructor
@@ -71,8 +98,11 @@ namespace Civilization.CustomControls
         public MapViewer()
         {
             InitializeComponent();
+
             cameraPosition = new Point(0, 0);
             MovingCamera = false;
+            zoom = 50;
+            CurrentMouseAction = MouseAction.MoveView;
         }
         #endregion
 
@@ -82,16 +112,22 @@ namespace Civilization.CustomControls
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
-            mousePosition = e.GetPosition(this);
-            MovingCamera = true;
+            if (CurrentMouseAction == MouseAction.MoveView)
+            {
+                oldCameraPosition = cameraPosition;
+                mousePosition = e.GetPosition(this);
+                MovingCamera = true;
+            }
+            else
+            {
+                 // Throw an event.
+            }
         }
 
         protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonUp(e);
-            // Update camera.
             UpdateCamera(e.GetPosition(this));
-
             MovingCamera = false;
         }
 
@@ -108,9 +144,12 @@ namespace Civilization.CustomControls
         protected override void OnMouseLeave(MouseEventArgs e)
         {
             base.OnMouseLeave(e);
-            UpdateCamera(e.GetPosition(this));
-
-            MovingCamera = false;
+            
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                UpdateCamera(e.GetPosition(this));
+                MovingCamera = false;
+            }
         }
 
         protected override void OnRender(DrawingContext drawingContext)
@@ -121,17 +160,17 @@ namespace Civilization.CustomControls
                 return;
 
             // Calculer l'affichage de la map.
-            int upperBoundX = (int)(cameraPosition.X / 50);
-            int upperBoundY = (int)(cameraPosition.Y / 50);
-            int maxX = (int)Math.Min(upperBoundX + (ActualWidth / 50), map.Size.X);
-            int maxY = (int)Math.Min(upperBoundY + (ActualHeight / 50), map.Size.Y);
+            int upperBoundX = (int)(cameraPosition.X / zoom);
+            int upperBoundY = (int)(cameraPosition.Y / zoom);
+            int maxX = (int)Math.Ceiling(Math.Min(upperBoundX + (ActualWidth / zoom), map.Size.X));
+            int maxY = (int)Math.Ceiling(Math.Min(upperBoundY + (ActualHeight / zoom), map.Size.Y));
 
             for (int i = upperBoundX; i < maxX; ++i)
             {
                 for (int j = upperBoundY; j < maxY; ++j)
                 {
-                    Size size = new Size(50, 50);
-                    Point position = new Point((i * 50) - cameraPosition.X, (j * 50) - cameraPosition.Y);
+                    Size size = new Size(zoom, zoom);
+                    Point position = new Point((i * zoom) - cameraPosition.X, (j * zoom) - cameraPosition.Y);
                     
                     if (position.X < 0)
                     {
@@ -144,6 +183,17 @@ namespace Civilization.CustomControls
                         size.Height -= position.Y;
                         position.Y = 0;
                     }
+
+                    if ((position.X + zoom) > ActualWidth)
+                    {
+                        size.Width = ActualWidth - position.X;
+                    }
+
+                    if ((position.Y + zoom) > ActualHeight)
+                    {
+                        size.Height = ActualHeight - position.Y;
+                    }
+
                         // 50 dpi and not 50 px.
                     Rect rect = new Rect(position, size);
 
@@ -156,18 +206,32 @@ namespace Civilization.CustomControls
         #endregion
 
         #region private
+        /// <summary>
+        /// Updates the camera.
+        /// </summary>
+        /// <param name="newPosition">The new position.</param>
         private void UpdateCamera(Point newPosition)
         {
-            cameraPosition.X += (mousePosition.X - newPosition.X) / 10;
-            cameraPosition.Y += (mousePosition.Y - newPosition.Y) / 10;
+            bool update = false;
 
-            cameraPosition.X = Math.Max(cameraPosition.X, 0);
-            cameraPosition.Y = Math.Max(cameraPosition.Y, 0);
+            if ((map.Size.X * zoom) > ActualWidth)
+            {
+                cameraPosition.X = oldCameraPosition.X + (mousePosition.X - newPosition.X);
+                cameraPosition.X = Math.Max(cameraPosition.X, 0);
+                cameraPosition.X = Math.Min(cameraPosition.X, (map.Size.X * zoom) - ActualWidth);
+                update = true;
+            }
 
-            cameraPosition.X = Math.Min(cameraPosition.X, ActualWidth);
-            cameraPosition.Y = Math.Min(cameraPosition.Y, ActualHeight);
+            if ((map.Size.Y * zoom) > ActualHeight)
+            {
+                cameraPosition.Y = oldCameraPosition.Y + (mousePosition.Y - newPosition.Y);
+                cameraPosition.Y = Math.Max(cameraPosition.Y, 0);
+                cameraPosition.Y = Math.Min(cameraPosition.Y, (map.Size.Y * zoom) - ActualHeight);
+                update = true;
+            }
 
-            this.InvalidateVisual();
+            if (update)
+                this.InvalidateVisual();
         }
         #endregion
         #endregion

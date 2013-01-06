@@ -213,7 +213,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Width="460" Height="460">
-                        <customControls:MapViewer x:Name="mapViewer">
+                        <customControls:MapViewer x:Name="mapViewer" Cursor="Hand">
                             
                         </customControls:MapViewer>
                     </Grid>
