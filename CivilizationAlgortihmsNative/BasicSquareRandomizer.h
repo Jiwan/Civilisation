@@ -53,6 +53,33 @@ public:
 	}
 
 private:
+	DecoratorType getDecorator(TileType& tileType)
+	{
+		if (tileType == TileType::WATER)
+		{
+			return DecoratorType::NONE;
+		}
+		else
+		{
+			int value = rand() % 6;
+
+			if (value == 0)
+			{
+				return DecoratorType::FRUIT;
+			}
+			else if (value == 1)
+			{
+				return DecoratorType::IRON;
+			}
+			else
+			{
+				return DecoratorType::NONE;
+			}
+		}
+	}
+
+
+private:
 	double m_waterRange;
 	double m_desertRange;
 	double m_fieldRange;

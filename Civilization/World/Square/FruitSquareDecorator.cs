@@ -7,12 +7,12 @@ namespace Civilization.World.Square
 
         public override uint AvailableFood
         {
-            get { return square.AvailableFood + 2; }
+            get { return EncapsulatedSquare.Value.AvailableFood + 2; }
         }
 
         public override uint AvailableOre
         {
-            get { return square.AvailableOre; }
+            get { return EncapsulatedSquare.Value.AvailableOre; }
         }
 
         #endregion

@@ -1,16 +1,10 @@
-﻿
-using System.Windows.Media.Imaging;
+﻿using System.Windows.Media.Imaging;
+using Civilization.Utils.Serialization;
 
 namespace Civilization.World.Square
 {
     class SquareDecorator : Square
     {
-        #region fields
-        /// <summary>
-        /// The square
-        /// </summary>
-        protected Square square;
-        #endregion
 
         #region properties
         /// <summary>
@@ -21,7 +15,19 @@ namespace Civilization.World.Square
         /// </value>
         public override BitmapImage Tile
         {
-            get { return square.Tile; }
+            get { return EncapsulatedSquare.Value.Tile; }
+        }
+
+        /// <summary>
+        /// Gets or sets the square.
+        /// </summary>
+        /// <value>
+        /// The square.
+        /// </value>
+        public XmlAnything<Square> EncapsulatedSquare
+        {
+            get;
+            set;
         }
         #endregion
 
@@ -32,7 +38,15 @@ namespace Civilization.World.Square
         /// <param name="square">The square.</param>
         public SquareDecorator(Square square) : base(0, 0)
         {
-            this.square = square;
+            this.EncapsulatedSquare.Value = square;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SquareDecorator" /> class.
+        /// </summary>
+        public SquareDecorator() : base(0, 0)
+        {
+            
         }
         #endregion
     }
