@@ -65,6 +65,11 @@ namespace Civilization.CustomControls
         /// The current mouse action
         /// </summary>
         private MouseAction currentMouseAction;
+
+        /// <summary>
+        /// The picked square
+        /// </summary>
+        private Point? pickedSquare;
         #endregion
 
         #region properties
@@ -143,7 +148,17 @@ namespace Civilization.CustomControls
             }
             else
             {
-                 // Throw an event.
+                Point pickPosition = e.GetPosition(this);
+                pickedSquare = new Point
+                    {
+                        X = Math.Floor(((pickPosition.X + cameraPosition.X) / 50)),
+                        Y = Math.Floor(((pickPosition.Y + cameraPosition.Y) / 50))
+                    };
+
+                this.InvalidateVisual();
+
+                if (SelectedSquareChanged != null)
+                    SelectedSquareChanged((Point)pickedSquare);
             }
         }
 
@@ -200,36 +215,22 @@ namespace Civilization.CustomControls
             {
                 for (int j = upperBoundY; j < maxY; ++j)
                 {
-                    Size size = new Size(zoom, zoom);
-                    Point position = new Point((i * zoom) - cameraPosition.X, (j * zoom) - cameraPosition.Y);
-                    
-                    if (position.X < 0)
-                    {
-                        size.Width -= position.X;
-                        position.X = 0;
-                    }
+                    Rect rect = GetRectangle(i, j);
 
-                    if (position.Y < 0)
-                    {
-                        size.Height -= position.Y;
-                        position.Y = 0;
-                    }
-
-                    if ((position.X + zoom) > ActualWidth)
-                    {
-                        size.Width = ActualWidth - position.X;
-                    }
-
-                    if ((position.Y + zoom) > ActualHeight)
-                    {
-                        size.Height = ActualHeight - position.Y;
-                    }
-
-                    Rect rect = new Rect(position, size);
-
-                    drawingContext.DrawImage(map.SquareMatrix[i, j].Tile, new Rect(position, size));
+                    drawingContext.DrawImage(map.SquareMatrix[i, j].Tile, rect);
                     Pen pen = new Pen(Brushes.Black, 1);
                     drawingContext.DrawRectangle(null, pen, rect);
+                }
+            }
+
+            if (pickedSquare != null)
+            {
+                if (((Point)pickedSquare).X >= upperBoundX && ((Point)pickedSquare).X < maxX && ((Point)pickedSquare).Y >= upperBoundY && ((Point)pickedSquare).Y < maxY)
+                {
+                    Rect rect = GetRectangle((int)((Point)pickedSquare).X, (int)((Point)pickedSquare).Y);
+                    SolidColorBrush myBrush = new SolidColorBrush(Colors.Blue);
+                    myBrush.Opacity = 0.2;
+                    drawingContext.DrawRectangle(myBrush, null, rect);
                 }
             }
         }
@@ -262,6 +263,36 @@ namespace Civilization.CustomControls
 
             if (update)
                 this.InvalidateVisual();
+        }
+
+        private Rect GetRectangle(int posX, int posY)
+        {
+            Size size = new Size(zoom, zoom);
+            Point position = new Point((posX * zoom) - cameraPosition.X, (posY * zoom) - cameraPosition.Y);
+
+            if (position.X < 0)
+            {
+                size.Width += position.X;
+                position.X = 0;
+            }
+
+            if (position.Y < 0)
+            {
+                size.Height += position.Y;
+                position.Y = 0;
+            }
+
+            if ((position.X + zoom) > ActualWidth)
+            {
+                size.Width = ActualWidth - position.X;
+            }
+
+            if ((position.Y + zoom) > ActualHeight)
+            {
+                size.Height = ActualHeight - position.Y;
+            }
+
+            return new Rect(position, size);
         }
         #endregion
         #endregion
