@@ -9,26 +9,29 @@ namespace Civilization.Player
     class AIPlayer : IPlayer
     {
         #region Attributes
-
-        /// <summary>
-        /// The cities
-        /// </summary>
-        private IList<ICity> cities;
-
-        /// <summary>
-        /// The units
-        /// </summary>
-        private IList<IUnit> units;
-
-        /// <summary>
-        /// The game
-        /// </summary>
+        private bool alive;
+        private List<ICity> cities;
+        private List<IUnit> units;
         private Game.Game game;
-
+        private string name;
+        private Civilization.ClockWork.Civilization playedCivilization;
+        private System.Windows.Media.Color color;
+        private uint availableFood;
+        private uint availableOre;
         #endregion
 
         #region properties
-
+        public bool Alive
+        {
+            get
+            {
+                return alive;
+            }
+            set
+            {
+                alive = value;
+            }
+        }
         public IList<ICity> Cities
         {
             get
@@ -36,7 +39,6 @@ namespace Civilization.Player
                 return cities;
             }
         }
-
         public IList<IUnit> Units
         {
             get
@@ -44,7 +46,6 @@ namespace Civilization.Player
                 return units;
             }
         }
-
         public Game.Game Game
         {
             get
@@ -57,39 +58,59 @@ namespace Civilization.Player
                 game = value;
             }
         }
-
-        public string Name { get; set; }
-
+        public string Name 
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
         public Civilization.ClockWork.Civilization PlayedCivilization
         {
-            get;
-            set;
-        }
-        
-        public System.Windows.Media.Color Color { get; set; }
-
-
-        public int AvailableFood
-        {
             get
             {
-                throw new System.NotImplementedException();
+                return playedCivilization;
             }
             set
             {
-                throw new System.NotImplementedException();
+                playedCivilization = value;
             }
         }
-
-        public int AvailableOre
+        public System.Windows.Media.Color Color
         {
             get
             {
-                throw new System.NotImplementedException();
+                return color;
             }
             set
             {
-                throw new System.NotImplementedException();
+                color = value;
+            }
+        }
+        public uint AvailableFood
+        {
+            get
+            {
+                return availableFood;
+            }
+            set
+            {
+                availableFood = value;
+            }
+        }
+        public uint AvailableOre
+        {
+            get
+            {
+                return availableOre;
+            }
+            set
+            {
+                availableOre = value;
             }
         }
         #endregion
@@ -99,6 +120,7 @@ namespace Civilization.Player
         {
             Name = name;
             Color = color;
+            alive = true;
         }
         #endregion
 
@@ -188,6 +210,14 @@ namespace Civilization.Player
             units.Remove(unit);
         }
 
+        public void NextTurn()
+        {
+            availableFood = 0;
+            cities.ForEach(city => city.NextTurn());
+            cities.ForEach(city => availableFood += city.Food);
+            cities.ForEach(city => availableOre += city.Ore);
+
+        }
         #endregion
 
 
