@@ -59,7 +59,7 @@ namespace Civilization.World.Square
         /// </value>
         public override string Name
         {
-            get { return EncapsulatedSquare.Value.Name + "avec bonus de minerai"; }
+            get { return EncapsulatedSquare.Value.Name + " avec bonus de minerai"; }
         }
         #endregion
 

@@ -147,6 +147,8 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         private void mapViewer_SelectedSquareChanged(Point position)
         {
             squarePositionStackPanel.DataContext = mapViewer;
+            pickContentControl.DataContext = mapViewer.Map.SquareMatrix[(int)position.X, (int)position.Y];
+            
         }
 
         /// <summary>

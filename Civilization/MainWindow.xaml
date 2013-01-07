@@ -47,7 +47,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <ContentControl ContentTemplateSelector=""/>
+                        <ContentControl Content="{Binding}" x:Name="pickContentControl" ContentTemplateSelector="{StaticResource ResourceKey=MyPickTemplateSelector}"/>
 
                         <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="squarePositionStackPanel">
                             <Label>X :</Label>
