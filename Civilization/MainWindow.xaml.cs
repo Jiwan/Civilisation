@@ -18,10 +18,7 @@ using Civilization.Utils.Logs;
 using Civilization.Player;
 using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
-<<<<<<< HEAD
-=======
 using Civilization.CustomControls;
->>>>>>> 9f5978c28b71f4175b3c38dbb8a98875fb89d5ca
 using Civilization.Fight;
 
 namespace Civilization
@@ -248,8 +245,6 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             {
                 new _1V1Fight(selectedUnit, attackedUnit);
             }
-<<<<<<< HEAD
-=======
 
         }
 
@@ -265,8 +260,6 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             players[currentPlayerIndex].Render((MapViewer)sender, drawingContext);
             
             // Dessine les unités des autres visibles par celle du joueur courant
->>>>>>> 9f5978c28b71f4175b3c38dbb8a98875fb89d5ca
-
         }
 
         #endregion
