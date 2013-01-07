@@ -168,6 +168,11 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 currentPlayerIndex = 0;
             }
         }
+
+        private void drawIdealLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            mapViewer.EnableIdealLocation = !mapViewer.EnableIdealLocation;
+        }
         #endregion
         #endregion
         #endregion

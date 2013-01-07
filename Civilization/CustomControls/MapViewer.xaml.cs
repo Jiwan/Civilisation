@@ -71,10 +71,11 @@ namespace Civilization.CustomControls
         /// </summary>
         private MouseAction currentMouseAction;
 
+        private bool enableIdealLocation;
         #endregion
 
         #region properties
-        
+
         public static readonly DependencyProperty PickedSquareProperty = DependencyProperty.Register("PickedSquare", typeof(Point), typeof(MapViewer));
 
         /// <summary>
@@ -145,6 +146,20 @@ namespace Civilization.CustomControls
         /// Occurs when [selected square changed].
         /// </summary>
         public event SelectedSquareChangedHandler SelectedSquareChanged;
+
+        public bool EnableIdealLocation 
+        {
+            get
+            {
+                return enableIdealLocation;
+            }
+            
+            set
+            {
+                enableIdealLocation = value;
+                Redraw();
+            }
+        }
         #endregion
 
         #region constructor
@@ -159,6 +174,7 @@ namespace Civilization.CustomControls
             MovingCamera = false;
             zoom = 50;
             CurrentMouseAction = MouseAction.MoveView;
+            enableIdealLocation = true;
         }
         #endregion
 
@@ -199,6 +215,26 @@ namespace Civilization.CustomControls
             }
 
             return new Rect(position, size);
+        }
+
+        /// <summary>
+        /// Check wether the square at position (position) is viewed by the camera.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public bool IsInView(Point position)
+        {
+            int upperBoundX = (int)(cameraPosition.X / zoom);
+            int upperBoundY = (int)(cameraPosition.Y / zoom);
+            int maxX = (int)Math.Ceiling(Math.Min(upperBoundX + (ActualWidth / zoom), map.Size.X));
+            int maxY = (int)Math.Ceiling(Math.Min(upperBoundY + (ActualHeight / zoom), map.Size.Y));
+
+            return position.X >= upperBoundX && position.X < maxX && position.Y >= upperBoundY && position.Y < maxY;
+        }
+
+        public void Redraw()
+        {
+            this.InvalidateVisual();
         }
         #endregion
 
@@ -299,12 +335,25 @@ namespace Civilization.CustomControls
 
             if (PickedSquare != null)
             {
-                if (PickedSquare.X >= upperBoundX && PickedSquare.X < maxX && PickedSquare.Y >= upperBoundY && PickedSquare.Y < maxY)
+                if (IsInView(PickedSquare))
                 {
-                    Rect rect = GetRectangle((int)PickedSquare.X, (int)PickedSquare.Y);
-                    SolidColorBrush myBrush = new SolidColorBrush(Colors.Blue);
-                    myBrush.Opacity = 0.2;
-                    drawingContext.DrawRectangle(myBrush, null, rect);
+                    DrawPickedSquare(drawingContext);
+                }
+            }
+
+            if (EnableIdealLocation)
+            {
+                if (IsInView(map.IdealPosition1))
+                {
+                    DrawIdealLocation(drawingContext, map.IdealPosition1);
+                }
+                if (IsInView(map.IdealPosition2))
+                {
+                    DrawIdealLocation(drawingContext, map.IdealPosition2);
+                }
+                if (IsInView(map.IdealPosition3))
+                {
+                    DrawIdealLocation(drawingContext, map.IdealPosition3);
                 }
             }
         }
@@ -336,7 +385,23 @@ namespace Civilization.CustomControls
             }
 
             if (update)
-                this.InvalidateVisual();
+                Redraw();
+        }
+
+        private void DrawPickedSquare(DrawingContext drawingContext)
+        {
+            Rect rect = GetRectangle((int)PickedSquare.X, (int)PickedSquare.Y);
+            SolidColorBrush myBrush = new SolidColorBrush(Colors.Blue);
+            myBrush.Opacity = 0.2;
+            drawingContext.DrawRectangle(myBrush, null, rect);
+        }
+
+        private void DrawIdealLocation(DrawingContext drawingContext, Point pos)
+        {
+            Rect rect = GetRectangle((int)pos.X, (int)pos.Y);
+            SolidColorBrush myBrush = new SolidColorBrush(Colors.Green);
+            myBrush.Opacity = 0.5;
+            drawingContext.DrawRectangle(myBrush, null, rect);
         }
         #endregion
         #endregion

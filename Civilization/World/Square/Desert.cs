@@ -33,7 +33,7 @@ namespace Civilization.World.Square
        /// </value>
        public override string Name
        {
-           get { return "Desert"; }
+           get { return "Désert"; }
        }
        #endregion
 
