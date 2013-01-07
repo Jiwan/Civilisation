@@ -176,19 +176,66 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             }
         }
 
+
+        /// <summary>
+        /// Numbers the units on square.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        /// <returns></returns>
+        public int numberUnitsOnSquare(Point position)
+        {
+            int number = 0;
+            foreach (IPlayer player in players)
+            {
+                foreach (IUnit unit in player.Units)
+                {
+                    if (unit.Position.Equals(position))
+                    {
+                        number++;
+                    }
+                }
+            }
+            return number;
+        }
+
         private void createCityButton_Click(object sender, RoutedEventArgs e)
         {
             bool hasCity = false;
             foreach(IPlayer player in players)
             {
-                player.Cities.ForEach(city => hasCity = city.isAtPosition(selectedUnit.Position));
+                foreach (ICity city in player.Cities)
+                {
+                    if (city.isAtPosition(selectedUnit.Position))
+                    {
+                        hasCity = true;
+                    }
+                }
             }
+            Log.Instance.Write("Détermination si la case est occupée ou pas.");
 
             if (!hasCity)
             {
                 ITeacher selectedTeacher = selectedUnit as ITeacher;
                 ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, players[currentPlayerIndex].Game.Map);
             }
+            Log.Instance.Write("Ville créée à l'emplacement.");
+
+            // do shit with city
+        }
+
+        // Attaquer des unités avec le click droit
+        private void attackButton_RightClick(object sender, RoutedEventArgs e)
+        {
+            if (selectedUnit.Attack == 0)
+            {
+                Log.Instance.Write("Cette unité ne peut attaquer!");
+                return;
+            }
+            /*
+            IUnit attackedUnit;
+            if (attackedUnit.Position)
+             */
+
         }
 
         private void drawIdealLocationButton_Click(object sender, RoutedEventArgs e)
