@@ -19,6 +19,11 @@ namespace Civilization.ClockWork.Unit
                 return 12 * (Attack + Defense + Movement + HP);
             }
         }
+
+        public override string Name
+        {
+            get { return "Enseignant"; }
+        }
         #endregion 
 
         #region constructors

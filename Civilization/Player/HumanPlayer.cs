@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
-using Civilization.ClockWork.Unit;
-using Civilization.ClockWork.City;
 using System.Windows;
-using System;
-using Civilization.Player.Actions;
-using System.Windows.Input;
+using System.Windows.Media;
+using Civilization.ClockWork.City;
+using Civilization.ClockWork.Unit;
+using Civilization.CustomControls;
 using Civilization.Utils.Logs;
 
 namespace Civilization.Player
 {
-    class HumanPlayer : IPlayer
+    public class HumanPlayer : IPlayer
     {
         #region Attributes
         private bool alive;
@@ -145,6 +144,7 @@ namespace Civilization.Player
         {
             units.Add(unit);
         }
+
         public bool HasCity(Point point)
         {
             foreach(ICity city in Cities)
@@ -156,6 +156,7 @@ namespace Civilization.Player
             }
             return false;
         }
+
         public bool HasUnit(Point point)
         {
             foreach (IUnit unit in Units)
@@ -167,14 +168,17 @@ namespace Civilization.Player
             }
             return false;
         }
+
         public void RemoveCity(ICity city)
         {
             cities.Remove(city);
         }
+
         public void RemoveUnit(IUnit unit)
         {
  	        units.Remove(unit);
         }
+
         public void NextTurn()
         {
             Log.Instance.Write("Prochain tour.");
@@ -195,6 +199,19 @@ namespace Civilization.Player
             cities.ForEach(city => availableFood += city.Food);
             cities.ForEach(city => availableOre += city.Ore);
             Log.Instance.Write("Nourriture et minerai mis à jour.");
+        }
+
+        public void Render(MapViewer mapViewer, DrawingContext drawingContext)
+        {
+            foreach (ICity city in cities)
+            {
+                city.Render(mapViewer, drawingContext);
+            }
+
+            foreach (IUnit unit in units)
+            {
+                unit.Render(mapViewer, drawingContext);
+            }
         }
         #endregion
     }

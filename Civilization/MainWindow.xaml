@@ -38,7 +38,7 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <customControls:MapViewer Grid.ColumnSpan="3" x:Name="mapViewer" SelectedSquareChanged="mapViewer_SelectedSquareChanged">
+                <customControls:MapViewer Grid.ColumnSpan="3" x:Name="mapViewer" SelectedSquareChanged="mapViewer_SelectedSquareChanged" RenderMap="mapViewer_RenderMap">
 
                 </customControls:MapViewer>
                 <Border BorderBrush="Gray" Grid.Row="1" BorderThickness="2,2,1,2">

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Windows;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Media;
+using System.Globalization;
 #endregion
 
 namespace Civilization.ClockWork.Unit
@@ -19,8 +21,7 @@ namespace Civilization.ClockWork.Unit
     #endregion
 
     #region classes
-    [Serializable()]
-    public class Unit : IUnit, INotifyPropertyChanged
+    public abstract class Unit : IUnit, INotifyPropertyChanged
     {        
         #region fields
         /// <summary>
@@ -184,6 +185,11 @@ namespace Civilization.ClockWork.Unit
             get { throw new System.NotImplementedException(); }
         }
 
+        public abstract string Name
+        {
+            get;
+        }
+
         /// <summary>
         /// Occurs when [property changed].
         /// </summary>
@@ -225,6 +231,23 @@ namespace Civilization.ClockWork.Unit
         public object Clone()
         {
             throw new NotImplementedException();
+        }
+
+        public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext)
+        {
+            if (mapViewer.IsInView(casePosition))
+            {
+                Rect rect = mapViewer.GetRectangle((int)casePosition.X, (int)casePosition.Y);
+                
+                FormattedText text = new FormattedText(Name,
+                    CultureInfo.GetCultureInfo("en-us"),
+                    FlowDirection.LeftToRight,
+                    new Typeface("Verdana"),
+                    32,
+                    Brushes.Black);
+
+                drawingContext.DrawText(text, new Point(rect.X, rect.Y));
+            }
         }
         #endregion
 

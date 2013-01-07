@@ -18,6 +18,7 @@ using Civilization.Utils.Logs;
 using Civilization.Player;
 using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
+using Civilization.CustomControls;
 
 namespace Civilization
 {
@@ -242,6 +243,17 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         {
             mapViewer.EnableIdealLocation = !mapViewer.EnableIdealLocation;
         }
+
+        private void mapViewer_RenderMap(object sender, DrawingContext drawingContext)
+        {
+            // Dessine toutes les unités et cités du joueur courant.
+            
+            players[currentPlayerIndex].Render((MapViewer)sender, drawingContext);
+            
+            // Dessine les unités des autres visibles par celle du joueur courant
+
+        }
+
         #endregion
         #endregion
         #endregion

@@ -22,6 +22,8 @@ namespace Civilization.CustomControls
     /// <param name="position">The position.</param>
     public delegate void SelectedSquareChangedHandler(Point position);
 
+    public delegate void RenderMapHandler(object sender, DrawingContext drawingContext);
+
     /// <summary>
     /// Logique d'interaction pour MapViewer.xaml
     /// </summary>
@@ -146,6 +148,8 @@ namespace Civilization.CustomControls
         /// Occurs when [selected square changed].
         /// </summary>
         public event SelectedSquareChangedHandler SelectedSquareChanged;
+
+        public event RenderMapHandler RenderMap;
 
         public bool EnableIdealLocation 
         {
@@ -333,6 +337,11 @@ namespace Civilization.CustomControls
                 }
             }
 
+            if (RenderMap != null)
+            {
+                RenderMap(this, drawingContext);
+            }
+
             if (PickedSquare != null)
             {
                 if (IsInView(PickedSquare))
@@ -356,6 +365,8 @@ namespace Civilization.CustomControls
                     DrawIdealLocation(drawingContext, map.IdealPosition3);
                 }
             }
+
+
         }
         #endregion
 
