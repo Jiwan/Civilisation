@@ -86,7 +86,7 @@
                                 </DataTemplate>
                             </Button.ContentTemplate>
                         </Button>
-                        <Button Name="nextTurn" Grid.Row="0" Grid.Column="2" ToolTip="Passer au tour suivant">
+                        <Button Grid.Row="0" Grid.Column="2" ToolTip="Passer au tour suivant">
                             <Button.ContentTemplate>
                                 <DataTemplate>
                                     <Image Source="{StaticResource HourglassIcon}"></Image>
