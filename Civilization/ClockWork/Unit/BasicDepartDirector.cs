@@ -54,7 +54,12 @@ namespace Civilization.ClockWork.Unit
             {
                 return 20 * (Attack + Defense + Movement + HP);
             }
-        }        
+        }
+
+        public override string Name
+        {
+            get { return "Directeur de département"; }
+        }
         #endregion
 
         #region methods

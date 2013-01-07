@@ -50,10 +50,17 @@ namespace Civilization.ClockWork.Unit
         {
             get;
         }
+
+        string Name
+        {
+            get;
+        }
         #endregion
 
         #region methods
         void Damage(int damageValue);
+
+        void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext);
         #endregion
     }
 }

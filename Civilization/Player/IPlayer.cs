@@ -5,6 +5,8 @@ using Civilization.ClockWork.Unit;
 using System.Collections;
 using System.Collections.Generic;
 using Civilization.Player.Actions;
+using System.Windows.Media;
+using Civilization.CustomControls;
 
 namespace Civilization.Player
 {
@@ -71,6 +73,7 @@ namespace Civilization.Player
 
         void NextTurn();
 
+        void Render(MapViewer mapViewer, DrawingContext drawingContext);
         #endregion
     }
 }

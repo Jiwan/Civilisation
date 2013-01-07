@@ -53,12 +53,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WPFToolkit.Extended">
-      <HintPath>ThirdParty\WPFToolkit.Extended.dll</HintPath>
-    </Reference>
-    <Reference Include="Xceed.Wpf.DataGrid">
-      <HintPath>ThirdParty\Xceed.Wpf.DataGrid.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -68,7 +62,7 @@
     <Compile Include="ClockWork\City\BasicCityExtender.cs" />
     <Compile Include="ClockWork\City\ICity.cs" />
     <Compile Include="ClockWork\City\ICityExtender.cs" />
-    <Compile Include="Images\Civilization.cs" />
+    <Compile Include="ClockWork\Civilization.cs" />
     <Compile Include="ClockWork\ICivilizationAbstractFactory.cs" />
     <Compile Include="ClockWork\PrototypeCivilizationFactory.cs" />
     <Compile Include="ClockWork\Unit\BasicDepartDirector.cs" />
@@ -242,6 +236,9 @@
   <ItemGroup>
     <Resource Include="Images\food.png" />
     <Resource Include="Images\iron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\drawingpin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

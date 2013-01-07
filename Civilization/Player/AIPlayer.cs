@@ -3,10 +3,12 @@ using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
 using System.Windows;
 using Civilization.Player.Actions;
+using Civilization.CustomControls;
+using System.Windows.Media;
 
 namespace Civilization.Player
 {
-    class AIPlayer : IPlayer
+    public class AIPlayer : IPlayer
     {
         #region Attributes
         private bool alive;
@@ -217,6 +219,11 @@ namespace Civilization.Player
             cities.ForEach(city => city.NextTurn());
             cities.ForEach(city => availableFood += city.Food);
             cities.ForEach(city => availableOre += city.Ore);
+
+        }
+
+        public void Render(MapViewer mapViewer, DrawingContext drawingContext)
+        {
 
         }
         #endregion

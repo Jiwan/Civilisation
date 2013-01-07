@@ -262,12 +262,18 @@ namespace Civilization.ClockWork.City
         {
             return MemberwiseClone();
         }
+
         public void NextTurn()
         {
             // remet le compteur de food à 0
             food = 0;
             CollectFood();
             CollectOre();
+        }
+
+        public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext)
+        {
+
         }
         #endregion
         #endregion

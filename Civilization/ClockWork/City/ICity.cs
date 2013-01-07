@@ -22,10 +22,16 @@ namespace Civilization.ClockWork.City
 
        #region methods
        bool isAtPosition(Point point);
+
        void CreateUnit(UnitType type);
+
        void NextTurn();
+
        void FindExtensionPoint();
+
        void ExtendPoint();
+
+       void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext);
        #endregion
    }
 }
