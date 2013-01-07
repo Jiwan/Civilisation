@@ -21,12 +21,10 @@ namespace Civilization.ClockWork.City
        #endregion
 
        #region methods
-       void AddCitizen();
-       void CollectOre();
-       void CollectFood();
-       Unit.IUnit CreateUnit(UnitType type);
+       void CreateUnit(UnitType type);
        void NextTurn();
-       void Extend();
+       void FindExtensionPoint();
+       void ExtendPoint();
        #endregion
    }
 }

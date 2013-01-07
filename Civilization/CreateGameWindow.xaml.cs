@@ -106,6 +106,14 @@ namespace Civilization
                 return mapViewer.Map;
             }
         }
+
+        public ObservableCollection<IPlayer> Players
+        {
+            get
+            {
+                return players;
+            }
+        }
         #endregion
 
         #region constructor

@@ -21,6 +21,7 @@ namespace Civilization.ClockWork.City
         private List<Point> controlledCases;
         private List<IUnit> inDoorsUnits;
         private Point position;
+        private Point extensionPoint;
         private Map map;
         private Player.IPlayer player;
         private int population;
@@ -85,6 +86,11 @@ namespace Civilization.ClockWork.City
                 ore = value;
             }
         }
+        public Point ExtensionPoint
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region constructors
@@ -105,7 +111,9 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region methods
-        public void AddCitizen()
+        
+        #region private
+        private void AddCitizen()
         {
             // il faut respecter la formule suivante : nbResn = nbResn−1 + nbResn−1/2.
             if (population == 1 && food == 10)
@@ -119,27 +127,43 @@ namespace Civilization.ClockWork.City
                 neededFood += neededFood / 2;
             }
         }
-        public Unit.IUnit CreateUnit(UnitType type)
+        private void CollectOre()
+        {
+            uint oldOre = Ore;
+            controlledCases.ForEach(point => Ore += map.SquareMatrix[point.X, point.Y].AvailableOre);
+            Ore += oldOre;
+        }
+        private void CollectFood()
+        {
+            controlledCases.ForEach(point => food += map.SquareMatrix[point.X, point.Y].AvailableFood);
+        }
+        #endregion
+
+        #region public
+        public void CreateUnit(UnitType type)
         {
             switch (type)
             {
                 case UnitType.U_DIRECTOR:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost)
                         player.AvailableOre -= (uint) player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
-                        return (Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector();
+                        InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector());
+                        break;
                 case UnitType.U_STUDENT:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
                         player.AvailableOre -= (uint) player.PlayedCivilization.Factory.StudentPrototype.Cost;
-                    return (Unit.Unit)player.PlayedCivilization.Factory.CreateStudent();
+                        InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateStudent());
+                        break;
                 case UnitType.U_TEACHER:
                     if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
                         player.AvailableOre -= (uint) player.PlayedCivilization.Factory.TeacherPrototype.Cost;
-                    return (Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher();
+                        InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher());
+                        break;
                 default:
                     throw new Exception("Cannot create the unit, not enough resources.");
             }
         }
-        public void Extend()
+        public void FindExtensionPoint()
         {
             if (controlledCases.Count >= 25)
             {
@@ -188,31 +212,48 @@ namespace Civilization.ClockWork.City
                 }
             }
 
+            Point toBeAdded = new Point();
             if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert && !controlledCases.Contains(point)))
             {
-                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert);
-                controlledCases.Add(toBeAdded);
-                return;
+                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert);
             }
             else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field && !controlledCases.Contains(point)))
             {
-                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field);
-                controlledCases.Add(toBeAdded);
-                return;
+                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field);
             }
             else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain && !controlledCases.Contains(point)))
             {
-                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain);
-                controlledCases.Add(toBeAdded);
-                return;
+                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain);
             }
             else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water && !controlledCases.Contains(point)))
             {
-                Point toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water);
-                controlledCases.Add(toBeAdded);
-                return;
+                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water);
             }
-         }
+
+            ExtensionPoint = toBeAdded;
+            player.CitiesToBeExtended.Enqueue(this);
+            Console.WriteLine("Case d'extension définie.");
+        }
+        public void ExtendPoint()
+        {
+            if (food > neededFood)
+            {
+                if (ExtensionPoint != null)
+                {
+                    ControlledCases.Add(ExtensionPoint);
+                    AddCitizen();
+                    Console.WriteLine("Ville étendue et population incrémentée.");
+                }
+                else
+                {
+                    Console.WriteLine("Aucune case d'extension désignée. La ville ne peut s'étendre.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Pas assez de nourriture pour s'étendre et créer un nouvel habitant.");
+            }
+        }
         public object Clone()
         {
             return MemberwiseClone();
@@ -224,14 +265,7 @@ namespace Civilization.ClockWork.City
             CollectFood();
             CollectOre();
         }
-        public void CollectOre()
-        {
-            controlledCases.ForEach(point => ore += map.SquareMatrix[point.X, point.Y].AvailableOre);
-        }
-        public void CollectFood()
-        {
-            controlledCases.ForEach(point => food += map.SquareMatrix[point.X, point.Y].AvailableFood);
-        }
+        #endregion
         #endregion
     }
 }

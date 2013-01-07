@@ -49,7 +49,6 @@ namespace Civilization
         {
             InitializeComponent();
             Log.Instance.WriteFunction = WriteLog;
-
         }
         #endregion
 
@@ -100,6 +99,7 @@ namespace Civilization
             if (result.HasValue && result.Value)
             {
                 mapViewer.Map = window.CreatedMap;
+                this.players = new List<IPlayer>(window.Players);
 
                 Log.Instance.Write("Chargement de la carte...");
                 Log.Instance.Write("Chargement des joueurs...");
@@ -156,12 +156,15 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void nextTurnButton_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
-
-        public void nextTurn(object nextTurn, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
+            players[currentPlayerIndex].NextTurn();
+            if (currentPlayerIndex < players.Count)
+            {
+                currentPlayerIndex++;
+            }
+            else
+            {
+                currentPlayerIndex = 0;
+            }
         }
         #endregion
         #endregion

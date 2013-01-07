@@ -31,7 +31,13 @@ namespace Civilization.ClockWork.Unit
         #region methods
         public void CreateCity()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+            /*
+            if (MainWindow.players.hasCity(this.Position))
+            {
+
+            }
+             */
         }
 
         public object Clone()

@@ -20,6 +20,7 @@ namespace Civilization.Player
         private System.Windows.Media.Color color;
         private uint availableFood;
         private uint availableOre;
+        private Queue<ICity> citiesToBeExtended;
         #endregion
 
         #region Constructeur
@@ -30,6 +31,7 @@ namespace Civilization.Player
             alive = true;
             cities = new List<ICity>();
             units = new List<IUnit>();
+            citiesToBeExtended = new Queue<ICity>();
         }
         #endregion
 
@@ -126,6 +128,11 @@ namespace Civilization.Player
                 availableOre = value;
             }
         }
+        public Queue<ICity> CitiesToBeExtended
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Methods
@@ -159,10 +166,6 @@ namespace Civilization.Player
             }
             return false;
         }
-        public IPlayerAction GetCommands()
-        {
- 	        throw new System.NotImplementedException();
-        }
         public void RemoveCity(ICity city)
         {
             cities.Remove(city);
@@ -171,25 +174,23 @@ namespace Civilization.Player
         {
  	        units.Remove(unit);
         }
-        public void KeyboardPressedEventHandler(Object o, KeyEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-        public void MousePressedEventHandler(Object o, MouseEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-        public void MouseMovedEventHandler(Object o, MouseEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
         public void NextTurn()
         {
+            Console.WriteLine("Prochain tour.");
+            units.ForEach(unit => unit.Movement = 0);
+            Console.WriteLine("Mouvements des unités remis à 0.");
+            cities.ForEach(city => city.FindExtensionPoint());
+            Console.WriteLine("Cases d'extension des villes trouvées.");
+            while (CitiesToBeExtended.Count != 0)
+            {
+                CitiesToBeExtended.Dequeue().ExtendPoint();
+            }
+            Console.WriteLine("Villes étendues.");
             availableFood = 0;
             cities.ForEach(city => city.NextTurn());
-            cities.ForEach(city => availableFood = city.Food);
+            cities.ForEach(city => availableFood += city.Food);
             cities.ForEach(city => availableOre += city.Ore);
-
+            Console.WriteLine("Nourriture et minerai mis à jour.");
         }
         #endregion
     }

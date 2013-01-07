@@ -18,6 +18,7 @@ namespace Civilization.Player
         private System.Windows.Media.Color color;
         private uint availableFood;
         private uint availableOre;
+        private Queue<ICity> citiesToBeExtended;
         #endregion
 
         #region properties
@@ -113,6 +114,11 @@ namespace Civilization.Player
                 availableOre = value;
             }
         }
+        public Queue<ICity> CitiesToBeExtended
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region constructor
@@ -183,11 +189,6 @@ namespace Civilization.Player
         }
 
         public IPlayerAction GetCommands()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool IsDead()
         {
             throw new System.NotImplementedException();
         }
