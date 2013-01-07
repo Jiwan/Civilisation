@@ -18,6 +18,7 @@ using Civilization.Utils.Logs;
 using Civilization.Player;
 using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
+using Civilization.Fight;
 
 namespace Civilization
 {
@@ -231,10 +232,18 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 Log.Instance.Write("Cette unité ne peut attaquer!");
                 return;
             }
-            /*
+
+            // Initialiser attackedUnit avec l'unité qu'on veut attaquer !!
             IUnit attackedUnit;
-            if (attackedUnit.Position)
-             */
+            if (numberUnitsOnSquare(attackedUnit.Position) > 1)
+            {
+                new XVXFight(selectedUnit, attackedUnit);
+                // ajouter les autres unités
+            }
+            else
+            {
+                new _1V1Fight(selectedUnit, attackedUnit);
+            }
 
         }
         #endregion
