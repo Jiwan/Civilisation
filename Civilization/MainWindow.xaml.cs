@@ -122,6 +122,11 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         {
             logTextBlock.Text += info + "\n";
         }
+
+        public void nextTurn(object nextTurn, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
