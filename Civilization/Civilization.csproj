@@ -116,6 +116,7 @@
     <Compile Include="Player\HumanPlayer.cs" />
     <Compile Include="Player\IPlayer.cs" />
     <Compile Include="Player\Actions\IPlayerAction.cs" />
+    <Compile Include="TemplateSelector\PickTemplateSelector.cs" />
     <Compile Include="TemplateSelector\PlayerTemplateSelector.cs" />
     <Compile Include="TemplateSelector\SquareTemplateSelector.cs" />
     <Compile Include="CustomControls\MapViewer.xaml.cs">

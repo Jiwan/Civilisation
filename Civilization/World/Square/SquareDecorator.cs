@@ -29,6 +29,17 @@ namespace Civilization.World.Square
             get;
             set;
         }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name
+        {
+            get { return EncapsulatedSquare.Value.Name; }
+        }
         #endregion
 
         #region constructors

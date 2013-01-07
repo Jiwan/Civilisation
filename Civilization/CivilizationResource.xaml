@@ -131,4 +131,39 @@
                                  AIDataTemplate="{StaticResource ResourceKey=AIPlayerItem}"
                                   HumanDataTemplate="{StaticResource ResourceKey=HumanPlayerItem}"
                                   />
+
+    <DataTemplate x:Key="CityTemplate">
+    </DataTemplate>
+
+    <DataTemplate x:Key="SquareTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label>Type : </Label>
+            <Label Content="{Binding Name}" Grid.Column="1"/>
+            
+            <Label Grid.Row="1">Nourriture : </Label>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding AvailableFood}"/>
+                   
+            <Label Grid.Row="2">Minerai : </Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding AvailableOre}"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="UnitTemplate">
+    </DataTemplate>
+    
+    <local:PickTemplateSelector x:Key="MyPickTemplateSelector"
+                                CityDataTemplate="{StaticResource ResourceKey=CityTemplate}"
+                                SquareDataTemplate="{StaticResource ResourceKey=SquareTemplate}"
+                                UnitDataTemplate="{StaticResource ResourceKey=UnitTemplate}"/>
 </ResourceDictionary>

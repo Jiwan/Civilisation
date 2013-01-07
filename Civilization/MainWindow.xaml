@@ -44,10 +44,10 @@
                 <Border BorderBrush="Gray" Grid.Row="1" BorderThickness="2,2,1,2">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="3*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Label>Infos et blablabla</Label>
+                        <ContentControl ContentTemplateSelector=""/>
 
                         <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="squarePositionStackPanel">
                             <Label>X :</Label>

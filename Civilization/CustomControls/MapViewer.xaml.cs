@@ -16,7 +16,12 @@ using Civilization.World.Map;
 
 namespace Civilization.CustomControls
 {
+    /// <summary>
+    /// An event that fire-up when a new square has been selected.
+    /// </summary>
+    /// <param name="position">The position.</param>
     public delegate void SelectedSquareChangedHandler(Point position);
+
     /// <summary>
     /// Logique d'interaction pour MapViewer.xaml
     /// </summary>

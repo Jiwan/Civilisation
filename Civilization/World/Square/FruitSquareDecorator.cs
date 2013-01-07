@@ -50,6 +50,17 @@ namespace Civilization.World.Square
                 return tileDecorator;
             }
         }
+
+        /// <summary>
+        /// Gets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public override string Name
+        {
+            get { return EncapsulatedSquare.Value.Name + "avec bonus de nourriture"; }
+        }
         #endregion
 
         #region constructor
