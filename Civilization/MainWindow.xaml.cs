@@ -16,6 +16,8 @@ using Civilization.World.Map;
 using Civilization.World.Square;
 using Civilization.Utils.Logs;
 using Civilization.Player;
+using Civilization.ClockWork.Unit;
+using Civilization.ClockWork.City;
 
 namespace Civilization
 {
@@ -39,6 +41,11 @@ namespace Civilization
         /// The current player index
         /// </summary>
         private int currentPlayerIndex;
+
+        /// <summary>
+        /// The selected unit
+        /// </summary>
+        private IUnit selectedUnit;
         #endregion
         
         #region constructors
@@ -166,6 +173,21 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             else
             {
                 currentPlayerIndex = 0;
+            }
+        }
+
+        private void createCityButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool hasCity = false;
+            foreach(IPlayer player in players)
+            {
+                player.Cities.ForEach(city => hasCity = city.isAtPosition(selectedUnit.Position));
+            }
+
+            if (!hasCity)
+            {
+                ITeacher selectedTeacher = selectedUnit as ITeacher;
+                ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, players[currentPlayerIndex].Game.Map);
             }
         }
 

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
+using System.Windows;
 using Civilization.ClockWork.Unit;
 using Civilization.World.Map;
 using System;
@@ -32,14 +32,14 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region properties
-        public IList<Point> ControlledCases 
+        public List<Point> ControlledCases 
         { 
             get 
             { 
                 return controlledCases; 
             } 
         }
-        public IList<IUnit> InDoorsUnits 
+        public List<IUnit> InDoorsUnits 
         {
             get
             {
@@ -130,16 +130,20 @@ namespace Civilization.ClockWork.City
         private void CollectOre()
         {
             uint oldOre = Ore;
-            controlledCases.ForEach(point => Ore += map.SquareMatrix[point.X, point.Y].AvailableOre);
+            controlledCases.ForEach(point => Ore += map.SquareMatrix[(int)point.X, (int)point.Y].AvailableOre);
             Ore += oldOre;
         }
         private void CollectFood()
         {
-            controlledCases.ForEach(point => food += map.SquareMatrix[point.X, point.Y].AvailableFood);
+            controlledCases.ForEach(point => food += map.SquareMatrix[(int)point.X, (int)point.Y].AvailableFood);
         }
         #endregion
 
         #region public
+        public bool isAtPosition(Point point)
+        {
+            return point.Equals(Position);
+        }
         public void CreateUnit(UnitType type)
         {
             switch (type)
@@ -203,31 +207,31 @@ namespace Civilization.ClockWork.City
 
             // Trouver le point idéal
             List<Point> listCases = new List<Point>();
-            
-            for (int i = HG.X; i < BD.X; i++)
+
+            for (int i = (int)HG.X; i < BD.X; i++)
             {
-                for (int j = HG.X; i < BD.Y; j++)
+                for (int j = (int)HG.X; i < BD.Y; j++)
                 {
                     listCases.Add(new Point(i, j));
                 }
             }
 
             Point toBeAdded = new Point();
-            if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert && !controlledCases.Contains(point)))
+            if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Desert && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Desert);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Desert);
             }
-            else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field && !controlledCases.Contains(point)))
+            else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Field && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Field);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Field);
             }
-            else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain && !controlledCases.Contains(point)))
+            else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Mountain && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Mountain);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Mountain);
             }
-            else if (listCases.Exists(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water && !controlledCases.Contains(point)))
+            else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Water && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[point.X, point.Y] is World.Square.Water);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Water);
             }
 
             ExtensionPoint = toBeAdded;

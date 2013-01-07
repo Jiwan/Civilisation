@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
-using System.Drawing;
+using System.Windows;
 using System;
 using Civilization.Player.Actions;
 using System.Windows.Input;
+using Civilization.Utils.Logs;
 
 namespace Civilization.Player
 {
@@ -47,14 +48,14 @@ namespace Civilization.Player
                 alive = value;
             }
         }
-        public IList<ICity> Cities
+        public List<ICity> Cities
         {
             get
             {
                 return cities;
             }
         }
-        public IList<IUnit> Units
+        public List<IUnit> Units
         {
             get
             {
@@ -155,7 +156,7 @@ namespace Civilization.Player
             }
             return false;
         }
-        public bool HasUnit(System.Drawing.Point point)
+        public bool HasUnit(Point point)
         {
             foreach (IUnit unit in Units)
             {
@@ -176,21 +177,24 @@ namespace Civilization.Player
         }
         public void NextTurn()
         {
-            Console.WriteLine("Prochain tour.");
+            Log.Instance.Write("Prochain tour.");
             units.ForEach(unit => unit.Movement = 0);
-            Console.WriteLine("Mouvements des unités remis à 0.");
+            Log.Instance.Write("Mouvements des unités remis à 0.");
+
             cities.ForEach(city => city.FindExtensionPoint());
-            Console.WriteLine("Cases d'extension des villes trouvées.");
+            Log.Instance.Write("Cases d'extension des villes trouvées.");
+
             while (CitiesToBeExtended.Count != 0)
             {
                 CitiesToBeExtended.Dequeue().ExtendPoint();
             }
-            Console.WriteLine("Villes étendues.");
+            Log.Instance.Write("Villes étendues.");
+
             availableFood = 0;
             cities.ForEach(city => city.NextTurn());
             cities.ForEach(city => availableFood += city.Food);
             cities.ForEach(city => availableOre += city.Ore);
-            Console.WriteLine("Nourriture et minerai mis à jour.");
+            Log.Instance.Write("Nourriture et minerai mis à jour.");
         }
         #endregion
     }

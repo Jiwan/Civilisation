@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using System.Windows;
 using System.Xml.Serialization;
 using Civilization.ClockWork.City;
 using Civilization.ClockWork.Unit;
@@ -120,7 +120,7 @@ namespace Civilization.ClockWork
             this.protoCity = new BasicCity(new Point(0, 0), null, null);
             XmlDepartDirectorPrototype = new XmlAnything<IDepartDirector>(new BasicDepartDirector());
             XmlStudentPrototype = new XmlAnything<IStudent>(new BasicStudent(0, 0, 0, 0));
-            XmlTeacherPrototype = new XmlAnything<ITeacher>(new BasicTeacher(0, 0, 0, 0));
+            XmlTeacherPrototype = new XmlAnything<ITeacher>(new BasicTeacher(null, 0, 0, 0, 0));
         }
         #endregion
 
