@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.Windows;
 using CivilizationAlgorithms;
 using Civilization.World.Square;
 
@@ -98,6 +98,27 @@ namespace Civilization.World.Map
                     map.GetSquare(new Point(i, j)).Position = new Point(i, j);
                 }
             }
+
+            CivilizationAlgorithms.PerlinNoise.FindIdealPositions();
+
+            map.IdealPosition1 = new Point
+            {
+                X = CivilizationAlgorithms.PerlinNoise.GetIdealPosition1().X,
+                Y = CivilizationAlgorithms.PerlinNoise.GetIdealPosition1().Y
+            };
+
+            map.IdealPosition2 = new Point
+            {
+                X = CivilizationAlgorithms.PerlinNoise.GetIdealPosition2().X,
+                Y = CivilizationAlgorithms.PerlinNoise.GetIdealPosition2().Y
+            };
+
+            map.IdealPosition3 = new Point
+            {
+                X = CivilizationAlgorithms.PerlinNoise.GetIdealPosition3().X,
+                Y = CivilizationAlgorithms.PerlinNoise.GetIdealPosition3().Y
+            };
+
             return map;
         }
         #endregion

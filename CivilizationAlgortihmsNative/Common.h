@@ -1,3 +1,10 @@
+/*!
+ * \file common.h
+ * \author J.Guegant 
+ * \author R.Lagrange
+ * This enumeration for our tiles.
+ */
+
 #ifndef COMMON_H
 #define COMMON_H
 

@@ -146,11 +146,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="position">The position.</param>
         private void mapViewer_SelectedSquareChanged(Point position)
         {
-            //!TODO : Mettre a jour les infos sur la case.
-           /* if (players[currentPlayerIndex].HasUnit(position))
-            { */
-                squarePositionStackPanel.DataContext = mapViewer;
-            //}
+            squarePositionStackPanel.DataContext = mapViewer;
         }
 
         /// <summary>

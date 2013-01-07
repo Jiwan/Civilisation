@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using System.Windows;
 using Civilization.World.Square;
 using System;
 using System.Xml.Serialization;
@@ -36,6 +36,24 @@ namespace Civilization.World.Map
             get { return size; }
             set { size = value; }
         }
+
+        public Point IdealPosition1
+        {
+            get;
+            set;
+        }
+
+        public Point IdealPosition2
+        {
+            get;
+            set;
+        }
+
+        public Point IdealPosition3
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region constructor
@@ -47,7 +65,7 @@ namespace Civilization.World.Map
         public Map(Point size)
         {
             this.size = size;
-            squareMatrix = new Square.Square[size.X, size.Y];           
+            squareMatrix = new Square.Square[(int)size.X, (int)size.Y];           
         }
 
         /// <summary>
@@ -68,7 +86,7 @@ namespace Civilization.World.Map
         /// <returns></returns>
         public Square.Square GetSquare(Point coord)
         {
-            return squareMatrix[coord.X, coord.Y];
+            return squareMatrix[(int)coord.X, (int)coord.Y];
         }
 
         /// <summary>
@@ -78,7 +96,7 @@ namespace Civilization.World.Map
         /// <param name="square">The square.</param>
         public void ReplaceSquare(Point coord, Square.Square square)
         {
-            squareMatrix[coord.X, coord.Y] = square;
+            squareMatrix[(int)coord.X, (int)coord.Y] = square;
         }
 
         public System.Xml.Schema.XmlSchema GetSchema()
@@ -93,7 +111,7 @@ namespace Civilization.World.Map
             
             reader.Read();
 
-            squareMatrix = new Square.Square[size.X, size.Y];
+            squareMatrix = new Square.Square[(int)size.X, (int)size.Y];
 
             for (int i = 0; i < size.X; ++i)
             {

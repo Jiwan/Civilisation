@@ -82,7 +82,7 @@ namespace Civilization.Game
         {
             //engine = new GraphicEngine();
             mainWindow = new Window();
-            map = new Map(new System.Drawing.Point(25, 25));
+            map = new Map(new System.Windows.Point(25, 25));
             states = new Stack();
             players = new List<Player.IPlayer>();
         }

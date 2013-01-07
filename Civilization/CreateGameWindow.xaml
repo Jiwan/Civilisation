@@ -175,7 +175,7 @@
                                         Maximum="{Binding AttackMaxPoint, ElementName=_this}" />
                                 <Label Grid.Column="2" Grid.Row="2" Content="{Binding Value, ElementName=attackSlider}"/>
                                 
-                                <Label Grid.Row="3">Defence : </Label>
+                                <Label Grid.Row="3">Defense : </Label>
                                 <Slider Grid.Column="1" Grid.Row="3" Name="defenceSlider"
                                         Value="{Binding SelectedUnit.Defense, ElementName=_this}" 
                                         ValueChanged="defenceSlider_ValueChanged"

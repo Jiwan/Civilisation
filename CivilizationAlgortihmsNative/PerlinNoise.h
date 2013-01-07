@@ -1,7 +1,13 @@
+/*!
+ * \file PerlinNoise.h
+ * \author J.Guegant 
+ * \author R.Lagrange
+ * This file contains the perlin noise class and its policies.
+ */
+
 #ifndef PERLINNOISE_H
 #define PERLINNOISE_H
-
-#define _USE_MATH_DEFINES // A mettre dans une 
+#define _USE_MATH_DEFINES
 
 #include <math.h>
 #include <stdlib.h>
@@ -13,9 +19,11 @@
 #include "Common.h"
 #include "ISquareRandomizer.h"
 
+/*! \struct LinearInterpolation
+ *  \brief Linear interpolation policy for the PerlinNoiseMap class.
+ */
 struct DECLDIR LinearInterpolation
 {
-	// If we store a field, remember to add a virtual destructor.
 public:
 	virtual double interpolate(double a, double b, double c, double d, double x, double y)
 	{
@@ -32,6 +40,9 @@ protected:
 	}
 };
 
+/*! \struct LinearInterpolation
+ *  \brief Cosinus interpolation policy for the PerlinNoiseMap class.
+ */
 struct DECLDIR CosInterpolation : LinearInterpolation
 {
 private:
@@ -43,16 +54,27 @@ private:
 	}
 };
 
-// Unlike interpolation, we may want to change the randomizer at running time and not at compile time with a policy.
 
+/*! \class PerlinNoiseMap
+ *  Create a pseudo-random map according to user's needs.
+ *  As we don't need to change interpolation type at runtime, we use policy (better at compile-time).
+ */
 template <class InterpolationPolicy = CosInterpolation> class DECLDIR PerlinNoiseMap : InterpolationPolicy
 {
 public:
+	/*! \brief Constructor
+	 */
 	PerlinNoiseMap()
 	{
 		srand(time(NULL));
 	}
-
+	/*! \brief generate new map (heightmaps).
+	*
+	* \param randomizer : the randomizer you want to use to create new tiles.
+	* \param maxHeight : the max height for mountain.
+	* \param width : the width of the new map.
+	* \param height : the height of the new map.
+	*/
 	void generateHeightMap(ISquareRandomizer* randomizer, double maxHeight, unsigned int width, unsigned int height)
 	{
 		m_width = width;
@@ -113,44 +135,43 @@ public:
 		}
 	}
 
+	/*! \brief get a the tile type at a given position.
+	*   \param x : the x coordinate.
+	*   \param y : the y coordinate.
+	*   \return the tile type at the given position.
+	*/
 	TileType getTileType(int x, int y) const
 	{
 		return m_map[(y * m_width) + x].first;
 	}
 
+	/*! \brief get a the decorator type at a given position.
+	*   \param x : the x coordinate.
+	*   \param y : the y coordinate.
+	*   \return the decorator type at the given position.
+	*/
 	DecoratorType getDecoratorType(int x, int y) const
 	{
 		return m_map[(y * m_width) + x].second;
 	}
 
+	/*! \return the width of the current map.
+	*/
 	unsigned int getWidth()
 	{
 		return m_width;
 	}
 
+	/*! \return the height of the current map.
+	*/
 	unsigned int getHeight()
 	{
 		return m_height;
 	}
-	//friend std::ostream& operator<<(std::ostream& other, PerlinNoiseMap& map);
+
 private:
 	std::unique_ptr<std::pair<TileType, DecoratorType>[]> m_map;
 	unsigned int m_width;
 	unsigned int m_height;
 };
-
-/*std::ostream& operator<<(std::ostream& out, PerlinNoiseMap<>& map)
-{	
-	for (unsigned int i = 0; i < map.m_width; ++i)
-	{
-		for (unsigned int j = 0; j < map.m_height; ++j)
-		{
-			std::cout << map.getTileType(i, j);
-		}
-
-		std::cout << std::endl;
-	}
-
-	return out;
-}*/
 #endif

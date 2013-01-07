@@ -1,3 +1,10 @@
+/*!
+ * \file BasicSquareRandomizer.h
+ * \author J.Guegant 
+ * \author R.Lagrange
+ * This file contains an implementation of a basic square randomizer.
+ */
+
 #ifndef BASICSQUARERANDOMIZER_H
 #define BASICSQUARERANDOMIZER_H
 
@@ -7,16 +14,22 @@
 class DECLDIR BasicSquareRandomizer : ISquareRandomizer
 {
 public:
+	/*! \brief Constructor
+	 */
 	BasicSquareRandomizer() : m_waterRange(10), m_desertRange(35), m_fieldRange(80)
 	{
 
 	}
 
+	/*! \brief virtual destructor to avoid memory leaks. 
+	 */
 	virtual ~BasicSquareRandomizer()
 	{
 
 	}
-
+	
+	/*! \brief Create a tile type and a decorator type according to an height.
+	 */
 	virtual std::pair<TileType, DecoratorType> createCase(double value)
 	{
 		TileType type = TileType::FIELD;
@@ -41,16 +54,25 @@ public:
 		return std::make_pair(type, getDecorator(type));
 	}
 
+	/*! \brief set the water range.
+	 *  \param the new range.
+	 */
 	void setWaterRange(double range)
 	{
 		m_waterRange = range;
 	}
 
+	/*! \brief set the desert range.
+	 *  \param the new range.
+	 */
 	void setDesertRange(double range)
 	{
 		m_desertRange = range;
 	}
 
+	/*! \brief set the field range.
+	 *  \param the new range.
+	 */
 	void setFieldRange(double range)
 	{
 		m_fieldRange = range;
