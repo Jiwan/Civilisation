@@ -72,10 +72,31 @@ namespace Civilization
         private void InitGame()
         {
             currentPlayerIndex = 0;
+
+            // Initialisation des unités de chaque joueur
+            for(int i = currentPlayerIndex; i < players.Count; i++)
+            {
+                Random random = new Random();
+                // Création de 2 points randoms, mais pas trop randoms hein ;)
+                // J'espère que ça marche, not so sure
+                int coordx = random.Next(currentPlayerIndex, (int)((i + 1) * players[i].Game.Map.Size.X) / players.Count);
+                int coordy = random.Next(currentPlayerIndex, (int)((i + 1) * players[i].Game.Map.Size.Y) / players.Count);
+                Log.Instance.Write("points aléatiores définis.");
+                // Création des joueurs
+                ITeacher teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();
+                teacher.Position.X = coordx;
+                teacher.Position.Y = coordy;
+                IStudent student = players[currentPlayerIndex].PlayedCivilization.Factory.CreateStudent();
+                student.Position.X = coordx;
+                student.Position.Y = coordy;
+                // Ajout à la liste des unités de chaque joueur
+                players[currentPlayerIndex].AddUnit(student);
+                players[currentPlayerIndex].AddUnit(teacher);
+            }
         }
 
         /// <summary>
-        /// Writes the a log.
+        /// Writes the log.
         /// </summary>
         /// <param name="info">The info you want to write.</param>
         private void WriteLog(string info)
