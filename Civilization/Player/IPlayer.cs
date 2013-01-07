@@ -11,19 +11,24 @@ namespace Civilization.Player
     public interface IPlayer
     {
         #region properties
-
         IList<ICity> Cities { get; }
+        
         IList<IUnit> Units { get; }
+        
         Game.Game Game { get; set; }
+        
         string Name { get; set; }
+        
         Civilization.ClockWork.Civilization PlayedCivilization { get; set; }
+        
         System.Windows.Media.Color Color { get; set; }
+        
         uint AvailableFood { get; set; }
+        
         uint AvailableOre { get; set; }
+        
         bool Alive { get; set; }
-
         #endregion
-
 
         #region methods
 

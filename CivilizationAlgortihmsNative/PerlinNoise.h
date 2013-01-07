@@ -123,6 +123,15 @@ public:
 		return m_map[(y * m_width) + x].second;
 	}
 
+	unsigned int getWidth()
+	{
+		return m_width;
+	}
+
+	unsigned int getHeight()
+	{
+		return m_height;
+	}
 	//friend std::ostream& operator<<(std::ostream& other, PerlinNoiseMap& map);
 private:
 	std::unique_ptr<std::pair<TileType, DecoratorType>[]> m_map;

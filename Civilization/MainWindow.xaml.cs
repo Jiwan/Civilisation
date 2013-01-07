@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Civilization.World.Map;
 using Civilization.World.Square;
 using Civilization.Utils.Logs;
+using Civilization.Player;
 
 namespace Civilization
 {
@@ -27,7 +28,17 @@ namespace Civilization
         /// <summary>
         /// The window
         /// </summary>
-        CreateGameWindow window;
+        private CreateGameWindow window;
+
+        /// <summary>
+        /// The players.
+        /// </summary>
+        private List<IPlayer> players;
+
+        /// <summary>
+        /// The current player index
+        /// </summary>
+        private int currentPlayerIndex;
         #endregion
         
         #region constructors
@@ -43,6 +54,29 @@ namespace Civilization
         #endregion
 
         #region methods
+
+        #region private
+
+        #region internal
+        /// <summary>
+        /// Inits the game.
+        /// </summary>
+        private void InitGame()
+        {
+            currentPlayerIndex = 0;
+        }
+
+        /// <summary>
+        /// Writes the a log.
+        /// </summary>
+        /// <param name="info">The info you want to write.</param>
+        private void WriteLog(string info)
+        {
+            logTextBlock.Text = info + "\n" + logTextBlock.Text;
+        }
+        #endregion
+
+        #region events
         /// <summary>
         /// Handles the Click event of the closeMenuItem control.
         /// </summary>
@@ -70,6 +104,8 @@ namespace Civilization
                 Log.Instance.Write("Chargement de la carte...");
                 Log.Instance.Write("Chargement des joueurs...");
                 Log.Instance.Write("Début de la partie.");
+
+                InitGame();
             }
         }
 
@@ -111,17 +147,23 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         private void mapViewer_SelectedSquareChanged(Point position)
         {
             //!TODO : Mettre a jour les infos sur la case.
-            squarePositionStackPanel.DataContext = mapViewer;
+           /* if (players[currentPlayerIndex].HasUnit(position))
+            { */
+                squarePositionStackPanel.DataContext = mapViewer;
+            //}
         }
 
         /// <summary>
-        /// Writes the log.
+        /// Handles the Click event of the nextTurnButton control.
         /// </summary>
-        /// <param name="info">The info you want to write.</param>
-        private void WriteLog(string info)
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void nextTurnButton_Click(object sender, RoutedEventArgs e)
         {
-            logTextBlock.Text += info + "\n";
+            
         }
+        #endregion
+        #endregion
         #endregion
     }
 }
