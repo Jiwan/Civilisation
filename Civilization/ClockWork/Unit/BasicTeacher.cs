@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Windows;
+using Civilization.World.Map;
+using Civilization.Player;
 
 namespace Civilization.ClockWork.Unit
 {
-    [Serializable()]
     public class BasicTeacher : Unit, ITeacher
     {
+        #region Fields
+        private IPlayer player;
+        #endregion
+
         #region properties
         public override int Cost
         {
@@ -16,28 +22,22 @@ namespace Civilization.ClockWork.Unit
         #endregion 
 
         #region constructors
-        public BasicTeacher() : base(0, 1, 1, 3)
+        public BasicTeacher(IPlayer player) : base(0, 1, 1, 3)
         {
-
+            this.player = player;
         }
 
-        public BasicTeacher(int attack, int defence, int hp, int movement) 
+        public BasicTeacher(IPlayer player, int attack, int defence, int hp, int movement) 
             : base(attack, defence, hp, movement)
         {
-
+            this.player = player;
         }
         #endregion
 
         #region methods
-        public void CreateCity()
+        public City.ICity CreateCity(Point constructionPoint, Map map)
         {
-            throw new NotImplementedException();
-            /*
-            if (MainWindow.players.hasCity(this.Position))
-            {
-
-            }
-             */
+            return new City.BasicCity(constructionPoint, map, player);
         }
 
         public object Clone()

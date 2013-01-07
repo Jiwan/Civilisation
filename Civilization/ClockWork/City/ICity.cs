@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Windows;
 using Civilization.ClockWork.Unit;
 
 namespace Civilization.ClockWork.City
@@ -8,8 +8,8 @@ namespace Civilization.ClockWork.City
    public interface ICity : ICloneable
    {
        #region properties
-       IList<Point> ControlledCases { get; }
-       IList<IUnit> InDoorsUnits { get; }
+       List<Point> ControlledCases { get; }
+       List<IUnit> InDoorsUnits { get; }
        Point Position
        {
            get;
@@ -21,6 +21,7 @@ namespace Civilization.ClockWork.City
        #endregion
 
        #region methods
+       bool isAtPosition(Point point);
        void CreateUnit(UnitType type);
        void NextTurn();
        void FindExtensionPoint();

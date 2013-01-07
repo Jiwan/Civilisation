@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 
 namespace Civilization.ClockWork.City
 {
@@ -38,7 +39,7 @@ namespace Civilization.ClockWork.City
         #endregion
         
         #region methods
-        public System.Drawing.Point Extends(ICity city)
+        public Point Extends(ICity city)
         {
             throw new NotImplementedException();
         }

@@ -1,7 +1,7 @@
 ﻿#region usings
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Windows;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 #endregion
@@ -148,7 +148,7 @@ namespace Civilization.ClockWork.Unit
         /// <value>
         /// The position.
         /// </value>
-        public System.Drawing.Point Position
+        public Point Position
         {
             get
             {

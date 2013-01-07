@@ -58,7 +58,14 @@ namespace Civilization.Game
         /// </value>
         public Map Map
         {
-            set { map = value; }
+            get
+            {
+                return map;
+            }
+            set
+            {
+                map = value;
+            }
         }
 
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
-using System.Drawing;
+using System.Windows;
 using Civilization.Player.Actions;
 
 namespace Civilization.Player
@@ -33,14 +33,14 @@ namespace Civilization.Player
                 alive = value;
             }
         }
-        public IList<ICity> Cities
+        public List<ICity> Cities
         {
             get
             {
                 return cities;
             }
         }
-        public IList<IUnit> Units
+        public List<IUnit> Units
         {
             get
             {
@@ -176,7 +176,7 @@ namespace Civilization.Player
         /// <returns>
         ///   <c>true</c> if the specified point has unit; otherwise, <c>false</c>.
         /// </returns>
-        public bool HasUnit(System.Drawing.Point point)
+        public bool HasUnit(Point point)
         {
             foreach (IUnit unit in Units)
             {

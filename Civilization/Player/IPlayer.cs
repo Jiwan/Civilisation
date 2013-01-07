@@ -1,6 +1,6 @@
 ﻿using System;
 using Civilization.ClockWork.City;
-using System.Drawing;
+using System.Windows;
 using Civilization.ClockWork.Unit;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,8 +12,8 @@ namespace Civilization.Player
     {
         #region properties
 
-        IList<ICity> Cities { get; }
-        IList<IUnit> Units { get; }
+        List<ICity> Cities { get; }
+        List<IUnit> Units { get; }
         Game.Game Game { get; set; }
         string Name { get; set; }
         Civilization.ClockWork.Civilization PlayedCivilization { get; set; }

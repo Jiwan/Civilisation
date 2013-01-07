@@ -1,4 +1,6 @@
-﻿
+﻿using System.Windows;
+using Civilization.World.Map;
+
 namespace Civilization.ClockWork.Unit
 {
     public interface ITeacher : IUnit
@@ -7,7 +9,7 @@ namespace Civilization.ClockWork.Unit
         /// <summary>
         /// Creates a new city.
         /// </summary>
-        void CreateCity();
+        City.ICity CreateCity(Point constructionPoint, Map map);
         #endregion
     }
 }
