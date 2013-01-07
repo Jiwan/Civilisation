@@ -106,6 +106,11 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             //!TODO : Mettre a jour les infos sur la case.
             squarePositionStackPanel.DataContext = mapViewer;
         }
+
+        public void nextTurn(object nextTurn, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
