@@ -122,6 +122,7 @@
       <DependentUpon>MapViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils\Drawing\TileFlyWeight.cs" />
+    <Compile Include="Utils\Logs\Log.cs" />
     <Compile Include="Utils\Serialization\XmlAnything.cs" />
     <Compile Include="World\Map\MediumMap.cs" />
     <Compile Include="World\Map\IMapCreate.cs" />
@@ -192,7 +193,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="World\Square\World.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CivilizationAlgorithms\CivilizationAlgorithms.vcxproj">
@@ -237,6 +237,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\mouse-cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\food.png" />
+    <Resource Include="Images\iron.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

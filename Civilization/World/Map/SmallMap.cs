@@ -61,24 +61,40 @@ namespace Civilization.World.Map
             {
                 for (int j = 0; j < 25; ++j)
                 {
+                    Square.Square newSquare;
                     switch (CivilizationAlgorithms.PerlinNoise.GetTileType(i, j))
                     {
                         case ManagedTileType.Desert:
-                            map.ReplaceSquare(new Point(i, j), new Desert());
+                            newSquare = new Desert();
                             break;
                         case ManagedTileType.Water:
-                            map.ReplaceSquare(new Point(i, j), new Water());
+                            newSquare = new Water();
                             break;
                         case ManagedTileType.Mountain:
-                            map.ReplaceSquare(new Point(i, j), new Mountain());
+                            newSquare = new Mountain();
                             break;
                         case ManagedTileType.Field:
-                            map.ReplaceSquare(new Point(i, j), new Field());
+                            newSquare = new Field();
                             break;
                         default:
                             throw new System.Exception("Unknow tile type");
                             break;
                     }
+
+                    switch (CivilizationAlgorithms.PerlinNoise.GetDecoratorType(i, j))
+                    {
+                        case ManagedDecoratorType.Fruit :
+                            newSquare = new FruitSquareDecorator(newSquare);
+                            break;
+                        case ManagedDecoratorType.Iron :
+                            newSquare = new IronSquareDecorator(newSquare);
+                            break;
+                        default:
+                            //NADA
+                            break;
+                    }
+
+                    map.ReplaceSquare(new Point(i, j), newSquare);
                     map.GetSquare(new Point(i, j)).Position = new Point(i, j);
                 }
             }

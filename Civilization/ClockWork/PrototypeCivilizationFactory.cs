@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Xml.Serialization;
 using Civilization.ClockWork.City;
 using Civilization.ClockWork.Unit;
@@ -7,7 +6,6 @@ using Civilization.Utils.Serialization;
 
 namespace Civilization.ClockWork
 {
-    [Serializable()]
     public class PrototypeCivilizationFactory : ICivilizationAbstractFactory
     {
         #region fields

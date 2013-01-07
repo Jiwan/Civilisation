@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 using Civilization.World.Map;
 using Civilization.World.Square;
+using Civilization.Utils.Logs;
 
 namespace Civilization
 {
@@ -36,7 +37,8 @@ namespace Civilization
         public MainWindow()
         {
             InitializeComponent();
-            window = new CreateGameWindow();
+            Log.Instance.WriteFunction = WriteLog;
+
         }
         #endregion
 
@@ -57,12 +59,17 @@ namespace Civilization
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void createMenuItem_Click(object sender, RoutedEventArgs e)
-        {            
+        {
+            window = new CreateGameWindow();
             var result = window.ShowDialog();
 
             if (result.HasValue && result.Value)
             {
                 mapViewer.Map = window.CreatedMap;
+
+                Log.Instance.Write("Chargement de la carte...");
+                Log.Instance.Write("Chargement des joueurs...");
+                Log.Instance.Write("Début de la partie.");
             }
         }
 
@@ -73,7 +80,7 @@ namespace Civilization
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void aboutMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(@"Ce projet a été crée par J.Guegant et R.Lagrange dans le cadre d'un projet de 4ème à l'Institut National des Sciences Appliquées de Rennes.
+            MessageBox.Show(@"Ce projet a été crée par J.Guegant et R.Lagrange dans le cadre d'un cours de POO à l'Institut National des Sciences Appliquées de Rennes.
 Pour plus d'informations, se référer au manuel utilisateur.");
         }
 
@@ -105,6 +112,15 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         {
             //!TODO : Mettre a jour les infos sur la case.
             squarePositionStackPanel.DataContext = mapViewer;
+        }
+
+        /// <summary>
+        /// Writes the log.
+        /// </summary>
+        /// <param name="info">The info you want to write.</param>
+        private void WriteLog(string info)
+        {
+            logTextBlock.Text += info + "\n";
         }
 
         public void nextTurn(object nextTurn, RoutedEventArgs e)

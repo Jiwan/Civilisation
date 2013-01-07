@@ -58,7 +58,7 @@
                     </Grid>
                 </Border>
                 <Border BorderBrush="Gray" Grid.Row="1" Grid.Column="1" BorderThickness="1,2">
-                    <TextBlock >blabla</TextBlock>
+                    <TextBlock x:Name="logTextBlock"></TextBlock>
                 </Border>
                 <Border BorderBrush="Gray" Grid.Row="1" Grid.Column="2" BorderThickness="1,2,2,2">
                     <Grid>
