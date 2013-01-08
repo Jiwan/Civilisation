@@ -48,6 +48,11 @@ namespace Civilization.ClockWork.Unit
         /// The movement
         /// </summary>
         private int movement;
+
+        /// <summary>
+        /// The current movement nb
+        /// </summary>
+        private int currentMovementNb;
         #endregion
 
         #region properties
@@ -135,6 +140,25 @@ namespace Civilization.ClockWork.Unit
             {
                 NotifyPropertyChanged(true, "Movement");
                 movement = value; 
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the current movement nb.
+        /// </summary>
+        /// <value>
+        /// The current movement nb.
+        /// </value>
+        public int CurrentMovementNb
+        {
+            get
+            {
+                return currentMovementNb;
+            }
+            set
+            {
+                NotifyPropertyChanged(true, "CurrentMovementNb");
+                currentMovementNb = value;
             }
         }
 
@@ -246,21 +270,25 @@ namespace Civilization.ClockWork.Unit
         public void moveLeft()
         {
             casePosition.X--;
+            currentMovementNb++;
         }
 
         public void moveRight()
         {
             casePosition.X++;
+            currentMovementNb++;
         }
 
         public void moveUp()
         {
             casePosition.Y--;
+            currentMovementNb++;
         }
 
         public void moveDown()
         {
             casePosition.Y++;
+            currentMovementNb++;
         }
         #endregion
 
