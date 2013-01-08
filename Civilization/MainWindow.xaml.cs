@@ -312,6 +312,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             mapViewer.Redraw();
             selectedUnit = null;
             selectedCity = null;
+            pickContentControl.DataContext = null;
             Log.Instance.Write("Debut du tour du joueur [" + players[currentPlayerIndex].Name + "]");
         }
 
@@ -688,7 +689,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                             selectedCity.CreateUnit(UnitType.U_STUDENT, players[currentPlayerIndex]);
                             break;
                         case "Directeur":
-                            selectedCity.CreateUnit(UnitType.U_STUDENT, players[currentPlayerIndex]);
+                            selectedCity.CreateUnit(UnitType.U_DIRECTOR, players[currentPlayerIndex]);
                             break;
                         case "Enseignant":
                             selectedCity.CreateUnit(UnitType.U_TEACHER, players[currentPlayerIndex]);
@@ -696,6 +697,8 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                     }
                 }
             }
+
+            this.mapViewer.Redraw();
         }
         #endregion
         #endregion

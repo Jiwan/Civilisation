@@ -138,10 +138,10 @@ namespace Civilization.ClockWork.City
         private void AddCitizen()
         {
             // il faut respecter la formule suivante : nbResn = nbResn−1 + nbResn−1/2.
-            if (population == 1 && food == 10)
+            if (population == 1)
             {
                 population++;
-                neededFood = 10;
+                neededFood = 2;
             }
             else if (food >= (neededFood + neededFood / 2))
             {
@@ -149,12 +149,14 @@ namespace Civilization.ClockWork.City
                 neededFood += neededFood / 2;
             }
         }
+
         private void CollectOre()
         {
             uint oldOre = Ore;
             controlledCases.ForEach(point => Ore += map.SquareMatrix[(int)point.X, (int)point.Y].AvailableOre);
             Ore += oldOre;
         }
+
         private void CollectFood()
         {
             controlledCases.ForEach(point => food += map.SquareMatrix[(int)point.X, (int)point.Y].AvailableFood);
@@ -257,7 +259,7 @@ namespace Civilization.ClockWork.City
 
             for (int i = (int)HG.X; i < BD.X; i++)
             {
-                for (int j = (int)HG.X; i < BD.Y; j++)
+                for (int j = (int)HG.Y; j < BD.Y; j++)
                 {
                     listCases.Add(new Point(i, j));
                 }
@@ -304,6 +306,7 @@ namespace Civilization.ClockWork.City
             {
                 Console.WriteLine("Pas assez de nourriture pour s'étendre et créer un nouvel habitant.");
             }
+            AddCitizen();
         }
 
         public object Clone()

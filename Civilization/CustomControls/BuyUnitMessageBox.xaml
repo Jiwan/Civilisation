@@ -1,0 +1,37 @@
+﻿<Window x:Class="Civilization.CustomControls.BuyUnitMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Acheter une nouvelle unitée" Height="150" Width="350">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.ColumnSpan="2">Veuillez choisir le type d'unité que vous voulez acheter.</Label>
+
+        <ComboBox Grid.Row="1" VerticalAlignment="Center"  Grid.ColumnSpan="2" Name="unitTypeComboBox">
+            <ComboBoxItem>
+                Etudiant
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Directeur
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Enseignant
+            </ComboBoxItem>
+        </ComboBox>
+        
+        <Button Grid.Row="2" Grid.Column="0" Click="okButton_Click" Name="okButton">
+            Ok
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Click="cancelButton_Click" Name="cancelButton">
+            Cancel
+        </Button>
+    </Grid>
+</Window>
