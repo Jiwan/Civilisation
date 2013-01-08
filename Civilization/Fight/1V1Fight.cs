@@ -52,14 +52,7 @@ namespace Civilization.Fight
         /// <param name="def">The defender.</param>
         public _1V1Fight(IUnit att, IUnit def)
         {
-            if (att.Attack != 0)
-            {
-                attacker = att;
-            }
-            else
-            {
-                throw AttackException("This unit cannot attack\n");
-            }
+            attacker = att;            
             defender = def;
             winner = Winner.W_NONE;
         }

@@ -34,13 +34,11 @@ namespace Civilization.Fight
         /// </summary>
         /// <param name="initialAttacker">The initial attacker.</param>
         /// <param name="initialDefender">The initial defender.</param>
-        public XVXFight(IUnit initialAttacker, IUnit initialDefender)
-        {
-            attackers = new List<IUnit>();
-            attackers.Add(initialAttacker);
-            defenders = new List<IUnit>();
-            defenders.Add(initialDefender);
+        public XVXFight()
+        {     
             winner = Winner.W_NONE;
+            attackers = new List<IUnit>();
+            defenders = new List<IUnit>();
         }
         #endregion
 

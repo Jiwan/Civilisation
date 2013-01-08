@@ -129,9 +129,53 @@ namespace Civilization
             logTextBlock.Text = info + "\n" + logTextBlock.Text;
         }
 
-        private bool Fight(IUnit attacker, List<IUnit> defender)
+        private void Fight(List<IUnit> attackers, List<IUnit> defenders, IPlayer otherPlayer)
         {
-            return true;
+            if (attackers.Count == 1 && defenders.Count == 1)
+            {
+                _1V1Fight fight = new _1V1Fight(attackers[0], defenders[0]);
+                fight.StartFight();
+            }
+            else
+            {
+                XVXFight fight = new XVXFight();
+            
+                foreach (IUnit unit in attackers)
+                {                
+                    fight.addAttacker(unit);
+                    if (unit is IDepartDirector)
+                    {
+                        fight.AddSupportToAttack();
+                    }
+                }
+
+                foreach (IUnit unit in defenders)
+                {
+                    fight.addDefender(unit);
+                    if (unit is IDepartDirector)
+                    {
+                        fight.AddSupportToDefence();
+                    }
+                }
+
+                fight.StartFight();
+            }
+
+            foreach (IUnit unit in attackers)
+            {
+                if (unit.IsDead)
+                {
+                    players[currentPlayerIndex].Units.Remove(unit);
+                }
+            }
+
+            foreach (IUnit unit in defenders)
+            {
+                if (unit.IsDead)
+                {
+                    otherPlayer.Units.Remove(unit);
+                }
+            }
         }
         #endregion
 
@@ -288,75 +332,6 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         }
 
         /// <summary>
-        /// Handles the Click event of the createCityButton control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
-        private void createCityButton_Click(object sender, RoutedEventArgs e)
-        {
-            bool hasCity = false;
-            foreach(IPlayer player in players)
-            {
-                foreach (ICity city in player.Cities)
-                {
-                    if (city.isAtPosition(selectedUnit.Position))
-                    {
-                        hasCity = true;
-                    }
-                }
-            }
-            Log.Instance.Write("Détermination si la case est occupée ou pas.");
-
-            if (!hasCity)
-            {
-                ITeacher selectedTeacher = selectedUnit as ITeacher;
-                ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, players[currentPlayerIndex].Game.Map);
-                players[currentPlayerIndex].Cities.Add(City);
-                selectedTeacher.HP = 0;
-                selectedTeacher.Movement = 0;
-                players[currentPlayerIndex].Units.Remove(selectedUnit);
-            }
-            Log.Instance.Write("Ville créée à l'emplacement.");
-        }
-
-        // Attaquer des unités
-        private void attack(object sender, RoutedEventArgs e)
-        {
-            if (selectedUnit.Attack == 0)
-            {
-                Log.Instance.Write("Cette unité ne peut attaquer!");
-                return;
-            }
-
-            // Initialiser attackedUnit avec l'unité qu'on veut attaquer !!
-            IUnit attackedUnit = null;
-            if (numberUnitsOnSquare(attackedUnit.Position) > 1)
-            {
-                XVXFight fight = new XVXFight(selectedUnit, attackedUnit);
-                // ajouter les autres unités
-                foreach (IUnit unit in players[currentPlayerIndex].Units)
-                {
-                    if (unit.Position.Equals(selectedUnit.Position))
-                    {
-                        fight.addAttacker(unit);
-                    }
-                }
-
-                foreach (IUnit unit in attackedUnit.Civil)
-                {
-                    if (unit.Position.Equals(selectedUnit.Position))
-                    {
-                        fight.addDefender(unit);
-                    }
-                }
-            }
-            else
-            {
-                new _1V1Fight(selectedUnit, attackedUnit);
-            }
-        }
-
-        /// <summary>
         /// Handles the Click event of the drawIdealLocationButton control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -436,7 +411,22 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                     {
                                         if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                                         {
-                                            return;
+                                            Fight(players[currentPlayerIndex].GetUnits(
+                                                selectedUnit.Position), 
+                                                player.GetUnits(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1)),
+                                                player);
+
+                                            if (player.GetUnits(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1)).Count < 1)
+                                            {
+                                                selectedUnit.MoveUp();                                                
+                                                // Traiter le cas ou on va sur une ville
+                                            }
+                                            else
+                                            {
+                                                mapViewer.Redraw();
+                                                selectedUnit = null;
+                                                return;
+                                            }
                                         }
                                         else
                                         {
@@ -476,8 +466,22 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                     {
                                         if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                                         {
-                                            
-                                            return;
+                                            Fight(players[currentPlayerIndex].GetUnits(
+                                                selectedUnit.Position),
+                                                player.GetUnits(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1)),
+                                                player);
+
+                                            if (player.GetUnits(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1)).Count < 1)
+                                            {
+                                                selectedUnit.MoveUp();
+                                                // Traiter le cas ou on va sur une ville
+                                            }
+                                            else
+                                            {
+                                                mapViewer.Redraw();
+                                                selectedUnit = null;
+                                                return;
+                                            }
                                         }
                                         else
                                         {
@@ -518,7 +522,22 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                         if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                                         {
 
-                                            return;
+                                            Fight(players[currentPlayerIndex].GetUnits(
+                                               selectedUnit.Position),
+                                               player.GetUnits(new Point((int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y)),
+                                               player);
+
+                                            if (player.GetUnits(new Point((int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y)).Count < 1)
+                                            {
+                                                selectedUnit.MoveUp();
+                                                // Traiter le cas ou on va sur une ville
+                                            }
+                                            else
+                                            {
+                                                mapViewer.Redraw();
+                                                selectedUnit = null;
+                                                return;
+                                            }
                                         }
                                         else
                                         {
@@ -559,7 +578,22 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                         if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                                         {
 
-                                            return;
+                                            Fight(players[currentPlayerIndex].GetUnits(
+                                                selectedUnit.Position),
+                                                player.GetUnits(new Point((int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y)),
+                                                player);
+
+                                            if (player.GetUnits(new Point((int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y)).Count < 1)
+                                            {
+                                                selectedUnit.MoveUp();
+                                                // Traiter le cas ou on va sur une ville
+                                            }
+                                            else
+                                            {
+                                                mapViewer.Redraw();
+                                                selectedUnit = null;
+                                                return;
+                                            }
                                         }
                                         else
                                         {
@@ -583,7 +617,43 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             }
         }
 
+        /// <summary>
+        /// Handles the 1 event of the createCityButton_Click control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void createCityButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (selectedUnit is ITeacher)
+            {
+                bool hasCity = false;
+                foreach (IPlayer player in players)
+                {
+                    foreach (ICity city in player.Cities)
+                    {
+                        if (city.IsAtPosition(selectedUnit.Position))
+                        {
+                            hasCity = true;
+                        }
+                    }
+                }
 
+                if (!hasCity)
+                {
+                    ITeacher selectedTeacher = selectedUnit as ITeacher;
+                    ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, mapViewer.Map);
+                    players[currentPlayerIndex].Cities.Add(City);
+                    selectedTeacher.HP = 0;
+                    selectedTeacher.Movement = 0;
+                    players[currentPlayerIndex].Units.Remove(selectedUnit);
+                }
+                else
+                {
+                    Log.Instance.Write("Une ville possède déjà cette case.");
+                }
+            }
+            mapViewer.Redraw();
+        }
         #endregion
         #endregion
         #endregion

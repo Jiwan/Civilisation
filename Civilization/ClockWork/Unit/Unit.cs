@@ -198,7 +198,7 @@ namespace Civilization.ClockWork.Unit
         /// <exception cref="System.NotImplementedException"></exception>
         public bool IsDead
         {
-            get { throw new System.NotImplementedException(); }
+            get { return hp <= 0; }
         }
 
         /// <summary>

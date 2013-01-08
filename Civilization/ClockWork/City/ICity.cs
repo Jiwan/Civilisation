@@ -9,7 +9,7 @@ namespace Civilization.ClockWork.City
    {
        #region properties
        List<Point> ControlledCases { get; }
-       List<IUnit> InDoorsUnits { get; }
+
        Point Position
        {
            get;
@@ -21,7 +21,7 @@ namespace Civilization.ClockWork.City
        #endregion
 
        #region methods
-       bool isAtPosition(Point point);
+       bool IsAtPosition(Point point);
 
        void CreateUnit(UnitType type);
 

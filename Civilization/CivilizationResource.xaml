@@ -134,6 +134,29 @@
                                   />
 
     <DataTemplate x:Key="CityTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="1">Ville</Label>
+
+            <Label Grid.Row="2">Taille :</Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Size}"/>
+
+            <Label Grid.Row="3">Nourriture :</Label>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding Food}"/>
+
+            <Label Grid.Row="4">Minerai :</Label>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding Ore}"/>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="SquareTemplate">

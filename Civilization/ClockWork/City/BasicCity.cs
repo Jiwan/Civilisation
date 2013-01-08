@@ -3,6 +3,8 @@ using System.Windows;
 using Civilization.ClockWork.Unit;
 using Civilization.World.Map;
 using System;
+using System.Windows.Media;
+using System.Globalization;
 
 namespace Civilization.ClockWork.City
 {
@@ -21,7 +23,6 @@ namespace Civilization.ClockWork.City
         private List<Point> controlledCases;
         private List<IUnit> inDoorsUnits;
         private Point position;
-        private Point extensionPoint;
         private Map map;
         private Player.IPlayer player;
         private int population;
@@ -61,7 +62,7 @@ namespace Civilization.ClockWork.City
         {
             get
             {
-                return 0;
+                return controlledCases.Count;
             }
         }
         public uint Food 
@@ -105,8 +106,6 @@ namespace Civilization.ClockWork.City
             
             controlledCases = new List<Point>();
             controlledCases.Add(position);
-            inDoorsUnits = new List<IUnit>();
-
         }
         #endregion
 
@@ -140,10 +139,11 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region public
-        public bool isAtPosition(Point point)
+        public bool IsAtPosition(Point point)
         {
-            return point.Equals(Position);
+            return controlledCases.Contains(point);
         }
+
         public void CreateUnit(UnitType type)
         {
             switch (type)
@@ -271,7 +271,19 @@ namespace Civilization.ClockWork.City
 
         public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext, System.Windows.Media.Color playerColor)
         {
+            if (mapViewer.IsInView(position))
+            {
+                Rect rect = mapViewer.GetRectangle((int)position.X, (int)position.Y);
 
+                FormattedText text = new FormattedText("Ville",
+                    CultureInfo.GetCultureInfo("en-us"),
+                    FlowDirection.LeftToRight,
+                    new Typeface("Verdana"),
+                    8,
+                    new SolidColorBrush(playerColor));
+
+                drawingContext.DrawText(text, new Point(rect.X, rect.Y));
+            }
         }
         #endregion
         #endregion
