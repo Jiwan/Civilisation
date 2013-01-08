@@ -4,6 +4,12 @@ namespace Civilization.Player.Actions
     public class InGameAction : IPlayerAction
     {
         #region properties
+        /// <summary>
+        /// Gets or sets the player.
+        /// </summary>
+        /// <value>
+        /// The player.
+        /// </value>
         public IPlayer Player { get; set; }
         #endregion
 

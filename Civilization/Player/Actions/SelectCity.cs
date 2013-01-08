@@ -5,6 +5,12 @@ namespace Civilization.Player.Actions
     public class SelectCity : InGameAction
     {
         #region properties
+        /// <summary>
+        /// Gets or sets the selected city.
+        /// </summary>
+        /// <value>
+        /// The selected city.
+        /// </value>
         public ICity SelectedCity { get; set; }
         #endregion
 

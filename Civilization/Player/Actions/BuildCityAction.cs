@@ -5,6 +5,12 @@ namespace Civilization.Player.Actions
     public class BuildCityAction : IPlayerAction
     {
         #region properties
+        /// <summary>
+        /// Gets or sets the city position.
+        /// </summary>
+        /// <value>
+        /// The city position.
+        /// </value>
         public Point CityPosition { get; set; }
         #endregion
 
