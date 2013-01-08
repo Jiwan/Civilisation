@@ -446,7 +446,19 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                             return;
                                         }
                                     }
+                                    else if (player.HasCity(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1)))
+                                    {
+                                        ICity city = player.GetCity(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1));
+                                        player.RemoveCity(city);
+                                        players[currentPlayerIndex].AddCity(city);
+
+                                        mapViewer.Redraw();
+                                        selectedUnit = null;
+                                        return;
+                                    }
                                 }
+
+
                             }
 
                             selectedUnit.MoveUp();
@@ -501,7 +513,18 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                             return;
                                         }
                                     }
+                                    else if (player.HasCity(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1)))
+                                    {
+                                        ICity city = player.GetCity(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1));
+                                        player.RemoveCity(city);
+                                        players[currentPlayerIndex].AddCity(city);
+
+                                        mapViewer.Redraw();
+                                        selectedUnit = null;
+                                        return;
+                                    }
                                 }
+
                             }
 
                             selectedUnit.MoveDown();
@@ -557,7 +580,18 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                             return;
                                         }
                                     }
+                                    else if (player.HasCity(new Point((int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y)))
+                                    {
+                                        ICity city = player.GetCity(new Point((int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y));
+                                        player.RemoveCity(city);
+                                        players[currentPlayerIndex].AddCity(city);
+
+                                        mapViewer.Redraw();
+                                        selectedUnit = null;
+                                        return;
+                                    }
                                 }
+
                             }
 
                             selectedUnit.MoveRight();
@@ -613,7 +647,19 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                             return;
                                         }
                                     }
+                                    else if (player.HasCity(new Point((int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y)))
+                                    {
+                                        ICity city = player.GetCity(new Point((int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y));
+                                        player.RemoveCity(city);
+                                        players[currentPlayerIndex].AddCity(city);
+
+                                        mapViewer.Redraw();
+                                        selectedUnit = null;
+                                        return;
+                                    }
                                 }
+
+
                             }
 
                             selectedUnit.MoveLeft();

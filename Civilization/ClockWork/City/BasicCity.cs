@@ -100,7 +100,7 @@ namespace Civilization.ClockWork.City
                 ore = value;
             }
         }
-        public Point ExtensionPoint
+        public Point? ExtensionPoint
         {
             get;
             set;
@@ -220,7 +220,8 @@ namespace Civilization.ClockWork.City
         public void FindExtensionPoint()
         {
             if (controlledCases.Count >= 25)
-            {                
+            {
+                ExtensionPoint = null;
                 return;
             }
 
@@ -257,34 +258,49 @@ namespace Civilization.ClockWork.City
             // Trouver le point idéal
             List<Point> listCases = new List<Point>();
 
-            for (int i = (int)HG.X; i < BD.X; i++)
+            for (int i = (int)HG.X; i <= BD.X; i++)
             {
-                for (int j = (int)HG.Y; j < BD.Y; j++)
+                for (int j = (int)HG.Y; j <= BD.Y; j++)
                 {
                     listCases.Add(new Point(i, j));
                 }
             }
 
             Point toBeAdded = new Point();
-            if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Desert && !controlledCases.Contains(point)))
+            if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.FruitSquareDecorator && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Desert);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.FruitSquareDecorator && !controlledCases.Contains(point));
+            }
+            else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.IronSquareDecorator && !controlledCases.Contains(point)))
+            {
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.IronSquareDecorator && !controlledCases.Contains(point));
             }
             else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Field && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Field);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Field && !controlledCases.Contains(point));
+            }
+            else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Desert && !controlledCases.Contains(point)))
+            {
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Desert && !controlledCases.Contains(point));
             }
             else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Mountain && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Mountain);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Mountain && !controlledCases.Contains(point));
             }
             else if (listCases.Exists(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Water && !controlledCases.Contains(point)))
             {
-                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Water);
+                toBeAdded = listCases.Find(point => map.SquareMatrix[(int)point.X, (int)point.Y] is World.Square.Water && !controlledCases.Contains(point));
             }
 
-            ExtensionPoint = toBeAdded;
-            player.CitiesToBeExtended.Enqueue(this);
+            if (toBeAdded.Equals(new Point(0, 0)))
+            {
+                ExtensionPoint = null;
+            }
+            else
+            {
+                ExtensionPoint = toBeAdded;
+                player.CitiesToBeExtended.Enqueue(this);
+            }
         }
 
         public void ExtendPoint()
@@ -293,7 +309,7 @@ namespace Civilization.ClockWork.City
             {
                 if (ExtensionPoint != null)
                 {
-                    ControlledCases.Add(ExtensionPoint);
+                    ControlledCases.Add((Point)ExtensionPoint);
                     AddCitizen();
                     Console.WriteLine("Ville étendue et population incrémentée.");
                 }

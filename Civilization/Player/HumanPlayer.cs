@@ -149,7 +149,7 @@ namespace Civilization.Player
         {
             foreach(ICity city in Cities)
             {
-                if (city.ControlledCases.Contains(point))
+                if (city.Position.Equals(point))
                 {
                     return true;
                 }
