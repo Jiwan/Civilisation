@@ -60,6 +60,20 @@ namespace Civilization.Player
         bool HasUnit(Point point);
 
         /// <summary>
+        /// Gets the units.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns></returns>
+        List<IUnit> GetUnits(Point point);
+
+        /// <summary>
+        /// Gets the city.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns></returns>
+        ICity GetCity(Point point);
+
+        /// <summary>
         /// Removes the city.
         /// </summary>
         /// <param name="city">The city.</param>

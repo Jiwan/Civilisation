@@ -147,7 +147,7 @@ namespace Civilization
         {
             players = new ObservableCollection<IPlayer>();
             players.Add(new HumanPlayer("Joueur 1", Colors.Blue));
-            players.Add(new AIPlayer("Joueur 2", Colors.Red));
+            players.Add(new HumanPlayer("Joueur 2", Colors.Red));
 
             playerListBox.ItemsSource = players;
         }

@@ -42,7 +42,7 @@ namespace Civilization.World.Square
         /// Initializes a new instance of the <see cref="Water" /> class.
         /// </summary>
         public Water()
-            : base(0, 0)
+            : base(8, 0)
         {
         }
 

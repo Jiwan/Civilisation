@@ -226,6 +226,26 @@ namespace Civilization.Player
         {
 
         }
+
+        /// <summary>
+        /// Gets the units.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns></returns>
+        public List<IUnit> GetUnits(Point point)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the city.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns></returns>
+        public ICity GetCity(Point point)
+        {
+            return null;
+        }
         #endregion
 
 

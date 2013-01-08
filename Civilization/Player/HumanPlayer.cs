@@ -213,6 +213,44 @@ namespace Civilization.Player
                 unit.Render(mapViewer, drawingContext);
             }
         }
+
+        /// <summary>
+        /// Gets the units.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns></returns>
+        public List<IUnit> GetUnits(Point point)
+        {
+            List<IUnit> units = new List<IUnit>();
+
+            foreach (IUnit unit in Units)
+            {
+                if (unit.Position.Equals(point))
+                {
+                    units.Add(unit);
+                }
+            }
+
+            return units;
+        }
+
+        /// <summary>
+        /// Gets the city.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns></returns>
+        public ICity GetCity(Point point)
+        {
+            foreach (ICity city in Cities)
+            {
+                if (city.ControlledCases.Contains(point))
+                {
+                    return city;
+                }
+            }
+
+            return null;
+        }
         #endregion
     }
 }

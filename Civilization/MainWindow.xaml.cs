@@ -48,6 +48,8 @@ namespace Civilization
         /// The selected unit
         /// </summary>
         private IUnit selectedUnit;
+
+        private ContextMenu pickedMenu;
         #endregion
         
         #region constructors
@@ -58,6 +60,7 @@ namespace Civilization
         {
             InitializeComponent();
             Log.Instance.WriteFunction = WriteLog;
+            pickedMenu = new ContextMenu();            
         }
         #endregion
 
@@ -74,6 +77,7 @@ namespace Civilization
             currentPlayerIndex = 0;
 
             Log.Instance.Write("Positionnement des unités des joueurs.");
+            List<Point> usedPoints = new List<Point>();
 
             // Initialisation des unités de chaque joueur
             for(int i = 0; i < players.Count; i++)
@@ -87,23 +91,25 @@ namespace Civilization
                 // Search a place without water.
                 while (!found)
                 {
-                    if (!(mapViewer.Map.SquareMatrix[coordx, coordy] is Water))
+                    if (!(mapViewer.Map.SquareMatrix[coordx, coordy] is Water) && !usedPoints.Contains(new Point(coordx, coordy)))
                         found = true;
 
                     coordx = random.Next(0, (int)mapViewer.Map.Size.X - 1);
                     coordy = random.Next(0, (int)mapViewer.Map.Size.Y - 1);
                 }
 
+                usedPoints.Add(new Point(coordx, coordy));
+
                 // Création des joueurs
-                IUnit teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();                
+                IUnit teacher = players[i].PlayedCivilization.Factory.CreateTeacher();                
                 teacher.Position = new Point(coordx, coordy);
 
-                IUnit student = players[currentPlayerIndex].PlayedCivilization.Factory.CreateStudent();
+                IUnit student = players[i].PlayedCivilization.Factory.CreateStudent();
                 student.Position = new Point(coordx, coordy);
 
                 // Ajout à la liste des unités de chaque joueur
-                players[currentPlayerIndex].AddUnit(student);
-                players[currentPlayerIndex].AddUnit(teacher);
+                players[i].AddUnit(student);
+                players[i].AddUnit(teacher);
             }
         }
 
@@ -190,9 +196,44 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="position">The position.</param>
         private void mapViewer_SelectedSquareChanged(Point position)
         {
-            squarePositionStackPanel.DataContext = mapViewer;
-            pickContentControl.DataContext = mapViewer.Map.SquareMatrix[(int)position.X, (int)position.Y];
-            
+            pickedMenu.Items.Clear();
+
+            if (players[currentPlayerIndex].HasUnit(position))
+            {
+                var units = players[currentPlayerIndex].GetUnits(position);
+
+                foreach (IUnit unit in units)
+                {
+                    MenuItem menuItem = new MenuItem();
+                    menuItem.DataContext = unit;
+                    menuItem.Header = unit.Name;
+                    menuItem.Click += MenuItem_Click;
+                    pickedMenu.Items.Add(menuItem);
+                    mapViewer.ContextMenu = pickedMenu;
+                }
+            }
+
+            if (players[currentPlayerIndex].HasCity(position))
+            {
+                var city = players[currentPlayerIndex].GetCity(position);
+
+                MenuItem menuItem = new MenuItem();
+                menuItem.DataContext = city;
+                menuItem.Header = "Ville";
+                menuItem.Click += MenuItem_Click;
+                pickedMenu.Items.Add(menuItem);
+                mapViewer.ContextMenu = pickedMenu;
+            }
+
+            if (pickedMenu.Items.Count > 0)
+            {
+                pickedMenu.IsOpen = true;
+            }
+            else
+            {
+                squarePositionStackPanel.DataContext = mapViewer;
+                pickContentControl.DataContext = mapViewer.Map.SquareMatrix[(int)position.X, (int)position.Y];
+            }            
         }
 
         /// <summary>
@@ -275,7 +316,6 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             {
                 new _1V1Fight(selectedUnit, attackedUnit);
             }
-
         }
 
         private void drawIdealLocationButton_Click(object sender, RoutedEventArgs e)
@@ -285,13 +325,20 @@ Pour plus d'informations, se référer au manuel utilisateur.");
 
         private void mapViewer_RenderMap(object sender, DrawingContext drawingContext)
         {
-            // Dessine toutes les unités et cités du joueur courant.
-            
+            // Dessine toutes les unités et cités du joueur courant.            
             players[currentPlayerIndex].Render((MapViewer)sender, drawingContext);
             
-            // Dessine les unités des autres visibles par celle du joueur courant
+            // Dessine les unités des autres visibles par celle du joueur courant.
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            pickedMenu.IsOpen = false;
+
+            MenuItem menuItem = (MenuItem)sender;
+
+            pickContentControl.DataContext = menuItem.DataContext;
+        }
         #endregion
         #endregion
         #endregion
