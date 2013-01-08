@@ -19,6 +19,7 @@ using Civilization.Player;
 using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
 using Civilization.CustomControls;
+using Civilization.Fight;
 
 namespace Civilization
 {
@@ -71,12 +72,31 @@ namespace Civilization
         private void InitGame()
         {
             currentPlayerIndex = 0;
-            ITeacher teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();
-            players[currentPlayerIndex].AddUnit(teacher);
+
+            // Initialisation des unités de chaque joueur
+            for(int i = currentPlayerIndex; i < players.Count; i++)
+            {
+                Random random = new Random();
+                // Création de 2 points randoms, mais pas trop randoms hein ;)
+                // J'espère que ça marche, not so sure
+                int coordx = random.Next(currentPlayerIndex, (int)((i + 1) * players[i].Game.Map.Size.X) / players.Count);
+                int coordy = random.Next(currentPlayerIndex, (int)((i + 1) * players[i].Game.Map.Size.Y) / players.Count);
+                Log.Instance.Write("points aléatiores définis.");
+                // Création des joueurs
+                ITeacher teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();
+                teacher.Position.X = coordx;
+                teacher.Position.Y = coordy;
+                IStudent student = players[currentPlayerIndex].PlayedCivilization.Factory.CreateStudent();
+                student.Position.X = coordx;
+                student.Position.Y = coordy;
+                // Ajout à la liste des unités de chaque joueur
+                players[currentPlayerIndex].AddUnit(student);
+                players[currentPlayerIndex].AddUnit(teacher);
+            }
         }
 
         /// <summary>
-        /// Writes the a log.
+        /// Writes the log.
         /// </summary>
         /// <param name="info">The info you want to write.</param>
         private void WriteLog(string info)
@@ -179,6 +199,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             }
         }
 
+
         /// <summary>
         /// Numbers the units on square.
         /// </summary>
@@ -233,10 +254,18 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 Log.Instance.Write("Cette unité ne peut attaquer!");
                 return;
             }
-            /*
+
+            // Initialiser attackedUnit avec l'unité qu'on veut attaquer !!
             IUnit attackedUnit;
-            if (attackedUnit.Position)
-             */
+            if (numberUnitsOnSquare(attackedUnit.Position) > 1)
+            {
+                new XVXFight(selectedUnit, attackedUnit);
+                // ajouter les autres unités
+            }
+            else
+            {
+                new _1V1Fight(selectedUnit, attackedUnit);
+            }
 
         }
 
@@ -252,7 +281,6 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             players[currentPlayerIndex].Render((MapViewer)sender, drawingContext);
             
             // Dessine les unités des autres visibles par celle du joueur courant
-
         }
 
         #endregion
