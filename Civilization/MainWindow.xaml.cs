@@ -49,6 +49,9 @@ namespace Civilization
         /// </summary>
         private IUnit selectedUnit;
 
+        /// <summary>
+        /// The picked menu
+        /// </summary>
         private ContextMenu pickedMenu;
         #endregion
         
@@ -75,6 +78,7 @@ namespace Civilization
         private void InitGame()
         {
             currentPlayerIndex = 0;
+            selectedUnit = null;
 
             Log.Instance.Write("Positionnement des unités des joueurs.");
             List<Point> usedPoints = new List<Point>();
@@ -247,6 +251,9 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             players[currentPlayerIndex].NextTurn();
 
             currentPlayerIndex = (++currentPlayerIndex % players.Count);
+
+            mapViewer.Redraw();
+            selectedUnit = null;
         }
 
 
@@ -331,13 +338,125 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             // Dessine les unités des autres visibles par celle du joueur courant.
         }
 
+        /// <summary>
+        /// Handles the Click event of the MenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             pickedMenu.IsOpen = false;
-
             MenuItem menuItem = (MenuItem)sender;
 
             pickContentControl.DataContext = menuItem.DataContext;
+
+            if (pickContentControl.DataContext is IUnit)
+            {
+                selectedUnit = (IUnit)pickContentControl.DataContext;
+            }
+        }
+
+        /// <summary>
+        /// Handles the KeyDown event of the Window control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="KeyEventArgs" /> instance containing the event data.</param>
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+
+            if (selectedUnit != null)
+            {
+                if (e.Key == Key.Up)
+                {
+                    if (selectedUnit.Position.Y == 0)
+                        return;
+
+                    if (mapViewer.Map.SquareMatrix[(int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1] is Water)
+                    {
+                        Log.Instance.Write("Impossible de bouger sur une case de type eau.");
+                    }
+                    else
+                    {
+                        if (selectedUnit.CanMove())
+                        {
+                            selectedUnit.MoveUp();
+                            mapViewer.Redraw();
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Cette unité ne possède plus de points de mouvement.");
+                        }
+                    }
+                }
+                else if (e.Key == Key.Down)
+                {
+                    if (selectedUnit.Position.Y == (mapViewer.Map.Size.Y - 1))
+                        return;
+
+                    if (mapViewer.Map.SquareMatrix[(int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1] is Water)
+                    {
+                        Log.Instance.Write("Impossible de bouger sur une case de type eau.");
+                    }
+                    else
+                    {
+                        if (selectedUnit.CanMove())
+                        {
+                            selectedUnit.MoveDown();
+                            mapViewer.Redraw();
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Cette unité ne possède plus de points de mouvement.");
+                        }
+                    }
+                }
+                else if (e.Key == Key.Right)
+                {
+                    if (selectedUnit.Position.X == (mapViewer.Map.Size.X - 1))
+                        return;
+
+                    if (mapViewer.Map.SquareMatrix[(int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y] is Water)
+                    {
+                        Log.Instance.Write("Impossible de bouger sur une case de type eau.");
+                    }
+                    else
+                    {
+                        if (selectedUnit.CanMove())
+                        {
+                            selectedUnit.MoveRight();
+                            mapViewer.Redraw();
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Cette unité ne possède plus de points de mouvement.");
+                        }
+                    }
+                }
+                else if (e.Key == Key.Left)
+                {
+                    if (selectedUnit.Position.X == 0)
+                        return;
+
+                    if (mapViewer.Map.SquareMatrix[(int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y] is Water)
+                    {
+                        Log.Instance.Write("Impossible de bouger sur une case de type eau.");
+                    }
+                    else
+                    {
+                        if (selectedUnit.CanMove())
+                        {
+                            selectedUnit.MoveLeft();
+                            mapViewer.Redraw();
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Cette unité ne possède plus de points de mouvement.");
+                        }
+                    }
+                }
+                mapViewer
+            }
         }
         #endregion
         #endregion

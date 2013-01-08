@@ -56,10 +56,15 @@ namespace Civilization.ClockWork.Unit
             get;
         }
 
-        public int CurrentMovementNb
+        int CurrentMovementNb
         {
             get;
             set;
+        }
+
+        int RemainingMovement
+        {
+            get;
         }
         #endregion
 
@@ -75,6 +80,8 @@ namespace Civilization.ClockWork.Unit
         void MoveUp();
 
         void MoveDown();
+
+        bool CanMove();
         #endregion
     }
 }

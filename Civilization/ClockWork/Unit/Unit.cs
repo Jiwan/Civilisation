@@ -157,8 +157,17 @@ namespace Civilization.ClockWork.Unit
             }
             set
             {
-                NotifyPropertyChanged(true, "CurrentMovementNb");
+                NotifyPropertyChanged(false, "CurrentMovementNb");
+                NotifyPropertyChanged(false, "RemainingMovement");
                 currentMovementNb = value;
+            }
+        }
+
+        public int RemainingMovement
+        {
+            get
+            {
+                return movement - currentMovementNb;
             }
         }
 
@@ -271,25 +280,30 @@ namespace Civilization.ClockWork.Unit
         public void MoveLeft()
         {
             casePosition.X--;
-            currentMovementNb++;
+            CurrentMovementNb++;
         }
 
         public void MoveRight()
         {
             casePosition.X++;
-            currentMovementNb++;
+            CurrentMovementNb++;
         }
 
         public void MoveUp()
         {
             casePosition.Y--;
-            currentMovementNb++;
+            CurrentMovementNb++;
         }
 
         public void MoveDown()
         {
             casePosition.Y++;
-            currentMovementNb++;
+            CurrentMovementNb++;
+        }
+
+        public bool CanMove()
+        {
+            return currentMovementNb < movement;
         }
         #endregion
 

@@ -182,13 +182,13 @@
             <Label Grid.Row="1" Grid.Column="1" Content="{Binding Attack}"/>
 
             <Label Grid.Row="2">Defense :</Label>
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Defence}"/>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Defense}"/>
 
             <Label Grid.Row="3">Vie :</Label>
             <Label Grid.Row="3" Grid.Column="1" Content="{Binding HP}"/>
 
             <Label Grid.Row="4">Mouvements :</Label>
-            <Label Grid.Row="4" Grid.Column="1" Content="{Binding Movment}"/>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding RemainingMovement}"/>
         </Grid>
     </DataTemplate>
     
