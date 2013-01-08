@@ -55,6 +55,12 @@ namespace Civilization.ClockWork.Unit
         {
             get;
         }
+
+        public int CurrentMovementNb
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region methods
@@ -62,13 +68,13 @@ namespace Civilization.ClockWork.Unit
 
         void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext);
 
-        void moveLeft();
+        void MoveLeft();
 
-        void moveRight();
+        void MoveRight();
 
-        void moveUp();
+        void MoveUp();
 
-        void moveDown();
+        void MoveDown();
         #endregion
     }
 }

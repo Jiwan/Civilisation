@@ -230,6 +230,7 @@ namespace Civilization.ClockWork.Unit
             this.defense = defense;
             this.hp = hp;
             this.movement = movement;
+            currentMovementNb = 0;
         }
         #endregion        
 
@@ -267,25 +268,25 @@ namespace Civilization.ClockWork.Unit
             }
         }
 
-        public void moveLeft()
+        public void MoveLeft()
         {
             casePosition.X--;
             currentMovementNb++;
         }
 
-        public void moveRight()
+        public void MoveRight()
         {
             casePosition.X++;
             currentMovementNb++;
         }
 
-        public void moveUp()
+        public void MoveUp()
         {
             casePosition.Y--;
             currentMovementNb++;
         }
 
-        public void moveDown()
+        public void MoveDown()
         {
             casePosition.Y++;
             currentMovementNb++;

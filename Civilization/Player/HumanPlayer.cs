@@ -182,7 +182,7 @@ namespace Civilization.Player
         public void NextTurn()
         {
             Log.Instance.Write("Prochain tour.");
-            units.ForEach(unit => unit.Movement = 0);
+            units.ForEach(unit => unit.CurrentMovementNb = 0);
             Log.Instance.Write("Mouvements des unités remis à 0.");
 
             cities.ForEach(city => city.FindExtensionPoint());
