@@ -245,7 +245,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             {
                 squarePositionStackPanel.DataContext = mapViewer;
                 pickContentControl.DataContext = mapViewer.Map.SquareMatrix[(int)position.X, (int)position.Y];
-            }            
+            }
         }
 
         /// <summary>
@@ -319,8 +319,8 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             Log.Instance.Write("Ville créée à l'emplacement.");
         }
 
-        // Attaquer des unités avec le click droit
-        private void attackButton_RightClick(object sender, RoutedEventArgs e)
+        // Attaquer des unités
+        private void attack(object sender, RoutedEventArgs e)
         {
             if (selectedUnit.Attack == 0)
             {
@@ -332,13 +332,21 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             IUnit attackedUnit = null;
             if (numberUnitsOnSquare(attackedUnit.Position) > 1)
             {
-                new XVXFight(selectedUnit, attackedUnit);
+                XVXFight fight = new XVXFight(selectedUnit, attackedUnit);
                 // ajouter les autres unités
                 foreach (IUnit unit in players[currentPlayerIndex].Units)
                 {
                     if (unit.Position.Equals(selectedUnit.Position))
                     {
+                        fight.addAttacker(unit);
+                    }
+                }
 
+                foreach (IUnit unit in attackedUnit.Civil)
+                {
+                    if (unit.Position.Equals(selectedUnit.Position))
+                    {
+                        fight.addDefender(unit);
                     }
                 }
             }
