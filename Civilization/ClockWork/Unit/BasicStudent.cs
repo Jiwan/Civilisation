@@ -1,10 +1,32 @@
 ﻿using System;
+using System.Windows.Media.Imaging;
+using Civilization.Utils.Drawing;
 
 namespace Civilization.ClockWork.Unit
 {
     [Serializable()]
     public class BasicStudent : Unit, IStudent
     {
+        #region fields
+        /// <summary>
+        /// The tile
+        /// </summary>
+        private static readonly BitmapImage tile = TileFlyWeight.Instance.GetBitmapImage(new Uri(@"pack://application:,,,/Images/sprite_student.png", UriKind.Absolute));
+        #endregion
+
+        #region propeperties
+        /// <summary>
+        /// Gets the tile.
+        /// </summary>
+        /// <value>
+        /// The tile.
+        /// </value>
+        public override BitmapImage Tile
+        {
+            get { return tile; }
+        }
+        #endregion
+
         #region constructors
 
 

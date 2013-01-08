@@ -2,6 +2,8 @@
 using System.Windows;
 using Civilization.World.Map;
 using Civilization.Player;
+using System.Windows.Media.Imaging;
+using Civilization.Utils.Drawing;
 
 namespace Civilization.ClockWork.Unit
 {
@@ -9,6 +11,11 @@ namespace Civilization.ClockWork.Unit
     {
         #region Fields
         private IPlayer player;
+
+        /// <summary>
+        /// The tile
+        /// </summary>
+        private static readonly BitmapImage tile = TileFlyWeight.Instance.GetBitmapImage(new Uri(@"pack://application:,,,/Images/sprite_teacher.png", UriKind.Absolute));
         #endregion
 
         #region properties
@@ -25,6 +32,20 @@ namespace Civilization.ClockWork.Unit
             get { return "Enseignant"; }
         }
         #endregion 
+
+
+        #region propeperties
+        /// <summary>
+        /// Gets the tile.
+        /// </summary>
+        /// <value>
+        /// The tile.
+        /// </value>
+        public override BitmapImage Tile
+        {
+            get { return tile; }
+        }
+        #endregion
 
         #region constructors
         public BasicTeacher()

@@ -5,6 +5,8 @@ using Civilization.World.Map;
 using System;
 using System.Windows.Media;
 using System.Globalization;
+using System.Windows.Media.Imaging;
+using Civilization.Utils.Drawing;
 
 namespace Civilization.ClockWork.City
 {
@@ -30,6 +32,11 @@ namespace Civilization.ClockWork.City
         private uint food;
         // neededFood represents the food that was needed last time to have a population increase.
         private double neededFood;
+
+        /// <summary>
+        /// The tile
+        /// </summary>
+        private static readonly BitmapImage tile = TileFlyWeight.Instance.GetBitmapImage(new Uri(@"pack://application:,,,/Images/sprite_city.png", UriKind.Absolute));
         #endregion
 
         #region properties
@@ -92,6 +99,15 @@ namespace Civilization.ClockWork.City
             get;
             set;
         }
+
+        /// <summary>
+        /// Gets the tile.
+        /// </summary>
+        /// <value>
+        /// The tile.
+        /// </value>
+        public BitmapImage Tile { get { return tile; } }
+
         #endregion
 
         #region constructors
@@ -275,14 +291,19 @@ namespace Civilization.ClockWork.City
             {
                 Rect rect = mapViewer.GetRectangle((int)position.X, (int)position.Y);
 
-                FormattedText text = new FormattedText("Ville",
-                    CultureInfo.GetCultureInfo("en-us"),
-                    FlowDirection.LeftToRight,
-                    new Typeface("Verdana"),
-                    8,
-                    new SolidColorBrush(playerColor));
+                drawingContext.DrawImage(Tile, rect);
+            }
 
-                drawingContext.DrawText(text, new Point(rect.X, rect.Y));
+            foreach (Point point in controlledCases)
+            {
+                if (mapViewer.IsInView(point))
+                {
+                    Rect rect = mapViewer.GetRectangle((int)point.X, (int)point.Y);
+
+                    SolidColorBrush myBrush = new SolidColorBrush(playerColor);
+                    myBrush.Opacity = 0.3;
+                    drawingContext.DrawRectangle(myBrush, null, rect);
+                }
             }
         }
         #endregion

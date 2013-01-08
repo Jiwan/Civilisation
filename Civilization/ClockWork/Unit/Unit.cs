@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
 using System.Globalization;
+using System.Windows.Media.Imaging;
 #endregion
 
 namespace Civilization.ClockWork.Unit
@@ -56,6 +57,14 @@ namespace Civilization.ClockWork.Unit
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets the tile.
+        /// </summary>
+        /// <value>
+        /// The tile.
+        /// </value>
+        public abstract BitmapImage Tile { get; }
+
         /// <summary>
         /// Gets or sets the attack.
         /// </summary>
@@ -271,15 +280,11 @@ namespace Civilization.ClockWork.Unit
             if (mapViewer.IsInView(casePosition))
             {
                 Rect rect = mapViewer.GetRectangle((int)casePosition.X, (int)casePosition.Y);
-                
-                FormattedText text = new FormattedText(Name,
-                    CultureInfo.GetCultureInfo("en-us"),
-                    FlowDirection.LeftToRight,
-                    new Typeface("Verdana"),
-                    8,
-                    new SolidColorBrush(playerColor));
 
-                drawingContext.DrawText(text, new Point(rect.X, rect.Y));
+                drawingContext.DrawImage(Tile, rect);
+                SolidColorBrush myBrush = new SolidColorBrush(playerColor);
+                myBrush.Opacity = 0.3;
+                drawingContext.DrawRectangle(myBrush, null, rect);
             }
         }
 

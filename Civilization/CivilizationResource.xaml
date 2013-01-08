@@ -15,6 +15,7 @@
     <BitmapImage x:Key="MouseIcon" UriSource="Images/mouse-cursor.png"/>
     <BitmapImage x:Key="HandIcon" UriSource="Images/hand-cursor.png"/>
     <BitmapImage x:Key="DrawingPin" UriSource="Images/drawingpin.png"/>
+    <BitmapImage x:Key="CityIcon" UriSource="Images/sprite_city.png"/>
     
     <!--Mountain DataTemplate (brown tile)-->
     <DataTemplate x:Key="MountainDataTemplate">
@@ -146,16 +147,16 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             
-            <Label Grid.Row="1">Ville</Label>
+            <Label Grid.Row="0">Ville</Label>
 
-            <Label Grid.Row="2">Taille :</Label>
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Size}"/>
+            <Label Grid.Row="1">Taille :</Label>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding Size}"/>
 
-            <Label Grid.Row="3">Nourriture :</Label>
-            <Label Grid.Row="3" Grid.Column="1" Content="{Binding Food}"/>
+            <Label Grid.Row="2">Nourriture :</Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Food}"/>
 
-            <Label Grid.Row="4">Minerai :</Label>
-            <Label Grid.Row="4" Grid.Column="1" Content="{Binding Ore}"/>
+            <Label Grid.Row="3">Minerai :</Label>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding Ore}"/>
         </Grid>
     </DataTemplate>
 

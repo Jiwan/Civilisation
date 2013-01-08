@@ -104,10 +104,18 @@
                             </Button.ContentTemplate>
                         </Button>
                         
-                        <Button Grid.Row="1" Grid.Column="0" ToolTip="Creer une ville" x:Name="createCityButton" Click="createCityButton_Click_1">
+                        <Button Grid.Row="1" Grid.Column="0" ToolTip="Créer une ville" x:Name="createCityButton" Click="createCityButton_Click_1">
                             <Button.ContentTemplate>
                                 <DataTemplate>
-                                    <Image Source="{StaticResource HandIcon}"></Image>
+                                    <Image Source="{StaticResource CityIcon}"></Image>
+                                </DataTemplate>
+                            </Button.ContentTemplate>
+                        </Button>
+
+                        <Button Grid.Row="1" Grid.Column="1" ToolTip="Créer une unité dans une ville" x:Name="createUnitButton" Click="">
+                            <Button.ContentTemplate>
+                                <DataTemplate>
+                                    <Image Source="{StaticResource CityIcon}"></Image>
                                 </DataTemplate>
                             </Button.ContentTemplate>
                         </Button>
