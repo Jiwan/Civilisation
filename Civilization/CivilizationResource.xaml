@@ -161,6 +161,35 @@
     </DataTemplate>
 
     <DataTemplate x:Key="UnitTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label>Unité :</Label>
+            <Label Content="{Binding Name}" Grid.Column="1"/>
+
+            <Label Grid.Row="1">Attack :</Label>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding Attack}"/>
+
+            <Label Grid.Row="2">Defense :</Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding Defence}"/>
+
+            <Label Grid.Row="3">Vie :</Label>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding HP}"/>
+
+            <Label Grid.Row="4">Mouvements :</Label>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding Movment}"/>
+        </Grid>
     </DataTemplate>
     
     <local:PickTemplateSelector x:Key="MyPickTemplateSelector"

@@ -73,22 +73,34 @@ namespace Civilization
         {
             currentPlayerIndex = 0;
 
+            Log.Instance.Write("Positionnement des unités des joueurs.");
+
             // Initialisation des unités de chaque joueur
-            for(int i = currentPlayerIndex; i < players.Count; i++)
+            for(int i = 0; i < players.Count; i++)
             {
                 Random random = new Random();
-                // Création de 2 points randoms, mais pas trop randoms hein ;)
-                // J'espère que ça marche, not so sure
-                int coordx = random.Next(currentPlayerIndex, (int)((i + 1) * players[i].Game.Map.Size.X) / players.Count);
-                int coordy = random.Next(currentPlayerIndex, (int)((i + 1) * players[i].Game.Map.Size.Y) / players.Count);
-                Log.Instance.Write("points aléatiores définis.");
+                
+                int coordx = random.Next(0, (int)mapViewer.Map.Size.X - 1);
+                int coordy = random.Next(0, (int)mapViewer.Map.Size.Y - 1);
+                bool found = false;
+
+                // Search a place without water.
+                while (!found)
+                {
+                    if (!(mapViewer.Map.SquareMatrix[coordx, coordy] is Water))
+                        found = true;
+
+                    coordx = random.Next(0, (int)mapViewer.Map.Size.X - 1);
+                    coordy = random.Next(0, (int)mapViewer.Map.Size.Y - 1);
+                }
+
                 // Création des joueurs
-                ITeacher teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();
-                teacher.Position.X = coordx;
-                teacher.Position.Y = coordy;
-                IStudent student = players[currentPlayerIndex].PlayedCivilization.Factory.CreateStudent();
-                student.Position.X = coordx;
-                student.Position.Y = coordy;
+                IUnit teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();                
+                teacher.Position = new Point(coordx, coordy);
+
+                IUnit student = players[currentPlayerIndex].PlayedCivilization.Factory.CreateStudent();
+                student.Position = new Point(coordx, coordy);
+
                 // Ajout à la liste des unités de chaque joueur
                 players[currentPlayerIndex].AddUnit(student);
                 players[currentPlayerIndex].AddUnit(teacher);
@@ -136,6 +148,8 @@ namespace Civilization
                 Log.Instance.Write("Début de la partie.");
 
                 InitGame();
+
+                Log.Instance.Write("Le joueur [" + players[currentPlayerIndex].Name + "] commence son tour.");
             }
         }
 
@@ -188,15 +202,10 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void nextTurnButton_Click(object sender, RoutedEventArgs e)
         {
+            Log.Instance.Write("Fin du tour du joueur [" + players[currentPlayerIndex].Name + "]");
             players[currentPlayerIndex].NextTurn();
-            if (currentPlayerIndex < players.Count)
-            {
-                currentPlayerIndex++;
-            }
-            else
-            {
-                currentPlayerIndex = 0;
-            }
+
+            currentPlayerIndex = (++currentPlayerIndex % players.Count);
         }
 
 
@@ -256,7 +265,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             }
 
             // Initialiser attackedUnit avec l'unité qu'on veut attaquer !!
-            IUnit attackedUnit;
+            IUnit attackedUnit = null;
             if (numberUnitsOnSquare(attackedUnit.Position) > 1)
             {
                 new XVXFight(selectedUnit, attackedUnit);

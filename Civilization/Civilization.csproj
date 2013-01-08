@@ -72,7 +72,6 @@
     <Compile Include="ClockWork\Unit\IStudent.cs" />
     <Compile Include="ClockWork\Unit\ITeacher.cs" />
     <Compile Include="ClockWork\Unit\IUnit.cs" />
-    <Compile Include="ClockWork\Unit\Sprite.cs" />
     <Compile Include="ClockWork\Unit\Unit.cs" />
     <Compile Include="CreateGameWindow.xaml.cs">
       <DependentUpon>CreateGameWindow.xaml</DependentUpon>

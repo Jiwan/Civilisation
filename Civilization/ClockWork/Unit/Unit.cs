@@ -25,11 +25,6 @@ namespace Civilization.ClockWork.Unit
     {        
         #region fields
         /// <summary>
-        /// The state motions
-        /// </summary>
-        private Dictionary<UnitState, Sprite> stateMotions;
-
-        /// <summary>
         /// The case position
         /// </summary>
         private Point casePosition;
@@ -206,9 +201,7 @@ namespace Civilization.ClockWork.Unit
         /// <param name="hp">The hp.</param>
         /// <param name="movement">The movement.</param>
         public Unit(int attack, int defense, int hp, int movement)
-        {
-            stateMotions = new Dictionary<UnitState, Sprite>();
-            
+        {            
             this.attack = attack;
             this.defense = defense;
             this.hp = hp;
