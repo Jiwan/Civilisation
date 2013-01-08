@@ -61,6 +61,14 @@ namespace Civilization.ClockWork.Unit
         void Damage(int damageValue);
 
         void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext);
+
+        void moveLeft();
+
+        void moveRight();
+
+        void moveUp();
+
+        void moveDown();
         #endregion
     }
 }

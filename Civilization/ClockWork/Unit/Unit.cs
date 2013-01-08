@@ -242,6 +242,26 @@ namespace Civilization.ClockWork.Unit
                 drawingContext.DrawText(text, new Point(rect.X, rect.Y));
             }
         }
+
+        public void moveLeft()
+        {
+            casePosition.X--;
+        }
+
+        public void moveRight()
+        {
+            casePosition.X++;
+        }
+
+        public void moveUp()
+        {
+            casePosition.Y--;
+        }
+
+        public void moveDown()
+        {
+            casePosition.Y++;
+        }
         #endregion
 
         /// <summary>
