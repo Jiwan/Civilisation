@@ -4,6 +4,7 @@ using System.Windows.Media.Imaging;
 
 namespace Civilization.World.Square
 {
+    [Serializable()]
     public abstract class Square// : IDrawable
     {
         #region fields

@@ -20,6 +20,10 @@ using Civilization.ClockWork.Unit;
 using Civilization.ClockWork.City;
 using Civilization.CustomControls;
 using Civilization.Fight;
+using System.Xml.Serialization;
+using System.IO;
+using Civilization.Utils.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Civilization
 {
@@ -767,7 +771,21 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void loadMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            /*
+            Microsoft.Win32.OpenFileDialog openFile = new Microsoft.Win32.OpenFileDialog();
+            openFile.Filter = "Party Xml (*.pxml)|*.pxml";
 
+            var result = openFile.ShowDialog();
+
+            if (result != null && result == true)
+            {
+                
+
+                using (StreamReader streamReader = System.IO.File.OpenText(openFile.FileName))
+                {
+                   // mapViewer.Map = (Map)xmlSerializer.Deserialize(streamReader);
+                }
+            }*/
         }
 
 
@@ -778,7 +796,32 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void saveMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            /*
+            Microsoft.Win32.SaveFileDialog saveFile = new Microsoft.Win32.SaveFileDialog();
+            saveFile.Filter = "Partie Xml (*.pxml)|*.pxml";
 
+            var result = saveFile.ShowDialog();
+
+            if (result != null && result == true)
+            {
+                BinaryFormatter bformatter = new BinaryFormatter();
+                Party p = new Party();
+                List<XmlAnything<IPlayer>> savedPlayers = new List<XmlAnything<IPlayer>>();
+
+                foreach (IPlayer player in players)
+                {
+                    savedPlayers.Add(new XmlAnything<IPlayer>(player));
+                }
+
+                p.Map = mapViewer.Map;
+                p.Players = savedPlayers;
+
+                using (Stream streamWriter = System.IO.File.Open(saveFile.FileName, FileMode.Create))
+                {
+                    bformatter.Serialize(streamWriter, p);
+                }
+            }
+             * */
         }
         #endregion
         #endregion

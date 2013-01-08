@@ -99,6 +99,7 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Party.cs" />
     <Compile Include="Player\Actions\AttackAction.cs" />
     <Compile Include="Player\Actions\BuildCityAction.cs" />
     <Compile Include="Player\Actions\CreateUnitAction.cs" />

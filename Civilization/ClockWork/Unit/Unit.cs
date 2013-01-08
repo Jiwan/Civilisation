@@ -22,6 +22,7 @@ namespace Civilization.ClockWork.Unit
     #endregion
 
     #region classes
+    [Serializable()]
     public abstract class Unit : IUnit, INotifyPropertyChanged
     {        
         #region fields

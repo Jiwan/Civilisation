@@ -1,8 +1,10 @@
 ﻿using System.Windows.Media.Imaging;
 using Civilization.Utils.Serialization;
+using System;
 
 namespace Civilization.World.Square
 {
+    [Serializable()]
     public class SquareDecorator : Square
     {
 

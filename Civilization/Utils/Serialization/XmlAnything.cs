@@ -7,6 +7,7 @@ namespace Civilization.Utils.Serialization
     /// This class permit to serialize an object without knowing its type.
     /// </summary>
     /// <typeparam name="T">The type of the object</typeparam>
+    [Serializable()]
     public sealed class XmlAnything<T> : IXmlSerializable
     {
         #region constructors

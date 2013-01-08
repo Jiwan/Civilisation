@@ -11,6 +11,7 @@ namespace Civilization.World.Map
     /// <summary>
     /// 
     /// </summary>
+    [Serializable()]
     public class Map : IXmlSerializable
     {
         #region fields

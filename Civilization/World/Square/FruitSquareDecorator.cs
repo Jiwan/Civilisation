@@ -4,7 +4,8 @@ using System;
 
 namespace Civilization.World.Square
 {
-    class FruitSquareDecorator : SquareDecorator
+    [Serializable()]
+    public class FruitSquareDecorator : SquareDecorator
     {
         #region fields
         /// <summary>

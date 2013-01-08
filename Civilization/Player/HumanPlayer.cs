@@ -5,9 +5,11 @@ using Civilization.ClockWork.City;
 using Civilization.ClockWork.Unit;
 using Civilization.CustomControls;
 using Civilization.Utils.Logs;
+using System;
 
 namespace Civilization.Player
 {
+    [Serializable()]
     public class HumanPlayer : IPlayer
     {
         #region Attributes
@@ -31,6 +33,11 @@ namespace Civilization.Player
             cities = new List<ICity>();
             units = new List<IUnit>();
             CitiesToBeExtended = new Queue<ICity>();
+        }
+
+        public HumanPlayer()
+        {
+
         }
         #endregion
 

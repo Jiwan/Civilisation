@@ -4,6 +4,7 @@ using Civilization.Utils.Drawing;
 
 namespace Civilization.World.Square
 {
+    [Serializable()]
     public class Water : Square
     {
         #region fields

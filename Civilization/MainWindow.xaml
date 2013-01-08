@@ -17,8 +17,8 @@
                 <MenuItem Header="Jeu" x:Name="gameMenuItem">
                     <MenuItem Header="Création d'une partie" x:Name="createMenuItem" Click="createMenuItem_Click" />
                     <Separator/>
-                    <MenuItem Header="Sauvegarder la partie" x:Name="saveMenuItem"/>
-                    <MenuItem Header="Charger une partie" x:Name="loadMenuItem"/>
+                    <MenuItem Header="Sauvegarder la partie" x:Name="saveMenuItem" Click="saveMenuItem_Click" />
+                    <MenuItem Header="Charger une partie" x:Name="loadMenuItem" Click="loadMenuItem_Click" />
                     <Separator/>
                     <MenuItem Header="Quitter" x:Name="closeMenuItem" Click="closeMenuItem_Click" />
                 </MenuItem>

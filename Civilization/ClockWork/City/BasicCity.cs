@@ -21,6 +21,7 @@ namespace Civilization.ClockWork.City
     };
     #endregion
 
+    [Serializable()]
     public class BasicCity : ICity
     {
         #region fields
