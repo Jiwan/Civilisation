@@ -297,10 +297,12 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             {
                 ITeacher selectedTeacher = selectedUnit as ITeacher;
                 ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, players[currentPlayerIndex].Game.Map);
+                players[currentPlayerIndex].Cities.Add(City);
+                selectedTeacher.HP = 0;
+                selectedTeacher.Movement = 0;
+                players[currentPlayerIndex].Units.Remove(selectedUnit);
             }
             Log.Instance.Write("Ville créée à l'emplacement.");
-
-            // do shit with city
         }
 
         // Attaquer des unités avec le click droit
@@ -318,6 +320,13 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             {
                 new XVXFight(selectedUnit, attackedUnit);
                 // ajouter les autres unités
+                foreach (IUnit unit in players[currentPlayerIndex].Units)
+                {
+                    if (unit.Position.Equals(selectedUnit.Position))
+                    {
+
+                    }
+                }
             }
             else
             {
@@ -458,6 +467,8 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 mapViewer
             }
         }
+
+
         #endregion
         #endregion
         #endregion
