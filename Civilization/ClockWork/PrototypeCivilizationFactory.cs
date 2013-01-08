@@ -115,6 +115,9 @@ namespace Civilization.ClockWork
             XmlTeacherPrototype = new XmlAnything<ITeacher>(protoTeacher);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrototypeCivilizationFactory" /> class.
+        /// </summary>
         public PrototypeCivilizationFactory()
         {
             this.protoCity = new BasicCity(new Point(0, 0), null, null);

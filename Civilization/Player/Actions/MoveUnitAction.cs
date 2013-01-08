@@ -6,7 +6,19 @@ namespace Civilization.Player.Actions
     public class MoveUnitAction : IPlayerAction
     {
         #region properties
+        /// <summary>
+        /// Gets or sets the attack position.
+        /// </summary>
+        /// <value>
+        /// The attack position.
+        /// </value>
         public Point AttackPosition { get; set; }
+        /// <summary>
+        /// Gets or sets the moving unit.
+        /// </summary>
+        /// <value>
+        /// The moving unit.
+        /// </value>
         public IUnit MovingUnit { get; set; }
         #endregion
 

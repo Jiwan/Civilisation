@@ -239,6 +239,9 @@ namespace Civilization.CustomControls
             return position.X >= upperBoundX && position.X < maxX && position.Y >= upperBoundY && position.Y < maxY;
         }
 
+        /// <summary>
+        /// Redraws this instance.
+        /// </summary>
         public void Redraw()
         {
             this.InvalidateVisual();
@@ -246,6 +249,10 @@ namespace Civilization.CustomControls
         #endregion
 
         #region protected
+        /// <summary>
+        /// Invoked when an unhandled <see cref="E:System.Windows.UIElement.MouseLeftButtonDown" /> routed event is raised on this element. Implement this method to add class handling for this event.
+        /// </summary>
+        /// <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs" /> that contains the event data. The event data reports that the left mouse button was pressed.</param>
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonDown(e);
@@ -272,6 +279,10 @@ namespace Civilization.CustomControls
             }
         }
 
+        /// <summary>
+        /// Invoked when an unhandled <see cref="E:System.Windows.UIElement.MouseLeftButtonUp" /> routed event reaches an element in its route that is derived from this class. Implement this method to add class handling for this event.
+        /// </summary>
+        /// <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs" /> that contains the event data. The event data reports that the left mouse button was released.</param>
         protected override void OnMouseLeftButtonUp(MouseButtonEventArgs e)
         {
             base.OnMouseLeftButtonUp(e);
@@ -283,6 +294,10 @@ namespace Civilization.CustomControls
             }
         }
 
+        /// <summary>
+        /// Invoked when an unhandled <see cref="E:System.Windows.Input.Mouse.MouseMove" /> attached event reaches an element in its route that is derived from this class. Implement this method to add class handling for this event.
+        /// </summary>
+        /// <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs" /> that contains the event data.</param>
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
@@ -293,6 +308,10 @@ namespace Civilization.CustomControls
             }
         }
 
+        /// <summary>
+        /// Invoked when an unhandled <see cref="E:System.Windows.Input.Mouse.MouseLeave" /> attached event is raised on this element. Implement this method to add class handling for this event.
+        /// </summary>
+        /// <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs" /> that contains the event data.</param>
         protected override void OnMouseLeave(MouseEventArgs e)
         {
             base.OnMouseLeave(e);
@@ -308,6 +327,10 @@ namespace Civilization.CustomControls
             }
         }
 
+        /// <summary>
+        /// When overridden in a derived class, participates in rendering operations that are directed by the layout system. The rendering instructions for this element are not used directly when this method is invoked, and are instead preserved for later asynchronous use by layout and drawing.
+        /// </summary>
+        /// <param name="drawingContext">The drawing instructions for a specific element. This context is provided to the layout system.</param>
         protected override void OnRender(DrawingContext drawingContext)
         {
             base.OnRender(drawingContext);
@@ -402,6 +425,10 @@ namespace Civilization.CustomControls
                 Redraw();
         }
 
+        /// <summary>
+        /// Draws the picked square.
+        /// </summary>
+        /// <param name="drawingContext">The drawing context.</param>
         private void DrawPickedSquare(DrawingContext drawingContext)
         {
             Rect rect = GetRectangle((int)PickedSquare.X, (int)PickedSquare.Y);
@@ -410,6 +437,11 @@ namespace Civilization.CustomControls
             drawingContext.DrawRectangle(myBrush, null, rect);
         }
 
+        /// <summary>
+        /// Draws the ideal location.
+        /// </summary>
+        /// <param name="drawingContext">The drawing context.</param>
+        /// <param name="pos">The pos.</param>
         private void DrawIdealLocation(DrawingContext drawingContext, Point pos)
         {
             Rect rect = GetRectangle((int)pos.X, (int)pos.Y);

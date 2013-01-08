@@ -6,7 +6,19 @@ namespace Civilization.Player.Actions
     public class CreateUnitAction : InGameAction
     {
         #region properties
+        /// <summary>
+        /// Gets or sets the selected city.
+        /// </summary>
+        /// <value>
+        /// The selected city.
+        /// </value>
         public ICity SelectedCity { get; set; }
+        /// <summary>
+        /// Gets or sets the new unit.
+        /// </summary>
+        /// <value>
+        /// The new unit.
+        /// </value>
         public IUnit NewUnit { get; set; }
         #endregion
 

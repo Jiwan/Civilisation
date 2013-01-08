@@ -5,6 +5,12 @@ namespace Civilization.Player.Actions
     public class SelectUnitAction : IPlayerAction
     {
         #region properties
+        /// <summary>
+        /// Gets or sets the selected unit.
+        /// </summary>
+        /// <value>
+        /// The selected unit.
+        /// </value>
         public IUnit SelectedUnit { get; set; }
         #endregion
 

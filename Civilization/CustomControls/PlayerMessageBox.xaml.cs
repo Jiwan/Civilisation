@@ -19,6 +19,9 @@ namespace Civilization.CustomControls
     public partial class PlayerMessageBox : Window
     {
         #region fields
+        /// <summary>
+        /// The player choice
+        /// </summary>
         private PlayerChoice playerChoice;
         #endregion
 
@@ -31,6 +34,12 @@ namespace Civilization.CustomControls
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets the player choice result.
+        /// </summary>
+        /// <value>
+        /// The player choice result.
+        /// </value>
         public PlayerChoice PlayerChoiceResult 
         { 
             get 
@@ -41,6 +50,9 @@ namespace Civilization.CustomControls
         #endregion
 
         #region PlayerMessageBox
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlayerMessageBox" /> class.
+        /// </summary>
         public PlayerMessageBox()
         {
             InitializeComponent();
@@ -49,12 +61,22 @@ namespace Civilization.CustomControls
 
         #region methods
         #region privates
+        /// <summary>
+        /// Handles the Click event of the addHumanButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void addHumanButton_Click(object sender, RoutedEventArgs e)
         {
             playerChoice = PlayerChoice.Human; 
             DialogResult = true;
         }
 
+        /// <summary>
+        /// Handles the Click event of the addAiButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void addAiButton_Click(object sender, RoutedEventArgs e)
         {
             playerChoice = PlayerChoice.Ai;
