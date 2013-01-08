@@ -243,7 +243,7 @@ namespace Civilization.ClockWork.Unit
                     CultureInfo.GetCultureInfo("en-us"),
                     FlowDirection.LeftToRight,
                     new Typeface("Verdana"),
-                    32,
+                    8,
                     Brushes.Black);
 
                 drawingContext.DrawText(text, new Point(rect.X, rect.Y));

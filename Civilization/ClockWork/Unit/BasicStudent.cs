@@ -6,6 +6,8 @@ namespace Civilization.ClockWork.Unit
     public class BasicStudent : Unit, IStudent
     {
         #region constructors
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BasicStudent" /> class.
         /// </summary>

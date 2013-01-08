@@ -71,6 +71,8 @@ namespace Civilization
         private void InitGame()
         {
             currentPlayerIndex = 0;
+            ITeacher teacher = players[currentPlayerIndex].PlayedCivilization.Factory.CreateTeacher();
+            players[currentPlayerIndex].AddUnit(teacher);
         }
 
         /// <summary>
@@ -176,7 +178,6 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 currentPlayerIndex = 0;
             }
         }
-
 
         /// <summary>
         /// Numbers the units on square.

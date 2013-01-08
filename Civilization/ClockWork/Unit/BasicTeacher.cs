@@ -27,6 +27,12 @@ namespace Civilization.ClockWork.Unit
         #endregion 
 
         #region constructors
+        public BasicTeacher()
+            : base(0, 1, 1, 3)
+        {
+
+        }
+
         public BasicTeacher(IPlayer player) : base(0, 1, 1, 3)
         {
             this.player = player;
