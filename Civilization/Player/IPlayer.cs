@@ -110,6 +110,14 @@ namespace Civilization.Player
         ///   <c>true</c> if this instance has director; otherwise, <c>false</c>.
         /// </returns>
         bool HasDirector();
+
+        /// <summary>
+        /// Determines whether this instance is dead.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is dead; otherwise, <c>false</c>.
+        /// </returns>
+        bool IsDead();
         #endregion
     }
 }

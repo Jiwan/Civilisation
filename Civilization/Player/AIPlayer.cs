@@ -252,9 +252,26 @@ namespace Civilization.Player
             return null;
         }
 
+        /// <summary>
+        /// Determines whether this instance has director.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance has director; otherwise, <c>false</c>.
+        /// </returns>
         public bool HasDirector()
         {
             return false;
+        }
+
+        /// <summary>
+        /// Determines whether this instance is dead.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is dead; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsDead()
+        {
+            return true;
         }
         #endregion
 

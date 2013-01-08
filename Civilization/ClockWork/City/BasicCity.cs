@@ -179,7 +179,9 @@ namespace Civilization.ClockWork.City
                             if (!player.HasDirector())
                             {
                                 player.AvailableOre -= (uint)player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
-                                InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector());
+                                var unit = player.PlayedCivilization.Factory.CreateDepartDirector();
+                                unit.Position = position;
+                                player.AddUnit(unit);
                             }
                             else
                             {
@@ -195,7 +197,9 @@ namespace Civilization.ClockWork.City
                         if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
                         {
                             player.AvailableOre -= (uint)player.PlayedCivilization.Factory.StudentPrototype.Cost;
-                            InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateStudent());
+                            var unit = player.PlayedCivilization.Factory.CreateStudent();
+                            unit.Position = position;
+                            player.AddUnit(unit);
                         }
                         else
                         {
@@ -206,7 +210,9 @@ namespace Civilization.ClockWork.City
                         if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
                         {
                             player.AvailableOre -= (uint)player.PlayedCivilization.Factory.TeacherPrototype.Cost;
-                            InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher());
+                            var unit = player.PlayedCivilization.Factory.CreateTeacher();
+                            unit.Position = position;
+                            player.AddUnit(unit);
                         }
                         else
                         {

@@ -304,6 +304,19 @@ Pour plus d'informations, se référer au manuel utilisateur.");
         /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void nextTurnButton_Click(object sender, RoutedEventArgs e)
         {
+            for (int i = 0; i < players.Count; ++i)
+            {
+                if (players[i].IsDead())
+                {
+                    players.RemoveAt(i);
+                }
+            }
+
+            if (players.Count == 1)
+            {
+                MessageBox.Show("Félicitations [" + players[0].Name + "]  vous avez gagné");
+            }
+
             Log.Instance.Write("Fin du tour du joueur [" + players[currentPlayerIndex].Name + "]");
             players[currentPlayerIndex].NextTurn();
 
@@ -451,7 +464,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                         ICity city = player.GetCity(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1));
                                         player.RemoveCity(city);
                                         players[currentPlayerIndex].AddCity(city);
-
+                                        Log.Instance.Write("Vous avez pris une ville de l'adversaire.");
                                         mapViewer.Redraw();
                                         selectedUnit = null;
                                         return;
@@ -518,7 +531,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                         ICity city = player.GetCity(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1));
                                         player.RemoveCity(city);
                                         players[currentPlayerIndex].AddCity(city);
-
+                                        Log.Instance.Write("Vous avez pris une ville de l'adversaire.");
                                         mapViewer.Redraw();
                                         selectedUnit = null;
                                         return;
@@ -585,7 +598,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                         ICity city = player.GetCity(new Point((int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y));
                                         player.RemoveCity(city);
                                         players[currentPlayerIndex].AddCity(city);
-
+                                        Log.Instance.Write("Vous avez pris une ville de l'adversaire.");
                                         mapViewer.Redraw();
                                         selectedUnit = null;
                                         return;
@@ -652,7 +665,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                                         ICity city = player.GetCity(new Point((int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y));
                                         player.RemoveCity(city);
                                         players[currentPlayerIndex].AddCity(city);
-
+                                        Log.Instance.Write("Vous avez pris une ville de l'adversaire.");
                                         mapViewer.Redraw();
                                         selectedUnit = null;
                                         return;
@@ -745,6 +758,27 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             }
 
             this.mapViewer.Redraw();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the loadMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void loadMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// Handles the Click event of the saveMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void saveMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
         #endregion
         #endregion

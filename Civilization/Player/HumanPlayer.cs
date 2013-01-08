@@ -325,6 +325,17 @@ namespace Civilization.Player
 
             return false;
         }
+
+        /// <summary>
+        /// Determines whether this instance is dead.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance is dead; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsDead()
+        {
+            return cities.Count == 0 && units.Count == 0; 
+        }
         #endregion
     }
 }
