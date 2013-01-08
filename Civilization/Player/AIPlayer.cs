@@ -11,19 +11,55 @@ namespace Civilization.Player
     public class AIPlayer : IPlayer
     {
         #region Attributes
+        /// <summary>
+        /// bool true if alive
+        /// </summary>
         private bool alive;
+        /// <summary>
+        /// The cities
+        /// </summary>
         private List<ICity> cities;
+        /// <summary>
+        /// The units
+        /// </summary>
         private List<IUnit> units;
+        /// <summary>
+        /// The game
+        /// </summary>
         private Game.Game game;
+        /// <summary>
+        /// The name
+        /// </summary>
         private string name;
+        /// <summary>
+        /// The played civilization
+        /// </summary>
         private Civilization.ClockWork.Civilization playedCivilization;
+        /// <summary>
+        /// The color
+        /// </summary>
         private System.Windows.Media.Color color;
+        /// <summary>
+        /// The available food
+        /// </summary>
         private uint availableFood;
+        /// <summary>
+        /// The available ore
+        /// </summary>
         private uint availableOre;
+        /// <summary>
+        /// The cities to be extended
+        /// </summary>
         private Queue<ICity> citiesToBeExtended;
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="AIPlayer" /> is alive.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if alive; otherwise, <c>false</c>.
+        /// </value>
         public bool Alive
         {
             get
@@ -35,6 +71,12 @@ namespace Civilization.Player
                 alive = value;
             }
         }
+        /// <summary>
+        /// Gets the cities.
+        /// </summary>
+        /// <value>
+        /// The cities.
+        /// </value>
         public List<ICity> Cities
         {
             get
@@ -42,6 +84,12 @@ namespace Civilization.Player
                 return cities;
             }
         }
+        /// <summary>
+        /// Gets the units.
+        /// </summary>
+        /// <value>
+        /// The units.
+        /// </value>
         public List<IUnit> Units
         {
             get
@@ -49,6 +97,12 @@ namespace Civilization.Player
                 return units;
             }
         }
+        /// <summary>
+        /// Gets or sets the game.
+        /// </summary>
+        /// <value>
+        /// The game.
+        /// </value>
         public Game.Game Game
         {
             get
@@ -61,6 +115,12 @@ namespace Civilization.Player
                 game = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name 
         {
             get
@@ -72,6 +132,12 @@ namespace Civilization.Player
                 name = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the played civilization.
+        /// </summary>
+        /// <value>
+        /// The played civilization.
+        /// </value>
         public Civilization.ClockWork.Civilization PlayedCivilization
         {
             get
@@ -83,6 +149,12 @@ namespace Civilization.Player
                 playedCivilization = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the color.
+        /// </summary>
+        /// <value>
+        /// The color.
+        /// </value>
         public System.Windows.Media.Color Color
         {
             get
@@ -94,6 +166,12 @@ namespace Civilization.Player
                 color = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the available food.
+        /// </summary>
+        /// <value>
+        /// The available food.
+        /// </value>
         public uint AvailableFood
         {
             get
@@ -105,6 +183,12 @@ namespace Civilization.Player
                 availableFood = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the available ore.
+        /// </summary>
+        /// <value>
+        /// The available ore.
+        /// </value>
         public uint AvailableOre
         {
             get
@@ -116,6 +200,12 @@ namespace Civilization.Player
                 availableOre = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the cities to be extended.
+        /// </summary>
+        /// <value>
+        /// The cities to be extended.
+        /// </value>
         public Queue<ICity> CitiesToBeExtended
         {
             get;
@@ -124,6 +214,11 @@ namespace Civilization.Player
         #endregion
 
         #region constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AIPlayer" /> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="color">The color.</param>
         public AIPlayer(string name, System.Windows.Media.Color color)
         {
             Name = name;

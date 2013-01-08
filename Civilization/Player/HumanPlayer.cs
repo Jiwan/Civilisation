@@ -13,18 +13,50 @@ namespace Civilization.Player
     public class HumanPlayer : IPlayer
     {
         #region Attributes
+        /// <summary>
+        /// The alive
+        /// </summary>
         private bool alive;
+        /// <summary>
+        /// The cities
+        /// </summary>
         private List<ICity> cities;
+        /// <summary>
+        /// The units
+        /// </summary>
         private List<IUnit> units;
+        /// <summary>
+        /// The game
+        /// </summary>
         private Game.Game game;
+        /// <summary>
+        /// The name
+        /// </summary>
         private string name;
+        /// <summary>
+        /// The played civilization
+        /// </summary>
         private Civilization.ClockWork.Civilization playedCivilization;
+        /// <summary>
+        /// The color
+        /// </summary>
         private System.Windows.Media.Color color;
+        /// <summary>
+        /// The available food
+        /// </summary>
         private uint availableFood;
+        /// <summary>
+        /// The available ore
+        /// </summary>
         private uint availableOre;
         #endregion
 
         #region Constructeur
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HumanPlayer" /> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="color">The color.</param>
         public HumanPlayer(string name, System.Windows.Media.Color color)
         {
             this.name = name;
@@ -35,6 +67,9 @@ namespace Civilization.Player
             CitiesToBeExtended = new Queue<ICity>();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HumanPlayer" /> class.
+        /// </summary>
         public HumanPlayer()
         {
 
@@ -42,6 +77,12 @@ namespace Civilization.Player
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="HumanPlayer" /> is alive.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if alive; otherwise, <c>false</c>.
+        /// </value>
         public bool Alive
         {
             get
@@ -53,6 +94,12 @@ namespace Civilization.Player
                 alive = value;
             }
         }
+        /// <summary>
+        /// Gets the cities.
+        /// </summary>
+        /// <value>
+        /// The cities.
+        /// </value>
         public List<ICity> Cities
         {
             get
@@ -60,6 +107,12 @@ namespace Civilization.Player
                 return cities;
             }
         }
+        /// <summary>
+        /// Gets the units.
+        /// </summary>
+        /// <value>
+        /// The units.
+        /// </value>
         public List<IUnit> Units
         {
             get
@@ -67,6 +120,12 @@ namespace Civilization.Player
                 return units;
             }
         }
+        /// <summary>
+        /// Gets or sets the game.
+        /// </summary>
+        /// <value>
+        /// The game.
+        /// </value>
         public Game.Game Game
         {
             get
@@ -79,6 +138,12 @@ namespace Civilization.Player
                 game = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name 
         {
             get
@@ -90,6 +155,12 @@ namespace Civilization.Player
                 name = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the played civilization.
+        /// </summary>
+        /// <value>
+        /// The played civilization.
+        /// </value>
         public Civilization.ClockWork.Civilization PlayedCivilization
         {
             get
@@ -101,6 +172,12 @@ namespace Civilization.Player
                 playedCivilization = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the color.
+        /// </summary>
+        /// <value>
+        /// The color.
+        /// </value>
         public System.Windows.Media.Color Color
         {
             get
@@ -112,6 +189,12 @@ namespace Civilization.Player
                 color = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the available food.
+        /// </summary>
+        /// <value>
+        /// The available food.
+        /// </value>
         public uint AvailableFood
         {
             get
@@ -123,6 +206,12 @@ namespace Civilization.Player
                 availableFood = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the available ore.
+        /// </summary>
+        /// <value>
+        /// The available ore.
+        /// </value>
         public uint AvailableOre
         {
             get
@@ -135,6 +224,12 @@ namespace Civilization.Player
             }
         }
 
+        /// <summary>
+        /// Gets or sets the cities to be extended.
+        /// </summary>
+        /// <value>
+        /// The cities to be extended.
+        /// </value>
         public Queue<ICity> CitiesToBeExtended
         {
             get;
@@ -143,15 +238,30 @@ namespace Civilization.Player
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Adds the city.
+        /// </summary>
+        /// <param name="city">The city.</param>
         public void AddCity(ICity city)
         {
             cities.Add(city);
         }
+        /// <summary>
+        /// Adds the unit.
+        /// </summary>
+        /// <param name="unit">The unit.</param>
         public void AddUnit(IUnit unit)
         {
             units.Add(unit);
         }
 
+        /// <summary>
+        /// Determines whether the specified point has a city.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified point has city; otherwise, <c>false</c>.
+        /// </returns>
         public bool HasCity(Point point)
         {
             foreach(ICity city in Cities)
@@ -164,6 +274,13 @@ namespace Civilization.Player
             return false;
         }
 
+        /// <summary>
+        /// Determines whether the specified point has a unit.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified point has unit; otherwise, <c>false</c>.
+        /// </returns>
         public bool HasUnit(Point point)
         {
             foreach (IUnit unit in Units)
@@ -176,11 +293,19 @@ namespace Civilization.Player
             return false;
         }
 
+        /// <summary>
+        /// Removes the city.
+        /// </summary>
+        /// <param name="city">The city.</param>
         public void RemoveCity(ICity city)
         {
             cities.Remove(city);
         }
 
+        /// <summary>
+        /// Removes the unit.
+        /// </summary>
+        /// <param name="unit">The unit.</param>
         public void RemoveUnit(IUnit unit)
         {
  	        units.Remove(unit);

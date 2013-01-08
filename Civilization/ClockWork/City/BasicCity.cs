@@ -25,13 +25,37 @@ namespace Civilization.ClockWork.City
     public class BasicCity : ICity
     {
         #region fields
+        /// <summary>
+        /// The controlled cases
+        /// </summary>
         private List<Point> controlledCases;
+        /// <summary>
+        /// The in doors units
+        /// </summary>
         private List<IUnit> inDoorsUnits;
+        /// <summary>
+        /// The position
+        /// </summary>
         private Point position;
+        /// <summary>
+        /// The map
+        /// </summary>
         private Map map;
+        /// <summary>
+        /// The player
+        /// </summary>
         private Player.IPlayer player;
+        /// <summary>
+        /// The population
+        /// </summary>
         private int population;
+        /// <summary>
+        /// The ore
+        /// </summary>
         private uint ore;
+        /// <summary>
+        /// The food
+        /// </summary>
         private uint food;
         // neededFood represents the food that was needed last time to have a population increase.
         private double neededFood;
@@ -43,6 +67,12 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region properties
+        /// <summary>
+        /// Gets the controlled cases.
+        /// </summary>
+        /// <value>
+        /// The controlled cases.
+        /// </value>
         public List<Point> ControlledCases 
         { 
             get 
@@ -50,6 +80,12 @@ namespace Civilization.ClockWork.City
                 return controlledCases; 
             } 
         }
+        /// <summary>
+        /// Gets or sets the in doors units.
+        /// </summary>
+        /// <value>
+        /// The in doors units.
+        /// </value>
         public List<IUnit> InDoorsUnits 
         {
             get
@@ -61,6 +97,12 @@ namespace Civilization.ClockWork.City
                 inDoorsUnits = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the position.
+        /// </summary>
+        /// <value>
+        /// The position.
+        /// </value>
         public Point Position
         {
             get
@@ -72,6 +114,12 @@ namespace Civilization.ClockWork.City
                 position = value;
             }
         }
+        /// <summary>
+        /// Gets the size.
+        /// </summary>
+        /// <value>
+        /// The size.
+        /// </value>
         public int Size 
         {
             get
@@ -79,6 +127,12 @@ namespace Civilization.ClockWork.City
                 return controlledCases.Count;
             }
         }
+        /// <summary>
+        /// Gets or sets the food.
+        /// </summary>
+        /// <value>
+        /// The food.
+        /// </value>
         public uint Food 
         { 
             get 
@@ -90,6 +144,12 @@ namespace Civilization.ClockWork.City
                 food = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the ore.
+        /// </summary>
+        /// <value>
+        /// The ore.
+        /// </value>
         public uint Ore
         {
             get
@@ -101,6 +161,12 @@ namespace Civilization.ClockWork.City
                 ore = value;
             }
         }
+        /// <summary>
+        /// Gets or sets the extension point.
+        /// </summary>
+        /// <value>
+        /// The extension point.
+        /// </value>
         public Point? ExtensionPoint
         {
             get;
@@ -118,6 +184,12 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region constructors
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicCity" /> class.
+        /// </summary>
+        /// <param name="location">The location.</param>
+        /// <param name="map">The map.</param>
+        /// <param name="player">The player.</param>
         public BasicCity(Point location, Map map, Player.IPlayer player)
         {
             this.map = map;
@@ -136,6 +208,9 @@ namespace Civilization.ClockWork.City
         #region methods
         
         #region private
+        /// <summary>
+        /// Adds a citizen.
+        /// </summary>
         private void AddCitizen()
         {
             // il faut respecter la formule suivante : nbResn = nbResn−1 + nbResn−1/2.
@@ -151,6 +226,9 @@ namespace Civilization.ClockWork.City
             }
         }
 
+        /// <summary>
+        /// Collects the ore.
+        /// </summary>
         private void CollectOre()
         {
             uint oldOre = Ore;
@@ -158,6 +236,9 @@ namespace Civilization.ClockWork.City
             Ore += oldOre;
         }
 
+        /// <summary>
+        /// Collects the food.
+        /// </summary>
         private void CollectFood()
         {
             controlledCases.ForEach(point => food += map.SquareMatrix[(int)point.X, (int)point.Y].AvailableFood);
@@ -165,11 +246,24 @@ namespace Civilization.ClockWork.City
         #endregion
 
         #region public
+        /// <summary>
+        /// Determines whether [is at position] [the specified point].
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>
+        ///   <c>true</c> if [is at position] [the specified point]; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsAtPosition(Point point)
         {
             return controlledCases.Contains(point);
         }
 
+        /// <summary>
+        /// Creates the unit.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="player">The player.</param>
+        /// <exception cref="System.Exception">Cannot create the unit, not enough resources.</exception>
         public void CreateUnit(UnitType type, IPlayer player)
         {
             switch (type)
@@ -224,6 +318,9 @@ namespace Civilization.ClockWork.City
                     throw new Exception("Cannot create the unit, not enough resources.");
             }
         }
+        /// <summary>
+        /// Finds the extension point.
+        /// </summary>
         public void FindExtensionPoint()
         {
             if (controlledCases.Count >= 25)
@@ -310,6 +407,9 @@ namespace Civilization.ClockWork.City
             }
         }
 
+        /// <summary>
+        /// Extends the point.
+        /// </summary>
         public void ExtendPoint()
         {
             if (food > neededFood)
@@ -332,11 +432,20 @@ namespace Civilization.ClockWork.City
             AddCitizen();
         }
 
+        /// <summary>
+        /// Creates a new object that is a copy of the current instance.
+        /// </summary>
+        /// <returns>
+        /// A new object that is a copy of this instance.
+        /// </returns>
         public object Clone()
         {
             return MemberwiseClone();
         }
 
+        /// <summary>
+        /// Next turn.
+        /// </summary>
         public void NextTurn()
         {
             // remet le compteur de food à 0
@@ -345,6 +454,12 @@ namespace Civilization.ClockWork.City
             CollectOre();
         }
 
+        /// <summary>
+        /// Renders the specified map viewer.
+        /// </summary>
+        /// <param name="mapViewer">The map viewer.</param>
+        /// <param name="drawingContext">The drawing context.</param>
+        /// <param name="playerColor">Color of the player.</param>
         public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext, System.Windows.Media.Color playerColor)
         {
             if (mapViewer.IsInView(position))
