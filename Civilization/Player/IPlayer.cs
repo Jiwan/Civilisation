@@ -102,6 +102,14 @@ namespace Civilization.Player
         /// </summary>
         /// <returns></returns>
         List<Point> GetAllViewPoint();
+
+        /// <summary>
+        /// Determines whether this instance has director.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance has director; otherwise, <c>false</c>.
+        /// </returns>
+        bool HasDirector();
         #endregion
     }
 }

@@ -77,6 +77,9 @@
       <DependentUpon>CreateGameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomCommands\ListBoxCommand.cs" />
+    <Compile Include="CustomControls\BuyUnitMessageBox.xaml.cs">
+      <DependentUpon>BuyUnitMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CivilizationMessageBox.xaml.cs">
       <DependentUpon>CivilizationMessageBox.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateGameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\BuyUnitMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,6 +251,9 @@
     <Resource Include="Images\sprite_director.png" />
     <Resource Include="Images\sprite_student.png" />
     <Resource Include="Images\sprite_teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gold.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

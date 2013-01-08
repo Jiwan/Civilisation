@@ -10,8 +10,6 @@ namespace Civilization.ClockWork.Unit
     public class BasicTeacher : Unit, ITeacher
     {
         #region Fields
-        private IPlayer player;
-
         /// <summary>
         /// The tile
         /// </summary>
@@ -52,22 +50,17 @@ namespace Civilization.ClockWork.Unit
             : base(0, 1, 1, 3)
         {
 
-        }
+        }       
 
-        public BasicTeacher(IPlayer player) : base(0, 1, 1, 3)
-        {
-            this.player = player;
-        }
-
-        public BasicTeacher(IPlayer player, int attack, int defence, int hp, int movement) 
+        public BasicTeacher(int attack, int defence, int hp, int movement) 
             : base(attack, defence, hp, movement)
         {
-            this.player = player;
+          
         }
         #endregion
 
         #region methods
-        public City.ICity CreateCity(Point constructionPoint, Map map)
+        public City.ICity CreateCity(Point constructionPoint, Map map, IPlayer player)
         {
             return new City.BasicCity(constructionPoint, map, player);
         }

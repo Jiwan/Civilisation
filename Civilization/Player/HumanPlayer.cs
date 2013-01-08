@@ -306,6 +306,25 @@ namespace Civilization.Player
 
             return viewPoints;
         }
+
+        /// <summary>
+        /// Determines whether this instance has director.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance has director; otherwise, <c>false</c>.
+        /// </returns>
+        public bool HasDirector()
+        {
+            foreach (IUnit unit in units)
+            {
+                if (unit is IDepartDirector)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
         #endregion
     }
 }

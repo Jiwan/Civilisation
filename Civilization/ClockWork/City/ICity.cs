@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using Civilization.ClockWork.Unit;
+using Civilization.Player;
 
 namespace Civilization.ClockWork.City
 {
@@ -23,7 +24,7 @@ namespace Civilization.ClockWork.City
        #region methods
        bool IsAtPosition(Point point);
 
-       void CreateUnit(UnitType type);
+       void CreateUnit(UnitType type, IPlayer player);
 
        void NextTurn();
 

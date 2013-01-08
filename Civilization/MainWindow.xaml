@@ -112,10 +112,10 @@
                             </Button.ContentTemplate>
                         </Button>
 
-                        <Button Grid.Row="1" Grid.Column="1" ToolTip="Créer une unité dans une ville" x:Name="createUnitButton" Click="">
+                        <Button Grid.Row="1" Grid.Column="1" ToolTip="Créer une unité dans une ville" x:Name="createUnitButton" Click="createUnitButton_Click">
                             <Button.ContentTemplate>
                                 <DataTemplate>
-                                    <Image Source="{StaticResource CityIcon}"></Image>
+                                    <Image Source="{StaticResource GoldIcon}"></Image>
                                 </DataTemplate>
                             </Button.ContentTemplate>
                         </Button>

@@ -50,6 +50,11 @@ namespace Civilization
         private IUnit selectedUnit;
 
         /// <summary>
+        /// The selected city
+        /// </summary>
+        private ICity selectedCity;
+
+        /// <summary>
         /// The picked menu
         /// </summary>
         private ContextMenu pickedMenu;
@@ -306,9 +311,9 @@ Pour plus d'informations, se référer au manuel utilisateur.");
 
             mapViewer.Redraw();
             selectedUnit = null;
+            selectedCity = null;
             Log.Instance.Write("Debut du tour du joueur [" + players[currentPlayerIndex].Name + "]");
         }
-
 
         /// <summary>
         /// Numbers the units on square.
@@ -376,6 +381,13 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             if (pickContentControl.DataContext is IUnit)
             {
                 selectedUnit = (IUnit)pickContentControl.DataContext;
+                selectedCity = null;
+            }
+
+            if (pickContentControl.DataContext is ICity)
+            {
+                selectedCity = (ICity)pickContentControl.DataContext;
+                selectedUnit = null;
             }
         }
 
@@ -641,7 +653,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 if (!hasCity)
                 {
                     ITeacher selectedTeacher = selectedUnit as ITeacher;
-                    ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, mapViewer.Map);
+                    ICity City = selectedTeacher.CreateCity(selectedTeacher.Position, mapViewer.Map, players[currentPlayerIndex]);
                     players[currentPlayerIndex].Cities.Add(City);
                     selectedTeacher.HP = 0;
                     selectedTeacher.Movement = 0;
@@ -653,6 +665,37 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                 }
             }
             mapViewer.Redraw();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the createUnitButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
+        private void createUnitButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedCity != null)
+            {
+                BuyUnitMessageBox buyMsgBox = new BuyUnitMessageBox();
+
+                var result = buyMsgBox.ShowDialog();
+
+                if ((result != null) && result == true)
+                {
+                    switch (buyMsgBox.SelectedUnitType)
+                    {
+                        case "Etudiant":
+                            selectedCity.CreateUnit(UnitType.U_STUDENT, players[currentPlayerIndex]);
+                            break;
+                        case "Directeur":
+                            selectedCity.CreateUnit(UnitType.U_STUDENT, players[currentPlayerIndex]);
+                            break;
+                        case "Enseignant":
+                            selectedCity.CreateUnit(UnitType.U_TEACHER, players[currentPlayerIndex]);
+                            break;
+                    }
+                }
+            }
         }
         #endregion
         #endregion

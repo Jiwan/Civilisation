@@ -16,6 +16,7 @@
     <BitmapImage x:Key="HandIcon" UriSource="Images/hand-cursor.png"/>
     <BitmapImage x:Key="DrawingPin" UriSource="Images/drawingpin.png"/>
     <BitmapImage x:Key="CityIcon" UriSource="Images/sprite_city.png"/>
+    <BitmapImage x:Key="GoldIcon" UriSource="Images/gold.png"/>
     
     <!--Mountain DataTemplate (brown tile)-->
     <DataTemplate x:Key="MountainDataTemplate">

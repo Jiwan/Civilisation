@@ -7,6 +7,8 @@ using System.Windows.Media;
 using System.Globalization;
 using System.Windows.Media.Imaging;
 using Civilization.Utils.Drawing;
+using Civilization.Player;
+using Civilization.Utils.Logs;
 
 namespace Civilization.ClockWork.City
 {
@@ -52,6 +54,10 @@ namespace Civilization.ClockWork.City
             get
             {
                 return inDoorsUnits;
+            }
+            set
+            {
+                inDoorsUnits = value;
             }
         }
         public Point Position
@@ -119,7 +125,8 @@ namespace Civilization.ClockWork.City
             population = 1;
             ore = 0;
             food = 0;
-            
+
+            inDoorsUnits = new List<IUnit>();
             controlledCases = new List<Point>();
             controlledCases.Add(position);
         }
@@ -160,24 +167,49 @@ namespace Civilization.ClockWork.City
             return controlledCases.Contains(point);
         }
 
-        public void CreateUnit(UnitType type)
+        public void CreateUnit(UnitType type, IPlayer player)
         {
             switch (type)
             {
                 case UnitType.U_DIRECTOR:
-                    if (player.AvailableOre >= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost)
-                        player.AvailableOre -= (uint) player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
-                        InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector());
+                        if (player.AvailableOre >= player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost)
+                        {
+                            if (!player.HasDirector())
+                            {
+                                player.AvailableOre -= (uint)player.PlayedCivilization.Factory.DepartDirectorPrototype.Cost;
+                                InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateDepartDirector());
+                            }
+                            else
+                            {
+                                Log.Instance.Write("Votre civilisation possède déjà un directeur.");
+                            }
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Vous n'avez pas assez de minerai dans cette ville pour pouvoir créer un nouveau directeur.");
+                        }
                         break;
                 case UnitType.U_STUDENT:
-                    if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
-                        player.AvailableOre -= (uint) player.PlayedCivilization.Factory.StudentPrototype.Cost;
-                        InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateStudent());
+                        if (player.AvailableOre >= player.PlayedCivilization.Factory.StudentPrototype.Cost)
+                        {
+                            player.AvailableOre -= (uint)player.PlayedCivilization.Factory.StudentPrototype.Cost;
+                            InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateStudent());
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Vous n'avez pas assez de minerai dans cette ville pour pouvoir créer un nouvel étudiant.");
+                        }
                         break;
                 case UnitType.U_TEACHER:
-                    if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
-                        player.AvailableOre -= (uint) player.PlayedCivilization.Factory.TeacherPrototype.Cost;
-                        InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher());
+                        if (player.AvailableOre >= player.PlayedCivilization.Factory.TeacherPrototype.Cost)
+                        {
+                            player.AvailableOre -= (uint)player.PlayedCivilization.Factory.TeacherPrototype.Cost;
+                            InDoorsUnits.Add((Unit.Unit)player.PlayedCivilization.Factory.CreateTeacher());
+                        }
+                        else
+                        {
+                            Log.Instance.Write("Vous n'avez pas assez de minerai dans cette ville pour pouvoir créer un nouvel enseignant.");
+                        }
                         break;
                 default:
                     throw new Exception("Cannot create the unit, not enough resources.");
@@ -252,6 +284,7 @@ namespace Civilization.ClockWork.City
             ExtensionPoint = toBeAdded;
             player.CitiesToBeExtended.Enqueue(this);
         }
+
         public void ExtendPoint()
         {
             if (food > neededFood)
@@ -272,6 +305,7 @@ namespace Civilization.ClockWork.City
                 Console.WriteLine("Pas assez de nourriture pour s'étendre et créer un nouvel habitant.");
             }
         }
+
         public object Clone()
         {
             return MemberwiseClone();

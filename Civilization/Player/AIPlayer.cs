@@ -251,6 +251,11 @@ namespace Civilization.Player
         {
             return null;
         }
+
+        public bool HasDirector()
+        {
+            return false;
+        }
         #endregion
 
 
