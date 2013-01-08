@@ -157,9 +157,9 @@ namespace Civilization.ClockWork.Unit
             }
             set
             {
-                NotifyPropertyChanged(false, "CurrentMovementNb");
-                NotifyPropertyChanged(false, "RemainingMovement");
                 currentMovementNb = value;
+                NotifyPropertyChanged(false, "RemainingMovement");
+                NotifyPropertyChanged(false, "CurrentMovementNb");                
             }
         }
 
@@ -260,7 +260,13 @@ namespace Civilization.ClockWork.Unit
             throw new NotImplementedException();
         }
 
-        public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext)
+        /// <summary>
+        /// Renders the specified map viewer.
+        /// </summary>
+        /// <param name="mapViewer">The map viewer.</param>
+        /// <param name="drawingContext">The drawing context.</param>
+        /// <param name="playerColor">Color of the player.</param>
+        public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext, System.Windows.Media.Color playerColor)
         {
             if (mapViewer.IsInView(casePosition))
             {
@@ -271,36 +277,54 @@ namespace Civilization.ClockWork.Unit
                     FlowDirection.LeftToRight,
                     new Typeface("Verdana"),
                     8,
-                    Brushes.Black);
+                    new SolidColorBrush(playerColor));
 
                 drawingContext.DrawText(text, new Point(rect.X, rect.Y));
             }
         }
 
+        /// <summary>
+        /// Moves to the left.
+        /// </summary>
         public void MoveLeft()
         {
             casePosition.X--;
             CurrentMovementNb++;
         }
 
+        /// <summary>
+        /// Moves to the right.
+        /// </summary>
         public void MoveRight()
         {
             casePosition.X++;
             CurrentMovementNb++;
         }
 
+        /// <summary>
+        /// Moves to the up.
+        /// </summary>
         public void MoveUp()
         {
             casePosition.Y--;
             CurrentMovementNb++;
         }
 
+        /// <summary>
+        /// Moves to the down.
+        /// </summary>
         public void MoveDown()
         {
             casePosition.Y++;
             CurrentMovementNb++;
         }
 
+        /// <summary>
+        /// Determines whether this instance can move.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if this instance can move; otherwise, <c>false</c>.
+        /// </returns>
         public bool CanMove()
         {
             return currentMovementNb < movement;

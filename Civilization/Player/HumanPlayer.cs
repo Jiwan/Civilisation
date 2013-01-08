@@ -20,7 +20,6 @@ namespace Civilization.Player
         private System.Windows.Media.Color color;
         private uint availableFood;
         private uint availableOre;
-        private Queue<ICity> citiesToBeExtended;
         #endregion
 
         #region Constructeur
@@ -31,7 +30,7 @@ namespace Civilization.Player
             alive = true;
             cities = new List<ICity>();
             units = new List<IUnit>();
-            citiesToBeExtended = new Queue<ICity>();
+            CitiesToBeExtended = new Queue<ICity>();
         }
         #endregion
 
@@ -128,6 +127,7 @@ namespace Civilization.Player
                 availableOre = value;
             }
         }
+
         public Queue<ICity> CitiesToBeExtended
         {
             get;
@@ -179,38 +179,72 @@ namespace Civilization.Player
  	        units.Remove(unit);
         }
 
+        /// <summary>
+        /// Next turn.
+        /// </summary>
         public void NextTurn()
         {
-            Log.Instance.Write("Prochain tour.");
-            units.ForEach(unit => unit.CurrentMovementNb = 0);
-            Log.Instance.Write("Mouvements des unités remis à 0.");
+            units.ForEach(unit => unit.CurrentMovementNb = 0);            
 
             cities.ForEach(city => city.FindExtensionPoint());
-            Log.Instance.Write("Cases d'extension des villes trouvées.");
 
             while (CitiesToBeExtended.Count != 0)
             {
                 CitiesToBeExtended.Dequeue().ExtendPoint();
             }
-            Log.Instance.Write("Villes étendues.");
 
             availableFood = 0;
             cities.ForEach(city => city.NextTurn());
             cities.ForEach(city => availableFood += city.Food);
             cities.ForEach(city => availableOre += city.Ore);
-            Log.Instance.Write("Nourriture et minerai mis à jour.");
+
+           
         }
 
-        public void Render(MapViewer mapViewer, DrawingContext drawingContext)
+        /// <summary>
+        /// Renders the specified map viewer.
+        /// </summary>
+        /// <param name="mapViewer">The map viewer.</param>
+        /// <param name="drawingContext">The drawing context.</param>
+        /// <param name="viewPoints"></param>
+        public void Render(MapViewer mapViewer, DrawingContext drawingContext, List<Point> viewPoints = null)
         {
             foreach (ICity city in cities)
-            {
-                city.Render(mapViewer, drawingContext);
+            { 
+                if (viewPoints != null)
+                {
+                    foreach (Point p in viewPoints)
+                    {
+                        if (city.Position.X > p.X - 5 && city.Position.X < p.X + 5 && city.Position.Y > p.Y - 5 && city.Position.Y < p.Y + 5)
+                        {
+                            city.Render(mapViewer, drawingContext, color);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    city.Render(mapViewer, drawingContext, color);
+                }
             }
 
             foreach (IUnit unit in units)
             {
-                unit.Render(mapViewer, drawingContext);
+                if (viewPoints != null)
+                {
+                     foreach (Point p in viewPoints)
+                    {
+                        if (unit.Position.X > p.X - 6 && unit.Position.X < p.X + 6 && unit.Position.Y > p.Y - 6 && unit.Position.Y < p.Y + 6)
+                        {
+                            unit.Render(mapViewer, drawingContext, color);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    unit.Render(mapViewer, drawingContext, color);
+                }
             }
         }
 
@@ -250,6 +284,27 @@ namespace Civilization.Player
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets all view point.
+        /// </summary>
+        /// <returns></returns>
+        public List<Point> GetAllViewPoint()
+        {
+            List<Point> viewPoints = new List<Point>();
+
+            foreach (ICity city in cities)
+            {
+                viewPoints.Add(city.Position);
+            }
+
+            foreach (IUnit unit in units)
+            {
+                viewPoints.Add(unit.Position);
+            }
+
+            return viewPoints;
         }
         #endregion
     }

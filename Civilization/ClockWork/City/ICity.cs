@@ -31,7 +31,7 @@ namespace Civilization.ClockWork.City
 
        void ExtendPoint();
 
-       void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext);
+       void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext, System.Windows.Media.Color playerColor);
        #endregion
    }
 }

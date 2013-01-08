@@ -84,7 +84,7 @@ namespace Civilization
             List<Point> usedPoints = new List<Point>();
 
             // Initialisation des unités de chaque joueur
-            for(int i = 0; i < players.Count; i++)
+            for(int i = 0; i < players.Count; ++i)
             {
                 Random random = new Random();
                 
@@ -96,7 +96,10 @@ namespace Civilization
                 while (!found)
                 {
                     if (!(mapViewer.Map.SquareMatrix[coordx, coordy] is Water) && !usedPoints.Contains(new Point(coordx, coordy)))
+                    {
                         found = true;
+                        break;
+                    }
 
                     coordx = random.Next(0, (int)mapViewer.Map.Size.X - 1);
                     coordy = random.Next(0, (int)mapViewer.Map.Size.Y - 1);
@@ -124,6 +127,11 @@ namespace Civilization
         private void WriteLog(string info)
         {
             logTextBlock.Text = info + "\n" + logTextBlock.Text;
+        }
+
+        private bool Fight(IUnit attacker, List<IUnit> defender)
+        {
+            return true;
         }
         #endregion
 
@@ -254,6 +262,7 @@ Pour plus d'informations, se référer au manuel utilisateur.");
 
             mapViewer.Redraw();
             selectedUnit = null;
+            Log.Instance.Write("Debut du tour du joueur [" + players[currentPlayerIndex].Name + "]");
         }
 
 
@@ -278,6 +287,11 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             return number;
         }
 
+        /// <summary>
+        /// Handles the Click event of the createCityButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void createCityButton_Click(object sender, RoutedEventArgs e)
         {
             bool hasCity = false;
@@ -334,17 +348,34 @@ Pour plus d'informations, se référer au manuel utilisateur.");
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the drawIdealLocationButton control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs" /> instance containing the event data.</param>
         private void drawIdealLocationButton_Click(object sender, RoutedEventArgs e)
         {
             mapViewer.EnableIdealLocation = !mapViewer.EnableIdealLocation;
         }
 
+        /// <summary>
+        /// Maps the viewer_ render map.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="drawingContext">The drawing context.</param>
         private void mapViewer_RenderMap(object sender, DrawingContext drawingContext)
         {
             // Dessine toutes les unités et cités du joueur courant.            
-            players[currentPlayerIndex].Render((MapViewer)sender, drawingContext);
+            players[currentPlayerIndex].Render((MapViewer)sender, drawingContext, null);
+            
+            var viewPoints = players[currentPlayerIndex].GetAllViewPoint();
             
             // Dessine les unités des autres visibles par celle du joueur courant.
+            foreach (IPlayer player in players)
+            {
+                if (player != players[currentPlayerIndex])
+                    player.Render((MapViewer)sender, drawingContext, viewPoints);
+            }
         }
 
         /// <summary>
@@ -389,6 +420,24 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                     {
                         if (selectedUnit.CanMove())
                         {
+                            foreach (IPlayer player in players)
+                            {
+                                if (player != players[currentPlayerIndex])
+                                {
+                                    if (player.HasUnit(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y - 1)))
+                                    {
+                                        if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                                        {
+                                            return;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+
                             selectedUnit.MoveUp();
                             mapViewer.Redraw();
                         }
@@ -411,6 +460,25 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                     {
                         if (selectedUnit.CanMove())
                         {
+                            foreach (IPlayer player in players)
+                            {
+                                if (player != players[currentPlayerIndex])
+                                {
+                                    if (player.HasUnit(new Point((int)selectedUnit.Position.X, (int)selectedUnit.Position.Y + 1)))
+                                    {
+                                        if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                                        {
+                                            
+                                            return;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+
                             selectedUnit.MoveDown();
                             mapViewer.Redraw();
                         }
@@ -433,6 +501,25 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                     {
                         if (selectedUnit.CanMove())
                         {
+                            foreach (IPlayer player in players)
+                            {
+                                if (player != players[currentPlayerIndex])
+                                {
+                                    if (player.HasUnit(new Point((int)selectedUnit.Position.X + 1, (int)selectedUnit.Position.Y)))
+                                    {
+                                        if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                                        {
+
+                                            return;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+
                             selectedUnit.MoveRight();
                             mapViewer.Redraw();
                         }
@@ -455,6 +542,25 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                     {
                         if (selectedUnit.CanMove())
                         {
+                            foreach (IPlayer player in players)
+                            {
+                                if (player != players[currentPlayerIndex])
+                                {
+                                    if (player.HasUnit(new Point((int)selectedUnit.Position.X - 1, (int)selectedUnit.Position.Y)))
+                                    {
+                                        if (MessageBox.Show("Voulez vous combattre l'unité adversaire du joueur [" + player.Name + "]", "Combat", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                                        {
+
+                                            return;
+                                        }
+                                        else
+                                        {
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+
                             selectedUnit.MoveLeft();
                             mapViewer.Redraw();
                         }
@@ -464,7 +570,8 @@ Pour plus d'informations, se référer au manuel utilisateur.");
                         }
                     }
                 }
-                mapViewer
+
+                mapViewer.PickedSquare = selectedUnit.Position;
             }
         }
 

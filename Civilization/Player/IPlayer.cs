@@ -85,9 +85,23 @@ namespace Civilization.Player
         /// <param name="unit">The unit.</param>
         void RemoveUnit(IUnit unit);
 
+        /// <summary>
+        /// Nexts the turn.
+        /// </summary>
         void NextTurn();
 
-        void Render(MapViewer mapViewer, DrawingContext drawingContext);
+        /// <summary>
+        /// Renders the specified map viewer.
+        /// </summary>
+        /// <param name="mapViewer">The map viewer.</param>
+        /// <param name="drawingContext">The drawing context.</param>
+        void Render(MapViewer mapViewer, DrawingContext drawingContext, List<Point> viewPoints);
+
+        /// <summary>
+        /// Gets all view point.
+        /// </summary>
+        /// <returns></returns>
+        List<Point> GetAllViewPoint();
         #endregion
     }
 }

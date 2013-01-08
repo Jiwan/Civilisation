@@ -222,7 +222,7 @@ namespace Civilization.Player
 
         }
 
-        public void Render(MapViewer mapViewer, DrawingContext drawingContext)
+        public void Render(MapViewer mapViewer, DrawingContext drawingContext, List<Point> viewPoints = null)
         {
 
         }
@@ -243,6 +243,11 @@ namespace Civilization.Player
         /// <param name="point">The point.</param>
         /// <returns></returns>
         public ICity GetCity(Point point)
+        {
+            return null;
+        }
+
+        public List<Point> GetAllViewPoint()
         {
             return null;
         }

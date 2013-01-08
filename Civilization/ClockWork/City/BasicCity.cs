@@ -170,8 +170,7 @@ namespace Civilization.ClockWork.City
         public void FindExtensionPoint()
         {
             if (controlledCases.Count >= 25)
-            {
-                Console.WriteLine("The city has reached its maximum capacity. It can no longer be extended.");
+            {                
                 return;
             }
 
@@ -236,7 +235,6 @@ namespace Civilization.ClockWork.City
 
             ExtensionPoint = toBeAdded;
             player.CitiesToBeExtended.Enqueue(this);
-            Console.WriteLine("Case d'extension définie.");
         }
         public void ExtendPoint()
         {
@@ -271,7 +269,7 @@ namespace Civilization.ClockWork.City
             CollectOre();
         }
 
-        public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext)
+        public void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext, System.Windows.Media.Color playerColor)
         {
 
         }

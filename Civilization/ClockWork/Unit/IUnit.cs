@@ -71,7 +71,7 @@ namespace Civilization.ClockWork.Unit
         #region methods
         void Damage(int damageValue);
 
-        void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext);
+        void Render(CustomControls.MapViewer mapViewer, System.Windows.Media.DrawingContext drawingContext, System.Windows.Media.Color playerColor);
 
         void MoveLeft();
 

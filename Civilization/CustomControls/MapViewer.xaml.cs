@@ -73,6 +73,9 @@ namespace Civilization.CustomControls
         /// </summary>
         private MouseAction currentMouseAction;
 
+        /// <summary>
+        /// The enable ideal location
+        /// </summary>
         private bool enableIdealLocation;
         #endregion
 
